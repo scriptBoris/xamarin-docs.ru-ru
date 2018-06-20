@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 275ec851a2fd8e96adecfeca5daf6a66add7bd92
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 7f68b7c8affc11b50bdb4a2fc9589f8dcbfb45ec
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209194"
 ---
 # <a name="gtk-platform-setup"></a>Программа установки платформы GTK #
 
@@ -42,7 +43,7 @@ GTK # для macOS и Linux устанавливается как часть [м
 
     Нажмите клавишу **ОК** кнопку, чтобы создать проект.
 
-4. В **обозревателе решений**, щелкните правой кнопкой мыши новый проект GTK и выберите **управление пакетами NuGet**. Выберите **Обзор** щелкните **включить предварительный выпуск** флажок и выполните поиск **Xamarin.Forms** 3.0 или более поздней.
+4. В **обозревателе решений**, щелкните правой кнопкой мыши новый проект GTK и выберите **управление пакетами NuGet**. Выберите **Обзор** и найдите **Xamarin.Forms** 3.0 или более поздней.
 
     ![Установите пакет Xamarin.Forms NuGet](gtk-images/win/select-forms-nuget-package.png "установите пакет Xamarin.Forms NuGet")
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 80d86e1aa6a00d4a55c0fdba1b858bfef7bcbc84
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 46fa32fc8203b32378f4a4fbe07cb8c9f8dbb854
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241348"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209210"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Страница Xamarin.Forms основной подробности
 
@@ -112,7 +112,7 @@ public class MainPageCS : MasterDetailPage
              Icon="hamburger.png"
              Title="Personal Organiser">
     <StackLayout>
-        <ListView x:Name="listView">
+        <ListView x:Name="listView" x:FieldModifier="public">
            <ListView.ItemsSource>
                 <x:Array Type="{x:Type local:MasterPageItem}">
                     <local:MasterPageItem Title="Contacts" IconSource="contacts.png" TargetType="{x:Type local:ContactsPage}" />
@@ -220,7 +220,7 @@ public partial class MainPage : MasterDetailPage
     public MainPage ()
     {
         ...
-        masterPage.ListView.ItemSelected += OnItemSelected;
+        masterPage.listView.ItemSelected += OnItemSelected;
     }
 
     void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -228,7 +228,7 @@ public partial class MainPage : MasterDetailPage
         var item = e.SelectedItem as MasterPageItem;
         if (item != null) {
             Detail = new NavigationPage ((Page)Activator.CreateInstance (item.TargetType));
-            masterPage.ListView.SelectedItem = null;
+            masterPage.listView.SelectedItem = null;
             IsPresented = false;
         }
     }

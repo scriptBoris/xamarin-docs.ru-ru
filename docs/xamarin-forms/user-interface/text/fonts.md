@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: fd45528446c9d3d4bdfa1b8f9f4010babb2ad044
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3d5fe936da9086dd7201b7ee7d91185b81eb65a1
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245635"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269035"
 ---
 # <a name="fonts-in-xamarinforms"></a>Шрифты в Xamarin.Forms
 
-В этой статье описываются как Xamarin.Forms позволяет указать атрибуты шрифта (включая вес и размер) на элементы управления, отображающие текст. Сведения о шрифте может быть [указанных в коде](#Setting_Font_in_Code) или [указанные в Xaml](#Setting_Font_in_Xaml).
+В этой статье описываются как Xamarin.Forms позволяет указать атрибуты шрифта (включая вес и размер) на элементы управления, отображающие текст. Сведения о шрифте может быть [указанных в коде](#Setting_Font_in_Code) или [указанные в XAML](#Setting_Font_in_Xaml).
 Можно также использовать [пользовательский шрифт](#Using_a_Custom_Font).
 
 <a name="Setting_Font_in_Code" />
@@ -55,7 +55,6 @@ label.FontSize = 24;
 -  **Небольшой**
 -  **Средний**
 -  **Большой**
-
 
 `NamedSize` Перечисления можно использовать везде, где `FontSize` можно задать с помощью `Device.GetNamedSize` метод, чтобы преобразовать значение в `double`:
 
@@ -103,7 +102,6 @@ fs.Spans.Add (new Span { Text=" and green!", ForegroundColor = Color.Green, Font
 labelFormatted.FormattedText = fs;
 ```
 
-
 ### <a name="setting-font-info-per-platform"></a>Сведения о шрифте настройки каждой платформы
 
 Кроме того `Device.RuntimePlatform` свойство может использоваться для установки шрифтов имен для каждой платформы, как показано в этом коде:
@@ -119,16 +117,16 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
 
 <a name="Setting_Font_in_Xaml" />
 
-## <a name="setting-the-font-in-xaml"></a>Установка шрифта в Xaml
+## <a name="setting-the-font-in-xaml"></a>Установка шрифта в XAML
 
-Xamarin.Forms элементы управления, отображаемого текста, имеют `Font` свойство, которое может быть задано в Xaml. Для задания шрифта в Xaml проще использовать именованные размер значений перечисления, как показано в следующем примере:
+Xamarin.Forms элементы управления, отображаемого текста, имеют `Font` свойство, которое может быть задано в XAML. Для задания шрифта в XAML проще использовать именованные размер значений перечисления, как показано в следующем примере:
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-Имеется встроенный преобразователь для `Font` свойство, позволяющее все параметры шрифта можно выразить в виде строкового значения в языке Xaml. В следующих примерах показано, как указать атрибуты шрифтов и размеров в Xaml:
+Имеется встроенный преобразователь для `Font` свойство, позволяющее все параметры шрифта можно выразить в виде строкового значения в языке XAML. В следующих примерах показано, как указать атрибуты шрифтов и размеров в XAML:
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
@@ -136,11 +134,12 @@ Xamarin.Forms элементы управления, отображаемого 
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-Чтобы указать несколько `Font` сочетание необходимые параметры в строку атрибута один шрифт. Строка атрибута шрифта должен быть в формате `"[font-face],[attributes],[size]"`. Важен порядок параметров, все параметры являются необязательными и несколько `attributes` могут быть заданы, например:
+Чтобы указать несколько `Font` сочетание необходимые параметры в единую `Font` строке атрибута. Строка атрибута шрифта должен быть в формате `"[font-face],[attributes],[size]"`. Важен порядок параметров, все параметры являются необязательными и несколько `attributes` могут быть заданы, например:
 
 ```xaml
-<Label Text="Small bold text" FontAttributes="Bold" FontSize="Micro" />
-<Label Text="Really big italic text" FontAttributes="Italic" FontSize="72" />
+<Label Text="Small bold text" Font="Bold, Micro" />
+<Label Text="Medium custom font" Font="MarkerFelt-Thin, 42" />
+<Label Text="Really big bold and italic text" Font="Bold, Italic, 72"  />
 ```
 
 `FormattedString` Класс также может использоваться в XAML, как показано ниже:
@@ -253,7 +252,7 @@ new Label
 
 Xamarin.Forms предоставляет параметры по умолчанию позволяют размер текст легко для всех поддерживаемых платформах. Он также позволяет задать начертание и размер &ndash; даже по-разному для каждой платформы &ndash; когда требуется более точное управление. `FormattedString` Класс может использоваться для создания строка, содержащая спецификации шрифтов с помощью `Span` класса.
 
-Информацию о шрифта можно также задать в Xaml, с помощью атрибутов шрифта в правильном формате или `FormattedString` элемент с `Span` дочерних элементов.
+Информацию о шрифта можно также задать в XAML, с помощью атрибутов шрифта в правильном формате или `FormattedString` элемент с `Span` дочерних элементов.
 
 
 ## <a name="related-links"></a>Связанные ссылки

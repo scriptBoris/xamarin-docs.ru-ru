@@ -7,16 +7,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3cf27e48fe23b9a0f035689e55a72fcc706ab266
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 73d74b59ef6e59028eec7cad19feec21908b6329
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241335"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269048"
 ---
 # <a name="consuming-an-azure-mobile-app"></a>Использование мобильного приложения Azure
 
 _Мобильные приложения Azure позволяют разрабатывать приложения с масштабируемой внутренних серверов, размещенных в службе приложений Azure, с поддержкой проверки подлинности мобильных устройств, автономной синхронизации и push-уведомлений. В этой статье, применим только для мобильных приложений Azure, использовать Node.js серверной части, описание запроса, вставки, обновления и удаления данных, хранящихся в таблице в экземпляре мобильных приложений Azure._
+
+> [!NOTE]
+> Начиная с 30 июня, все новые мобильные приложения Azure будут создаваться с TLS 1.2 по умолчанию. Кроме того, также рекомендуется существующих мобильных приложений Azure быть перенастроены на использование TLS 1.2. Сведения о том, как применять TLS 1.2 в мобильные приложения Azure в разделе [применять TLS 1.2](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-1112). Сведения о настройке проектов Xamarin для использования TLS 1.2 см. в разделе [Transport Layer Security (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md).
 
 Сведения о том, как создать экземпляр мобильных приложений Azure, могут быть использованы Xamarin.Forms см. в разделе [Создание приложения Xamarin.Forms](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/). После выполнения этих инструкций можно настроить загружаемый пример приложения следует использовать экземпляр мобильных приложений Azure, задав `Constants.ApplicationURL` URL-адрес экземпляра мобильных приложений Azure. Затем при запуске образца приложения его подключатся к экземпляра мобильных приложений Azure, как показано на следующем снимке экрана:
 

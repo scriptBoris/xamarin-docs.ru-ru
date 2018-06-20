@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 author: topgenorth
 ms.author: toopge
-ms.date: 03/30/2017
-ms.openlocfilehash: fa8806345a364a70535a91b2ba99e3bfee8d47bc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 6e37b1ac3d0fb78b5737ebe97b5a28ab40adb648
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794024"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269061"
 ---
 # <a name="debugging-integrations"></a>Отладка интеграции
 
@@ -23,8 +23,8 @@ ms.locfileid: "34794024"
 
 Журнал клиента находится в следующих местоположениях в macOS и Windows:
 
-- MAC: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
-- Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
+- MAC: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 Следует иметь в виду, что при загрузке интеграции через обычные `#r` механизм во время разработки сборки интеграции будет выбрано как _зависимостей_ книги и если абсолютный путь в пакеты с ним не используется. Это может вызвать изменения в по-видимому не распространяются, как если бы перестроение интеграции не происходило никаких действий.
 
@@ -39,7 +39,7 @@ ms.locfileid: "34794024"
 Чтобы включить средства разработчика для книг Xamarin на Mac, выполните следующую команду в окне терминала:
 
 ```shell
-defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
+defaults write com.xamarin.Workbooks WebKitDeveloperExtras -bool true
 ```
 
 а затем перезапустите Xamarin книги. После этого вы увидите **проверить элемент** отображаются в вашей контекстного меню и новый **разработчика** области будут доступны в установках книг. Этот параметр позволяет выбрать, должны ли открываться при запуске средств разработчика:

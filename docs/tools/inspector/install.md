@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2017
-ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: f7c5217a9c2d3881ca29094c3186e448975db6a3
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793812"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268973"
 ---
 # <a name="inspector-installation-and-requirements"></a>Требования к установке инспектора и
 
@@ -19,13 +19,15 @@ ms.locfileid: "34793812"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. Загрузите и установите [Xamarin книг & окон инспектора для](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
-2. [Проверки вашего собственного приложения!](~/tools/inspector/inspect.md)
+1. Загрузите и установите [Visual Studio Enterprise](https://www.visualstudio.com/vs/) и выберите **Разработка мобильных приложений в .NET Framework** рабочей нагрузки.
+1. [Войдите в](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) для включения подписки Enterprise.
+1. [Проверить](~/tools/inspector/inspect.md) вашего собственного приложения!
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. Загрузите и установите [Xamarin книг & инспектора для Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
-2. [Проверки вашего собственного приложения!](~/tools/inspector/inspect.md)
+1. Загрузите и установите [Visual Studio для Mac](https://www.visualstudio.com/vs/mac/).
+1. [Войдите в](https://docs.microsoft.com/visualstudio/mac/activation) для включения подписки Enterprise.
+1. [Проверить](~/tools/inspector/inspect.md) вашего собственного приложения!
 
 -----
 
@@ -38,10 +40,8 @@ ms.locfileid: "34793812"
 
 ### <a name="supported-ides"></a>Поддерживаемые интегрированными средами разработки
 
-- Xamarin Studio 6.2 или выше
-- Visual Studio для Mac Preview 4 или выше
-- Visual Studio 2015 с Xamarin 4.3.x или выше
-- 2017 г. Visual Studio с Xamarin рабочей нагрузки
+- Visual Studio для Mac
+- Visual Studio 2017 г. с **Разработка мобильных приложений в .NET Framework** рабочей нагрузки
 
 Проверка работающем приложении доступен для корпоративных клиентов.
 
@@ -51,10 +51,10 @@ ms.locfileid: "34793812"
 
 |Платформа приложений|Поддержка интегрированной среды разработки|Примечания|
 |--- |--- |--- |
-|Mac (единой)|Поддерживаются только для Mac|
-|операций ввода-вывода (единый)|Поддерживается в Visual Studio и XS|Проверка приложений iOS из Windows требуется одна и та же версия инспектор также будет установлен на узле Mac сборки.|
-|Android|Поддерживается в Visual Studio и XS|Должны быть предназначены Android > = 4.0.3, с **fastdev** включена.<br />Необходимо использовать эмуляторы Google, Visual Studio и Xamarin Android. Эмуляторы Android 7 не может разрешить проверки в данный момент.|
-|WPF|Поддерживается только в Visual Studio в Windows|
+|Mac|Поддерживается только в Visual Studio для Mac|
+|iOS|Поддерживается в Visual Studio 2017 г. и Visual Studio для Mac| |
+|Android|Поддерживается в Visual Studio 2017 г. и Visual Studio для Mac|Должны быть предназначены Android > = 4.0.3, с **fastdev** включена.<br />Необходимо использовать эмуляторы Google, Visual Studio и Xamarin Android. Эмуляторы Android 7 не может разрешить проверки в данный момент.|
+|WPF|Поддерживается только в Visual Studio 2017 г.|
 
 <a name="reporting-bugs" />
 
@@ -73,11 +73,6 @@ ms.locfileid: "34793812"
 Visual Studio для Mac
 
 - **Visual Studio > о Visual Studio > Показать подробности > скопировать сведения**
-- Вставить в отчет об ошибках
-
-Xamarin Studio
-
-- **Xamarin Studio > о Xamarin Studio > Показать подробности > скопировать сведения**
 - Вставить в отчет об ошибках
 
 Visual Studio
@@ -102,10 +97,6 @@ Visual Studio для Mac
 
 - `~/Library/Logs/VisualStudio/7.0/Ide.log`
 
-Xamarin Studio
-
-- `~/Library/Logs/XamarinStudio-6.0/Ide.log`
-
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
@@ -129,42 +120,3 @@ Visual Studio
 - Устройство имеет подключение к сети (проверка через веб-браузер)?
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new
-
-## <a name="uninstall"></a>Удалить
-
-### <a name="windows"></a>Windows
-
-В зависимости от того, как вы получили книг & инспектора необходимо выполнить две процедуры удаления. Проверьте эти полностью удалить программное обеспечение.
-
-#### <a name="visual-studio-installer"></a>Visual Studio Installer
-
-При наличии 2017 г. для Visual Studio, откройте **установщик Visual Studio**и найдите в **отдельные компоненты** для **книги Xamarin**. Если он установлен, снимите этот флажок и нажмите кнопку «Изменить» для удаления.
-
-#### <a name="system-uninstall"></a>Удаление системы
-
-Если вы установили книг & Инспектор самостоятельно Скачанный установщик, его необходимо установить через **приложений и возможности** страница параметров настройки системы в Windows 10 или с помощью **Установка и удаление программ**на панели управления в предыдущих версиях Windows.
-
-> **Пуск > Параметры > Система > приложений и компонентов**
-
-![](install-images/windows-remove.png "Xamarin книг и инспектора, перечисленные в разделе «Приложения и компоненты»")
-
-**Процедуры для установщик Visual Studio, чтобы убедиться, что книги по-прежнему следует придерживаться & инспектора не получить переустановки без ведома пользователя.**
-
-### <a name="macos"></a>macOS
-
-Начиная с [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), книг Xamarin & Инспектор могут быть удалены из терминала, выполнив:
-
-```bash
-sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
-```
-
-Программа удаления подробно файлов и каталогов, она удаляет и запрашивать подтверждение перед продолжением.
-
-Передайте `-help` аргумент `uninstall` скрипт для более сложных сценариев.
-
-В более старых версиях требуется вручную удалить следующие компоненты:
-
-1. Приложение Workbooks в `"/Applications/Xamarin Workbooks.app"`
-2. Приложение Inspector в `"Applications/Xamarin Inspector.app"`
-3. Надстройки `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` и `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-4. Inspector и вспомогательные файлы `/Library/Frameworks/Xamarin.Interactive.framework` и `/Library/Frameworks/Xamarin.Inspector.framework`

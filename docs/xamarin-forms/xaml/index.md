@@ -6,12 +6,13 @@ ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 10/24/2016
-ms.openlocfilehash: bb3b4c4f80171f676e8b5f9a7464f4da890a4643
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/18/2018
+ms.openlocfilehash: c040c12829708418d0a705b8e9f930989900c678
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209431"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>расширяемого языка разметки приложений (XAML)
 
@@ -45,6 +46,10 @@ XAML использует `xmlns` атрибута XML для объявлени
 ## <a name="xaml-markup-extensionsmarkup-extensionsindexmd"></a>[Расширения разметки XAML](markup-extensions/index.md)
 
 XAML включает расширения разметки для установки атрибутов для значений или объектов за пределы нельзя выразить с помощью простых строк. К ним относятся ссылки на константы, статические свойства и поля, словарях ресурсов и привязки данных.
+
+## <a name="field-modifiersfield-modifiersmd"></a>[Модификаторы поля](field-modifiers.md)
+
+`x:FieldModifier` Атрибут пространства имен указывает уровень доступа для созданных полей для именованных элементов XAML.
 
 ## <a name="passing-argumentspassing-argumentsmd"></a>[Передача аргументов](passing-arguments.md)
 

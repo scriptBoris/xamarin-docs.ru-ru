@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: e9f38377299e8094162dd2d2d73174e6f2b40369
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e83f8a585c4badc31bffaea53bb2f183e7b11fc9
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245775"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268866"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Часть 5. От привязок данных для MVVM
 
@@ -290,7 +290,7 @@ namespace XamlSamples
 </ContentPage>
 ```
 
-Привязка на каждом `Label` значение по умолчанию `OneWay`. Ему нужно только отобразить значение. Однако привязки для каждого `Slider` — `TwoWay`. Это позволяет `Slider` инициализированную из ViewModel. Обратите внимание, что `Color` свойству `Blue` при создании экземпляра ViewModel. Однако изменения в `Slider` также необходимо указать новое значение для свойства в ViewModel, который затем вычисляет новый цвет.
+Привязка на каждом `Label` значение по умолчанию `OneWay`. Ему нужно только отобразить значение. Однако привязки для каждого `Slider` — `TwoWay`. Это позволяет `Slider` инициализированную из ViewModel. Обратите внимание, что `Color` свойству `Aqua` при создании экземпляра ViewModel. Однако изменения в `Slider` также необходимо указать новое значение для свойства в ViewModel, который затем вычисляет новый цвет.
 
 [![](data-bindings-to-mvvm-images/hslcolorscroll.png "С помощью привязки данных двусторонняя MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM с помощью двусторонней привязки данных")
 

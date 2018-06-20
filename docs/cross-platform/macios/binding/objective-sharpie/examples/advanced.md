@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 7af9700a9b661280c2ee32a1f65cdc01234cbe37
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 811b783d33a20e23a7e807861e19355a1c372b84
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781260"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209405"
 ---
 # <a name="advanced-manual-real-world-example"></a>Расширенный пример (вручную)
 
@@ -19,7 +19,7 @@ ms.locfileid: "34781260"
 
 В этом разделе рассматриваются более сложные подход к привязке, где используется Apple `xcodebuild` инструмент, сначала выполните построение проекта POP и вывести входные данные для цели Sharpie вручную. По сути они охватывают действия Sharpie цель за кулисами в предыдущем разделе.
 
-```csharp
+```
  $ git clone https://github.com/facebook/pop.git
 Cloning into 'pop'...
    _(more git clone output)_
@@ -29,7 +29,7 @@ $ cd pop
 
 Поскольку библиотека POP есть проект Xcode (`pop.xcodeproj`), мы просто используем `xcodebuild` для построения POP. Этот процесс, в свою очередь может создавать файлы заголовков, Sharpie цель может потребоваться выполнить синтаксический анализ. Именно поэтому построение перед важно привязки. При построении через `xcodebuild` обеспечить передается архитектура и идентификатор пакета SDK, необходимо передать Sharpie цель (и обратите внимание, что цель Sharpie 3.0 обычно это можно сделать для вас!):
 
-```csharp
+```
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
 
 Build settings from command line:
@@ -54,7 +54,7 @@ CpHeader pop/POPAnimationTracer.h build/Headers/POP/POPAnimationTracer.h
 
 Теперь мы готовы для привязки POP. Мы знаем, что мы хотим построить для пакета SDK `iphoneos8.1` с `arm64` архитектуры и в нем имеются файлы заголовков, которые мы стремимся `build/Headers` под извлечение POP git. Если мы посмотрим `build/Headers` каталог, мы рассмотрим несколько файлов заголовков:
 
-```csharp
+```
 $ ls build/Headers/POP/
 POP.h                    POPAnimationTracer.h     POPDefines.h
 POPAnimatableProperty.h  POPAnimator.h            POPGeometry.h
@@ -66,7 +66,7 @@ POPAnimationPrivate.h    POPDecayAnimation.h
 
 Если взглянуть на `POP.h`, мы видим основной верхнего уровня заголовка библиотеки в файл, который является `#import`s другие файлы. По этой причине нам требуется только для передачи `POP.h` для Sharpie цель и clang будет выполнять rest в фоновом:
 
-```csharp
+```
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
     -scope build/Headers build/Headers/POP/POP.h \
     -c -Ibuild/Headers -arch arm64

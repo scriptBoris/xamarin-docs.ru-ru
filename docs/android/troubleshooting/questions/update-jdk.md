@@ -7,12 +7,13 @@ ms.assetid: 4b3ac51d-18dd-4034-87b4-4365194e4ece
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: dcfc5e406e60ac72fb1ca1e9cfb0395d17074b2c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/18/2018
+ms.openlocfilehash: 979bf4572e0e0865c2254c3e1c2f707c8eecae8d
+ms.sourcegitcommit: 57f9a9ba2f199697cb75e7be67f1a372c35a861b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36269664"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Как обновить версию Java Development Kit (JDK)?
 
@@ -38,7 +39,7 @@ Xamarin.Android использует Java Development Kit (JDK) для инте�
 
 4.  Откройте Visual Studio и обновление **Java Development Kit расположение** для указания нового JDK в **средства > Параметры > Xamarin > Параметры Android > Java Development Kit расположение > Изменение**:
 
-    ![Параметр Path для JDK на странице настроек Android IDE](update-jdk-images/image4.png)
+    [![Параметр Path для JDK на странице настроек Android IDE](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
 
 Не забудьте перезапустить Visual Studio после обновления расположения.
 

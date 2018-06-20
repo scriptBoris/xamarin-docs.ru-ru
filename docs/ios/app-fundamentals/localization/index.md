@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 06758fd8fac62a63c309b173738a8ee889716143
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7f05243196a9b916ac5c7b73df957262604ccb11
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785270"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268814"
 ---
 # <a name="localization-in-xamarinios"></a>Локализация в Xamarin.iOS
 
@@ -55,6 +55,16 @@ var lang = NSBundle.MainBundle.PreferredLocalizations[0];
 - `NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier`
 
 Первое значение могут кэшироваться операционной системой и поэтому может не всегда отражают языкового стандарта текущего выбранного пользователя. Второе значение используйте для получения текущего выбранного языка.
+
+> [!NOTE]
+> Моно (выполнения .NET, на которой основан Xamarin.iOS) и Apple iOS API-интерфейсы не поддерживают идентичными наборами сочетания языка или региона.
+> По этой причине невозможно выбрать сочетание языка или региона в iOS **параметры** приложение, которое не соответствует значение на допустимое Mono. Например английский язык, iPhone и ее области в Испании, то следующие интерфейсы API для получения различных значений:
+> 
+> - `CurrentThead.CurrentCulture`: en US (моно API)
+> - `CurrentThread.CurrentUICulture`: en US (моно API)
+> - `NSLocale.CurrentLocale.LocaleIdentifier`: en_ES (Apple API)
+>
+> Поскольку использует моно `CurrentThread.CurrentUICulture` выберите ресурсы и `CurrentThread.CurrentCulture` для форматирования дат и валют, на основе моно локализации (например, с RESX-файлы) не может возврат ожидаемых результатов для этих сочетаний языка или региона. В таких ситуациях используют Apple API-интерфейсы для локализации при необходимости.
 
 ### <a name="nscurrentlocaledidchangenotification"></a>NSCurrentLocaleDidChangeNotification
 

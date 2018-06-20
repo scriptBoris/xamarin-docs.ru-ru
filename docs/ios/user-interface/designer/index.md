@@ -7,22 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/31/2018
-ms.openlocfilehash: eadc2147a44d6077436e394a4757d367ce42e5fa
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a931373a6abba3084af3c7aefcdddc903ad1b577
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790007"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209236"
 ---
 # <a name="building-user-interfaces-with-the-ios-designer"></a>Создание пользовательских интерфейсов с iOS конструктора
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
-
-=======
-# <a name="ios-designer"></a>Конструктор iOS
-
 _Конструктор Xamarin для операций ввода-вывода — это визуальный конструктор для iOS раскадровки и интерфейс построителя форматы, полностью интегрирован с Visual Studio для Mac и Visual Studio. IOS конструктор поддерживает полной совместимости с форматами раскадровки и .xib, поэтому файлы можно редактировать в Visual Studio для Mac или Visual Studio, в дополнение к Xcode интерфейс построителя. Кроме того конструктор Xamarin iOS поддерживает дополнительные функции, такие как пользовательские элементы управления, которые отображаются во время разработки в редакторе._
->>>>>>> master
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 

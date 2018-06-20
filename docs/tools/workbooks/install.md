@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: b5e94a9b0bc3b9e9f141ad9fd262d29e01eb8a10
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: a35038a948a89889bbf067a453b7465c1a6a7b49
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793825"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268996"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Требования к установке книг и
 
@@ -43,8 +44,8 @@ ms.locfileid: "34793825"
 
 |Платформа приложений|Поддержка ОС|Примечания|
 |--- |--- |--- |
-|Mac (единой)|Поддерживаются только для Mac|
-|операций ввода-вывода (единый)|Поддерживается на Mac и Windows|Xamarin.iOS 11.0 и Xcode версии 9.0 или более поздней, должны быть установлены на компьютере Mac. Необходим узел построения Mac выполнения всех указанных выше, для выполнения операций ввода-вывода книг в Windows и [удаленной симулятор iOS](~/tools/ios-simulator.md) установить в Windows.|
+|Mac|Поддерживаются только для Mac|
+|iOS|Поддерживается на Mac и Windows|Xamarin.iOS 11.0 и Xcode версии 9.0 или более поздней, должны быть установлены на компьютере Mac. Необходим узел построения Mac выполнения всех указанных выше, для выполнения операций ввода-вывода книг в Windows и [удаленной симулятор iOS](~/tools/ios-simulator.md) установить в Windows.|
 |Android|Поддерживается на Mac и Windows|Необходимо использовать эмулятор Google, Visual Studio или Xamarin Android, с виртуальным устройством > = 5.0|
 |WPF|Поддерживается только в Windows|
 |Консоль (.NET Framework)|Поддерживается на Mac и Windows|
@@ -114,7 +115,7 @@ Visual Studio
 
 ### <a name="windows"></a>Windows
 
-В зависимости от того, как вы получили книг & инспектора необходимо выполнить две процедуры удаления. Проверьте эти полностью удалить программное обеспечение.
+В зависимости от того, как вы получили книги необходимо выполнить две процедуры удаления. Проверьте эти полностью удалить программное обеспечение.
 
 #### <a name="visual-studio-installer"></a>Visual Studio Installer
 
@@ -122,19 +123,19 @@ Visual Studio
 
 #### <a name="system-uninstall"></a>Удаление системы
 
-Если вы установили книг & Инспектор самостоятельно Скачанный установщик, его необходимо установить через **приложений и возможности** страница параметров настройки системы в Windows 10 или с помощью **Установка и удаление программ**на панели управления в предыдущих версиях Windows.
+Если вы установили книг самостоятельно Скачанный установщик, его необходимо установить через **приложений и возможности** страница параметров настройки системы в Windows 10 или с помощью **Установка и удаление программ** в элементе управления Панель в предыдущих версиях Windows.
 
 > **Пуск > Параметры > Система > приложений и компонентов**
 
-![](install-images/windows-remove.png "Xamarin книг и инспектора, перечисленные в &quot;приложения &amp; функции&quot;")
+![](install-images/windows-remove.png "Xamarin книги, как указано в &quot;приложения &amp; функции&quot;")
 
-**Процедуры для установщик Visual Studio, чтобы убедиться, что книги по-прежнему следует придерживаться & инспектора не получить переустановки без ведома пользователя.**
+**По-прежнему необходимо следовать процедура установщик Visual Studio, чтобы убедиться, что книги не получить переустановки без ведома пользователя.**
 
 <a name="uninstall-macos" />
 
 ### <a name="macos"></a>macOS
 
-Начиная с [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), книг Xamarin & Инспектор могут быть удалены из терминала, выполнив:
+Начиная с [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), Xamarin книги могут быть удалены из терминала, выполнив:
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
@@ -153,7 +154,7 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 ## <a name="downgrading"></a>Понижение уровня
 
-Идентификатор пакета для **Workbooks.app/Applications/Xamarin** изменилось с `com.xamarin.Inspector` для `com.xamarin.Workbooks` 1,4 выпуска для упрощения будущих разделение установщиков книг Xamarin & инспектора.
+Идентификатор пакета для **Workbooks.app/Applications/Xamarin** изменилось с `com.xamarin.Inspector` для `com.xamarin.Workbooks` 1,4 выпуска, как книг и инспектора теперь полностью разделяются.
 
 Из-за ошибки в более старых программ установки не удается понизить выпуски 1.4 или более поздней версии с помощью 1.3.2 или более старых программ установки.
 

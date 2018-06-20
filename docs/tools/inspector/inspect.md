@@ -5,19 +5,18 @@ ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2017
-ms.openlocfilehash: 16a0474c7fc9a496409e2133714b6d4374691dbc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 67cc6b42901521226322d964514f19b4b639148b
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793483"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268827"
 ---
 # <a name="inspecting-live-applications"></a>Проверка работающих приложениях.
 
 Проверка работающем приложении доступен для корпоративных клиентов.
 
-1. [Установите Xamarin книг & инспектора.](~/tools/inspector/install.md)
 1. Открыть любую [поддерживается проект приложения](~/tools/inspector/install.md#supported-platforms) в Visual Studio для Mac или Visual Studio.
 1. Запустите приложение в режиме отладки.
 1. Нажмите кнопку **инспектировать** на панели инструментов в интегрированной среде разработки (в Visual Studio **инспектировать текущее приложение...**  пункта меню также доступна из **средства** или **отладки** меню).
