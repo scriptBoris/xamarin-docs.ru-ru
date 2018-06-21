@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 6d3e5e61069723b0910b092da6631d5dc4ad8629
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b0fd644f1f3b49a949a3a9ba9aca4c0770f17013
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244549"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291355"
 ---
 # <a name="images-in-xamarinforms"></a>Образы в Xamarin.Forms
 
@@ -153,8 +153,11 @@ Android альтернативный разрешение изображения
 Код для загрузки внедренное изображение просто передает **идентификатор ресурса** для [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) метода, как показано ниже:
 
 ```csharp
-var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg") };
+var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
 ```
+
+> [!NOTE]
+> Для поддержки отображения внедренные изображения в режиме выпуска на универсальной платформе Windows, необходимо использовать перегруженный `ImageSource.FromResource` , указывающий источник сборки, в которой для поиска изображения.
 
 В настоящее время нет неявного преобразования для идентификаторов ресурсов. Вместо этого необходимо использовать [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) или `new ResourceImageSource()` для загрузки внедренных изображений.
 
@@ -182,12 +185,15 @@ public class ImageResourceExtension : IMarkupExtension
    }
 
    // Do your translation lookup here, using whatever method you require
-   var imageSource = ImageSource.FromResource(Source);
+   var imageSource = ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
 
    return imageSource;
  }
 }
 ```
+
+> [!NOTE]
+> Для поддержки отображения внедренные изображения в режиме выпуска на универсальной платформе Windows, необходимо использовать перегруженный `ImageSource.FromResource` , указывающий источник сборки, в которой для поиска изображения.
 
 Для использования этого расширения добавить пользовательское `xmlns` в языке XAML, используя правильные значения пространства имен и сборки для проекта. Затем можно создать источник изображения с помощью этого синтаксиса: `{local:ImageResource WorkingWithImages.beach.jpg}`. Ниже приводится полный пример, в XAML.
 
@@ -224,9 +230,15 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-#### <a name="images-embedded-in-other-projects-dont-appear"></a>Изображения, внедренные в других проектах не отображаются.
+#### <a name="images-embedded-in-other-projects"></a>Изображения, внедренные в других проектах
 
-`Image.FromResource` осуществляет только для изображений в той же сборке, как код, вызывающий `FromResource`. С помощью отладки кода выше можно определить, какие сборки содержат конкретный ресурс, изменив `typeof()` инструкции `Type` известно, в каждой сборке.
+По умолчанию `ImageSource.FromResource` метод выполняет только для изображений в той же сборке, как код, вызывающий `ImageSource.FromResource` метод. С помощью отладки кода выше можно определить, какие сборки содержат конкретный ресурс, изменив `typeof()` инструкции `Type` известно, в каждой сборке.
+
+Тем не менее, заданное исходной сборки, поиск внедренного изображения в качестве аргумента для `ImageSource.FromResource` метод:
+
+```csharp
+var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTypeInfo().Assembly);
+```
 
 <a name="Downloading_Images" />
 
@@ -316,7 +328,6 @@ webImage.Source = new UriImageSource
 Xamarin.Forms предоставляет ряд способов включения изображений в кросс платформенные приложения, включая тот же образ для использования на платформах или платформой изображения должен быть задан. Также автоматически кэшируются загруженными изображениями, автоматизация чаще кодирования.
 
 Изображения значков, так и экран-заставка приложения, настройки и настроен для приложений, не являющихся Xamarin.Forms - те же правила, используемые для конкретной платформы приложений.
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/21/2018
-ms.openlocfilehash: b9c15357895bae64176ef34a848b968917035f3d
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: c2e6a5624baba251061bcd324fcb849e3d95ebfd
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291039"
 ---
 # <a name="resource-dictionaries"></a>Словари ресурсов
 
@@ -251,7 +252,7 @@ _Ресурсы XAML — определения объектов, которые
 
 1. Ресурсы локального словарь ресурсов.
 1. Ресурсы, содержащиеся в словаре ресурсов, которая была объединена через устаревшие [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith) свойство.
-1. Ресурсы, содержащиеся в словарях ресурсов, которые были объединены через `MergedDictionaries` коллекции в порядке их перечисления в `MergedDictionaries` свойство.
+1. Ресурсы, содержащиеся в словарях ресурсов, которые были объединены через `MergedDictionaries` коллекции, в обратном порядке, указанном в `MergedDictionaries` свойство.
 
 > [!NOTE]
 > Поиск в словарях ресурсов может быть вычислительных задач, если приложение содержит несколько словарей больших ресурсов. Таким образом Чтобы избежать ненужного поиска, необходимо гарантировать, что каждой страницы в приложении только используется словари ресурсов, которые подходят для страницы.
