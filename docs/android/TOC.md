@@ -113,7 +113,6 @@
 ## [Функции платформы](platform/index.md)
 ### [Android Beam](platform/android-beam.md)
 ### [Манифест Android](platform/android-manifest.md)
-### [Внедрение .NET в Java](platform/embedding-net-in-java.md)
 ### [Проверка подлинности по отпечаткам](platform/fingerprint-authentication/index.md)
 #### [Начало работы](platform/fingerprint-authentication/get-started.md)
 #### [Сканирование отпечатков](platform/fingerprint-authentication/scanning.md)
