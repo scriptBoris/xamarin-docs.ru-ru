@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30764454"
 ---
 # <a name="auto-complete"></a>Автозавершение
 
@@ -192,4 +193,4 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 *Некоторые части этой страницы, изменения на основе работы создан и совместно используются Android открыть исходный проект и используются в соответствии с условиями, описанной в* 
  [ *Creative Commons 2.5 однозначного соответствия лицензий* ](http://creativecommons.org/licenses/by/2.5/) *. Этот учебник основывается на* 
  [ *Android автозавершения учебника*](http://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
-*.*
+ *.*

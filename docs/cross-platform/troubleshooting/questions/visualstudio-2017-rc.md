@@ -12,6 +12,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33946724"
 ---
 # <a name="can-i-use-visual-studio-2017-release-candidate-with-xamarin"></a>Можно использовать Visual Studio, версия-кандидат 2017 г. с помощью Xamarin
 

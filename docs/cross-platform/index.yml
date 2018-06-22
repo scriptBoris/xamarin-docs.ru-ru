@@ -12,6 +12,7 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: ru-RU
   ms.lasthandoff: 05/03/2018
+  ms.locfileid: "32436389"
 abstract:
   description: Xamarin предоставляет решение для кроссплатформенной разработки мобильных и классических приложений, а также приложений для планшетов. В этом разделе содержатся сведения, которые применяются независимо платформы.
   menu:

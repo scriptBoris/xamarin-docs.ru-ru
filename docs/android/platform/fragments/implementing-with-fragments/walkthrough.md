@@ -12,6 +12,7 @@ ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33798490"
 ---
 # <a name="fragments-walkthrough-ndash-phone"></a>Пошаговое руководство фрагменты &ndash; phone]
 

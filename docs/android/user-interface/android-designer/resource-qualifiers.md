@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30771896"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Квалификаторы ресурсов и параметры визуализации
 
@@ -260,7 +261,7 @@ Android доступен на множество устройств и уров�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Светлая тема теперь доступна](resource-qualifiers-images/vs/16-light-theme.png "теперь доступен "светлой" теме")
+![Светлая тема теперь доступна](resource-qualifiers-images/vs/16-light-theme.png "теперь доступен \"светлой\" теме")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
 

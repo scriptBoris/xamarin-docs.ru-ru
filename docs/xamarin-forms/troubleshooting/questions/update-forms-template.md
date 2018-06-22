@@ -12,6 +12,7 @@ ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34049838"
 ---
 # <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>Можно обновить шаблон по умолчанию Xamarin.Forms новой пакет NuGet?
 

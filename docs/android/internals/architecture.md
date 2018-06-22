@@ -11,6 +11,7 @@ ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/27/2018
+ms.locfileid: "32019299"
 ---
 # <a name="architecture"></a>Архитектура
 

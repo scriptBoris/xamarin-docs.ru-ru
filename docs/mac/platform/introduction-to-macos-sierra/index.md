@@ -12,6 +12,7 @@ ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31044984"
 ---
 # <a name="introduction-to-macos-sierra"></a>Общие сведения о macOS Сьерра
 

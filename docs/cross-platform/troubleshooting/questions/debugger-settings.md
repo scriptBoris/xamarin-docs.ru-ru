@@ -10,6 +10,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33919993"
 ---
 # <a name="what-project-settings-are-required-for-the-debugger"></a>Какие параметры проекта, необходимые для отладчика.
 

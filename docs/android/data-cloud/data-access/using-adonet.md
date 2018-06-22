@@ -11,6 +11,7 @@ ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/20/2018
+ms.locfileid: "31646785"
 ---
 # <a name="using-adonet-with-android"></a>С помощью ADO.NET с Android
 

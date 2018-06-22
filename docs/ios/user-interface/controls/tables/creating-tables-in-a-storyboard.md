@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30780727"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Работа с таблицами в конструкторе iOS
 
@@ -45,7 +46,7 @@ A `UITableView` с прототипом содержимого обычно пр
 
 ## <a name="walkthrough"></a>Пошаговое руководство
 
-Создайте новое решение в Visual Studio с помощью **(Create) создать проект... > единого представления App(C#)**и назовите его _StoryboardTables_.
+Создайте новое решение в Visual Studio с помощью **(Create) создать проект... > единого представления App(C#)** и назовите его _StoryboardTables_.
 
  [![Создать диалоговое окно нового проекта](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
