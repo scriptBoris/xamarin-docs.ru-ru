@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f843f4b1c20daba2a504bd0e70ae51f4d0405c06
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d75cac7a21b2c74a6627845cdda8e4c04e72bddc
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240250"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309779"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Принципы работы приложения Xamarin.Forms
 
@@ -47,6 +47,10 @@ ms.locfileid: "35240250"
 ## <a name="effectseffectsindexmd"></a>[Эффекты](effects/index.md)
 
 Эффекты позволяют собственные элементы управления на каждой платформе, которую нужно изменить и обычно используются для изменения небольшой стилей.
+
+## <a name="filesfilesmd"></a>[Файлы](files.md)
+
+Обработка с помощью Xamarin.Forms файлов может осуществляться с помощью кода в библиотеке .NET Standard или с помощью внедренных ресурсов.
 
 ## <a name="gesturesgesturesindexmd"></a>[Жесты](gestures/index.md)
 

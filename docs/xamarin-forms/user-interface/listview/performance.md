@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 4803a612e2b06e458f2859dbbbd30b970f0fc8ea
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f1707a6b2a1dc03ae1346520bf29ff83f0fe74fb
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244907"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309815"
 ---
 # <a name="listview-performance"></a>Производительность элемента управления ListView
 
@@ -171,9 +171,9 @@ public class CustomListView : ListView
 -  Избегайте глубоко вложенной структуры иерархии. Используйте `AbsoluteLayout` или `Grid` с целью сокращения вложение.
 -  Избегайте конкретных `LayoutOptions` отличный от `Fill` (заливки является cheapest вычислений).
 -  Избегайте размещения `ListView` внутри `ScrollView` по следующим причинам:
-  - `ListView` Реализует собственную прокрутки.
-  - `ListView` Не получит все жесты, как будет обрабатываться родительским `ScrollView`.
-  - `ListView` Может представлять настраиваемый верхний и нижний колонтитулы прокручивается вместе с элементами списка, потенциально предложение функциональные возможности, `ScrollView` был использован для. Дополнительные сведения см. [верхние и нижние колонтитулы](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
+    - `ListView` Реализует собственную прокрутки.
+    - `ListView` Не получит все жесты, как будет обрабатываться родительским `ScrollView`.
+    - `ListView` Может представлять настраиваемый верхний и нижний колонтитулы прокручивается вместе с элементами списка, потенциально предложение функциональные возможности, `ScrollView` был использован для. Дополнительные сведения см. [верхние и нижние колонтитулы](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
 -  Рекомендуется использовать пользовательское средство отрисовки, если требуется специфичны сложных Дизайн, представленных в ячейках.
 
 `AbsoluteLayout` имеет возможность выполнять макеты без вызова одной из них. Это делает очень мощный для повышения производительности. Если `AbsoluteLayout` не может быть используется, рассмотрите возможность [ `RelativeLayout` ](http://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/). При использовании `RelativeLayout`, непосредственно передача ограничения будет намного быстрее, чем использование выражения API. Это, так как выражение API использует JIT и на iOS дереве следует интерпретировать которого снижается. Выражение API подходит для макеты страниц, в которых он требуется только на начального макета и поворота, но в `ListView`, в котором он выполняется непрерывно, при прокрутке, ее производительность может снижаться.
