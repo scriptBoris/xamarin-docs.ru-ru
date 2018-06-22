@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30763960"
 ---
 # <a name="smarter-xamarin-android-support-v4--v13-nuget-packages"></a>Оптимизированное Xamarin Android поддерживает v4 и пакеты NuGet v13
 
