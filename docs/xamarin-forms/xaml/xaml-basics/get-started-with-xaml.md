@@ -12,6 +12,7 @@ ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34049731"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Часть 1. Начало работы с XAML
 
@@ -404,7 +405,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 При запуске программы, `Label` не отображает `Slider` поскольку `ValueChanged` событие еще не запущено. Любое изменение, но `Slider` приводит значение для отображения:
 
-[![](get-started-with-xaml-images/xamlpluscode2.png "Отображаемое значение ползунка")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "отображаемое значение "ползунок"")
+[![](get-started-with-xaml-images/xamlpluscode2.png "Отображаемое значение ползунка")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "отображаемое значение \"ползунок\"")
 
 Теперь для `Button`. Давайте имитировать ответ `Clicked` событий, отображая оповещения с `Text` кнопки. Обработчик событий можно безопасно привести `sender` аргумент `Button` и затем получить доступ к его свойствам:
 

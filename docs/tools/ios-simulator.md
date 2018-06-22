@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34149811"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Удаленный симулятор iOS для Windows
 

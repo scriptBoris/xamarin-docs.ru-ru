@@ -12,6 +12,7 @@ ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34458358"
 ---
 # <a name="advanced-concepts-and-internals"></a>Дополнительные возможности и внутренние компоненты
 

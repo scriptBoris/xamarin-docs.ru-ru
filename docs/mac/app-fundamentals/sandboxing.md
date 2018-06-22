@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30787913"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>«Песочница» для приложения Xamarin.Mac
 
@@ -196,7 +197,7 @@ public override void AwakeFromNib ()
 1. В **Pad решения**, дважды щелкните **Entitlements.plist** файл, чтобы открыть его для редактирования.
 2. Установите флажки **включите права** и **приложения «песочницы» для включения**: 
 
-    [![Изменение прав и включение «песочницы» для](sandboxing-images/sign17.png "редактирование прав и включение "песочницы"")](sandboxing-images/sign17-large.png#lightbox)
+    [![Изменение прав и включение «песочницы» для](sandboxing-images/sign17.png "редактирование прав и включение \"песочницы\"")](sandboxing-images/sign17-large.png#lightbox)
 3. Сохраните изменения.
 
 На этом этапе вы включили приложение "песочницы", но вы не предоставили требуется сетевой доступ для веб-представление. Если запустить приложение, вы должны получить пустое окно:
@@ -247,7 +248,7 @@ public override void AwakeFromNib ()
 2. Откройте **консоли** приложения (из `/Applications/Utilties/`).
 3. Выберите **все сообщения** на боковой панели и введите `sandbox` поиска: 
 
-    [![Пример проблемы в консоли «песочницы» для](sandboxing-images/resolve01.png "пример проблем "песочницы" в консоли")](sandboxing-images/resolve01-large.png#lightbox)
+    [![Пример проблемы в консоли «песочницы» для](sandboxing-images/resolve01.png "пример проблем \"песочницы\" в консоли")](sandboxing-images/resolve01-large.png#lightbox)
 
 Для нашего выше примере приложения вы увидите, что Kernal блокирует `network-outbound` трафика из-за приложения "песочницы", так как не был запрошен эти права.
 

@@ -12,6 +12,7 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: ru-RU
   ms.lasthandoff: 04/04/2018
+  ms.locfileid: "30776135"
 abstract:
   description: Примеры приложений и демонстрации кода Xamarin.iOS, которые помогут начать создавать мобильные приложения с помощью Xamarin и C#.
   menu:
