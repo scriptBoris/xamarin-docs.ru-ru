@@ -6,17 +6,17 @@ ms.assetid: 7B6752BB-8E4C-4690-B275-7E425A051F45
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 4afe2b9fab8eeebb3f0451379b8e3937cc8d8f55
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.date: 06/21/2018
+ms.openlocfilehash: f94c0966dd67940fc201df84a311db422d77b542
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30823068"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935205"
 ---
 # <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Можно ли подключиться к эмуляторы Android выполняется на компьютере Mac с виртуальной Машины Windows?
 
-Чтобы подключить эмулятор Android Google, выполнив на компьютере Mac из виртуальной машины Windows, выполните следующие действия:
+Чтобы подключиться к эмулятору Android, выполняемое на Mac с виртуальной машины Windows, выполните следующие действия:
 
 1.  Запуск эмулятора на компьютере Mac.
 

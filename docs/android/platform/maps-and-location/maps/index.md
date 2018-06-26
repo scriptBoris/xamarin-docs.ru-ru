@@ -1,20 +1,20 @@
 ---
-title: Карты
+title: Как использовать карты Google и расположение с Xamarin.Android
 description: В этой статье описывается использование карт и расположение с Xamarin.Android. Она охватывает все, начиная от использования встроенные карты приложению непосредственно с помощью V2 сопоставляет Android API Google.
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e57dc07aefbd1c80a53f4225f5f44fe72a9ddb9a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: a861e43152870933ba684bf693a1bd3d3ac5bd0b
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763333"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935377"
 ---
-# <a name="maps"></a>Карты
+# <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Как использовать карты Google и расположение с Xamarin.Android
 
 _В этой статье описывается использование карт и расположение с Xamarin.Android. Она охватывает все, начиная от использования встроенные карты приложению непосредственно с помощью V2 сопоставляет Android API Google._
 
@@ -35,6 +35,5 @@ _В этой статье описывается использование ка
 - [MapsAndLocationDemo_v3 (пример)](https://developer.xamarin.com/samples/monodroid/MapsAndLocationDemo_v3/)
 - [Жизненный цикл действия](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Получение ключа API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Дополнительные интерфейсы API Google](http://code.google.com/android/add-ons/google-apis/reference/index.html?com/google/android/maps/package-summary.html)
 - [Список целей: Вызов Google приложений на устройствах Android](http://developer.android.com/guide/appendix/g-app-intents.html)
 - [Расположение и карты](http://developer.android.com/guide/topics/location/index.html)

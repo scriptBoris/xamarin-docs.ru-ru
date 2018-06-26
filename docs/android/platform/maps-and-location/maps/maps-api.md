@@ -1,19 +1,20 @@
 ---
-title: Maps API
+title: С помощью карты Google API в приложении
+description: Как реализовать возможности v2 Google Maps API Xamarin.Android приложения.
 ms.prod: xamarin
 ms.assetid: C0589878-2D04-180E-A5B9-BB41D5AF6E02
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: fc16178a4068b2dcf22fc19047e0ef403e83633f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: a0e010a8300eb4b4452737e34d2f55a35ab95428
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30773528"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935143"
 ---
-# <a name="maps-api"></a>Maps API
+# <a name="using-the-google-maps-api-in-your-application"></a>С помощью API-интерфейса Google карты в приложении
 
 С помощью приложения Maps отлично, но иногда требуется включить maps непосредственно в приложении. Помимо встроенной схемы приложения, также предлагает Google [встроенное сопоставление API для Android](https://developers.google.com/maps/documentation/android/).
 Maps API подходит для случаев, где вы хотите поддерживать дополнительные контролировать процесс сопоставления. Объекты, которые возможны Maps API включают:
@@ -315,7 +316,7 @@ Android Maps API предоставляет API который разрешае�
 
 Карты являются modelled как плоский плоскости на экране, в зависимости от проекцию Меркатора. Представление схемы, представляет *камеры* привлекательных сверху на этой плоскости. Положение камеры можно управлять, изменив расположение, масштаб, наклон и влияет. [CameraUpdate](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdate) класс используется для перемещения расположения камеры. `CameraUpdate` объекты не будут создаваться напрямую, вместо Maps API предоставляет [CameraUpdateFactory](http://developer.android.com/reference/com/google/android/gms/maps/CameraUpdateFactory.html) класса.
 
-Один раз `CameraUpdate` объект был создан, он передается как параметр либо [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera(com.google.maps.CameraUpdate)) или [GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.maps.CameraUpdate)) методы. `MoveCamera` Метод обновляет схему мгновенно при `AnimateCamera` метод обеспечивает переход smooth, анимацию.
+Один раз `CameraUpdate` объект был создан, он передается как параметр либо [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera%28com.google.maps.CameraUpdate%29) или [GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera%28com.google.maps.CameraUpdate%29) методы. `MoveCamera` Метод обновляет схему мгновенно при `AnimateCamera` метод обеспечивает переход smooth, анимацию.
 
 Этот фрагмент кода приведен простой пример демонстрирует использование `CameraUpdateFactory` для создания `CameraUpdate` уровень масштаба карты, увеличивает на единицу:
 
@@ -328,7 +329,7 @@ if (_map != null) {
 }
 ```
 
-Предоставляет API карт [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) которого будет проводить статистическое вычисление всех возможных значений для положение камеры. Экземпляр этого класса может быть предоставлен для [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition(com.google.android.gms.maps.model.CameraPosition)) метод, который будет возвращать `CameraUpdate` объекта. Также включает API карт [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) класс, предоставляющий fluent API для создания `CameraPosition` объектов.
+Предоставляет API карт [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) которого будет проводить статистическое вычисление всех возможных значений для положение камеры. Экземпляр этого класса может быть предоставлен для [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29) метод, который будет возвращать `CameraUpdate` объекта. Также включает API карт [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) класс, предоставляющий fluent API для создания `CameraPosition` объектов.
 В следующем фрагменте кода показан пример создания `CameraUpdate` из `CameraPosition` и использовать его для изменения положения камеры на `GoogleMap`:
 
 ```csharp
@@ -372,7 +373,7 @@ Android Maps API предоставляет API-Интерфейсы для ри
 
 ##### <a name="adding-a-marker"></a>Добавление маркера
 
-Для добавления маркера к карте, необходимо создать новую [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) объекта, а затем вызвать [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker(com.google.android.gms.maps.model.MarkerOptions)) метод `GoogleMap` экземпляр. Этот метод будет возвращать [маркер](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) объекта.
+Для добавления маркера к карте, необходимо создать новую [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) объекта, а затем вызвать [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29) метод `GoogleMap` экземпляр. Этот метод будет возвращать [маркер](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) объекта.
 
 ```csharp
 MapFragment mapFrag = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.my_mapfragment_container);
@@ -382,7 +383,7 @@ if (_map != null) {
     MarkerOptions markerOpt1 = new MarkerOptions();
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -402,7 +403,7 @@ if (_map != null) {
 
 -   `FromBitmap(Bitmap image)` &ndash; Используйте в качестве значка указанном точечном рисунке.
 
--   `FromFile(string fileName` &ndash; Создайте пользовательский значок из файла по указанному пути.
+-   `FromFile(string fileName)` &ndash; Создайте пользовательский значок из файла по указанному пути.
 
 -   `FromResource(int resourceId)` &ndash; Создание пользовательского значка из указанного ресурса.
 
@@ -417,7 +418,7 @@ if (_map != null)
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
     markerOpt1.InvokeIcon(BitmapDescriptorFactory.DefaultMarker (BitmapDescriptorFactory.HueCyan));
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -515,7 +516,7 @@ myMap.AddPolygon(rectOptions);
 CircleOptions circleOptions = new CircleOptions ();
 circleOptions.InvokeCenter (new LatLng(37.4, -122.1));
 circleOptions.InvokeRadius (1000);
-_map.AddCircle (CircleOptions);
+_map.AddCircle (circleOptions);
 ```
 
 
@@ -614,4 +615,3 @@ private void MapOnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEvent
 - [Google сопоставляет v2 Android API](https://developers.google.com/maps/documentation/android/)
 - [APK служб Google Play](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
 - [Получить ключ API Google карты](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Проблема 57880: Не обновлены, кроме AVD служб Google Play](https://code.google.com/p/android/issues/detail?id=57880)

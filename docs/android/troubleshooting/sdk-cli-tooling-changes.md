@@ -7,13 +7,13 @@ ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: b0d9458238c4b3ac9ceeeb7d7ce4e2ca8b0b6de3
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: 4e808736fd92fa40ecbf0c24938c0fedd7afcff9
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732870"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935455"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Изменения в Android SDK Tools
 
@@ -56,7 +56,7 @@ Visual Studio и Visual Studio для Mac теперь предоставляю�
 
 **Добавлено в:** пакет инструментов SDK Android 25.3.0 (марта 2017 г.) и более поздних версий.
 
-Имеется новая программа, которая называется **avdmanager** в **Сервис/bin** папку пакета SDK для Android. Это средство используется для поддержания Avd для эмулятора Google Android. Дополнительные сведения об использовании этого инструмента см. в разделе [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
+Имеется новая программа, которая называется **avdmanager** в **Сервис/bin** папку пакета SDK для Android. Это средство используется для поддержания для эмулятора Android Avd. Дополнительные сведения об использовании этого инструмента см. в разделе [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
 
 ### <a name="downgrading"></a>Понижение уровня
 

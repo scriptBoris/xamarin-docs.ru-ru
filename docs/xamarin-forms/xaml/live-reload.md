@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 756f0570ce792450cfcaf6b1c5161a95a6cb80c8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848308"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935432"
 ---
 # <a name="xamarin-live-reload"></a>Перезагрузить динамической Xamarin
 
@@ -119,6 +119,7 @@ public partial class App : Application
 ## <a name="known-issues"></a>Известные проблемы
 
 * Поддерживается только в Visual Studio.
+* Связывание должно быть присвоено **ссылка не** или **только ссылку Framework SDK** 
 * Повторная загрузка ресурсы на уровне приложения (т. е. **App.xaml** или Общие словари ресурсов), сброс навигации приложения. Эта проблема будет устранена в следующей версии предварительного просмотра.
 * Редактирование XAML во время отладки UWP могут вызвать сбой среды выполнения. Решение: Используйте **Запуск без отладки (Ctrl + F5)** вместо **начать отладку (F5)**.
 
