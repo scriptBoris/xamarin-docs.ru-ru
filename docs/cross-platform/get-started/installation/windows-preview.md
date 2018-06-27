@@ -6,12 +6,12 @@ ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
-ms.openlocfilehash: d920dd688a7911ccf4002d67914c977da56f89e1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 17deacf115042a2fcd6bad9e22a630eadb432d44
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780689"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269022"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Установка предварительной версии Xamarin в ОС Windows
 
@@ -29,7 +29,8 @@ Visual Studio 2017 не поддерживает альфа- и бета-кан�
 - Xamarin.iOS
 - Xamarin.Android
 - Xamarin Profiler
-- Xamarin Workbooks или Inspector
+- Xamarin Workbooks
+- Xamarin Inspector
 - Симулятор iOS удаленной работы для Xamarin
 
 На снимке экрана **установщика предварительной версии** ниже показаны параметры и предварительной версии, и выпуска (обратите внимание на номера версий, указанные серым цветом: версия 15.0 относится к выпуску, а версия 15.1 — к предварительной версии):

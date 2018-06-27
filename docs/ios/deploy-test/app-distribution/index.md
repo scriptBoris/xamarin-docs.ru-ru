@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 83c58fa430a0cf21e8b86e56b9dea04b3cad6d82
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 815277e9a4f9384d92bf17376f426cacd40dbc9f
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784772"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209444"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Общие сведения о распространении приложений Xamarin.iOS
 
@@ -35,6 +35,9 @@ _В этом документе содержатся общие сведения
 <a name="App_Store_Distribution"/>
 
 ## <a name="app-store-distribution"></a>Распространение через App Store
+
+> [!IMPORTANT]
+> Корпорация Apple [объявила](https://developer.apple.com/news/?id=05072018a), что начиная с июля 2018 г. все публикуемые в App Store приложения и обновления должны быть собраны с использованием пакета SDK для iOS 11 и должны [поддерживать дисплей iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
 Это основной способ распространения приложений iOS на устройствах iOS потребителям. Все приложения, отправляемые в Магазин приложений, требуют утверждения Apple.
 

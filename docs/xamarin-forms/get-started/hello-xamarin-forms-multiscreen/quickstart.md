@@ -6,13 +6,13 @@ ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: c931b4f74fbfbbb7396e492cb7ad7ae5d0097bad
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/13/2018
+ms.openlocfilehash: 538ca831e51069f345a8a7a53aa844352c207faa
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35242395"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268840"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Краткое руководство по работе с приложением Xamarin.Forms с несколькими экранами
 
