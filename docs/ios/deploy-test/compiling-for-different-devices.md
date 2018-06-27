@@ -1,29 +1,31 @@
 ---
-title: Компиляция для разных устройств
+title: Компиляция для разных устройств в Xamarin.iOS
+description: Этот документ описывает различные параметры конфигурации сборки, которые можно использовать для настройки сборки Xamarin.iOS для различных устройств.
 ms.prod: xamarin
 ms.assetid: 3B259248-887E-3E4F-E09C-7AD28C2A8CEE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 039e0a931613ec79ccd6f2b13bc18ae6b80f5195
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b1bfab36646256eee706316c70004aef8399994
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784849"
 ---
-# <a name="compiling-for-different-devices"></a>Компиляция для разных устройств
+# <a name="compiling-for-different-devices-in-xamarinios"></a>Компиляция для разных устройств в Xamarin.iOS
 
 Вы можете настроить свойства сборки для исполняемого файла на странице свойств проекта **Сборка iOS**. Чтобы открыть эту страницу, щелкните имя проекта правой кнопкой мыши и выберите **Параметры > Сборка iOS** (в Visual Studio для Mac) или **Свойства** (в Visual Studio).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
 
 
-[![](compiling-for-different-devices-images/image1.png "Страница свойств проекта "Сборка iOS"")](compiling-for-different-devices-images/image1.png#lightbox) 
+[![](compiling-for-different-devices-images/image1.png "Страница свойств проекта \"Сборка iOS\"")](compiling-for-different-devices-images/image1.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](compiling-for-different-devices-images/image1a.png "Страница свойств проекта "Сборка iOS"")](compiling-for-different-devices-images/image1a.png#lightbox)
+[![](compiling-for-different-devices-images/image1a.png "Страница свойств проекта \"Сборка iOS\"")](compiling-for-different-devices-images/image1a.png#lightbox)
 
 -----
 

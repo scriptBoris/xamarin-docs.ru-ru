@@ -1,6 +1,6 @@
 ---
 title: Начало работы с Xamarin.Forms
-description: Xamarin.Forms — это кроссплатформенный набор средств пользовательского интерфейса, позволяющий разработчикам эффективно создавать собственные макеты пользовательских интерфейсов для совместного использования в приложениях iOS, Android и универсальной платформы Windows. В этой серии статей описываются основы разработки Xamarin.Forms и рассматривается создание приложений с несколькими экранами и работающими на нескольких платформах.
+description: Это руководство описывает базовые принципы разработки Xamarin.Forms и рассматривает создание приложений с несколькими экранами и приложений, работающих на нескольких платформах.
 ms.prod: xamarin
 ms.assetid: d87d7232-242c-4ec4-81e9-36103d7e8fcf
 ms.technology: xamarin-forms
@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: da5547de1f21b1f02462f47a4e6ffee43dd0d1bf
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 6ac76f41fc0646107102e0d5e59609c0f3969511
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2018
-ms.locfileid: "32024330"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35242444"
 ---
 # <a name="getting-started-with-xamarinforms"></a>Начало работы с Xamarin.Forms
 

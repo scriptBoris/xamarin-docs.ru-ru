@@ -1,15 +1,17 @@
 ---
 title: Введение в разработку мобильных приложений
+description: Этот документ содержит вводные сведения о разработке мобильных приложений, в том числе о среде Xamarin, ее работе и создаваемых ею приложениях.
 ms.prod: xamarin
 ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 81b9dc62587bec8c5edc468d6bd94f5868c6858e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c6f0233d736c51142d6d83996361558709fd2070
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781924"
 ---
 # <a name="introduction-to-mobile-development"></a>Введение в разработку мобильных приложений
 

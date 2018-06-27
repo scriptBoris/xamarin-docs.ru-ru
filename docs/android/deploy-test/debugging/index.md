@@ -6,22 +6,23 @@ ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/25/2018
-ms.openlocfilehash: a4ce36e28bd5b6dcf78d248b1f2ba951cad9b286
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: e1c2a591450d8a5fd0aebe2bceb1d914a711512e
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732223"
 ---
 # <a name="debugging"></a>Отладка
 
 В этом разделе описываются принципы отладки приложения Xamarin.Android на устройствах или эмуляторах.
+
 ## <a name="debugging-overview"></a>Общие сведения об отладке
 
 При разработке приложений Android приложения требуется запускать либо на физическом оборудовании, либо с помощью эмулятора. Использование оборудования является лучшим, но не всегда самым целесообразным вариантом. Во многих случаях может быть проще и рентабельнее смоделировать или сэмулировать оборудование Android с помощью одного из описанных ниже эмуляторов.
 
-
-### <a name="google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Эмулятор Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+### <a name="debugging-with-the-google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Отладка с помощью Google Android Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
 
 В этой статье рассматривается использование эмулятора по умолчанию, который предоставляется с пакетом SDK для Android. Этот эмулятор доступен для Visual Studio для Windows и Visual Studio для Mac.
 

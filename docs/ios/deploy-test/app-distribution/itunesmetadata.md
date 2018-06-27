@@ -1,5 +1,5 @@
 ---
-title: Файл iTunesMetadata.plist
+title: Файл iTunesMetadata.plist в приложениях Xamarin.iOS
 description: Статья описывает файл iTunesMetadata.plist, который используется для предоставления информации iTunes о приложении при распространении напрямую для тестирования или корпоративного развертывания.
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 1b1b0c758126acb0c1e7953ea36e5ac871ee20ef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 39e1af5edf91ffd6811fa8d221fd56580f3b33da
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784905"
 ---
-# <a name="the-itunesmetadataplist-file"></a>Файл iTunesMetadata.plist
+# <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Файл iTunesMetadata.plist в приложениях Xamarin.iOS
 
 _В статье описывается файл iTunesMetadata.plist, который предоставляет в iTunes информацию о приложении при прямом распространении для тестирования или корпоративного развертывания._
 
@@ -310,7 +311,7 @@ Apple определяет следующие жанры и идентифика
     ![](itunesmetadata-images/image03.png "Создайте новую запись и введите UIRequiredDeviceCapabilities в качестве имени ключа")
 6. Нажмите на тип значение **Строка** и выберите **Словарь** в раскрывающемся списке:
 
-    ![](itunesmetadata-images/image04.png "Выберите "Словарь" в раскрывающемся списке")
+    ![](itunesmetadata-images/image04.png "Выберите \"Словарь\" в раскрывающемся списке")
 7. Нажмите стрелку вниз слева от имени свойства, чтобы показать элементы словаря:
 
     ![](itunesmetadata-images/image05.png "Раскройте элементы словаря")
@@ -319,7 +320,7 @@ Apple определяет следующие жанры и идентифика
     ![](itunesmetadata-images/image06.png "Добавьте запись в словарь")
 9. Введите `armv7` в качестве имени ключа, выберите тип **Логическое** и введите **Да** в качестве значения:
 
-    ![](itunesmetadata-images/image07.png "Введите armv7 в качестве имени ключа, выберите тип "Логическое" и введите "Да" в качестве значения")
+    ![](itunesmetadata-images/image07.png "Введите armv7 в качестве имени ключа, выберите тип \"Логическое\" и введите \"Да\" в качестве значения")
 10. Повторяйте эти шаги, пока не заполните все необходимые пары ключ/значение в файле `iTunesMetadata.plist` (подробные сведения см. в разделе [Содержимое файла iTunesMetadata.plist](#iTunesMetadata_contents)).
 
 11. Сохраните изменения в файле plist.

@@ -1,17 +1,18 @@
 ---
 title: Настройка Visual Studio 2017
-description: В этой статье описываются различные параметры конфигурации Xamarin.iOS для Visual Studio 2017.
+description: Эта статья описывает, как настроить Visual Studio 2017 для развертывания Xamarin.iOS. В частности, она описывает настройку установленной версии Xamarin.iOS, панели инструментов iOS и раскрывающегося меню "Платформы решения".
 ms.prod: xamarin
 ms.assetid: 22D82244-890D-4325-B3CC-C0AC49130BCA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/16/2018
-ms.openlocfilehash: ee08cf7d68bd9d10026f1c15d4438077349fe367
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.openlocfilehash: 70633877fb07f52ce4e7a399668be6268942b137
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785958"
 ---
 # <a name="configuring-visual-studio-2017"></a>Настройка Visual Studio 2017
 
@@ -53,10 +54,10 @@ _В этой статье описываются различные параме
 - Выберите пункт **Добавить или удалить кнопки** 
 - Убедитесь, что флажок **Платформы решения** установлен:
 
-![Включение раскрывающегося меню "Платформы решения"](config-options-images/solution-platforms-enable.png "Включение раскрывающегося меню "Платформы решения"")
+![Включение раскрывающегося меню "Платформы решения"](config-options-images/solution-platforms-enable.png "Включение раскрывающегося меню \"Платформы решения\"")
 
 При открытии проекта iOS панели инструментов **Стандартная** и **iOS** должны выглядеть как на следующем снимке экрана:
 
-![Панели инструментов "Стандартная" и iOS](config-options-images/toolbars.png "Панели инструментов "Стандартная" и iOS")
+![Панели инструментов "Стандартная" и iOS](config-options-images/toolbars.png "Панели инструментов \"Стандартная\" и iOS")
 
 

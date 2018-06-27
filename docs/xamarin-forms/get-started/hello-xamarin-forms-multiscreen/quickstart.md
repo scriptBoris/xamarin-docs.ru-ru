@@ -1,16 +1,18 @@
 ---
 title: Краткое руководство по работе с приложением Xamarin.Forms с несколькими экранами
+description: Эта статья описывает расширение приложения Phoneword путем добавления второго экрана для отслеживания журнала вызовов приложения.
 ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 066f084187a486ca2f88882890b5e9ad277b8cff
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c931b4f74fbfbbb7396e492cb7ad7ae5d0097bad
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35242395"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Краткое руководство по работе с приложением Xamarin.Forms с несколькими экранами
 
@@ -57,7 +59,7 @@ ms.lasthandoff: 04/27/2018
 
     Сохраните изменения в файле **CallHistoryPage.xaml**, нажав клавиши **CTRL+S**, и закройте файл.
 
-5. В **обозревателе решений** дважды щелкните файл **App.xaml.cs**, чтобы его открыть:
+5. В **обозревателе решений** дважды щелкните файл **App.xaml.cs** в общем проекте **Phoneword**, чтобы открыть его:
 
     ![](quickstart-images/vs/open-app-class.png "Открытие файла App.xaml.cs")
 
@@ -88,7 +90,7 @@ ms.lasthandoff: 04/27/2018
 
     Сохраните изменения в файле **App.xaml.cs**, нажав клавиши **CTRL+S**, и закройте файл.
 
-7. В **обозревателе решений** дважды щелкните файл **MainPage.xaml**, чтобы его открыть:
+7. В **обозревателе решений** дважды щелкните файл **MainPage.xaml** в общем проекте **Phoneword**, чтобы открыть его:
 
     ![](quickstart-images/vs/open-mainpage-xaml.png "Открытие файла MainPage.xaml")
 

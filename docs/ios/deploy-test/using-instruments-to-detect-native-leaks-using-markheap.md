@@ -1,21 +1,20 @@
 ---
 title: Профилирование приложений Xamarin.iOS с помощью Instruments
-description: Инструкции по использованию Instruments с приложением Xamarin.iOS на устройстве или в симуляторе.
+description: Этот документ описывает использование приложения Apple Instruments для профилирования приложения Xamarin.iOS, установленного на устройстве или в симуляторе.
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a5c44531a8f05529b169390f25b2946133411098
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785616"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Профилирование приложений Xamarin.iOS с помощью Instruments
-
-_Инструкции по использованию Instruments с приложением Xamarin.iOS на устройстве или в симуляторе._
 
 Xcode **Instruments** — это инструмент, который можно использовать для профилирования приложений Xamarin.iOS на устройстве или в симуляторе. Mono использует его модель JIT для компиляции кода, но Instruments плохо справляется с интерпретацией данных такого типа, что затрудняет работу с выходными данными использующих Instruments приложений на базе симулятора.
 По этой причине руководство будет рассматривать интерпретацию выходных данных Instruments с помощью приложения разработчика.

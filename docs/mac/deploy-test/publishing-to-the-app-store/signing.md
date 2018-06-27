@@ -1,19 +1,20 @@
 ---
-title: Подписывание с использованием идентификатора разработчика
-description: В этом руководстве содержатся сведения о подписывании приложения Xamarin.Mac с использованием идентификатора разработчика для публикации.
+title: Подписывание приложений Xamarin.Mac с помощью идентификатора разработчика
+description: Этот документ описывает подпись приложения Xamarin.Mac с помощью идентификатора разработчика, чтобы его можно было распространять за пределами Mac App Store. В нем описаны параметры подписи кода и сборка.
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 1a2726ec46ac51ae9848b318798afba74183360c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 130766ef7f9ab8e311db97a7209f4ec62a2ceee4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792308"
 ---
-# <a name="sign-with-developer-id"></a>Подписывание с использованием идентификатора разработчика
+# <a name="signing-xamarinmac-apps-with-a-developer-id"></a>Подписывание приложений Xamarin.Mac с помощью идентификатора разработчика
 
 Если приложение планируется распространять напрямую пользователям macOS, компания Apple рекомендует подписать его код с помощью идентификатора разработчика, чтобы устанавливать в системах macOS с включенным **привратником**. Если приложение не было подписано, **привратник** запретит его устанавливать, выводя предупреждение (пользователи могут обойти это ограничение, удерживая нажатой клавишу CTRL при запуске).
 

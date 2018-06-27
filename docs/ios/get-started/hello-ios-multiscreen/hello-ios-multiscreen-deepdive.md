@@ -1,6 +1,6 @@
 ---
-title: Привет, iOS (несколько экранов)
-description: В этом руководстве из двух частей мы расширим функционал приложения Phoneword, созданного в руководстве по началу работы с iOS, для работы со вторым экраном. В этом руководстве мы расскажем о конструктивном шаблоне модель-представление-контроллер, реализуем нашу первую навигацию iOS и углубим понимание структуры и работы приложения iOS.
+title: 'Привет, iOS (несколько экранов): теперь подробнее'
+description: Этот документ более подробно рассматривает расширенное приложение Phoneword, более подробно знакомя читателя со структурой модель-представление-контроллер (MVC), навигацией iOS и другими ключевыми концепциями по разработке для iOS.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 6f3c02bf3e5def0ad4acdb82e4c8a2606159846a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdeea6d78ec1262a0b5b613b4f483012c9df2c19
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785662"
 ---
-# <a name="hello-ios-multiscreen-deep-dive"></a>Привет, iOS, подробные сведения о нескольких экранах
+# <a name="hello-ios-multiscreen--deep-dive"></a>Привет, iOS (несколько экранов): теперь подробнее
 
 В этом пошаговом руководстве мы создадим и запустим первое приложение Xamarin.iOS с поддержкой нескольких экранов. Пришло время для расширения знаний о навигации и архитектуре iOS.
 
@@ -71,7 +72,7 @@ ms.lasthandoff: 04/04/2018
 
 Контроллер навигации часто используется в iOS и обеспечивает навигацию в основных приложениях, например в приложении **Настройки**, как показано на рисунке ниже:
 
- [![](hello-ios-multiscreen-deepdive-images/01.png "Контроллер навигации обеспечивает навигацию для приложений iOS, таких как изображенное здесь приложение "Параметры"")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/01.png "Контроллер навигации обеспечивает навигацию для приложений iOS, таких как изображенное здесь приложение \"Параметры\"")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
 
 Контроллер навигации выполняет три основные функции:
 

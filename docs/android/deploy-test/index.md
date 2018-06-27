@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 5b3061f30f6f120cf8edb41ccf5e70ae853aeb9e
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: ce86590b2d05f3b9141d1a5ba42df9274544f9ae
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34549240"
 ---
 # <a name="deployment-and-testing"></a>Развертывание и тестирование
 
@@ -57,6 +58,11 @@ ms.lasthandoff: 05/03/2018
 ## <a name="xamarinandroid-performanceandroiddeploy-testperformancemd"></a>[Производительность Xamarin.Android](~/android/deploy-test/performance.md)
 
 Существует множество методов повышения производительности приложений, созданных с помощью Xamarin.Android. Вместе они могут значительно снизить объем работы, выполняемой ЦП, а также объем используемой приложением памяти.
+
+## <a name="profiling-android-appsandroiddeploy-testprofilingmd"></a>[Профилирование приложений Android](~/android/deploy-test/profiling.md)
+
+Это руководство поясняет, как использовать средства профилирования для изучения производительности и использования памяти в приложении Android.
+
 
 ## <a name="preparing-an-application-for-releaseandroiddeploy-testrelease-prepindexmd"></a>[Подготовка приложения к выпуску](~/android/deploy-test/release-prep/index.md)
 

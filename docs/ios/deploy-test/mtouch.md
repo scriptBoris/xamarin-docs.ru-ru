@@ -1,23 +1,23 @@
 ---
-title: mtouch
+title: Использование mtouch для объединения приложений Xamarin.iOS в пакет
+description: Этот документ описывает средство mtouch, которое упрощает выполнение многих операций по превращению приложения Xamarin.iOS в пакет, его запуску в симуляторе и развертыванию на физическом устройстве.
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 933ad24a8778ffbee3a1b6089c6ebcf33d26bf84
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9aaa79f929898f6765b97ab0a0c4a30a271d945a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784957"
 ---
-# <a name="mtouch"></a>mtouch
-
+# <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Использование mtouch для объединения приложений Xamarin.iOS в пакет
 
 Приложения iPhone поставляются в виде пакетов приложений. Это каталоги с расширением `.app`, содержащие код и данные приложения, файлы конфигурации и манифест, из которых iPhone сможет получить сведения о приложении.
 
 Преобразование исполняемого файла .NET в приложение выполняется в основном с помощью команды `mtouch`. При этом интегрируется множество действий, необходимых для создания пакета приложения. Это средство также позволяет запустить приложение в симуляторе и развернуть программное обеспечение на настоящем устройстве iPhone или iPod Touch.
-
 
 ## <a name="detailed-instructions"></a>Подробные инструкции
 

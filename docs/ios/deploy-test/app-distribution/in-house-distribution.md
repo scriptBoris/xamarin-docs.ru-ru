@@ -1,5 +1,5 @@
 ---
-title: Внутреннее распространение
+title: Внутреннее распространение для приложений Xamarin.iOS
 description: Этот документ содержит краткий обзор внутреннего распространения приложений внутри организации в рамках участия в программе Apple Enterprise Developer Program.
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: c11148928ab0fa028f9cc4a9cb50b27a0e195847
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 657370705233e923b482b67fc5afed12631c8187
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785032"
 ---
-# <a name="in-house-distribution"></a>Внутреннее распространение
+# <a name="in-house-distribution-for-xamarinios-apps"></a>Внутреннее распространение для приложений Xamarin.iOS
 
 _Этот документ содержит краткий обзор распространения приложений внутри организации в рамках участия в программе Apple Enterprise Developer Program._
 
@@ -55,7 +56,7 @@ _Этот документ содержит краткий обзор распр
 3. Нажмите кнопку **+**, чтобы создать новый сертификат.
 4. В разделе *Production* (Производство) установите флажок **In-House and Ad Hoc** (Собственный и прямой):
 
-   [![](in-house-distribution-images/createcertmanually01.png "Выбор элемента "Собственный и прямой"")](in-house-distribution-images/createcertmanually01.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually01.png "Выбор элемента \"Собственный и прямой\"")](in-house-distribution-images/createcertmanually01.png#lightbox)
 
 5. Нажмите кнопку "Continue" (Продолжить) и следуйте инструкциям, чтобы создать запрос подписи сертификата через доступ к цепочке ключей:
 
@@ -81,7 +82,7 @@ _Этот документ содержит краткий обзор распр
 
 2.   Далее щелкните **знак "плюс" (+)** и выберите пункт **iOS App Store**:
 
-   [![](in-house-distribution-images/selectcert.png "Выбор пункта "iOS App Store"")](in-house-distribution-images/selectcert.png#lightbox)
+   [![](in-house-distribution-images/selectcert.png "Выбор пункта \"iOS App Store\"")](in-house-distribution-images/selectcert.png#lightbox)
 
 <a name="profile" />
 
@@ -104,7 +105,7 @@ _Этот документ содержит краткий обзор распр
 
 1. Вернитесь на портал подготовки Apple и выберите **Provisioning** > **Distribution** (Подготовка > Распространение):
 
-   [![](in-house-distribution-images/distribute01.png "Выбор элемента "Provisioning" (Подготовка) > "Distribution" (Распространение)")](in-house-distribution-images/distribute01.png#lightbox)
+   [![](in-house-distribution-images/distribute01.png "Выбор элемента \"Provisioning\" (Подготовка) > \"Distribution\" (Распространение)")](in-house-distribution-images/distribute01.png#lightbox)
 
 2. Нажмите кнопку **+** и выберите тип профиля распространения, который нужно создать для **внутреннего распространения**:
 

@@ -1,21 +1,20 @@
 ---
-title: Публикация в Магазине приложений
-description: В этом руководстве описывается процедура развертывания приложения Xamarin.Mac с помощью Visual Studio для Mac. Здесь приводятся сведения о настройке учетной записи разработчика Mac, выполняются пошаговые действия по созданию сертификатов для подписания кода и демонстрируется их использование для создания приложений Mac, распространяемых напрямую или через Mac App Store.
+title: Публикация приложений Xamarin.Mac в Mac App Store
+description: Этот документ описывает развертывание приложения Xamarin.Mac с помощью Visual Studio для Mac. Он содержит сведения о настройке учетной записи разработчика Mac, создании сертификатов для подписания кода и их использовании для создания приложений Mac, распространяемых напрямую или через Mac App Store.
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b21dd0adfd96e1190660aa97b2850f968b5473f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eba359dac70e31325235f6145fe06902e25df7af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791970"
 ---
-# <a name="publishing-to-the-app-store"></a>Публикация в Магазине приложений
-
-_В этом руководстве описано, как развертывать приложения Xamarin.Mac с помощью Visual Studio для Mac. Здесь приводятся сведения о настройке учетной записи разработчика Mac, выполняются пошаговые действия по созданию сертификатов для подписания кода и демонстрируется их использование для создания приложений Mac, распространяемых напрямую или через Mac App Store._
+# <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Публикация приложений Xamarin.Mac в Mac App Store
 
 ## <a name="overview"></a>Обзор
 

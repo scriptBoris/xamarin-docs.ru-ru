@@ -1,6 +1,6 @@
 ---
-title: Начало работы с iOS
-description: От Hello World к Hello App Store
+title: Начало работы с Xamarin.iOS
+description: Этот документ содержит ссылки на руководства по настройке Xamarin.iOS и созданию первого приложения, а также сведения о Xamarin для разработчиков Objective-C.
 ms.prod: xamarin
 ms.assetid: FA802CCF-3BA4-4F26-A7BF-FBB7D0AA889B
 ms.technology: xamarin-ios
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/23/2016
-ms.openlocfilehash: be25d976cc58d6c1dd0154cbdc06aab7039c544e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 237480c91a40e6ee08481664ce3981af10f97599
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785605"
 ---
-# <a name="getting-started-with-ios"></a>Начало работы с iOS
+# <a name="getting-started-with-xamarinios"></a>Начало работы с Xamarin.iOS
 
 Xamarin.iOS позволяет разработчикам создавать собственные приложения iOS с помощью тех же элементов управления пользовательского интерфейса, которые доступны в Objective-C и Xcode, только теперь с гибкостью и элегантностью, присущими современному языку (C#), эффективностью библиотеки базовых классов .NET (BCL) и двух первоклассных интегрированных сред разработки — Visual Studio для Mac и Visual Studio. В этих материалах представлен процесс настройки и установки Xamarin.iOS и рассматриваются основные принципы разработки Xamarin.iOS.
 

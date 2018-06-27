@@ -1,17 +1,18 @@
 ---
 title: Пошаговое руководство. Использование средства Apple Instruments
-description: В этой статье последовательно описываются этапы использования средства Apple Instruments для диагностики проблем с памятью в приложении iOS, созданном с помощью Xamarin. В ней описывается запуск Instruments, создание мгновенного снимка кучи и анализ роста памяти. В статье также показано, как использовать Instruments для отображения и определения именно тех строк кода, которые приводят к возникновению проблем с памятью.
+description: Эта статья описывает использование средства Apple Instruments для диагностики проблем с памятью в приложении iOS, созданном с помощью Xamarin. Она описывает запуск Instruments, создание моментальных снимков кучи, анализ роста памяти и многое другое.
 ms.prod: xamarin
 ms.assetid: 8f21db1d-7107-4158-8058-d47e417689a0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0142cf90fbe7eff5beacf58897d5b3672f6ff55b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4241fe9fed260091de98ba47d68b0ad5d97ed626
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785779"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>Пошаговое руководство. Использование средства Apple Instruments
 

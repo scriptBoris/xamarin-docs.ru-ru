@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок при подключении
+title: Устранение неполадок подключения для узла сборки Xamarin.iOS
 description: В этом руководстве приводятся инструкции по устранению неполадок, которые могут возникнуть при использовании нового диспетчера подключений, в том числе неполадок с подключением и протоколом SSH.
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8aac58546e51525ae22c09218f90addef911669a
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: e371b4aecdd7b40c33e4596fec3c3ca7691bb42c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786191"
 ---
-# <a name="connection-troubleshooting"></a>Устранение неполадок при подключении
+# <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Устранение неполадок подключения для узла сборки Xamarin.iOS
 
 _В этом руководстве приводятся инструкции по устранению неполадок, которые могут возникнуть при использовании нового диспетчера подключений, в том числе неполадок с подключением и протоколом SSH._
 

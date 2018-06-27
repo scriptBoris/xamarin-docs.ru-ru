@@ -1,20 +1,19 @@
 ---
 title: Xamarin для разработчиков на Objective-C
-description: Как разработчик Objective-C, вы можете применять свои навыки работы с существующим кодом Objective-C на платформе Xamarin, получая возможность повторно использовать код C#. Этот раздел является стартовой точкой для начала работы с Xamarin.iOS. Здесь вы найдете ссылки на документацию по использованию существующего кода Objective-C из C#.
+description: Этот документ описывает Xamarin.iOS для разработчиков Objective-C. Он содержит ссылки на руководства по переходу из Objective-C в C#, привязке библиотеки Objective-C для использования в C# и созданию кроссплатформенных мобильных приложений.
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e29762fb258f7d796878c85bfe6f7aaa93207c5e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 027ef8cabc55ace41bcf201b8355aab8ca6ec625
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786055"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Xamarin для разработчиков на Objective-C
-
-_Как разработчик Objective-C, вы можете применять свои навыки работы с существующим кодом Objective-C на платформе Xamarin, получая возможность повторно использовать код C#. Этот раздел является стартовой точкой для начала работы с Xamarin.iOS. Здесь вы найдете ссылки на документацию по использованию существующего кода Objective-C из C#._
 
 Xamarin позволяет разработчикам, создающим решения для iOS, перемещать существующий код (без пользовательского интерфейса) в независящий от платформ код C#, который они смогут использовать везде, где доступен язык C#, включая Android (через Xamarin.Android) и любые версии Windows. При этом возможность использовать C# с Xamarin подразумевает применение существующих навыков работы с кодом Objective-C. Более того, знание Objective-C даже повышает вашу ценность как разработчика для Xamarin.iOS, так как Xamarin предоставляет все хорошо вам знакомые API-интерфейсы iOS и OS X, включая UIKit, Core Animation, Core Foundation, Core Graphics и многие другие. В то же время вы получаете в свое распоряжение всю мощь C#, включая такие возможности, как LINQ и универсальные шаблоны, а также библиотеки базовых классов .NET. Все это вы сможете применять в своих приложениях.
 

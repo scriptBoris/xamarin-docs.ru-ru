@@ -1,22 +1,22 @@
 ---
-title: Развертывание и тестирование
-description: Руководства по стабилизации и развертыванию
+title: Развертывание и тестирование приложений Xamarin.iOS
+description: Этот документ содержит ссылки на различные руководства, описывающие развертывание и тестирование приложения Xamarin.iOS. Затрагиваются такие аспекты, как распространение приложений, файлы IPA, подготовка, беспроводное развертывание, TestFlight и отладка.
 ms.prod: xamarin
 ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 515ea8e63f8309c46a7d802af1daafcb0c483762
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a96eeefa631eb4055d8bd0af5b89160ab0899907
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785188"
 ---
-# <a name="deployment-and-testing"></a>Развертывание и тестирование
+# <a name="deploying-and-testing-xamarinios-apps"></a>Развертывание и тестирование приложений Xamarin.iOS
 
 В разделах этого документа рассматриваются вопросы тестирования и распространения приложений. В них описываются инструменты, используемые для отладки, содержатся сведения о развертывании для инженеров-испытателей, а также приводятся инструкции о публикации приложений в Магазин приложений.
-
 
 ##  <a name="app-distributioniosdeploy-testapp-distributionindexmd"></a>[Распространение приложений](~/ios/deploy-test/app-distribution/index.md)
 
@@ -46,19 +46,14 @@ ms.lasthandoff: 04/04/2018
 
 В Visual Studio и Visual Studio для Mac реализована поддержка для отладки приложений Xamarin.iOS в симуляторе iOS и на устройствах iOS. В этой статье показано, как использовать отладчик, а также как настраивать различные поддерживаемые им параметры.
 
-
 ##  <a name="touchunitiosdeploy-testtouchunitmd"></a>[Touch.Unit](~/ios/deploy-test/touch.unit.md)
 
 В этом документе описывается создание модульных тестов для проектов Xamarin.iOS.
 Модульное тестирование с помощью Xamarin.iOS осуществляется с помощью платформы Touch.Unit, в состав которой входит средство запуска тестов iOS и измененная версия платформы[NUnitLite](http://www.nunitlite.com/), предоставляющая знакомый набор API-интерфейсов для написания модульных тестов.
 
-
-
 ##  <a name="using-instruments-to-detect-native-leaks-using-markheapiosdeploy-testusing-instruments-to-detect-native-leaks-using-markheapmd"></a>[Использование средства Instruments для обнаружения собственных утечек с помощью MarkHeap](~/ios/deploy-test/using-instruments-to-detect-native-leaks-using-markheap.md)
 
 В этой статье описывается использование средства Instruments на любом устройстве iOS и в любом приложении Xamarin.iOS. В ней также рассматривается профилирование приложений в симуляторе.
-
-
 
 ##  <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[Пошаговое руководство. Использование средства Apple Instruments](~/ios/deploy-test/walkthrough-apples-instrument.md)
 

@@ -6,12 +6,13 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/17/2018
-ms.openlocfilehash: ca88159e8bcbcd4665e29b4ad8df9ffe00cfec67
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/30/2018
+ms.openlocfilehash: 545636bc38240bc17837a661416702ec259caf45
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732610"
 ---
 # <a name="windows-installation"></a>Установка в Windows
 
@@ -82,7 +83,7 @@ Android использует несколько параметров уровн�
 1. Microsoft Hyper-V &ndash; доступно на компьютерах под управлением Windows 10 с обновлением за апрель.
 2. Hardware Accelerated Execution Manager (HAXM) от Intel &ndash; доступно на компьютерах с процессором x86 на базе OS X, macOS или более старой версии Windows.
 
-Дополнительные сведения об эмуляторе Google Android, Hyper-V и HAXM см. в руководстве [Аппаратное ускорение эмулятора Android](~/android/get-started/installation/android-emulator/hardware-acceleration.md).
+Дополнительные сведения о Google Android Emulator, Hyper-V и HAXM см. в разделе [Аппаратное ускорение для производительной работы эмулятора](~/android/get-started/installation/android-emulator/hardware-acceleration.md).
 
 > [!NOTE]
 > В более старых версиях Windows HAXM несовместим с Hyper-V. В этом случае необходимо [отключить Hyper-V](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#disabling-hyper-v) или использовать более медленные образы эмулятора без оптимизации для x86.
@@ -121,6 +122,6 @@ Android использует несколько параметров уровн�
 - [Установка инструментов Visual Studio для Xamarin](~/cross-platform/get-started/installation/windows.md)
 - [Требования к системе](~/cross-platform/get-started/requirements.md)
 - [Установка пакета SDK для Android](~/android/get-started/installation/android-sdk.md)
-- [Эмулятор Google Android](~/android/get-started/installation/android-emulator/index.md)
+- [Настройка эмулятора Android](~/android/get-started/installation/android-emulator/index.md)
 - [Настройка устройства для разработки](~/android/get-started/installation/set-up-device-for-development.md)
 - [Запуск приложений в эмуляторе Android](https://developer.android.com/studio/run/emulator#Requirements)

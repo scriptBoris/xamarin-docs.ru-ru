@@ -1,18 +1,20 @@
 ---
-title: Справочник по Info.plist
+title: Справочник по Info.plist для Xamarin.iOS
+description: Этот документ описывает различные пары "ключ-значение", которые можно задать в файле Info.plist приложения Xamarin.iOS. Эти ключи необходимы, если приложение выполняет конкретные задачи, например обращение к расположению, фотографиям, микрофону или камере.
 ms.prod: xamarin
 ms.assetid: 944DFDB5-ADBA-4D6E-984C-5AEC19A1CC57
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2017
-ms.openlocfilehash: 8ad2c5e8137dede71d9858aa144e440d984c1a75
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fa40add67155bd982041b829264a10b9764aa950
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785480"
 ---
-# <a name="infoplist-reference"></a>Справочник по Info.plist
+# <a name="infoplist-reference-for-xamarinios"></a>Справочник по Info.plist для Xamarin.iOS
 
 Дополнительные сведения о работе с ключами Info.Plist см. в руководстве по [работе с безопасностью и конфиденциальностью](~/ios/app-fundamentals/security-privacy.md). 
 

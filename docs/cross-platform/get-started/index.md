@@ -1,21 +1,20 @@
 ---
-title: Начало работы
-description: Узнайте, как разрабатывать мобильные приложения с нуля до развертывания с помощью сведений в этих подробных руководствах.
+title: Начало работы с Xamarin
+description: Этот документ содержит ссылки на различные руководства, описывающие начало разработки Xamarin.Mac. Указанные в нем материалы посвящены созданию первого приложения, знакомству с разработкой мобильных приложений и обучению с помощью Xamarin University.
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: de5b1499f95e6703e0c11adb1f76e1717a494e33
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3873236c64f1288a896c40d468f06b60f532a431
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780800"
 ---
-# <a name="getting-started"></a>Начало работы
-
-_Сведения о разработке мобильных приложений с нуля до развертывания с помощью этих подробных руководств._
+# <a name="getting-started-with-xamarin"></a>Начало работы с Xamarin
 
 Прежде чем начать, ознакомьтесь с [требованиями к системе](requirements.md) и [инструкциями по установке](installation/index.md), чтобы все было готово к работе.
 

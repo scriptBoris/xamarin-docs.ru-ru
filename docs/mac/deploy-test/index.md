@@ -1,19 +1,20 @@
 ---
-title: Развертывание и тестирование
-description: Этот документ содержит ссылки на руководства по значкам, производительности и публикациям в Магазине приложений.
+title: Развертывание и тестирование приложений Xamarin.Mac
+description: Этот документ содержит ссылки на различные руководства, описывающие развертывание и тестирование приложений Xamarin.Mac. Эти руководства описывают значки приложений, производительность и публикацию в App Store.
 ms.prod: xamarin
 ms.assetid: 2FF314C7-D926-9FEC-57A6-F421A0ED3A46
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/17/2018
-ms.openlocfilehash: 7e0af30b412a0a4c9d73009dad5d66d7762edbb9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4bf1643be8c7a8fc5371c2dda5cf8d5bf1b5ec1f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792089"
 ---
-# <a name="deployment-and-testing"></a>Развертывание и тестирование
+# <a name="deploying-and-testing-xamarinmac-apps"></a>Развертывание и тестирование приложений Xamarin.Mac
 
 ## <a name="application-iconapp-iconmd"></a>[Значок приложения](app-icon.md)
 

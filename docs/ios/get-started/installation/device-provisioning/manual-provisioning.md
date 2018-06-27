@@ -1,21 +1,22 @@
 ---
-title: Подготовка вручную
-description: После успешной установки Xamarin.iOS следующим шагом в разработке приложений для iOS является подготовка устройства iOS. В этом руководстве рассматривается запрос сертификатов и профилей разработки, работа со службами приложений и развертывание приложения на устройстве.
+title: Ручная подготовка для Xamarin.iOS
+description: После успешной установки Xamarin.iOS следующим шагом в разработке приложений для iOS является подготовка устройства iOS. Это руководство описывает, как использовать ручную подготовку для настройки сертификатов и профилей разработки.
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: f604d41990a7a592a3d5207e7a12075c35ae661f
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: c0404a1fd8f7e878638b9483c65c637f6b4faa66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786107"
 ---
-# <a name="manual-provisioning"></a>Подготовка вручную
+# <a name="manual-provisioning-for-xamarinios"></a>Ручная подготовка для Xamarin.iOS
 
-_Установив Xamarin.iOS для разработки приложений для iOS можно приступать к подготовке устройства iOS. В этом руководстве описано, как запрашивать сертификаты и профили разработки, работать со службами приложений и развертывать приложения на устройстве._
+_Установив Xamarin.iOS для разработки приложений для iOS можно приступать к подготовке устройства iOS. Это руководство описывает, как использовать ручную подготовку для настройки сертификатов и профилей разработки._
 
 <a name="signingidentity" />
 
@@ -37,11 +38,11 @@ _Установив Xamarin.iOS для разработки приложений
 
 1. Войдите в [раздел Certificates, Identifiers and Profiles (Сертификаты, идентификаторы и профили) на портале разработчика](https://developer.apple.com/account/overview.action) и выберите в столбце **iOS Apps** (Приложения iOS) раздел **Certificates** (Сертификаты). Чтобы создать сертификат, нажмите кнопку **+**:
 
-    [![](manual-provisioning-images/cert-plus.png "Нажмите кнопку "+", чтобы создать сертификат")](manual-provisioning-images/cert-plus.png#lightbox)
+    [![](manual-provisioning-images/cert-plus.png "Нажмите кнопку \"+\", чтобы создать сертификат")](manual-provisioning-images/cert-plus.png#lightbox)
 
 2. В качестве типа сертификата выберите **iOS App Development** (Разработка приложений для iOS), после чего нажмите кнопку **Continue** (Продолжить). В зависимости от прав вашей учетной записи этот экран может выглядеть иначе:
 
-    [![](manual-provisioning-images/cert-first.png "Выбор типа сертификата "Разработка приложений для iOS"")](manual-provisioning-images/cert-first.png#lightbox)
+    [![](manual-provisioning-images/cert-first.png "Выбор типа сертификата \"Разработка приложений для iOS\"")](manual-provisioning-images/cert-first.png#lightbox)
 
 3. Отправьте запрос на подписание сертификата, который необходим для создания сертификата вручную. Для этого запустите на компьютере Mac программу **Keychain Access** (Доступ к связке ключей). В главном меню выберите пункт **Certificate Assistant** (Помощник по сертификатам), а затем пункт **Request a Certificate from a Certificate Authority...** (Запросить сертификат из центра сертификации...), как показано ниже:
 
@@ -102,7 +103,7 @@ _Установив Xamarin.iOS для разработки приложений
 2. Подключите подготавливаемое устройство к компьютеру Mac с помощью USB-кабеля из комплекта поставки.
 2. В меню **Window** (Окно) выберите пункт **Devices** (Устройства):
 
-  [![](manual-provisioning-images/add01.png "В меню "Окно" выберите "Устройства"")](manual-provisioning-images/add01.png#lightbox)
+  [![](manual-provisioning-images/add01.png "В меню \"Окно\" выберите \"Устройства\"")](manual-provisioning-images/add01.png#lightbox)
 
 3. В списке **DEVICES** (Устройства) в левой части окна Devices выберите нужно устройство iOS.
 4. Выделите строку в поле **Identifier** (Идентификатор) и скопируйте ее в буфер обмена:
@@ -112,15 +113,15 @@ _Установив Xamarin.iOS для разработки приложений
 5. В браузере Safari перейдите в [Apple Developer Center](https://developer.apple.com/membercenter/index.action) и выполните вход.
 6. Щелкните ссылку **Certificates, Identifiers & Profiles** (Сертификаты, идентификаторы и профили):
 
-  [![](manual-provisioning-images/add03.png "Щелкните ссылку "Сертификаты, идентификаторы и профили"")](manual-provisioning-images/add03.png#lightbox)
+  [![](manual-provisioning-images/add03.png "Щелкните ссылку \"Сертификаты, идентификаторы и профили\"")](manual-provisioning-images/add03.png#lightbox)
 
 7. Щелкните ссылку **Devices** (Устройства):
 
-  [![](manual-provisioning-images/add04.png "Щелкните ссылку "Устройства"")](manual-provisioning-images/add04.png#lightbox)
+  [![](manual-provisioning-images/add04.png "Щелкните ссылку \"Устройства\"")](manual-provisioning-images/add04.png#lightbox)
 
 8. Нажмите кнопку **+**:
 
-  [![](manual-provisioning-images/add05.png "Нажмите кнопку "+"")](manual-provisioning-images/add05.png#lightbox)
+  [![](manual-provisioning-images/add05.png "Нажмите кнопку \"+\"")](manual-provisioning-images/add05.png#lightbox)
 
 9. Укажите имя нового устройства и вставьте **идентификатор** устройства, скопированный ранее, в поле **UUID**:
 

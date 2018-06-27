@@ -1,19 +1,20 @@
 ---
-title: Подписывание и подготовка кода
-description: Некоторые особенности
+title: Подписывание кода и подготовка для приложений Xamarin.iOS
+description: Этот документ содержит ссылки на руководства, описывающие подготовку устройств, работу с возможностями, работу с правами, файл Info.plist и средство fastlane.
 ms.prod: xamarin
 ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2017
-ms.openlocfilehash: ff9d9e779f246c0cd2fde4332f6c80aae4b43d49
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cfbb36dc7298563987bcd688927649366094ae89
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785541"
 ---
-# <a name="code-signing-and-provisioning"></a>Подписывание и подготовка кода
+# <a name="code-signing-and-provisioning-for-xamarinios-apps"></a>Подписывание кода и подготовка для приложений Xamarin.iOS
 
 ## <a name="device-provisioning--introductioniosget-startedinstallationdevice-provisioningindexmd"></a>[Подготовка устройств — введение](~/ios/get-started/installation/device-provisioning/index.md)
 
@@ -24,7 +25,6 @@ ms.lasthandoff: 04/04/2018
 Расширение функциональности приложений iOS с помощью служб приложений
 
 Добавление возможностей в приложения часто требует дополнительной подготовки. Это руководство описывает процесс настройки, необходимый для добавления поддержки возможностей приложения.
-
 
 ## <a name="working-with-entitlementsentitlementsmd"></a>[Работа с разрешениями](entitlements.md)
 
@@ -37,4 +37,3 @@ ms.lasthandoff: 04/04/2018
 ## <a name="introduction-to-fastlane-for-iosiosdeploy-testprovisioningfastlaneindexmd"></a>[Общие сведения о Fastlane для iOS](~/ios/deploy-test/provisioning/fastlane/index.md)
 
 Это руководство описывает разнообразные инструменты Fastlane, которые можно использовать для подписывания кода приложений iOS.
-

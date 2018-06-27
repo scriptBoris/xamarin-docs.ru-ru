@@ -1,5 +1,5 @@
 ---
-title: Возможности групп приложений
+title: Возможности групп приложений в Xamarin.iOS
 description: Добавление возможностей в приложения часто требует дополнительной подготовки. Это руководство рассказывает о настройке, необходимой для использования возможностей групп приложений.
 ms.prod: xamarin
 ms.assetid: 0A61220B-BBAC-492B-9D3B-578986E64064
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f0c6cb1a080e05cfa60af72c4140f7109e3c37b4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3bfae755c11437df721943d2c16526d195e4dec7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785623"
 ---
-# <a name="app-group-capabilities"></a>Возможности групп приложений
+# <a name="app-group-capabilities-in-xamarinios"></a>Возможности групп приложений в Xamarin.iOS
 
 _Добавление возможностей в приложения часто требует дополнительной подготовки. В этом руководстве объясняется, как выполнить настройку, необходимую для использования возможностей групп приложений._
 

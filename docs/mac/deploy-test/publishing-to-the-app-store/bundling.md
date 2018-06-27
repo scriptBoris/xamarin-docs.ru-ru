@@ -1,19 +1,20 @@
 ---
 title: Объединение для магазина Mac App Store
-description: В этом руководстве описывается создание пакета приложения Xamarin.Mac для публикации в Mac App Store.
+description: Этот документ описывает помещение приложения Xamarin.Mac в пакет для публикации в Mac App Store. В нем описаны параметры подписи кода и сборка.
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 88d813331dfce437f3668ada8f008bbbd5fdc3de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3aeda97fa4a5a63d51623335c0721026b2394d2f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792064"
 ---
-# <a name="bundle-for-mac-app-store"></a>Создание пакета для Mac App Store
+# <a name="bundling-for-the-mac-app-store"></a>Объединение для магазина Mac App Store
 
 В этом разделе рассматриваются основы создания приложения для выпуска в Mac App Store с помощью Visual Studio для Mac. При наличии дополнительных функций (например, доступа к iCloud и push-уведомлений) могут потребоваться дальнейшее установки, которые выходят за рамки этой статьи.
 

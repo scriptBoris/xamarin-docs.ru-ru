@@ -1,16 +1,18 @@
 ---
 title: fastlane для iOS - match
+description: Этот документ описывает команду match средства fastlane, которая используется для создания и обслуживания сертификатов подписывания кода и профилей подготовки для разработки для iOS.
 ms.prod: xamarin
 ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 729bfb5bf19034fc5eed2350a3fe5f481224a385
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 668538d4c9048175fb95f9d010bb5e95c800fea8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785454"
 ---
 # <a name="fastlane-for-ios---match"></a>fastlane для iOS - match
 
@@ -59,7 +61,7 @@ match отвечает за создание и обслуживание сер�
 
 URL-адрес можно найти и скопировать, нажав кнопку **Clone or Download** (Клонировать или скачать) на сайте github.com, как показано ниже:
 
-[![](match-images/fastlane-image6.png "URL-адрес под кнопкой "Клонировать или скачать" на сайте github.com")](match-images/fastlane-image6.png#lightbox)
+[![](match-images/fastlane-image6.png "URL-адрес под кнопкой \"Клонировать или скачать\" на сайте github.com")](match-images/fastlane-image6.png#lightbox)
 
 После инициализации проекта создается matchfile — текстовый файл, в который можно внести изменения, чтобы передать инструменту match переменные среды. Пример matchfile показан ниже:
 

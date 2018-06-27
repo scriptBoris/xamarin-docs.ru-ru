@@ -1,5 +1,5 @@
 ---
-title: Возможности Wallet
+title: Возможности Wallet в Xamarin.iOS
 description: Добавление возможностей в приложения часто требует дополнительной подготовки. Это руководство описывает процесс настройки, необходимый для добавления поддержки возможностей приложения Wallet.
 ms.prod: xamarin
 ms.assetid: BD9475E6-F586-488C-93D4-8A2A1629B99B
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f41ba2b693b37f39ea49f62e322932537014a317
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 811c5bc707a5768e72ccb2d20541d16af67ab835
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785090"
 ---
-# <a name="wallet-capabilities"></a>Возможности Wallet
+# <a name="wallet-capabilities-in-xamarinios"></a>Возможности Wallet в Xamarin.iOS
 
 _Добавление возможностей в приложения часто требует дополнительной подготовки. Это руководство описывает процесс настройки, необходимый для добавления поддержки возможностей приложения Wallet._
 

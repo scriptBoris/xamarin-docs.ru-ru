@@ -1,5 +1,5 @@
 ---
-title: Значок приложения
+title: Значок приложения для приложений Xamarin.Mac
 description: В этой статье описано, как создавать изображения, необходимые для использования значков приложения Хamarin.Mac, объединения изображений в файл ICNS и включения значков в проект Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3603e43b4b98d1387c718d0a6010d38aa01440c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 685a29eea4b03361b185e25ae0e146be7b5e69b6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792040"
 ---
-# <a name="application-icon"></a>Значок приложения
+# <a name="application-icon-for-xamarinmac-apps"></a>Значок приложения для приложений Xamarin.Mac
 
 _В этой статье описано, как создавать изображения, необходимые для использования значков приложения Хamarin.Mac, объединения изображений в файл ICNS и включения значков в проект Xamarin.Mac._
 

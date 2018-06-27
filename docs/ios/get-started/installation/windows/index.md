@@ -1,17 +1,18 @@
 ---
 title: Установка Xamarin.iOS в Windows
-description: В этой статье описывается настройка компьютера Windows и узла сборки Mac для разработки Xamarin.iOS.
+description: Этот документ описывает настройку компьютера Windows и узла сборки Mac, а также сопряжение Windows с Mac для разработки Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: abf85d3e-a365-44a2-b1a4-6c572c7f76dd
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/16/2018
-ms.openlocfilehash: e6f50a48481be3ca5c64332f5a182e44715740c0
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.openlocfilehash: 2bff37aba9b961b7308bf261377951dc96bd8e34
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786068"
 ---
 # <a name="installing-xamarinios-on-windows"></a>Установка Xamarin.iOS в Windows
 

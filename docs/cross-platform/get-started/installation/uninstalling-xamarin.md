@@ -1,17 +1,17 @@
 ---
 title: Удаление Xamarin
-description: Удаление продуктов Xamarin с компьютера
+description: Этот документ описывает удаление Xamarin на компьютерах Windows и Mac. Он содержит отдельные инструкции по удалению Mono, Xamarin.Android, Xamarin.iOS и других средств.
 ms.prod: xamarin
 ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: d1b88ad97a1cecaadd84226bca61c7f2b262438d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d5cf15b8ecd225fb75a3cfa0017cb84bc13cce1b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33918725"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782025"
 ---
 # <a name="uninstalling-xamarin"></a>Удаление Xamarin
 

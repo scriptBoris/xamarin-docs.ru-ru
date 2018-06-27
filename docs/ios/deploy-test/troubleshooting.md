@@ -1,19 +1,20 @@
 ---
-title: Устранение неполадок
-description: Советы и рекомендации по эффективному развертыванию
+title: Развертывание и тестирование Xamarin.iOS — устранение неполадок
+description: Этот документ содержит советы по устранению неполадок, связанных с подготовкой и подписыванием кода, TestFlight и копированием пакета приложений iOS с узла сборки Mac в Windows.
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: fe7425bbf6440317cc856d2c727874298f66bc33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 056b9ba5c1625093cd7fdd2914fa5df919a2f426
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785389"
 ---
-# <a name="troubleshooting"></a>Устранение неполадок
+# <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Развертывание и тестирование Xamarin.iOS — устранение неполадок
 
 ## <a name="code-signing--provisioning"></a>Подписывание и подготовка кода
 
@@ -32,7 +33,6 @@ ms.lasthandoff: 04/04/2018
 * Убедитесь, что вам доступны все необходимые сертификаты и соответствующие закрытые ключи. Каждой команде потребуется сертификат разработчика (для установки приложений на собственное устройство) и сертификат распространения (для установки на другие устройства)
 
 * После установки нового сертификата или профиля подготовки перезапустите Xcode и Visual Studio/Visual Studio для Mac.
-
 
 ## <a name="testflight"></a>TestFlight
 

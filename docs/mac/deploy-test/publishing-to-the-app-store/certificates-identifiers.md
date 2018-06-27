@@ -1,5 +1,5 @@
 ---
-title: Сертификаты и идентификаторы
+title: Сертификаты и идентификаторы в Xamarin.Mac
 description: В этом руководстве описывается создание необходимых сертификатов и идентификаторов, которые потребуются для публикации приложения Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d94819be2c014aec5edfae19959ce949ee8dcd4b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b86f731009380db7e9e8980114272ddd38d2f0da
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792879"
 ---
-# <a name="certificates-and-identifiers"></a>Сертификаты и идентификаторы
+# <a name="certificates-and-identifiers-in-xamarinmac"></a>Сертификаты и идентификаторы в Xamarin.Mac
 
 _В этом руководстве описывается создание необходимых сертификатов и идентификаторов, которые потребуются для публикации приложения Xamarin.Mac._
 
@@ -29,7 +30,7 @@ _В этом руководстве описывается создание не
 
 Далее в разделе **Mac Apps** (Приложения Mac) щелкните ссылку **Certificates** (Сертификаты):
 
-[![Выбор ссылки "Сертификаты"](certificates-identifiers-images/devcenter03.png "Выбор ссылки "Сертификаты"")](certificates-identifiers-images/devcenter03-large.png#lightbox)
+[![Выбор ссылки "Сертификаты"](certificates-identifiers-images/devcenter03.png "Выбор ссылки \"Сертификаты\"")](certificates-identifiers-images/devcenter03-large.png#lightbox)
 
 Щелкните ссылку **All** (Все) и нажмите кнопку **+**:
 

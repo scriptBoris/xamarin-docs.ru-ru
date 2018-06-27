@@ -1,16 +1,17 @@
 ---
 title: Инструкции по настройке брандмауэра Xamarin
-description: В этой статье приводится перечень узлов, которые необходимо добавить в список утвержденных для брандмауэра, чтобы использовать платформу Xamarin в организации.
+description: Этот документ содержит список узлов, которые нужно включить в список разрешенных в брандмауэре, чтобы обеспечить работу Xamarin в корпоративной среде.
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: 34ac0b0eb2563b2122d7b093b19ac3a6ac78cbe5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: dab4aeccd58da22736aea3139f11cbdff259ef7b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781095"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Инструкции по настройке брандмауэра Xamarin
 

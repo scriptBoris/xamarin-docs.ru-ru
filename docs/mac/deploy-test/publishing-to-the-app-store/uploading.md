@@ -1,17 +1,18 @@
 ---
 title: Отправка в Mac App Store
-description: В этом руководстве описывается отправка пакета приложения Xamarin.Mac для публикации в Mac App Store.
+description: Этот документ описывает использование iTunes Connect для отправки приложения Xamarin.Mac в Mac App Store. Он содержит сведения, необходимые iTunes Connect для завершения этого процесса.
 ms.prod: xamarin
 ms.assetid: 30cd0e47-1b2e-47ef-93f6-4bed20b15c03
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 4ddbbdc32ecb2de4f9dcb89162bc38803fa7159e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e51171f0f5153f48237ebe76e393c2077453bbd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792168"
 ---
 # <a name="upload-to-mac-app-store"></a>Отправка в Mac App Store
 
@@ -59,7 +60,7 @@ _В этом руководстве описано, как отправить п
 
 6. В представлении сведений нажмите кнопку "Ready to Upload Binary" (Готово для отправки двоичного файла), чтобы отправить файл пакета приложения: 
 
-    [![](uploading-images/image74.png "Кнопка "Готово для отправки двоичного файла"")](uploading-images/image74.png#lightbox)
+    [![](uploading-images/image74.png "Кнопка \"Готово для отправки двоичного файла\"")](uploading-images/image74.png#lightbox)
 
 7. Ответьте на вопрос шифрования: 
 
