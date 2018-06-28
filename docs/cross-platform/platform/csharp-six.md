@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: e120b917a106d01067e073219bbe2688c2811448
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fffb78d6f2599c231617ed025d41282beffd319b
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33918764"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066459"
 ---
 # <a name="c-6-new-features-overview"></a>Возможности C# 6 новые общие сведения
 
@@ -49,7 +49,7 @@ _Последнюю версию языка C# — версия 6 – посто
 Компилятор моно C# 6 включается в моно 4.0 и более поздней версии, который является [бесплатно загрузить](http://www.mono-project.com/download/).
 Visual Studio для Mac автоматически обновляет моно установки в вашей системе.
 
-Пользователи Windows должны иметь [Visual Studio 2015 или 2017 г ^](https://www.visualstudio.com/) установлен для компиляции кода C# 6 (даже если выбор Xamarin Studio для Windows, как интерфейс IDE).
+Пользователи Windows должны иметь [Visual Studio 2015 или 2017 г ^](https://visualstudio.microsoft.com/) установлен для компиляции кода C# 6 (даже если выбор Xamarin Studio для Windows, как интерфейс IDE).
 
 ^ или *[2015 средства построения Microsoft](http://www.microsoft.com/download/details.aspx?id=48159)* для командной строки компиляции или серверы сборки, например.
 

@@ -6,18 +6,18 @@ ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: topgenorth
 ms.author: toopge
 ms.date: 03/28/2018
-ms.openlocfilehash: 6fbd46578f07692f266d97279031f1893bb96a1f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0bb27df901d306e97151cfeaad5c26130508e5b1
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793921"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066485"
 ---
 # <a name="getting-started-with-android"></a>Приступая к работе с Android
 
 Помимо требований к из [Приступая к работе с Java](~/tools/dotnet-embedding/get-started/java/index.md) руководства, необходимо:
 
-* [Xamarin.Android 7.5](https://www.visualstudio.com/xamarin/) или более поздней версии
+* [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/) или более поздней версии
 * [Android Studio 3.x](https://developer.android.com/studio/index.html) с Java 1.8
 
 Как обзор произойдет следующее.
@@ -86,7 +86,7 @@ public class HelloActivity : Activity
 mono '${SolutionDir}/packages/Embeddinator-4000.0.4.0.0/tools/Embeddinator-4000.exe' '${TargetPath}' --gen=Java --platform=Android --outdir='${SolutionDir}/output' -c
 ```
 
-#### <a name="visual-studio-2017"></a>Visual Studio 2017
+#### <a name="visual-studio-2017"></a>Visual Studio 2017
 
 ```shell
 set E4K_OUTPUT="$(SolutionDir)output"

@@ -7,16 +7,27 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 9e82db1c0f38d35c23a6cd0667bef49315ff86be
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 539ec976e3ea28aa2e017318022bd102f2c03ae5
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792230"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066888"
 ---
 # <a name="macos-platform-features"></a>macOS возможности платформы
 
 Документы в этом разделе описывается работа с ключом, определяемые платформой возможности macOS в приложении Xamarin.Mac.
+
+## <a name="introduction-to-macos-mojavemacplatformintroduction-to-macos-mojaveindexmd"></a>[Общие сведения о macOS Mojave](~/mac/platform/introduction-to-macos-mojave/index.md)
+
+> [!WARNING]
+> Xamarin macOS поддержки Mojave сейчас в предварительной версии, поэтому он может содержать ошибки, не все компоненты и может измениться. Используйте для экспериментов только.
+
+Этот документ содержит общий обзор новых и обновленных функциях macOS Mojave, доступные для использования при построении приложений Xamarin.Mac.
+
+## <a name="introduction-to-macos-high-sierramacplatformintroduction-to-macos-high-sierraindexmd"></a>[Общие сведения о macOS Сьерра высокого уровня](~/mac/platform/introduction-to-macos-high-sierra/index.md)
+
+В этом документе описаны новые и улучшенные возможности macOS Сьерра высокого уровня.
 
 ## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[Введение в macOS Sierra](~/mac/platform/introduction-to-macos-sierra/index.md)
 
@@ -30,7 +41,6 @@ macOS Сьерра является последней версии рабоче
 ## <a name="introduction-to-opentkmacplatformopentkmd"></a>[Введение в OpenTK](~/mac/platform/opentk.md)
 
 OpenTK (открыть набор) — дополнительно, низкоуровневые C# библиотека, которая упрощает работу с OpenGL и OpenCL OpenAL. OpenTK может использоваться для игр, научных приложений или другие проекты, которые требуют трехмерной графики, аудио- или вычислительные функции. В этой статье дается краткое введение в использование в приложении Xamarin.Mac OpenTK.
-
 
 ## <a name="introduction-to-storyboardsmacplatformstoryboardsindexmd"></a>[Введение в раскадровку](~/mac/platform/storyboards/index.md)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935432"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066654"
 ---
 # <a name="xamarin-live-reload"></a>Перезагрузить динамической Xamarin
 
@@ -28,7 +28,7 @@ ms.locfileid: "36935432"
 
 ## <a name="requirements"></a>Требования
 
-* [Версии 15,7 2017 г. Visual Studio или более поздней версии](https://www.visualstudio.com/vs/) или более поздней версии с **Разработка мобильных приложений в .NET Framework** рабочей нагрузки.
+* [Версии 15,7 2017 г. Visual Studio или более поздней версии](https://visualstudio.microsoft.com/vs/) или более поздней версии с **Разработка мобильных приложений в .NET Framework** рабочей нагрузки.
 * [Xamarin.Forms 3.0.0 или более поздней версии](https://www.nuget.org/packages/Xamarin.Forms/) или более поздней версии.
 
 ## <a name="getting-started"></a>Начало работы

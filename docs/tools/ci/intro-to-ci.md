@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 333e672b054c38370847338e9a4ffad94c90bb5d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 67fc32fc9f79d54274642fbab2d0c2f8afd14d8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793666"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066511"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Введение в непрерывной интеграции с Xamarin
 
@@ -48,14 +48,14 @@ _Непрерывная интеграция рекомендуется прим
 
 ### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services и Team Foundation Server
 
-[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) и [Team Foundation Server](http://msdn.microsoft.com/vstudio/ff637362.aspx) (TFS), средствами совместной работы корпорации Майкрософт для непрерывной интеграции сборки служб, отслеживание задач, гибкого планирования и создания отчетов средства и версии элемент управления. С системой управления версиями VSTS и TFS могут работать с свою собственную систему (системы управления версиями Team Foundation или TFVC) или проектов, размещенных на сайте GitHub.
+[Visual Studio Team Services](https://visualstudio.microsoft.com/team-services/) (VSTS) и [Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS), средствами совместной работы корпорации Майкрософт для непрерывной интеграции сборки служб, отслеживание задач, гибкого планирования и создания отчетов средства и версии элемент управления. С системой управления версиями VSTS и TFS могут работать с свою собственную систему (системы управления версиями Team Foundation или TFVC) или проектов, размещенных на сайте GitHub.
 
  - Visual Studio Team Services предоставляет службы через облако. Основное преимущество заключается в том, что не требует специального оборудования или инфраструктуры и может осуществляться из любого места через веб-браузеры и популярные средства разработки — Visual Studio, делая привлекательным для команд, которые являются географически распределенные. Это бесплатно для команды разработчиков пять или меньше, после какие дополнительные лицензии можно приобрести для размещения растущего команды.
  - TFS разработан для серверов Windows в локальной среде и открыть с помощью локальной сети или VPN-подключение к этой сети. Его основное преимущество — полностью управлять конфигурации серверов сборки и можно установить необходимые любые дополнительное программное обеспечение или службы. TFS имеет бесплатный выпуск Express начального уровня для небольших команд.
 
 TFS и VSTS тесно интегрирован с Visual Studio и разработчики могут выполнять многие системы управления версиями и CI задачи в любой из одной интегрированной среды разработки. Также доступен Team Explorer Everywhere подключаемый модуль для Eclipse (см. ниже). Visual Studio для Mac не обеспечивает никакой поддержки TFS или VSTS.
 
-Система построения Visual Studio Team службы имеет прямую поддержку Xamarin проектов, в течение которых необходимо создать определение построения, для каждой платформы, которую вы хотите целевой (Android, iOS и Windows). Для каждого определения построения требуется соответствующая лицензия Xamarin. Можно также для локального подключения, поддержкой Xamarin TFS сборки сервера Visual Studio Team Services для этой цели. С помощью этой программы на локальном сервере будут делегированы построений, которые находятся в очереди VSTS. Дополнительные сведения см. в [развертывание и настройка сервера сборки](https://msdn.microsoft.com/library/ms181712.aspx). Кроме того можно использовать другой инструмент сборки, например Jenkins или Город команды.
+Система построения Visual Studio Team службы имеет прямую поддержку Xamarin проектов, в течение которых необходимо создать определение построения, для каждой платформы, которую вы хотите целевой (Android, iOS и Windows). Для каждого определения построения требуется соответствующая лицензия Xamarin. Можно также для локального подключения, поддержкой Xamarin TFS сборки сервера Visual Studio Team Services для этой цели. С помощью этой программы на локальном сервере будут делегированы построений, которые находятся в очереди VSTS. Дополнительные сведения см. в [развертывание и настройка сервера сборки](https://docs.microsoft.com/vsts/pipelines/agents/agents?view=vsts). Кроме того можно использовать другой инструмент сборки, например Jenkins или Город команды.
 
 Полный список всех возможностей управления жизненным циклом приложений (ALM) Visual Studio, Visual Studio Team Services и Team Foundation Server, см. в разделе [управления жизненным циклом приложений с помощью приложений Xamarin](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx) на сайте MSDN.
 
@@ -107,7 +107,7 @@ TFS и VSTS можно использовать отдельно или Jenkins 
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services и Jenkins
 
-При использовании Jenkins создавать приложения, можно хранить код в Visual Studio Team Services или Team Foundation Server и продолжать использовать для сборок непрерывной Интеграции Jenkins. Вы можете активировать сборки Jenkins, при выполнении отправки кода репозитории командного проекта или при возврате кода в TFVC. Дополнительные сведения см. в разделе [Jenkins с Visual Studio Team Services](https://www.visualstudio.com/docs/marketplace/integrate/service-hooks/services/jenkins).
+При использовании Jenkins создавать приложения, можно хранить код в Visual Studio Team Services или Team Foundation Server и продолжать использовать для сборок непрерывной Интеграции Jenkins. Вы можете активировать сборки Jenkins, при выполнении отправки кода репозитории командного проекта или при возврате кода в TFVC. Дополнительные сведения см. в разделе [Jenkins с Visual Studio Team Services](https://docs.microsoft.com/en-us/vsts/service-hooks/services/jenkins?view=vsts).
 
 [![](intro-to-ci-images/intro04-small.png "При использовании Jenkins создавать приложения, можно хранить код в Visual Studio Team Services или Team Foundation Server и продолжать использовать для сборок непрерывной Интеграции Jenkins")](intro-to-ci-images/intro04.png#lightbox)
 

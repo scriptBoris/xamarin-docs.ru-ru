@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/07/2017
-ms.openlocfilehash: 550cf57f6b89a8fd5726ae55cb5eaaa54d6d2692
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 94c931176e968ed765cbc05ddaac2fa7329107f0
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791271"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066602"
 ---
 # <a name="introduction-to-watchos-4"></a>Общие сведения о watchOS 4
 
@@ -31,7 +31,6 @@ ms.locfileid: "34791271"
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Примеры watchOS](https://developer.xamarin.com/samples/watchos/all/)
-- [Новые возможности watchOS 4](https://developer.apple.com/watchos/)
-- [WatchKit (Apple)](https://developer.apple.com/documentation/watchkit)
-- [Новые возможности watchOS 4 (WWDC) (видео)](https://developer.apple.com/videos/play/wwdc2017/205/)
+* [Примеры watchOS](https://developer.xamarin.com/samples/watchos/all/)
+* [WatchKit (Apple)](https://developer.apple.com/documentation/watchkit)
+* [Новые возможности watchOS 4 (Apple) (видео)](https://developer.apple.com/videos/play/wwdc2017/205/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 8b49d02b9670e66d04060375e59b005905c41bf7
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: ee3f2b1e1ff6a3ac1bec2d73d4af6e740979aa04
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935260"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066875"
 ---
 # <a name="what-usb-drivers-do-i-need-to-debug-android-on-windows"></a>Какие драйверы USB требуется отладка Android в Windows?
 
@@ -28,7 +28,7 @@ ms.locfileid: "36935260"
 
 - [Приложение центра тестирования](https://docs.microsoft.com/appcenter/test-cloud/) — тестирование службы выполняются на сотнях real Android устройств облака.
 
-- [Эмулятор Visual Studio для Android](https://www.visualstudio.com/en-us/features/msft-android-emulator-vs.aspx)
+- [Эмулятор Visual Studio для Android](https://visualstudio.microsoft.com/vs/msft-android-emulator/)
 
 - [Отладка в эмуляторе Android](~/android/deploy-test/debugging/debug-on-emulator.md)
 

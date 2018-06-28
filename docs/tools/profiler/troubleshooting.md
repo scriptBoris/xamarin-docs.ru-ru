@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 247a18cf7f645ea90d100cb3f4900f30ac7754cc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 71faf79ef9b783480dbb6ff4674859a9148abca3
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793860"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066914"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Профилировщик Xamarin, устранение неполадок
 
@@ -67,7 +67,7 @@ ms.locfileid: "34793860"
 - Убедитесь, платформа — [поддерживается](~/tools/profiler/index.md#Profiler_Support).
 - Обеспечьте правой лицензии.
 - Убедитесь, что вы вошли в и должным образом проверку подлинности.
-- [Visual Studio] Необходимо использовать [Visual Studio Enterprise](https://www.visualstudio.com/vs/enterprise/) и иметь действующую лицензию Enterprise.
+- [Visual Studio] Необходимо использовать [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/enterprise/) и иметь действующую лицензию Enterprise.
 
 #### <a name="i-get-an-error-when-i-try-to-launch-the-profiler"></a>Произошла ошибка при попытке запуска профилировщика
 
