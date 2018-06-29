@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/03/2018
-ms.openlocfilehash: e62ac290423db1c18e7e50d55b2b3550f99d1533
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: fd9ebc7922428d2779e6985379c3118274a46aff
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34549271"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066667"
 ---
 # <a name="profiling-android-apps"></a>Профилирование приложений Android
 
@@ -30,7 +30,7 @@ ms.locfileid: "34549271"
 Xamarin Profiler — это автономное приложение, интегрированное с Visual Studio и Visual Studio для Mac для профилирования приложений Xamarin из интегрированной среды разработки. Дополнительные сведения об использовании Xamarin Profiler см. в статье [Xamarin Profiler](~/tools/profiler/index.md).
 
 > [!NOTE]
-> Чтобы разблокировать компонент Xamarin Profiler в Visual Studio Enterprise для Windows или Visual Studio для Mac, вы должны быть подписчиком [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/).
+> Чтобы разблокировать компонент Xamarin Profiler в Visual Studio Enterprise для Windows или Visual Studio для Mac, вы должны быть подписчиком [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/).
  
 ## <a name="android-studio-profiler"></a>Профилировщик Android Studio
 

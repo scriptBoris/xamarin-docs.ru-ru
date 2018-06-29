@@ -6,13 +6,13 @@ ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: 0af0ef56630103498041ad61f7c5ce900358b055
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: 6a3f3f79e81339cc903d85081ca173a7ac707f6a
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732857"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935481"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Настройка пакета SDK для Android для Xamarin.Android
 
@@ -280,6 +280,5 @@ Xamarin.Android использует пакет [JDK 8](http://www.oracle.com/te
 
 - [Изменения в инструментарии пакета SDK для Android](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 - [Общие сведения об уровнях API Android](~/android/app-fundamentals/android-api-levels.md)
-- [Заметки о выпуске пакета SDK Tools (Google)](https://developer.android.com/studiohttps://developer.xamarin.com/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)

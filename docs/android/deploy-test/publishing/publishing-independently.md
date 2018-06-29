@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: f7ba0620a4639ff62e2d75d7cf8f02fcc01faac5
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: 2cb2167f534251e15455e11b6a2c85f53fb48b8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33113477"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37067005"
 ---
 # <a name="publishing-independently"></a>Независимая публикация
 
@@ -28,7 +28,7 @@ ms.locfileid: "33113477"
 
 -   **Visual Studio Enterprise** &ndash; для команд любого размера (только для Windows). Эта лицензия предлагает возможности корпоративного уровня, стандартную подписку или подписку на облачную службу.
 
-Посетите веб-сайт [visualstudio.com](https://www.visualstudio.com/xamarin/), чтобы скачать Community Edition или получить дополнительные сведения о приобретении выпусков Professional и Enterprise.
+Посетите веб-сайт [visualstudio.com](https://visualstudio.microsoft.com/xamarin/), чтобы скачать Community Edition или получить дополнительные сведения о приобретении выпусков Professional и Enterprise.
 
 
 ## <a name="allow-installation-from-unknown-sources"></a>Разрешение установки из неизвестных источников
