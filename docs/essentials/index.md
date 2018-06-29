@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 5fec06fd6f0c13a75040d940a11811ef97c3bcc3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 97dc5494f37da1590178bc90feb673889598bdd7
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782743"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080549"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -44,8 +44,11 @@ Android, iOS и UWP обеспечивают уникальное операци
 * [Географическое положение](geolocation.md?context=xamarin/xamarin-forms) — получить расположение GPS в устройстве.
 * [Гироскопа](gyroscope.md?context=xamarin/xamarin-forms) — отслеживания поворота вокруг устройства три основные оси.
 * [Магнитометр](magnetometer.md?context=xamarin/xamarin-forms) — обнаружить ориентации устройства относительно поля магнитные Земли.
+* [MainThread](main-thread.md?content=xamarin/xamarin-forms) — выполнять код для основного потока приложения. 
 * [Откройте браузер](open-browser.md?context=xamarin/xamarin-forms) — быстро и легко открыть браузер для определенного веб-узла.
+* [Ориентация датчика](orientation-sensor.md?context=xamarin/xamarin-forms) — получить ориентации устройства в трех двухмерном пространстве.
 * [Телефон](phone-dialer.md?context=xamarin/xamarin-forms) — открыть программу "Телефон".
+* [Power](power.md?context=xamarin/xamarin-forms) — получить состояние устройства экономия энергии.
 * [Параметры](preferences.md?context=xamarin/xamarin-forms) — быстро и легко добавлять постоянные предпочтения.
 * [Блокировка экрана](screen-lock.md?context=xamarin/xamarin-forms) — не переходит в спящий режим экран устройства.
 * [Защищенное хранилище](secure-storage.md?context=xamarin/xamarin-forms) — безопасно хранить данные.
