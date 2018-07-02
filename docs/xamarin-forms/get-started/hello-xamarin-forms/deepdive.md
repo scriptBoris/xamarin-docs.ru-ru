@@ -7,13 +7,13 @@ ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/10/2018
-ms.openlocfilehash: 011ec94aca4e5110c704b83cb24cf6260338dfbd
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/13/2018
+ms.openlocfilehash: 7c8eee5fc7075f23221c06dab29b83b1d5e01ffc
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35243630"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269072"
 ---
 # <a name="xamarinforms-deep-dive"></a>Подробное знакомство с Xamarin.Forms
 
@@ -62,15 +62,11 @@ Visual Studio для Mac — это бесплатная интегрирова
 
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Структура приложения Xamarin.Forms
 
-На следующих снимках экрана показано содержимое проекта переносимой библиотеки классов Phoneword в Visual Studio для Mac:
+На следующих снимках экрана показано содержимое проекта библиотеки .NET Standard Phoneword в Visual Studio для Mac:
 
-![](deepdive-images/xs/pcl-project.png "Содержимое проекта переносимой библиотеки классов Phoneword")
+![](deepdive-images/xs/library-project.png "Содержимое проекта библиотеки .NET Standard Phoneword")
 
-Проект состоит из трех папок:
-
-- **References** — содержит сборки, необходимые для создания и запуска приложения. Если развернуть папку .NET Portable Subset, будут доступны ссылки на сборки .NET, такие как [System](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx), System.Core и [System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx). Если развернуть папку **From Packages**, будут доступны ссылки на сборки Xamarin.Forms.
-- **Packages** — в каталоге Packages размещаются пакеты [NuGet](https://www.nuget.org), которые позволяют упростить работу со сторонними библиотеками в приложении. Чтобы обновить пакеты до последней версии, щелкните папку правой кнопкой мыши и выберите команду обновления во всплывающем меню.
-- **Properties** — содержит файл **AssemblyInfo.cs** с метаданными сборки .NET. В этот файл рекомендуется внести некоторые основные сведения о приложении. Дополнительные сведения об этом файле см. в разделе [Класс AssemblyInfo](http://msdn.microsoft.com/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx) на веб-сайте MSDN.
+В этом проекте есть узел **Зависимости**, который содержит узлы **NuGet** и **SDK**. Узел **NuGet** содержит добавленный в проект пакет Xamarin.Forms NuGet, а узел **SDK** содержит метапакет `NETStandard.Library`, который ссылается на полный набор пакетов NuGet, определяющих .NET Standard.
 
 -----
 
@@ -81,7 +77,6 @@ Visual Studio для Mac — это бесплатная интегрирова
 - **IDialer.cs** — интерфейс `IDialer`, который указывает, что в любом реализующем классе должен быть предоставлен метод `Dial`.
 - **MainPage.xaml** — разметка XAML для класса `MainPage`, который определяет пользовательский интерфейс страницы, отображаемой при запуске приложения.
 - **MainPage.xaml.cs** — код программной части для класса `MainPage`, который содержит бизнес-логику, выполняемую при взаимодействии пользователя со страницей.
-- **packages.config** (только в Visual Studio для Mac) — XML-файл со сведениями об используемых в проекте пакетах NuGet, который позволяет отслеживать необходимые пакеты и версии. Visual Studio для Mac и Visual Studio можно настроить для автоматического восстановления любых отсутствующих пакетов NuGet при публикации исходного кода для других пользователей. Содержимое этого файла контролируется диспетчером пакетов NuGet и не должно изменяться вручную.
 - **PhoneTranslator.cs** — бизнес-логика, отвечающая за преобразования номера телефона из текстового в цифровой формат. Вызывается из файла **MainPage.xaml.cs**.
 
 Дополнительные сведения о структуре приложения Xamarin.iOS см. [здесь](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Дополнительные сведения о структуре приложения Xamarin.Android см. [здесь](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
@@ -99,8 +94,6 @@ Visual Studio для Mac — это бесплатная интегрирова
 По своей архитектуре приложения Xamarin.Forms не отличаются от традиционных кроссплатформенных приложений. Общий код обычно помещается в библиотеку .NET Standard и используется приложениями для конкретных платформ. На следующей схеме показаны эти взаимосвязи для приложения Phoneword:
 
 ![](deepdive-images/xs/architecture.png "Архитектура приложения Phoneword")
-
-Дополнительные сведения о переносимых библиотеках классов см. в разделе [Введение в переносимые библиотеки классов](~/cross-platform/app-fundamentals/pcl.md).
 
 -----
 
@@ -153,23 +146,26 @@ namespace Phoneword.iOS
 
 ### <a name="android"></a>Android
 
-Чтобы начальную страницу Xamarin.Forms можно было запустить в Android, проект Phoneword.Droid включает код, который создает действие `Activity` с атрибутом `MainLauncher`, которое наследует от класса `FormsApplicationActivity`, как показано в следующем примере кода:
+Чтобы начальную страницу Xamarin.Forms можно было запустить в Android, проект Phoneword.Droid включает код, который создает действие `Activity` с атрибутом `MainLauncher`, которое наследует от класса `FormsAppCompatActivity`, как показано в следующем примере кода:
 
 ```csharp
 namespace Phoneword.Droid
 {
-    [Activity(Label = "Phoneword",
-              Icon = "@drawable/icon",
+    [Activity(Label = "Phoneword", 
+              Icon = "@mipmap/icon", 
+              Theme = "@style/MainTheme", 
               MainLauncher = true,
               ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         internal static MainActivity Instance { get; private set; }
 
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
+            base.OnCreate(bundle);
             Instance = this;
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
