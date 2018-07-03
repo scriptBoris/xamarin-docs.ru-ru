@@ -6,13 +6,13 @@ ms.assetid: 9116A3AA-EA00-56AF-AE70-BAEEC045EF11
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/21/2017
-ms.openlocfilehash: 16716db67067f07166fa35df7e539cdf3ed1de5e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/22/2018
+ms.openlocfilehash: 838e0df80334d6865466b189a65a3f7c590bb590
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30768286"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935364"
 ---
 # <a name="set-up-device-for-development"></a>Настройка устройства для разработки
 
@@ -112,7 +112,7 @@ _В этой статье описано, как настроить устрой
 
 6.  Выберите **Выполнить поиск драйверов на этом компьютере** и нажмите кнопку **Далее**.
 
-7.  Нажмите кнопку **Обзор** и перейдите в папку USB-драйвера (USB-драйвер Google расположен в папке **[путь установки пакета SDK для Android]\extras\google\usb_driver**.
+7.  Нажмите кнопку **Обзор** и перейдите в папку USB-драйвера (USB-драйвер Google расположен в папке **[путь установки пакета SDK для Android]\extras\google\usb_driver**).
 
 8.  Нажмите кнопку **Далее**, чтобы установить драйвер.
 

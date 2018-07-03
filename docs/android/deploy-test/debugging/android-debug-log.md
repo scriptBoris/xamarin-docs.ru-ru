@@ -1,17 +1,18 @@
 ---
 title: Журнал отладки Android
+description: Инструкции по использованию журнала отладки для отладки приложений Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/04/2018
-ms.openlocfilehash: e0e22fe35dc5042a7b3c895a250803e936611629
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.date: 06/22/2018
+ms.openlocfilehash: 442606f456e6f42ee178cd93253883a1d9de52c4
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30822886"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935221"
 ---
 # <a name="android-debug-log"></a>Журнал отладки Android
 
@@ -22,7 +23,7 @@ ms.locfileid: "30822886"
 Инструмент **Журнал отладки** позволяет просматривать выходные данные журнала при отладке приложения с помощью Visual Studio. Журнал отладки поддерживает следующие устройства:
 
 -   физические телефоны, планшеты и переносные устройства Android;
--   виртуальные устройства Android, работающие в эмуляторе Google Android. 
+-   виртуальные устройства с Android, работающие в Android Emulator. 
 
 > [!NOTE]
 > Инструмент **Журнал отладки** не работает с Xamarin Live Player.

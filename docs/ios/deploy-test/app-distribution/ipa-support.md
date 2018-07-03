@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 288ac813f23f281a1bbed375cadf5faa9d4ff9d0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4fd64a1ebf05dd149304f49d8282ee1b38bfcf03
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784882"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321367"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Поддержка IPA в Xamarin.iOS
 
@@ -132,10 +132,10 @@ _В этой статье описано, как создать файл IPA, к
 
      ![](ipa-support-images/imagexs03.png "Выбор файла iTunesMetadata.plist в списке")
 
-1. Вызовите **xbuild** (или **mdtool** для Classic API) напрямую и передайте это свойство через командную строку:
+1. Вызовите **msbuild** напрямую и передайте это свойство в командной строке.
 
     ```bash
-    /Library/Frameworks/Mono.framework/Commands/xbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
+    /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -178,7 +178,7 @@ _В этой статье описано, как создать файл IPA, к
 
 Использовать новое свойство можно несколькими способами:
 
-Например, чтобы выводить файл **IPA** в старый каталог по умолчанию (как в Xamarin.iOS 9.6 и более ранних версиях), задайте для свойства `IpaPackageDir` значение `$(OutputPath)` одним из следующих способов. Оба подхода совместимы со всеми сборками Unified API Xamarin.iOS, включая сборки интегрированной среды разработки и сборки командной строки, которые используют **xbuild**, **msbuild** или **mdtool**:
+Например, чтобы выводить файл **IPA** в старый каталог по умолчанию (как в Xamarin.iOS 9.6 и более ранних версиях), задайте для свойства `IpaPackageDir` значение `$(OutputPath)` одним из следующих способов. Оба подхода совместимы со всеми сборками Unified API Xamarin.iOS, включая сборки интегрированной среды разработки и сборки командной строки, которые используют **msbuild**, **xbuild** или **mdtool**.
 
 - Первый способ подразумевает установку свойства `IpaPackageDir` в элементе `<PropertyGroup>` в файле **MSBuild**. Например, можно добавить следующий элемент `<PropertyGroup>` в конец файла **CSPROJ** проекта приложения iOS (непосредственно перед закрывающим тегом `</Project>`):
 
@@ -212,19 +212,17 @@ _В этой статье описано, как создать файл IPA, к
     </PropertyGroup>
     ```
 
-Альтернативный способ для сборок командной строки **msbuild** или **xbuild** заключается в добавлении аргумента командной строки `/p:` для установки свойства `IpaPackageDir`. В этом случае обратите внимание, что **msbuild** не развертывает выражения `$()`, передаваемые в командную строку, поэтому использовать синтаксис `$(OutputPath)` невозможно. Вместо этого необходимо предоставить полный путь. Команда Mono **xbuild** развертывает выражения `$()`, однако по-прежнему рекомендуется использовать полный путь к файлу, так как в конечном итоге в последующих выпусках **xbuild** устареет и уступит место кроссплатформенной версии [ **msbuild**](http://www.mono-project.com/docs/about-mono/releases/4.4.0/#msbuild-preview-for-os-x).
+Альтернативный способ для сборки командной строки **msbuild** или **xbuild** заключается в добавлении аргумента `/p:` для установки свойства `IpaPackageDir`. В этом случае обратите внимание, что **msbuild** не развертывает выражения `$()`, передаваемые в командную строку, поэтому использовать синтаксис `$(OutputPath)` невозможно. Вместо этого необходимо предоставить полный путь. Команда Mono **xbuild** раскрывает выражения `$()`, однако по-прежнему рекомендуется использовать полный путь к файлу, так как вместо **xbuild** рекомендуется использовать [кроссплатформенную версию **msbuild**](https://www.mono-project.com/docs/about-mono/releases/5.0.0/#msbuild).
 
 Полный пример, в котором используется этот подход, в ОС Windows может выглядеть следующим образом:
-
 
 ```bash
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.168.1.3" /p:ServerUser="macuser" /p:IpaPackageDir="%USERPROFILE%\Builds" /t:Build SingleViewIphone1.sln
 ```
-
 В Mac он будет иметь следующий вид:
 
 ```bash
-xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
+msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
 <a name="installipa" />
