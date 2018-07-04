@@ -1,6 +1,6 @@
 # [Кроссплатформенные приложения](index.yml)
 ## [Начало работы](get-started/index.md)
-### [Requirements](get-started/requirements.md)
+### [Требования](get-started/requirements.md)
 ### [Установка](get-started/installation/index.md)
 #### [Установка Xamarin в Windows](get-started/installation/windows.md)
 ##### [Установка предварительных версий Xamarin в Windows](get-started/installation/windows-preview.md)
@@ -11,7 +11,7 @@
 ### [Введение в разработку мобильных приложений](get-started/introduction-to-mobile-development.md)
 ### [Введение в жизненный цикл программного обеспечения (SDLC) мобильных устройств](get-started/introduction-to-mobile-sdlc.md)
 
-### [Создание кросс платформенных приложений](app-fundamentals/building-cross-platform-applications/index.md)
+### [Создание кроссплатформенных приложений](app-fundamentals/building-cross-platform-applications/index.md)
 #### [Обзор набора средств Visual Studio для Unity](app-fundamentals/building-cross-platform-applications/overview.md)
 #### [Часть 1. Основные сведения о мобильной платформе Xamarin](app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 #### [Часть 2. Архитектура](app-fundamentals/building-cross-platform-applications/architecture.md)
@@ -89,5 +89,4 @@
 #### [Почему Visual Studio не включает проект библиотеки в сборку, которая на него ссылается?](troubleshooting/questions/vs-config-manager.md)
 
 ### [Обновление ссылок на компоненты в NuGet](troubleshooting/component-nuget.md)
-### [Варианты поддержки](troubleshooting/support-options.md)
 ## [Примеры](samples/index.yml)
