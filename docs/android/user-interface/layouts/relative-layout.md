@@ -1,41 +1,42 @@
 ---
 title: С помощью RelativeLayout в Xamarin.Android
+description: Как использовать RelativeLayout в приложениях Xamarin.Android
 ms.prod: xamarin
 ms.assetid: AFD9C849-02C3-E728-BC78-77A563612BC5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/25/2018
-ms.openlocfilehash: cd2d7537036978e30c97b5776155e429178b6dac
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 06/29/2018
+ms.openlocfilehash: af8d37775a798fc6019106a66df75843a951c108
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436002"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403420"
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
-[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) — [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/) , отображающий дочерние [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) элементов в относительные позиции. Положение [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) может быть задан относительно элементов того же уровня (например, относительно левой части или ниже данного элемента) или в помещает относительно [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) области (например, Выравнивание по нижнему краю левый в центре).
+[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) — [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/) , отображающий дочерних [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) элементов в относительные позиции. Положение [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) может быть задан относительно одноуровневых элементов (например, относительно левой части или ниже данного элемента) или в помещает относительно [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) области (например, выравнивается по нижней, левой части center).
 
-Объект [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) — это очень мощный программа, разработке пользовательского интерфейса, так как он может устранить вложенных [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s. Если вы с помощью нескольких вложенных [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) групп, можно заменить один [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/).
+Объект [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) — очень мощная служебная программа, разработке пользовательского интерфейса, так как позволяет избавиться от вложенных [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s. Если вы с помощью нескольких вложенных [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) групп, можно заменить их одним [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/).
 
-Создание нового проекта с именем **HelloRelativeLayout**.
+Создайте новый проект с именем **HelloRelativeLayout**.
 
 Откройте **Resources/Layout/Main.axml** файл и вставьте следующий текст:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
         android:id="@+id/label"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Type here:"/>
     <EditText
         android:id="@+id/entry"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:drawable/editbox_background"
         android:layout_below="@id/label"/>
@@ -56,12 +57,12 @@ ms.locfileid: "32436002"
 </RelativeLayout>
 ```
 
-Обратите внимание на то, каждый из `android:layout_*` атрибуты, такие как `layout_below`, `layout_alignParentRight`, и `layout_toLeftOf`.
-При использовании [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/), эти атрибуты можно использовать для описания того, как можно разместить каждый [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/). Каждый одного из этих атрибутов определяют различные виды относительное положение. Некоторые атрибуты использовать идентификатор ресурса одноуровневой [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) для определения собственного относительное положение. Например, последний [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) определено для размещения в левой части и выравниваются с сверху of [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) с Идентификатором `ok` (являющийся предыдущих [`Button`](https://developer.xamarin.com/api/type/Android.Widget.Button/)).
+Обратите внимание, что каждый из `android:layout_*` атрибуты, такие как `layout_below`, `layout_alignParentRight`, и `layout_toLeftOf`.
+При использовании [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/), эти атрибуты можно использовать для описания того, как вы хотите разместить каждый [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/). Каждый из этих атрибутов определяют различные виды относительное положение. Некоторые атрибуты использовать идентификатор ресурса того же уровня [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) определить свой собственный относительное положение. Например, последний [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) определен на более низких взятия слева и выравниваются с-top-of [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) с Идентификатором `ok` (который является предыдущей [`Button`](https://developer.xamarin.com/api/type/Android.Widget.Button/)).
 
 Все доступные макета атрибуты определены в [ `RelativeLayout.LayoutParams` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout+LayoutParams/).
 
-Убедитесь, что загрузить этот макет в [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) метод:
+Убедитесь, что вы загружаете этот макет в [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) метод:
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)
@@ -71,9 +72,9 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/p/System.Int32/) Метод загружает файл макета для [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/), указанной по Идентификатору ресурса &mdash; `Resource.Layout.Main` ссылается на **ресурсы и макета или Main.AXML** файл макета.
+[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/p/System.Int32/) Метод загружает файл макета для [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/), указанного по Идентификатору ресурса &mdash; `Resource.Layout.Main` ссылается на **ресурсы/макета / Main.AXML** файл макета.
 
-Запустите приложение. Должен появиться следующий результат:
+Запустите приложение. Вы должны увидеть следующий результат:
 
 [![Снимок экрана относительный макета с использованием текстового представления, EditText и две кнопки](relative-layout-images/helloviews2.png)](relative-layout-images/helloviews2.png#lightbox)
 
@@ -87,5 +88,5 @@ protected override void OnCreate (Bundle savedInstanceState)
 -   [`Button`](https://developer.xamarin.com/api/type/Android.Widget.Button/)
 
 
-*Некоторые части этой страницы, изменения на основе работы создан и совместно используются Android открыть исходный проект и используются в соответствии с условиями, описанной в*
-[*Creative Commons 2.5 однозначного соответствия лицензий* ](http://creativecommons.org/licenses/by/2.5/).
+*Некоторые части этой страницы, изменения с учетом работы создана и совместно используется Android откройте исходный проект и используются в соответствии с условиями, описанными в*
+[*лицензии Creative Commons 2.5 Attribution* ](http://creativecommons.org/licenses/by/2.5/).

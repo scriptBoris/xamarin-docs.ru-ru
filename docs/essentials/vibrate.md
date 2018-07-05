@@ -1,46 +1,46 @@
 ---
 title: 'Xamarin.Essentials: вибрация'
-description: Этот документ описывает класс Вибрация в Xamarin.Essentials, который позволяет запускать и останавливать vibrate функциональные возможности для требуемый промежуток времени.
+description: Этот документ описывает класс Вибрация в Xamarin.Essentials, который позволяет запускать и останавливать vibrate функциональные возможности для требуемого числа раз.
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2a2902ca4eac8b889f6875580d7cb4ea352803a8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1de464d289bc684015e5fb8489683e3134535b70
+ms.sourcegitcommit: cb69bdb469db0b3118e365d71114091c6febb027
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782925"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37406775"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: вибрация
 
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
+![Предварительные версии NuGet](~/media/shared/pre-release.png)
 
-**Вибрация** класс позволяет запускать и останавливать vibrate функциональные возможности для требуемый промежуток времени.
+**Вибрация** класс позволяет запускать и останавливать vibrate функциональные возможности для требуемого числа раз.
 
 ## <a name="getting-started"></a>Начало работы
 
-Чтобы получить доступ к **вибрация** требуется функциональность следующие платформы определенные настройки.
+Чтобы получить доступ к **вибрация** функциональность приведены следующие настройки платформы является обязательным.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
 Разрешение Vibrate является обязательным и должен быть настроен в проекте Android. Это можно сделать одним из следующих способов:
 
-Откройте **AssemblyInfo.cs** файл **свойства** папки и добавьте:
+Откройте **AssemblyInfo.cs** файл **свойства** папку и добавьте:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Vibrate)]
 ```
 
-ИЛИ обновление манифеста Android.
+ИЛИ обновите манифест Android:
 
-Откройте **AndroidManifest.xml** файл **свойства** папки и добавьте следующий код внутри блока **манифеста** узла.
+Откройте **AndroidManifest.xml** файл **свойства** папку и добавьте следующий код внутри класса **манифеста** узла.
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-Или щелкните правой кнопкой мыши проект Anroid и откройте свойства проекта. В разделе **Android манифеста** найти **требуемые разрешения:** области и проверка **VIBRATE** разрешение. Будет автоматически обновлена **AndroidManifest.xml** файла.
+Или щелкните правой кнопкой проект Anroid и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **VIBRATE** разрешение. Будет автоматически обновлена **AndroidManifest.xml** файла.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -99,14 +99,15 @@ catch (Exception ex)
 }
 ```
 
-## <a name="platform-differences"></a>Различия между платформами
+## <a name="platform-differences"></a>Различия платформ
 
 | Platform | Различие |
 | --- | --- |
+| iOS | Только подачи звуковых, если устройство имеет значение «Vibrate на кольцо». |
 | iOS | Всегда подачи звуковых для 500 миллисекунд. |
-| iOS | Не удается отменить вибрация. |
+| iOS | Не удается отменить вибрации. |
 
 ## <a name="api"></a>API
 
 - [Вибрация исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Vibration)
-- [Вибрация API документации](xref:Xamarin.Essentials.Vibration)
+- [Документация по API вибрация](xref:Xamarin.Essentials.Vibration)
