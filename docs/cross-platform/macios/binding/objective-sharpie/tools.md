@@ -1,26 +1,26 @@
 ---
-title: Цели Sharpie средств и команд
-description: Этот документ предоставляет обзор средства, включенные в Sharpie цель и аргументы командной строки для использования с ними.
+title: Цели Sharpie средства и команды
+description: Этот документ предоставляет обзор средств, включенных с Sharpie цели и аргументы командной строки для использования с ними.
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 9ef566559249caca75281d9490d5314e08e26d44
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 718b5104ddc4593d080b88b062c42d371d9e8e2e
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781069"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855072"
 ---
-# <a name="objective-sharpie-tools--commands"></a>Цели Sharpie средств и команд
+# <a name="objective-sharpie-tools--commands"></a>Цели Sharpie средства и команды
 
-_Обзор средства, включенные в Sharpie цель и аргументы командной строки для их использования._
+_Обзор средств, включенных с Sharpie цели и аргументы командной строки для их использования._
 
-<style type="text/css"> синий .terminal {цвет: rgb(10,96,254);} .terminal зеленый {цвет: rgb(12,156,26);} .terminal magenta {цвет: rgb(152,12,103);} </style>
+<style type="text/css"> .Terminal синий {color: rgb(10,96,254);} .terminal зеленый {color: rgb(12,156,26);} .terminal пурпурный {цвет: rgb(152,12,103);} </style>
 
 
-После успешной цель Sharpie [установлен](~/cross-platform/macios/binding/objective-sharpie/get-started.md)откройте терминал и ознакомиться с <em>команды</em> Sharpie цель должен предлагать:
+После успешной цели Sharpie [установлен](~/cross-platform/macios/binding/objective-sharpie/get-started.md), откройте окно терминала и ознакомиться с <em>команды</em> Sharpie цель может предложить:
 
 <pre>$ <b>sharpie -help</b>
 usage: sharpie [OPTIONS] TOOL [TOOL_OPTIONS]
@@ -54,14 +54,14 @@ Available Tools:
 
 |Средство|Описание:|
 |--- |--- |
-|**Xcode**|Предоставляет сведения о текущей установке Xcode и версии iOS и Mac пакетов SDK, которые доступны. Мы используем эти сведения позже при мы создаем нашей привязок.|
-|**POD**|Выполняет поиск, настраивает, устанавливает (в локальном каталоге) и привязывает Objective-C [CocoaPod](https://cocoapods.org/) библиотеки из характеристик главного репозитория. Это средство оценивает установленных CocoaPod автоматически вычислить правильные входные данные для передачи `bind` средство ниже. Новые возможности 3.0!|
+|**xcode**|Сведения о текущей установке Xcode и версиях iOS и Mac пакеты SDK, которые доступны. Мы будем использовать в дальнейшем при создании наших привязки.|
+|**POD**|Выполняет поиск, настраивает, устанавливает (в локальном каталоге) и привязывает Objective-C [cocoapod для службы](https://cocoapods.org/) библиотек, доступных из главного репозитория спецификаций. Этот инструмент оценивает установленных cocoapod для службы автоматически определить правильные входные данные для передачи `bind` ниже средства. Новые возможности 3.0!|
 |**bind**|Анализирует файлы заголовков (`*.h`) в библиотеке Objective-C в исходный [ApiDefinition.cs и StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) файлов.|
-|**update**|Проверяет наличие новых версий Sharpie цель и загружает и запускает установщик, если он доступен.|
-|**Проверьте документы**|Содержит подробные сведения о `[Verify]` атрибуты.|
-|**Документы**|Переход к этому документу, в веб-браузере по умолчанию.|
+|**update**|Проверяет наличие более новых версиях Sharpie цели и загружает и запускает программу установки, если таковой доступен.|
+|**проверить документы**|Отображаются подробные сведения о `[Verify]` атрибуты.|
+|**Документы**|Переход к этому документу в веб-браузере по умолчанию.|
 
-Чтобы получить справку по определенного инструмента Sharpie цель, введите имя средства и `-help` параметр. Например `sharpie xcode -help` возвращает следующие результаты:
+Чтобы получить справку по определенное средство Sharpie цели, введите имя средства и `-help` параметр. Например `sharpie xcode -help` возвращает следующие выходные данные:
 
 <pre>$ <b>sharpie xcode -help</b>
 usage: sharpie xcode [OPTIONS]
@@ -73,7 +73,7 @@ Options:
 Xcode Options:
   -sdks            List all available Xcode SDKs. Pass -verbose for more details.</pre>
 
-Перед началом процесса привязки, нам нужно получить сведения о нашей текущей пакетов SDK, введя следующую команду в окне терминала `sharpie xcode -sdks`. Выходные данные могут отличаться в зависимости от того, какие версии Xcode установки. Цели Sharpie ищет пакеты SDK, установлена в любом `Xcode*.app` под `/Applications` каталога:
+Прежде чем приступать процесса привязки, нам нужно получить сведения о нашей текущей установленных SDK, введя следующую команду в окне терминала `sharpie xcode -sdks`. Выходные данные могут различаться в зависимости от версий Xcode установки. Цели Sharpie ищет пакеты SDK, устанавливать его в любом `Xcode*.app` под `/Applications` каталог:
 
 <pre>$ <b>sharpie xcode -sdks</b>
 <span class="terminal-blue">sdk:</span> appletvos9.0    <span class="terminal-green">arch:</span> arm64
@@ -84,5 +84,9 @@ Xcode Options:
 <span class="terminal-blue">sdk:</span> macosx10.10     <span class="terminal-green">arch:</span> x86_64  i386
 <span class="terminal-blue">sdk:</span> watchos2.0      <span class="terminal-green">arch:</span> armv7</pre>
 
-Из примера выше, мы видим, что у нас есть `iphoneos9.1` пакет SDK установлен на компьютере и имеет `arm64` поддержка архитектуры. Мы будет использовать это значение для всех образцов этого раздела. С этими данными мы готовы выполнить синтаксический анализ файлов заголовка библиотеки Objective-C в исходный `ApiDefinition.cs` и `StructsAndEnums.cs` для привязки проекта.
+Приведенные выше, мы видим, что у нас есть `iphoneos9.1` пакет SDK установлен на компьютере, и он имеет `arm64` поддержка архитектуры. Мы будем использовать это значение для всех примеров в этом разделе. Располагая этой информацией, мы готовы выполнить синтаксический анализ файлов заголовка библиотеки Objective-C в исходный `ApiDefinition.cs` и `StructsAndEnums.cs` для привязки проекта.
 
+## <a name="related-links"></a>Связанные ссылки
+
+- [Xamarin University курс: Создание библиотеку привязки Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University курс: Создание библиотеки привязки Objective-C с помощью цели Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

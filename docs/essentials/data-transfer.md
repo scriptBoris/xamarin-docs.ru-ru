@@ -1,24 +1,24 @@
 ---
 title: 'Xamarin.Essentials: Передача данных'
-description: Класс DataTransfer в Xamarin.Essentials позволяет приложениям совместно использовать данные, такие как текст и веб-ссылки на другие приложения на устройстве.
+description: Класс DataTransfer Xamarin.Essentials позволяет приложениям совместно использовать данные, например текст и веб-ссылки на другие приложения на устройстве.
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 69d429b1cdbbbd6dbb53e3cefa89695666494ba7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c1ed298e1317d0a3f78f4dbd9fc89a2b01c6958c
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782389"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855114"
 ---
 # <a name="xamarinessentials-data-transfer"></a>Xamarin.Essentials: Передача данных
 
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
+![Предварительные версии NuGet](~/media/shared/pre-release.png)
 
-**DataTransfer** класса позволяет приложениям совместно использовать данные, такие как текст и веб-ссылки на другие приложения на устройстве.
+**DataTransfer** класс позволяет приложениям совместно использовать данные, например текст и веб-ссылки на другие приложения на устройстве.
 
-## <a name="using-data-transfer"></a>Передача данных с помощью
+## <a name="using-data-transfer"></a>С помощью передачи данных
 
 Добавьте ссылку на Xamarin.Essentials в классе:
 
@@ -26,7 +26,7 @@ ms.locfileid: "34782389"
 using Xamarin.Essentials;
 ```
 
-Функции передачи данных работает путем вызова `RequestAsync` метод полезных данных запроса, включающий сведения о совместно использовать с другими приложениями. Текст и Uri можно комбинировать и обработки каждой платформы фильтрации на основе содержимого.
+Функциональные возможности передачи данных работает путем вызова `RequestAsync` метод полезных данных запроса данных, включая сведения для совместного использования для других приложений. Текст и Uri могут сочетаться, и каждая платформа будет обрабатывать фильтрации на основе содержимого.
 
 ```csharp
 
@@ -56,15 +56,23 @@ public class DataTransferTest
 
 ![Передача данных](data-transfer-images/data-transfer.png)
 
-## <a name="platform-differences"></a>Различия между платформами
+## <a name="platform-differences"></a>Различия платформ
 
-| Platform | Различие |
-| --- | --- |
-| Android | Свойство «Тема» используется для нужного тема сообщения. |
-| iOS | Тема не используется. |
-| iOS | Заголовок не используется. |
-| UWP | Заголовок будет по умолчанию для имени приложения Если не установлено. |
-| UWP | Тема не используется. |
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+* `Subject` свойство используется для требуемой темы сообщения.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* `Subject` не используется.
+* `Title` не используется. 
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+* `Title` будет, то происходит не задано, если значение по умолчанию имени приложения.
+* `Subject` не используется.
+
+-----
 
 ## <a name="api"></a>API
 
