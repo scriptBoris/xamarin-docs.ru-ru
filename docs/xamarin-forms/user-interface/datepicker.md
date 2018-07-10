@@ -1,46 +1,46 @@
 ---
 title: Xamarin.Forms DatePicker
-description: DatePicker является представлением Xamarin.Forms, которое позволяет пользователю выбрать дату. В этой статье объясняется, как использовать DatePicker в приложении Xamarin.Forms.
+description: DatePicker находится представление Xamarin.Forms, которое позволяет пользователю выбрать дату. В этой статье объясняется, как использовать DatePicker в приложении Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/04/2018
-ms.openlocfilehash: 9cbc87637df088a4989d3602a7d1d126adf86385
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 31422f1067473ccb49a681098bd0809c451e7369
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243649"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935362"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
 _Представление Xamarin.Forms, которое позволяет пользователю выбрать дату_
 
-Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) вызывает элемент управления выбора даты платформы и позволяет пользователю выбрать дату. `DatePicker` Определяет восемь свойства:
+Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) вызывает элемент управления выбора даты платформы и позволяет пользователю выбрать дату. `DatePicker` Определяет восемь свойств:
 
-- [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) Тип [ `DateTime` ](https://developer.xamarin.com/api/type/System.DateTime/), который по умолчанию в первый день года 1900.
-- [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) Тип `DateTime`, какие значения по умолчанию для последнего дня года 2100.
-- [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) Тип `DateTime`, выбранной даты, по умолчанию используется значение [ `DateTime.Today` ](https://developer.xamarin.com/api/property/System.DateTime.Today/).
-- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) типа `string`, [Стандартная](/dotnet/standard/base-types/standard-date-and-time-format-strings/) или [пользовательские](/dotnet/standard/base-types/custom-date-and-time-format-strings/) .NET форматирования строки, которая по умолчанию «D», длинных Дата шаблон.
-- [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.TextColor/) Тип [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/), цвет, используемый для отображения выбранной даты, значение по умолчанию [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/).
-- [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) Тип [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), который по умолчанию [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
-- [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) Тип `string`, который по умолчанию `null`.
-- [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) Тип `double`, который по умолчанию -1,0.
+- [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) типа [ `DateTime` ](https://developer.xamarin.com/api/type/System.DateTime/), которое по умолчанию к первому дню 1900 года.
+- [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) типа `DateTime`, какие значения по умолчанию до последнего дня года 2100.
+- [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) типа `DateTime`, выбранной даты, по умолчанию используется значение [ `DateTime.Today` ](https://developer.xamarin.com/api/property/System.DateTime.Today/).
+- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) типа `string`, [стандартный](/dotnet/standard/base-types/standard-date-and-time-format-strings/) или [пользовательских](/dotnet/standard/base-types/custom-date-and-time-format-strings/) .NET форматирования строки, которая по умолчанию «D», долго формат даты.
+- [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.TextColor/) типа [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/), цвет, используемый для отображения выбранной даты, значение по умолчанию — [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/).
+- [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) типа [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), который по умолчанию [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
+- [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) типа `string`, который по умолчанию `null`.
+- [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) типа `double`, который по умолчанию -1,0.
 
 `DatePicker` Активируется [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) событие, когда пользователь выбирает дату.
 
 > [!WARNING]
-> При задании `MinimumDate` и `MaximumDate`, убедитесь, что `MinimumDate` , всегда меньше или равно `MaximumDate`. В противном случае `DatePicker` вызовет исключение.
+> При задании `MinimumDate` и `MaximumDate`, убедитесь, что `MinimumDate` , всегда меньше или равно `MaximumDate`. В противном случае `DatePicker` приведет к появлению исключения.
 
-На внутреннем уровне `DatePicker` гарантирует, что `Date` между `MinimumDate` и `MaximumDate`включительно. Если `MinimumDate` или `MaximumDate` имеет значение, чтобы `Date` не между ними, `DatePicker` будет изменить значение параметра `Date`.
+На внутреннем уровне `DatePicker` гарантирует, что `Date` между `MinimumDate` и `MaximumDate`включительно. Если `MinimumDate` или `MaximumDate` устанавливается таким образом, чтобы `Date` не между ними, `DatePicker` будет изменить значение параметра `Date`.
 
-Все восемь свойств, поддерживаемых [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) объектов, что означает, что они могут быть со стилем и свойства могут являться целевыми для привязки данных. `Date` Свойство имеет режима привязки по умолчанию [ `BindingMode.TwoWay` ](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/), что означает, что он может быть целевым объектом привязки данных в приложение, использующее [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) архитектура.
+Все восемь свойств обеспечиваются [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) объектов, что означает, что их можно применить различные стили, и свойства могут быть целями привязки данных. `Date` Свойство имеет режим привязки по умолчанию [ `BindingMode.TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay), что означает, что он может быть целевой объект привязки данных в приложение, использующее [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) архитектура.
 
 ## <a name="initializing-the-datetime-properties"></a>Инициализация свойств даты и времени
 
-В коде, можно инициализировать `MinimumDate`, `MaximumDate`, и `Date` свойств для значений типа `DateTime`:
+В коде, можно инициализировать `MinimumDate`, `MaximumDate`, и `Date` свойства к значениям типа `DateTime`:
 
 ```csharp
 DatePicker datePicker = new DatePicker
@@ -51,7 +51,7 @@ DatePicker datePicker = new DatePicker
 };
 ```
 
-Когда `DateTime` значение указывается в XAML, средство синтаксического анализа XAML использует `DateTime.Parse` метод с `CultureInfo.InvariantCulture` аргумент для преобразования строки в `DateTime` значение. Даты должен быть указан в формате точный: двумя цифрами месяцев, дней двумя цифрами и четырехзначный год, разделенных косой чертой:
+Когда `DateTime` значение указывается в XAML, средство синтаксического анализа XAML использует `DateTime.Parse` метод с `CultureInfo.InvariantCulture` аргумент для преобразования строки в `DateTime` значение. Даты должен быть указан в виде точного: двузначное месяцев, дней из двух цифр и года из четырех цифр, разделенных косыми чертами:
 
 ```xaml
 <DatePicker MinimumDate="01/01/2018"
@@ -59,7 +59,7 @@ DatePicker datePicker = new DatePicker
             Date="06/21/2018" />
 ```
 
-Если `BindingContext` свойство `DatePicker` устанавливается на экземпляр ViewModel, содержащий свойства типа `DateTime` с именем `MinDate`, `MaxDate`, и `SelectedDate` (например), можно создать экземпляр `DatePicker` следующим образом :
+Если `BindingContext` свойство `DatePicker` присваивается экземпляр ViewModel, содержащий свойства типа `DateTime` с именем `MinDate`, `MaxDate`, и `SelectedDate` (например), можно создать экземпляр `DatePicker` следующим образом :
 
 ```xaml
 <DatePicker MinimumDate="{Binding MinDate}"
@@ -67,15 +67,15 @@ DatePicker datePicker = new DatePicker
             Date="{Binding SelectedDate}" />
 ```
 
-В этом примере все три свойства инициализируются соответствующие свойства в ViewModel. Поскольку `Date` свойство имеет режим привязки `TwoWay`, любой новую дату, которое выбирает пользователь автоматически отражаются в ViewModel.
+В этом примере все три свойства инициализируются в соответствующие свойства в ViewModel. Так как `Date` свойство имеет режим привязки `TwoWay`, любой новой даты, выбранной пользователем автоматически отражаются в ViewModel.
 
-Если `DatePicker` не содержит привязки на его `Date` свойства, приложению следует подключить обработчик `DateSelected` событие было в курсе, когда пользователь выбирает новую дату.
+Если `DatePicker` не содержит привязки на его `Date` свойство, приложения следует присоединить обработчик для `DateSelected` событие, чтобы быть в курсе, когда пользователь выбирает новую дату.
 
-Сведения о настройке свойств шрифта см. в разделе [шрифты](~/xamarin-forms/user-interface/text/fonts.md).
+Сведения о настройке свойств шрифта, см. в разделе [шрифты](~/xamarin-forms/user-interface/text/fonts.md).
 
 ## <a name="datepicker-and-layout"></a>DatePicker и макет
 
-Можно использовать параметр неограниченного горизонтальном расположении, такие как `Center`, `Start`, или `End` с `DatePicker`:
+Можно использовать параметр неограниченного горизонтальном расположении, например `Center`, `Start`, или `End` с `DatePicker`:
 
 ```xaml
 <DatePicker ···
@@ -83,14 +83,14 @@ DatePicker datePicker = new DatePicker
             ··· />
 ```
 
-Однако это не рекомендуется. В зависимости от значения `Format` выбранным свойством даты могут потребоваться другим ширины. Например, строка формата «D» вызывает `DateTime` для отображения дат в полном формате, а «Среда, 12 сентябрь 2018» требует больше ширины экрана, чем «Пятница, 4 май 2018». В зависимости от платформы, это различие может привести к `DateTime` представления для изменения ширины в макете, или для отображения, усекаются.
+Тем не менее это не рекомендуется. Зависимости от настройки `Format` выбранным свойством даты может потребоваться другое отображаемое ширины. Например, строка формата «D» вызывает `DateTime` для отображения даты в длинном формате и «среда, сентябрь 12 2018 г."необходим ширины экрана больше, чем «Пятница, май 4 2018 г.". В зависимости от платформы, это различие может привести к `DateTime` представление, чтобы изменить ширину в макете, или для отображения усечение.
 
 > [!TIP]
-> Рекомендуется использовать значение по умолчанию `HorizontalOptions` параметра `Fill` с `DatePicker`и не использовать ширину `Auto` при размещении `DatePicker` в `Grid` ячейки.
+> Лучше всего использовать значение по умолчанию `HorizontalOptions` параметр `Fill` с `DatePicker`и не использовать ширину `Auto` при помещении `DatePicker` в `Grid` ячейки.
 
 ## <a name="datepicker-in-an-application"></a>DatePicker в приложении
 
-[ **DaysBetweenDates** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker) пример содержит две `DatePicker` представления на странице. Они используются для выбора двух дат и программа вычисляет количество дней между этими датами. Программа не изменять параметры `MinimumDate` и `MaximumDate` свойства, поэтому две даты должен быть в диапазоне от 1900 до 2100.
+[ **DaysBetweenDates** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker) пример включает в себя два `DatePicker` представлений на его странице. Их можно использовать для выбора двух дат, и программа вычисляет количество дней в указанном интервале дат. Программа не изменить параметры `MinimumDate` и `MaximumDate` свойства, поэтому необходимо указать две даты от 1900 до 2100.
 
 Ниже приведен файл XAML.
 
@@ -144,9 +144,9 @@ DatePicker datePicker = new DatePicker
 </ContentPage>
 ```
 
-Каждый `DatePicker` назначается `Format` свойство «D» для длинный формат даты. Обратите внимание, что `endDatePicker` объект имеет привязку, которая обращается его `MinimumDate` свойство. Источник привязки является выбранного `Date` свойство `startDatePicker` объекта. Это гарантирует, что дата окончания всегда позже или равна дате начала. Помимо двух `DatePicker` объектов, `Switch` с меткой «Включить оба дня в итог».
+Каждый `DatePicker` назначается `Format` свойство «D» для длинный формат даты. Обратите внимание, что `endDatePicker` объект имеет привязку, предназначенного его `MinimumDate` свойство. Источник привязки является выбранным `Date` свойство `startDatePicker` объекта. Это гарантирует, что дата окончания это всегда позже или равна дате начала. Дополнение к двум `DatePicker` объектов, `Switch` имеет метку «Включить оба дня в целом».
 
-Два `DatePicker` представления имеют прикреплены обработчики `DateSelected` события и `Switch` присоединен обработчик его `Toggled` событий. Эти обработчики событий в файле кода и запустит новое вычисление дней между двумя датами:
+Два `DatePicker` представления имеют обработчики, присоединенные к `DateSelected` событий и `Switch` присоединил обработчик к его `Toggled` событий. Эти обработчики событий в файле кода и активировать новое вычисление дней между двумя датами:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -177,19 +177,19 @@ public partial class MainPage : ContentPage
 }
 ```
 
-При первом запуске образца, оба `DatePicker` представления инициализируются до сегодняшней даты. На следующем рисунке показан программу на iOS, Android и универсальной платформе Windows:
+Когда образец сначала выполняется, оба `DatePicker` представления инициализируются на сегодняшнюю дату. На следующем снимке экрана показан программу на iOS, Android и универсальной платформы Windows:
 
 [![Дней между датами начала](datepicker-images/DaysBetweenDatesStart.png "дней между датами начала")](datepicker-images/DaysBetweenDatesStart-Large.png#lightbox "дней между датами начала")
 
-Коснитесь любого из `DatePicker` отображает вызывает выбор даты платформы. Три платформы реализовать этот управляющий элемент выбора даты очень разными способами, но каждого подхода есть уже знакомые пользователям этой платформы:
+Коснитесь любой из `DatePicker` отображает вызывает средство выбора даты платформы. Трех платформ реализованы средства выбора даты самыми разными способами, но каждый подход крайне знакомы пользователям функции этой платформы:
 
-[![Выберите дней между датами](datepicker-images/DaysBetweenDatesSelect.png "дней между датами выберите")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "выберите дней между датами")
+[![Выберите дней между датами](datepicker-images/DaysBetweenDatesSelect.png "выберите дней между датами")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "выберите дней между датами")
 
-После выбора двумя датами приложение отображает количество дней между этими датами:
+После выбора двумя датами, приложение отображает количество дней в указанном интервале дат:
 
-[![Дней от даты результат](datepicker-images/DaysBetweenDatesResult.png "дней от даты результат")](datepicker-images/DaysBetweenDatesResult-Large.png#lightbox "дней от даты результат")
+[![Дней от даты результат](datepicker-images/DaysBetweenDatesResult.png "дней между датами результат")](datepicker-images/DaysBetweenDatesResult-Large.png#lightbox "дней между датами результат")
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Образец DaysBetweenDates](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
+- [Пример DaysBetweenDates](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
 - [DatePicker API](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)

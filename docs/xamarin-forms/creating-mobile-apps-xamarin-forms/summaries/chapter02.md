@@ -1,49 +1,49 @@
 ---
-title: Сводка Глава 2. Составляющие приложение
-description: 'Создание мобильных приложений с помощью Xamarin.Forms: Сводка Глава 2. Составляющие приложение'
+title: Сводка Глава 2. Анатомия приложения
+description: 'Создание мобильных приложений с помощью Xamarin.Forms: Сводка Глава 2. Анатомия приложения'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 208cf28341ceaa43d1c56b4f5086dc98febee6be
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 94c575bdfdc2325def00de58381f9bc295d953b9
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242751"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935131"
 ---
-# <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Сводка Глава 2. Составляющие приложение
+# <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Сводка Глава 2. Анатомия приложения
 
-В приложении Xamarin.Forms объектов, которые занимают место на экране, называются *визуальные элементы*, инкапсулированный с [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) класса. Визуальные элементы можно разделить на три категории, соответствующий этих классов:
+В приложении Xamarin.Forms объектов, занимающих место на экране, называются *визуальные элементы*, инкапсулированный с [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) класса. Визуальные элементы можно разделить на три категории, соответствующие этих классов:
 
 - [Страница](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)
 - [Макет](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/)
 - [Вид](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)
 
-Объект `Page` производный класс занимает весь экран или почти во весь экран. Часто является потомком страницы `Layout` производный класс для упорядочения дочерних визуальных элементов. Дочерние элементы `Layout` могут выполняться другие `Layout` классы или `View` производные (часто называемые *элементы*), — знакомые объекты, такие как текст, растровые изображения, ползунки, кнопки, списки и т. д.
+Объект `Page` производных занимает весь экран или почти весь экран. Часто является дочерним элементом страницы `Layout` производных для упорядочения дочерних визуальных элементов. Дочерние элементы `Layout` может быть другой `Layout` классы или `View` производные (часто называется *элементы*), — знакомые объекты, такие как текст, растровые изображения, ползунки, кнопок, списков и т. д.
 
-В этой главе показано, как создать приложение, сосредоточившись на [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), который является `View` производный класс, который отображает текст.
+В этой главе показано, как создать приложение, уделяя [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), который является `View` производных, отображающий текст.
 
 ## <a name="say-hello"></a>Поприветствуйте
 
-С платформой Xamarin установлено можно создать новое решение Xamarin.Forms в Visual Studio или Visual Studio для Mac. [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) решение использует переносимой библиотеки классов для общий код. Он демонстрирует решения Xamarin.Forms, созданного в Visual Studio без изменений. Решение состоит из шести проектов (последней, два из которых создаются без текущие шаблоны решения Xamarin.Forms).
+На платформе Xamarin установлен можно создать новое решение Xamarin.Forms в Visual Studio или Visual Studio для Mac. [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) решение использует переносимую библиотеку классов, общий код. Он демонстрирует решение Xamarin.Forms, созданные в Visual Studio без изменений. Решение состоит из шести проектов (последние два из которых не создаются с помощью текущего шаблонов решения Xamarin.Forms):
 
-- [**Hello**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello), Переносимая библиотека классов (PCL) совместно в других проектах
+- [**Hello**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello), переносимой библиотеки классов (PCL), общим для других проектов
 - [**Hello.Droid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid), проект приложения для Android
 - [**Hello.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.iOS), проект приложения для iOS
 - [**Hello.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.UWP), проект приложения для универсальной платформы Windows (Windows 10 и Windows 10 Mobile)
 - [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows), проект приложения для Windows 8.1
 - [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone), проект приложения для Windows Phone 8.1
 
-Внесите любые из этих проектов приложений запускаемого проекта и затем постройте и запустите программу на устройстве или в симуляторе.
+Внесите любые из этих проектов приложений запускаемого проекта и затем постройте и запустите программу на устройства или симулятора.
 
-Во многих программах Xamarin.Forms не изменяя проекты приложений. Часто они остаются очень мала заглушки просто для запуска программы. Большая часть фокус будет переносимой библиотеки классов, общие для всех приложений.
+Во многих приложениях Xamarin.Forms не изменяя проектов приложений. Они часто остаются tiny заглушки просто для того, чтобы запустить программу. Большая часть фокус будет переносимой библиотеки классов, общие для всех приложений.
 
-## <a name="inside-the-files"></a>Внутри файлов
+## <a name="inside-the-files"></a>В файлах
 
-Визуальные элементы, отображаемые **Hello** программы определяются в конструкторе [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) класса. `App` является производным от класса Xamarin.Forms [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/).
+Визуальные элементы, отображаемые **Hello** программы определяются в конструкторе класса [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) класса. `App` является производным от класса Xamarin.Forms [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/).
 
 **Ссылки** раздел **Hello** проект переносимой библиотеки Классов включает следующие сборки Xamarin.Forms:
 
@@ -51,7 +51,7 @@ ms.locfileid: "35242751"
 - **Xamarin.Forms.Xaml**
 - **Xamarin.Forms.Platform**
 
-**Ссылки** разделы проектов пять приложения содержат дополнительных сборок, которые применяются для отдельных платформ:
+**Ссылки** разделы проектов пять приложений содержат дополнительные сборки, которые применяются для отдельных платформ:
 
 - **Xamarin.Forms.Platform.Android**
 - **Xamarin.Forms.Platform.iOS**
@@ -60,15 +60,15 @@ ms.locfileid: "35242751"
 - **Xamarin.Forms.Platform.WinRT.Tablet**
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
-Каждый из проектов приложений содержит вызов статического `Forms.Init` метод в `Xamarin.Forms` пространства имен. Это инициализирует библиотеку Xamarin.Forms. С другой версией `Forms.Init` определяется для каждой платформы. Вызов этого метода можно найти в следующих классов:
+Каждый из проектов приложений содержит вызов статического `Forms.Init` метод в `Xamarin.Forms` пространства имен. Это инициализирует библиотеку Xamarin.Forms. Другая версия `Forms.Init` определяется для каждой платформы. Вызовы этого метода можно найти в следующих классов:
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- UWP: [ `App` класса, `OnLaunched` метод](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- Windows 8.1: [ `App` класса, `OnLaunched` метод](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/App.xaml.cs#L65)
-- Windows Phone 8.1: [ `App` класса, `OnLaunched` метод](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WinPhone/App.xaml.cs#L67)
+- UWP: [ `App` класс, `OnLaunched` метод](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
+- Windows 8.1: [ `App` класс, `OnLaunched` метод](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/App.xaml.cs#L65)
+- Windows Phone 8.1: [ `App` класс, `OnLaunched` метод](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WinPhone/App.xaml.cs#L67)
 
-Кроме того, необходимо создать экземпляр каждой платформы `App` класса расположение в PCL. Это происходит при вызове `LoadApplication` в следующие классы:
+Кроме того, необходимо создать экземпляр каждой платформы `App` класса расположение в переносимой библиотеке Классов. Это происходит при вызове `LoadApplication` в следующие классы:
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
@@ -76,28 +76,28 @@ ms.locfileid: "35242751"
 - Windows 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/MainPage.xaml.cs)
 - Windows Phone 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WindowsPhone/MainPage.xaml.cs)
 
-В противном случае эти проекты приложений — это обычные программы «ничего не делать».
+В противном случае эти проекты приложений — это обычный программы «ничего не делать».
 
 ## <a name="pcl-or-sap"></a>PCL или SAP?
 
-Можно создать решение Xamarin.Forms с общий код в переносимой библиотеки классов (PCL) или общего ресурса проекта (SAP). Чтобы создать решение SAP, выберите параметр Shared в Visual Studio. [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) решение демонстрирует SAP шаблон без изменений.
+Имеется возможность создать решение Xamarin.Forms с общим кодом в переносимой библиотеки классов (PCL) или общего ресурса проекта (SAP). Создание решения SAP, выберите параметр Shared в Visual Studio. [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) решение демонстрирует SAP шаблон без изменений.
 
-Пакеты подход PCL общего кода в проекте библиотеки ссылается проектов платформы приложений. С данным подходом SAP общий код эффективно существует во всех проектах приложения платформы и распределяется между ними.
+Пакеты подход PCL, общего кода в проекте библиотеки ссылаться проекты приложения платформы. При использовании SAP общий код фактически существует во всех проектах приложения платформы и распределяется между ними.
 
-Большинство разработчиков Xamarin.Forms предпочтительнее подход PCL. В этой книге большинство решений являются PCL. Те, которые используют SAP включают **Sap** суффикс имени проекта.
+Большинство разработчиков Xamarin.Forms предпочитают подход переносимой библиотеки Классов. В этой книге большинство решений, PCL. Те, которые используют SAP включают **Sap** суффикс имени проекта.
 
-Для поддержки всех платформ Xamarin.Forms, версии .NET, используемый PCL должны включать следующие платформы:
+Для поддержки всех платформ Xamarin.Forms, версию .NET, используемые в переносимую библиотеку Классов должны включать следующие платформы:
 
 - .NET Framework 4,5
 - Windows 8
 - Windows Phone 8.1
 - Xamarin.Android
 - Xamarin.iOS
-- Xamarin.IOS (Classic)
+- Xamarin.IOS (Классическая модель)
 
 Это называется 111 профиля ПК.
 
-В случае SAP код в общий проект может выполнять разный код для различных платформ, с помощью директивы препроцессора C# (`#if`, #`elif`, и `#endif`) со следующими предопределенные идентификаторы:
+При использовании SAP код в общем проекте можно выполнить разный код для различных платформ с помощью директивы препроцессора C# (`#if`, #`elif`, и `#endif`) с помощью этих предопределенных идентификаторов:
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
@@ -105,75 +105,75 @@ ms.locfileid: "35242751"
 - Windows 8.1: `WINDOWS_APP`
 - Windows Phone 8.1: `WINDOWS_PHONE_APP`
 
-В PCL можно определить, какие платформы, вы используете во время выполнения, как можно будет увидеть ниже в этой главе.
+В переносимую библиотеку Классов платформы вы используете во время выполнения, можно определить, как вы увидите далее в этой главе.
 
 ## <a name="labels-for-text"></a>Метки для текста
 
-[ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings) решений показано, как добавить новый файл C# для **Greetings** проекта. Этот файл определяет класс с именем `GreetingsPage` , производный от `ContentPage`. В этой книге, большинство проектов содержат один `ContentPage` производный класс, имя которого является имя проекта с суффиксом `Page` добавляется.
+[ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings) решении показано, как добавить новый файл C# для **Greetings** проекта. Этот файл определяет класс с именем `GreetingsPage` , наследуемый от класса `ContentPage`. В этой книге, большинство проектов содержат один `ContentPage` производных, имя которого является имя проекта с суффиксом `Page` добавляется.
 
-`GreetingsPage` Конструктор создает [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) представление, которое является Xamarin.Forms представление, которое отображает текст. [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) Задано значение текста, отображаемого элементом `Label`. Эта программа задает `Label` для `Content` свойство `ContentPage`. Конструктор `App` создает экземпляр класса `GreetingsPage` и задает для его `MainPage` свойство.
+`GreetingsPage` Конструктор создает [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) представление, которое является представление Xamarin.Forms, которое отображает текст. [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) Свойству присвоено тексту, отображаемому элементом `Label`. Эта программа задает `Label` для `Content` свойство `ContentPage`. Конструктор `App` создает экземпляр класса `GreetingsPage` и задает для его `MainPage` свойство.
 
-Текст отображается в левом верхнем углу страницы. На iOS это означает, что он перекрывает строки состояния страницы. Существует несколько решений этой проблемы:
+Текст отображается в левом верхнем углу страницы. В iOS это означает, что он перекрывает строки состояния страницы. Существует несколько решений этой проблемы:
 
-### <a name="solution-1-include-padding-on-the-page"></a>Решение 1. Включать заполнение на странице
+### <a name="solution-1-include-padding-on-the-page"></a>Решение 1. Включить внутренние поля на странице
 
-Задать [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) свойство на странице. `Padding` относится к типу [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/), структуру, используя четыре свойства:
+Задайте [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) свойство на странице. `Padding` имеет тип [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/), структуру, используя четыре свойства:
 
 - [`Left`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Left/)
 - [`Top`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Top/)
 - [`Right`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Right/)
 - [`Bottom`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Bottom/)
 
-`Padding` Определяет область внутри страницы, где исключается содержимого. Это позволяет `Label` Чтобы избежать перезаписи в строке состояния операций ввода-вывода.
+`Padding` Определяет область внутри страницы, где исключается содержимого. Это позволяет `Label` Чтобы избежать перезаписи строки состояния iOS.
 
-### <a name="solution-2-include-padding-just-for-ios-sap-only"></a>Решение 2. Включать заполнение только для операций ввода-вывода (SAP)
+### <a name="solution-2-include-padding-just-for-ios-sap-only"></a>Решение 2. Включить внутренние поля только для iOS (только для SAP)
 
-Задайте свойство «Заполнение» только для iOS с помощью SAP с директивой препроцессора C#. Это показано в [ **GreetingsSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/GreetingsSap) решения.
+Задайте свойство «Заполнение» только в iOS с помощью SAP с помощью директивы препроцессора C#. Это показано в [ **GreetingsSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/GreetingsSap) решения.
 
-### <a name="solution-3-include-padding-just-for-ios-pcl-or-sap"></a>Решение 3. Включать заполнение только для операций ввода-вывода (PCL или SAP)
+### <a name="solution-3-include-padding-just-for-ios-pcl-or-sap"></a>Решение 3. Включить внутренние поля только для iOS (переносимой библиотеки Классов или SAP)
 
-В версии Xamarin.Forms используется для книги `Padding` можно выбрать свойство для операций ввода-вывода в PCL или SAP с помощью [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) или [ `Device.OnPlatform<T>` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform%7BT%7D/p/T/T/T/) статический метод. Эти методы являются устаревшими
+В версии Xamarin.Forms, используемый для книги `Padding` свойства, относящиеся к операций ввода-вывода в SAP или переносимой библиотеки Классов можно выбрать с помощью [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) или [ `Device.OnPlatform<T>` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform%7BT%7D/p/T/T/T/) статический метод. Эти методы являются нерекомендуемыми
 
-`Device.OnPlatform` Методы используются для выполнения кода под конкретную платформу или выберите конкретные платформы значения. Они убедитесь, использование [ `Device.OS` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.OS/) статическое свойство только для чтения, то возвращает член [ `TargetPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetPlatform/) перечисления:
+`Device.OnPlatform` Методы используются для выполнения кода для конкретных платформ или для выбора значений, зависящих от платформы. На внутреннем уровне они делают использование [ `Device.OS` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.OS/) статический только для чтения свойство, которое возвращает элемент [ `TargetPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetPlatform/) перечисления:
 
-- [`iOS`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.iOS/)
-- [`Android`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Android/)
-- [`Windows`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Windows/) для Windows 8.1, Windows Phone 8.1 и все устройства UWP.
-- [`WinPhone`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.WinPhone/), ранее используется для идентификации Windows Phone 8.0, а также является теперь неиспользуемые
-- [`Other`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Other/) не используется
+- [`iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)
+- [`Android`](xref:Xamarin.Forms.TargetPlatform.Android)
+- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) для Windows 8.1, Windows Phone 8.1 и все устройства универсальной платформы Windows.
+- [`WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone), ранее используется для идентификации Windows Phone 8.0, а также является неиспользуемого сейчас
+- [`Other`](xref:Xamarin.Forms.TargetPlatform.Other) не используется
 
-`Device.OnPlatform` Методы, `Device.OS` свойство и `TargetPlatform` перечисления всех теперь рекомендуется к использованию. Вместо этого используйте [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) свойство и сравнить `string` возвращаемое значение с следующие статические поля:
+`Device.OnPlatform` Методы, `Device.OS` свойство и `TargetPlatform` перечисления отменяется, теперь устарело. Вместо этого используйте [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) свойство и сравнение `string` возвращаемое значение с следующие статические поля:
 
 - [`iOS`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.iOS/), строка «iOS»
 - [`Android`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Android/), строка «Android»
-- [`UWP`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.UWP/), строка «UWP», ссылающийся на платформу среды выполнения Windows
+- [`UWP`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.UWP/), строка «UWP», ссылающийся на платформы среды выполнения Windows
 - [`Windows`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Windows/), строка «Windows» для среды выполнения Windows (Windows 8.1 и Windows Phone 8.1)
 - [`WinPhone`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinPhone/), строка «WinPhone» для Windows Phone 8.0
 
-[ `Device.Idiom` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.Idiom/) Связанные статическое свойство только для чтения. Это возвращает член [ `TargetIdiom` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetIdiom/), который содержит следующие члены:
+[ `Device.Idiom` ](xref:Xamarin.Forms.Device.Idiom) Связана статическое свойство только для чтения. Возвращает член [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom), который содержит следующие члены:
 
-- [`Desktop`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetIdiom.Desktop/)
-- [`Tablet`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetIdiom.Tablet/)
-- [`Phone`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetIdiom.Phone/)
-- [`Unsupported`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetIdiom.Unsupported/) не используется
+- [`Desktop`](xref:Xamarin.Forms.TargetIdiom.Desktop)
+- [`Tablet`](xref:Xamarin.Forms.TargetIdiom.Tablet)
+- [`Phone`](xref:Xamarin.Forms.TargetIdiom.Phone)
+- [`Unsupported`](xref:Xamarin.Forms.TargetIdiom.Unsupported) не используется
 
-Для iOS и Android, отсечение между `Tablet` и `Phone` с книжной шириной 600 единиц. Для платформы Windows `Desktop` указывает приложения UWP, запущенного с Windows 10 `Tablet` — это программа Windows 8.1 и `Phone` указывает приложения UWP, на компьютерах под управлением Windows 10 или приложения Windows Phone 8.1.
+Для iOS и Android, отсечение между `Tablet` и `Phone` с книжной шириной 600 единиц. На платформе Windows `Desktop` указывает приложения универсальной платформы Windows, под управлением Windows 10, `Tablet` — это программа Windows 8.1 и `Phone` указывает приложения универсальной платформы Windows, под управлением Windows 10 или приложение Windows Phone 8.1.
 
 ## <a name="solution-3a-set-margin-on-the-label"></a>Решение 3a. Задание границы метки
 
-[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) Свойство было введено слишком поздно для включения в книге, но он также имеет тип `Thickness` , вы можете задать на `Label` для определения области за пределами представления, который включен в расчет макет представления.
+[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) Свойство было введено слишком поздно должны быть включены в книге, но он также является типом `Thickness` и его можно установить при `Label` для определения области за пределами представления, который включен в расчет макет представления.
 
-`Padding` Свойство доступно только на [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) и [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) производных продуктов. `Margin` Свойство доступно для всех [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) производных продуктов.
+`Padding` Свойство доступно только на [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) и [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) производные от него. `Margin` Свойство доступно для всех [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) производные от него.
 
-## <a name="solution-4-center-the-label-within-the-page"></a>Решение 4. Метка на странице центра
+## <a name="solution-4-center-the-label-within-the-page"></a>Решение 4. Center метку в странице
 
-Можно выровнять по центру `Label` в `Page` (или поместить его в один из восьми знаков), задав [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) и [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) свойства `Label` значение типа [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/). `LayoutOptions` Структура определяет два свойства:
+Можно выровнять по центру `Label` в `Page` (или поместить его в одном из восьми мест), задав [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) и [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) свойства `Label` значение типа [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/). `LayoutOptions` Структура определяет два свойства:
 
-- [ `Alignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Alignment/) Свойство типа [ `LayoutAlignment` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutAlignment/), перечисление с четырьмя элементами: [ `Start` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.Start/), означающее, что левого или верхнего в зависимости от Ориентация [ `Center` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.Center/), [ `End` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.End/), означающее правому или нижнему в зависимости от ориентации и [ `Fill` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.Fill/).
+- [ `Alignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Alignment/) Свойство типа [ `LayoutAlignment` ](xref:Xamarin.Forms.LayoutAlignment), это перечисление с четырьмя членами: [ `Start` ](xref:Xamarin.Forms.LayoutAlignment.Start), что означает левого или верхнего в зависимости от Ориентация [ `Center` ](xref:Xamarin.Forms.LayoutAlignment.Center), [ `End` ](xref:Xamarin.Forms.LayoutAlignment.End), означающее правую или нижнюю в зависимости от ориентации, и [ `Fill` ](xref:Xamarin.Forms.LayoutAlignment.Fill).
 
 - [ `Expands` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Expands/) Свойство типа `bool`.
 
-Обычно эти свойства не используется напрямую. Вместо этого сочетания этих свойств предоставляются восьми статических свойств только для чтения типа `LayoutOptions`:
+Обычно эти свойства не используются напрямую. Вместо этого сочетания этих двух свойств предоставляемых восьми статических свойств только для чтения типа `LayoutOptions`:
 
 - [`LayoutOptions.Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/)
 - [`LayoutOptions.Center`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Center/)
@@ -184,27 +184,27 @@ ms.locfileid: "35242751"
 - [`LayoutOptions.EndAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.EndAndExpand/)
 - [`LayoutOptions.FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/)
 
-`HorizontalOptions` и `VerticalOptions` являются наиболее важные свойства в макете Xamarin.Forms и рассматриваются более подробно в [ **Доп. Прокрутка стека**](chapter04.md).
+`HorizontalOptions` и `VerticalOptions` приведены наиболее важные свойства в макете Xamarin.Forms и обсуждаются более подробно в [ **Глава 4. Раскрутка стека**](chapter04.md).
 
 Ниже приведен результат с `HorizontalOptions` и `VerticalOptions` свойства `Label` равными `LayoutOptions.Center`:
 
-[![Тройной экрана приветствия программы](images/ch02fg05-small.png "метки по горизонтали и вертикали по центру")](images/ch02fg05-large.png#lightbox "метки по горизонтали и вертикали по центру")
+[![Тройной снимок экрана приветствия программы](images/ch02fg05-small.png "горизонтально и вертикально по центру метки")](images/ch02fg05-large.png#lightbox "метки по горизонтали и вертикали по центру")
 
 ## <a name="solution-5-center-the-text-within-the-label"></a>Решение 5. Центрирование текста в метке
 
-Выравнивание текста по центру (или поместить его в восьми расположения на странице), задав [ `HorizontalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.HorizontalTextAlignment/) и [ `VerticalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) свойства `Label` членом [ `TextAlignment` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TextAlignment/) перечисления:
+Выравнивание текста по центру (или поместить его в восемь места на странице), задав [ `HorizontalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.HorizontalTextAlignment/) и [ `VerticalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) свойства `Label` членом [ `TextAlignment` ](xref:Xamarin.Forms.TextAlignment) перечисления:
 
-- [`Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.TextAlignment.Start/), значение left или top (в зависимости от ориентации)
-- [`Center`](https://developer.xamarin.com/api/field/Xamarin.Forms.TextAlignment.Center/)
-- [`End`](https://developer.xamarin.com/api/field/Xamarin.Forms.TextAlignment.End/), то есть правому или нижнему (в зависимости от ориентации)
+- [`Start`](xref:Xamarin.Forms.TextAlignment.Start), значение слева или сверху (в зависимости от ориентации)
+- [`Center`](xref:Xamarin.Forms.TextAlignment.Center)
+- [`End`](xref:Xamarin.Forms.TextAlignment.End), то есть правую или нижнюю (в зависимости от ориентации)
 
-Эти свойства определяются только `Label`, тогда как `HorizontalAlignment` и `VerticalAlignment` свойства, определенные в `View` и наследуется всеми `View` производных продуктов. Visual результаты покажутся похожими, но это совершенно разные, как показано в следующей главе.
+Эти свойства определяются только `Label`, тогда как `HorizontalAlignment` и `VerticalAlignment` свойства, определенные в `View` и наследуют все `View` производные от него. Результаты visual покажутся схожими, но они сильно отличаются как показано в следующей главе.
 
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Полный текст Глава 2 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
-- [Образцы Глава 2](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
-- [Образцы Глава 2 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
+- [Глава 2 полнотекстового поиска (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
+- [Примеры Глава 2](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+- [Примеры Глава 2 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [Начало работы с Xamarin.Forms](~/xamarin-forms/get-started/index.md)

@@ -7,102 +7,102 @@ ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: d95e801f6a239e894c1f6baa68015659af9eba35
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0f9b9e27afd5dbbf52f3653995470136e794f17b
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241559"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935203"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Сводка главе 13. Растровые изображения
 
-Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) элемент отображает растровое изображение. Все платформы Xamarin.Forms поддерживают форматы файлов JPEG, GIF, PNG и BMP.
+Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) элемент отображает точечный рисунок. Все платформы Xamarin.Forms поддерживают форматы файлов JPEG, PNG, GIF и BMP.
 
 Растровые изображения в Xamarin.Forms поступать из четырех местах:
 
-- Через Интернет в соответствии с URL-адреса
-- Встроенного как ресурс в общих переносимой библиотеки классов
-- Встроенного как ресурс в проектах приложений платформы
-- В любом месте, которое можно ссылаться по .NET `Stream` объекта, включая `MemoryStream`
+- В Интернете в соответствии с URL-адрес
+- Внедрены в качестве ресурса в общей библиотеке переносных классов
+- Внедренного как ресурс в проектах приложений платформы
+- Из любого места, которое позволяет ссылаться на .NET `Stream` объекта, включая `MemoryStream`
 
-Ресурсы точечный рисунок в PCL являются зависят от платформы, а точечный рисунок ресурсов в проекты платформы зависят от платформы.
+Ресурсы точечного рисунка в переносимой библиотеке Классов являются независимыми от платформы, пока ресурсы точечного рисунка в проектах платформы зависят от платформы.
 
-Битовая карта задается путем присвоения [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) свойство `Image` для объекта типа [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/), абстрактный класс с тремя производные:
+Точечный рисунок, заданный, задав [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) свойство `Image` для объекта типа [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/), абстрактным классом с производными три:
 
-- [`UriImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) для доступа к растрового изображения в Интернете, на основе `Uri` объекта установить его [ `Uri` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.Uri/) свойство
+- [`UriImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) для доступа к растрового изображения в Интернете, на основе `Uri` присвоено его [ `Uri` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.Uri/) свойство
 - [`FileImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/) для доступа к растрового изображения, хранимые в проекте приложения платформы на основе пути файлов и папок его [ `File` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FileImageSource.File/) свойство
-- [`StreamImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.StreamImageSource/) для загрузки растрового изображения с помощью .NET `Stream` объект, заданный путем возвращения `Stream` из `Func` присвоено его [ `Stream` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StreamImageSource.Stream/) свойство
+- [`StreamImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.StreamImageSource/) для загрузки точечного рисунка, с помощью .NET `Stream` указанного путем возвращения объекта `Stream` из `Func` присвоено его [ `Stream` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StreamImageSource.Stream/) свойство
 
-В качестве альтернативы (и часто более) можно использовать следующие статические методы `ImageSource` класса, которые возвращают все `ImageSource` объектов:
+Кроме того (и чаще) можно использовать следующие статические методы `ImageSource` класс, которые возвращают `ImageSource` объектов:
 
 - [`ImageSource.FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) для доступа к растрового изображения в Интернете, на основе `Uri` объекта
-- [`ImageSource.FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) для доступа к растрового изображения, хранящиеся в виде внедренного ресурса в PCL, приложение или [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Type/) или [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Reflection.Assembly/) для доступа к растрового изображения в другой сборке источника
+- [`ImageSource.FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) для доступа к растрового изображения, хранящиеся в виде внедренного ресурса в PCL, приложения или [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Type/) или [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Reflection.Assembly/) для доступа к растрового изображения в другой сборке источника
 - [`ImageSource.FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) для доступа к растрового изображения из проекта приложения платформы
-- [`ImageSource.FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) для загрузки растрового изображения на основе `Stream` объекта
+- [`ImageSource.FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) для загрузки точечного рисунка, на основе `Stream` объекта
 
-Отсутствует эквивалент класса из `Image.FromResource` методы. `UriImageSource` Класс является полезным, если требуются для управления кэшированием. `FileImageSource` Класс удобно использовать в XAML. `StreamImageSource` полезно для асинхронной загрузки `Stream` объектов, в то время как `ImageSource.FromStream` является синхронным.
+Отсутствует эквивалент класса из `Image.FromResource` методы. `UriImageSource` Класс может быть полезен, если вам нужно управлять кэшированием. `FileImageSource` Класс полезен в XAML. `StreamImageSource` полезно для асинхронной загрузки объекта `Stream` объектов, тогда как `ImageSource.FromStream` выполняется в синхронном режиме.
 
-## <a name="platform-independent-bitmaps"></a>Независимая от платформы растровые изображения
+## <a name="platform-independent-bitmaps"></a>Точечные рисунки независимо от платформы
 
-[ **WebBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode) проекта загружает точечный рисунок через веб-с помощью `ImageSource.FromUri`. `Image` Задан равным `Content` свойство `ContentPage`, поэтому он ограничен размер страницы. Независимо от размера растрового изображения, ограниченного `Image` элемент растягивается на размер контейнера и точечный рисунок отображается в максимального размера в `Image` элемент сохранением пропорции растрового изображения. Области `Image` за пределы растрового изображения окрашенные [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/).
+[ **WebBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode) проекта загружает растровый рисунок по Интернету при помощи `ImageSource.FromUri`. `Image` Элементу присваивается `Content` свойство `ContentPage`, поэтому он ограничен размер страницы. Независимо от размера точечного рисунка, ограниченный ресурсами `Image` элемент растягивается по размеру контейнера и точечный рисунок отображается в его максимальный размер в рамках `Image` элемент сохранением пропорции растрового изображения. Области `Image` за пределы растрового изображения будут выделены цветом с [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/).
 
 [ **WebBitmapXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapXaml) пример аналогичен, но просто задает `Source` URL-адрес. Преобразование обрабатывается [ `ImageSourceConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSourceConverter/) класса.
 
-### <a name="fit-and-fill"></a>Размеры и заполнения
+### <a name="fit-and-fill"></a>По размеру и заливки
 
-Можно управлять растяжением растрового изображения, задав [ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) свойство `Image` для одного из следующих членов [ `Aspect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Aspect/) перечисления:
+Можно управлять как растровое изображение растягивается, задав [ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) свойство `Image` к одному из следующих членов [ `Aspect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Aspect/) перечисления:
 
-- [`AspectFit`](https://developer.xamarin.com/api/field/Xamarin.Forms.Aspect.AspectFit/): соблюдает пропорции (по умолчанию)
-- [`Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.Aspect.Fill/): заполняет область, не сохраняет пропорции
-- [`AspectFill`](https://developer.xamarin.com/api/type/Xamarin.Forms.Aspect.AspectFill/): заполняет область, но соблюдает пропорции, возможно благодаря обрезки части растрового изображения
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit): учитывает пропорции (по умолчанию)
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill): заполняет область, не сохраняет пропорции
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill): заполняет область, но учитывает пропорции, выполнена Обрезка части точечного рисунка
 
 ### <a name="embedded-resources"></a>Внедренные ресурсы
 
-Можно добавить файл точечного рисунка для PCL или папку в PCL. Присвойте ему **действие при построении** из **EmbeddedResource**. [ **ResourceBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ResourceBitmapCode) образце демонстрируется использование `ImageSource.FromResource` для загрузки файла. Имя ресурса, который передается в метод состоит из имени сборки, за которым следует точка, за которым следует имя необязательно папки и точкой, а затем по имени файла.
+Можно добавить к файлу точечного рисунка, PCL или папки в переносимой библиотеке Классов. Присвойте ему **действие при построении** из **EmbeddedResource**. [ **ResourceBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ResourceBitmapCode) образце показано, как использовать `ImageSource.FromResource` для загрузки файла. Имя ресурса, передаваемые методу состоит из имени сборки, за которым следует точка, за которым следует имя необязательная папка и точкой, а затем имя файла.
 
-Программа наборы `VerticalOptions` и `HorizontalOptions` свойства `Image` для `LayoutOptions.Center`, что делает `Image` неограниченное элемент. `Image` И растрового изображения имеют одинаковый размер:
+Наборы программы `VerticalOptions` и `HorizontalOptions` свойства `Image` для `LayoutOptions.Center`, что делает `Image` элемент без ограничений. `Image` И растрового изображения имеют одинаковый размер:
 
-- В iOS и Android `Image` размер пикселей растрового изображения. Имеется взаимно-однозначное сопоставление между пикселей растрового изображения и экран пикселей.
-- Для платформ среды выполнения Windows `Image` размер пикселей растрового изображения в аппаратно независимых единицах. На большинство устройств каждого пикселя точечный рисунок занимает несколько точек.
+- В iOS и Android `Image` является размер растрового изображения в пикселях. Имеется однозначное сопоставление между пикселов точечного рисунка и точек.
+- На платформах среды выполнения Windows `Image` — это размер пикселей растрового изображения в аппаратно независимых единицах. На большинстве устройств каждый пиксел точечный рисунок занимает несколько точек.
 
-[ **StackedBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap) пример помещает `Image` в вертикальной `StackLayout` в XAML. Расширения разметки с именем [ `ImageResourceExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs) позволяет ссылаться на внедренный ресурс в XAML. Этот класс загружает только ресурсы из сборки, в котором она расположена, поэтому он не может быть помещен в библиотеку.
+[ **StackedBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap) пример помещает `Image` в вертикальном `StackLayout` в XAML. Расширения разметки с именем [ `ImageResourceExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs) позволяет ссылаться на внедренный ресурс в XAML. Этот класс только загружает ресурсы из сборки, в котором она размещается, поэтому он не может быть помещен в библиотеку.
 
 ### <a name="more-on-sizing"></a>Дополнительные сведения об изменения размера
 
-Часто желательно, к точечным рисункам размер постоянно среди всех платформ.
-Эксперименты с **StackedBitmap**, можно задать `WidthRequest` на `Image` элемент в вертикальной `StackLayout` обеспечение согласованности между платформами, но размер можно только уменьшить размер, при использовании этого метода.
+Часто желательно, чтобы точечные рисунки размером согласованно среди всех платформ.
+Поэкспериментировав с **StackedBitmap**, можно задать `WidthRequest` на `Image` элемент в вертикальном `StackLayout` обеспечение согласованности между платформами, но размер может уменьшаться размер только при использовании этого метода.
 
-Можно также задать `HeightRequest` делает изображение размеров, согласованные на платформах, но ограничивает ограниченного Ширина растрового изображения универсальность этого метода. Для изображения в вертикальной `StackLayout`, `HeightRequest` следует избегать.
+Можно также задать `HeightRequest` чтобы сделать образ размером согласованное на платформах, но ограниченное ширину растрового изображения будет ограничить гибкость использования этой технологии. Для изображения в вертикальном `StackLayout`, `HeightRequest` следует избегать.
 
-Лучшим решением является его с растровым изображением, превышает ширину в аппаратно независимых единицах телефона и устанавливает значение `WidthRequest` до требуемой ширины в аппаратно независимых единицах. Это показано в [ **DeviceIndBitmapSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DeviceIndBitmapSize) образца.
+Лучше всего начать с растровым изображением шире, чем phone ширину в аппаратно независимых единицах и задайте `WidthRequest` до требуемой ширины в аппаратно независимых единицах. Это показано в [ **DeviceIndBitmapSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DeviceIndBitmapSize) образца.
 
-[ **MadTeaParty** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/MadTeaParty) отображает главе 7 Льюис Carroll *Анны приключения в Wonderland* с исходной иллюстрации, Джон Tenniel:
+[ **MadTeaParty** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/MadTeaParty) отображает седьмой главе Льюиса Кэрролла *Алисы приключения в Страна чудес* с исходной иллюстрациями, Джон Tenniel:
 
-[![Тройной экрана mad стороны чая](images/ch13fg16-small.png "Mad текст книги чая стороны Hatters")](images/ch13fg16-large.png#lightbox "Mad текст книги Hatters стороной чая")
+[![Тройной снимок mad сторона чая](images/ch13fg16-small.png "Mad текст книги чая сторона Hatters")](images/ch13fg16-large.png#lightbox "Mad текст книги Hatters сторона чая")
 
 ### <a name="browsing-and-waiting"></a>Обзор и ожидания
 
-[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) образец позволяет пользователю выполнять поиск стандартных изображений, хранящихся на веб-сайте Xamarin. Она использует .NET `WebRequest` класс, чтобы загрузить файл JSON со списком точечных рисунков.
+[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) образец позволяет пользователю просматривать через готовые образы, хранящиеся на веб-сайте Xamarin. Она использует .NET `WebRequest` класса, чтобы скачать JSON-файл со списком точечных рисунков.
 
-Программа использует [ `ActivityIndicator` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/) для указания, что что-то происходит. При загрузке каждого растрового изображения, доступной только для чтения [ `IsLoading` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.IsLoading/) свойство `Image` — `true`. `IsLoading` Резервируется привязываемые свойства, поэтому `PropertyChanged` событие при изменении этого свойства. Программа присоединяет обработчик этого события и использует текущую настройку `IsLoaded` для задания [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/) свойство `ActivityIndicator`.
+Программа использует [ `ActivityIndicator` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/) для указания, что что-то происходит. При загрузке каждого растрового изображения, доступной только для чтения [ `IsLoading` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.IsLoading/) свойство `Image` является `true`. `IsLoading` Резервируется привязываемые свойства, поэтому `PropertyChanged` событие при изменении этого свойства. Программа присоединяет обработчик к этому событию и использует текущее значение параметра `IsLoaded` присвоить [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/) свойство `ActivityIndicator`.
 
-## <a name="streaming-bitmaps"></a>Потоковая передача растровые изображения
+## <a name="streaming-bitmaps"></a>Потоковая передача точечных рисунков
 
-`ImageSource.FromStream` Метод создает `ImageSource` основании .NET `Stream`. Метод должен быть передан `Func` объект, который возвращает `Stream` объекта.
+`ImageSource.FromStream` Метод создает `ImageSource` на основе .NET `Stream`. Метод должен быть передан `Func` объект, который возвращает `Stream` объекта.
 
 ### <a name="accessing-the-streams"></a>Доступ к потоки
 
-[ **BitmapStreams** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/BitmapStreams) образце демонстрируется использование `ImaageSource.FromStream` метод для загрузки растрового изображения, хранящегося в виде внедренного ресурса и для загрузки растрового изображения в Интернете.
+[ **BitmapStreams** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/BitmapStreams) образце показано, как использовать `ImaageSource.FromStream` метод для загрузки хранятся в виде внедренного ресурса точечного рисунка и для загрузки точечного рисунка в Интернете.
 
 ### <a name="generating-bitmaps-at-run-time"></a>Создание растровых изображений во время выполнения
 
-Все платформы Xamarin.Forms поддерживают несжатый формат файлов BMP, который можно легко создать в коде и затем сохранить в `MemoryStream`. Этот прием позволяет типовой Создание растровых изображений во время выполнения, как осуществляется в [ `BmpMaker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs) класса в **Xamrin.FormsBook.Toolkit** библиотеки.
+Все платформы Xamarin.Forms поддерживают несжатых формат файла BMP, которую можно легко создавать в коде и затем сохранить в `MemoryStream`. Этот прием позволяет алгоритмически Создание растровых изображений во время выполнения, реализованное в [ `BmpMaker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs) в класс **Xamrin.FormsBook.Toolkit** библиотеки.
 
-«Самообслуживания» [ **DiyGradientBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DiyGradientBitmap) образце демонстрируется использование `BmpMaker` для создания растрового изображения с помощью образа градиента.
+«Самообслуживания» [ **DiyGradientBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DiyGradientBitmap) в нем демонстрируется использование `BmpMaker` для создания растрового изображения с помощью градиента образа.
 
-## <a name="platform-specific-bitmaps"></a>Специфический для платформы растровые изображения
+## <a name="platform-specific-bitmaps"></a>Растровые изображения для конкретных платформ
 
-Все платформы Xamarin.Forms Разрешить сохранение растровых изображений в сборки платформы приложений. При получении приложением Xamarin.Forms, платформа растровых изображения имеют тип [ `FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/). Они используются для:
+Все платформы Xamarin.Forms Разрешить сохранение растровых изображений в сборки платформы приложений. При получении приложением Xamarin.Forms, эти точечные рисунки платформы имеют тип [ `FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/). Они используются для:
 
 - [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) свойство [`MenuItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/)
 - [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) свойство [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)
@@ -110,88 +110,88 @@ Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.I
 
 Сборки платформы уже содержат точечные рисунки, значки и экраны-заставки:
 
-- В проекте iOS в **ресурсов** папки
-- В проекте Android в подпапках **ресурсов** папки
-- В проектах Windows в **активы** папку (несмотря на то, что к этой папке платформы Windows не ограничить растровые изображения)
+- В проекте iOS в **ресурсы** папки
+- В проекте Android в подпапках **ресурсы** папки
+- В проектах Windows в **активы** папку (несмотря на то, что к этой папке на платформах Windows не ограничивают растровые изображения)
 
-[ **PlatformBitmaps** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/PlatformBitmaps) примере используется код для отображения значка из проектов платформы приложений.
+[ **PlatformBitmaps** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/PlatformBitmaps) примере используется код для отображения значка из проектов приложений для платформы.
 
-### <a name="bitmap-resolutions"></a>Битовая карта разрешений экрана
+### <a name="bitmap-resolutions"></a>Разрешение растрового изображения
 
-Все платформы позволяют хранить несколько версий растровых изображений для различных устройств разрешений. Во время выполнения нужной версии загружается в зависимости от разрешения экрана устройства.
+Все платформы позволяют хранить несколько версий точечных рисунков для разрешений на другое устройство. Во время выполнения правильную версию загружается в зависимости от разрешения экрана устройства.
 
-На iOS эти битовые карты, различаются по суффикс к имени файла:
+В iOS эти точечные рисунки, различаются по суффикс к имени файла:
 
 - Без суффикса для устройств 160 точек на ДЮЙМ (1 пиксель в аппаратно независимая единица)
 - "@2x" суффикс для устройств 320 точек на ДЮЙМ (2 точек в DIU)
 - "@3x" суффикс для устройств 480 точек на ДЮЙМ (3 точек в DIU)
 
-Точечный рисунок должен отображаться в виде квадрата 1 дюйм будет существовать в трех версиях:
+Растровое изображение, предназначенное для отображения как квадрат 1 дюйм будет существовать в трех версиях:
 
-- MyImage.jpg в квадрат 160 пикселей
-- MyImage@2x.jpg на квадратный 320 пикселей
-- MyImage@3x.jpg в квадратных 480 пикселей
+- MyImage.jpg 160 точек square
+- MyImage@2x.jpg 320 пикселов в квадрат
+- MyImage@3x.jpg 480 точек square
 
-Программа относится это растровое изображение как MyImage.jpg, но соответствующая версия извлекается во время выполнения на основе разрешения экрана. При отсутствии ограничений растровое изображение всегда будет отображаться на 160 аппаратно независимых единицах.
+Программа ссылаетесь на дополнительное этим растровым изображением, как MyImage.jpg, но правильную версию извлекается во время выполнения на основе разрешения экрана. При отсутствии ограничений точечный рисунок всегда будет отображаться на 160 аппаратно независимых единицах.
 
-Для Android, битовые карты хранятся в различных вложенных папках **ресурсов** папки:
+Для Android, битовые карты хранятся в различных подпапках **ресурсы** папку:
 
 - drawable-ldpi (низкий точек на ДЮЙМ) для устройств 120 точек на ДЮЙМ (0,75 точек в DIU)
 - drawable-mdpi (средний) для устройств 160 точек на ДЮЙМ (1 пиксель в DIU)
 - drawable-hdpi (высокий) для устройств 240 точек на ДЮЙМ (1,5 точек в DIU)
-- drawable-xhdpi (очень высокий) для устройств 320 точек на ДЮЙМ (2 точек в DIU)
-- drawable-xxhdpi (лишние очень высокая) для устройств 480 точек на ДЮЙМ (3 точек в DIU)
-- drawable-xxxhdpi (три дополнительных различных) для устройств 640 точек на ДЮЙМ (4 точек, в DIU)
+- drawable-xhdpi (очень высокое) для устройств 320 точек на ДЮЙМ (2 точек в DIU)
+- drawable-xxhdpi (очень очень высокий уровень) для устройств 480 точек на ДЮЙМ (3 точек в DIU)
+- drawable-xxxhdpi (три дополнительных Удачи) для устройств 640 точек на ДЮЙМ (4 точек в DIU)
 
-Точечный рисунок предназначен для отображения на квадратный один дюйм различные версии растровое изображение будет иметь то же имя, но другого размера и хранящиеся в этих папках:
+Для точечного рисунка, который предназначен для отображения на одной квадратный дюйм в различных версиях растровое изображение будет тем же именем, но другого размера и хранящиеся в этих папках:
 
-- drawable-ldpi или MyImage.jpg на 120 пикселей квадрат
-- drawable-mdpi/MyImage.jpg в квадрат 160 пикселей
-- drawable-hdpi-MyImage.jpg в квадрат 240 пикселей
-- drawable-xhdpi/MyImage.jpg в квадрат 320 пикселей
-- drawable-xxhdpi/MyImage.jpg в квадрат 480 пикселей
+- drawable-ldpi/MyImage.jpg на 120 пикселей ниже square
+- drawable-mdpi/MyImage.jpg 160 точек square
+- drawable-hdpi/MyImage.jpg в квадрат составляет 240 пикселей
+- drawable-xhdpi/MyImage.jpg 320 пикселов в квадрат
+- drawable-xxhdpi/MyImage.jpg 480 точек square
 - drawable-xxxhdpi/MyImage.jpg в квадрат 640 пикселей
 
-Растровое изображение всегда будет отображаться на 160 аппаратно независимых единицах. (Стандартный шаблон решения Xamarin.Forms включает только hdpi, xhdpi и xxhdpi папок.)
+Точечный рисунок всегда будет отображаться на 160 аппаратно независимых единицах. (Стандартный шаблон решения Xamarin.Forms включает только hdpi, xhdpi и xxhdpi папок.)
 
-Проекты среды выполнения Windows поддерживает растрового изображения, состоящий из коэффициент масштабирования в пикселях аппаратно независимые единицы в процентах, например схему именования:
+Проекты среды выполнения Windows поддерживают Битовая карта, состоящий из коэффициент масштабирования в пикселях на аппаратно независимые единицы в процентах, например схему именования:
 
-- MyImage.scale-200.jpg в квадрат 320 пикселей
+- MyImage.scale-200.jpg 320 пикселов в квадрат
 
-Допустимы только некоторые проценты. Примеры программ для этой книги включать только изображения с **масштаб 200** суффиксы, но текущего решения шаблоны Xamarin.Forms, которые включают **масштаб 100**, **шкалы 125**, **масштаб 150**, и **масштаб 400**.
+Только некоторые процентные показатели являются допустимыми. Примеры программ, эта книга включают в себя только образы с **масштаб 200** суффиксы, но текущее решение шаблоны Xamarin.Forms, которые включают **масштаб 100**, **масштабирования 125**, **масштабирования до 150**, и **масштаба 400**.
 
-При добавлении растровых изображений в проектах платформы **действие построения** должно быть:
+При добавлении точечных рисунков в проекты платформы **действие при построении** должно быть:
 
 - iOS: **BundleResource**
 - Android — **AndroidResource**
 - Среда выполнения Windows: **содержимого**
 
-[ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap) образце создаются два объекта как кнопки, состоящий из `Image` элементы с `TapGestureRecognizer` установлен. Предполагается, что объекты были квадрат 1 дюйм. `Source` Свойство `Image` задается с помощью `OnPlatform` и `On` объектов для ссылки на имена других файлов на платформах. Растровые изображения включать цифры, указывающее, их размер в пикселях, чтобы можно было видеть, какие размер растрового изображения извлекается и подготовке к просмотру.
+[ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap) пример создает два объекта аналогичный кнопке, состоящий из `Image` элементов при помощи `TapGestureRecognizer` установлен. Предполагается, что объекты были квадрат 1 дюйм. `Source` Свойство `Image` задается с помощью `OnPlatform` и `On` объектов для ссылки на потенциально различные имена файлов на платформах. Растровые изображения включают значения указывают их размер в пикселях, чтобы можно было видеть, какой размер растрового изображения извлекается и подготовке к просмотру.
 
 ### <a name="toolbars-and-their-icons"></a>Панели инструментов и соответствующие значки
 
-Одно из основных применений точечных рисунков платформой является инструментов Xamarin.Forms, которая создается с помощью добавления [ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) объектов [ `ToolbarItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.ToolbarItems/) определяется коллекции`Page`. `ToobarItem` является производным от [ `MenuItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/) от которого он наследует некоторые свойства.
+Одним из основных применений точечных рисунков, специфические для платформы является панели инструментов Xamarin.Forms, которое создается с помощью добавления [ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) объектов [ `ToolbarItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.ToolbarItems/) определяется коллекции`Page`. `ToobarItem` является производным от [ `MenuItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/) от которого он наследует некоторые свойства.
 
 Наиболее важным `ToolbarItem` свойства являются:
 
 - [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Text/) для текста, который может присутствовать в зависимости от платформы и `Order`
-- [`Icon`](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) Тип `FileImageSource` для образа, который может присутствовать в зависимости от платформы и `Order`
-- [`Order`](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Order/) Тип [ `ToolbarItemOrder` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItemOrder/), перечисление с тремя членами [ `Default` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ToolbarItemOrder.Default/), [ `Primary` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ToolbarItemOrder.Primary/), и [ `Secondary` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ToolbarItemOrder.Secondary/).
+- [`Icon`](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) типа `FileImageSource` для изображения, которое может отображаться в зависимости от платформы и `Order`
+- [`Order`](xref:Xamarin.Forms.ToolbarItem.Order) типа [ `ToolbarItemOrder` ](xref:Xamarin.Forms.ToolbarItemOrder), перечисление с тремя членами [ `Default` ](xref:Xamarin.Forms.ToolbarItemOrder.Default), [ `Primary` ](xref:Xamarin.Forms.ToolbarItemOrder.Primary), и [ `Secondary` ](xref:Xamarin.Forms.ToolbarItemOrder.Secondary).
 
-Количество `Primary` должно быть ограничено трех или четырех элементов. Следует включить `Text` для всех элементов. Для большинства платформ, только `Primary` элементы требуется `Icon` , но требует Windows 8.1 `Icon` для всех элементов. Значки должны иметь размер 32 аппаратно независимых единицах квадрат. `FileImageSource` Тип указывает, что они специфический для платформы.
+Количество `Primary` элементы должны быть ограничены трем или четырем. Следует включить `Text` для всех элементов. Для большинства платформ, только `Primary` элементы, требующие `Icon` , но требуется Windows 8.1 `Icon` для всех элементов. Значки должны иметь 32 аппаратно независимых единицах square. `FileImageSource` Тип указывает, что они зависят от платформы.
 
-`ToolbarItem` Активируется [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) событие при касании очень похоже на `Button`. `ToolbarItem` также поддерживает [ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Command/) и [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.CommandParameter/) часто используется в связи с MVVM свойства. (См. [Глава 18, MVVM](chapter18.md)).
+`ToolbarItem` Активируется [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) событий шифрованию, очень похоже на `Button`. `ToolbarItem` также поддерживает [ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Command/) и [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.CommandParameter/) свойства часто используются в связи с MVVM. (См. в разделе [Глава 18, MVVM](chapter18.md)).
 
-IOS и Android требуют страница, на которой отображается панель инструментов [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) или страницы, переход по `NavigationPage`. [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) программы наборы `MainPage` свойство его `App` класса [ `NavigationPage` конструктор](https://developer.xamarin.com/api/constructor/Xamarin.Forms.NavigationPage.NavigationPage/p/Xamarin.Forms.Page/) с `ContentPage` аргумент и демонстрируется построение и обработчиком событий панели инструментов.
+IOS и Android требовать, чтобы страница, на которой отображается панель инструментов [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) или страницы был переход по `NavigationPage`. [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) программировать наборы `MainPage` свойство его `App` класс [ `NavigationPage` конструктор](https://developer.xamarin.com/api/constructor/Xamarin.Forms.NavigationPage.NavigationPage/p/Xamarin.Forms.Page/) с `ContentPage` аргумент и демонстрирует построение и обработчиком событий панели инструментов.
 
 ### <a name="button-images"></a>Изображения кнопки
 
-Растровые изображения платформой также можно использовать для задания [ `Image` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Image/) свойство `Button` к растровому изображению квадрата 32 аппаратно независимых единицах, как показано в предыдущем [ **ButtonImage** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage) образца.
+Также можно использовать точечные рисунки с платформой для задания [ `Image` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Image/) свойство `Button` к растровому изображению квадрата 32 аппаратно независимых единицах, как показано [ **ButtonImage** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage) образец.
 
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Полный текст главе 13 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
-- [Образцы в главе 13](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
+- [Глава 13 полнотекстового поиска (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
+- [Примеры в главе 13](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 - [Работа с образами](~/xamarin-forms/user-interface/images.md)

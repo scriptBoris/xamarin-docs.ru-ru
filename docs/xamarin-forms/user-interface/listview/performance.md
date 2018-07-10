@@ -1,32 +1,32 @@
 ---
 title: Производительность элемента управления ListView
-description: Хотя ListView — это полезное представление для отображения данных, она имеет некоторые ограничения. В этой статье объясняется, как обеспечить высокую производительность с помощью Xamarin.Forms ListView, в приложении.
+description: Несмотря на то, что ListView является мощным представление для отображения данных, он имеет некоторые ограничения. В этой статье объясняется, как обеспечить высокую производительность с ListView Xamarin.Forms в приложении.
 ms.prod: xamarin
 ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: f1707a6b2a1dc03ae1346520bf29ff83f0fe74fb
-ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
+ms.openlocfilehash: 906fd60954b18064467e665295dba8bb75ed5a45
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36309815"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935593"
 ---
 # <a name="listview-performance"></a>Производительность элемента управления ListView
 
-При написании приложений для мобильных устройств, производительность имеет значение. Пользователи привыкли плавная прокрутка и время быстрой загрузки. Несоответствие требованиям ожиданий пользователей будет стоить оценки в хранилище приложения или в случае с бизнес-приложением затрат время и деньги.
+При написании приложений для мобильных устройств, производительность имеет значение. Пользователи привыкли плавную прокрутку и время быстрой загрузки. Несоответствие требованиям ожиданиям пользователей будет стоить вам оценки в хранилище приложения или в случае с бизнес-приложением издержек время и деньги.
 
-Несмотря на то что [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) — это мощная представление для отображения данных, она имеет некоторые ограничения. Прокрутка производительность может снизиться при использовании пользовательских ячеек, особенно в том случае, если они содержат большим уровнем вложенности представление иерархии или использовать определенные макеты, требующие много измерения. К счастью существуют методы, которые можно использовать, чтобы избежать низкой производительности.
+Несмотря на то что [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) — это полезное представление для отображения данных, он имеет некоторые ограничения. Производительность прокрутки может заметно снижаться при использовании пользовательских ячеек, особенно в том случае, если они содержат представлений с глубоким иерархий или использовать определенные макеты, которые требуют значительных измерения. К счастью существуют методы, которые можно использовать, чтобы избежать снижения производительности.
 
 <a name="cachingstrategy" />
 
-## <a name="caching-strategy"></a>Стратегия кэширования
+## <a name="caching-strategy"></a>Стратегии кэширования
 
-Представлениях ListView часто используются для отображения данных гораздо больше, чем можно вписать на экране. Например, рассмотрим приложении музыки. Возможно, библиотека песен тысячи записей. Простой подход, который следует создать строку для каждой песни, будет иметь низкую производительность. Этот подход много ценных памяти и может привести к снижению прокрутки для сканирования. Другой подход заключается в том, чтобы создавать и уничтожать строк как данных в области просмотра. Требуется постоянное создание экземпляра и очистки объектов представления, которые могут быть очень медленно.
+ListViews часто используются для отображения данных гораздо больше, чем можно вписать на экране. Например, рассмотрим приложение music. Библиотека песен возможно, тысяч вхождений. Простой подход, который следует создать строку для каждой песни, бы к снижению производительности. Этот подход впустую экономии памяти и могут замедлить прокрутка для сканирования. Другой подход заключается в том, чтобы создавать и уничтожать строк как данных в области просмотра. Требуется постоянное при создании экземпляра и очистки объектов представления, которые могут быть очень медленно.
 
-Для экономии памяти собственный [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) эквиваленты для каждой платформы имеют встроенные функции для повторного использования строк. Только ячейки, видимым на экране, загружаются в память и **содержимого** загружается в существующие ячейки. Это предотвращает приложение от необходимости создания экземпляра тысяч объектов, экономя время и память.
+Для экономии памяти, собственного [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) эквиваленты для каждой платформы имеют встроенные функции для повторного использования строк. Только ячейки, которые отображаются на экране, загруженные в память и **содержимого** загружается в существующие ячейки. Это дает приложению от необходимости создания экземпляра тысячи объектов, экономя время и память.
 
 Xamarin.Forms позволяет [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ячейки повторного использования через [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) перечисления, который имеет следующие значения:
 
@@ -40,29 +40,29 @@ public enum ListViewCachingStrategy
 ```
 
 > [!NOTE]
-> Игнорирует универсальной платформы Windows (UWP) [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) кэширование стратегии, поскольку он всегда использует кэширования для повышения производительности. Таким образом, по умолчанию он ведет себя как если бы [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) применяется стратегия кэширования.
+> Игнорирует универсальной платформы Windows (UWP) [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement) стратегию, кэширования, так как он всегда использует кэширование для повышения производительности. Таким образом, по умолчанию он ведет себя так, как если [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) применяется стратегию кэширования.
 
 ### <a name="retainelement"></a>RetainElement
 
-[ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) Стратегию кэширования указывает, что [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) создаст ячейки для каждого элемента в списке, и значение по умолчанию `ListView` поведение. Обычно он должен использоваться в следующих случаях:
+[ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement) Стратегию кэширования указывает, что [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) создаст ячейку для каждого элемента в списке, и значение по умолчанию `ListView` поведение. Как правило, его следует использовать в следующих случаях:
 
-- Когда каждая ячейка имеет большое количество привязок (20-30 +).
-- При изменении часто шаблона ячеек.
-- Если проверка показывает, что `RecycleElement` кэширования результатов стратегии в снижение быстродействия.
+- Когда каждая ячейка имеет большое количество привязок (20-30 и более).
+- Когда шаблон ячейки часто изменяется.
+- Если тестирование показывает, что `RecycleElement` кэширования результатов стратегии в снижение быстродействия.
 
-Очень важно для распознавания последствия [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) стратегию кэширования при работе с пользовательские ячейки. Любой код инициализации ячейки необходимо выполнить для создания каждой ячейки, которое может быть несколько раз в секунду. В этом случае методы макета, которые были правильно на странице, как и с помощью нескольких вложенных [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) экземпляров становятся узкие места по производительности, когда они настраиваются и уничтожается в режиме реального времени прокрутке пользователем.
+Очень важно для распознавания последствия [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement) стратегию кэширования, при работе с пользовательские ячейки. Код для инициализации ячейки будет нужно запускать для создания каждой ячейки, которое может иметь несколько раз в секунду. В этом случае макет методики, которые были правильно на странице, такие как с помощью нескольких вложенных [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) экземпляра, становятся узких мест производительности, когда они настроены и уничтожается в режиме реального времени прокрутке пользователем.
 
 <a name="recycleelement" />
 
 ### <a name="recycleelement"></a>RecycleElement
 
-[ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) Стратегию кэширования указывает, что [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) попытается уменьшить скорость место, занимаемое и выполнения его памяти путем перезапуска ячейки списка. Этот режим не всегда обеспечивает более высокую производительность и определить, какие улучшения необходимо проводить тестирование. Тем не менее оно обычно является предпочтительным вариантом выбора и должен использоваться в следующих случаях:
+[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) Стратегию кэширования указывает, что [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) будет старайтесь свести к минимуму его памяти объема и скорости выполнения путем перезапуска ячейки списка. Этот режим не всегда обеспечивает повышение производительности и тестирование следует провести, чтобы определить, какие-либо улучшения. Тем не менее он обычно является предпочтительным вариантом и следует использовать в следующих случаях:
 
-- Когда каждая ячейка имеет небольших и среднее количество привязок.
+- Когда каждая ячейка имеет небольших и умеренное число привязок.
 - При каждой ячейки [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) определяет все ячейки данных.
-- При каждой ячейке во многом аналогично с неизменяемым шаблона ячейки.
+- При каждой ячейки схожее с неизменяемым шаблона ячеек.
 
-Во время виртуализации ячейки будут иметь соответствующего контекста привязок обновлена, и поэтому если приложение использует этот режим она должна обеспечивать правильно обрабатывать обновления контекста привязки. Все данные о ячейке должны поступать из контекста привязки или могут возникнуть ошибки согласованности. Это можно сделать с помощью привязки данных для отображения данных ячейки. Кроме того, данные ячейки следует задавать в `OnBindingContextChanged` переопределения, а не в конструкторе пользовательских ячеек, как показано в следующем примере кода:
+Во время виртуализации ячейка будет иметь контекст привязки обновлены и поэтому если приложение использует этот режим его необходимо убедиться, правильно обрабатывать обновления контекста привязки. Все данные о ячейке должны поступать из контекста привязки, или, возможно возникновение ошибок согласованности. Это можно сделать с помощью привязки данных для отображения данных ячейки. Кроме того, данные ячейки следует задавать в `OnBindingContextChanged` переопределить, а не в конструктор пользовательской ячейки, как показано в следующем примере кода:
 
 ```csharp
 public class CustomCell : ViewCell
@@ -87,33 +87,33 @@ public class CustomCell : ViewCell
 }
 ```
 
-Дополнительные сведения см. в разделе [изменения контекста привязки](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#binding-context-changes).
+Дополнительные сведения см. в разделе [изменений контекста привязки](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#binding-context-changes).
 
-В iOS и Android Если ячейки используют пользовательские модули подготовки отчетов, их необходимо убедиться, правильно реализован уведомления об изменении свойства. Если ячейки повторно их значения свойства будут меняться при обновлении контекста привязки, доступные ячейки с `PropertyChanged` вызванных событий. Дополнительные сведения см. в разделе [Настройка ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md).
+В iOS и Android Если ячейки использовать пользовательские модули подготовки отчетов, они необходимо убедиться, что правильно реализуется уведомления об изменении свойства. При повторно ячеек используются значения свойств изменится при обновлении контекста привязки, доступные ячейки, с помощью `PropertyChanged` вызванных событий. Дополнительные сведения см. в разделе [Настройка ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md).
 
 #### <a name="recycleelement-with-a-datatemplateselector"></a>RecycleElement с DataTemplateSelector
 
-Когда [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) использует [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) установите [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) кэширования стратегия не кэширует `DataTemplate`s. Вместо этого `DataTemplate` выбран для каждого элемента данных в списке.
+Когда [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) использует [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) для выбора [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) кэширования стратегия не кэширует `DataTemplate`s. Вместо этого `DataTemplate` выбран для каждого элемента данных в списке.
 
 > [!NOTE]
-> [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) Стратегию кэширования имеет необходимое условие, представленные в Xamarin.Forms 2.4, что при [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) будет предложено выбрать [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), каждая из которых `DataTemplate` должен возвращать же [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) типа. Например, если [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) с `DataTemplateSelector` , могут возвращать либо `MyDataTemplateA` (где `MyDataTemplateA` возвращает `ViewCell` типа `MyViewCellA`), или `MyDataTemplateB` (где `MyDataTemplateB`возвращает `ViewCell` типа `MyViewCellB`), когда `MyDataTemplateA` возвращается, она должна вернуть `MyViewCellA` или будет вызвано исключение.
+> [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) Стратегию кэширования имеет обязательной, представленные в Xamarin.Forms 2.4, что при [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) предлагается выбрать [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), в которых `DataTemplate` должен возвращать же [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) типа. Например, если [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) с `DataTemplateSelector` , могут возвращать либо `MyDataTemplateA` (где `MyDataTemplateA` возвращает `ViewCell` типа `MyViewCellA`), или `MyDataTemplateB` (где `MyDataTemplateB`возвращает `ViewCell` типа `MyViewCellB`), когда `MyDataTemplateA` возвращается, он должен возвращать `MyViewCellA` или будет вызвано исключение.
 
 ### <a name="recycleelementanddatatemplate"></a>RecycleElementAndDataTemplate
 
-[ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) Стратегию кэширования лежит [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) стратегия кэширования, гарантируя, кроме того, что при [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) использует [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) установите [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), `DataTemplate`s кэшируются на тип элемента в списке. Таким образом `DataTemplate`s выбрать один раз на тип элемента, а не один раз для каждого экземпляра элемента.
+[ `RecycleElementAndDataTemplate` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate) Стратегию кэширования лежит [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) стратегию кэширования, гарантируя, кроме того, что при [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) использует [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) для выбора [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), `DataTemplate`s кэшируемых тип элемента в списке. Таким образом `DataTemplate`s выбраны один раз на тип элемента, а не один раз для каждого экземпляра элемента.
 
 > [!NOTE]
-> [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) Стратегию кэширования имеет необходимое условие, `DataTemplate`, возвращаемый [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) необходимо использовать [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) конструктор, принимающий `Type`.
+> [ `RecycleElementAndDataTemplate` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate) Стратегию кэширования имеет необходимым условием, `DataTemplate`, возвращаемый [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) необходимо использовать [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) конструктор, принимающий `Type`.
 
-### <a name="setting-the-caching-strategy"></a>Установка стратегии кэширования
+### <a name="setting-the-caching-strategy"></a>Настройка кэширования стратегии
 
-[ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) Указано значение перечисления с [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) перегрузку конструктора, как показано в следующем примере кода:
+[ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy) Указано значение перечисления с [ `ListView` ](xref:Xamarin.Forms.ListView) перегрузку конструктора, как показано в следующем примере кода:
 
 ```csharp
 var listView = new ListView(ListViewCachingStrategy.RecycleElement);
 ```
 
-В XAML задайте `CachingStrategy` атрибута, как показано в следующем коде:
+В XAML, задайте `CachingStrategy` атрибута, как показано в следующем коде:
 
 ```xaml
 <ListView CachingStrategy="RecycleElement">
@@ -127,13 +127,13 @@ var listView = new ListView(ListViewCachingStrategy.RecycleElement);
 </ListView>
 ```
 
-Это действует так же, как и настройка аргумент стратегии кэширования в конструкторе в C#; Следует отметить, что не `CachingStrategy` свойство `ListView`.
+Это действует так же, как и Настройка кэширования стратегии аргумента в конструктор в C#; Следует отметить, что не `CachingStrategy` свойство `ListView`.
 
-#### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>Установка стратегии кэширования в подклассов ListView
+#### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>Настройка кэширования стратегии в подклассах ListView
 
-Установка `CachingStrategy` атрибута из XAML подклассов [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) не дает требуемого поведения, так как не `CachingStrategy` свойство `ListView`. Кроме того Если [XAMLC](~/xamarin-forms/xaml/xamlc.md) — включен, будет произведено следующее сообщение об ошибке: **не свойство, связываемое свойство или событие, найти для «CachingStrategy»**
+Установка `CachingStrategy` атрибута из XAML в подклассах [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) не даст требуемое поведение, так как не `CachingStrategy` свойство `ListView`. Кроме того Если [XAMLC](~/xamarin-forms/xaml/xamlc.md) — включена, будет произведено следующее сообщение об ошибке: **не свойство, может быть привязано или событие найдено для «CachingStrategy»**
 
-Решение этой проблемы является указание конструктор подклассов [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) , принимающий [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) параметра и передает его в базовом классе:
+Решение этой проблемы является указание конструктор для подкласса [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) , принимающий [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) параметра и передает его в базовый класс:
 
 ```csharp
 public class CustomListView : ListView
@@ -159,30 +159,30 @@ public class CustomListView : ListView
 
 ## <a name="improving-listview-performance"></a>Повышение производительности ListView
 
-Существует множество методов для повышения производительности `ListView`:
+Существует множество методов повышения производительности `ListView`:
 
--  Привязать `ItemsSource` свойства `IList<T>` коллекции вместо `IEnumerable<T>` коллекции, так как `IEnumerable<T>` коллекции, которые не поддерживают произвольный доступ.
+-  Привязать `ItemsSource` свойства `IList<T>` , а не `IEnumerable<T>` коллекции, так как `IEnumerable<T>` коллекции, которые не поддерживают произвольного доступа.
 -  Используйте встроенные ячейки (например `TextCell`  /  `SwitchCell` ) вместо `ViewCell` каждый раз, когда вы можете.
--  Используйте меньшее число элементов. Рассмотрим для примера с помощью одного `FormattedString` метки, а не несколько меток.
--  Замените `ListView` с `TableView` при отображении неоднородные данные — то есть данных разных типов.
--  Ограничение использования [ `Cell.ForceUpdateSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.ForceUpdateSize()/) метод. Если поскольку вызовет перегрузку, он может повлиять на производительность.
--  На Android, не устанавливайте значение `ListView`его видимость разделителя строк или цвет после его создания, поскольку приводит к снижению большой производительности.
--  Не следует изменять макет ячейки, на основе [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/). Это приводит к большой затраты на макет и инициализации.
--  Избегайте глубоко вложенной структуры иерархии. Используйте `AbsoluteLayout` или `Grid` с целью сокращения вложение.
--  Избегайте конкретных `LayoutOptions` отличный от `Fill` (заливки является cheapest вычислений).
+-  Используйте меньшее число элементов. Для примера рассмотрите возможность использования одного `FormattedString` метки, а не несколько меток.
+-  Замените `ListView` с `TableView` при отображении неоднородные данные – то есть разные типы данных.
+-  Ограничить использование [ `Cell.ForceUpdateSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.ForceUpdateSize()/) метод. Поскольку вызовет перегрузку, он снизится производительность.
+-  В Android, старайтесь не использовать параметр `ListView`в строку разделителя видимость или цвет после он был создан экземпляр, поскольку приводит к снижению производительности.
+-  Не следует изменять макет ячейки, на основе [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/). Это влечет за собой большие затраты макет и инициализации.
+-  Избегайте иерархий глубоко вложенных макетов. Используйте `AbsoluteLayout` или `Grid` с целью сокращения вложения.
+-  Избежать определенных `LayoutOptions` отличное от `Fill` (заливки — дешевая для вычисления).
 -  Избегайте размещения `ListView` внутри `ScrollView` по следующим причинам:
-    - `ListView` Реализует собственную прокрутки.
-    - `ListView` Не получит все жесты, как будет обрабатываться родительским `ScrollView`.
-    - `ListView` Может представлять настраиваемый верхний и нижний колонтитулы прокручивается вместе с элементами списка, потенциально предложение функциональные возможности, `ScrollView` был использован для. Дополнительные сведения см. [верхние и нижние колонтитулы](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
--  Рекомендуется использовать пользовательское средство отрисовки, если требуется специфичны сложных Дизайн, представленных в ячейках.
+    - `ListView` Реализует свой собственный прокрутки.
+    - `ListView` Не получит все жесты, как будут обрабатываться в родительском `ScrollView`.
+    - `ListView` Может создать настраиваемый верхний и нижний колонтитул, прокручивает элементы списка, потенциально, предоставляющей функциональность `ScrollView` был использован для. Дополнительные сведения см. в разделе [верхние и нижние колонтитулы](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
+-  Если вам нужна специальная разработка сложных, представленные в ячейках, рассмотрите возможность пользовательское средство отрисовки.
 
-`AbsoluteLayout` имеет возможность выполнять макеты без вызова одной из них. Это делает очень мощный для повышения производительности. Если `AbsoluteLayout` не может быть используется, рассмотрите возможность [ `RelativeLayout` ](http://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/). При использовании `RelativeLayout`, непосредственно передача ограничения будет намного быстрее, чем использование выражения API. Это, так как выражение API использует JIT и на iOS дереве следует интерпретировать которого снижается. Выражение API подходит для макеты страниц, в которых он требуется только на начального макета и поворота, но в `ListView`, в котором он выполняется непрерывно, при прокрутке, ее производительность может снижаться.
+`AbsoluteLayout` имеет возможность выполнять макеты без вызова одной из них. Это позволяет очень мощный для производительности. Если `AbsoluteLayout` нельзя использовать, рассмотрите возможность [ `RelativeLayout` ](http://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/). При использовании `RelativeLayout`, непосредственно передачи ограничения будут значительно быстрее, чем использование выражения API. Том, что выражение API использует JIT и в iOS дереве интерпретироваться, которое выполняется медленнее. Выражение API подходит для макетов страниц, в котором его требуется только на исходный макет и поворота, но в `ListView`, где он выполняется постоянно во время прокрутки, ее производительность может снижаться.
 
-Создание пользовательского средства визуализации для [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) или его ячеек является одним из способов уменьшить эффект вычисления макета на прокрутки производительности. Дополнительные сведения см. в разделе [Настройка ListView](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md) и [Настройка ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md).
+Создание пользовательского средства визуализации для [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) или ячейках является одним из подходов к уменьшению влияния вычисления макета на производительность прокрутки. Дополнительные сведения см. в разделе [Настройка ListView](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md) и [Настройка ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md).
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Пользовательское представление модуля подготовки отчетов (пример)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
-- [Пользовательский модуль подготовки отчетов ViewCell (пример)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)
+- [ViewCell пользовательского модуля подготовки отчетов (пример)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)
 - [ListViewCachingStrategy](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/)

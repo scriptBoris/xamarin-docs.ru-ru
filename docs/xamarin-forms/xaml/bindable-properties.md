@@ -1,60 +1,60 @@
 ---
 title: Привязываемые свойства
-description: В этой статье содержатся вводные привязываемые свойства и показано, как создавать и использовать их.
+description: В этой статье содержатся вводные привязываемые свойства, а также показано, как создавать и использовать их.
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: 5e39e8eb3d7ffb3ed33ea2a585d8d367302e9baa
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 115fff5f80eb531780aa208fde677b26b69e9294
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245980"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935632"
 ---
 # <a name="bindable-properties"></a>Привязываемые свойства
 
-_В Xamarin.Forms привязываемые свойства расширяется функциональные возможности свойств среды выполнения (CLR). Привязываемые свойства — специальный тип свойства, где значение свойства отслеживается системой свойств Xamarin.Forms. В этой статье содержатся вводные привязываемые свойства и показано, как создавать и использовать их._
+_В Xamarin.Forms функциональные возможности параметров среды выполнения (CLR) расширен с помощью свойства связывания. Может быть привязано — это специальный тип свойства, где значение свойства отслеживается системой свойств Xamarin.Forms. В этой статье содержатся вводные привязываемые свойства, а также показано, как создавать и использовать их._
 
 ## <a name="overview"></a>Обзор
 
-Привязываемые свойства расширяют функциональность свойства CLR, Резервное свойство с [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) типа, вместо Резервное свойство с полем. Привязываемые свойства служит для предоставления системы свойств, которая поддерживает привязку данных, стили, шаблоны и задать значения с помощью родительско дочерних отношений. Кроме того привязываемые свойства можно указать значения по умолчанию, проверку значений свойств и обратные вызовы, которые отслеживают изменения свойств.
+Привязываемые свойства расширяют функциональные возможности свойства CLR, связывание свойства с [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) типа, не связывание свойства с полем. Привязываемые свойства служит для предоставления системы свойств, который поддерживает привязку данных, стили, шаблоны и значения, заданные через родительско дочерних отношений. Кроме того привязываемые свойства можно указать значения по умолчанию, проверку значений свойств и обратных вызовов, отслеживающих изменения свойств.
 
-Свойства должны быть реализованы как привязываемые свойства для поддержки один или несколько из следующих компонентов:
+Свойства должны быть реализованы как привязываемые свойства должно поддерживать одну или несколько из следующих компонентов:
 
 - Выступает в качестве допустимого *целевой* свойство для привязки данных.
-- Задание свойства с помощью [стиль](~/xamarin-forms/user-interface/styles/index.md).
-- Предоставление значением свойства по умолчанию, отличный от установленного по умолчанию для типа свойства.
+- Задание свойства с помощью [стиля](~/xamarin-forms/user-interface/styles/index.md).
+- Предоставление значением свойства по умолчанию, который отличается от по умолчанию для типа свойства.
 - Проверка значения свойства.
 - Мониторинг изменений свойств.
 
-Примеры привязываемые свойства Xamarin.Forms [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/), [ `Button.BorderRadius` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderRadius/), и [ `StackLayout.Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/). Каждое свойство привязки имеет соответствующий `public static readonly` свойство типа [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) , отображается в том же классе, и является идентификатором привязываемые свойства. Например, соответствующий идентификатор привязываемые свойства для `Label.Text` свойство [ `Label.TextProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Label.TextProperty/).
+Примеры Xamarin.Forms привязываемые свойства [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/), [ `Button.BorderRadius` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderRadius/), и [ `StackLayout.Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/). Каждое свойство привязки имеет соответствующий `public static readonly` свойство типа [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) , который предоставляется для одного класса и является идентификатором связываемые свойства. Например, соответствующий идентификатор свойство, используемое для `Label.Text` свойство [ `Label.TextProperty` ](xref:Xamarin.Forms.Label.TextProperty).
 
 <a name="consuming-bindable-property" />
 
-## <a name="creating-and-consuming-a-bindable-property"></a>Создание и использование привязываемые свойства
+## <a name="creating-and-consuming-a-bindable-property"></a>Создание и использование может быть привязано
 
-Процесс создания привязываемые свойства выглядит следующим образом:
+Процесс создания может быть привязано выглядит следующим образом:
 
-1. Создание [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляра с одним из [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) перегруженных версий метода.
-1. Определение методов доступа свойства для [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляра.
+1. Создание [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляра с одним из [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) перегрузок метода.
+1. Определять методы доступа свойств для [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляра.
 
-Обратите внимание, что все [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляры должны создаваться в потоке пользовательского интерфейса. Это означает, что только код, который выполняется в потоке пользовательского интерфейса можно получить или задать значение привязываемые свойства. Тем не менее `BindableProperty` экземпляров может осуществляться из других потоков маршалинг в поток пользовательского интерфейса с [ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/) метод.
+Обратите внимание, что все [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляры должны создаваться в потоке пользовательского интерфейса. Это означает, что только код, который выполняется в потоке пользовательского интерфейса можно получить или задать значение может быть привязано. Тем не менее `BindableProperty` экземпляров может осуществляться из других потоков маршалинг в поток пользовательского интерфейса с помощью [ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/) метод.
 
 ### <a name="creating-a-property"></a>Создание свойства
 
-Для создания `BindableProperty` экземпляр, содержащий класс должен быть производным от [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) класса. Тем не менее `BindableObject` класс высокого уровня в иерархии классов, поэтому большинство классов, используемый для привязки свойства поддержки функциональные возможности пользовательского интерфейса.
+Чтобы создать `BindableProperty` экземпляра, содержащего класса должен быть производным от [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) класса. Тем не менее `BindableObject` класс высокого уровня в иерархии классов, поэтому большинство классов, используемый для привязки свойств поддержки функциональные возможности пользовательского интерфейса.
 
-Привязываемые свойства могут создаваться путем объявления `public static readonly` свойство типа [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/). Привязываемые свойства должно быть присвоено возвращаемое значение одного из [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) перегруженных версий метода. Объявление должно быть в теле [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) производного класса, но за пределами определения членов.
+Может быть привязано могут создаваться путем объявления `public static readonly` свойство типа [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/). Возвращаемое значение одного из задается свойство, используемое [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) перегрузок метода. Объявление должно быть в теле [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) производного класса, но вне определения любого из членов.
 
-Как минимум, необходимо указать идентификатор при создании [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/), а также следующие параметры:
+Как минимум, идентификатор должен быть указан при создании [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/), а также следующие параметры:
 
 - Имя [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/).
 - Тип свойства.
-- Тип объекта.
-- Значение по умолчанию для свойства. Это гарантирует, что данное свойство всегда возвращает значение по умолчанию конкретной, когда оно не определено, может отличаться от значения по умолчанию для типа свойства. Значение по умолчанию будут восстановлены при [ `ClearValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.ClearValue/p/Xamarin.Forms.BindableProperty/) метод вызывается для привязки свойства.
+- Тип объекта-владельца.
+- Значение по умолчанию для свойства. Это гарантирует, что свойство всегда возвращает значение определенного по умолчанию, если оно не установлено, и он может отличаться от значения по умолчанию для типа свойства. Значение по умолчанию будут восстановлены при [ `ClearValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.ClearValue/p/Xamarin.Forms.BindableProperty/) на свойство, используемое вызывается метод.
 
 Ниже приведен пример привязки свойства, с идентификатором и значения четыре обязательных параметров:
 
@@ -63,22 +63,22 @@ public static readonly BindableProperty EventNameProperty =
   BindableProperty.Create ("EventName", typeof(string), typeof(EventToCommandBehavior), null);
 ```
 
-При этом создается [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляр с именем `EventName`, типа `string`. Свойство принадлежит `EventToCommandBehavior` класса и имеет значение по умолчанию `null`. Соглашение об именовании для свойства связывания заключается в том, что идентификатор привязываемые свойства должна соответствовать имя свойства, указанное в `Create` метод, с добавлением «свойство». Таким образом, в приведенном выше примере указан идентификатор привязываемые свойства `EventNameProperty`.
+При этом создается [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляр с именем `EventName`, типа `string`. Свойство принадлежит `EventToCommandBehavior` класса, и имеет значение по умолчанию `null`. Соглашение об именовании привязываемые свойства — это что может быть привязано идентификатор должен соответствовать имени свойства, указанные в `Create` метод, с добавленным к нему «Property». Таким образом, в приведенном выше примере идентификатор может быть привязано является `EventNameProperty`.
 
-Кроме того при создании [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляра следующие параметры могут быть заданы:
+При необходимости при создании [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляра, следующие параметры можно указать:
 
-- Режим привязки. Используется для указания направления, в котором будет распространено изменениях значения свойства. В режиме привязки по умолчанию, изменения будут распространяться из *источника* для *целевой*.
-- Проверка делегат, который вызывается, если задать значение свойства. Дополнительные сведения см. в разделе [обратные вызовы проверки](#validation).
-- Делегат, который будет вызываться при изменении значения свойства изменено свойство. Дополнительные сведения см. в разделе [обнаружение изменения свойств](#propertychanges).
-- Изменение делегата, который будет вызываться при изменении значения свойства будут свойство. Этот делегат имеет ту же сигнатуру, что и делегат изменения свойства.
-- Делегат значение принудительного, который будет вызываться при изменении значения свойства. Дополнительные сведения см. в разделе [Coerce обратных вызовов значение](#coerce).
-- Объект `Func` , используемый для инициализации значения свойства по умолчанию. Дополнительные сведения см. в разделе [создание значения по умолчанию с Func](#defaultfunc).
+- Режим привязки. Используется для указания направления, в котором будут распространены изменения значений свойств. В режиме привязки по умолчанию, изменения распространялись из *источника* для *целевой*.
+- Делегат проверки, который будет вызываться, когда свойство имеет значение. Дополнительные сведения см. в разделе [обратные вызовы проверки](#validation).
+- Делегат, который будет вызываться при изменении значения свойства изменено свойство. Дополнительные сведения см. в разделе [обнаружение изменений свойств](#propertychanges).
+- Свойство, изменение делегата, который будет вызываться, когда изменится значение свойства. Этот делегат имеет ту же сигнатуру, что делегат изменения свойства.
+- Делегат значение принудительного, который будет вызываться при изменении значения свойства. Дополнительные сведения см. в разделе [приведение обратных вызовов значение](#coerce).
+- Объект `Func` , используемый для инициализации значения свойства по умолчанию. Дополнительные сведения см. в разделе [создающий значение по умолчанию с Func](#defaultfunc).
 
 ### <a name="creating-accessors"></a>Создание методов доступа
 
-К свойствам должны использовать синтаксис свойства для доступа к привязываемые свойства. `Get` Метод доступа должен возвращать значение, которое содержится в соответствующее свойство, связываемое. Это можно сделать путем вызова [ `GetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.GetValue/p/Xamarin.Forms.BindableProperty/) метод, передавая идентификатор привязываемые свойства, для которого требуется получить значение, а затем приведение результата в требуемый тип. `Set` Доступа следует установить значение соответствующего свойства привязки. Это можно сделать путем вызова [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) метод, передавая идентификатор привязываемые свойства, для которого требуется задать значение и значение для установки.
+К свойствам должны использовать синтаксис свойства для доступа к может быть привязано. `Get` Доступа должна возвращать значение, которое содержится в соответствующее свойство привязки. Это достигается путем вызова [ `GetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.GetValue/p/Xamarin.Forms.BindableProperty/) метод, передав идентификатор может быть привязано, для которого необходимо получить значение и затем преобразование результата в требуемый тип. `Set` Доступа следует устанавливать значение соответствующего свойства привязки. Это достигается путем вызова [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) метод, передавая идентификатор может быть привязано, для которого требуется задать значение и присваиваемое значение.
 
-В следующем примере кода показаны методы доступа для `EventName` привязываемые свойства:
+В следующем примере кода показаны методы доступа для `EventName` свойство, используемое:
 
 ```csharp
 public string EventName {
@@ -87,11 +87,11 @@ public string EventName {
 }
 ```
 
-### <a name="consuming-a-bindable-property"></a>Использование привязываемые свойства
+### <a name="consuming-a-bindable-property"></a>Использование может быть привязано
 
-После создания привязываемые свойства могут быть востребованы из XAML-кода. В языке XAML это достигается путем объявления пространства имен с префиксом с объявления пространства имен, указывающее имя пространства имен CLR и при необходимости, имя сборки. Дополнительные сведения см. в разделе [пространства имен языка XAML](~/xamarin-forms/xaml/namespaces.md).
+После создания может быть привязано, его можно будет использовать из XAML или кода. В XAML это достигается путем объявления пространства имен с префиксом, с объявлением пространства имен, указывающее имя пространства имен CLR и при необходимости, имя сборки. Дополнительные сведения см. в разделе [пространства имен XAML](~/xamarin-forms/xaml/namespaces.md).
 
-В следующем примере кода показаны пространства имен XAML для пользовательского типа, который содержит привязываемые свойства, которое определяется в сборке, в качестве кода приложения, ссылается на пользовательский тип:
+В следующем примере кода показано пространство имен XAML для пользовательского типа, который содержит свойство привязки, который определен в сборке, в качестве код приложения, который ссылается на пользовательский тип:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:EventToCommandBehavior" ...>
@@ -99,7 +99,7 @@ public string EventName {
 </ContentPage>
 ```
 
-Объявление пространства имен используется при задании `EventName` привязываемые свойства, как демонстрируется в следующем примере кода XAML:
+Объявление пространства имен используется при задании `EventName` свойство, используемое, как показано в следующем примере кода XAML:
 
 ```xaml
 <ListView ...>
@@ -123,15 +123,15 @@ listView.Behaviors.Add (new EventToCommandBehavior {
 
 ## <a name="advanced-scenarios"></a>Расширенные сценарии
 
-При создании [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляра, существует ряд необязательных параметров, которые могут быть установлены для реализации сценариев дополнительного привязываемые свойства. В этом разделе рассматриваются эти сценарии.
+При создании [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляра, существует несколько необязательных параметров, которые могут устанавливаться для реализации сценариев дополнительного связываемые свойства. В данном разделе изучаются этих сценариев.
 
 <a name="propertychanges" />
 
-### <a name="detecting-property-changes"></a>Обнаружение изменений свойств
+### <a name="detecting-property-changes"></a>Обнаружение событий изменения свойств
 
-Объект `static` метод обратного вызова изменения свойства может быть зарегистрирован привязываемые свойства путем указания `propertyChanged` параметр [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) метод. Указанный метод обратного вызова будет вызываться при изменении значения свойства привязки.
+Объект `static` метод обратного вызова, изменения свойств может быть зарегистрирован может быть привязано, указав `propertyChanged` параметр для [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) метод. Указанный метод обратного вызова будет вызываться при изменении значения свойства привязки.
 
-В следующем примере кода показан способ `EventName` регистры привязываемые свойства `OnEventNameChanged` метода в качестве метода обратного вызова изменения свойства:
+В следующем примере кода показано как `EventName` регистрирует свойство, используемое `OnEventNameChanged` метода как метода обратного вызова, изменения свойства:
 
 ```csharp
 public static readonly BindableProperty EventNameProperty =
@@ -145,15 +145,15 @@ static void OnEventNameChanged (BindableObject bindable, object oldValue, object
 }
 ```
 
-В методе обратного вызова изменения свойства [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) параметр используется для обозначения того, какой экземпляр класс-владелец обнаружил изменения и значения двух `object` параметров представляют старое и новое значения свойство привязки.
+В методе обратного вызова, изменения свойств [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) параметр используется для обозначения того, какой экземпляр класс-владелец обнаружил изменение, а также значения двух `object` параметры представляют старые и новые значения свойство, используемое.
 
 <a name="validation" />
 
 ### <a name="validation-callbacks"></a>Обратные вызовы проверки
 
-Объект `static` метод обратного вызова проверки может быть зарегистрирован привязываемые свойства путем указания `validateValue` параметр [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) метод. Указанный метод обратного вызова будет вызываться, если задано значение привязываемые свойства.
+Объект `static` метод обратного вызова проверки может быть зарегистрирован может быть привязано, указав `validateValue` параметр для [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) метод. Указанный метод обратного вызова будет вызываться, если задано значение, связываемые свойства.
 
-В следующем примере кода показан способ `Angle` регистры привязываемые свойства `IsValidValue` метода в качестве метода обратного вызова проверки:
+В следующем примере кода показано как `Angle` регистрирует свойство, используемое `IsValidValue` метода как метода обратного вызова проверки:
 
 ```csharp
 public static readonly BindableProperty AngleProperty =
@@ -168,17 +168,17 @@ static bool IsValidValue (BindableObject view, object value)
 }
 ```
 
-Обратные вызовы проверки предоставляются со значением и должен возвращать `true` Если допустимым является значение для свойства, в противном случае `false`. Будет ли вызываться исключение, если обратный вызов проверки возвращает `false`, что должны обрабатываться разработчиком. Типичное использование метода обратного вызова проверки ограничение значения целых при привязываемых свойству. Например `IsValidValue` метод проверяет, что значение свойства `double` в диапазоне от 0 до 360.
+Обратные вызовы проверки предоставляются со значением и должен возвращать `true` Если значение является допустимым для свойства, в противном случае `false`. Будет порождено исключение, если обратный вызов проверки возвращает `false`, которого должно обрабатываться разработчиком. Типичное использование метода обратного вызова проверки ограничения значений целых чисел, если задано свойство, используемое. Например `IsValidValue` метод проверяет, что свойство имеет значение `double` в диапазоне от 0 до 360.
 
 <a name="coerce" />
 
 ### <a name="coerce-value-callbacks"></a>Приведенных значений
 
-Объект `static` приведение значения метод обратного вызова может быть зарегистрирован привязываемые свойства путем указания `coerceValue` параметр [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) метод. Указанный метод обратного вызова будет вызываться при изменении значения свойства привязки.
+Объект `static` привязкой к значению метод обратного вызова может быть зарегистрирован может быть привязано, указав `coerceValue` параметр для [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) метод. Указанный метод обратного вызова будет вызываться при изменении значения свойства привязки.
 
-Приведение значения обратные вызовы используются для принудительного повторного вычисления, привязываемые свойства при изменении значения свойства. Например значение принудительного обратного вызова можно использовать чтобы значение одного свойства привязки не больше, чем значение другого привязываемые свойства.
+Приведение значения обратные вызовы используются для принудительного переоценки свойство, используемое при изменении значения свойства. Например чтобы убедиться, что значение одного свойства привязки не больше, чем значение другого привязываемые свойства можно использовать значение принудительного обратного вызова.
 
-В следующем примере кода показан способ `Angle` регистры привязываемые свойства `CoerceAngle` метода в качестве метода обратного вызова значение принудительного:
+В следующем примере кода показано как `Angle` регистрирует свойство, используемое `CoerceAngle` метода как метода обратного вызова значение принудительного:
 
 ```csharp
 public static readonly BindableProperty AngleProperty = BindableProperty.Create (
@@ -200,13 +200,13 @@ static object CoerceAngle (BindableObject bindable, object value)
 }
 ```
 
-`CoerceAngle` Метод проверяет значение `MaximumAngle` свойство и если `Angle` он превышает значение свойства, он приводит значение к `MaximumAngle` значение свойства.
+`CoerceAngle` Метод проверяет значение параметра `MaximumAngle` свойство и если `Angle` он превышает значение свойства, он приводит значение к `MaximumAngle` значение свойства.
 
 <a name="defaultfunc" />
 
-### <a name="creating-a-default-value-with-a-func"></a>Создание значения по умолчанию с Func
+### <a name="creating-a-default-value-with-a-func"></a>Создание значения по умолчанию с помощью Func
 
-Объект `Func` можно использовать для инициализации значения по умолчанию привязываемые свойства, как показано в следующем примере кода:
+Объект `Func` может использоваться для инициализации значения по умолчанию привязываемые свойства, как показано в следующем примере кода:
 
 ```csharp
 public static readonly BindableProperty SizeProperty =
@@ -214,18 +214,18 @@ public static readonly BindableProperty SizeProperty =
   defaultValueCreator: bindable => Device.GetNamedSize (NamedSize.Large, (Label)bindable));
 ```
 
-`defaultValueCreator` Параметра равным `Func` , вызывающий [ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/) метод для возврата `double` , представляющий именованный размер шрифта, используемый в [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) на собственной платформы.
+`defaultValueCreator` Параметр имеет значение `Func` , вызывающий [ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/) метод для возврата `double` , представляющий именованный размер шрифта, который используется на [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) на собственной платформе.
 
 ## <a name="summary"></a>Сводка
 
-В этой статье сведения о привязываемые свойства и было показано, как создавать и использовать их. Привязываемые свойства — специальный тип свойства, где значение свойства отслеживается системой свойств Xamarin.Forms.
+В этой статье предоставляются общие сведения о привязываемые свойства, а также показано, как создавать и использовать их. Может быть привязано — это специальный тип свойства, где значение свойства отслеживается системой свойств Xamarin.Forms.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Пространства имен языка XAML](~/xamarin-forms/xaml/namespaces.md)
-- [События на поведение команды (пример)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+- [Чтобы команда поведение события (пример)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
 - [Обратный вызов проверки (пример)](https://developer.xamarin.com/samples/xamarin-forms/xaml/validationcallback/)
-- [Приведение значения обратного вызова (пример)](https://developer.xamarin.com/samples/xamarin-forms/xaml/coercevaluecallback/)
+- [Приведение значение обратного вызова (пример)](https://developer.xamarin.com/samples/xamarin-forms/xaml/coercevaluecallback/)
 - [BindableProperty](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)
 - [BindableObject](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)
