@@ -1,41 +1,41 @@
 ---
-title: Приложение динамической проигрыватель Xamarin
-description: В этом документе описывается проигрыватель Xamarin Live live приложение, которое можно использовать для предварительного просмотра изменения кода на устройстве. В нем описывается установки, образцы, журналы, параметры, управление устройствами и многое другое.
+title: Приложение Xamarin Live Player
+description: В этом документе описывается в Xamarin Live Player live приложение, которое может использоваться для предварительного просмотра изменений кода на устройстве. В нем описывается настройка, примеры, журналы, параметры, управление устройствами и многое другое.
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
 ms.date: 05/14/2017
 ms.openlocfilehash: 88f7f62650484007c221aa7baaa684f872e0a8e9
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794154"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38830417"
 ---
-# <a name="xamarin-live-player-app"></a>Приложение динамической проигрыватель Xamarin
+# <a name="xamarin-live-player-app"></a>Приложение Xamarin Live Player
 
 ![Функция предварительного просмотра](~/media/shared/preview.png)
 
-После установки приложения на телефоне, выполните [инструкции по установке](~/tools/live-player/install.md) для подключения к компьютеру. Попробуйте выполнить одно из [образец приложения](~/tools/live-player/samples.md) для его запуска.
+После установки приложения на телефоне, выполните [инструкции по установке](~/tools/live-player/install.md) для подключения к компьютеру. Попробуйте выполнить одно из [примеры приложений](~/tools/live-player/samples.md) чтобы заставить ее работать.
 
-Во время запуска приложения Xamarin Live Player выглядит следующим образом (в iOS и Android соответственно):
+При запуске, приложение Xamarin Live Player выглядит следующим образом (в iOS и Android соответственно):
 
-![Live проигрывателя снимка экрана приложения iOS](player-images/app-iphone-sml.png) ![Динамическая Player Android снимка экрана приложения](player-images/app-android-sml.png)
+![Live Player снимка экрана приложения iOS](player-images/app-iphone-sml.png) ![Live Player Android снимка экрана приложения](player-images/app-android-sml.png)
 
-При нажатии клавиши **пару, чтобы Visual Studio**, использовать камеру для сканирования штрих-кода, показывающий на вашем компьютере:
+При нажатии клавиши **пары для Visual Studio**, сканирование штрихкода, показывающий на компьютере с помощью камеры:
 
 ![Снимок экрана сканер штрих-кодов iOS](player-images/scan-iphone-sml.png) ![Снимок экрана сканер штрихкодов Android](player-images/scan-android-sml.png)
 
-Если соединение установлено успешно, код должен выполняться на устройстве практически сразу (такие как [образец калькулятора](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
+Если подключение установлено успешно, код должен выполняться на устройстве почти сразу же (такие как [образец калькулятора](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
 
-![Пример приложения калькулятора, запущенного на устройстве](player-images/basic-calculator-iphone-sml.png)
+![Пример, калькулятор, приложения, выполняющегося на устройстве](player-images/basic-calculator-iphone-sml.png)
 
 ## <a name="options"></a>Параметры
 
-Нажмите кнопку "Сведения" **(i)** в нижней части приложения, чтобы раскрыть **параметры** меню:
+Нажмите кнопку "Сведения" **(i)** в нижней части приложения, чтобы отобразить **параметры** меню:
 
-[![Снимок экрана: меню «Параметры»](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![Снимок экрана: меню "Параметры"](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>Журналы
 
@@ -51,39 +51,39 @@ ms.locfileid: "34794154"
 
 ## <a name="managing-devices"></a>Управление устройствами
 
-Для подключения к устройству в первый раз, следуйте инструкциям в [требования и настройка](~/tools/live-player/install.md). Можно связать несколько устройств (например, iOS и Android) и управлять ими в среде IDE.
+Для подключения устройства в первый раз, следуйте инструкциям в [требования и настройка](~/tools/live-player/install.md). Можно связать несколько устройств (например, iOS и Android) и управлять ими с помощью интегрированной среды разработки.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-В Visual Studio выберите **Сервис > Xamarin Live Player > Управление устройствами...**
+В Visual Studio, выберите **средства > Xamarin Live Player > Управление устройствами...**
 
-![Управление для закрытия этого окна](player-images/manage-tools-menu-vs.png)
+![Управление окном устройств](player-images/manage-tools-menu-vs.png)
 
 Это окно позволяет выполнить следующие действия.
 
-- Чтобы связать новое устройство, проверки кода
-- Можно также свяжите устройство, введя код, отображаемый на экране его
-- Удалите существующие устройства из списка
+- Чтобы связать новое устройство, проверка кода
+- Кроме того, связывая устройство, введя код, отображаемый в его на экране
+- Удалить существующие устройства из списка
 
-Это окно можно также открыть из списка устройств.
+Это окно также можно открыть из списка устройств.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
-В Visual Studio для Mac, выберите **Инструменты > Управление устройствами (Live проигрыватель Xamarin)...**
+В Visual Studio для Mac выберите **Инструменты > Управление устройствами (Xamarin Live Player)...**
 
-![Управление для закрытия этого окна](player-images/manage-tools-menu.png)
+![Управление окном устройств](player-images/manage-tools-menu.png)
 
 Это окно позволяет выполнить следующие действия.
 
-- Чтобы связать новое устройство, проверки кода
-- Можно также свяжите устройство, введя код, отображаемый на экране его
-- Удалите существующие устройства из списка
+- Чтобы связать новое устройство, проверка кода
+- Кроме того, связывая устройство, введя код, отображаемый в его на экране
+- Удалить существующие устройства из списка
 
-![Управление для закрытия этого окна](player-images/manage.png)
+![Управление окном устройств](player-images/manage.png)
 
-Можно также открыть это окно из списка устройств:
+Это окно также можно открыть из списка устройств:
 
-![Выберите из списка устройств Xamarin Live проигрывателей](player-images/manage-device-menu.png)
+![Выберите из списка устройств Xamarin Live Player Devices](player-images/manage-device-menu.png)
 
 -----
 
@@ -93,4 +93,4 @@ ms.locfileid: "34794154"
 
 - [Ограничения](~/tools/live-player/limitations.md)
 - [Устранение неполадок](~/tools/live-player/troubleshooting.md)
-- [Образцы динамической проигрыватель Xamarin](samples.md)
+- [Образцы Xamarin Live Player](samples.md)

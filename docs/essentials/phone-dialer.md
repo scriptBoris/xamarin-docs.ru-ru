@@ -6,15 +6,15 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 6733e43ed4174d1dd78b2e8f70268eb54adadb98
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782856"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831401"
 ---
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: Телефон
 
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
+![Предварительные версии NuGet](~/media/shared/pre-release.png)
 
 **PhoneDialer** класс позволяет приложения, чтобы открыть веб-ссылку в браузере предпочтительный оптимизированного системы или внешнем браузере.
 
@@ -26,7 +26,7 @@ ms.locfileid: "34782856"
 using Xamarin.Essentials;
 ```
 
-Эта функциональность телефон работает путем вызова `Open` метод с номером телефона, чтобы открыть программу "," с. Когда `Open` запрашивается API будет автоматически пытаться форматировать число, основанное на код страны, если указано.
+Функциональность телефон работает путем вызова `Open` метод с номером телефона, чтобы открыть номеронабирателя с. Когда `Open` запрашивается API автоматически будет пытаться форматировать количество в зависимости от кода страны, если указано.
 
 ```csharp
 public class PhoneDialerTest
@@ -56,4 +56,4 @@ public class PhoneDialerTest
 ## <a name="api"></a>API
 
 - [Телефон исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/PhoneDialer)
-- [Документация по API набора номера телефона](xref:Xamarin.Essentials.PhoneDialer)
+- [Документация по API набирателя номера телефона](xref:Xamarin.Essentials.PhoneDialer)

@@ -1,6 +1,6 @@
 ---
 title: Создании пользовательских Xamarin.Forms темы
-description: В этой статье описывается создание пользовательской темы Xamarin.Forms для ссылки в приложении.
+description: В этой статье объясняется, как создать пользовательскую тему Xamarin.Forms для ссылок на них в приложение.
 ms.prod: xamarin
 ms.assetid: 4FE08ADC-093F-47FA-B33C-20CF08B5D7E0
 ms.technology: xamarin-forms
@@ -8,25 +8,25 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 018193cf0b198fd87f0f09cbfeba52e9d2a0f68b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245583"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38838174"
 ---
 # <a name="creating-a-custom-xamarinforms-theme"></a>Создании пользовательских Xamarin.Forms темы
 
-![](~/media/shared/preview.png "Этот API в настоящее время находится в предварительной версии")
+![](~/media/shared/preview.png "Этот API доступна в предварительной версии")
 
-Помимо добавления тему из пакета Nuget (такие как [свет](~/xamarin-forms/user-interface/themes/light.md) и [темной](~/xamarin-forms/user-interface/themes/dark.md) темы), можно создать собственный ресурс словаря темы, которые можно ссылаться в приложении.
+Помимо добавления темы из пакета Nuget (такие как [свет](~/xamarin-forms/user-interface/themes/light.md) и [темно-](~/xamarin-forms/user-interface/themes/dark.md) темы), можно создать собственный ресурс словаря темы, которые можно ссылаться в приложении.
 
 ## <a name="example"></a>Пример
 
-Три `BoxView`s, отображаемый на [темы страницы](~/xamarin-forms/user-interface/themes/index.md) выглядят в соответствии с трех классов, определенных в двух загружаемых тем.
+Три `BoxView`s, показанный на [темы страницы](~/xamarin-forms/user-interface/themes/index.md) выглядят в соответствии с трех классов, определенных в два загружаемых тем.
 
-Чтобы понять, как они работают, приведенный ниже код создает эквивалентный стиль, который можно добавить непосредственно в ваш **App.xaml**.
+Чтобы понять, как они работают, следующая разметка создает эквивалентный стиль, который можно добавить непосредственно в ваш **App.xaml**.
 
-Примечание `Class` для атрибута `Style` (в отличие от [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) атрибута в более ранних версиях Xamarin.Forms).
+Примечание `Class` для атрибута `Style` (в отличие от [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) атрибут, доступный в более ранних версиях Xamarin.Forms).
 
 ```xml
 <ResourceDictionary>
@@ -63,17 +63,17 @@ ms.locfileid: "35245583"
 </ResourceDictionary>
 ```
 
-Вы заметите, что `Rounded` класс ссылается настраиваемый эффект `CornerRadius`.
-Код для этого эффекта приведены ниже - для ссылки на него правильно пользовательского `xmlns` должны добавляться **App.xaml**в корневой элемент:
+Вы заметите, что `Rounded` класс относится к настраиваемого эффекта `CornerRadius`.
+Код для этого приведены ниже - ссылка на него правильно пользовательского `xmlns` должны добавляться **App.xaml**в корневой элемент:
 
 ```csharp
 xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 ```
 
-### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>Код C# .NET Standard проекта библиотеки или общий проект
+### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>Код C# в проекте библиотеки .NET Standard или общий проект
 
-Код для создания циклов угла `BoxView` использует [эффекты](~/xamarin-forms/app-fundamentals/effects/index.md).
-Радиус скругления углов задается с помощью `BindableProperty` и реализуется путем применения [эффект](~/xamarin-forms/app-fundamentals/effects/index.md). Эффект требуется код платформы в [iOS](#ios) и [Android](#android) проекты (показано ниже).
+Код для создания углом Циклический `BoxView` использует [эффекты](~/xamarin-forms/app-fundamentals/effects/index.md).
+Радиус углов применяется с помощью `BindableProperty` и реализуется путем применения [эффект](~/xamarin-forms/app-fundamentals/effects/index.md). Эффект требует создания кода платформой [iOS](#ios) и [Android](#android) проектов (см. ниже).
 
 ```csharp
 namespace ThemesDemo
@@ -257,8 +257,8 @@ namespace ThemesDemo.Droid
 
 ## <a name="summary"></a>Сводка
 
-Можно создать пользовательские темы, определив стилей для каждого элемента управления, который требуется пользовательское оформление. Несколько стили для элемента управления следует различающееся разными `Class` атрибуты в словаре ресурсов, а затем применяется, задав `StyleClass` атрибута в элементе управления.
+Можно создать пользовательские темы, определив стили для каждого элемента управления, который требуется пользовательское оформление. Несколько стилей для элемента управления следует различить разные `Class` атрибуты в словаре ресурсов, а затем применяется, задав `StyleClass` атрибут в элементе управления.
 
 Можно также использовать стиль [эффекты](~/xamarin-forms/app-fundamentals/effects/index.md) для дальнейшей настройки внешнего вида элемента управления.
 
-[Неявные стили](~/xamarin-forms/user-interface/styles/implicit.md) (отсутствует либо `x:Key` или `Style` атрибут) продолжают применяться ко всем элементам управления, которые соответствуют `TargetType`.
+[Неявные стили](~/xamarin-forms/user-interface/styles/implicit.md) (без либо `x:Key` или `Style` атрибут) продолжают применяться ко всем элементам управления, которые соответствуют `TargetType`.

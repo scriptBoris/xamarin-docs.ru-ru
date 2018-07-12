@@ -1,6 +1,6 @@
 ---
 title: Справочник по элементам управления DataPages
-description: В этой статье описаны элементы управления, которые доступны в пакет Xamarin.Forms DataPages NuGet.
+description: В этой статье рассматриваются элементы управления, доступные в пакете Xamarin.Forms DataPages NuGet.
 ms.prod: xamarin
 ms.assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31
 ms.technology: xamarin-forms
@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: c907d55f09d334e167c831a19f9d0edc4c97732f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243133"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38866526"
 ---
 # <a name="datapages-controls-reference"></a>Справочник по элементам управления DataPages
 
-![](~/media/shared/preview.png "Этот API в настоящее время находится в предварительной версии")
+![](~/media/shared/preview.png "Этот API доступна в предварительной версии")
 
 > [!IMPORTANT]
 > Требуется DataPages [Xamarin.Forms темы](~/xamarin-forms/user-interface/themes/index.md) ссылку для отображения.
 
 
-Xamarin.Forms DataPages Nuget включает несколько элементов управления, которые могут воспользоваться преимуществами привязки источника данных.
+Xamarin.Forms DataPages Nuget включает в себя ряд элементов управления, можно воспользоваться преимуществами привязку к источнику данных.
 
-Чтобы использовать эти элементы управления в XAML, убедитесь пространство имен был включен см. пример `xmlns:pages` объявление ниже:
+Чтобы использовать эти элементы управления в XAML, убедитесь, пространство имен был включен, например см. в разделе `xmlns:pages` объявление ниже:
 
 ```xaml
 <ContentPage
@@ -34,7 +34,7 @@ Xamarin.Forms DataPages Nuget включает несколько элемент
     x:Class="DataPagesDemo.Detail">
 ```
 
-Приведенные ниже примеры включают `DynamicResource` ссылки, которые пришлось бы существует в словаре ресурсов проекта для работы. Также приводится пример создания [пользовательского элемента управления](#custom)
+В приведенных ниже примерах включают `DynamicResource` ссылки, которые должны существовать в словаре ресурсов проекта для работы. Имеется также пример создания [пользовательского элемента управления](#custom)
 
 ## <a name="built-in-controls"></a>Встроенные элементы управления
 
@@ -43,13 +43,13 @@ Xamarin.Forms DataPages Nuget включает несколько элемент
 
 <a name="heroimage" />
 
-### <a name="heroimage"></a>HeroImage
+### <a name="heroimage"></a>Имиджевое изображение
 
 `HeroImage` Элемент управления имеет четыре свойства:
 
 * Text
 * Подробно
-* Вложенный класс ImageSource
+* ImageSource
 * Аспект
 
 ```xaml
@@ -62,24 +62,24 @@ Xamarin.Forms DataPages Nuget включает несколько элемент
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Элемент управления HeroImage на Android") ![ ] (controls-images/heroimage-dark-android.png "управления HeroImage на Android")
+![](controls-images/heroimage-light-android.png "Элемент управления имиджевое изображение на Android") ![ ] (controls-images/heroimage-dark-android.png "имиджевое изображение элемента управления на устройстве Android")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "Элемент управления HeroImage на iOS") ![ ] (controls-images/heroimage-dark-ios.png "HeroImage управления в iOS")
+![](controls-images/heroimage-light-ios.png "Имиджевое изображение элемента управления в iOS") ![ ] (controls-images/heroimage-dark-ios.png "имиджевое изображение элемента управления в iOS")
 
 
 <a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
 
-`ListItem` Макет элемента управления аналогичен машинным кодом iOS и Android списка или таблицы строк, однако он может также использоваться как обычное представление. В примере кода ниже показан базирующееся в `StackLayout`, но также может использоваться в элементах управления с привязкой к данным scolling списка.
+`ListItem` Макета элемента управления похож на машинном коде iOS и Android списка или таблицы строк, тем не менее он может также использоваться как обычное представление. В примере кода ниже показан размещается внутри `StackLayout`, но он также может использоваться в элементах управления списками scolling привязкой к данным.
 
 Существует пять свойств.
 
 * Заголовок
 * Подробно
-* Вложенный класс ImageSource
+* ImageSource
 * PlaceholdImageSource
 * Аспект
 
@@ -93,7 +93,7 @@ Xamarin.Forms DataPages Nuget включает несколько элемент
     />
 ```
 
-Показать эти снимки экрана `ListItem` в iOS и Android платформ, при использовании светлой и темной темы:
+Показать эти снимки экрана `ListItem` на платформах iOS и Android с помощью как светлой и темной темы:
 
 **Android**
 
@@ -106,15 +106,15 @@ Xamarin.Forms DataPages Nuget включает несколько элемент
 
 ## <a name="custom-control-example"></a>Пример пользовательского элемента управления
 
-Эта пользовательская цель `CardView` элемент управления является выглядеть собственного CardView Android.
+Цель эта пользовательская `CardView` является элемент управления, чтобы он напоминал собственного CardView Android.
 
 Он будет содержать три свойства:
 
 * Text
 * Подробно
-* Вложенный класс ImageSource
+* ImageSource
 
-Цель — пользовательский элемент управления, который будет выглядеть, как в приведенном ниже коде (Обратите внимание, что пользовательский `xmlns:local` требуется который ссылается текущая сборка):
+Целью является настраиваемым элементом управления, который будет выглядеть как приведенный ниже код (Обратите внимание, что пользовательский `xmlns:local` является обязательным, ссылающийся на текущей сборки):
 
 ```xaml
 <local:CardView
@@ -124,26 +124,26 @@ Xamarin.Forms DataPages Nuget включает несколько элемент
 />
 ```
 
-Оно должно иметь вид снимки экрана ниже, с помощью цвета, соответствующие встроенные светлой и темной темах:
+Он должен выглядеть как снимки экрана ниже, с помощью цвета, соответствующие встроенные светлой и темной темах:
 
 **Android**
 
-![](controls-images/cardview-light-android.png "CardView пользовательского элемента управления в Android") ![ ] (controls-images/cardview-dark-android.png "CardView пользовательского элемента управления в Android")
+![](controls-images/cardview-light-android.png "CardView пользовательский элемент управления на устройстве Android") ![ ] (controls-images/cardview-dark-android.png "CardView пользовательский элемент управления на устройстве Android")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "CardView пользовательского элемента управления в iOS") ![ ] (controls-images/cardview-dark-ios.png "CardView пользовательского элемента управления в iOS")
+![](controls-images/cardview-light-ios.png "CardView пользовательский элемент управления в iOS") ![ ] (controls-images/cardview-dark-ios.png "CardView пользовательский элемент управления в iOS")
 
 <a name="custom" />
 
-### <a name="building-the-custom-cardview"></a>Построение пользовательского CardView
+### <a name="building-the-custom-cardview"></a>Создание пользовательских CardView
 
 1. [Подкласс DataView](#1)
-2. [Определить шрифт, макет и поля](#2)
+2. [Определение шрифта, макет и поля](#2)
 3. [Создание стилей для дочернего элемента управления.](#3)
-4. [Создать шаблон макета элемента управления](#4)
-5. [Добавление ресурсов тематических](#5)
-6. [Задайте элемент ControlTemplate для класса CardView](#6)
+4. [Создание шаблона макета элемента управления](#4)
+5. [Добавить ресурсы конкретной темы](#5)
+6. [Задать для класса CardView ControlTemplate](#6)
 7. [Добавьте элемент управления на страницу](#7)
 
 <a name="1" />
@@ -190,11 +190,11 @@ public class CardView : DataView
 
 <a name="2" />
 
-#### <a name="2-define-font-layout-and-margins"></a>2. Определить шрифт, макет и поля
+#### <a name="2-define-font-layout-and-margins"></a>2. Определение шрифта, макет и поля
 
-Конструктор элементов управления будет понять, эти значения как часть разработки пользовательского интерфейса для пользовательского элемента управления. Там, где требуются спецификации платформой, `OnPlatform` используется элемент.
+Конструктор элемента управления будет понять, эти значения при проектировании пользовательского интерфейса для пользовательского элемента управления. Там, где спецификации платформы являются обязательными, `OnPlatform` используется элемент.
 
-Обратите внимание, что некоторые значения относятся `StaticResource`s — они будут определены [шаг 5](#5).
+Обратите внимание, что некоторые значения ссылаются `StaticResource`s — они будут определены [шаг 5](#5).
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -280,9 +280,9 @@ public class CardView : DataView
 
 <a name="4" />
 
-#### <a name="4-create-the-control-layout-template"></a>4. Создать шаблон макета элемента управления
+#### <a name="4-create-the-control-layout-template"></a>4. Создание шаблона макета элемента управления
 
-Визуальная разработка пользовательского элемента управления был объявлен явным образом в шаблоне элемента управления с использованием ресурсов, определенный выше:
+Визуальный Дизайн пользовательского элемента управления был объявлен явным образом в шаблоне элемента управления, используя ресурсы, определенные выше:
 
 ```xml
 <!--- CARDVIEW -->
@@ -324,9 +324,9 @@ public class CardView : DataView
 
 <a name="5" />
 
-#### <a name="5-add-the-theme-specific-resources"></a>5. Добавление ресурсов тематических
+#### <a name="5-add-the-theme-specific-resources"></a>5. Добавить ресурсы конкретной темы
 
-Так как пользовательский элемент управления, добавьте ресурсы, соответствующие темы, которые вы используете словарь ресурсов:
+Так как это пользовательский элемент управления, добавьте ресурсы, соответствующими исходной теме вы используете словарь ресурсов:
 
 ##### <a name="light-theme-colors"></a>Цвета "светлой" теме
 
@@ -341,7 +341,7 @@ public class CardView : DataView
 <Color x:Key="iOSCardViewDetailTextColor">#8F8E94</Color>
 ```
 
-##### <a name="dark-theme-colors"></a>Цвета темной темы
+##### <a name="dark-theme-colors"></a>Цвета "темной" теме
 
 ```xaml
 <!-- CARD VIEW COLORS -->
@@ -357,9 +357,9 @@ public class CardView : DataView
 
 <a name="6" />
 
-#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. Задайте элемент ControlTemplate для класса CardView
+#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. Задать для класса CardView ControlTemplate
 
-Наконец, убедитесь в классе C#, созданных в [шаг 1](#1) использует шаблон элемента управления, определенных в [шаг 4](#4) с помощью `Style` `Setter` элемент
+Наконец, убедитесь, класс C#, созданный в [шаг 1](#1) использует шаблон элемента управления, определенных в [шаг 4](#4) с помощью `Style` `Setter` элемент
 
 ```xml
 <Style TargetType="local:CardView">
@@ -373,7 +373,7 @@ public class CardView : DataView
 
 #### <a name="7-add-the-control-to-a-page"></a>7. Добавьте элемент управления на страницу
 
-`CardView` Управления теперь можно добавить на страницу. В следующем примере показано он размещен в `StackLayout`:
+`CardView` Управления теперь можно добавлять на страницу. В приведенном ниже примере показано, разместить в `StackLayout`:
 
 ```xaml
 <StackLayout Spacing="0">

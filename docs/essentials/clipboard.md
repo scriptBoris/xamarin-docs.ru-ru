@@ -6,17 +6,17 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 41b15b480fa23bd49667b68e904043e4f1a95732
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782363"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38842619"
 ---
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials: буфер обмена
 
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
+![Предварительные версии NuGet](~/media/shared/pre-release.png)
 
-**Буфер** класс позволяет скопировать и вставить текст в буфер обмена между приложениями.
+**Буфер обмена** класс позволяет скопировать и вставить текст в буфер обмена между приложениями.
 
 ## <a name="using-clipboard"></a>Использование буфера обмена
 
@@ -26,13 +26,13 @@ ms.locfileid: "34782363"
 using Xamarin.Essentials;
 ```
 
-Чтобы проверить, если **буфер обмена** используется в данный момент, которую можно вставить текст:
+Чтобы проверить, если **буфер обмена** имеет в данный момент все готово для вставки текста:
 
 ```csharp
 var hasText = Clipboard.HasText;
 ```
 
-Чтобы задать текст **буфер обмена**:
+Для задания текста **буфер обмена**:
 
 ```csharp
 Clipboard.SetText("Hello World");

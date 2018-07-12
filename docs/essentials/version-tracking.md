@@ -1,24 +1,24 @@
 ---
 title: 'Xamarin.Essentials: Отслеживание версий'
-description: Класс VersionTracking в Xamarin.Essentials позволяет проверить версию приложения и номерам сборки, а также просматривать дополнительные сведения о таких, как, если он является первым время, когда-либо запустить приложение или текущую версию получить предыдущей сборки сведения и многое другое.
+description: Класс VersionTracking в Xamarin.Essentials позволяет проверить версию приложения и номера сборок, а также просматривать дополнительные сведения о таких, если это первый раз когда-нибудь запущенное приложение или текущую версию, получить предыдущей сборки сведения и многое другое.
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 2c092d6767045f0af956c5dab74801077dadb51f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783006"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815652"
 ---
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Отслеживание версий
 
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
+![Предварительные версии NuGet](~/media/shared/pre-release.png)
 
-**VersionTracking** позволяет проверить версию приложения и номерам сборки, а также просматривать дополнительные сведения о таких, как, если он является первым время, когда-либо запустить приложение или получить текущую версию предыдущего сведения о сборке и многое другое.
+**VersionTracking** класс позволяет проверить версию приложения и номера сборок, а также просматривать дополнительные сведения о таких, если это первый раз когда-нибудь запущенное приложение или текущую версию, получить предыдущего сведения о сборке и многое другое.
 
-## <a name="using-version-tracking"></a>Отслеживание версий с помощью
+## <a name="using-version-tracking"></a>Использование отслеживания версии
 
 Добавьте ссылку на Xamarin.Essentials в классе:
 
@@ -26,13 +26,13 @@ ms.locfileid: "34783006"
 using Xamarin.Essentials;
 ```
 
-При первом использовании **VersionTracking** класса, он будет запущен, отслеживание текущую версию. Необходимо вызвать метод `Track` раннее только в приложении каждый раз, он загружается отслеживаемых сведений о текущей версии:
+При первом использовании **VersionTracking** класс, он будет запущен, отслеживание текущей версии. Необходимо вызвать `Track` раннее только в приложении каждый раз, он загружается отслеживаемых сведений о текущей версии:
 
 ```csharp
 VersionTracking.Track();
 ```
 
-После первоначального `Track` вызывается можно считать сведения о версии:
+После первоначального `Track` вызывается считываются сведения о версии:
 
 ```csharp
 
@@ -72,11 +72,11 @@ var buildHistory = VersionTracking.BuildHistory;
 
 ## <a name="platform-implementation-specifics"></a>Особенности реализации платформы
 
-Все сведения о версии хранится с использованием [предпочтения](preferences.md) API в Xamarin.Essentials и сохраняется в имени файла **.xamarinessentials [YOUR--ПАКЕТА-идентификатор приложения]**.
+Все сведения о версии хранится с использованием [предпочтения](preferences.md) API в Xamarin.Essentials и хранится вместе с имени файла **.xamarinessentials [YOUR-APP-пакет-ID]**.
 
-После удаления приложения _LocalSettings_и отслеживания сведений для удаления всех версий.
+При удалении приложения приведет к _LocalSettings_и все версии, данные для удаления отслеживания.
 
 ## <a name="api"></a>API
 
-- [Версия отслеживания исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
-- [Версия API отслеживания документации](xref:Xamarin.Essentials.VersionTracking)
+- [Исходный код для отслеживания версии](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
+- [Документация по API отслеживания версии](xref:Xamarin.Essentials.VersionTracking)

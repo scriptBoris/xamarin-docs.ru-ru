@@ -1,6 +1,6 @@
 ---
-title: Стандарт XAML (Предварительная версия)
-description: В этой статье объясняется, как начать с изучения Предварительная версия Standard XAML в Xamarin.Forms.
+title: XAML Standard (Предварительная версия)
+description: В этой статье объясняется, как начать работу с изучения предварительной версии стандартных XAML в Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 24382DF1-BE70-4608-B86F-B79FB23E4A78
 ms.technology: xamarin-forms
@@ -8,37 +8,37 @@ author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
 ms.openlocfilehash: 61e0fa2587ce9a8794dbd32ff9de1f13da857342
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245798"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38838014"
 ---
-# <a name="xaml-standard-preview"></a>Стандарт XAML (Предварительная версия)
+# <a name="xaml-standard-preview"></a>XAML Standard (Предварительная версия)
 
 ![Предварительный просмотр](~/media/shared/preview.png)
 
-Выполните следующие действия, чтобы поэкспериментировать со стандартными XAML в Xamarin.Forms.
+Выполните следующие действия, чтобы поэкспериментировать с помощью стандартного XAML в Xamarin.Forms.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Загрузить [предварительного просмотра здесь пакет NuGet](https://aka.ms/xf-xamlstandard-nuget).
-2. Добавить **Xamarin.Forms.Alias** пакет NuGet Xamarin.Forms .NET Standard и платформы проектов.
+1. Скачайте [предварительной версии пакета NuGet здесь](https://aka.ms/xf-xamlstandard-nuget).
+2. Добавить **Xamarin.Forms.Alias** пакет NuGet в проекты Xamarin.Forms .NET Standard и платформы.
 3. Инициализировать пакет с `Alias.Init()`
-4. Добавить `xmlns:a` ссылки `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
-5. Использовать типы в XAML - в разделе [Справочник элементов управления](controls.md) для получения дополнительной информации.
+4. Добавление `xmlns:a` ссылки `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
+5. Использовать типы в XAML - см. в разделе [Справочник по элементам управления](controls.md) Дополнительные сведения.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
 
-1. Загрузить [предварительного просмотра здесь пакет NuGet](https://aka.ms/xf-xamlstandard-nuget).
-2. Добавить **Xamarin.Forms.Alias** пакет NuGet Xamarin.Forms .NET Standard и платформы проектов.
+1. Скачайте [предварительной версии пакета NuGet здесь](https://aka.ms/xf-xamlstandard-nuget).
+2. Добавить **Xamarin.Forms.Alias** пакет NuGet в проекты Xamarin.Forms .NET Standard и платформы.
 3. Инициализировать пакет с `Alias.Init()`
-4. Добавить `xmlns:a` ссылки `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
-5. Использовать типы в XAML - в разделе [Справочник элементов управления](controls.md) для получения дополнительной информации.
+4. Добавление `xmlns:a` ссылки `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
+5. Использовать типы в XAML - см. в разделе [Справочник по элементам управления](controls.md) Дополнительные сведения.
 
 -----
 
-Следующий код XAML демонстрирует некоторые XAML стандартных элементов управления, используемых в Xamarin.Forms `ContentPage`:
+Следующий XAML демонстрирует некоторые XAML стандартные элементы управления, используемых в Xamarin.Forms `ContentPage`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -71,7 +71,7 @@ ms.locfileid: "35245798"
 ```
 
 > [!NOTE]
-> Требование xmlns `a:` префикс имени XAML стандартные элементы управления является ограничением текущей предварительной версии.
+> Требуя xmlns `a:` префикс имени XAML стандартные элементы управления является ограничением текущей предварительной версии.
 
 
 ## <a name="related-links"></a>Связанные ссылки

@@ -1,20 +1,20 @@
 ---
 title: 'Xamarin.Essentials: Сведения об устройстве'
-description: Этот документ описывает класс DeviceInfo в Xamarin.Essentials, который предоставляет сведения об устройстве, что приложение работает.
+description: Этот документ описывает класс DeviceInfo в Xamarin.Essentials, который предоставляет сведения об устройстве, что приложение выполняется на.
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: b7246afca19607ef2f70288d4643696f4ac35d52
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782402"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831491"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: Сведения об устройстве
 
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
+![Предварительные версии NuGet](~/media/shared/pre-release.png)
 
 **DeviceInfo** класс предоставляет сведения об устройстве, приложение выполняется.
 
@@ -26,7 +26,7 @@ ms.locfileid: "34782402"
 using Xamarin.Essentials;
 ```
 
-Через API-Интерфейс предоставляются следующие сведения:
+Через API предоставляются следующие сведения:
 
 ```csharp
 // Device Model (SMG-950U)
@@ -53,16 +53,16 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="platformsxrefxamarinessentialsdeviceinfoplatforms"></a>[Платформы](xref:Xamarin.Essentials.DeviceInfo.Platforms)
 
-`DeviceInfo.Platform` Сопоставляет строковой константы, который сопоставляется операционной системы. Можно проверить значения с `Platforms` класса:
+`DeviceInfo.Platform` Устанавливает корреляцию между строковую константу, который сопоставляется операционной системы. Значения можно проверить с помощью `Platforms` класса:
 
 - **DeviceInfo.Platforms.iOS** — iOS
 - **DeviceInfo.Platforms.Android** — Android
-- **DeviceInfo.Platforms.UWP** — UWP
+- **DeviceInfo.Platforms.UWP** — универсальной платформы Windows
 - **DeviceInfo.Platforms.Unsupported** — не поддерживается
 
 ## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[Стили](xref:Xamarin.Essentials.DeviceInfo.Idioms)
 
-`DeviceInfo.Idiom` соотносится строковую константу, соответствующий типу устройства приложение выполняется на. Можно проверить значения с `Idioms` класса:
+`DeviceInfo.Idiom` Сопоставляет строковую константу, который сопоставляется с типом устройства, приложение выполняется на. Значения можно проверить с помощью `Idioms` класса:
 
 - **DeviceInfo.Idioms.Phone** — телефон
 - **DeviceInfo.Idioms.Tablet** — планшета
@@ -72,9 +72,9 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="device-type"></a>Тип устройства
 
-`DeviceInfo.DeviceType` Сопоставляет перечисление, чтобы определить, является ли приложение задать задержку на физический или виртуальный устройства. Виртуальное устройство находится в симуляторе или эмуляторе.
+`DeviceInfo.DeviceType` Устанавливает корреляцию между перечисление для определения того, является ли приложения, которые выполняются в физический или виртуальный устройства. Виртуальное устройство – симуляторе или эмуляторе.
 
 ## <a name="api"></a>API
 
-- [DeviceInfo исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
-- [Документация по DeviceInfo API](xref:Xamarin.Essentials.DeviceInfo)
+- [Исходный код для отправки сведений об устройстве](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
+- [Документация по API для отправки сведений об устройстве](xref:Xamarin.Essentials.DeviceInfo)

@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms темной темы
-description: В этой статье объясняется, как использовать темной темами Xamarin.Forms в приложении.
+title: Xamarin.Forms Темная тема
+description: В этой статье объясняется, как использовать Xamarin.Forms "темной" теме в приложении.
 ms.prod: xamarin
 ms.assetid: 43A3798D-6F05-4734-AF5E-97235B46D9B9
 ms.technology: xamarin-forms
@@ -8,30 +8,30 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 1fc329f506afde04b0dc59dc637d999865aafbe1
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245928"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38853249"
 ---
-# <a name="xamarinforms-dark-theme"></a>Xamarin.Forms темной темы
+# <a name="xamarinforms-dark-theme"></a>Xamarin.Forms Темная тема
 
-![](~/media/shared/preview.png "Этот API в настоящее время находится в предварительной версии")
+![](~/media/shared/preview.png "Этот API доступна в предварительной версии")
 
 > [!NOTE]
-> Темы используют предварительной версии Xamarin.Forms 2.3. Проверьте [советы по устранению неполадок](~/xamarin-forms/user-interface/themes/index.md) при возникновении ошибки.
+> Темы требуется предварительной версии Xamarin.Forms 2.3. Проверьте [советы по устранению неполадок](~/xamarin-forms/user-interface/themes/index.md) при возникновении ошибок.
 
-Чтобы использовать темной темы:
+Чтобы использовать "темной" теме:
 
-## <a name="1-add-nuget-packages"></a>1. Добавление пакетов Nuget
+## <a name="1-add-nuget-packages"></a>1. Добавьте пакеты Nuget
 
 * Xamarin.Forms.Theme.Base
 * Xamarin.Forms.Theme.Dark
 
-## <a name="2-add-to-the-resource-dictionary"></a>2. Добавить словарь ресурсов
+## <a name="2-add-to-the-resource-dictionary"></a>2. Добавить в словарь ресурсов
 
-В **App.xaml** файл добавления новых настраиваемых `xmlns` для темы, а затем убедитесь ресурсы темы объединяются со словарем ресурсов приложения.
-Ниже приводится пример файла XAML.
+В **App.xaml** файла добавьте новый пользовательский `xmlns` для темы, а затем убедитесь, ресурсы темы объединяются со словарем ресурсов приложения.
+Ниже приведен пример файла XAML:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8"?>
@@ -43,13 +43,13 @@ ms.locfileid: "35245928"
 </Application>
 ```
 
-## <a name="3-load-theme-classes"></a>3. Загрузки классов темы
+## <a name="3-load-theme-classes"></a>3. Загрузка классов тем
 
-После этого использовать [Устранение неполадок шаг](~/xamarin-forms/user-interface/themes/index.md) и добавьте требуемый код в проектах приложения Android и iOS.
+Выполните это [этап устранения неполадок](~/xamarin-forms/user-interface/themes/index.md) и добавьте необходимый код в проектах приложений Android и iOS.
 
 ## <a name="4-use-styleclass"></a>4. Использовать StyleClass
 
-Ниже приведен пример кнопок и метки в темной темы, вместе с разметку, которая создает их.
+Ниже приведен пример кнопки и метки "темной" темы, а также разметку, которая создает их.
 
 [![](dark-images/dark-theme-sml.png "Кнопки и метки в \"темной\" теме")](dark-images/dark-theme.png#lightbox "кнопки и метки в \"темной\" теме")
 
