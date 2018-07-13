@@ -1,46 +1,46 @@
 ---
-title: Для повторного использования EventToCommandBehavior
-description: Поведения можно использовать для связи команд с помощью элементов управления, которые не были предназначены для взаимодействия с командами. В этой статье показано, с помощью Xamarin.Forms поведения для вызова команды при запуске события.
+title: Повторно используемые EventToCommandBehavior
+description: Поведения можно использовать для сопоставления команд с помощью элементов управления, которые не были предназначены для взаимодействия с помощью команд. В этой статье показано, с помощью Xamarin.Forms поведения для вызова команды в том случае, когда создается событие.
 ms.prod: xamarin
 ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: e89400c74c3d1afbf8954d0f88387c5967ebd534
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 3151179b6ff6d26b74a87ded747310646b304603
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848237"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996325"
 ---
-# <a name="reusable-eventtocommandbehavior"></a>Для повторного использования EventToCommandBehavior
+# <a name="reusable-eventtocommandbehavior"></a>Повторно используемые EventToCommandBehavior
 
-_Поведения можно использовать для связи команд с помощью элементов управления, которые не были предназначены для взаимодействия с командами. В этой статье показано, с помощью Xamarin.Forms поведения для вызова команды при запуске события._
+_Поведения можно использовать для сопоставления команд с помощью элементов управления, которые не были предназначены для взаимодействия с помощью команд. В этой статье показано, с помощью Xamarin.Forms поведения для вызова команды в том случае, когда создается событие._
 
 ## <a name="overview"></a>Обзор
 
-`EventToCommandBehavior` Класс является многократно используемых пользовательское поведение Xamarin.Forms, которое выполняет команду в ответ на *любой* событием. По умолчанию аргументы события для события будут передаваться в команду, а при необходимости может быть преобразован с [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) реализации.
+`EventToCommandBehavior` Класс является многократно используемых пользовательское поведение Xamarin.Forms и выполняет команды в ответ на *любой* события Click. По умолчанию аргументы события для события передаются в команду, а при необходимости может быть преобразован с [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) реализации.
 
-Чтобы использовать поведение должно быть задано поведение следующие свойства:
+Следующие свойства поведение должно быть задано в соответствии с поведением:
 
 - **EventName** — имя события поведение прослушивает.
-- **Команда** – **ICommand** для выполнения. Поведение ожидает найти `ICommand` экземпляра [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) вложенного управления, который может быть унаследован от родительского элемента.
+- **Команда** — **ICommand** для выполнения. Поведение ожидает найти `ICommand` экземпляра [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) из присоединенного элемента управления, которое может быть унаследовано от родительского элемента.
 
-Также можно задать следующие свойства необязательным поведением.
+Также можно задать следующие свойства необязательное поведение:
 
-- **CommandParameter** — `object` будут передаваться в команду.
-- **Преобразователь** — [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) реализацию, которая будет изменить формат данных аргумента события, передаваемый между *источника* и *целевой*модулем привязки.
+- **CommandParameter** — `object` , передаются в команду.
+- **Преобразователь** — [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) реализация, которая изменит формат данных события, аргумент, передаваемый между *источника* и *целевой*обработчиком привязки.
 
-## <a name="creating-the-behavior"></a>Создание поведения
+## <a name="creating-the-behavior"></a>Создание поведение
 
-`EventToCommandBehavior` Класс является производным от `BehaviorBase<T>` класс, который в свою очередь является производным от [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) класса. Назначение `BehaviorBase<T>` класса является предоставление базового класса для любого Xamarin.Forms поведений, которые требуют [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) поведения, задаваемое для вложенного элемента управления. Это гарантирует, что поведение можно привязать к и выполнить `ICommand` заданные `Command` свойства, если используются в поведение.
+`EventToCommandBehavior` Класс является производным от `BehaviorBase<T>` класс, который в свою очередь является производным от [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) класса. Цель `BehaviorBase<T>` класса заключается в предоставлении базовый класс для любого реакции на событие Xamarin.Forms, требующих [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) поведения будет присвоено присоединенного элемента управления. Это гарантирует, что поведение можно привязать к и выполняться `ICommand` определяется `Command` свойства при использовании поведения.
 
-`BehaviorBase<T>` Класс предоставляет overridable [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) метод, который задает [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) поведение и переопределяемым [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/)метод, который выполняет очистку `BindingContext`. Кроме того, класс хранит ссылку на вложенный элемент управления в `AssociatedObject` свойство.
+`BehaviorBase<T>` Класс предоставляет переопределяемый [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) метод, который задает [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) поведение и переопределяемым [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))метод, который очищает `BindingContext`. Кроме того, класс хранит ссылку на присоединенного элемента управления в `AssociatedObject` свойство.
 
-### <a name="implementing-bindable-properties"></a>Реализация свойства для привязки
+### <a name="implementing-bindable-properties"></a>Реализация привязываемые свойства
 
-`EventToCommandBehavior` Класс определяет четыре [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляров, выполняемых пользователем определенные команды при запуске события. В следующем примере кода показаны следующие свойства:
+`EventToCommandBehavior` Класс определяет четыре [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) экземпляров, выполняемых пользователем определенные команды, когда создается событие. Эти свойства отображаются в следующем примере кода:
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -62,13 +62,13 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-При `EventToCommandBehavior` потребляются класс `Command` свойство должно быть данными, привязанными к `ICommand` должно выполняться в ответ на события Click, который определен в `EventName` свойство. Поведение ожидает найти `ICommand` на [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) вложенного элемента управления.
+При `EventToCommandBehavior` исчерпания класс `Command` свойство должно иметь значение данных, привязанных к `ICommand` для выполнения в ответ на события Click, который определен в `EventName` свойство. Поведение ожидают найти `ICommand` на [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) из присоединенного элемента управления.
 
-По умолчанию аргументы событий для события передаются в команду. Эти данные можно при необходимости преобразовать при передаче между *источника* и *целевой* модулем привязки, указывая [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) реализации как `Converter` значение свойства. Кроме того, параметр может быть передан команду, указав `CommandParameter` значение свойства.
+По умолчанию аргументы события для события передаются в команду. Эти данные можно при необходимости преобразовать при передаче между *источника* и *целевой* обработчиком привязки, указав [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) реализацию как `Converter` значение свойства. Кроме того, параметр может передаваться в команду, указав `CommandParameter` значение свойства.
 
-### <a name="implementing-the-overrides"></a>Реализации переопределений
+### <a name="implementing-the-overrides"></a>Реализация переопределения
 
-`EventToCommandBehavior` Класса переопределения [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) и [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) методы `BehaviorBase<T>` класса, как показано в следующем примере кода:
+`EventToCommandBehavior` Класса переопределения [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) и [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) методы `BehaviorBase<T>` класса, как показано в следующем примере кода:
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -89,11 +89,11 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-[ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Метод выполняет программу установки с помощью вызова `RegisterEvent` метод, передавая значение `EventName` свойство в качестве параметра. [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) Метод выполняет очистку, вызвав `DeregisterEvent` метод, передавая значение `EventName` свойство в качестве параметра.
+[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Метод выполняет программу установки с помощью вызова `RegisterEvent` метод, передавая значение `EventName` свойство в качестве параметра. [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Метод выполняет очистку, вызвав `DeregisterEvent` метод, передавая значение `EventName` свойство в качестве параметра.
 
 ### <a name="implementing-the-behavior-functionality"></a>Реализация функциональных возможностей поведения
 
-Поведение предназначено для выполнения команды, определяемые `Command` свойства в ответ на события Click, который определяется `EventName` свойство. В следующем примере кода показано поведение основные функциональные возможности:
+Поведение предназначено для выполнения команды, определяется `Command` свойства в ответ на события Click, который определяется `EventName` свойство. В следующем примере кода показано поведение основные функциональные возможности:
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -137,21 +137,21 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-`RegisterEvent` Метод выполняется в ответ на `EventToCommandBehavior` , присоединяемый к элементу управления и он получает значение `EventName` свойство в качестве параметра. Метод пытается найти события, определенного в `EventName` свойство вложенного элемента управления. Условии, что событие может быть найден, `OnEvent` метод зарегистрирован методом обработчика для события.
+`RegisterEvent` Метод выполняется в ответ на `EventToCommandBehavior` присоединяемый к элементу управления и он получает значение `EventName` свойство в качестве параметра. Затем пытается найти события, определенного в методе `EventName` свойства, вложенного элемента управления. Условии, что событие может быть найден, `OnEvent` регистрации метода способом обработчик для события.
 
 `OnEvent` Метод выполняется в ответ на события Click, который определен в `EventName` свойство. При условии, что `Command` свойство ссылается на допустимый `ICommand`, метод пытается получить параметр для передачи `ICommand` следующим образом:
 
-- Если `CommandParameter` свойство определяет параметр, они будут получены.
-- В противном случае, если `Converter` свойство определяет [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) реализация преобразователя выполняется и преобразует данные аргумент события, передаваемый между *источника* и *целевой* модулем привязки.
+- Если `CommandParameter` свойство определяет параметр, он извлекается.
+- В противном случае, если `Converter` определяет свойство [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) реализации преобразователя, выполняется и преобразует данные аргумент события, передаваемый между *источника* и *целевой* обработчиком привязки.
 - В противном случае аргументы события считаются параметра.
 
-Данные, привязанные `ICommand` выполняется, передавая параметр в команду, при условии, что [ `CanExecute` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Command.CanExecute/p/System.Object/) возвращает `true`.
+Данные, привязываемые `ICommand` выполняется, передавая их в команду, при условии, что в параметре [ `CanExecute` ](xref:Xamarin.Forms.Command.CanExecute(System.Object)) возвращает метод `true`.
 
-Несмотря на то, что не показано здесь, `EventToCommandBehavior` также включает `DeregisterEvent` метод, который выполняется путем [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) метод. `DeregisterEvent` Метод используется для поиска и удалить регистрацию события, определенного в `EventName` свойство, которое возникает утечка памяти потенциальных очистки.
+Несмотря на то, что не отображается, `EventToCommandBehavior` также включает в себя `DeregisterEvent` метод, который выполняется путем [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) метод. `DeregisterEvent` Метод используется для поиска и отменить регистрацию события, определенного в `EventName` свойство, для очистки памяти потенциальных утечек.
 
 ## <a name="consuming-the-behavior"></a>Использование поведения
 
-`EventToCommandBehavior` Класса можно подключить к [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) коллекцию элементов управления, как показано в следующем примере кода XAML:
+`EventToCommandBehavior` Класса можно подключить к [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) коллекцию элементов управления, как показано в следующем примере кода XAML:
 
 ```xaml
 <ListView ItemsSource="{Binding People}">
@@ -178,21 +178,21 @@ var selectedItemLabel = new Label ();
 selectedItemLabel.SetBinding (Label.TextProperty, "SelectedItemText");
 ```
 
-`Command` Свойство поведения является данными, привязанными к `OutputAgeCommand` свойства связанного ViewModel при `Converter` свойству `SelectedItemConverter` экземпляр, который возвращает [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/)из [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) из [ `SelectedItemChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SelectedItemChangedEventArgs/).
+`Command` Свойство поведения является привязанным к данным `OutputAgeCommand` свойства связанного ViewModel, хотя `Converter` свойству `SelectedItemConverter` экземпляр, который возвращает [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)из [ `ListView` ](xref:Xamarin.Forms.ListView) из [ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs).
 
-Во время выполнения поведение будет отвечать на действия с элементом управления. При выборе элемента в [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/), [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/) активизируется событие, в которой будет выполнен `OutputAgeCommand` в ViewModel. В свою очередь, при этом обновляются ViewModel `SelectedItemText` свойство, [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) привязывается к, как показано на следующем снимке экрана:
+Во время выполнения поведение будет отвечать на действия с элементом управления. При выборе элемента в [ `ListView` ](xref:Xamarin.Forms.ListView), [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) событие будет срабатывать, которой будет выполнен `OutputAgeCommand` в ViewModel. В свою очередь, при этом обновляется ViewModel `SelectedItemText` свойство, [ `Label` ](xref:Xamarin.Forms.Label) привязывает to, как показано на следующем снимке экрана:
 
-[![](event-to-command-behavior-images/screenshots-sml.png "Образец приложения с EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "образец приложения с EventToCommandBehavior")
+[![](event-to-command-behavior-images/screenshots-sml.png "Пример приложения с EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "пример приложения с EventToCommandBehavior")
 
-Преимущество использования этого поведения для выполнения команды при запуске события, является, команды могут быть связаны с элементами управления, которые не были предназначены для взаимодействия с командами. Кроме того код обработки события пластина шаблон удаляется из файлов кода.
+Преимуществом использования это поведение для выполнения команды в том случае, когда создается событие, является, что команды могут быть связаны с элементами управления, которые не были предназначены для взаимодействия с помощью команд. Кроме того это удаляет стереотипного кода обработки событий из файлы с выделенным кодом.
 
 ## <a name="summary"></a>Сводка
 
-В этой статье показано, с помощью Xamarin.Forms поведения для вызова команды при запуске события. Поведения можно использовать для связи команд с помощью элементов управления, которые не были предназначены для взаимодействия с командами.
+В этой статье показано, с помощью Xamarin.Forms поведения для вызова команды в том случае, когда создается событие. Поведения можно использовать для сопоставления команд с помощью элементов управления, которые не были предназначены для взаимодействия с помощью команд.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Поведение EventToCommand (пример)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
-- [Поведение](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
-- [Поведение<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)
+- [Поведение](xref:Xamarin.Forms.Behavior)
+- [Поведение<T>](xref:Xamarin.Forms.Behavior`1)

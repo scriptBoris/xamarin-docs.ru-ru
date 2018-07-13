@@ -1,45 +1,45 @@
 ---
 title: Поля и заполнение
-description: Поля и свойства заполнения управляющие поведением макета при подготовке к просмотру элемента в пользовательском интерфейсе. В этой статье показано различие между двумя свойствами и способ их настройки.
+description: Поля и свойства заполнения управлять поведением макета, когда элемент отображается в пользовательском интерфейсе. В этой статье показано различие между двумя свойствами, а также об их настройке.
 ms.prod: xamarin
 ms.assetid: BEB096BB-51DF-410F-B0F1-D235287B0F4A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 545468d3b02f9651c45fcaebe159351aafea6432
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 595e673c59d23a45cbaf923a0d58faff2000c296
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30790604"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996620"
 ---
 # <a name="margin-and-padding"></a>Поля и заполнение
 
-_Поля и свойства заполнения управляющие поведением макета при подготовке к просмотру элемента в пользовательском интерфейсе. В этой статье показано различие между двумя свойствами и способ их настройки._
+_Поля и свойства заполнения управлять поведением макета, когда элемент отображается в пользовательском интерфейсе. В этой статье показано различие между двумя свойствами, а также об их настройке._
 
 ## <a name="overview"></a>Обзор
 
 Поля и заполнение — макет связанные понятия:
 
-- [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) Свойство представляет расстояние между элементом и его соседние элементы и используется для управления позицию отрисовки данного элемента и его соседями позицию отрисовки. `Margin` значения могут быть заданы на [макета](~/xamarin-forms/user-interface/controls/layouts.md) и [представление](~/xamarin-forms/user-interface/controls/views.md) классы.
-- [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) Свойство представляет расстояние между элементом и его дочерние элементы и используется для разделения управления из его собственного содержимого. `Padding` значения могут быть заданы на [макета](~/xamarin-forms/user-interface/controls/layouts.md) классы.
+- [ `Margin` ](xref:Xamarin.Forms.View.Margin) Свойство представляет расстояние между элементом и его соседние элементы и используется для управления положением отрисовки элемента и положения своих соседей. `Margin` значение должно лежать в [макета](~/xamarin-forms/user-interface/controls/layouts.md) и [представление](~/xamarin-forms/user-interface/controls/views.md) классы.
+- [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) Свойство представляет расстояние между элементом и его дочерние элементы и используется для разделения его собственного содержимого элемента управления. `Padding` значение должно лежать в [макета](~/xamarin-forms/user-interface/controls/layouts.md) классы.
 
-Следующая диаграмма иллюстрирует две основные понятия.
+На следующей схеме эти два понятия:
 
 [![](margin-and-padding-images/margins-and-padding-sml.png "Поля и заполнение понятия")](margin-and-padding-images/margins-and-padding.png#lightbox "поля и заполнение основные понятия")
 
-Обратите внимание, что [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) значения являются аддитивными. Таким образом Если два соседних элемента указать на поле шириной в 20 точек, расстояние между элементами будет 40 пикселей. Кроме того, поля и заполнение являются друг к другу при обоих применяются, в том, что расстояние между элементом и любое содержимое будет полей, а также заполнения.
+Обратите внимание, что [ `Margin` ](xref:Xamarin.Forms.View.Margin) значения являются аддитивными. Таким образом Если два соседних элемента задать поля 20 точек, расстояние между элементами будет 40 пикселей. Кроме того, поля и заполнение являются аддитивный, если оба применяются, в том, что расстояние между элементом и любое содержимое будет иметь поля, а также заполнения.
 
-## <a name="specifying-a-thickness"></a>Задание толщины
+## <a name="specifying-a-thickness"></a>Указание толщину
 
-[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) И [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) свойства имеют тип [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/). Возможны три варианта при создании `Thickness` структуры:
+[ `Margin` ](xref:Xamarin.Forms.View.Margin) И [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) свойства имеют тип [ `Thickness` ](xref:Xamarin.Forms.Thickness). Возможны три варианта при создании `Thickness` структуры:
 
-- Создание [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) структуры, определяемой универсальный одно значение. Одно значение применяется к слева, сверху, справа и нижней сторонах элемента.
-- Создание [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) структуры, определяемой значения по горизонтали и вертикали. Значение горизонтального симметрично применяется к левой и правой сторон элемента, значением по вертикали симметрично, применяемые к верхней и нижней границами элемента.
-- Создание [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) структуры, определяемой четыре различных значений, применяемых к слева, сверху, справа и нижней сторонах элемента.
+- Создание [ `Thickness` ](xref:Xamarin.Forms.Thickness) структуры, определяемой одно значение универсального кода. Одно значение применяется к левой, верхней, правой и нижней сторон элемента.
+- Создание [ `Thickness` ](xref:Xamarin.Forms.Thickness) структуры, определяемой по горизонтали и вертикали значениям. Значением по вертикали симметрично, применяемая к верхней и нижней сторон элемента левой и правой сторон элемента, симметрично применяется значение по горизонтали.
+- Создание [ `Thickness` ](xref:Xamarin.Forms.Thickness) структуры, определяемой четыре разных значения, которые применяются к левой, верхней, правой и нижней сторон элемента.
 
-В следующем примере кода XAML показаны все три возможности:
+В следующем примере кода XAML показаны все три варианта:
 
 ```xaml
 <StackLayout Padding="0,20,0,0">
@@ -63,15 +63,15 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> `Thickness` значения могут быть отрицательными, который обычно отсекает или обрезку элементов содержимого.
+> `Thickness` значения могут быть отрицательным, который обычно отсекает или обрезку элементов содержимого.
 
 ## <a name="summary"></a>Сводка
 
-В этой статье показано различие между [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) и [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) свойства и способ их настройки. Свойства управляют поведением макета при подготовке к просмотру элемента в пользовательском интерфейсе.
+В этой статье показано различие между [ `Margin` ](xref:Xamarin.Forms.View.Margin) и [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) свойства и их настройке. Свойства управления поведением макета, когда элемент отображается в пользовательском интерфейсе.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Поля](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)
-- [Заполнение](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)
-- [Толщина](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/)
+- [Поле](xref:Xamarin.Forms.View.Margin)
+- [Заполнение](xref:Xamarin.Forms.Layout.Padding)
+- [Толщина](xref:Xamarin.Forms.Thickness)

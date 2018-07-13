@@ -1,72 +1,72 @@
 ---
 title: Кнопки в Xamarin.iOS
-description: Класс UIButton используется для представления различных различные стили кнопки на экранах операций ввода-вывода. В этом разделе представлены различные параметры для работы с кнопками в iOS.
+description: Класс UIButton используется для представления различных различные стили кнопки на экранах iOS. Это руководство описывает различные параметры для работы с кнопками в iOS.
 ms.prod: xamarin
 ms.assetid: 304229E5-8FA8-41BD-8563-D19E1D2A0296
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/21/2017
-ms.openlocfilehash: bf9a36c63e0c153ed950f4c3531e99e6baf77687
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/11/2018
+ms.openlocfilehash: 32f6330ad2fddc2e8386d6e574918a011f3bebad
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789483"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986008"
 ---
 # <a name="buttons-in-xamarinios"></a>Кнопки в Xamarin.iOS
 
-_Класс UIButton используется для представления различных различные стили кнопки на экранах операций ввода-вывода. В этом разделе представлены различные параметры для работы с кнопками в iOS._
+В iOS `UIButton` класс представляет элемент управления button.
 
-`UIButton`Класс представляет элемент управления button в iOS. 
+Свойства кнопки можно изменить программно или с помощью **панели свойств** из конструктора iOS:
 
-Можно изменить свойства кнопки в `Properties Pad` конструктора операций ввода-вывода:
+![Панели свойств в конструкторе iOS](buttons-images/properties.png "панели свойств объекта в конструкторе iOS")
 
+## <a name="creating-a-button-programmatically"></a>Создание кнопки программным способом
 
-![](buttons-images/properties.png "Панель свойств конструктора операций ввода-вывода")
+Объект `UIButton` могут создаваться с помощью всего нескольких строк кода.
 
-## <a name="creating-a-button"></a>Создание кнопки
+- Создают экземпляр кнопки и указать его тип.
 
-UIButton могут создаваться в помощью всего нескольких строк кода.
+  ```csharp
+  UIButton myButton = new UIButton(UIButtonType.System);
+  ```
 
-Во-первых создают новые кнопки и укажите тип кнопки, что нужно:
+  Тип кнопки задается `UIButtonType`:
 
-```csharp
-UIButton myButton = new UIButton(UIButtonType.System);
-```
+  - `UIButtonType.System` -Кнопка общего назначения
+  - `UIButtonType.DetailDisclosure` — Указывает, доступности, содержащие подробную информацию, обычно о конкретного элемента в таблицу
+  - `UIButtonType.InfoDark` — Указывает доступность сведений о конфигурации; темные
+  - `UIButtonType.InfoLight` — Указывает доступность сведений о конфигурации; Светлый
+  - `UIButtonType..AddContact` — Указывает, что можно добавить контакт
+  - `UIButtonType.Custom` -Настраиваемую кнопку
 
-UIButtonType должно быть указано как одно из следующих:
+  Дополнительные сведения о различные типы кнопок взгляните на:
+  
+  - [Кнопку нестандартные](#custom-button-types) раздел этого документа
+  - [Кнопку типы](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/create_different_types_of_buttons) рецепт
+  - Apple [iOS рекомендациям по интерфейсам](https://developer.apple.com/design/human-interface-guidelines/ios/controls/buttons/).
 
-- **Система** -это тип стандартной кнопки, используемые iOS, тип, который будет использоваться чаще всего.
-- **DetailDisclosure** -представляет «выключить» тип, из которой можно скрыть или отобразить подробные сведения.
-- **InfoDark** -темной подробные сведения, кнопка «i» отображается в кружке.
-- **InfoLight** -индикатор подробные сведения, кнопка «i» отображается в кружке.
-- **AddContact** -отображать кнопку в виде кнопки, добавить контакт.
-- **Настраиваемый** -позволяет настраивать несколько характеристик кнопки.
+- Определите размер и положение кнопки:
 
-Дополнительные сведения о типах кнопку можно найти в [типов кнопки](https://developer.xamarin.com/recipes/ios/standard_controls/buttons/create_different_types_of_buttons/) инструкций.
+  ```csharp
+  myButton.Frame = new CGRect(25, 25, 300, 150);
+  ```
 
-Затем определите на экране размер и расположение кнопки. Пример
+- Задайте текст кнопки. Используйте `SetTitle` метод, который должен отображаться текст и `UIControlState` значение:
 
-```csharp
-myButton.Frame = new CGRect (25, 25, 300, 150);
-```
+  ```csharp
+  myButton.SetTitle("Hello, World!", UIControlState.Normal);
+  ```
 
-Чтобы изменить текст кнопки, используйте `SetTitle` свойство на кнопке, необходимо задать строку текста и `UIControlStyle`. Пример:
+  Дополнительные сведения о Задание стиля кнопки и задание его текст см. в:
 
-```csharp
-myButton.SetTitle("Hello, World!", UIControlState.Normal);
-```
+  - [Задание стиля кнопки](#styling-a-button) раздел этого документа
+  - [Задать текст кнопки](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/set_button_text) рецепт.
 
-Задание различных свойств для каждого состояния позволяет обмениваться данными Дополнительные сведения для пользователя (например) сделать цвет текста для отключенного состояния серым). Можно переключаться между каждого состояния, с помощью iOS конструктор, или можно сделать программно. Дополнительные сведения о текст кнопки параметров и состояния посвящены [задать текст кнопки](https://developer.xamarin.com/recipes/ios/standard_controls/buttons/set_button_text/) инструкций.
+## <a name="handling-a-button-tap"></a>Обработка путем нажатия кнопки
 
-## <a name="dealing-with-user-interactions"></a>Работа с взаимодействие с пользователем
-
-
-Кнопки не очень полезны, если только они заняться при щелчке! 
-
-В iOS события для кнопки, почти всегда событий сенсорного ввода, использование взаимодействует с кнопкой на экранах по границе с ним. Список всех возможных событий UIControl [здесь](https://developer.apple.com/documentation/uikit/uicontrolevents), но наиболее часто используемые событие в iOS `TouchUpInside`. Затем можно создать обработчик событий к каким-либо, если была нажата кнопка:
-
+Чтобы реагировать на них путем нажатия кнопки, можно создать обработчик для кнопки `TouchUpInside` событий:
 
 ```csharp
 button.TouchUpInside += (sender, e) => {
@@ -74,38 +74,44 @@ button.TouchUpInside += (sender, e) => {
 };
 ```
 
-### <a name="adding-events-in-the-ios-designer"></a>Добавление событий в конструкторе iOS
- 
-На вкладке событий в панели свойств для добавления событий для элементов управления.
+> [!NOTE]
+> `TouchUpInside` не является событием доступно только кнопки. `UIButton` является дочерний класс этого `UIControl`, который определяет [различные события](https://developer.xamarin.com/api/type/UIKit.UIControlEvent/).
 
-Выберите событие и введите имя нового обработчика событий или выберите один из списка. Это создаст новый разделяемого метода в классе контроллера представления.
+### <a name="using-the-ios-designer-to-specify-button-event-handlers"></a>Использовании конструктора iOS, чтобы указать обработчики событий для кнопки
 
-![Вкладка "события"](buttons-images/image1.png)
+Используйте **события** вкладке **панели свойств** определить обработчики событий для кнопки различных событий.
+
+Для соответствующего события введите имя нового обработчика событий или выберите его из списка. Это создаст обработчик событий в коде для контроллера представления кнопки.
+
+![Вкладке "события" в панели свойств](buttons-images/image1.png "вкладке \"события\" в панели свойств")
 
 ## <a name="styling-a-button"></a>Задание стиля кнопки
 
-UIButtons отличаются от большинства UIKit управляет тем, что они имеют состояние, поэтому нельзя просто изменить заголовок, необходимо изменить его для каждого `UIControlState`. Задавая цвет заголовка и цвет тени выполняется аналогичным образом:
+`UIButton` элементы управления могут существовать в нескольких различных состояний, каждый указанных по `UIControlState` значение — `Normal`, `Disabled`, `Focused`, `Highlighted`и т. д. Каждое состояние можно предоставить уникальный стиль, указанный программно или с помощью конструктора iOS.
+
+> [!NOTE]
+> Полный список всех `UIControlState` значения, взгляните на [ `UIKit.UIControlState enumeration` ](https://developer.xamarin.com/api/type/UIKit.UIControlState/) документации.
+
+Например, чтобы задать цвет заголовка и цвет тени для `UIControlState.Normal`:
 
 ```csharp
-button.SetTitleColor (UIColor.White, UIControlState.Normal);
+button.SetTitleColor(UIColor.White, UIControlState.Normal);
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 ```
 
-Кроме того можно использовать атрибутами текст в качестве кнопки заголовка. Пример:
+Следующий код задает заголовок, кнопки строку с атрибутами (стилизованные) для `UIControlState.Normal` и `UIControlState.Highlighted`:
 
 ```csharp
-var normalAttributedTitle = new NSAttributedString (buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);
-myButton.SetAttributedTitle (normalAttributedTitle, UIControlState.Normal);
+var normalAttributedTitle = new NSAttributedString(buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);
+myButton.SetAttributedTitle(normalAttributedTitle, UIControlState.Normal);
 
-var highlightedAttributedTitle = new NSAttributedString (buttonTitle, foregroundColor: UIColor.Green, strikethroughStyle: NSUnderlineStyle.Thick);
-myButton.SetAttributedTitle (highlightedAttributedTitle, UIControlState.Highlighted);
+var highlightedAttributedTitle = new NSAttributedString(buttonTitle, foregroundColor: UIColor.Green, strikethroughStyle: NSUnderlineStyle.Thick);
+myButton.SetAttributedTitle(highlightedAttributedTitle, UIControlState.Highlighted);
 ```
 
-## <a name="custom-button-types"></a>Типы пользовательских кнопок
+## <a name="custom-button-types"></a>Типы настраиваемых кнопок
 
-
-При задании `Custom` тип кнопки, объект содержит не отрисовки по умолчанию. Можно настроить внешний вид кнопки, задав изображения для различных состояний. Например, следующий код демонстрирует добавить различные изображения для `Normal`, `Highlighted` и `Selected` состояний:
-
+Кнопки с `UIButtonType` из `Custom` не стили по умолчанию. Тем не менее можно настроить внешний вид кнопки, задав изображения для разных состояний:
 
 ```csharp
 button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand.png"), UIControlState.Normal);
@@ -113,16 +119,13 @@ button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_Highlight.png"), UICont
 button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlState.Selected);
 ```
 
+В зависимости от того, является ли пользователь касается кнопки или нет, он будет обрабатывать как один из следующих образов (`UIControlState.Normal`, `UIControlState.Highlighted` и `UIControlState.Selected` состояния, соответственно):
 
-В зависимости от того, является ли пользователь касается кнопки или нет, оно обрабатывается как один из следующих образов (`Normal`, `Highlighted` и `Selected` соответственно состояния):
+![UIControlState.Normal](buttons-images/image22.png "UIControlState.Normal")
+![UIControlState.Highlighted](buttons-images/image23.png "UIControlState.Highlighted") 
+ ![UIControlState.Selected](buttons-images/image24.png "UIControlState.Selected")
 
-
-![](buttons-images/image22.png "Нормальное состояние UIButton")
-![](buttons-images/image23.png "UIButton состояние выделяются")
-![](buttons-images/image24.png "UIButton состоянию, выбранному")
-
-Дополнительные сведения о работе с пользовательскими кнопками посвящены [использования изображения для кнопки](https://developer.xamarin.com/recipes/ios/standard_controls/buttons/use_an_image_for_a_button/).
-
+Дополнительные сведения о работе с пользовательскими кнопками см [использования изображения для кнопки](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button) рецепт.
 
 ## <a name="related-links"></a>Связанные ссылки
 

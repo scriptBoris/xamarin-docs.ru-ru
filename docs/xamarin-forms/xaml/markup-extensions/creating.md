@@ -1,24 +1,24 @@
 ---
 title: Создание расширений разметки XAML
-description: В этой статье объясняется, как для определения собственного пользовательского расширения разметки Xamarin.Forms XAML. Расширение разметки XAML является класс, реализующий интерфейс IMarkupExtension IMarkupExtension.
+description: В этой статье объясняется, как определить собственные пользовательские расширения разметки XAML Xamarin.Forms. Расширение разметки XAML — это класс, который реализует интерфейс IMarkupExtension IMarkupExtension.
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: b185ea3b7260ff2be8a4dec5dc713f24dc6e6095
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d4b3d5c65ddf8be433d1f8e182774aa839f60357
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245707"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995600"
 ---
 # <a name="creating-xaml-markup-extensions"></a>Создание расширений разметки XAML
 
-На уровне программный расширение разметки XAML является класс, реализующий [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) или [ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/) интерфейса. Можно просмотреть исходный код расширения стандартной разметки описано ниже в [ **MarkupExtensions** каталога](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) репозитория Xamarin.Forms GitHub.
+На уровне программного расширения разметки XAML — это класс, реализующий [ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension) или [ `IMarkupExtension<T>` ](xref:Xamarin.Forms.Xaml.IMarkupExtension`1) интерфейс. Можно просматривать исходный код расширений стандартной разметки, описано ниже в [ **расширений MarkupExtension** directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) репозитория Xamarin.Forms GitHub.
 
-Также можно определить собственные пользовательские расширения разметки XAML путем наследования от `IMarkupExtension` или `IMarkupExtension<T>`. Используйте универсальную форму, если расширение разметки получает значение определенного типа. Это относится к несколько расширений разметки Xamarin.Forms:
+Это также можно определить собственные пользовательские расширения разметки XAML путем наследования от `IMarkupExtension` или `IMarkupExtension<T>`. Используйте универсальную форму, если расширение разметки получает значение определенного типа. Это происходит с несколькими из расширения разметки Xamarin.Forms:
 
 - `TypeExtension` является производным от `IMarkupExtension<Type>`
 - `ArrayExtension` является производным от `IMarkupExtension<Array>`
@@ -26,7 +26,7 @@ ms.locfileid: "35245707"
 - `BindingExtension` является производным от `IMarkupExtension<BindingBase>`
 - `ConstraintExpression` является производным от `IMarkupExtension<Constraint>`
 
-Два `IMarkupExtension` интерфейсы определяют каждого, только один метод с именем `ProvideValue`:
+Два `IMarkupExtension` интерфейсы определяют только один метод, с именем `ProvideValue`:
 
 ```csharp
 public interface IMarkupExtension
@@ -40,13 +40,13 @@ public interface IMarkupExtension<out T> : IMarkupExtension
 }
 ```
 
-Поскольку `IMarkupExtension<T>` является производным от `IMarkupExtension` и включает `new` ключевое слово на `ProvideValue`, одновременно содержит `ProvideValue` методы.
+Так как `IMarkupExtension<T>` является производным от `IMarkupExtension` и включает в себя `new` ключевое слово на `ProvideValue`, одновременно содержит `ProvideValue` методы.
 
-Очень часто расширения разметки XAML определяют свойства, влияющие к возвращаемому значению. (Очевидно исключение `NullExtension`, в котором `ProvideValue` просто возвращает `null`.) `ProvideValue` Метод имеет один аргумент типа `IServiceProvider` обсуждаются далее в этой статье.
+Очень часто расширения разметки XAML определяют свойства, влияющие к возвращаемому значению. (Является исключением, очевидно, `NullExtension`, в котором `ProvideValue` просто возвращает `null`.) `ProvideValue` Метод имеет один аргумент типа `IServiceProvider` , будет рассказано далее в этой статье.
 
-## <a name="a-markup-extension-for-specifying-color"></a>Расширения разметки для цвета
+## <a name="a-markup-extension-for-specifying-color"></a>Расширение разметки для указания цвета
 
-Следующие расширения разметки XAML позволяет создавать `Color` с использованием компонентов оттенка, насыщенности и яркости. Он определяет четыре свойства четыре компонента цвета, включая альфа-компонент, который устанавливается равным 1. Класс является производным от `IMarkupExtension<Color>` для указания `Color` возвращаемое значение:
+Следующее расширение разметки XAML позволяет создавать `Color` с использованием компонентов тона, насыщенности и яркости. Он определяет четыре свойства для четырех компонентов цвета, включая альфа-компонент, который устанавливается равным 1. Класс является производным от `IMarkupExtension<Color>` для указания `Color` возвращаемое значение:
 
 ```csharp
 public class HslColorExtension : IMarkupExtension<Color>
@@ -71,9 +71,9 @@ public class HslColorExtension : IMarkupExtension<Color>
 }
 ```
 
-Поскольку `IMarkupExtension<T>` является производным от `IMarkupExtension`, класс должен содержать два `ProvideValue` методов, который возвращает `Color` и второй, который возвращает `object`, но второй метод может просто вызвать метод first.
+Так как `IMarkupExtension<T>` является производным от `IMarkupExtension`, класс должен содержать два `ProvideValue` метода, который возвращает `Color` и еще одно, которое возвращает `object`, но второй метод может просто вызвать первый метод.
 
-**Демонстрация цвет HSL** странице отображаются различными способами, которые `HslColorExtension` могут присутствовать в файле XAML, чтобы указать цвет для `BoxView`:
+**Демонстрация цвета HSL** странице отображаются различные виды `HslColorExtension` может находиться в файле XAML для указания цвета для `BoxView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -115,15 +115,15 @@ public class HslColorExtension : IMarkupExtension<Color>
 </ContentPage>
 ```
 
-Обратите внимание, что при `HslColorExtension` является XML-тег, четыре свойства заданы как атрибуты, но когда он появится между фигурными скобками, четыре свойства разделяются запятыми, без кавычек. Для значений по умолчанию `H`, `S`, и `L` 0 и значение по умолчанию `A` -1, поэтому эти свойства можно опустить, если их значения по умолчанию. Последний пример показывает пример, где яркость равно 0, что обычно приводит к черным цветом, но альфа-канала — 0,5, поэтому половина прозрачно и отображается серым белом фоне страницы:
+Обратите внимание, что при `HslColorExtension` является XML-тег, четыре свойства заданы как атрибуты, но при его появлении расположены между фигурными скобками четыре свойства разделяются запятыми без кавычек. Для значений по умолчанию `H`, `S`, и `L` 0 и значение по умолчанию `A` -1, поэтому эти свойства можно опустить, если их значения по умолчанию. Последний пример показывает пример, где яркость равно 0, что обычно приводит к черный, но альфа-канал — 0,5, поэтому половина прозрачен и отображается серым белом фоне страницы:
 
-[![Демонстрация цвет HSL](creating-images/hslcolordemo-small.png "Демонстрация цвет HSL")](creating-images/hslcolordemo-large.png#lightbox "Демонстрация цвет HSL")
+[![Демонстрация цвета HSL](creating-images/hslcolordemo-small.png "Демонстрация цвета HSL")](creating-images/hslcolordemo-large.png#lightbox "Демонстрация цвета HSL")
 
-## <a name="a-markup-extension-for-accessing-bitmaps"></a>Расширения разметки для доступа к растровые изображения
+## <a name="a-markup-extension-for-accessing-bitmaps"></a>Расширение разметки для доступа к точечных рисунков
 
-Аргумент `ProvideValue` — это объект, реализующий [ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/) интерфейс, который определен в .NET `System` пространства имен. Этот интерфейс содержит один из элементов, метод с именем `GetService` с `Type` аргумент.
+Аргумент `ProvideValue` — это объект, реализующий [ `IServiceProvider` ](xref:System.IServiceProvider) интерфейс, который определен в .NET `System` пространства имен. Этот интерфейс содержит один член, метод с именем `GetService` с `Type` аргумент.
 
-`ImageResourceExtension` Класс, показанный ниже показан один из возможных способов использования `IServiceProvider` и `GetService` для получения `IXmlLineInfoProvider` объект, способный предоставлять строку и символ, данные для которых была обнаружена конкретной ошибки. В этом случае возникает исключение при `Source` не задано свойство:
+`ImageResourceExtension` Класс, показанный ниже показан один из возможных способов использования `IServiceProvider` и `GetService` для получения `IXmlLineInfoProvider` объект, способный предоставлять строку и символ, данные для которых была обнаружена конкретной ошибки. В этом случае возникает исключение при `Source` не было задано свойство:
 
 ```csharp
 [ContentProperty("Source")]
@@ -152,9 +152,9 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` полезно, когда XAML-файл должен быть доступ к файлу изображения хранятся в виде внедренного ресурса в проекте библиотеки .NET Standard. Она использует `Source` свойство для вызова статического `ImageSource.FromResource` метод. Этот метод требует ресурсов полное доменное имя, которое состоит из имени сборки, имя папки и имя файла, разделенных точками. `ImageResourceExtension` Не требуется имя сборки, части, так как он получает имя сборки, с помощью отражения и добавляет его в `Source` свойство. Независимо от того `ImageSource.FromResource` должна вызываться из сборки, содержащей растрового изображения, это означает, что это расширение ресурсов XAML не может быть частью внешней библиотеки Если образы также находятся в эту библиотеку. (См. [ **внедренные изображения** ](~/xamarin-forms/user-interface/images.md#embedded_images) для получения дополнительных сведений о доступе к растровые изображения, хранящиеся в виде внедренных ресурсов.)
+`ImageResourceExtension` полезно, когда файл XAML требуется доступ к файл изображения, хранящиеся в виде внедренного ресурса в проект библиотеки .NET Standard. Она использует `Source` свойство для вызова статического `ImageSource.FromResource` метод. Этот метод требует ресурсов полное доменное имя, которое состоит из имени сборки, имя папки и имя файла, разделенных точками. `ImageResourceExtension` Не требуется имя сборки, часть, так как он получает имя сборки, с помощью отражения и добавляет его в `Source` свойство. В любом случае `ImageSource.FromResource` должна вызываться из сборки, содержащей точечного рисунка, который означает, что это расширение ресурсов XAML не может быть частью внешней библиотеки, если не являются также в этой библиотеке. (См. в разделе [ **внедренные изображения** ](~/xamarin-forms/user-interface/images.md#embedded_images) содержатся дополнительные сведения о доступе к растровые изображения, хранящиеся в виде внедренных ресурсов.)
 
-Несмотря на то что `ImageResourceExtension` требует `Source` должно быть задано свойство `Source` свойство указывается в атрибуте как свойство содержимого класса. Это означает, что `Source=` можно опустить часть выражения в фигурных скобках. В **Демонстрация ресурса изображения** страницы, `Image` элементы выборки два изображения, используя имя папки и имя файла, разделенных точками:
+Несмотря на то что `ImageResourceExtension` требует `Source` свойство для установки, `Source` свойство указывается в атрибуте как свойство содержимого класса. Это означает, что `Source=` можно опустить часть выражения в фигурных скобках. В **Демонстрация ресурса образа** странице `Image` элементы получить два изображения, используя имя папки и имя файла, разделенных точками:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -178,30 +178,30 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 </ContentPage>
 ```
 
-Вот программу на всех трех платформ.
+Вот ее запуск на всех трех платформах:
 
-[![Демонстрация ресурса изображения](creating-images/imageresourcedemo-small.png "изображения Демонстрация ресурсов")](creating-images/imageresourcedemo-large.png#lightbox "изображения Демонстрация ресурсов")
+[![Изображение ресурсов Demo](creating-images/imageresourcedemo-small.png "изображения ресурсов Demo")](creating-images/imageresourcedemo-large.png#lightbox "изображения Демонстрация ресурсов")
 
 ## <a name="service-providers"></a>Поставщики услуг
 
-С помощью `IServiceProvider` аргумент `ProvideValue`, расширения разметки XAML могут получить доступ к полезной информации о файле XAML, в котором они используются. Но, чтобы использовать `IServiceProvider` аргумент успешно, необходимо знать, какие службы доступны в определенной контекстах. Лучший способ получить представление об этой функции — путем отслеживания исходный код существующего расширения разметки XAML в [ **MarkupExtensions** папки](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) в Xamarin.Forms репозитория в GitHub. Имейте в виду, что некоторые типы служб являются внутренними для Xamarin.Forms.
+С помощью `IServiceProvider` аргумент `ProvideValue`, расширения разметки XAML могут получить доступ к полезную информацию о файле XAML, в котором они используются. Но использование `IServiceProvider` аргумент успешно, необходимо знать, какие службы доступны в определенных контекстов. Лучший способ понять, эта функция является путем отслеживания влияния исходный код существующего расширения разметки XAML в [ **расширений MarkupExtension** папку](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) в Xamarin.Forms репозитория в GitHub. Имейте в виду, что некоторые типы служб являются внутренними для Xamarin.Forms.
 
-В некоторых расширений разметки XAML эта служба может быть полезной:
+В некоторых расширений разметки XAML могут пригодиться эта служба.
 
 ```csharp
  IProvideValueTarget provideValueTarget = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
 ```
 
-`IProvideValueTarget` Интерфейс определяет два свойства `TargetObject` и `TargetProperty`. Если эти сведения можно получить в `ImageResourceExtension` класса, `TargetObject` — `Image` и `TargetProperty` — `BindableProperty` для объекта `Source` свойство `Image`. Это свойство, для которого задана расширение разметки XAML.
+`IProvideValueTarget` Интерфейс определяет два свойства `TargetObject` и `TargetProperty`. Если эти сведения будут получены в `ImageResourceExtension` класс, `TargetObject` — `Image` и `TargetProperty` — `BindableProperty` для объекта `Source` свойство `Image`. Это свойство, на котором установлено расширение разметки XAML.
 
-`GetService` Вызов с аргументом `typeof(IProvideValueTarget)` фактически возвращает объект типа `SimpleValueTargetProvider`, которая определена в `Xamarin.Forms.Xaml.Internals` пространства имен. При приведении возвращаемое значение `GetService` к этому типу, также можно использовать `ParentObjects` свойство, которое является массив, содержащий `Image` элемент, `Grid` родительского элемента и `ImageResourceDemoPage` родительский `Grid`.
+`GetService` Вызов с аргументом `typeof(IProvideValueTarget)` фактически возвращает объект типа `SimpleValueTargetProvider`, который определен в `Xamarin.Forms.Xaml.Internals` пространства имен. Если нужно привести возвращаемое значение `GetService` к этому типу, также доступны `ParentObjects` свойство, которое представляет собой массив, содержащий `Image` элемент, `Grid` родительский элемент и `ImageResourceDemoPage` родительский `Grid`.
 
 ## <a name="conclusion"></a>Заключение
 
-Расширения разметки XAML играют важную роль в XAML, расширяя возможности задавать атрибуты из различных источников. Кроме того Если существующие расширения разметки XAML, не обеспечивают то, что вам нужно, можно также написать собственные.
+Расширения разметки XAML играют важную роль в XAML, расширив возможность устанавливать атрибуты из различных источников. Кроме того Если не указать существующие расширения разметки XAML, то, что вам нужно, можно также написать собственные.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Расширения разметки (пример)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
-- [Глава расширений разметки XAML из книги Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [Глава расширения разметки XAML из Xamarin.Forms (книга)](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)

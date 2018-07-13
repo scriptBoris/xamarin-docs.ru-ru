@@ -1,32 +1,32 @@
 ---
-title: Сводка Глава 8. Код и код XAML в согласованную
-description: 'Создание мобильных приложений с помощью Xamarin.Forms: Сводка Глава 8. Код и код XAML в согласованную'
+title: Сводка Глава 8. Код и XAML в гармонии
+description: 'Создание мобильных приложений с помощью Xamarin.Forms: Сводка Глава 8. Код и XAML в гармонии'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 70c2babef55ee6cb886b0e7da26ee57b086fa558
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b08355db6cc90381b16f51ce7bf23be8e8bd4e14
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241023"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994537"
 ---
-# <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>Сводка Глава 8. Код и код XAML в согласованную
+# <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>Сводка Глава 8. Код и XAML в гармонии
 
-В этой главе более глубоко исследует XAML, и особенно кода XAML взаимодействия и.
+В этой главе рассматриваются XAML более глубоко, и особенно код и XAML взаимодействие.
 
 ## <a name="passing-arguments"></a>Передача аргументов
 
-В общем случае класс, созданный в XAML должен иметь открытый конструктор без параметров; результирующий объект инициализируется через параметры свойств. Тем не менее существует два других способа можно создавать экземпляры и инициализации объектов.
+В общем случае класс, созданный в XAML должен иметь открытый конструктор без параметров; результирующий объект инициализируется с помощью свойства параметров. Тем не менее существует два других способа что объектов может быть создан и инициализирован.
 
-Несмотря на то, что это методы общего назначения, они в основном используется в связи с MVVM Просмотр моделей.
+Несмотря на то, что они являются методы общего назначения, они используются главным образом в MVVM Просмотр моделей.
 
 ### <a name="constructors-with-arguments"></a>Конструкторы с аргументами
 
-[ **ParameteredConstructorDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo) образце демонстрируется использование `x:Arguments` тег, чтобы задать аргументы конструктора. Эти аргументы должны быть заключены в теги элементов, указывающее тип аргумента. Для базовых типов данных .NET доступны следующие теги:
+[ **ParameteredConstructorDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo) образце показано, как использовать `x:Arguments` тег, чтобы задать аргументы конструктора. Эти аргументы должны быть заключены в теги элементов, указывающее тип аргумента. Для базовых типов данных .NET доступны следующие теги:
 
 - `x:Object`
 - `x:Boolean`
@@ -45,40 +45,40 @@ ms.locfileid: "35241023"
 
 ### <a name="can-i-call-methods-from-xaml"></a>Может вызывать методы из XAML
 
-[ **FactoryMethodDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo) образце демонстрируется использование `x:FactoryMethod` элемента, чтобы указать фабричный метод, вызываемый для создания объекта. Такой метод фабрики должен быть открытым и статическим, и его необходимо создать объект типа, в котором он определен. (Например [ `Color.FromRgb` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgb/p/System.Double/System.Double/System.Double/)) определяет метод, так как он является открытым и статическим и возвращает значение типа `Color`.) Фабричный метод аргументы задаются в `x:Arguments` тегов.
+[ **FactoryMethodDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo) образце показано, как использовать `x:FactoryMethod` элемента, чтобы указать фабричный метод, который вызывается для создания объекта. Такой метод фабрики должен быть открытым и статическим, и его необходимо создать объект типа, в котором он определен. (Например [ `Color.FromRgb` ](xref:Xamarin.Forms.Color.FromRgb(System.Double,System.Double,System.Double)) определяет метод, так как он является открытым и статическим и возвращает значение типа `Color`.) Аргументы в метод фабрики, заданных в `x:Arguments` теги.
 
 ## <a name="the-xname-attribute"></a>Атрибут x: Name
 
-`x:Name` Атрибут позволяет создать его экземпляр в XAML, чтобы задать имя объекта. Правила для этих имен, идентичны представлениям имена переменных в C#. После возврата `InitializeComponent` вызовите в конструкторе, файл кода может ссылаться на эти имена для доступа к соответствующий элемент XAML. Имена, фактически преобразуются средством синтаксического анализа XAML в закрытых полей в созданный разделяемый класс.
+`x:Name` Атрибут позволяет создавать экземпляр в XAML, чтобы присвоить имя объекта. Правила для этих имен не отличаются от имен переменных в C#. После возврата `InitializeComponent` вызовите в конструкторе, файл с выделенным кодом могут ссылаться на эти имена для доступа к соответствующему элементу XAML. Имена, фактически преобразуются средством синтаксического анализа XAML в закрытых полей в созданного разделяемого класса.
 
-[ **XamlClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock) образце показано использование `x:Name` позволяет создать файл кода для сохранения два `Label` элементы, определенные в XAML, обновление с текущей датой и временем.
+[ **XamlClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock) в нем демонстрируется использование `x:Name` файла кода для сохранения два `Label` элементы, определенные в XAML, обновлен с текущей датой и временем.
 
-То же имя не может использоваться для нескольких элементов на одной странице. Это определенной проблемы при использовании `OnPlatform` создания параллельных именованные объекты для каждой платформы. [ **PlatformSpecificLabele** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels) демонстрирует более эффективный способ сделать что-нибудь подобное.
+Тем же именем не может использоваться для нескольких элементов на одной странице. Это проблема при использовании `OnPlatform` создания параллельных именованные объекты для каждой платформы. [ **PlatformSpecificLabele** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels) в нем демонстрируется более эффективный способ сделать нечто подобное.
 
-## <a name="custom-xaml-based-views"></a>Представления XAML
+## <a name="custom-xaml-based-views"></a>Пользовательские представления на основе XAML
 
-Существует несколько способов избежать повтора разметки в XAML. Один из распространенных способов является создание нового класса на основе XAML, производный от [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/). Этот метод показан в [ **ColorViewList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList) образца. `ColorView` Класс является производным от `ContentView` для отображения определенного цвета и его имя, а `ColorViewListPage` класс является производным от `ContentPage` в обычном режиме и явно создает 17 экземпляры `ColorView`.
+Существует несколько способов избежать повтора разметки в XAML. Один из распространенных способов — создать новый класс на основе XAML, который является производным [ `ContentView` ](xref:Xamarin.Forms.ContentView). Этот подход продемонстрирован в [ **ColorViewList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList) образца. `ColorView` Класс является производным от `ContentView` для отображения определенного цвета и его имя, тогда как `ColorViewListPage` класс является производным от `ContentPage` как обычно и явным образом создает 17 экземпляров `ColorView`.
 
-Доступ к `ColorView` класса в языке XAML требуется другое объявление пространства имен XML, обычно с именем `local` для классов в той же сборке.
+Доступ к `ColorView` класса в XAML требуется другое объявление пространства имен XML, обычно называются `local` для классов в той же сборке.
 
 ## <a name="events-and-handlers"></a>События и обработчики
 
-События могут быть назначены обработчиков событий в XAML, но сам обработчик событий должен быть реализован в файле кода. [ **XamlKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad) демонстрирует построение пользовательского интерфейса клавиатуры в XAML и реализовать `Clicked` обработчики в файле кода.
+События могут быть назначены обработчиков событий в XAML, но сам обработчик событий должен быть реализован в файле кода. [ **XamlKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad) демонстрирует способы создания пользовательского интерфейса клавиатуры в XAML и способ реализации `Clicked` обработчики в файле кода.
 
-## <a name="tap-gestures"></a>Коснитесь жесты
+## <a name="tap-gestures"></a>Жесты касания
 
-Любой `View` объекта можно получить сенсорный ввод и создают события на основе этих данных. `View` Класс определяет [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) свойство коллекции, который может содержать один или несколько экземпляров классов, производных от [ `GestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/).
+Любой `View` объекта можно получить сенсорный ввод и создавать события из этого входа. `View` Класс определяет [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) свойство коллекции, который может содержать один или несколько экземпляров классов, производных от [ `GestureRecognizer` ](xref:Xamarin.Forms.GestureRecognizer).
 
-[ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) Приводит к возникновению ошибки [ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/) события. [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap) программы показано, как присоединить `TapGestureRecognizer` объектов до четырех `BoxView` элементы должны быть созданы имитация игры:
+[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Приводит к возникновению ошибки [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) события. [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap) программы показано, как подключить `TapGestureRecognizer` объектов до четырех `BoxView` элементы должны быть созданы игру имитация:
 
-[![Снимок экрана тройной monkey отвода](images/ch08fg07-small.png "игры имитации")](images/ch08fg07-large.png#lightbox "имитации игры")
+[![Тройной снимок monkey tap](images/ch08fg07-small.png "игры имитации")](images/ch08fg07-large.png#lightbox "имитации игры")
 
-Но **MonkeyTap** звук действительно необходимы программе. (См. [следующей главе](chapter09.md).)
+Но **MonkeyTap** программа должна звук. (См. в разделе [следующей главе](chapter09.md).)
 
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Полный текст Глава 8 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
-- [Образцы Глава 8](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
-- [Образец главы 8 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
+- [Полный текст главе 8 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
+- [Примеры в главе 8](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
+- [Пример главе 8 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)

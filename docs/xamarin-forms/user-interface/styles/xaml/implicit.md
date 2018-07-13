@@ -1,28 +1,28 @@
 ---
-title: Неявных стилей в Xamarin.Forms
-description: Неявный стиль то, которое используется для всех элементов управления из того же TargetType, без необходимости каждый элемент управления для ссылки на стиль.
+title: Неявные стили в Xamarin.Forms
+description: Неявный стиль, которое используется для всех элементов управления из же TargetType, без необходимости каждый элемент управления для ссылки на стиль.
 ms.prod: xamarin
 ms.assetid: 02A75F3B-4389-49D4-A2F4-AFD473A4A161
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 9444d6d8d743fb63496de31e23291b24d9d09993
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 277be51c242521f52e9b1e162226ae8137e7b133
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245400"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995518"
 ---
-# <a name="implicit-styles-in-xamarinforms"></a>Неявных стилей в Xamarin.Forms
+# <a name="implicit-styles-in-xamarinforms"></a>Неявные стили в Xamarin.Forms
 
-_Неявный стиль то, которое используется для всех элементов управления из того же TargetType, без необходимости каждый элемент управления для ссылки на стиль._
+_Неявный стиль, которое используется для всех элементов управления из же TargetType, без необходимости каждый элемент управления для ссылки на стиль._
 
-## <a name="creating-an-implicit-style-in-xaml"></a>Создание неявный стиль в XAML
+## <a name="creating-an-implicit-style-in-xaml"></a>Создание неявного стиля в XAML
 
-Для объявления [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) на уровне страницы, [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) необходимо добавить страницу и выберите один или несколько `Style` объявления могут быть включены в `ResourceDictionary`. Объект `Style` становится *неявное* , не указывая `x:Key` атрибута. Стиль затем применяются к визуальные элементы, которые соответствуют `TargetType` точно, но не к элементам, которые являются производными от `TargetType` значение.
+Чтобы объявить [ `Style` ](xref:Xamarin.Forms.Style) на уровне страницы, [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) должны добавляться к странице и затем одному или нескольким `Style` объявления могут быть включены в `ResourceDictionary`. Объект `Style` становится *неявное* , не указывая `x:Key` атрибута. Затем будет применен стиль к визуальным элементам, которые соответствуют `TargetType` точно, но не к элементам, которые являются производными от `TargetType` значение.
 
-В следующем примере кода показан *неявное* стиля, объявленного в языке XAML на странице `ResourceDictionary`и применяется к странице [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) экземпляров:
+В следующем коде показано в примере *неявное* стиль, объявленных в XAML, на странице `ResourceDictionary`и применяется к странице [ `Entry` ](xref:Xamarin.Forms.Entry) экземпляров:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" Icon="xaml.png">
@@ -49,15 +49,15 @@ _Неявный стиль то, которое используется для 
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) Определяет одно *неявное* стиль, применяемый к странице [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) экземпляров. `Style` Используется для отображения синий текст на желтом фоне, а для параметра другие параметры внешнего вида. `Style` Добавляется к странице [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) без указания `x:Key` атрибута. Таким образом `Style` применяется ко всем `Entry` экземпляров неявным образом, как они соответствуют [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) свойство `Style` точно. Тем не менее `Style` не применяется к `CustomEntry` экземпляра, то есть подклассов `Entry`. Это приводит к появлению показано на следующем снимке экрана:
+[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) Определяет одно *неявное* стиль, применяемый к странице [ `Entry` ](xref:Xamarin.Forms.Entry) экземпляров. `Style` Используется для отображения синий текст на желтом фоне, а для параметра другие параметры оформления. `Style` Добавляется на страницу [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) без указания `x:Key` атрибута. Таким образом `Style` применяется ко всем `Entry` экземпляров неявно, так как они соответствуют [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) свойство `Style` точно. Тем не менее `Style` не применяется к `CustomEntry` экземпляра, то есть, выведенных в подклассы `Entry`. Это приводит к появлению, показано на следующем снимке экрана:
 
-[![](implicit-images/implicit-styles.png "Пример неявных стилей")](implicit-images/implicit-styles-large.png#lightbox "примере неявных стилей")
+[![](implicit-images/implicit-styles.png "Пример неявные стили")](implicit-images/implicit-styles-large.png#lightbox "пример неявные стили")
 
-Кроме того, четвертый [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) переопределяет [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) и [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) свойства неявный стиль для разных `Color`значения.
+Кроме того, четвертый [ `Entry` ](xref:Xamarin.Forms.Entry) переопределяет [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor) и [ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor) свойства неявный стиль для разных `Color`значения.
 
-### <a name="creating-an-implicit-style-at-the-control-level"></a>Создание уровня неявный стиль в элемент управления
+### <a name="creating-an-implicit-style-at-the-control-level"></a>Создание неявного стиля в элемент управления уровнем
 
-Помимо создания *неявное* стили на уровне страниц, они могут также создаваться на уровне элемента управления, как показано в следующем примере кода:
+В дополнение к созданию *неявное* стили на уровне страницы, они также могут создаваться на уровне управления, как показано в следующем примере кода:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" Icon="xaml.png">
@@ -78,13 +78,13 @@ _Неявный стиль то, которое используется для 
 </ContentPage>
 ```
 
-В этом примере *неявное* [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) назначается [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) коллекцию [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)элемента управления. *Неявное* затем можно применить стиль для элемента управления и его дочерних элементов.
+В этом примере *неявное* [ `Style` ](xref:Xamarin.Forms.Style) назначается [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) коллекцию [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)элемента управления. *Неявное* стиль затем могут применяться в элемент управления и его дочерних элементов.
 
-Дополнительные сведения о создании стилей в приложении [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), в разделе [глобальные стили](~/xamarin-forms/user-interface/styles/application.md).
+Сведения о создании стилей в приложения [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), см. в разделе [глобальные стили](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-implicit-style-in-c35"></a>Создание неявный стиль в C&#35;
+## <a name="creating-an-implicit-style-in-c35"></a>Создание неявного стиля в C&#35;
 
-[`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) экземпляры можно добавить на страницу [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) коллекции для C#, создав новую [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)и затем добавив `Style` экземпляров `ResourceDictionary`, как показано в Следующий пример кода:
+[`Style`](xref:Xamarin.Forms.Style) экземпляры можно добавить на страницу [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) коллекции в C# путем создания нового [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)и затем добавив `Style` экземпляры `ResourceDictionary`, как показано на Следующий пример кода:
 
 ```csharp
 public class ImplicitStylesPageCS : ContentPage
@@ -115,11 +115,11 @@ public class ImplicitStylesPageCS : ContentPage
 }
 ```
 
-Конструктор определяет одно *неявное* стиль, применяемый к странице [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) экземпляров. `Style` Используется для отображения синий текст на желтом фоне, а для параметра другие параметры внешнего вида. `Style` Добавляется к странице [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) без указания `key` строки. Таким образом `Style` применяется ко всем `Entry` экземпляров неявным образом, как они соответствуют [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) свойство `Style` точно. Тем не менее `Style` не применяется к `CustomEntry` экземпляра, то есть подклассов `Entry`.
+Конструктор определяет одно *неявное* стиль, применяемый к странице [ `Entry` ](xref:Xamarin.Forms.Entry) экземпляров. `Style` Используется для отображения синий текст на желтом фоне, а для параметра другие параметры оформления. `Style` Добавляется на страницу [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) без указания `key` строка. Таким образом `Style` применяется ко всем `Entry` экземпляров неявно, так как они соответствуют [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) свойство `Style` точно. Тем не менее `Style` не применяется к `CustomEntry` экземпляра, то есть, выведенных в подклассы `Entry`.
 
 ## <a name="summary"></a>Сводка
 
-*Неявное* это один из используемых все визуальные элементы в одной и той же [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/), без необходимости каждый элемент управления для ссылки на стиль. Объект `Style` становится *неявное* , не указывая `x:Key` атрибута. Вместо этого `x:Key` атрибут автоматически становится значение [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) свойство.
+*Неявное* стиль является одним из используемых все визуальные элементы в одной и той же [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType), не требуя от каждого элемента управления для ссылки на стиль. Объект `Style` становится *неявное* , не указывая `x:Key` атрибута. Вместо этого `x:Key` атрибут автоматически станет значение [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) свойство.
 
 
 
@@ -127,7 +127,7 @@ public class ImplicitStylesPageCS : ContentPage
 
 - [Расширения разметки XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Основные стили (пример)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [Работа со стилями (пример)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [стиль](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Метод задания](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [Работа с использованием стилей (пример)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Стиль](xref:Xamarin.Forms.Style)
+- [Метод задания](xref:Xamarin.Forms.Setter)

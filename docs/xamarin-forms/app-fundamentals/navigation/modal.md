@@ -1,54 +1,54 @@
 ---
-title: Xamarin.Forms Modal страниц
-description: Xamarin.Forms поддерживает модальные страницы. На модальной странице пользователь должен выполнить отдельную задачу, причем он не может уйти с этой страницы, пока задача не будет выполнена или отменена. В этой статье показано, как для перехода по страницам модальным.
+title: Страницы Xamarin.Forms модальное окно
+description: Xamarin.Forms поддерживает модальные страницы. На модальной странице пользователь должен выполнить отдельную задачу, причем он не может уйти с этой страницы, пока задача не будет выполнена или отменена. В этой статье показано, как для перехода по модальным страницам.
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 4540ac006993a46cb0ead9346c1cb960ac631926
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 44aee8500c7de2ae56b59049368d6025ec49cc5e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240142"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994832"
 ---
-# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms Modal страниц
+# <a name="xamarinforms-modal-pages"></a>Страницы Xamarin.Forms модальное окно
 
-_Xamarin.Forms предоставляет поддержку для модального страниц. На модальной странице пользователь должен выполнить отдельную задачу, причем он не может уйти с этой страницы, пока задача не будет выполнена или отменена. В этой статье показано, как для перехода по страницам модальным._
+_Xamarin.Forms поддерживает модальные страницы. На модальной странице пользователь должен выполнить отдельную задачу, причем он не может уйти с этой страницы, пока задача не будет выполнена или отменена. В этой статье показано, как для перехода по модальным страницам._
 
-В этой статье рассматриваются следующие вопросы:
+В этой статье рассматриваются следующие темы:
 
-- [Выполнение навигации](#Performing_Navigation) — передача страниц на стеке модальное извлечение страниц из модального стека, отключение кнопки "Назад" и анимации переходов.
-- [Передача данных при переходе](#Passing_Data_when_Navigating) — передача данных через конструктор страницы и `BindingContext`.
+- [Выполнение навигации](#Performing_Navigation) — Отправка страниц в стеке модальное извлечения страниц из модального стека, отключение кнопки «Назад» и анимация переходов страниц.
+- [Передача данных при переходе](#Passing_Data_when_Navigating) — передача данных через конструктор страниц и `BindingContext`.
 
 ## <a name="overview"></a>Обзор
 
-Модальные страницы может быть любой из [страницы](~/xamarin-forms/user-interface/controls/pages.md) типы, поддерживаемые Xamarin.Forms. Для отображения модальных страницы приложения будет передавать его в модальное стек которых она становится активной страницы, как показано на следующей схеме:
+Модальная страница может быть любой из [страницы](~/xamarin-forms/user-interface/controls/pages.md) типов, поддерживаемых Xamarin.Forms. Для отображения модальной страницы приложение помещает ее в модальное стек, где она становится активной страницей, как показано на следующей схеме:
 
-![](modal-images/pushing.png "Отправить страницу модальное стека")
+![](modal-images/pushing.png "Отправка страницы в стеке модального")
 
-Для возврата на предыдущую страницу приложение отобразит текущей страницы из модального стека, и новый верхний страница становится активной, как показано на следующей схеме:
+Чтобы вернуться к предыдущей странице приложение выбирает текущую страницу из модального стека, а верхняя страница становится активной страницей, как показано на следующей схеме:
 
-![](modal-images/popping.png "Выталкивания страницы из модального стека")
+![](modal-images/popping.png "Извлечение страницы из модального стека")
 
 <a name="Performing_Navigation" />
 
 ## <a name="performing-navigation"></a>Выполнение навигации
 
-Методы модальной навигации предоставляются свойством [`Navigation`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) любых типов, производных от класса [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Эти методы предоставляют возможность [push модальное страниц](#Pushing_Pages_to_the_Modal_Stack) стек модальные и [pop модальное страниц](#Popping_Pages_from_the_Modal_Stack) из модального стека.
+Методы модальной навигации предоставляются свойством [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) любых типов, производных от класса [`Page`](xref:Xamarin.Forms.Page). Эти методы предоставляют возможность [push модальные страницы](#Pushing_Pages_to_the_Modal_Stack) в модальное стек, и [pop модальные страницы](#Popping_Pages_from_the_Modal_Stack) из модального стека.
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Также предоставляет свойство [ `ModalStack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INavigation.ModalStack/) свойства, из которого можно получить модальное страниц в модальное стека. Однако не существует средств для работы с модальным стеком или перехода к корневой странице модальной навигации. Причина в том, что такие операции поддерживаются не всеми базовыми платформами.
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Также предоставляет свойство [ `ModalStack` ](xref:Xamarin.Forms.INavigation.ModalStack) свойство, из которого можно получить модальные страницы в стеке модальным. Однако не существует средств для работы с модальным стеком или перехода к корневой странице модальной навигации. Причина в том, что такие операции поддерживаются не всеми базовыми платформами.
 
 > [!NOTE]
-> Экземпляр [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) не требуется для навигации по модальным страницам.
+> Экземпляр [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) не требуется для навигации по модальным страницам.
 
 <a name="Pushing_Pages_to_the_Modal_Stack" />
 
-### <a name="pushing-pages-to-the-modal-stack"></a>Передача страниц на модальное стека
+### <a name="pushing-pages-to-the-modal-stack"></a>Отправка страницы в стеке модального
 
-Для перехода к `ModalPage` необходимо вызвать [ `PushModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page)/) метод [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) свойства текущей страницы, как демонстрируется в следующем примере кода:
+Чтобы перейти к `ModalPage` необходимо вызвать [ `PushModalAsync` ](xref:Xamarin.Forms.INavigation.PushModalAsync*) метод [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) свойство текущей страницы, как показано в следующем примере кода:
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -61,28 +61,28 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-В результате `ModalPage` экземпляр помещается в модальное стек, где оно станет активной странице, указано, что элемент был выбран в [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) на `MainPage` экземпляра. `ModalPage` На следующих снимках экрана показан экземпляр:
+В результате `ModalPage` помещается в стек модальное, где он становится активной страницей, экземпляр указано, что элемент выбран в [ `ListView` ](xref:Xamarin.Forms.ListView) на `MainPage` экземпляра. `ModalPage` Экземпляр показан на снимках экрана ниже:
 
-![](modal-images/modalpage.png "Модальные пример страницы")
+![](modal-images/modalpage.png "Пример модальные страницы")
 
-Когда [ `PushModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page)/) вызывается, происходят следующие события:
+Когда [ `PushModalAsync` ](xref:Xamarin.Forms.INavigation.PushModalAsync*) вызывается, происходят следующие события:
 
-- Вызов страницы `PushModalAsync` имеет его [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) переопределение вызывается при условии, что базовая платформа не Android.
-- На странице, куда выполняется переход его [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) переопределение вызывается.
+- Вызов страницы `PushModalAsync` имеет его [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) переопределение вызывается, при условии, что базовая платформа не Android.
+- На странице, на которой осуществляется переход к его [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) вызывается переопределение.
 - `PushAsync` Завершения задачи.
 
-Тем не менее точный порядок, что эти события происходят — зависит от используемой платформы. Дополнительные сведения см. в разделе [Глава 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Чарльз Петцольд Xamarin.Forms книги.
+Тем не менее точный порядок, что эти события происходят — зависит от платформы. Дополнительные сведения см. в разделе [Глава 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) книги Xamarin.Forms (Charles Petzold).
 
 > [!NOTE]
-> Вызовы [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) и [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) переопределения не может рассматриваться как гарантированную указаний по страницам. Например, для операций ввода-вывода `OnDisappearing` переопределение вызывается на активной странице, когда приложение завершает работу.
+> Вызовы [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) и [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) переопределения не может рассматриваться как гарантированной указывают, навигация по страницам. Например, в iOS `OnDisappearing` переопределение вызывается на активной странице, когда приложение завершает работу.
 
 <a name="Popping_Pages_from_the_Modal_Stack" />
 
-### <a name="popping-pages-from-the-modal-stack"></a>Извлечение страниц из модального стека
+### <a name="popping-pages-from-the-modal-stack"></a>Добавление страницы из модального стека
 
-Активная страница может извлекается из модального стека, нажав клавишу *обратно* кнопку на устройстве, независимо от ли это физическую кнопку на устройстве или на экране кнопку.
+Активная страница может извлекается из модального стека, нажав клавишу *обратно* кнопку на устройстве, независимо от того, является ли это физической кнопки на устройстве или на экране кнопку.
 
-Чтобы вернуться на исходную страницу программным образом, экземпляр `ModalPage` должен вызвать метод [`PopModalAsync`](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PopModalAsync()/), как показано в следующем примере кода:
+Чтобы вернуться на исходную страницу программным образом, экземпляр `ModalPage` должен вызвать метод [`PopModalAsync`](xref:Xamarin.Forms.INavigation.PopModalAsync), как показано в следующем примере кода:
 
 ```csharp
 async void OnDismissButtonClicked (object sender, EventArgs args)
@@ -91,21 +91,21 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 }
 ```
 
-В результате `ModalPage` экземпляр удаляется из модального стека с новой страницей верхних становится активной странице. Когда [ `PopModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PopModalAsync()/) вызывается, происходят следующие события:
+В результате `ModalPage` экземпляр удаляться из модального стека с верхняя страница становится активной страницей. Когда [ `PopModalAsync` ](xref:Xamarin.Forms.INavigation.PopModalAsync) вызывается, происходят следующие события:
 
-- Вызов страницы `PopModalAsync` имеет его [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) переопределение вызывается.
-- На странице, возвращается его [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) переопределение вызывается при условии, что базовая платформа не Android.
-- `PopModalAsync` Возвращает задач.
+- Вызов страницы `PopModalAsync` имеет его [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) вызывается переопределение.
+- На странице, возвращается его [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) переопределение вызывается, при условии, что базовая платформа не Android.
+- `PopModalAsync` Задач возвращает.
 
-Тем не менее точный порядок, что эти события происходят — зависит от используемой платформы. Дополнительные сведения см. в разделе [Глава 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Чарльз Петцольд Xamarin.Forms книги.
+Тем не менее точный порядок, что эти события происходят — зависит от платформы. Дополнительные сведения см. в разделе [Глава 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) книги Xamarin.Forms (Charles Petzold).
 
-### <a name="disabling-the-back-button"></a>Отключение кнопки "Назад"
+### <a name="disabling-the-back-button"></a>Отключение кнопки «Назад»
 
-В Android пользователь всегда можно вернуться на предыдущую страницу, нажав клавишу стандартной *обратно* кнопку на устройстве. Если модальные страницы требуется пользователь должен выполнить задачу самодостаточным перед выходом из страницы, необходимо отключить приложение *обратно* кнопки. Это можно сделать путем переопределения [ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/) метода на странице модальным. Дополнительные сведения см. [Глава 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Чарльз Петцольд Xamarin.Forms книги.
+В Android пользователь всегда можете вернуться на предыдущую страницу, нажав клавишу стандарте *обратно* кнопку на устройстве. Если модальные страницы требуется пользователь должен выполнить отдельную задачу до выхода со страницы, необходимо отключить приложение *обратно* кнопки. Это можно сделать путем переопределения [ `Page.OnBackButtonPressed` ](xref:Xamarin.Forms.Page.OnBackButtonPressed) метода модальные страницы. Дополнительные сведения см. в разделе [Глава 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) книги Xamarin.Forms (Charles Petzold).
 
-### <a name="animating-page-transitions"></a>Страница проходит анимации
+### <a name="animating-page-transitions"></a>Анимация переходов страниц
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Также предоставляет свойства каждой страницы переопределенный принудительной отправки и pop методы, которые включают `boolean` параметр, который управляет отображением страницы анимация во время перехода, как показано в следующем коде Пример:
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Свойство каждой страницы также предоставляет переопределенный Push-уведомлений и pop методы, которые включают `boolean` параметр, который управляет отображением анимированный страницы во время перехода, как показано в следующем коде Пример:
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -121,17 +121,17 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 }
 ```
 
-Установка `boolean` параметр `false` отключает переход страниц анимацию, установив параметр в `true` позволяет анимации переход страниц, при условии, что он поддерживается используемой платформой. Тем не менее помещать и извлекать методы, которые не хватает этот параметр включает анимации по умолчанию.
+Установка `boolean` параметр `false` отключает анимацию перехода страницы, задать для параметра `true` позволяет анимации перехода страницы, при условии, что он поддерживается используемой платформой. Тем не менее Принудительная отправка и извлечение методы, которые не хватает этот параметр по умолчанию включают анимации.
 
 <a name="Passing_Data_when_Navigating" />
 
 ## <a name="passing-data-when-navigating"></a>Передача данных при переходе
 
-Иногда она необходима для страницы для передачи данных на другую страницу во время навигации. Два способа для решения этой проблемы, при передаче данных с помощью конструктора страницы и задав новую страницу [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) к данным. Каждый теперь обсуждаются в свою очередь.
+Иногда это необходимо для страницы для передачи данных на другую страницу во время навигации. Два способа решения этой проблемы являются, передачи данных через конструктор страницы и новая страница [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) к данным. Каждый теперь обсуждаются в свою очередь.
 
-### <a name="passing-data-through-a-page-constructor"></a>Передача данных с помощью конструктора страницы
+### <a name="passing-data-through-a-page-constructor"></a>Передача данных через конструктор страниц
 
-Проще всего для передачи данных на другую страницу во время навигации осуществляется через страницу параметра конструктора, как показано в следующем примере кода:
+Самый простой способ передачи данных на другую страницу во время навигации — в качестве параметра конструктора страницы, как показано в следующем примере кода:
 
 ```csharp
 public App ()
@@ -140,7 +140,7 @@ public App ()
 }
 ```
 
-Этот код создает `MainPage` экземпляра, передавая текущую дату и время в формат ISO8601.
+Этот код создает `MainPage` экземпляр, передав в текущую дату и время в формате ISO8601.
 
 `MainPage` Экземпляр получает данные с помощью параметра конструктора, как показано в следующем примере кода:
 
@@ -152,11 +152,11 @@ public MainPage (string date)
 }
 ```
 
-Данные отображаются на странице, задав [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) свойство.
+Данные отображаются на странице, задав [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) свойство.
 
 ### <a name="passing-data-through-a-bindingcontext"></a>Передача данных через объект BindingContext
 
-Альтернативный подход для передачи данных на другую страницу во время перехода является установка на новую страницу [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) к данным, как показано в следующем примере кода:
+Альтернативный подход для передачи данных на другую страницу во время навигации —, задав новую страницу [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) к данным, как показано в следующем примере кода:
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -170,7 +170,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-Этот код задает [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) из `DetailPage` экземпляр `Contact` экземпляра, а затем переходит к `DetailPage`.
+Этот код задает [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) из `DetailPage` экземпляр `Contact` экземпляра, а затем переходит к `DetailPage`.
 
 `DetailPage` Затем использует привязку данных для отображения `Contact` экземпляра данных, как показано в следующем примере кода XAML:
 
@@ -196,7 +196,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 </ContentPage>
 ```
 
-В следующем примере кода показано, как в C#, в котором можно выполнить привязку данных.
+В следующем примере кода показано, как можно выполнить привязку данных в C#:
 
 ```csharp
 public class DetailPageCS : ContentPage
@@ -248,17 +248,17 @@ public class DetailPageCS : ContentPage
 }
 ```
 
-Данные отображаются на странице ряд [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) элементов управления.
+Данные отображаются на странице ряд [ `Label` ](xref:Xamarin.Forms.Label) элементов управления.
 
 Дополнительные сведения о привязке данных см. в статье [Основы привязки данных](~/xamarin-forms/xaml/xaml-basics/index.md).
 
 ## <a name="summary"></a>Сводка
 
-В этой статье показано, как для перехода по страницам модальным. На модальной странице пользователь должен выполнить отдельную задачу, причем он не может уйти с этой страницы, пока задача не будет выполнена или отменена.
+В этой статье показано, как для перехода по модальным страницам. На модальной странице пользователь должен выполнить отдельную задачу, причем он не может уйти с этой страницы, пока задача не будет выполнена или отменена.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Навигация по страницам](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [Modal (пример)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Modal/)
+- [Модальное окно (пример)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Modal/)
 - [PassingData (пример)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)

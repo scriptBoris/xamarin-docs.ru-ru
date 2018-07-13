@@ -1,55 +1,55 @@
 ---
 title: Xamarin.Forms BoxView
-description: В этой статье описывается использование цветного прямоугольника для оформления, графики и взаимодействия в приложении Xamarin.Forms.
+description: В этой статье описываются способы использования цветным прямоугольником для оформления, графику и взаимодействие в приложении Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 0a99845b23ee32a00a6894ef60988e61e361805e
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: 813a913c2c2fb27456c9a489c73b16d5892c4b8d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209249"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997056"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
-[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) Подготавливает к просмотру простой прямоугольник заданную ширину, высоту и цвет. Можно использовать `BoxView` для оформления, ограниченные механизмы графики, а также для взаимодействия с пользователем с помощью сенсорного ввода.
+[`BoxView`](xref:Xamarin.Forms.BoxView) Отображает простой прямоугольник заданную ширину, высоту и цвет. Можно использовать `BoxView` для оформления, элементарные графики, а также для взаимодействия с пользователем с помощью сенсорного ввода.
 
-Поскольку Xamarin.Forms не имеет встроенных векторной графики системы, `BoxView` помогает для компенсации. Некоторые примеры программ, описанные в этой статье использует `BoxView` для отображения графики. `BoxView` Можно размера для сходства строки заданной ширины и толщины, а затем поворачивать угол с помощью `Rotation` свойство.
+Поскольку Xamarin.Forms не имеет встроенных вектор графической системе, `BoxView` помогает соответствующим образом. Некоторые из примеров программ, описанные в этой статье подразумевают использование `BoxView` для рендеринга графики. `BoxView` Можно размера, чтобы он напоминал строки заданной ширины и толщины, а затем (повернутый) с помощью любой угол `Rotation` свойство.
 
-Несмотря на то что `BoxView` может имитировать простой графикой, может потребоваться изучение [с помощью SkiaSharp в Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) для более сложных требований графики.
+Несмотря на то что `BoxView` может имитировать простой графикой, может потребоваться изучение [использование SkiaSharp в Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) для более сложных требований графики.
 
-В этой статье рассматриваются следующие вопросы:
+В этой статье рассматриваются следующие темы:
 
-- **[Настройка размера и цвета BoxView](#colorandsize)**  &ndash; задать `BoxView` свойства.
-- **[Оформление текста отрисовки](#textdecorations)**  &ndash; использовать `BoxView` для подготовки к просмотру строк.
+- **[Параметр BoxView цвет и размер](#colorandsize)**  &ndash; задать `BoxView` свойства.
+- **[Оформление текста отрисовки](#textdecorations)**  &ndash; использовать `BoxView` для отрисовки линий.
 - **[Список цветов с BoxView](#listingcolors)**  &ndash; отображения всех системных цветов в `ListView`.
-- **[Воспроизведение игры жизни путем создания подкласса BoxView](#subclassing)**  &ndash; реализовать знаменитый сотовой связи машин.
+- **[Воспроизведение игры жизнь путем создания подклассов BoxView](#subclassing)**  &ndash; реализовать знаменитые сотовой связи недетерминированного.
 - **[Создание цифровых часов](#digitalclock)**  &ndash; имитировать отображения матричный.
-- **[Создание часов аналогом](#analogclock)**  &ndash; преобразовывать и анимировать `BoxView` элементов.
+- **[Создание часов аналоговый](#analogclock)**  &ndash; преобразовывать и анимировать `BoxView` элементов.
 
 <a name="colorandsize" />
 
 ## <a name="setting-boxview-color-and-size"></a>Параметр BoxView цвет и размер
 
-Очень часто можно задать следующие три свойства `BoxView`:
+Очень часто необходимо установить следующие три свойства `BoxView`:
 
-- [`Color`](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) Чтобы задать значение цвета.
-- [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) Чтобы задать ширину `BoxView` в аппаратно независимых единицах.
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) Чтобы задать высоту `BoxView`.
+- [`Color`](xref:Xamarin.Forms.BoxView.Color) Чтобы указать ее цвет.
+- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) Чтобы задать ширину `BoxView` в аппаратно независимых единицах.
+- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) Чтобы задать высоту `BoxView`.
 
-`Color` Свойство относится к типу `Color`; свойство можно задать для любой `Color` значения, включая 141 статические только для чтения поля с именем цвета в алфавитном порядке от `AliceBlue` для `YellowGreen`.
+`Color` Свойство имеет тип `Color`; свойство можно присвоить любой `Color` значение, включая 141 статические поля только для чтения класса с именем цвета в алфавитном порядке от `AliceBlue` для `YellowGreen`.
 
-`WidthRequest` И `HeightRequest` свойства играют роль, только если `BoxView` — *произвольные* в макете. Это случается, когда контейнер макета, должно быть известно дочернего элемента размер, например, при `BoxView` является дочерним ячейки автоматически определяемым размером в `Grid` макета. Объект `BoxView` можно без ограничений, когда его `HorizontalOptions` и `VerticalOptions` свойствам присваиваются значения, отличного от `LayoutOptions.Fill`. Если `BoxView` — без ограничений, но `WidthRequest` и `HeightRequest` не задано, то ширина или высота присваиваются значения по умолчанию 40 единиц или около 1/4 дюйма на мобильных устройствах.
+`WidthRequest` И `HeightRequest` свойства играют роль, только если `BoxView` — *неограниченного* в макете. Это происходит, когда контейнер макета должен знать дочернего элемента размер, например, при `BoxView` является дочерним элементом автоматическим размером ячейки в `Grid` макета. Объект `BoxView` тоже без ограничений, когда его `HorizontalOptions` и `VerticalOptions` свойства присваиваются значения, отличные от `LayoutOptions.Fill`. Если `BoxView` — без ограничений, но `WidthRequest` и `HeightRequest` свойства не заданы, то ширина или высота присваиваются значения по умолчанию 40 единиц или примерно 1/4 дюйма на мобильных устройствах.
 
-`WidthRequest` И `HeightRequest` свойства игнорируются, если `BoxView` — *ограниченного* в формате, в котором регистр контейнера макета налагает на свой собственный размер `BoxView`.
+`WidthRequest` И `HeightRequest` свойства учитываются, если `BoxView` — *ограниченного* в макете, в котором случае контейнер макета налагает на свой собственный размер `BoxView`.
 
-Объект `BoxView` в одном измерении ограниченное и неограниченное в другой. Например если `BoxView` является потомком вертикальной `StackLayout`, по вертикали `BoxView` — неограниченное и его горизонтальный размер обычно ограничен. Однако существуют исключения для этого измерения горизонтальной: Если `BoxView` имеет его `HorizontalOptions` свойства, значение, отличное от `LayoutOptions.Fill`, то горизонтальный размер также произвольные. Можно также для `StackLayout` сам иметь произвольные горизонтальный размер, в этом случае `BoxView` также будет горизонтально без ограничений.
+Объект `BoxView` может быть ограничен в одно измерение и без ограничений в другой. Например если `BoxView` является дочерним для вертикального `StackLayout`, по вертикали `BoxView` — без ограничений, и его горизонтальный размер обычно ограничен. Однако существуют исключения для горизонтального измерения: Если `BoxView` имеет его `HorizontalOptions` свойство, значение, отличное от `LayoutOptions.Fill`, горизонтальный размер также будет без ограничений. Существует также возможность `StackLayout` сам иметь неограниченный горизонтальный размер, в этом случае `BoxView` также будет горизонтально без ограничений.
 
-[ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView) пример отображает один дюйм квадратные неограниченное `BoxView` в центре его страницы:
+[ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView) пример отображает один дюймовый квадрат без ограничений `BoxView` в центре его страницы:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -66,13 +66,13 @@ ms.locfileid: "36209249"
 </ContentPage>
 ```
 
-Ниже приведен результат:
+Ниже приведен результат.
 
 [![Основные BoxView](boxview-images/basicboxview-small.png "основные BoxView")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
-Если `VerticalOptions` и `HorizontalOptions` свойства будут удалены из `BoxView` тег или получают `Fill`, то `BoxView` становится ограничен по размеру страницы и дополняет для заполнения страницы.
+Если `VerticalOptions` и `HorizontalOptions` свойства будут удалены из `BoxView` тег или приводятся к `Fill`, то `BoxView` становится ограничением размера страницы и разворачивается для заполнения страницы.
 
-Объект `BoxView` также может быть дочерним элементом `AbsoluteLayout`. В этом случае, расположение и размер `BoxView` задаются с использованием `LayoutBounds` присоединенного привязываемые свойства. `AbsoluteLayout` Описывается в статье [ **AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md).
+Объект `BoxView` также может быть дочерним элементом `AbsoluteLayout`. В этом случае, расположение и размер `BoxView` задаются с помощью `LayoutBounds` присоединенного связываемые свойства. `AbsoluteLayout` Рассматривается в статье [ **AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md).
 
 Вы увидите примеры всех этих случаях в последующих примерах программ.
 
@@ -80,7 +80,7 @@ ms.locfileid: "36209249"
 
 ## <a name="rendering-text-decorations"></a>Подготовка к просмотру оформление текста
 
-Можно использовать `BoxView` для добавления некоторых простых оформление на страницах в виде горизонтальных и вертикальных линий. [ **TextDecoration** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration) примере демонстрируется это. Все визуальные элементы программы определяются в **MainPage.xaml** файл, который содержит несколько `Label` и `BoxView` элементов в `StackLayout` показано ниже:
+Можно использовать `BoxView` для добавления некоторых простых оформление на страницах в виде горизонтальных и вертикальных линий. [ **TextDecoration** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration) в нем демонстрируется это. Все визуальные элементы программы определенные в **MainPage.xaml** файл, который содержит несколько `Label` и `BoxView` элементов в `StackLayout` показано ниже:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -111,11 +111,11 @@ ms.locfileid: "36209249"
 </ContentPage>
 ```
 
-Все разметка, являющиеся дочерними для `StackLayout`. Эта разметка состоит из нескольких типов декоративного `BoxView` элементы, используемые с `Label` элемента:
+Все разметка, являющиеся дочерними для `StackLayout`. Эта разметка состоит из нескольких типов фигурных `BoxView` элементы, используемые с `Label` элемент:
 
-[![Оформление текста](boxview-images/textdecoration-small.png "оформления текста")](boxview-images/textdecoration-large.png#lightbox "оформление текста")
+[![Оформление текста](boxview-images/textdecoration-small.png "оформление текста")](boxview-images/textdecoration-large.png#lightbox "оформление текста")
 
-Стильная заголовок в верхней части страницы достигается с `AbsoluteLayout` , дочерние элементы которого являются четыре `BoxView` элементы и `Label`, все из которых назначены определенные расположения и размеры:
+Стильный заголовка в верхней части страницы достигается за счет `AbsoluteLayout` дочерние элементы которого четыре `BoxView` элементов и `Label`, все из которых назначен определенные расположения и размеры:
 
 ```xaml
 <AbsoluteLayout>
@@ -131,7 +131,7 @@ ms.locfileid: "36209249"
 
 В файле XAML `AbsoluteLayout` следуют `Label` с форматированный текст, который описывает `AbsoluteLayout`.
 
-Можно подчеркнуть текстовой строки, заключив оба `Label` и `BoxView` в `StackLayout` с его `HorizontalOptions` значение на что-то отличное от `Fill`. Ширина `StackLayout` затем регулируется ширина `Label`, который затем применяет эту ширину на `BoxView`. `BoxView` Назначается только точные значения высоты:
+Можно подчеркнуть строку текста путем заключения оба `Label` и `BoxView` в `StackLayout` с его `HorizontalOptions` значение значение, отличное от `Fill`. Ширина `StackLayout` затем регулируется ширина `Label`, который затем налагает это на `BoxView`. `BoxView` Назначается только точные значения высоты:
 
 ```xaml
 <StackLayout HorizontalOptions="Center">
@@ -141,15 +141,15 @@ ms.locfileid: "36209249"
 </StackLayout>
 ```
 
-Этот метод нельзя использовать на подчеркивание отдельные слова в пределах более текстовые строки или абзаца.
+Этот метод нельзя использовать на подчеркивание отдельные слова в пределах более длинные строки текста или абзаца.
 
-Можно также использовать `BoxView` выглядеть HTML `hr` (горизонтальное правило) элемент. Просто разрешить ширину `BoxView` определяется родительским контейнером, который в данном случае является `StackLayout`:
+Можно также использовать `BoxView` , чтобы он напоминал HTML `hr` элемент (горизонтальная линия). Просто разрешить ширину `BoxView` определяется его родительского контейнера, который в данном случае является `StackLayout`:
 
 ```xaml
 <BoxView HeightRequest="3" />
 ```
 
-Наконец, можно нарисовать вертикальной линии на одной стороне абзац текста путем заключения оба `BoxView` и `Label` в горизонтальной `StackLayout`. В данном случае высоту `BoxView` совпадает со значением высоты `StackLayout`, который управляется высоту `Label`:
+Наконец, можно нарисовать вертикальную линию на одной стороне абзац текста путем заключения оба `BoxView` и `Label` в горизонтальной `StackLayout`. В данном случае высоту `BoxView` совпадает со значением высоты `StackLayout`, который регулируется высота `Label`:
 
 ```xaml
 <StackLayout Orientation="Horizontal">
@@ -166,11 +166,11 @@ ms.locfileid: "36209249"
 
 ## <a name="listing-colors-with-boxview"></a>Список цветов с BoxView
 
-`BoxView` Удобен для отображения цветов. Эта программа использует `ListView` Чтобы перечислить все открытые статические только для чтения поля Xamarin.Forms `Color` структуры:
+`BoxView` Удобное отображение цветов. Эта программа использует `ListView` Чтобы вывести список все открытые статические только для чтения поля Xamarin.Forms `Color` структуры:
 
 [![Цвета ListView](boxview-images/listviewcolors-small.png "цвета ListView")](boxview-images/listviewcolors-large.png#lightbox "цвета ListView")
 
-[ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) программа включает класс с именем `NamedColor`. Статический конструктор использует отражение для доступа к все поля `Color` структуры и создать `NamedColor` объекта для каждого из них. Эти значения хранятся в статический `All` свойство:
+[ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) программа включает класс с именем `NamedColor`. Статический конструктор использует отражение для доступа к все поля `Color` структурировать и создать `NamedColor` объекта для каждого из них. Эти значения хранятся в статический `All` свойство:
 
 ```csharp
 public class NamedColor
@@ -242,7 +242,7 @@ public class NamedColor
 }
 ```
 
-Визуальные элементы программы описаны в файле XAML. `ItemsSource` Свойство `ListView` присваивается статический `NamedColor.All` свойство, которое означает, что `ListView` отображает все отдельные `NamedColor` объектов:
+Визуальные элементы программы, описаны в файле XAML. `ItemsSource` Свойство `ListView` присваивается статический `NamedColor.All` свойство, которое означает, что `ListView` отображает все отдельные `NamedColor` объектов:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -293,15 +293,15 @@ public class NamedColor
 </ContentPage>
 ```
 
-`NamedColor` Объекты форматируются с `ViewCell` объект, заданный как шаблон данных `ListView`. Этот шаблон включает в себя `BoxView` которого `Color` свойство привязано к `Color` свойство `NamedColor` объекта.
+`NamedColor` Объекты форматируются с `ViewCell` объект, который задан в качестве шаблона данных `ListView`. Этот шаблон включает `BoxView` которого `Color` свойство привязано к `Color` свойство `NamedColor` объекта.
 
 <a name="subclassing" />
 
-## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>Игры путем создания подкласса BoxView жизненного цикла
+## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>Играя в игру существования путем создания подклассов BoxView
 
-Игра срока службы является сотовой связи машин изобретенный поля Джон конвея прогноз и Кроме того, на страницах *научных American* в 1970-х годах. Указанное представление в статье Википедии [Конвея игры срока службы](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
+Игра срока службы является сотовой связи недетерминированного разработанная компанией по имени математика Джорджа Конвея Джона и Кроме того, на страницах *научных American* в 1970-х годах. О чем идет речь, предоставляемые статье Википедии [Конвея игры of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
-Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/) программа определяет класс с именем `LifeCell` , производный от `BoxView`. Этот класс инкапсулирует логику отдельные ячейки в игру срока службы:
+Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/) программа определяет класс с именем `LifeCell` , наследуемый от класса `BoxView`. Этот класс инкапсулирует логику отдельную ячейку в игре of Life:
 
 ```csharp
 class LifeCell : BoxView
@@ -344,23 +344,23 @@ class LifeCell : BoxView
 }
 ```
 
-`LifeCell` Добавляет три дополнительные свойства в `BoxView`: `Col` и `Row` свойства хранения позиции ячейки в сетке и `IsAlive` свойство указывает его состояние. `IsAlive` Свойство также задает `Color` свойство `BoxView` в черный, если ячейка находится в активном состоянии и белый Если ячейка не находится в активном состоянии.
+`LifeCell` Добавляет три дополнительные свойства для `BoxView`: `Col` и `Row` свойства хранения положение ячейки в сетке и `IsAlive` свойство указывающее его состояние. `IsAlive` Также задает свойство `Color` свойство `BoxView` черный цвет, если ячейка находится в активном состоянии и белым Если ячейка не содержится в активном состоянии.
 
-`LifeCell` также устанавливает `TapGestureRecognizer` чтобы разрешить пользователю переключение состояния ячеек, коснувшись их. Класс преобразует `Tapped` события из распознаватель жестов в свой собственный `Tapped` событий.
+`LifeCell` также устанавливает `TapGestureRecognizer` разрешение на переключение состояния ячеек, коснувшись их. Этот класс преобразует `Tapped` событий из средства распознавания в свой собственный `Tapped` событий.
 
-**GameOfLife** также `LifeGrid` класс, который включает большую часть логики игры и `MainPage` класс, который обрабатывает визуальные элементы программы. К ним относятся наложение, который описывает правила игры. Здесь — это программа, в действии, показывающая несколько сотен `LifeCell` объектов на странице:
+**GameOfLife** также `LifeGrid` класс, который инкапсулирует большую часть логики игры и `MainPage` класс, который обрабатывает визуальные элементы программы. К ним относятся наложение, описывающий правила игры. Вот программа в действии, показывающий несколько сотен `LifeCell` объектов на странице:
 
-[![Игра жизненного цикла](boxview-images/gameoflife-small.png "игры жизни")](boxview-images/gameoflife-large.png#lightbox "игры жизненного цикла")
+[![Игра жизни](boxview-images/gameoflife-small.png "игры жизненного цикла")](boxview-images/gameoflife-large.png#lightbox "игры жизненного цикла")
 
 <a name="digitalclock" />
 
 ## <a name="creating-a-digital-clock"></a>Создание цифровых часов
 
-[ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) программа создает 210 `BoxView` элементы для имитации точек проверенное отображения матричный 5 по 7. Время в книжном или альбомном режиме можно считывать, но больше, в альбомной ориентации:
+[ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) программа создает 210 `BoxView` элементы для имитации точки доброе отображения матричный 5 по 7. Вы найдете время в книжном или альбомном режиме, но он больше в альбомной ориентации:
 
-[![Матричный часы](boxview-images/dotmatrixclock-small.png "часов матричный")](boxview-images/dotmatrixclock-large.png#lightbox "матричный часов")
+[![Часы матричный](boxview-images/dotmatrixclock-small.png "часы матричный")](boxview-images/dotmatrixclock-large.png#lightbox "матричный часов")
 
-В файле XAML немногим больше, чем создать экземпляр `AbsoluteLayout` для часов:
+Файл XAML немногим больше, чем создать экземпляр `AbsoluteLayout` для часов:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -375,7 +375,7 @@ class LifeCell : BoxView
 </ContentPage>
 ```
 
-Все остальные встречается в файле кода. Логика отображения матричный упрощено по определению несколько массивов, описывающие точек, каждая из 10 цифр и точкой с запятой:
+Все остальное происходит в файле кода. Логику отображения матричный значительно упростилось по определению несколько массивов, которые описывают точек, каждая из 10 цифр и двоеточие:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -447,9 +447,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Эти поля заканчиваться трехмерный массив `BoxView` элементы для хранения шаблонов точка для шести цифр.
+Эти поля завершу статью трехмерный массив `BoxView` элементов для хранения шаблонов точка для шести цифр.
 
-Конструктор создает все `BoxView` элементы для цифры и двоеточия, а также инициализирует `Color` свойство `BoxView` элементы двоеточия:
+Конструктор создает все `BoxView` элементы для цифр и двоеточие, а также инициализирует `Color` свойство `BoxView` элементы для него:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -528,9 +528,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Эта программа использует относительное позиционирование и возможность изменения размера `AbsoluteLayout`. Ширина и Высота каждого `BoxView` присваиваются дробных значений, в частности 85% 1, деленное на число точек по горизонтали и вертикали. Позиции также присвоено дробных значений.
+Эта программа использует относительное позиционирование и функция изменения размера `AbsoluteLayout`. Ширина и Высота каждого `BoxView` присваивается дробных значений, в частности 85% 1, деленное на количество точек. Положения также присвоено дробные значения использовать нельзя.
 
-Из-за расположения и размеров относительно общего объема `AbsoluteLayout`, `SizeChanged` обработчика необходимо задать только `HeightRequest` из `AbsoluteLayout`:
+Так как все положения и размеры задаются относительно общего объема `AbsoluteLayout`, `SizeChanged` обработчика необходимо только установить `HeightRequest` из `AbsoluteLayout`:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -551,7 +551,7 @@ public partial class MainPage : ContentPage
 
 Ширина `AbsoluteLayout` автоматически получает значение, так как она растягивается на всю ширину страницы.
 
-Окончательный код в `MainPage` класс обрабатывает обратный вызов таймера и цвета точек каждая цифра. Определение многомерных массивов в начале файла кода помогает сделать эту логику простой части программы:
+Последний код в `MainPage` класс обрабатывает обратный вызов таймера и цвета точек каждая цифра. Определение многомерных массивов в начале файла кода помогает сделать эту логику самой простой частью программы:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -592,13 +592,13 @@ public partial class MainPage : ContentPage
 
 ## <a name="creating-an-analog-clock"></a>Создание аналогично часам со стрелками
 
-Часы матричный может показаться очевидным приложения `BoxView`, но `BoxView` элементы также поддерживают реализации аналогично часам со стрелками:
+Часы матричный может показаться очевидным применения `BoxView`, но `BoxView` элементы также способны реализации аналогично часам со стрелками:
 
 [![Часы BoxView](boxview-images/boxviewclock-small.png "часы BoxView")](boxview-images/boxviewclock-large.png#lightbox "BoxView часов")
 
-Все визуальные элементы в [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) программы являются потомками `AbsoluteLayout`. Эти элементы имеют размер с помощью `LayoutBounds` присоединенного свойства и повернутый с использованием `Rotation` свойство.
+Все визуальные элементы в [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) программы являются дочерними элементами `AbsoluteLayout`. Эти элементы имеют размер с помощью `LayoutBounds` вложенного свойства зависимостей и повернутый с использованием `Rotation` свойство.
 
-Три `BoxView` элементы для стрелки часов экземпляр в XAML-файле, но не располагается или размера:
+Три `BoxView` для стрелки часов создан в файле XAML, но не расположен или элементов размера:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -626,7 +626,7 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-Конструктор для файла кода создается экземпляр 60 `BoxView` элементы для деления вокруг окружности часов:
+Конструктор файла кода создает 60 `BoxView` элементы для делений вокруг длины окружности часов:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -655,7 +655,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Изменения размера и положения всех `BoxView` элементов происходит в `SizeChanged` обработчик `AbsoluteLayout`. Внутренний класс небольшой структура называется `HandParams` описывает размер каждого из трех руки относительно общего объема часы:
+Определения размеров и положения всех `BoxView` элементы происходит в `SizeChanged` обработчик для `AbsoluteLayout`. Внутренний класс небольшая структура называется `HandParams` описывает размер каждого из трех руки относительно общего объема часы:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -684,7 +684,7 @@ public partial class MainPage : ContentPage
  }
 ```
 
-`SizeChanged` Обработчик определяет центра и радиус `AbsoluteLayout`и изменяет размер и помещает 60 `BoxView` элементы, используемые в качестве деления. `for` Цикл завершается, задав `Rotation` свойства каждого из этих `BoxView` элементов. В конце `SizeChanged` обработчик, `LayoutHand` метод вызывается с размером и расположением три стрелки часов:
+`SizeChanged` Обработчик определяет центра и радиус `AbsoluteLayout`и изменяет размер и помещает 60 `BoxView` элементы, используемые в качестве меток делений. `for` Цилк, задав `Rotation` свойства каждого из этих `BoxView` элементов. В конце `SizeChanged` обработчик, `LayoutHand` был вызван с размером и расположением три стрелки часов:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -735,9 +735,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`LayoutHand` Метод размеров и размещает каждой стрелки, чтобы они указывали непосредственно до позиции, 12:00. В конце метода `AnchorY` свойству позиции, соответствующий центр часов. Это означает центра вращения.
+`LayoutHand` Метод размерами и положениями каждой стрелки, чтобы они указывали непосредственно до позиции, 12:00. В конце метода `AnchorY` свойству положение, соответствующее center часов. Это указывает центр вращения.
 
-Стрелки поворачиваются в функции обратного вызова таймера:
+Руки меняются в функции обратного вызова таймера:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -770,11 +770,11 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Рука секунду обрабатывается немного по-разному: вносить перемещение очевидно, механическими, а не smooth применяется функция плавности анимации. На каждом этапе секунду извлекает немного и затем overshoots места назначения. Добавляет этот небольшого фрагмента кода во многом реалистичности движения.
+Немного по-разному обрабатывается секундной стрелки: функция для реалистичной анимации анимация применяется к задать перемещение кажется, механическими, а не smooth. На каждом этапе секундной стрелки стягивает немного и затем overshoots места назначения. Этот небольшой фрагмент кода добавляет гораздо реализм движения.
 
 ## <a name="conclusion"></a>Заключение
 
-`BoxView` Может показаться простой в сначала, а как вы уже видели, может быть достаточно гибким и может почти воспроизвести визуальных элементов, которые обычно возможны только с векторная графика. Для более сложных графики, обратитесь к [с помощью SkiaSharp в Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
+`BoxView` Может показаться простой в, во-первых, но как вы убедились, это может быть весьма гибким, и можно почти воспроизведения визуальных элементов, которые обычно возможны только с векторную графику. Для более сложных рисунков, обратитесь к [использование SkiaSharp в Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
 
 
 ## <a name="related-links"></a>Связанные ссылки
@@ -785,4 +785,4 @@ public partial class MainPage : ContentPage
 - [Игра жизненного цикла (пример)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)
 - [Матричный часов (пример)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock)
 - [Часы BoxView (пример)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock)
-- [BoxView](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)
+- [BoxView](xref:Xamarin.Forms.BoxView)

@@ -1,60 +1,60 @@
 ---
 title: Общие сведения о шаблонах элементов управления Xamarin.Forms
-description: Xamarin.Forms шаблонов элементов управления предоставляют возможность легко темы и re темы страницы приложения во время выполнения. В этой статье содержатся общие сведения о шаблонах элементов управления.
+description: Шаблоны элементов управления Xamarin.Forms дают возможность легко темой и re темой страницы приложений во время выполнения. В этой статье содержатся общие сведения о шаблонах элементов управления.
 ms.prod: xamarin
 ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: a8e5c84bfa2525a28e9af5343be0ee156564bdd6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6b7a6c6d9c9c541e1d5e821fc2dac202e98bec62
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242522"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994429"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Общие сведения о шаблонах элементов управления Xamarin.Forms
 
-_Xamarin.Forms шаблонов элементов управления предоставляют возможность легко темы и re темы страницы приложения во время выполнения. В этой статье содержатся общие сведения о шаблонах элементов управления._
+_Шаблоны элементов управления Xamarin.Forms дают возможность легко темой и re темой страницы приложений во время выполнения. В этой статье содержатся общие сведения о шаблонах элементов управления._
 
-Элементы управления имеют различные свойства, такие как `BackgroundColor` и `TextColor`, который можно определить внешний вид элемента управления. Эти свойства можно задать с помощью [стили](~/xamarin-forms/user-interface/styles/index.md), который может быть изменен во время выполнения для реализации основных тем. Тем не менее стили не поддерживать четкое разделение внешний вид страницы и его содержимого и изменения, которые можно сделать, задав такие параметры ограничены.
+Элементы управления имеют разные свойства, такие как `BackgroundColor` и `TextColor`, который можно определить внешний вид элемента управления. Эти свойства можно задать с помощью [стили](~/xamarin-forms/user-interface/styles/index.md), который может быть изменен во время выполнения для реализации основных темы. Тем не менее стили не поддерживать четкое разделение между внешний вид страницы и его содержимого и изменения, которые можно сделать, задав такие свойства ограничены.
 
-Шаблоны элементов управления предоставляют четкое разделение внешний вид страницы и его содержимым, таким образом, что позволяет создавать страницы, которые легко может быть включен в тему. Например приложение может содержать шаблоны управление на уровне приложения, которые предоставляют темной темой и светлой темами. Каждый [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) в приложении может быть включен в тему, применив один из шаблонов элементов управления без изменения содержимого, отображаемого в каждой странице. Кроме того темы, предоставляемые шаблонов элементов управления не только для изменения свойств элементов управления. Также можно изменить элементы управления, используемые для реализации темы.
+Шаблоны элементов управления дают четкое разделение между внешний вид страницы и его содержимым, таким образом, что позволяет создавать страницы, которые можно легко применять различные темы. Например приложение может содержать шаблоны управления уровня приложения, которые обеспечивают темной и светлой темами. Каждый [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) в приложении можно применять различные темы, применив один из шаблонов элементов управления без изменения содержимого, отображаемого для каждой страницы. Кроме того темы, предоставляемые шаблоны элементов управления не только для изменения свойств элементов управления. Они также можно изменить элементы управления, используемые для реализации темы.
 
 ## <a name="creating-a-controltemplate"></a>Создание шаблона ControlTemplate
 
-Объект [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) определяет внешний вид страницы или представления и содержит корневой макет и на макет элементов управления, реализующих шаблон. Как правило `ControlTemplate` задействует [ `ContentPresenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) для пометки, где будет отображаться содержимое, отображаемое на странице или представления. Страница или представление, которое использует `ControlTemplate` этого необходимо определить содержимое, отображаемое по `ContentPresenter`. На следующей схеме показана `ControlTemplate` для страницы, которая содержит ряд элементов управления, включая `ContentPresenter` помеченные синим прямоугольником:
+Объект [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) указывает внешний вид страницы или представления и содержит корневой макет и в макете, элементы управления, реализующих шаблон. Как правило `ControlTemplate` будет использовать [ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter) для пометки, где будет отображаться содержимое, отображаемое на странице или представлении. Страницу или представление, использующее `ControlTemplate` этого необходимо определить содержимое, отображаемое по `ContentPresenter`. На следующей схеме показана `ControlTemplate` для страницы, которая содержит несколько элементов управления, включая `ContentPresenter` обозначен синий прямоугольник:
 
 ![](introduction-images/control-template.png "Шаблон элемента управления для страницы")
 
-Объект [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) могут применяться к следующим типам, задав их `ControlTemplate` свойства:
+Объект [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) могут применяться к следующим типам, задав их `ControlTemplate` свойства:
 
-- [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)
-- [`ContentView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)
-- [`TemplatedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/)
-- [`TemplatedView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/)
+- [`ContentPage`](xref:Xamarin.Forms.ContentPage)
+- [`ContentView`](xref:Xamarin.Forms.ContentView)
+- [`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage)
+- [`TemplatedView`](xref:Xamarin.Forms.TemplatedView)
 
-Когда [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) и назначается для этих типов, любые существующие внешний вид заменяется внешний вид, определенные в `ControlTemplate`. Кроме того, а также настройка внешнего вида с помощью `ControlTemplate` свойства, шаблоны также можно применить с помощью стилей для дальнейшего управления разверните возможность темы.
+Когда [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) создается и назначается на эти типы, любой существующий внешний вид заменяется внешний вид, определяемый в `ControlTemplate`. Кроме того, а также настройка внешнего вида с помощью `ControlTemplate` свойства, шаблоны могут применяться также с помощью стилей для дальнейшего управления разверните возможности темы.
 
 > [!NOTE]
->  *Что такое `TemplatedPage` и `TemplatedView` типов?* `TemplatedPage` является базовым классом для `ContentPage`, а — самый простой тип страницы, предоставляемые Xamarin.Forms. В отличие от `ContentPage`, `TemplatedPage` не имеет `Content` свойства. Таким образом, содержимое не может быть добавлено непосредственно `TemplatedPage` экземпляра. Вместо этого содержимое добавляется, установив шаблон элемента управления для `TemplatedPage` экземпляра. Аналогичным образом `TemplatedView` является базовым классом для `ContentView`. В отличие от `ContentView`, `TemplatedView` не имеет `Content` свойства. Таким образом, содержимое не может быть добавлено непосредственно `TemplatedView` экземпляра. Вместо этого содержимое добавляется, установив шаблон элемента управления для `TemplatedView` экземпляра.
+>  *Что такое `TemplatedPage` и `TemplatedView` типов?* `TemplatedPage` является базовым классом для `ContentPage`это самый простой тип страницы, предоставляемые Xamarin.Forms. В отличие от `ContentPage`, `TemplatedPage` имеет `Content` свойства. Таким образом, содержимое невозможно непосредственно добавлять к `TemplatedPage` экземпляра. Вместо этого содержимое добавляется, задав шаблон элемента управления для `TemplatedPage` экземпляра. Аналогичным образом `TemplatedView` является базовым классом для `ContentView`. В отличие от `ContentView`, `TemplatedView` имеет `Content` свойства. Таким образом, содержимое невозможно непосредственно добавлять к `TemplatedView` экземпляра. Вместо этого содержимое добавляется, задав шаблон элемента управления для `TemplatedView` экземпляра.
 
-Шаблоны элементов управления можно создать в XAML и C#:
+Шаблоны элементов управления могут создаваться в XAML и C#:
 
-- Шаблоны элементов управления, созданный в XAML, определяются в [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) , которые назначены [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) коллекции страницы или чаще для [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/) сбора приложения.
-- Шаблоны элементов управления, созданных в C# обычно определяются в классе страницы или в классе, который может осуществляться глобально.
+- Шаблоны элементов управления, созданные в XAML, определяются в [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) , назначенный [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) коллекции, или чаще для [ `Resources` ](xref:Xamarin.Forms.Application.Resources) коллекции приложения.
+- Шаблоны элементов управления, созданном на C# обычно определяются в классе страницы или в классе, который может осуществляться глобально.
 
-Выбор места для определения [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) экземпляра влияние, где он может использоваться:
+Выбор места для определения [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) экземпляра последствий, где его можно использовать:
 
-- [`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) экземпляры, определенные на уровне страниц может применяться только к странице.
-- [`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) экземпляры, определенного на уровне приложения могут применяться на страницы в приложении.
+- [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) экземпляры, определенные на уровне страниц может применяться только к странице.
+- [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) экземпляры, определенные на уровне приложения могут применяться к страницам в приложении.
 
-Шаблоны элементов управления более низкого уровня в иерархии представления имеют приоритет над указанных выше вверх. Например [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) с именем `DarkTheme` , определенный на уровне страницы будет иметь приоритет над одноименного шаблона, определенного на уровне приложения. Таким образом шаблон элемента управления, который определяет тему для применения к каждой страницы в приложении должен быть определен на уровне приложения.
+Шаблоны элементов управления, более низкого уровня в иерархии представлений имеют приоритет над определенных выше вверх. Например [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) с именем `DarkTheme` , определяется на уровне страницы будет иметь приоритет над шаблоном с одинаковыми именами, определенные на уровне приложения. Таким образом шаблон элемента управления, который определяет тему для применения к каждой страницы в приложении должен быть определен на уровне приложения.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Стили](~/xamarin-forms/user-interface/styles/index.md)
-- [ControlTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)
-- [ContentPresenter](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)
+- [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
+- [ContentPresenter](xref:Xamarin.Forms.ContentPresenter)

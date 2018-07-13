@@ -1,36 +1,36 @@
 ---
-title: Основные сведения о битовой карты в SkiaSharp
-description: В этой статье объясняется, как загрузить растровых изображений в SkiaSharp из различных источников и их отображения в Xamarin.Forms приложений и это демонстрируется с примерами кода.
+title: Основы растрового изображения в SkiaSharp
+description: В этой статье объясняется, как загружать точечные рисунки в SkiaSharp из различных источников и отображать их в приложениях Xamarin.Forms и демонстрирует это с помощью примера кода.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: 291f08afb95c70e9f9fccc02e1fd7353cf107213
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: dec6fa1534f14836ae98677ad33e280ff510fb97
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244390"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995193"
 ---
-# <a name="bitmap-basics-in-skiasharp"></a>Основные сведения о битовой карты в SkiaSharp
+# <a name="bitmap-basics-in-skiasharp"></a>Основы растрового изображения в SkiaSharp
 
-_Загрузить растровые изображения из различных источников и их отображения._
+_Загрузка точечных рисунков из различных источников и отобразить их._
 
-Поддержка точечных рисунков в SkiaSharp достаточно большим. В этой статье описываются только основные &mdash; загрузить точечные рисунки и способ их отображения:
+Поддержка точечных рисунков в SkiaSharp является достаточно большим. В этой статье рассматриваются только основные &mdash; как загружать точечные рисунки и способ их отображения:
 
 ![](bitmaps-images/bitmapssample.png "Отображение двух точечных рисунков")
 
-Битовая карта SkiaSharp — это объект типа [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Существует много способов создания растрового изображения, но в этой статье ограничится для [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/) метод, который загружает точечный рисунок из [ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/) объекта, который ссылается на файл растрового изображения. Удобно использовать [ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/) класс, производный от `SKStream` , так как он имеет конструктор, принимающий .NET [ `Stream` ](https://developer.xamarin.com/api/type/System.IO.Stream/) объекта.
+Битовая карта SkiaSharp — это объект типа [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Существует много способов создания растрового изображения, но в этой статье задействует, чтобы [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/) метод, который загружает точечный рисунок из [ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/) объект, который ссылается на файл точечного рисунка. Его удобно использовать [ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/) класс, производный от `SKStream` так как он имеет конструктор, принимающий .NET [ `Stream` ](xref:System.IO.Stream) объекта.
 
-**Основные растровые изображения** страницы в **SkiaSharpFormsDemos** показано, как загрузить растровые изображения из трех различных источников:
+**Основные точечные рисунки** странице в **SkiaSharpFormsDemos** программа демонстрирует, как загрузить точечных рисунков из трех различных источников:
 
-- Через Интернет
-- Из ресурса, внедренные в исполняемый файл
-- Из библиотеки фото пользователя
+- Из Интернета
+- Из ресурсов, внедренных в исполняемый файл
+- В библиотеке фотографий пользователя
 
-Три `SKBitmap` объектов для этих трех источников, определяются в виде полей [ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs) класса:
+Три `SKBitmap` объекты для этих трех источников определены как поля в [ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs) класса:
 
 ```csharp
 public class BasicBitmapsPage : ContentPage
@@ -55,7 +55,7 @@ public class BasicBitmapsPage : ContentPage
 
 ## <a name="loading-a-bitmap-from-the-web"></a>Загрузка точечный рисунок из Интернета
 
-Чтобы загрузить точечный рисунок на основе URL-адреса, можно использовать [ `WebRequest` ](https://developer.xamarin.com/api/type/System.Net.WebRequest/) класса, как показано в следующем коде выполняется в `BasicBitmapsPage` конструктора. URL-адрес указывает область на веб-сайт Xamarin некоторые образцы рисунков. Пакет веб-сайта позволяет добавления спецификацию для изменения размеров точечного рисунка для конкретного ширины:
+Для загрузки точечного рисунка по URL-АДРЕСУ, можно использовать [ `WebRequest` ](xref:System.Net.WebRequest) класса, как показано в следующем коде выполняется `BasicBitmapsPage` конструктор. URL-адрес указывает на область веб-сайте Xamarin с некоторые образцы рисунков. Пакет веб-сайте позволяет добавления спецификацию для изменения размеров точечного рисунка для конкретного ширины:
 
 ```csharp
 Uri uri = new Uri("http://developer.xamarin.com/demo/IMG_3256.JPG?width=480");
@@ -85,15 +85,15 @@ request.BeginGetResponse((IAsyncResult arg) =>
 }, null);
 ```
 
-Если растровое изображение были успешно загружены, метод обратного вызова передать `BeginGetResponse` метода. `EndGetResponse` Вызов должен быть в `try` блокировки в случае, если произошла ошибка. `Stream` Получен из `GetResponseStream` недостаточна на некоторых платформах, поэтому содержимое растрового изображения копируются в `MemoryStream` объекта. На этом этапе `SKManagedStream` объект может быть создан. Теперь ссылается на файл точечного рисунка, который, скорее всего, файл JPEG или PNG. `SKBitmap.Decode` Метод декодирует файл точечного рисунка и сохраняет результаты во внутреннем формате SkiaSharp.
+Растровое изображение после успешной загрузки, метод обратного вызова передается `BeginGetResponse` выполнения метода. `EndGetResponse` Вызов должен быть в `try` блокировки в случае, если произошла ошибка. `Stream` Полученный из `GetResponseStream` не подходит на некоторых платформах, поэтому содержимое растрового изображения копируются в `MemoryStream` объекта. На этом этапе `SKManagedStream` объект может быть создан. Теперь ссылается на файл точечного рисунка, который вероятнее всего, файл JPEG или PNG. `SKBitmap.Decode` Метод декодирует файл точечного рисунка и сохраняет результаты во внутреннем формате SkiaSharp.
 
-Передаваемый в метод обратного вызова `BeginGetResponse` выполняется после завершения выполнения, конструктор, т. е., `SKCanvasView` необходимо недействительным, чтобы разрешить `PaintSurface` обработчика, чтобы обновить отображение. Тем не менее `BeginGetResponse` обратный вызов выполняется в второстепенный поток выполнения, поэтому необходимо использовать `Device.BeginInvokeOnMainThread` для запуска `InvalidateSurface` метод в потоке пользовательского интерфейса.
+Метод обратного вызова передается `BeginGetResponse` выполняется после завершения конструктора выполнения, т. е `SKCanvasView` необходимо сделать недействительным, чтобы разрешить `PaintSurface` обработчик для обновления отображения. Тем не менее `BeginGetResponse` обратного вызова выполняется дополнительный поток выполнения, поэтому необходимо использовать `Device.BeginInvokeOnMainThread` для запуска `InvalidateSurface` метод в потоке пользовательского интерфейса.
 
 ## <a name="loading-a-bitmap-resource"></a>Загрузка ресурса точечного рисунка
 
-С точки зрения кода простой подход к загрузке рисунков — включая ресурса точечного рисунка в самом приложении. **SkiaSharpFormsDemos** программа включает в себя папку с именем **мультимедиа** с файлом растровое изображение с именем **monkey.png**. В **свойства** диалоговое окно для этого файла необходимо предоставить такой файл **действие при построении** из **внедренный ресурс**!
+С точки зрения кода самый простой подход к загрузке растровые изображения — включая ресурса точечного рисунка непосредственно в приложении. **SkiaSharpFormsDemos** программа включает в себя папку с именем **мультимедиа** содержащего точечный рисунок файл с именем **monkey.png**. В **свойства** диалоговое окно для этого файла необходимо предоставить такой файл **действие при построении** из **внедренный ресурс**!
 
-Каждый внедренный ресурс имеет *идентификатор ресурса* , включающая в себя имя проекта, папки и имя файла, всех подключенных точками: **SkiaSharpFormsDemos.Media.monkey.png**. Можно получить доступ к этому ресурсу, указав этот ресурс идентификатор в качестве аргумента для [ `GetManifestResourceStream` ](https://developer.xamarin.com/api/member/System.Reflection.Assembly.GetManifestResourceStream/p/System.String/) метод [ `Assembly` ](https://developer.xamarin.com/api/type/System.Reflection.Assembly/) класса:
+Каждый внедренный ресурс имеет *идентификатор ресурса* , состоящее из имени проекта, папку и имя файла, всех подключенных по периодам: **SkiaSharpFormsDemos.Media.monkey.png**. Вы можете получить доступ к этому ресурсу, указав этот ресурс идентификатор в качестве аргумента для [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) метод [ `Assembly` ](xref:System.Reflection.Assembly) класса:
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -108,13 +108,13 @@ using (SKManagedStream skStream = new SKManagedStream(stream))
 
 Это `Stream` объекта могут быть преобразованы прямо в `SKManagedStream` объекта.
 
-## <a name="loading-a-bitmap-from-the-photo-library"></a>Загрузке растрового изображения из библиотеки фото
+## <a name="loading-a-bitmap-from-the-photo-library"></a>Загрузка точечный рисунок из Медиатеки
 
-Также пользователь может загрузить фотографию из библиотеки рисунков устройства. Эта функция позволяет Xamarin.Forms сам не предоставляется. Задание требуется служба зависимостей, как описано в статье [комплектации фотографию из библиотеки рисунков](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
+Можно также для пользователя для загрузки фотографии из библиотеки рисунков устройства. Эта функция позволяет Xamarin.Forms, сам не предоставляется. Задание требует службы зависимостей, подобного описанному в статье [комплектации фотографии из библиотеки рисунков](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-**IPicturePicker.cs** файла и трех **PicturePickerImplementation.cs** различных проектов для копирования файлов из этой статьи **SkiaSharpFormsDemos**решения и новые имена пространств имен. Кроме того, Android **MainActivity.cs** файл был изменен таким образом, как описано в статье, а проект iOS предоставлены разрешения на доступ к библиотеке фотографий с двумя строками в нижней части **info.plist**  файла.
+**IPicturePicker.cs** файл и три **PicturePickerImplementation.cs** различные проекты были скопированы файлы из этой статьи **SkiaSharpFormsDemos**решения и новые имена пространств имен. Кроме того, если в Android **MainActivity.cs** файл был изменен таким образом, как описано в статье, и проект iOS предоставлены разрешения на доступ к библиотеке фотографий с помощью двух строк в конце **info.plist**  файл.
 
-`BasicBitmapsPage` Конструктор добавляет `TapGestureRecognizer` для `SKCanvasView` уведомляемых ответвлений. При получении касание `Tapped` обработчик получает доступ к рисунок выбора зависимостей службы и вызовы `GetImageStreamAsync`. Если `Stream` возвращается объект, а затем содержимое копируется в `MemoryStream`в соответствии с требованием, некоторые платформы. Остальная часть кода похожа на двух других методов:
+`BasicBitmapsPage` Конструктор добавляет `TapGestureRecognizer` для `SKCanvasView` для получения уведомлений об касания. При получении касание `Tapped` обработчик получает доступ к рисунок выбора зависимостей службы и вызывает `GetImageStreamAsync`. Если `Stream` , то возвращается объект, а затем содержимое копируется в `MemoryStream`, как требуется в некоторых платформ. Остальной код похож на двух других методов:
 
 ```csharp
 // Add tap gesture recognizer
@@ -145,21 +145,21 @@ tapRecognizer.Tapped += async (sender, args) =>
 canvasView.GestureRecognizers.Add(tapRecognizer);
 ```
 
-Обратите внимание, что `Tapped` вызовов обработчика `InvalidateSurface` метод `SKCanvasView` объекта. Этот код создает новый вызов `PaintSurface` обработчика.
+Обратите внимание, что `Tapped` вызовов обработчика `InvalidateSurface` метод `SKCanvasView` объекта. При этом создается новый вызов к `PaintSurface` обработчика.
 
 ## <a name="displaying-the-bitmaps"></a>Отображение точечных рисунков
 
 `PaintSurface` Обработчик должен отображать три растровых изображений. Обработчик предполагается, что телефон находится в книжной ориентации и делит холст по вертикали на три равные части.
 
-Отображается первая растровое изображение с простой [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/System.Single/System.Single/SkiaSharp.SKPaint/) метод. Все, что вам нужно указать являются координаты X и Y, где будет размещаться верхнего левого угла изображения:
+Первый растровое изображение будет отображаться с самых простых [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/System.Single/System.Single/SkiaSharp.SKPaint/) метод. Все, что вам нужно указать приведены координаты X и Y, где будет размещаться верхнего левого угла растрового изображения.
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, Single x, Single y, SKPaint paint = null)
 ```
 
-Несмотря на то что `SKPaint` параметр определен, он имеет значение по умолчанию `null` и его можно пропустить. Пиксели в отображаемой области с взаимно-однозначное сопоставление просто передаются пикселей растрового изображения.
+Несмотря на то что `SKPaint` определен параметр, он имеет значение по умолчанию `null` и ее можно игнорировать. Пиксели точечного рисунка, просто передаются пикселы поверхность отображения с взаимно-однозначное сопоставление.
 
-Программу можно получить в пикселах точечный рисунок с [ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Width/) и [ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Height/) свойства. Эти свойства позволяют рассчитать координаты для размещения растровое изображение в центре трети верхней части холста:
+Программа может получить размеры точечного рисунка с [ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Width/) и [ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Height/) свойства. Эти свойства позволяют рассчитать координаты, чтобы разместить растровое изображение в центре треть верхней части холста:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -180,7 +180,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Два других точечные рисунки, отображаются с помощью версии [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKPaint/) с `SKRect` параметр:
+Два других точечные рисунки, отображаются с версией [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKPaint/) с `SKRect` параметр:
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, SKRect dest, SKPaint paint = null)
@@ -188,7 +188,7 @@ public void DrawBitmap (SKBitmap bitmap, SKRect dest, SKPaint paint = null)
 
 Третья версия [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/) имеет два `SKRect` аргументы для указания прямоугольную часть точечного рисунка для отображения, но эта версия не используется в этой статье.
 
-Ниже приведен код для отображения растрового изображения, загруженные из внедренного ресурса точечного рисунка:
+Ниже приведен код для отображения растрового изображения, загруженные из внедренного ресурса точечного рисунка.
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -205,9 +205,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Точечный рисунок растягивается до размеров прямоугольника, поэтому monkey растягивается по горизонтали на этих снимках экрана:
 
-[![](bitmaps-images/basicbitmaps-small.png "Тройной снимок экрана страницы основные растровые изображения")](bitmaps-images/basicbitmaps-large.png#lightbox "тройной снимок экрана страницы основные растровые изображения")
+[![](bitmaps-images/basicbitmaps-small.png "Тройной снимок экрана страницы основные точечные рисунки")](bitmaps-images/basicbitmaps-large.png#lightbox "тройной снимок экрана страницы основные точечных рисунков")
 
-Третье изображение &mdash; которой будут отображаться только если вы запустите программу и загрузить фотографию из библиотеки рисунков &mdash; также отображается внутри прямоугольника, но прямоугольника положение и размер корректируются будет сохраняться соотношение сторон растрового изображения. Этот расчет немного сложнее, поскольку для нее требуется вычисление на основе размера точечного рисунка и прямоугольника назначения коэффициент масштабирования и центрирование прямоугольник, в этой области:
+Третье изображение &mdash; вы увидите, только если вы запустите программу и Загружаем фотографию из библиотеки рисунков &mdash; также отображается внутри прямоугольника, но прямоугольника положение и размер корректируются будет сохраняться соотношение сторон растрового изображения. Этот расчет является немного сложнее, поскольку она требует вычисление на основе размера точечного рисунка и целевого прямоугольника коэффициент масштабирования и выравнивание по центру прямоугольника в этой области:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -242,11 +242,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Если нет точечный рисунок еще загружены из библиотеки рисунков, а затем `else` текст для запроса у пользователя, коснитесь экрана содержит блок.
+Если точечный рисунок отсутствует еще были загружены из библиотеки рисунков, а затем `else` блок отображает текст выводится на экран.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [API-интерфейсы SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (пример)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [Подбор фотографию из библиотеки рисунков](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)
+- [Выбрав фотографии из библиотеки рисунков](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

@@ -7,16 +7,16 @@ ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0f9b9e27afd5dbbf52f3653995470136e794f17b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b27df7f63ac83206c50858175dc2945937142f78
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935203"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995473"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Сводка главе 13. Растровые изображения
 
-Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) элемент отображает точечный рисунок. Все платформы Xamarin.Forms поддерживают форматы файлов JPEG, PNG, GIF и BMP.
+Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) элемент отображает точечный рисунок. Все платформы Xamarin.Forms поддерживают форматы файлов JPEG, PNG, GIF и BMP.
 
 Растровые изображения в Xamarin.Forms поступать из четырех местах:
 
@@ -27,30 +27,30 @@ Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.I
 
 Ресурсы точечного рисунка в переносимой библиотеке Классов являются независимыми от платформы, пока ресурсы точечного рисунка в проектах платформы зависят от платформы.
 
-Точечный рисунок, заданный, задав [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) свойство `Image` для объекта типа [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/), абстрактным классом с производными три:
+Точечный рисунок, заданный, задав [ `Source` ](xref:Xamarin.Forms.Image.Source) свойство `Image` для объекта типа [ `ImageSource` ](xref:Xamarin.Forms.ImageSource), абстрактным классом с производными три:
 
-- [`UriImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) для доступа к растрового изображения в Интернете, на основе `Uri` присвоено его [ `Uri` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.Uri/) свойство
-- [`FileImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/) для доступа к растрового изображения, хранимые в проекте приложения платформы на основе пути файлов и папок его [ `File` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FileImageSource.File/) свойство
-- [`StreamImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.StreamImageSource/) для загрузки точечного рисунка, с помощью .NET `Stream` указанного путем возвращения объекта `Stream` из `Func` присвоено его [ `Stream` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StreamImageSource.Stream/) свойство
+- [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) для доступа к растрового изображения в Интернете, на основе `Uri` присвоено его [ `Uri` ](xref:Xamarin.Forms.UriImageSource.Uri) свойство
+- [`FileImageSource`](xref:Xamarin.Forms.FileImageSource) для доступа к растрового изображения, хранимые в проекте приложения платформы на основе пути файлов и папок его [ `File` ](xref:Xamarin.Forms.FileImageSource.File) свойство
+- [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource) для загрузки точечного рисунка, с помощью .NET `Stream` указанного путем возвращения объекта `Stream` из `Func` присвоено его [ `Stream` ](xref:Xamarin.Forms.StreamImageSource.Stream) свойство
 
 Кроме того (и чаще) можно использовать следующие статические методы `ImageSource` класс, которые возвращают `ImageSource` объектов:
 
-- [`ImageSource.FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) для доступа к растрового изображения в Интернете, на основе `Uri` объекта
-- [`ImageSource.FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) для доступа к растрового изображения, хранящиеся в виде внедренного ресурса в PCL, приложения или [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Type/) или [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Reflection.Assembly/) для доступа к растрового изображения в другой сборке источника
-- [`ImageSource.FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) для доступа к растрового изображения из проекта приложения платформы
-- [`ImageSource.FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) для загрузки точечного рисунка, на основе `Stream` объекта
+- [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) для доступа к растрового изображения в Интернете, на основе `Uri` объекта
+- [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) для доступа к растрового изображения, хранящиеся в виде внедренного ресурса в приложение переносимой библиотеки Классов; [ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource(System.String,System.Type)) или [ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource(System.String,System.Reflection.Assembly)) для доступа к растрового изображения в другой сборке источника
+- [`ImageSource.FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String)) для доступа к растрового изображения из проекта приложения платформы
+- [`ImageSource.FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream})) для загрузки точечного рисунка, на основе `Stream` объекта
 
 Отсутствует эквивалент класса из `Image.FromResource` методы. `UriImageSource` Класс может быть полезен, если вам нужно управлять кэшированием. `FileImageSource` Класс полезен в XAML. `StreamImageSource` полезно для асинхронной загрузки объекта `Stream` объектов, тогда как `ImageSource.FromStream` выполняется в синхронном режиме.
 
 ## <a name="platform-independent-bitmaps"></a>Точечные рисунки независимо от платформы
 
-[ **WebBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode) проекта загружает растровый рисунок по Интернету при помощи `ImageSource.FromUri`. `Image` Элементу присваивается `Content` свойство `ContentPage`, поэтому он ограничен размер страницы. Независимо от размера точечного рисунка, ограниченный ресурсами `Image` элемент растягивается по размеру контейнера и точечный рисунок отображается в его максимальный размер в рамках `Image` элемент сохранением пропорции растрового изображения. Области `Image` за пределы растрового изображения будут выделены цветом с [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/).
+[ **WebBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode) проекта загружает растровый рисунок по Интернету при помощи `ImageSource.FromUri`. `Image` Элементу присваивается `Content` свойство `ContentPage`, поэтому он ограничен размер страницы. Независимо от размера точечного рисунка, ограниченный ресурсами `Image` элемент растягивается по размеру контейнера и точечный рисунок отображается в его максимальный размер в рамках `Image` элемент сохранением пропорции растрового изображения. Области `Image` за пределы растрового изображения будут выделены цветом с [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor).
 
-[ **WebBitmapXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapXaml) пример аналогичен, но просто задает `Source` URL-адрес. Преобразование обрабатывается [ `ImageSourceConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSourceConverter/) класса.
+[ **WebBitmapXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapXaml) пример аналогичен, но просто задает `Source` URL-адрес. Преобразование обрабатывается [ `ImageSourceConverter` ](xref:Xamarin.Forms.ImageSourceConverter) класса.
 
 ### <a name="fit-and-fill"></a>По размеру и заливки
 
-Можно управлять как растровое изображение растягивается, задав [ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) свойство `Image` к одному из следующих членов [ `Aspect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Aspect/) перечисления:
+Можно управлять как растровое изображение растягивается, задав [ `Aspect` ](xref:Xamarin.Forms.Image.Aspect) свойство `Image` к одному из следующих членов [ `Aspect` ](xref:Xamarin.Forms.Aspect) перечисления:
 
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit): учитывает пропорции (по умолчанию)
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill): заполняет область, не сохраняет пропорции
@@ -84,7 +84,7 @@ Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.I
 
 [ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) образец позволяет пользователю просматривать через готовые образы, хранящиеся на веб-сайте Xamarin. Она использует .NET `WebRequest` класса, чтобы скачать JSON-файл со списком точечных рисунков.
 
-Программа использует [ `ActivityIndicator` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/) для указания, что что-то происходит. При загрузке каждого растрового изображения, доступной только для чтения [ `IsLoading` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.IsLoading/) свойство `Image` является `true`. `IsLoading` Резервируется привязываемые свойства, поэтому `PropertyChanged` событие при изменении этого свойства. Программа присоединяет обработчик к этому событию и использует текущее значение параметра `IsLoaded` присвоить [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/) свойство `ActivityIndicator`.
+Программа использует [ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator) для указания, что что-то происходит. При загрузке каждого растрового изображения, доступной только для чтения [ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading) свойство `Image` является `true`. `IsLoading` Резервируется привязываемые свойства, поэтому `PropertyChanged` событие при изменении этого свойства. Программа присоединяет обработчик к этому событию и использует текущее значение параметра `IsLoaded` присвоить [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/) свойство `ActivityIndicator`.
 
 ## <a name="streaming-bitmaps"></a>Потоковая передача точечных рисунков
 
@@ -102,11 +102,11 @@ Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.I
 
 ## <a name="platform-specific-bitmaps"></a>Растровые изображения для конкретных платформ
 
-Все платформы Xamarin.Forms Разрешить сохранение растровых изображений в сборки платформы приложений. При получении приложением Xamarin.Forms, эти точечные рисунки платформы имеют тип [ `FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/). Они используются для:
+Все платформы Xamarin.Forms Разрешить сохранение растровых изображений в сборки платформы приложений. При получении приложением Xamarin.Forms, эти точечные рисунки платформы имеют тип [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource). Они используются для:
 
-- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) свойство [`MenuItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/)
-- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) свойство [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)
-- [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) свойство `Button`
+- [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon) свойство [`MenuItem`](xref:Xamarin.Forms.MenuItem)
+- [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon) свойство [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)
+- [ `Image` ](xref:Xamarin.Forms.Button) свойство `Button`
 
 Сборки платформы уже содержат точечные рисунки, значки и экраны-заставки:
 
@@ -170,23 +170,23 @@ Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.I
 
 ### <a name="toolbars-and-their-icons"></a>Панели инструментов и соответствующие значки
 
-Одним из основных применений точечных рисунков, специфические для платформы является панели инструментов Xamarin.Forms, которое создается с помощью добавления [ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) объектов [ `ToolbarItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.ToolbarItems/) определяется коллекции`Page`. `ToobarItem` является производным от [ `MenuItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/) от которого он наследует некоторые свойства.
+Одним из основных применений точечных рисунков, специфические для платформы является панели инструментов Xamarin.Forms, которое создается с помощью добавления [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem) объектов [ `ToolbarItems` ](xref:Xamarin.Forms.Page.ToolbarItems) определяется коллекции`Page`. `ToobarItem` является производным от [ `MenuItem` ](xref:Xamarin.Forms.MenuItem) от которого он наследует некоторые свойства.
 
 Наиболее важным `ToolbarItem` свойства являются:
 
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Text/) для текста, который может присутствовать в зависимости от платформы и `Order`
-- [`Icon`](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) типа `FileImageSource` для изображения, которое может отображаться в зависимости от платформы и `Order`
+- [`Text`](xref:Xamarin.Forms.MenuItem.Text) для текста, который может присутствовать в зависимости от платформы и `Order`
+- [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) типа `FileImageSource` для изображения, которое может отображаться в зависимости от платформы и `Order`
 - [`Order`](xref:Xamarin.Forms.ToolbarItem.Order) типа [ `ToolbarItemOrder` ](xref:Xamarin.Forms.ToolbarItemOrder), перечисление с тремя членами [ `Default` ](xref:Xamarin.Forms.ToolbarItemOrder.Default), [ `Primary` ](xref:Xamarin.Forms.ToolbarItemOrder.Primary), и [ `Secondary` ](xref:Xamarin.Forms.ToolbarItemOrder.Secondary).
 
 Количество `Primary` элементы должны быть ограничены трем или четырем. Следует включить `Text` для всех элементов. Для большинства платформ, только `Primary` элементы, требующие `Icon` , но требуется Windows 8.1 `Icon` для всех элементов. Значки должны иметь 32 аппаратно независимых единицах square. `FileImageSource` Тип указывает, что они зависят от платформы.
 
-`ToolbarItem` Активируется [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) событий шифрованию, очень похоже на `Button`. `ToolbarItem` также поддерживает [ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Command/) и [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.CommandParameter/) свойства часто используются в связи с MVVM. (См. в разделе [Глава 18, MVVM](chapter18.md)).
+`ToolbarItem` Активируется [ `Clicked` ](xref:Xamarin.Forms.MenuItem.Clicked) событий шифрованию, очень похоже на `Button`. `ToolbarItem` также поддерживает [ `Command` ](xref:Xamarin.Forms.MenuItem.Command) и [ `CommandParameter` ](xref:Xamarin.Forms.MenuItem.CommandParameter) свойства часто используются в связи с MVVM. (См. в разделе [Глава 18, MVVM](chapter18.md)).
 
-IOS и Android требовать, чтобы страница, на которой отображается панель инструментов [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) или страницы был переход по `NavigationPage`. [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) программировать наборы `MainPage` свойство его `App` класс [ `NavigationPage` конструктор](https://developer.xamarin.com/api/constructor/Xamarin.Forms.NavigationPage.NavigationPage/p/Xamarin.Forms.Page/) с `ContentPage` аргумент и демонстрирует построение и обработчиком событий панели инструментов.
+IOS и Android требовать, чтобы страница, на которой отображается панель инструментов [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) или страницы был переход по `NavigationPage`. [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) программировать наборы `MainPage` свойство его `App` класс [ `NavigationPage` конструктор](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page)) с `ContentPage` аргумент и демонстрирует построение и обработчиком событий панели инструментов.
 
 ### <a name="button-images"></a>Изображения кнопки
 
-Также можно использовать точечные рисунки с платформой для задания [ `Image` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Image/) свойство `Button` к растровому изображению квадрата 32 аппаратно независимых единицах, как показано [ **ButtonImage** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage) образец.
+Также можно использовать точечные рисунки с платформой для задания [ `Image` ](xref:Xamarin.Forms.Button.Image) свойство `Button` к растровому изображению квадрата 32 аппаратно независимых единицах, как показано [ **ButtonImage** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage) образец.
 
 
 

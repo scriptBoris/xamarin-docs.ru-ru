@@ -7,29 +7,29 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/04/2018
-ms.openlocfilehash: 31422f1067473ccb49a681098bd0809c451e7369
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 553957bfa06c7b7a9c5261e426ebee4190de5ebb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935362"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994930"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
 _Представление Xamarin.Forms, которое позволяет пользователю выбрать дату_
 
-Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) вызывает элемент управления выбора даты платформы и позволяет пользователю выбрать дату. `DatePicker` Определяет восемь свойств:
+Xamarin.Forms [ `DatePicker` ](xref:Xamarin.Forms.DatePicker) вызывает элемент управления выбора даты платформы и позволяет пользователю выбрать дату. `DatePicker` Определяет восемь свойств:
 
-- [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) типа [ `DateTime` ](https://developer.xamarin.com/api/type/System.DateTime/), которое по умолчанию к первому дню 1900 года.
-- [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) типа `DateTime`, какие значения по умолчанию до последнего дня года 2100.
-- [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) типа `DateTime`, выбранной даты, по умолчанию используется значение [ `DateTime.Today` ](https://developer.xamarin.com/api/property/System.DateTime.Today/).
-- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) типа `string`, [стандартный](/dotnet/standard/base-types/standard-date-and-time-format-strings/) или [пользовательских](/dotnet/standard/base-types/custom-date-and-time-format-strings/) .NET форматирования строки, которая по умолчанию «D», долго формат даты.
-- [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.TextColor/) типа [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/), цвет, используемый для отображения выбранной даты, значение по умолчанию — [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/).
+- [`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate) типа [ `DateTime` ](xref:System.DateTime), которое по умолчанию к первому дню 1900 года.
+- [`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate) типа `DateTime`, какие значения по умолчанию до последнего дня года 2100.
+- [`Date`](xref:Xamarin.Forms.DatePicker.Date) типа `DateTime`, выбранной даты, по умолчанию используется значение [ `DateTime.Today` ](xref:System.DateTime.Today).
+- [`Format`](xref:Xamarin.Forms.DatePicker.Format) типа `string`, [стандартный](/dotnet/standard/base-types/standard-date-and-time-format-strings/) или [пользовательских](/dotnet/standard/base-types/custom-date-and-time-format-strings/) .NET форматирования строки, которая по умолчанию «D», долго формат даты.
+- [`TextColor`](xref:Xamarin.Forms.DatePicker.TextColor) типа [ `Color` ](xref:Xamarin.Forms.Color), цвет, используемый для отображения выбранной даты, значение по умолчанию — [ `Color.Default` ](xref:Xamarin.Forms.Color.Default).
 - [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) типа [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), который по умолчанию [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
 - [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) типа `string`, который по умолчанию `null`.
 - [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) типа `double`, который по умолчанию -1,0.
 
-`DatePicker` Активируется [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) событие, когда пользователь выбирает дату.
+`DatePicker` Активируется [ `DateSelected` ](xref:Xamarin.Forms.DatePicker.DateSelected) событие, когда пользователь выбирает дату.
 
 > [!WARNING]
 > При задании `MinimumDate` и `MaximumDate`, убедитесь, что `MinimumDate` , всегда меньше или равно `MaximumDate`. В противном случае `DatePicker` приведет к появлению исключения.
@@ -192,4 +192,4 @@ public partial class MainPage : ContentPage
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Пример DaysBetweenDates](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
-- [DatePicker API](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)
+- [DatePicker API](xref:Xamarin.Forms.DatePicker)

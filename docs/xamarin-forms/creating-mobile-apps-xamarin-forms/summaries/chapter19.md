@@ -7,32 +7,32 @@ ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7ae6ff5bb08977ab83f95242770794b4c4363145
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: a04f72d0577c7b8bf467ee73df233e483f6aa401
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935177"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996429"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Сводка главе 19. Представления коллекций
 
 Xamarin.Forms определяет три представления, которые обслуживают коллекции и отображают их элементов:
 
-- [`Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) — относительно короткий список элементов строковых, пользователь может выбрать один
-- [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) часто представляет собой длинный список элементов, обычно того же типа и форматирование, также позволяя пользователю выбрать один
-- [`TableView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/) — Это коллекция *ячеек* (как правило, различные типы и внешний вид) для отображения данных или управление ввод данных пользователем
+- [`Picker`](xref:Xamarin.Forms.Picker) — относительно короткий список элементов строковых, пользователь может выбрать один
+- [`ListView`](xref:Xamarin.Forms.ListView) часто представляет собой длинный список элементов, обычно того же типа и форматирование, также позволяя пользователю выбрать один
+- [`TableView`](xref:Xamarin.Forms.TableView) — Это коллекция *ячеек* (как правило, различные типы и внешний вид) для отображения данных или управление ввод данных пользователем
 
 Довольно часто для использования приложениями MVVM `ListView` для отображения можно выбрать коллекцию объектов.
 
 ## <a name="program-options-with-picker"></a>Параметры для программы с помощью средства выбора
 
-[ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) Является хорошим выбором при необходимости разрешить пользователю выбор из списка относительно короткий `string` элементов.
+[ `Picker` ](xref:Xamarin.Forms.Picker) Является хорошим выбором при необходимости разрешить пользователю выбор из списка относительно короткий `string` элементов.
 
 ### <a name="the-picker-and-event-handling"></a>Средство выбора и обработка событий
 
-[ **PickerDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerDemo) образце показано, как использовать XAML для установки `Picker` [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/) свойство и добавьте `string` элементы [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/) коллекции. Когда пользователь выбирает `Picker`, она отображает элементы в `Items` коллекции в виде зависят от платформы.
+[ **PickerDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerDemo) образце показано, как использовать XAML для установки `Picker` [ `Title` ](xref:Xamarin.Forms.Picker.Title) свойство и добавьте `string` элементы [ `Items` ](xref:Xamarin.Forms.Picker.Items) коллекции. Когда пользователь выбирает `Picker`, она отображает элементы в `Items` коллекции в виде зависят от платформы.
 
-[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/) Событие указывает, когда пользователь выбрал элемент. Отсчитываемый от нуля [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) свойство затем указывает выбранный элемент. Если элемент не выбран, `SelectedIndex` равно &ndash;1.
+[ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) Событие указывает, когда пользователь выбрал элемент. Отсчитываемый от нуля [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) свойство затем указывает выбранный элемент. Если элемент не выбран, `SelectedIndex` равно &ndash;1.
 
 Можно также использовать `SelectedIndex` для инициализации выбранного элемента, но оно должно быть задано позднее `Items` заполнения коллекции. В XAML, это означает, что вы воспользуетесь property-элемент для задания `SelectedIndex`.
 
@@ -42,11 +42,11 @@ Xamarin.Forms определяет три представления, котор
 
 ## <a name="rendering-data-with-listview"></a>Подготовка к просмотру данных с помощью ListView
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Является единственным классом, который является производным от [ `ItemsView<TVisual>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) от которого он наследуется [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemsSource/) и [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/) свойства.
+[ `ListView` ](xref:Xamarin.Forms.ListView) Является единственным классом, который является производным от [ `ItemsView<TVisual>` ](xref:Xamarin.Forms.ItemsView`1) от которого он наследуется [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) и [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) свойства.
 
 `ItemsSource` имеет тип `IEnumerable` , но это `null` по умолчанию и, необходимо явно инициализировать или (обычно) в коллекции через привязку данных. Элементы в этой коллекции может быть любого типа.
 
-`ListView` Определяет [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/) свойству, либо присвоить один из элементов в `ItemsSource` коллекции или `null` Если элемент не выбран. `ListView` активируется [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/) событие, когда элемент выбран.
+`ListView` Определяет [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) свойству, либо присвоить один из элементов в `ItemsSource` коллекции или `null` Если элемент не выбран. `ListView` активируется [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) событие, когда элемент выбран.
 
 ### <a name="collections-and-selections"></a>Коллекции и предварительно выбранными параметрами
 
@@ -54,7 +54,7 @@ Xamarin.Forms определяет три представления, котор
 
 ### <a name="the-row-separator"></a>Разделитель строк
 
-В iOS и Android отображает тонкой отделяет строки. Вы можете управлять этим с [ `SeparatorVisibiliy` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SeparatorVisibility/) и [ `SeparatorColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SeparatorColor/) свойства. `SeparatorVisibility` свойство имеет тип [ `SeparatorVisbility` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SeparatorVisibility/), перечисление с двумя членами:
+В iOS и Android отображает тонкой отделяет строки. Вы можете управлять этим с [ `SeparatorVisibiliy` ](xref:Xamarin.Forms.ListView.SeparatorVisibility) и [ `SeparatorColor` ](xref:Xamarin.Forms.ListView.SeparatorColor) свойства. `SeparatorVisibility` свойство имеет тип [ `SeparatorVisbility` ](xref:Xamarin.Forms.SeparatorVisibility), перечисление с двумя членами:
 
 - [`Default`](xref:Xamarin.Forms.SeparatorVisibility.Default), значение по умолчанию
 - [`None`](xref:Xamarin.Forms.SeparatorVisibility.None)
@@ -69,7 +69,7 @@ Xamarin.Forms определяет три представления, котор
 
 Тем не менее `ListView` не обновится автоматически сам поскольку `List<T>` коллекции не имеет механизм уведомлений, чтобы указать, при добавлении или удален из коллекции элементов.
 
-Гораздо лучше класс для использования в таких случаях является [ `ObservableCollection<T>` ](https://developer.xamarin.com/api/type/System.Collections.ObjectModel.ObservableCollection%3CT%3E/) определенные в `System.Collections.ObjectModel` пространства имен. Этот класс реализует [ `INotifyCollectionChanged` ](https://developer.xamarin.com/api/type/System.Collections.Specialized.INotifyCollectionChanged/) интерфейса и, следовательно, активируется [ `CollectionChanged` ](https://developer.xamarin.com/api/event/System.Collections.ObjectModel.ObservableCollection%3CT%3E.CollectionChanged/) событие при добавлении или удален из коллекции, или когда они заменены или перемещении в пределах элементов Коллекция. Когда `ListView` внутренне обнаруживает, что класс, реализующий `INotifyCollectionChanged` было присвоено его `ItemsSource` свойство, он присоединяет обработчик к `CollectionChanged` событий и обновляет отображаемые данные при изменении коллекции.
+Гораздо лучше класс для использования в таких случаях является [ `ObservableCollection<T>` ](xref:System.Collections.ObjectModel.ObservableCollection`1) определенные в `System.Collections.ObjectModel` пространства имен. Этот класс реализует [ `INotifyCollectionChanged` ](xref:System.Collections.Specialized.INotifyCollectionChanged) интерфейса и, следовательно, активируется [ `CollectionChanged` ](xref:System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged) событие при добавлении или удален из коллекции, или когда они заменены или перемещении в пределах элементов Коллекция. Когда `ListView` внутренне обнаруживает, что класс, реализующий `INotifyCollectionChanged` было присвоено его `ItemsSource` свойство, он присоединяет обработчик к `CollectionChanged` событий и обновляет отображаемые данные при изменении коллекции.
 
 [ **ObservableLogger** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ObservableLogger) в нем демонстрируется использование `ObservableCollection`.
 
@@ -81,41 +81,41 @@ Xamarin.Forms определяет три представления, котор
 
 [ **NaiveNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/NaiveNamedColorList) пример наборов `ItemsSource` из `ListView` к этому `NamedColor.All` свойство, но только имена полной `NamedColor` объекты отображается.
 
-`ListView` требуется шаблон для отображения этих элементов. В коде, можно задать [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/) свойство, определенное `ItemsView<TVisual>` для [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) с помощью [ `DataTemplate` конструктор](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) , ссылается на, производный от [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) класса. `Cell` имеет пять производные:
+`ListView` требуется шаблон для отображения этих элементов. В коде, можно задать [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) свойство, определенное `ItemsView<TVisual>` для [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) с помощью [ `DataTemplate` конструктор](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Type)) , ссылается на, производный от [ `Cell` ](xref:Xamarin.Forms.Cell) класса. `Cell` имеет пять производные:
 
-- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) &mdash; содержит два `Label` представлений (с концептуальной точки зрения)
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) &mdash; Добавляет `Image` представления `TextCell`
-- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) &mdash; содержит `Entry` просмотреть с помощью `Label`
-- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) &mdash; содержит `Switch` с `Label`
-- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) &mdash; может быть любым `View` (скорее всего, с помощью дочерних элементов)
+- [`TextCell`](xref:Xamarin.Forms.TextCell) &mdash; содержит два `Label` представлений (с концептуальной точки зрения)
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) &mdash; Добавляет `Image` представления `TextCell`
+- [`EntryCell`](xref:Xamarin.Forms.EntryCell) &mdash; содержит `Entry` просмотреть с помощью `Label`
+- [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) &mdash; содержит `Switch` с `Label`
+- [`ViewCell`](xref:Xamarin.Forms.ViewCell) &mdash; может быть любым `View` (скорее всего, с помощью дочерних элементов)
 
-Затем вызовите [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) и [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) на `DataTemplate` объект для связывания значения с `Cell` свойства, или чтобы задать привязки данных на `Cell` Свойства ссылки на свойства элементов в `ItemsSource` коллекции. Это показано в [ **TextCellListCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) образца.
+Затем вызовите [ `SetValue` ](xref:Xamarin.Forms.DataTemplate.SetValue(Xamarin.Forms.BindableProperty,System.Object)) и [ `SetBinding` ](xref:Xamarin.Forms.DataTemplate.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) на `DataTemplate` объект для связывания значения с `Cell` свойства, или чтобы задать привязки данных на `Cell` Свойства ссылки на свойства элементов в `ItemsSource` коллекции. Это показано в [ **TextCellListCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) образца.
 
-Так как каждый элемент отображается с `ListView`небольшой визуальное дерево строится на основе шаблона и привязки данных, устанавливаются между элементом и свойства элементов в визуальном дереве. Представление этого процесса можно получить, установив обработчики для [ `ItemAppearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemAppearing/) и [ `ItemDisappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemDisappearing/) события `ListView`, или с помощью альтернативы [ `DataTemplate`конструктор](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Func%7BSystem.Object%7D/) , использующий функцию, которая вызывается каждый раз, необходимо создать визуальное дерево элемента.
+Так как каждый элемент отображается с `ListView`небольшой визуальное дерево строится на основе шаблона и привязки данных, устанавливаются между элементом и свойства элементов в визуальном дереве. Представление этого процесса можно получить, установив обработчики для [ `ItemAppearing` ](xref:Xamarin.Forms.ListView.ItemAppearing) и [ `ItemDisappearing` ](xref:Xamarin.Forms.ListView.ItemDisappearing) события `ListView`, или с помощью альтернативы [ `DataTemplate`конструктор](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Func{System.Object})) , использующий функцию, которая вызывается каждый раз, необходимо создать визуальное дерево элемента.
 
-[ **TextCellListXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListXaml) показывает идентичных по функциональности программы полностью в XAML. Объект `DataTemplate` имеет значение тега `ItemTemplate` свойство `ListView`, а затем `TextCell` присваивается `DataTemplate`. Привязки для свойств элементов в коллекции, задаются непосредственно в [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TextCell.Text/) и [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TextCell.Detail/) свойства `TextCell`.
+[ **TextCellListXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListXaml) показывает идентичных по функциональности программы полностью в XAML. Объект `DataTemplate` имеет значение тега `ItemTemplate` свойство `ListView`, а затем `TextCell` присваивается `DataTemplate`. Привязки для свойств элементов в коллекции, задаются непосредственно в [ `Text` ](xref:Xamarin.Forms.TextCell.Text) и [ `Detail` ](xref:Xamarin.Forms.TextCell.Detail) свойства `TextCell`.
 
 ### <a name="custom-cells"></a>Пользовательские ячейки
 
-В XAML можно задать [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) для `DataTemplate` , а затем определите пользовательского визуального дерева как [ `View` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ViewCell.View/) свойство `ViewCell`. (`View` является свойством содержимого из `ViewCell` поэтому `ViewCell.View` теги не являются обязательными.) [ **CustomNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList) этот метод продемонстрирован в примере:
+В XAML можно задать [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) для `DataTemplate` , а затем определите пользовательского визуального дерева как [ `View` ](xref:Xamarin.Forms.ViewCell.View) свойство `ViewCell`. (`View` является свойством содержимого из `ViewCell` поэтому `ViewCell.View` теги не являются обязательными.) [ **CustomNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList) этот метод продемонстрирован в примере:
 
 [![Тройной снимок экрана: список цветов с именем пользовательского](images/ch19fg11-small.png "список цветов с именем пользовательского")](images/ch19fg11-large.png#lightbox "список цветов с именем Custom")
 
-Получение размера сразу для всех платформ может быть непростой задачей. [ `RowHeight` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RowHeight/) Свойство полезно, но в некоторых случаях вы захотите прибегнуть к [ `HasUnevenRows` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.HasUnevenRows/) свойство, которое является менее эффективным, но заставляет `ListView` для изменения размера строки. Для iOS и Android Чтобы получить правильное изменение размеров необходимо использовать одно из этих двух свойств.
+Получение размера сразу для всех платформ может быть непростой задачей. [ `RowHeight` ](xref:Xamarin.Forms.ListView.RowHeight) Свойство полезно, но в некоторых случаях вы захотите прибегнуть к [ `HasUnevenRows` ](xref:Xamarin.Forms.ListView.HasUnevenRows) свойство, которое является менее эффективным, но заставляет `ListView` для изменения размера строки. Для iOS и Android Чтобы получить правильное изменение размеров необходимо использовать одно из этих двух свойств.
 
 ### <a name="grouping-the-listview-items"></a>Группирование элементов ListView
 
 `ListView` поддерживает группирование элементов и перехода между этими группами. `ItemsSource` Свойство должно иметь значение в коллекцию коллекций: объект, `ItemsSource` присваивается должен реализовать `IEnumerable`, и каждый элемент в коллекции необходимо также реализовать `IEnumerable`. Каждая группа должна содержать два свойства: текстовое описание группы и трехбуквенное сокращение.
 
-[ `NamedColorGroup` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs) В класс [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) library создает семь групп `NamedColor` объектов. [ **ColorGroupList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList) примере показано, как использовать эти группы с помощью [ `IsGroupingEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.IsGroupingEnabled/) свойство `ListView` присвоено `true`и [ `GroupDisplayBinding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/) и [ `GroupShortNameBinding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) свойства, привязаны к свойствам в каждой группе.
+[ `NamedColorGroup` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs) В класс [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) library создает семь групп `NamedColor` объектов. [ **ColorGroupList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList) примере показано, как использовать эти группы с помощью [ `IsGroupingEnabled` ](xref:Xamarin.Forms.ListView.IsGroupingEnabled) свойство `ListView` присвоено `true`и [ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding) и [ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding) свойства, привязаны к свойствам в каждой группе.
 
 ### <a name="custom-group-headers"></a>Заголовки пользовательских групп
 
-Существует возможность создания пользовательских заголовков `ListView` групп, заменив `GroupDisplayBinding` свойство с [ `GroupHeaderTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupHeaderTemplate/) определение шаблона для заголовков.
+Существует возможность создания пользовательских заголовков `ListView` групп, заменив `GroupDisplayBinding` свойство с [ `GroupHeaderTemplate` ](xref:Xamarin.Forms.ListView.GroupHeaderTemplate) определение шаблона для заголовков.
 
 ### <a name="listview-and-interactivity"></a>ListView и интерактивность
 
-Как правило, приложение получит взаимодействие пользователя с `ListView` путем присоединения обработчика к `ItemSelected` или [ `ItemTapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemTapped/) событий, или установив привязку данных на `SelectedItem` свойство. Но некоторые типы ячейки (`EntryCell` и `SwitchCell`) разрешение взаимодействия с пользователем, а также возможно, чтобы создать пользовательские ячейки, которые сами взаимодействия с пользователем. [ **InteractiveListView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/InteractiveListView) создает 100 экземпляров [ `ColorViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) и позволяет пользователю изменять каждый цвет, с помощью модулей электронной инструментальной `Slider` элементов. Программа также используется [ `ColorToContrastColorConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorToContrastColorConverter.cs) в [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit).
+Как правило, приложение получит взаимодействие пользователя с `ListView` путем присоединения обработчика к `ItemSelected` или [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) событий, или установив привязку данных на `SelectedItem` свойство. Но некоторые типы ячейки (`EntryCell` и `SwitchCell`) разрешение взаимодействия с пользователем, а также возможно, чтобы создать пользовательские ячейки, которые сами взаимодействия с пользователем. [ **InteractiveListView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/InteractiveListView) создает 100 экземпляров [ `ColorViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) и позволяет пользователю изменять каждый цвет, с помощью модулей электронной инструментальной `Slider` элементов. Программа также используется [ `ColorToContrastColorConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorToContrastColorConverter.cs) в [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit).
 
 ## <a name="listview-and-mvvm"></a>ListView и MVVM
 
@@ -131,7 +131,7 @@ Xamarin.Forms определяет три представления, котор
 
 [![Тройной снимок экрана: список учащихся](images/ch19fg18-small.png "список учащихся")](images/ch19fg18-large.png#lightbox "список учащихся")
 
-[ **ListViewHeader** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader) пример добавляет [ `Header` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.Header/) свойство, но выводится только в Android.
+[ **ListViewHeader** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader) пример добавляет [ `Header` ](xref:Xamarin.Forms.ListView.Header) свойство, но выводится только в Android.
 
 ### <a name="selection-and-the-binding-context"></a>Выбор и контекст привязки
 
@@ -139,17 +139,17 @@ Xamarin.Forms определяет три представления, котор
 
 ### <a name="context-menus"></a>Контекстные меню
 
-Ячейки можно определить контекстное меню, которое реализуется в виде конкретной платформы. Чтобы создать это меню, добавьте [ `MenuItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/) объектов [ `ContextActions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Cell.ContextActions/) свойство `Cell`.
+Ячейки можно определить контекстное меню, которое реализуется в виде конкретной платформы. Чтобы создать это меню, добавьте [ `MenuItem` ](xref:Xamarin.Forms.MenuItem) объектов [ `ContextActions` ](xref:Xamarin.Forms.Cell.ContextActions) свойство `Cell`.
 
 `MenuItem` Определяет пять свойств:
 
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Text/) типа `string`
-- [`Icon`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) типа `FileImageSource`
-- [`IsDestructive`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.IsDestructive/) типа `bool`
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Command/) типа `ICommand`
-- [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.CommandParameter/) типа `object`
+- [`Text`](xref:Xamarin.Forms.MenuItem.Text) типа `string`
+- [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) типа `FileImageSource`
+- [`IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive) типа `bool`
+- [`Command`](xref:Xamarin.Forms.MenuItem.Command) типа `ICommand`
+- [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter) типа `object`
 
-`Command` И `CommandParameter` свойства подразумевает, что ViewModel для каждого элемента содержит методы для выполнения команд меню. В сценариях без MVVM `MenuItem` также определяет [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) событий.
+`Command` И `CommandParameter` свойства подразумевает, что ViewModel для каждого элемента содержит методы для выполнения команд меню. В сценариях без MVVM `MenuItem` также определяет [ `Clicked` ](xref:Xamarin.Forms.MenuItem.Clicked) событий.
 
 [ **CellContextMenu** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CellContextMenu) этот метод продемонстрирован. `Command` Свойства каждого `MenuItem` привязано к свойству типа `ICommand` в `Student` класса. Задайте `IsDestructive` свойства `true` для `MenuItem` , удаляет или удаление выбранного объекта.
 
@@ -160,7 +160,7 @@ Xamarin.Forms определяет три представления, котор
 
 ### <a name="refreshing-the-content"></a>Обновление содержимого
 
-`ListView` Поддерживает жест раскрывающемся списке для обновления его данных. Необходимо установить программу [ `IsPullToRefresh` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.IsPullToRefreshEnabled/) свойства `true` соответствующим образом. `ListView` Реагирует на жест раскрывающемся списке, задав его [ `IsRefreshing` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.IsRefreshing/) свойства `true`и формируя [ `Refreshing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.Refreshing/) событий и (для сценариев MVVM) вызова `Execute` метод его [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/) свойство.
+`ListView` Поддерживает жест раскрывающемся списке для обновления его данных. Необходимо установить программу [ `IsPullToRefresh` ](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled) свойства `true` соответствующим образом. `ListView` Реагирует на жест раскрывающемся списке, задав его [ `IsRefreshing` ](xref:Xamarin.Forms.ListView.IsRefreshing) свойства `true`и формируя [ `Refreshing` ](xref:Xamarin.Forms.ListView.Refreshing) событий и (для сценариев MVVM) вызова `Execute` метод его [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand) свойство.
 
 Код обработки `Refresh` событий или `RefreshCommand` возможно обновление данных, отображаемых объектом `ListView` и задает `IsRefreshing` обратно `false`.
 
@@ -168,16 +168,16 @@ Xamarin.Forms определяет три представления, котор
 
 ## <a name="the-tableview-and-its-intents"></a>TableView и его намерений
 
-Хотя `ListView` обычно отображается несколько экземпляров одного типа, [ `TableView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/) обычно сосредоточена на предоставление пользовательского интерфейса для нескольких свойств различных типов. Каждый элемент связан с собственным [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) класс, производный от для отображения свойства или предоставление пользовательского интерфейса к нему.
+Хотя `ListView` обычно отображается несколько экземпляров одного типа, [ `TableView` ](xref:Xamarin.Forms.TableView) обычно сосредоточена на предоставление пользовательского интерфейса для нескольких свойств различных типов. Каждый элемент связан с собственным [ `Cell` ](xref:Xamarin.Forms.Cell) класс, производный от для отображения свойства или предоставление пользовательского интерфейса к нему.
 
 ### <a name="properties-and-hierarchies"></a>Свойства и иерархий
 
 `TableView` определяет только четыре свойства:
 
-- [`Intent`](https://developer.xamarin.com/api/property/Xamarin.Forms.TableView.Intent/) типа [ `TableIntent` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TableIntent/), перечисление
-- [`Root`](https://developer.xamarin.com/api/property/Xamarin.Forms.TableView.Root/) типа [ `TableRoot` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TableRoot/), свойство содержимого `TableView`
-- [`RowHeight`](https://developer.xamarin.com/api/property/Xamarin.Forms.TableView.RowHeight/) типа `int`
-- [`HasUnevenRows`](https://developer.xamarin.com/api/property/Xamarin.Forms.TableView.HasUnevenRows/) типа `bool`
+- [`Intent`](xref:Xamarin.Forms.TableView.Intent) типа [ `TableIntent` ](xref:Xamarin.Forms.TableIntent), перечисление
+- [`Root`](xref:Xamarin.Forms.TableView.Root) типа [ `TableRoot` ](xref:Xamarin.Forms.TableRoot), свойство содержимого `TableView`
+- [`RowHeight`](xref:Xamarin.Forms.TableView.RowHeight) типа `int`
+- [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows) типа `bool`
 
 `TableIntent` Перечисления указывает, как вы планируете использовать `TableView`:
 
@@ -190,13 +190,13 @@ Xamarin.Forms определяет три представления, котор
 
 В определении таблицы участвуют несколько других классов.
 
-- [`TableSectionBase`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableSectionBase/) — Это абстрактный класс, производный от `BindableObject` и определяет [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TableSectionBase.Title/) свойство
+- [`TableSectionBase`](xref:Xamarin.Forms.TableSectionBase) — Это абстрактный класс, производный от `BindableObject` и определяет [ `Title` ](xref:Xamarin.Forms.TableSectionBase.Title) свойство
 
-- [`TableSectionBase<T>`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableSectionBase%3CT%3E/) — Это абстрактный класс, производный от `TableSectionBase` и реализует `IList<T>` и `INotifyCollectionChanged`
+- [`TableSectionBase<T>`](xref:Xamarin.Forms.TableSectionBase`1) — Это абстрактный класс, производный от `TableSectionBase` и реализует `IList<T>` и `INotifyCollectionChanged`
 
-- [`TableSection`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableSection/) является производным от `TableSectionBase<Cell>`
+- [`TableSection`](xref:Xamarin.Forms.TableSection) является производным от `TableSectionBase<Cell>`
 
-- [`TableRoot`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableRoot/) является производным от `TableSectionBase<TableSection>`
+- [`TableRoot`](xref:Xamarin.Forms.TableRoot) является производным от `TableSectionBase<TableSection>`
 
 Короче говоря `TableView` имеет `Root` свойство, которое задано для `TableRoot` объект, который представляет собой коллекцию из `TableSection` объектов, каждый из которых является коллекцией `Cell` объектов. Таблица содержит несколько разделов, а каждый раздел содержит несколько ячеек. Сама таблица может иметь название, и каждый раздел может иметь название. Несмотря на то что `TableView` использует `Cell` производные, при этом не делает использование `DataTemplate`.
 

@@ -1,41 +1,41 @@
 ---
-title: Для повторного использования EffectBehavior
-description: Поведения — полезна для добавления эффекта в элемент управления, удаление эффекта шаблон формы, обработки кода из файлов кода. В этой статье показано, с помощью поведения Xamarin.Forms, чтобы добавить эффект к элементу управления.
+title: Повторно используемые EffectBehavior
+description: Поведения представляют собой удобный подход для добавления эффекта к элементу управления, удаление эффекта стереотипного кода из файлов кода программной обработки. В этой статье показано, с помощью поведения Xamarin.Forms, чтобы добавить эффект к элементу управления.
 ms.prod: xamarin
 ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: a1612d1e87f0e05c859babd93fd03ac9a5736b47
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1ce7eda6f556041cbffc3793b00e8e2cba44d3d0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30785059"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995785"
 ---
-# <a name="reusable-effectbehavior"></a>Для повторного использования EffectBehavior
+# <a name="reusable-effectbehavior"></a>Повторно используемые EffectBehavior
 
-_Поведения — полезна для добавления эффекта в элемент управления, удаление эффекта шаблон формы, обработки кода из файлов кода. В этой статье показано, с помощью поведения Xamarin.Forms, чтобы добавить эффект к элементу управления._
+_Поведения представляют собой удобный подход для добавления эффекта к элементу управления, удаление эффекта стереотипного кода из файлов кода программной обработки. В этой статье показано, с помощью поведения Xamarin.Forms, чтобы добавить эффект к элементу управления._
 
 ## <a name="overview"></a>Обзор
 
-`EffectBehavior` Класс является многократно используемых пользовательское поведение Xamarin.Forms, который добавляет [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) экземпляр для элемента управления, когда поведение, присоединенных к элементу управления и удаляет `Effect` экземпляра при поведение отсоединяется от элемента управления.
+`EffectBehavior` Класс является многократно используемых пользовательское поведение Xamarin.Forms, который добавляет [ `Effect` ](xref:Xamarin.Forms.Effect) экземпляра к элементу управления, когда поведение, присоединенных к элементу управления и удаляет `Effect` экземпляра при поведение отсоединить от элемента управления.
 
-Чтобы использовать поведение должно быть задано поведение следующие свойства:
+Следующие свойства поведение должно быть задано в соответствии с поведением:
 
-- **Группа** – значение [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) атрибутом для класса эффект.
-- **Имя** – значение [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) атрибутом для класса эффект.
+- **Группа** – значение [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) атрибута для класса эффект.
+- **Имя** – значение [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) атрибута для класса эффект.
 
 Дополнительные сведения об эффектах см. в разделе [эффекты](~/xamarin-forms/app-fundamentals/effects/index.md).
 
-## <a name="creating-the-behavior"></a>Создание поведения
+## <a name="creating-the-behavior"></a>Создание поведение
 
-`EffectBehavior` Класс является производным от [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) класса, где `T` — [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/). Это означает, что `EffectBehavior` класса можно подключить к любому элементу управления Xamarin.Forms.
+`EffectBehavior` Класс является производным от [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) класса, где `T` — [ `View` ](xref:Xamarin.Forms.View). Это означает, что `EffectBehavior` класса можно подключить к любому элементу управления Xamarin.Forms.
 
-### <a name="implementing-bindable-properties"></a>Реализация свойства для привязки
+### <a name="implementing-bindable-properties"></a>Реализация привязываемые свойства
 
-`EffectBehavior` Класс определяет два [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) экземпляров, которые используются для добавления [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) к элементу управления, когда применяется поведение элемента управления. В следующем примере кода показаны следующие свойства:
+`EffectBehavior` Класс определяет два [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) экземпляров, которые можно использовать для добавления [ `Effect` ](xref:Xamarin.Forms.Effect) к элементу управления, при присоединении поведения к элементу управления. Эти свойства отображаются в следующем примере кода:
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -58,11 +58,11 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-Когда `EffectBehavior` потребляется, `Group` свойство должно быть присвоено значение [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) атрибута применительно к эффекту. Кроме того `Name` свойство должно быть присвоено значение [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) атрибутом для класса эффект.
+Когда `EffectBehavior` исчерпания `Group` свойство должно быть присвоено значение [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) атрибут для эффекта. Кроме того `Name` свойство должно быть присвоено значение [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) атрибута для класса эффект.
 
-### <a name="implementing-the-overrides"></a>Реализации переопределений
+### <a name="implementing-the-overrides"></a>Реализация переопределения
 
-`EffectBehavior` Класса переопределения [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) и [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) методы [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) класса, как показано в следующем коде Пример:
+`EffectBehavior` Класса переопределения [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) и [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) методы [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) класса, как показано в следующем коде Пример:
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -83,11 +83,11 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-[ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Метод выполняет программу установки с помощью вызова `AddEffect` метод, передавая присоединенного элемента управления как параметр. [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) Метод выполняет очистку, вызвав `RemoveEffect` метод, передавая присоединенного элемента управления как параметр.
+[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Метод выполняет программу установки с помощью вызова `AddEffect` метод, передавая присоединенного элемента управления как параметр. [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Метод выполняет очистку, вызвав `RemoveEffect` метод, передавая присоединенного элемента управления как параметр.
 
 ### <a name="implementing-the-behavior-functionality"></a>Реализация функциональных возможностей поведения
 
-Поведение служит для добавления [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) определенные в `Group` и `Name` свойства для элемента управления, когда поведение, присоединенных к элементу управления и удалите `Effect` при поведение отсоединяется от элемента управления. В следующем примере кода показано поведение основные функциональные возможности:
+Поведение служит для добавления [ `Effect` ](xref:Xamarin.Forms.Effect) определенные в `Group` и `Name` свойства в элемент управления, когда поведение, присоединенных к элементу управления и удалите `Effect` при поведение отсоединить от элемента управления. В следующем примере кода показано поведение основные функциональные возможности:
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -119,13 +119,13 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-`AddEffect` Метод выполняется в ответ на `EffectBehavior` , присоединяемый к элементу управления и он получает присоединенного элемента управления как параметр. Затем этот метод добавляет полученные эффект к элементу управления [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) коллекции. `RemoveEffect` Метод выполняется в ответ на `EffectBehavior` отключаемой от элемента управления и он получает присоединенного элемента управления как параметр. Метод затем удаляет эффект из элемента управления [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) коллекции.
+`AddEffect` Метод выполняется в ответ на `EffectBehavior` присоединяемый к элементу управления и он получает присоединенного элемента управления как параметр. Затем этот метод добавляет полученный результат в элемент управления [ `Effects` ](xref:Xamarin.Forms.Element.Effects) коллекции. `RemoveEffect` Метод выполняется в ответ на `EffectBehavior` после отключения от элемента управления и он получает присоединенного элемента управления как параметр. Метод затем удаляет эффект из элемента управления [ `Effects` ](xref:Xamarin.Forms.Element.Effects) коллекции.
 
-`GetEffect` Использует метод [ `Effect.Resolve` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.Resolve/p/System.String/) метод для извлечения [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/). Результат находится посредством объединения `Group` и `Name` значения свойств. Если платформа не дает эффекта, `Effect.Resolve` метод возвращает значение, отличное от`null` значение.
+`GetEffect` Использует метод [ `Effect.Resolve` ](xref:Xamarin.Forms.Effect.Resolve(System.String)) метод для извлечения [ `Effect` ](xref:Xamarin.Forms.Effect). Результат находится через объединение `Group` и `Name` значения свойств. Если платформа не предоставляет эффектом `Effect.Resolve` метод будет возвращать значение отличное от`null` значение.
 
 ## <a name="consuming-the-behavior"></a>Использование поведения
 
-`EffectBehavior` Класса можно подключить к [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) коллекцию элементов управления, как показано в следующем примере кода XAML:
+`EffectBehavior` Класса можно подключить к [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) коллекцию элементов управления, как показано в следующем примере кода XAML:
 
 ```xaml
 <Label Text="Label Shadow Effect" ...>
@@ -148,22 +148,22 @@ label.Behaviors.Add (new EffectBehavior {
 });
 ```
 
-`Group` И `Name` свойствам поведения присваиваются значения [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) и [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) атрибуты для класса эффект в каждой платформы проект.
+`Group` И `Name` свойства поведения присваиваются значения [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) и [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) атрибуты для класса эффект в каждой конкретной платформы проект.
 
-Во время выполнения, когда применяется поведение [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) управления `Xamarin.LabelShadowEffect` будут добавлены к элементу управления [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) коллекции. Это приведет к тень, добавляемый текст, отображаемый элементом `Label` устанавливаются, как показано на следующем снимке экрана:
+Во время выполнения, при присоединении поведения к [ `Label` ](xref:Xamarin.Forms.Label) управления `Xamarin.LabelShadowEffect` будут добавлены к элементу управления [ `Effects` ](xref:Xamarin.Forms.Element.Effects) коллекции. Это приводит к тени, добавляемой к тексту, отображаемому элементом `Label` контролировать, как показано на следующем снимке экрана:
 
-![](effect-behavior-images/screenshots.png "Пример приложения с EffectsBehavior")
+![](effect-behavior-images/screenshots.png "Пример приложения с помощью EffectsBehavior")
 
-Преимущество использования этого поведения для добавления и удаления эффекты от элементов управления — что кода эффект обработки шаблона формы могут быть удалены из файлов кода.
+Преимуществом использования этого поведения для добавления и удаления эффекты от элементов управления является удаления эффект обработки стереотипного кода из файлов кода.
 
 ## <a name="summary"></a>Сводка
 
-В этой статье показано, с помощью поведения, чтобы добавить эффект к элементу управления. `EffectBehavior` Класс является многократно используемых пользовательское поведение Xamarin.Forms, который добавляет [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) экземпляр для элемента управления, когда поведение, присоединенных к элементу управления и удаляет `Effect` экземпляра при поведение отсоединяется от элемента управления.
+В этой статье показано, с помощью поведения, чтобы добавить эффект к элементу управления. `EffectBehavior` Класс является многократно используемых пользовательское поведение Xamarin.Forms, который добавляет [ `Effect` ](xref:Xamarin.Forms.Effect) экземпляра к элементу управления, когда поведение, присоединенных к элементу управления и удаляет `Effect` экземпляра при поведение отсоединить от элемента управления.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Эффекты](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [Поведение эффект (пример)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
-- [Behavior](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
-- [Behavior<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)
+- [Поведение](xref:Xamarin.Forms.Behavior)
+- [Поведение<T>](xref:Xamarin.Forms.Behavior`1)

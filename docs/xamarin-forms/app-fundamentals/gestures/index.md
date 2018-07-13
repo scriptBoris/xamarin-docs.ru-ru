@@ -1,33 +1,33 @@
 ---
-title: Xamarin.Forms жесты
-description: В этом руководстве объясняется, как распознавателей жестов Xamarin.Forms можно использовать для определения взаимодействия с пользователем с произвольным числом элементов Xamarin.Forms приложения.
+title: Жесты Xamarin.Forms
+description: В этом руководстве объясняется, как средства распознавания жестов Xamarin.Forms можно использовать для определения взаимодействия с пользователем с множеством элементов приложения Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 0E197A51-2304-4C09-A710-C7FF24A89F15
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 1c055d7ab02ad3233c38f2123793c4a4f49479cb
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e7ae1e427dfd480b1f279c50ac5e301181912ee7
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240370"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994693"
 ---
-# <a name="xamarinforms-gestures"></a>Xamarin.Forms жесты
+# <a name="xamarinforms-gestures"></a>Жесты Xamarin.Forms
 
-_Распознаватель жестов можно использовать для определения взаимодействия с пользователем с произвольным числом элементов Xamarin.Forms приложения._
+_Средства распознавания жестов можно использовать для определения взаимодействия с пользователем с множеством элементов приложения Xamarin.Forms._
 
-Xamarin.Forms [ `GestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/) класс поддерживает tap, сжатие и сдвиг жестов на элементы управления пользовательского интерфейса.
+Xamarin.Forms [ `GestureRecognizer` ](xref:Xamarin.Forms.GestureRecognizer) класс поддерживает tap, сжатие и жесты панорамирования на элементы управления пользовательского интерфейса.
 
-## <a name="adding-a-tap-gesture-recognizertapmd"></a>[Добавление отвода распознаватель жестов](tap.md)
+## <a name="adding-a-tap-gesture-recognizertapmd"></a>[Добавление распознавателя жестов касания](tap.md)
 
-Используется для обнаружения tap жеста касания и реализуется с помощью [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) класса.
+Используется для обнаружения tap жеста касания и реализуется с помощью [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) класса.
 
-## <a name="adding-a-pinch-gesture-recognizerpinchmd"></a>[Добавление распознавателя жестом сжатия](pinch.md)
+## <a name="adding-a-pinch-gesture-recognizerpinchmd"></a>[Добавление распознавателя жестов жестом сжатия](pinch.md)
 
-Используется для выполнения интерактивных масштаба жестов жестом сжатия и реализуется с помощью [ `PinchGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/) класса.
+Жест «щипок» используется для выполнения интерактивного масштабирования и реализуется с помощью [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) класса.
 
-## <a name="adding-a-pan-gesture-recognizerpanmd"></a>[Добавление распознавателя сдвиг](pan.md)
+## <a name="adding-a-pan-gesture-recognizerpanmd"></a>[Добавление распознавателя жестов Pan](pan.md)
 
-Жест панорамирование используется для выявления перетаскивания и реализуется с помощью [ `PanGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PanGestureRecognizer/) класса.
+Жест pan используется для выявления перетаскивания и реализуется с помощью [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) класса.

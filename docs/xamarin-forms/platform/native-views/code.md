@@ -1,49 +1,49 @@
 ---
-title: Собственные представления в C#
-description: Собственные представления из iOS, Android и UWP могут существовать прямые ссылки с Xamarin.Forms страниц, созданных с помощью C#. В этой статье демонстрирует добавлять собственные представления в Xamarin.Forms макета, созданные с помощью C# и переопределить макета настраиваемые представления, чтобы исправить их измерения использование API.
+title: Исходные представления в C#
+description: Исходные представления из iOS, Android и UWP можно непосредственно ссылаться из страницы Xamarin.Forms, созданные с помощью C#. В этой статье показано, как добавить исходные представления в макете Xamarin.Forms, созданные с помощью C# и переопределение макет пользовательские представления, чтобы исправить их измерения использования API.
 ms.prod: xamarin
 ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: c3a79947b02e0f877fd4ea1b0ddb72486c222719
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: ad633f49c1c448529fa4c2b50483ec233c1ee841
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34050056"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996198"
 ---
-# <a name="native-views-in-c"></a>Собственные представления в C#
+# <a name="native-views-in-c"></a>Исходные представления в C#
 
-_Собственные представления из iOS, Android и UWP могут существовать прямые ссылки с Xamarin.Forms страниц, созданных с помощью C#. В этой статье демонстрирует добавлять собственные представления в Xamarin.Forms макета, созданные с помощью C# и переопределить макета настраиваемые представления, чтобы исправить их измерения использование API._
+_Исходные представления из iOS, Android и UWP можно непосредственно ссылаться из страницы Xamarin.Forms, созданные с помощью C#. В этой статье показано, как добавить исходные представления в макете Xamarin.Forms, созданные с помощью C# и переопределение макет пользовательские представления, чтобы исправить их измерения использования API._
 
 ## <a name="overview"></a>Обзор
 
-Любой элемент управления Xamarin.Forms, который позволяет `Content` Чтобы задать, а также `Children` коллекции, можно добавить представления конкретную платформу. Например, iOS `UILabel` могут напрямую добавляться [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) свойства, или к [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) коллекции. Однако обратите внимание, что эта функциональность требует использования `#if` определяет в решениях Xamarin.Forms общий проект и не доступна из решения Xamarin.Forms .NET стандартные библиотеки.
+Любой элемент управления Xamarin.Forms, который позволяет `Content` , чтобы задать, или с `Children` коллекции, можно добавить представления платформы. Например, iOS `UILabel` можно напрямую добавить [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) свойство, или к [ `StackLayout.Children` ](xref:Xamarin.Forms.Layout`1.Children) коллекции. Тем не менее, обратите внимание, что эта функция требует использования `#if` определяет в решениях общий проект Xamarin.Forms и не доступна из решений Xamarin.Forms .NET Standard library.
 
-Следующих снимках экрана показано платформой представления были добавлены в Xamarin.Forms [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
+Далее на снимках экрана демонстрируют платформой представления были добавлены в Xamarin.Forms [ `StackLayout` ](xref:Xamarin.Forms.StackLayout):
 
-[![](code-images/screenshots-sml.png "StackLayout, содержащий представления платформой")](code-images/screenshots.png#lightbox "StackLayout, содержащий представления платформой")
+[![](code-images/screenshots-sml.png "Содержит представления платформы StackLayout")](code-images/screenshots.png#lightbox "StackLayout, содержащий представления платформы")
 
-Возможность добавления представления платформой в макете Xamarin.Forms включено по два метода расширения на каждой платформе:
+Возможность добавления представления с платформой Xamarin.Forms макет включен по два метода расширения на каждой платформе:
 
-- `Add` — Добавляет представление конкретную платформу, чтобы [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) коллекции макета.
-- `ToView` — принимает вид конкретную платформу и помещает его в качестве Xamarin.Forms [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) , можно задать в качестве `Content` свойство элемента управления.
+- `Add` — Добавляет представление платформы для [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) коллекции макета.
+- `ToView` — принимает представления платформы и помещает его в качестве Xamarin.Forms [ `View` ](xref:Xamarin.Forms.View) , можно задать в качестве `Content` свойства элемента управления.
 
-С помощью этих методов в общем проекте Xamarin.Forms требует импорта соответствующего пространства имен Xamarin.Forms платформ:
+С помощью этих методов в общий проект Xamarin.Forms требует импорта соответствующего пространства имен платформы Xamarin.Forms:
 
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** — Xamarin.Forms.Platform.Android
-- **Универсальная платформа Windows (UWP)** – Xamarin.Forms.Platform.UWP
+- **Платформа универсальной Windows (UWP)** – Xamarin.Forms.Platform.UWP
 
-## <a name="adding-platform-specific-views-on-each-platform"></a>Добавление представлений платформой на каждой платформе
+## <a name="adding-platform-specific-views-on-each-platform"></a>Добавление представлений платформы на каждой платформе
 
-Ниже описаны процедуры добавления представления платформой в Xamarin.Forms макет на каждой платформе.
+Ниже описаны процедуры добавления представления платформы в макет Xamarin.Forms на каждой платформе.
 
 ### <a name="ios"></a>iOS
 
-В следующем примере кода показано, как добавить `UILabel` для [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) и [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+В следующем примере кода показано, как добавить `UILabel` для [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) и [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var uiLabel = new UILabel {
@@ -56,11 +56,11 @@ stackLayout.Children.Add (uiLabel);
 contentView.Content = uiLabel.ToView();
 ```
 
-Предполагается, что `stackLayout` и `contentView` экземпляры ранее были созданы в XAML и C#.
+Предполагается, что `stackLayout` и `contentView` ранее были созданы экземпляры в XAML или C#.
 
 ### <a name="android"></a>Android
 
-В следующем примере кода показано, как добавить `TextView` для [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) и [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+В следующем примере кода показано, как добавить `TextView` для [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) и [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textView = new TextView (MainActivity.Instance) { Text = originalText, TextSize = 14 };
@@ -68,11 +68,11 @@ stackLayout.Children.Add (textView);
 contentView.Content = textView.ToView();
 ```
 
-Предполагается, что `stackLayout` и `contentView` экземпляры ранее были созданы в XAML и C#.
+Предполагается, что `stackLayout` и `contentView` ранее были созданы экземпляры в XAML или C#.
 
 ### <a name="universal-windows-platform"></a>Универсальная платформа Windows 
 
-В следующем примере кода показано, как добавить `TextBlock` для [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) и [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+В следующем примере кода показано, как добавить `TextBlock` для [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) и [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textBlock = new TextBlock
@@ -86,17 +86,17 @@ stackLayout.Children.Add(textBlock);
 contentView.Content = textBlock.ToView();
 ```
 
-Предполагается, что `stackLayout` и `contentView` экземпляры ранее были созданы в XAML и C#.
+Предполагается, что `stackLayout` и `contentView` ранее были созданы экземпляры в XAML или C#.
 
-## <a name="overriding-platform-measurements-for-custom-views"></a>Переопределения измерений платформы пользовательских представлений
+## <a name="overriding-platform-measurements-for-custom-views"></a>Переопределение показателей платформы для пользовательских представлений
 
-Настраиваемые представления на каждой платформе часто только правильной реализации измерения для макета сценария, для которой они были спроектированы. Например пользовательское представление может были разработаны для занимать половины ширины элемента устройства. Тем не менее после которой совместно с другими пользователями, настраиваемое представление может потребоваться занимая полной ширины элемента устройства. Таким образом может потребоваться переопределить реализацию настраиваемых представлений измерения при, повторно используемые в макете Xamarin.Forms. По этой причине `Add` и `ToView` методы расширения предоставляют переопределений, которые позволяют указать делегаты измерения, которые можно переопределить пользовательское представление макета при ее добавлении в макет Xamarin.Forms.
+Пользовательские представления на каждой платформе часто только правильно реализовать измерения для макета сценария, для которого они были созданы. Например пользовательское представление может рассчитаны на занимать половины ширины элемента устройства. Однако после совместно с другими пользователями, пользовательское представление может потребоваться занимают все доступные ширину устройства. Таким образом может потребоваться переопределить реализацию измерения пользовательские представления, когда будут повторно использованы в макете Xamarin.Forms. По этой причине `Add` и `ToView` методы расширения предоставляют переопределений, которые позволяют указать делегаты измерения, которые можно переопределить макет пользовательского представления, при добавлении в макет Xamarin.Forms.
 
-Приведенные ниже показано, как переопределить макета настраиваемые представления, чтобы исправить их измерения использование API.
+Ниже показано, как переопределять макет пользовательские представления, чтобы исправить их измерения использования API.
 
 ### <a name="ios"></a>iOS
 
-В следующем примере кода показан `CustomControl` класс, унаследованный от класса `UILabel`:
+В следующем коде показано в примере `CustomControl` класс, унаследованный от `UILabel`:
 
 ```csharp
 public class CustomControl : UILabel
@@ -113,7 +113,7 @@ public class CustomControl : UILabel
 }
 ```
 
-Добавляемый экземпляр этого представления [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), как показано в следующем примере кода:
+Экземпляр этого представления добавляется [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), как показано в следующем примере кода:
 
 ```csharp
 var customControl = new CustomControl {
@@ -125,11 +125,11 @@ var customControl = new CustomControl {
 stackLayout.Children.Add (customControl);
 ```
 
-Тем не менее поскольку `CustomControl.SizeThatFits` переопределения всегда возвращает высоту 150, представление отображается с пустым пространством выше и ниже его, как показано на следующем снимке экрана:
+Тем не менее поскольку `CustomControl.SizeThatFits` переопределение всегда возвращает высоту 150, представление будет отображаться с пустым отступа сверху и снизу, как показано на следующем снимке экрана:
 
-![](code-images/ios-bad-measurement.png "пользовательский элемент управления с неправильной реализацией SizeThatFits iOS")
+![](code-images/ios-bad-measurement.png "пользовательский элемент управления с реализацией SizeThatFits iOS")
 
-Решением этой проблемы является предоставление `GetDesiredSizeDelegate` реализацию, как показано в следующем примере кода:
+Решение этой проблемы — предоставить `GetDesiredSizeDelegate` реализации, как показано в следующем примере кода:
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double height)
@@ -150,19 +150,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double h
 }
 ```
 
-Этот метод использует ширине, предоставляемой `CustomControl.SizeThatFits` метода, но замещает высоту 150 для высоты 70. Когда `CustomControl` добавляется экземпляр [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), `FixSize` метод может быть указан как `GetDesiredSizeDelegate` для исправления поврежденных измерения, предоставленные `CustomControl` класса:
+Этот метод использует ширине, предоставляемой `CustomControl.SizeThatFits` метод, но заменяет высоту 150 для высоты 70. При `CustomControl` добавляется экземпляр [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), `FixSize` метод может быть указан как `GetDesiredSizeDelegate` для исправления поврежденных измерения, предоставляемые `CustomControl` класса:
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-Это приводит к в представление правильности отображения без пустое пространство выше и ниже его, как показано на следующем снимке экрана:
+В результате пользовательское представление правильности отображения без пустого пространства, сверху и снизу, как показано на следующем снимке экрана:
 
 ![](code-images/ios-good-measurement.png "пользовательский элемент управления с переопределением GetDesiredSize iOS")
 
 ### <a name="android"></a>Android
 
-В следующем примере кода показан `CustomControl` класс, унаследованный от класса `TextView`:
+В следующем коде показано в примере `CustomControl` класс, унаследованный от `TextView`:
 
 ```csharp
 public class CustomControl : TextView
@@ -184,7 +184,7 @@ public class CustomControl : TextView
 }
 ```
 
-Добавляемый экземпляр этого представления [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), как показано в следующем примере кода:
+Экземпляр этого представления добавляется [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), как показано в следующем примере кода:
 
 ```csharp
 var customControl = new CustomControl (MainActivity.Instance) {
@@ -194,11 +194,11 @@ var customControl = new CustomControl (MainActivity.Instance) {
 stackLayout.Children.Add (customControl);
 ```
 
-Тем не менее поскольку `CustomControl.OnMeasure` переопределения всегда возвращает половины ширины запрошенного, будет отображено представление занимающих только половину ширины элемента устройства, как показано на следующем снимке экрана:
+Тем не менее поскольку `CustomControl.OnMeasure` переопределение всегда возвращает половины ширины запрошенного, представление будет отображаться резервирует только половина доступную ширину устройства, как показано на следующем снимке экрана:
 
 ![](code-images/android-bad-measurement.png "Android пользовательский элемент управления с реализацией неправильный OnMeasure")
 
-Решением этой проблемы является предоставление `GetDesiredSizeDelegate` реализацию, как показано в следующем примере кода:
+Решение этой проблемы — предоставить `GetDesiredSizeDelegate` реализации, как показано в следующем примере кода:
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, int heightConstraint)
@@ -217,19 +217,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, i
 }
 ```
 
-Этот метод использует ширине, предоставляемой `CustomControl.OnMeasure` метода, но умножает его на два. Когда `CustomControl` добавляется экземпляр [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), `FixSize` метод может быть указан как `GetDesiredSizeDelegate` для исправления поврежденных измерения, предоставленные `CustomControl` класса:
+Этот метод использует ширине, предоставляемой `CustomControl.OnMeasure` метод, но умножает его на два. При `CustomControl` добавляется экземпляр [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), `FixSize` метод может быть указан как `GetDesiredSizeDelegate` для исправления поврежденных измерения, предоставляемые `CustomControl` класса:
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-Это приводит к тем, что пользовательское представление отображается неправильно, занимающих ширину устройства, как показано на следующем снимке экрана:
+В результате, пользовательское представление отображается правильно, занимающий ширину устройства, как показано на следующем снимке экрана:
 
-![](code-images/android-good-measurement.png "Android пользовательский элемент управления с делегатом пользовательские GetDesiredSize")
+![](code-images/android-good-measurement.png "Android пользовательский элемент управления с помощью пользовательских GetDesiredSize делегата")
 
 ### <a name="universal-windows-platform"></a>Универсальная платформа Windows 
 
-В следующем примере кода показан `CustomControl` класс, унаследованный от класса `Panel`:
+В следующем коде показано в примере `CustomControl` класс, унаследованный от `Panel`:
 
 ```csharp
 public class CustomControl : Panel
@@ -282,7 +282,7 @@ public class CustomControl : Panel
 }
 ```
 
-Добавляемый экземпляр этого представления [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), как показано в следующем примере кода:
+Экземпляр этого представления добавляется [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), как показано в следующем примере кода:
 
 ```csharp
 var brokenControl = new CustomControl {
@@ -291,11 +291,11 @@ var brokenControl = new CustomControl {
 stackLayout.Children.Add(brokenControl);
 ```
 
-Тем не менее поскольку `CustomControl.ArrangeOverride` переопределения всегда возвращает половины ширины запрошенного, представление будет обрезано до половины ширины элемента устройства, как показано на следующем снимке экрана:
+Тем не менее поскольку `CustomControl.ArrangeOverride` переопределение всегда возвращает половины ширины запрошенного, представление будет обрезано до половины ширины элемента устройства, как показано на следующем снимке экрана:
 
-![](code-images/winrt-bad-measurement.png "Пользовательский элемент управления UWP с реализацией неправильный ArrangeOverride")
+![](code-images/winrt-bad-measurement.png "Пользовательский элемент управления универсальной платформы Windows с реализацией неправильный ArrangeOverride")
 
-Решением этой проблемы является предоставление `ArrangeOverrideDelegate` реализация, при добавлении представления [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), как показано в следующем примере кода:
+Решение этой проблемы — предоставить `ArrangeOverrideDelegate` реализация, при добавлении представления [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), как показано в следующем примере кода:
 
 ```csharp
 stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, finalSize) =>
@@ -310,13 +310,13 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 });
 ```
 
-Этот метод использует ширине, предоставляемой `CustomControl.ArrangeOverride` метода, но умножает его на два. Это приводит к тем, что пользовательское представление отображается неправильно, занимающих ширину устройства, как показано на следующем снимке экрана:
+Этот метод использует ширине, предоставляемой `CustomControl.ArrangeOverride` метод, но умножает его на два. В результате, пользовательское представление отображается правильно, занимающий ширину устройства, как показано на следующем снимке экрана:
 
-![](code-images/winrt-good-measurement.png "Пользовательский элемент управления UWP с делегатом ArrangeOverride")
+![](code-images/winrt-good-measurement.png "Пользовательский элемент управления универсальной платформы Windows с делегатом ArrangeOverride")
 
 ## <a name="summary"></a>Сводка
 
-В этой статье описано, как добавить собственные представления в Xamarin.Forms макета, созданные с помощью C# и переопределение макета настраиваемые представления, чтобы исправить их измерения использование API.
+В этой статье описываются способы добавления собственного представления макета Xamarin.Forms, созданные с помощью C# и переопределение макет пользовательские представления, чтобы исправить их измерения использования API.
 
 
 ## <a name="related-links"></a>Связанные ссылки

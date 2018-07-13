@@ -1,38 +1,38 @@
 ---
-title: Создание Xamarin.Forms DataTemplate
-description: Шаблоны данных можно создавать встроенные, ResourceDictionary или из пользовательского типа или соответствующий тип ячейки Xamarin.Forms. В этой статье исследуются каждого метода.
+title: Создание шаблона данных Xamarin.Forms DataTemplate
+description: Шаблоны данных могут создаваться встроенный в ResourceDictionary, или из пользовательского типа или соответствующий тип ячейки Xamarin.Forms. В этой статье рассматриваются каждому из них.
 ms.prod: xamarin
 ms.assetid: CFF4AB5E-9069-461C-84D8-F9F6C38510AB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 8aa0ad693fd1a7f086492f93f18c1e33871dee0e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 63f9bf82bc8e637aced1afa5d5699ac1e8dc3f8c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240516"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994619"
 ---
-# <a name="creating-a-xamarinforms-datatemplate"></a>Создание Xamarin.Forms DataTemplate
+# <a name="creating-a-xamarinforms-datatemplate"></a>Создание шаблона данных Xamarin.Forms DataTemplate
 
-_Шаблоны данных можно создавать встроенные, ResourceDictionary или из пользовательского типа или соответствующий тип ячейки Xamarin.Forms. В этой статье исследуются каждого метода._
+_Шаблоны данных могут создаваться встроенный в ResourceDictionary, или из пользовательского типа или соответствующий тип ячейки Xamarin.Forms. В этой статье рассматриваются каждому из них._
 
-Стандартный сценарий использования [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) отображаются данные из коллекции объектов в [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Внешний вид данных для каждой ячейки в [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) можно управлять, задав [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) свойства [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/). Существует несколько способов, которые могут использоваться для выполнения этой задачи.
+Стандартный сценарий использования [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) отображает данные из коллекции объектов в [ `ListView` ](xref:Xamarin.Forms.ListView). Внешний вид данных для каждой ячейки в [ `ListView` ](xref:Xamarin.Forms.ListView) можно управлять, задав [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) свойства [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Существует несколько способов, которые могут использоваться для выполнения этой задачи:
 
 - [Создание встроенных DataTemplate](#inline).
-- [Создание DataTemplate с типом](#type).
-- [Создание DataTemplate как ресурс](#resource).
+- [Создание шаблона данных DataTemplate с типом](#type).
+- [Создание шаблона данных DataTemplate как ресурса](#resource).
 
-Независимо от используемого метода, результатом является, внешний вид каждой ячейки в [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) определяется [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), как показано на следующем снимке экрана:
+Независимо от того, используется метод, результатом является, внешний вид каждой ячейки в [ `ListView` ](xref:Xamarin.Forms.ListView) определяется [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate), как показано на следующем снимке экрана:
 
-![](creating-images/data-template-appearance.png "ListView с DataTemplate")
+![](creating-images/data-template-appearance.png "ListView с помощью DataTemplate")
 
 <a name="inline" />
 
 ## <a name="creating-an-inline-datatemplate"></a>Создание встроенных DataTemplate
 
-[ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) Может быть установлено на встроенный [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/). Встроенного шаблона, который является тот, который указан в качестве ближайшего дочернего свойства соответствующего элемента управления, следует использовать, если нет необходимости повторно использовать шаблон данных в другом месте. Элементы, указанные в `DataTemplate` определяют внешний вид каждой ячейки, как показано в следующем примере кода XAML:
+[ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) Может быть установлено на встроенный [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Встроенный шаблон, который — это помещается в качестве ближайшего дочернего свойства соответствующего элемента управления, следует использовать, если нет необходимости повторно использовать шаблон данных в другом месте. Элементы, указанные в `DataTemplate` определяют внешний вид каждой ячейки, как показано в следующем примере кода XAML:
 
 ```xaml
 <ListView Margin="0,20,0,0">
@@ -61,7 +61,7 @@ _Шаблоны данных можно создавать встроенные,
 </ListView>
 ```
 
-Дочерние встроенный [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) должно быть, или быть производным от, введите [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/). Макет внутри `ViewCell` управляется здесь [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/). `Grid` Содержит три [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) экземпляры этой привязки их [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) свойства для каждого из соответствующих свойств `Person` объекта в коллекции.
+Дочерним элементом элемента встроенный [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) должна быть, или являются производными от, введите [ `ViewCell` ](xref:Xamarin.Forms.ViewCell). Макет внутри `ViewCell` управляется здесь [ `Grid` ](xref:Xamarin.Forms.Grid). `Grid` Содержит три [ `Label` ](xref:Xamarin.Forms.Label) экземпляров привязать их [ `Text` ](xref:Xamarin.Forms.Label.Text) свойства к соответствующим свойствам каждого `Person` объекта в коллекции.
 
 Эквивалентный код на языке C# показан в следующем примере:
 
@@ -108,13 +108,13 @@ public class WithDataTemplatePageCS : ContentPage
 }
 ```
 
-В C#, встроенной функции [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) создается с использованием перегрузки конструктора, которая указывает `Func` аргумент.
+В C#, встроенную [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) создается с использованием перегрузки конструктора, которая указывает `Func` аргумент.
 
 <a name="type" />
 
-## <a name="creating-a-datatemplate-with-a-type"></a>Создание DataTemplate с типом
+## <a name="creating-a-datatemplate-with-a-type"></a>Создание шаблона данных DataTemplate с типом
 
-[ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) Свойство также может быть присвоено [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) , созданный из типа ячейки. Преимущество такого подхода является, внешний вид, определяемый тип ячейки могут быть использованы несколько шаблонов данных в приложении. Следующий код XAML показан пример такого подхода.
+[ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) Свойство также может быть присвоено [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) , созданный из типа ячейки. Преимуществом такого подхода является то, что внешний вид, определяемый тип ячейки могут быть использованы несколько шаблонов данных во всем приложении. В следующем коде XAML показан пример этого подхода:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,7 +140,7 @@ public class WithDataTemplatePageCS : ContentPage
 </ContentPage>
 ```
 
-Здесь [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) свойству [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) , созданных из пользовательского типа, который определяет внешний вид для ячеек. Пользовательский тип должен быть производным от типа [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), как показано в следующем примере кода:
+Здесь [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) свойству [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) , созданный из пользовательского типа, который определяет внешний вид ячейки. Пользовательский тип должен быть производным от типа [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), как показано в следующем примере кода:
 
 ```xaml
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -159,9 +159,9 @@ public class WithDataTemplatePageCS : ContentPage
 </ViewCell>
 ```
 
-В пределах [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), макет управляется здесь [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/). `Grid` Содержит три [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) экземпляры этой привязки их [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) свойства для каждого из соответствующих свойств `Person` объекта в коллекции.
+В рамках [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), макет управляется здесь [ `Grid` ](xref:Xamarin.Forms.Grid). `Grid` Содержит три [ `Label` ](xref:Xamarin.Forms.Label) экземпляров привязать их [ `Text` ](xref:Xamarin.Forms.Label.Text) свойства к соответствующим свойствам каждого `Person` объекта в коллекции.
 
-В следующем примере показан эквивалентный код C#:
+В следующем примере показан эквивалентный код на C#:
 
 ```csharp
 public class WithDataTemplatePageFromTypeCS : ContentPage
@@ -187,7 +187,7 @@ public class WithDataTemplatePageFromTypeCS : ContentPage
 }
 ```
 
-В C# [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) создается с использованием перегрузки конструктора, которая указывает тип ячейки в качестве аргумента. Тип ячейки должен быть производным от типа [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), как показано в следующем примере кода:
+В C# [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) создается с использованием перегрузки конструктора, которая задает тип ячейки в качестве аргумента. Тип ячейки должен быть производным от типа [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), как показано в следующем примере кода:
 
 ```csharp
 public class PersonCellCS : ViewCell
@@ -214,13 +214,13 @@ public class PersonCellCS : ViewCell
 ```
 
 > [!NOTE]
-> Обратите внимание, что Xamarin.Forms также включает типов ячеек, которые могут использоваться для отображения данных в [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ячеек. Дополнительные сведения см. в разделе [внешнего вида ячеек](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
+> Обратите внимание, что Xamarin.Forms также включает типов ячеек, которые могут использоваться для отображения данных в [ `ListView` ](xref:Xamarin.Forms.ListView) ячеек. Дополнительные сведения см. в разделе [внешний вид ячейки](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
 
 <a name="resource" />
 
-## <a name="creating-a-datatemplate-as-a-resource"></a>Создание DataTemplate как ресурс
+## <a name="creating-a-datatemplate-as-a-resource"></a>Создание шаблона данных DataTemplate как ресурса
 
-Также можно создавать шаблоны данных для повторного использования в виде объектов [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). Это достигается путем предоставления каждое объявление уникальный `x:Key` атрибут, который предоставляет ему описательное ключ в `ResourceDictionary`, как показано в следующем примере кода XAML:
+Шаблоны данных также могут создаваться как многократно используемые объекты в [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Это достигается путем предоставления каждое объявление уникальный `x:Key` атрибут, который предоставляет ему описательное ключа в `ResourceDictionary`, как показано в следующем примере кода XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -251,9 +251,9 @@ public class PersonCellCS : ViewCell
 </ContentPage>
 ```
 
-[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) Назначается [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) свойства с помощью `StaticResource` расширения разметки. Обратите внимание, что, хотя `DataTemplate` определено на странице [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), также можно задать на уровне элемента управления или приложения.
+[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Назначается [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) свойства с помощью `StaticResource` расширение разметки. Обратите внимание, что, хотя `DataTemplate` определен на странице [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), его также можно определить на уровне элемента управления или приложения.
 
-В следующем примере кода показан эквивалентный страницы в C#:
+В следующем примере кода показана страница эквивалент в C#:
 
 ```csharp
 public class WithDataTemplatePageCS : ContentPage
@@ -281,15 +281,15 @@ public class WithDataTemplatePageCS : ContentPage
 }
 ```
 
-[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) Добавляется [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) с помощью [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ResourceDictionary.Add/p/System.String/System.Object/) метод, который указывает `Key` строку, которая используется для Справочник по `DataTemplate` при его получении.
+[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Добавляется [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) с помощью [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) метод, который указывает `Key` строку, которая используется для Справочник по `DataTemplate` при извлечении.
 
 ## <a name="summary"></a>Сводка
 
-В этой статье показано создание шаблонов данных встроенным образом, из пользовательского типа, так и [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). Встроенного шаблона следует использовать, если нет необходимости повторно использовать шаблон данных в другом месте. Кроме того шаблон данных могут использоваться повторно путем определения его как пользовательский тип, или как ресурс на уровне страницы или уровня приложения уровня управления.
+Этой статье показано, как создать шаблоны анализа данных, встроенные, из пользовательского типа, или [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Встроенный шаблон следует использовать, если нет необходимости повторно использовать шаблон данных в другом месте. Кроме того шаблон данных могут использоваться повторно, определив его как пользовательский тип, или как ресурс управления уровня, уровня страницы или уровня приложения.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Вид ячейки](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
 - [Шаблоны данных (пример)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
-- [DataTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)
+- [DataTemplate](xref:Xamarin.Forms.DataTemplate)
