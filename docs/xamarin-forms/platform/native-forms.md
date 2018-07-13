@@ -1,43 +1,43 @@
 ---
-title: Xamarin.Forms в Xamarin Native проектов
-description: В этой статье описывается использование производных ContentPage страниц, которые напрямую добавляются в собственных проектах Xamarin и перемещаться между ними.
+title: Xamarin.Forms в проектах Xamarin Native
+description: В этой статье объясняется, как использовать производные ContentPage страниц, которые напрямую добавляются в собственные проекты Xamarin и как перемещаться между ними.
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: ca62b9fec3223e8da62d8e4cc6e1f69a58f335a0
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 65bb3fa070c082fa6c6c489e326a870a80fb9502
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243279"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997527"
 ---
-# <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms в Xamarin Native проектов
+# <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms в проектах Xamarin Native
 
-_Собственный формы позволяют производным Xamarin.Forms ContentPage страниц для использования собственных проектов Xamarin.iOS, Xamarin.Android и универсальной платформы Windows (UWP). Собственные проекты могут потреблять производный ContentPage страниц, которые напрямую добавляются в проект или из библиотеки .NET Standard, .NET стандартной библиотеки или общий проект. В этой статье описывается использование производных ContentPage страниц, которые напрямую добавляются в собственных проектах и перемещаться между ними._
+_Исходные формы позволяют производным Xamarin.Forms ContentPage страниц для использования в собственных проектах Xamarin.iOS, Xamarin.Android и универсальной платформы Windows (UWP). Собственные проекты могут потреблять производным ContentPage страниц, которые добавляются непосредственно в проект, или из библиотеки .NET Standard, библиотеку .NET Standard или общий проект. Эта статья объясняет, как использовать производные ContentPage страниц, которые напрямую добавляются в собственные проекты и как перемещаться между ними._
 
-Как правило, приложение Xamarin.Forms включает одну или несколько страниц, которые являются производными от [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), и эти страницы являются общими для всех платформ .NET Standard проекта библиотеки или общего проекта. Однако собственный форм позволяет `ContentPage`-производный страницы для добавления в машинном коде приложения Xamarin.iOS, Xamarin.Android и UWP. По сравнению с необходимости использовать собственный проект `ContentPage`-производном .NET Standard проекта библиотеки или общий проект, преимущество страницы непосредственно к собственным проектам вполне, страниц могут быть расширены с помощью собственного представления. С именем собственного представления можно затем при помощи XAML с `x:Name` и ссылаться на нее из кода. Дополнительные сведения о собственном представлениях см. в разделе [собственного представления](~/xamarin-forms/platform/native-views/index.md).
+Как правило, приложения Xamarin.Forms включает в себя одну или несколько страниц, которые являются производными от [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), и эти страницы являются общими для всех платформ в проекте библиотеки .NET Standard или общий проект. Тем не менее, исходные формы позволяет `ContentPage`-производным страницы, чтобы добавить непосредственно в собственных приложений Xamarin.iOS, Xamarin.Android и универсальной платформы Windows. По сравнению с необходимости использовать собственный проект `ContentPage`-производных страниц из проекта библиотеки .NET Standard или общий проект, добавление страниц проектов в машинном коде преимущество — что страниц можно расширить с помощью собственного представления. Исходные представления затем можно присвоить имя в XAML с `x:Name` и на которые имеются ссылки из кода. Дополнительные сведения о собственном представлениях см. в разделе [исходные представления](~/xamarin-forms/platform/native-views/index.md).
 
-Процесс получения Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производном в собственный проект можно следующим образом:
+Процесс получения Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производных от page в собственный проект выглядит следующим образом:
 
 1. Добавьте пакет Xamarin.Forms NuGet в собственный проект.
-1. Добавить [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производного страницы, а также любые зависимости, в собственный проект.
+1. Добавить [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производных страницы и зависимые компоненты в собственный проект.
 1. Вызовите метод `Forms.Init`.
-1. Создать экземпляр [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производным страницы и преобразовать его в соответствующий собственный тип, используя один из следующих методов расширения: `CreateViewController` для операций ввода-вывода, `CreateFragment` или `CreateSupportFragment` для Android, или `CreateFrameworkElement` для UWP.
-1. Перейдите в представление собственного типа [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производный страницы с помощью собственного навигации API.
+1. Сконструировать экземпляр [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-страница производной и преобразовать его в соответствующий собственный тип, с помощью одного из следующих методов расширения: `CreateViewController` для iOS, `CreateFragment` или `CreateSupportFragment` для Android, или `CreateFrameworkElement` для универсальной платформы Windows.
+1. Перейдите в представление собственного типа [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-страница, с помощью собственного API-навигации производной.
 
-Xamarin.Forms должен быть инициализирован путем вызова `Forms.Init` метод перед собственного проекта можно создать [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производный страницы. Выбор места для этого в основном зависит от времени наиболее удобно в потоке приложения — может быть выполнена при запуске приложения, или непосредственно перед `ContentPage`-создании производной страницы. В этой статье и сопутствующие примеры приложений `Forms.Init` метод вызывается при запуске приложения.
+Xamarin.Forms должны инициализироваться, вызвав `Forms.Init` метод, прежде чем можно создать собственный проект [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-страница производной. Выбор места для этого в основном зависит от времени наиболее удобное в блок-схеме приложения — может быть выполнена при запуске приложения или непосредственно перед `ContentPage`-создается производный страницы. В этой статье и сопутствующие примеры приложений `Forms.Init` метод вызывается при запуске приложения.
 
 > [!NOTE]
-> **NativeForms** решение образца приложения не содержит все проекты Xamarin.Forms. Вместо этого он состоит из проекта Xamarin.iOS, Xamarin.Android проект и проект UWP. Каждый проект имеет собственный проект, использующий собственные формы для использования [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производный страниц. Тем не менее, нет причин, почему не удалось использовать собственные проекты `ContentPage`-страницы на основе .NET Standard проекта библиотеки или общий проект.
+> **NativeForms** примера приложения решения не содержит все проекты Xamarin.Forms. Вместо этого он состоит из проекта Xamarin.iOS, проект Xamarin.Android и проекта универсальной платформы Windows. Каждый проект имеет собственный проект, использующий собственные формы для использования [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производным страниц. Тем не менее, нет причин, почему не могли использовать собственные проекты `ContentPage`-страниц на основе проекта библиотеки .NET Standard или общий проект.
 
-При использовании собственного форм, таких как компоненты Xamarin.Forms [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/), [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/)и механизм привязки данных, все по-прежнему работали.
+Если вы используете собственные формы, Xamarin.Forms такие функции, как [ `DependencyService` ](xref:Xamarin.Forms.DependencyService), [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)и механизм привязки данных, все по-прежнему работали.
 
 ## <a name="ios"></a>iOS
 
-На iOS `FinishedLaunching` переопределить в `AppDelegate` класс обычно является местом для выполнения приложения при запуске задач, связанных с. Он вызывается после запуска приложения и обычно переопределяется, чтобы настроить главное окно и просмотреть контроллера. В следующем примере кода показан `AppDelegate` класса в примере приложения:
+В iOS `FinishedLaunching` в Переопределите `AppDelegate` класса обычно является местом для выполнения приложения задач, связанных с запуска. Он вызывается после запуска и приложения обычно переопределяется, чтобы настроить главное окно и просмотреть контроллера. В следующем коде показано в примере `AppDelegate` класс в приложении-примере:
 
 ```csharp
 [Register("AppDelegate")]
@@ -76,18 +76,18 @@ public class AppDelegate : UIApplicationDelegate
 `FinishedLaunching` Метод выполняет следующие задачи:
 
 - Xamarin.Forms инициализируется путем вызова `Forms.Init` метод.
-- Ссылку на `AppDelegate` класс хранится в `static` `Instance` поля. Это позволит обеспечить механизм для других классов для вызова методов, определенных в `AppDelegate` класса.
-- `UIWindow`, Создается это основной контейнер для представлений в приложениях машинным кодом iOS.
-- `PhonewordPage` Класса, который является Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производный страницы, определенные в XAML, создается и преобразовать `UIViewController` с помощью `CreateViewController` метода расширения.
-- `Title` Свойство `UIViewController` имеет значение, который будет отображаться на `UINavigationBar`.
-- Объект `UINavigationController` создается для управления иерархической навигации. `UINavigationController` Класс управляет стек Просмотр контроллеров и `UIViewController` переданные в конструктор откроется изначально при `UINavigationController` загружается.
-- `UINavigationController` Экземпляр задан в качестве верхнего уровня `UIViewController` для `UIWindow`и `UIWindow` задан в качестве ключа окна для приложения и станет видимым.
+- Ссылку на `AppDelegate` класса хранится в `static` `Instance` поля. Это позволяет предоставить механизм для других классов для вызова методов, определенных в `AppDelegate` класса.
+- `UIWindow`, Который является основной контейнер для представлений в собственные приложения iOS, создается.
+- `PhonewordPage` Класс, являющийся Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производным страницы, определенные в XAML, создается и преобразовать `UIViewController` с помощью `CreateViewController` метода расширения.
+- `Title` Свойство `UIViewController` имеет значение, отображаемые на `UINavigationBar`.
+- Объект `UINavigationController` создается для управления иерархической навигации. `UINavigationController` Класс управляет стеком контроллеров представлений и `UIViewController` передан в конструктор отображается изначально при `UINavigationController` загружается.
+- `UINavigationController` Экземпляр задан в качестве верхнего уровня `UIViewController` для `UIWindow`и `UIWindow` задан в качестве ключа окна для приложения и является видимым.
 
-Один раз `FinishedLaunching` выполнен метод, пользовательский Интерфейс определен в Xamarin.Forms `PhonewordPage` будет отображаться класса, как показано на следующем снимке экрана:
+Один раз `FinishedLaunching` успешного выполнения метода, определенного пользовательского интерфейса в Xamarin.Forms `PhonewordPage` класс будет отображаться, как показано на следующем снимке экрана:
 
 [![](native-forms-images/ios-phonewordpage.png "iOS PhonewordPage")](native-forms-images/ios-phonewordpage-large.png#lightbox "iOS PhonewordPage")
 
-Взаимодействие с пользовательским Интерфейсом, например, коснувшись [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), приведет к обработчиков событий в `PhonewordPage` выполнение кода. Например, когда пользователь касается **журнал звонков** выполняется кнопки следующий обработчик событий:
+Взаимодействие с пользовательским Интерфейсом, например, коснувшись [ `Button` ](xref:Xamarin.Forms.Button), приведет к обработчиков событий в `PhonewordPage` выполнение кода. Например, когда пользователь касается **Call History** выполняется следующий обработчик событий кнопки:
 
 ```csharp
 void OnCallHistory(object sender, EventArgs e)
@@ -96,7 +96,7 @@ void OnCallHistory(object sender, EventArgs e)
 }
 ```
 
-`static` `AppDelegate.Instance` Поле позволяет `AppDelegate.NavigateToCallHistoryPage` вызываемого метода, как показано в следующем примере кода:
+`static` `AppDelegate.Instance` Поле позволяет `AppDelegate.NavigateToCallHistoryPage` метод должен быть вызван, как показано в следующем примере кода:
 
 ```csharp
 public void NavigateToCallHistoryPage()
@@ -107,15 +107,15 @@ public void NavigateToCallHistoryPage()
 }
 ```
 
-`NavigateToCallHistoryPage` Метод преобразует Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-страницу, чтобы производный `UIViewController` с `CreateViewController` метода расширения и наборы `Title` свойство `UIViewController`. `UIViewController` Затем помещается в `UINavigationController` по `PushViewController` метод. Таким образом, определен пользовательский Интерфейс в Xamarin.Forms `CallHistoryPage` будет отображаться класса, как показано на следующем снимке экрана:
+`NavigateToCallHistoryPage` Метод преобразует Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-страница для производной `UIViewController` с `CreateViewController` метод расширения и наборы `Title` свойство `UIViewController`. `UIViewController` Затем помещается в `UINavigationController` по `PushViewController` метод. Таким образом, пользовательский Интерфейс определен в Xamarin.Forms `CallHistoryPage` класс будет отображаться, как показано на следующем снимке экрана:
 
 [![](native-forms-images/ios-callhistorypage.png "iOS CallHistoryPage")](native-forms-images/ios-callhistorypage-large.png#lightbox "iOS CallHistoryPage")
 
-При `CallHistoryPage` отображается, нажимая на задний план отобразит стрелка `UIViewController` для `CallHistoryPage` класса из `UINavigationController`, возвращая пользователю `UIViewController` для `PhonewordPage` класса.
+При `CallHistoryPage` отображается, коснувшись обратной стрелки появится всплывающее `UIViewController` для `CallHistoryPage` класса из `UINavigationController`, возвращая пользователю `UIViewController` для `PhonewordPage` класса.
 
 ## <a name="android"></a>Android
 
-В Android `OnCreate` переопределить в `MainActivity` класс обычно является местом для выполнения приложения при запуске задач, связанных с. В следующем примере кода показан `MainActivity` класса в примере приложения:
+В Android `OnCreate` в Переопределите `MainActivity` класса обычно является местом для выполнения приложения задач, связанных с запуска. В следующем коде показано в примере `MainActivity` класс в приложении-примере:
 
 ```csharp
 public class MainActivity : AppCompatActivity
@@ -148,22 +148,22 @@ public class MainActivity : AppCompatActivity
 `OnCreate` Метод выполняет следующие задачи:
 
 - Xamarin.Forms инициализируется путем вызова `Forms.Init` метод.
-- Ссылку на `MainActivity` класс хранится в `static` `Instance` поля. Это позволит обеспечить механизм для других классов для вызова методов, определенных в `MainActivity` класса.
-- `Activity` Содержимое задано из разметки ресурса. В примере приложения макет состоит из `LinearLayout` , содержащий `Toolbar`и `FrameLayout` в качестве контейнера фрагмента.
+- Ссылку на `MainActivity` класса хранится в `static` `Instance` поля. Это позволяет предоставить механизм для других классов для вызова методов, определенных в `MainActivity` класса.
+- `Activity` Содержимое устанавливается из ресурса макета. В приложении-примере макет состоит из `LinearLayout` , содержащий `Toolbar`и `FrameLayout` в качестве контейнера фрагмента.
 - `Toolbar` Извлекается и задать в качестве панели действий для `Activity`, и задайте заголовок панели действий.
-- `PhonewordPage` Класса, который является Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производный страницы, определенные в XAML, создается и преобразовать `Fragment` с помощью `CreateFragment` метода расширения.
-- `FragmentManager` Класс создает и фиксирует транзакцию, которая заменяет `FrameLayout` экземпляра с `Fragment` для `PhonewordPage` класса.
+- `PhonewordPage` Класс, являющийся Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производным страницы, определенные в XAML, создается и преобразовать `Fragment` с помощью `CreateFragment` метода расширения.
+- `FragmentManager` Класс создает и фиксирует транзакцию, которая заменяет `FrameLayout` с экземпляром `Fragment` для `PhonewordPage` класса.
 
 Дополнительные сведения о фрагментах см. в разделе [фрагментов](~/android/platform/fragments/index.md).
 
 > [!NOTE]
-> В дополнение к `CreateFragment` Xamarin.Forms метод расширения также включает `CreateSupportFragment` метод. `CreateFragment` Метод создает `Android.App.Fragment` , можно использовать в приложениях, предназначенных для API 11 и выше. `CreateSupportFragment` Метод создает `Android.Support.V4.App.Fragment` может использоваться в приложениях, предназначенных для версий API до 11.
+> В дополнение к `CreateFragment` метод расширения, Xamarin.Forms также входит `CreateSupportFragment` метод. `CreateFragment` Метод создает `Android.App.Fragment` , можно использовать в приложениях, предназначенных для API 11 и выше. `CreateSupportFragment` Метод создает `Android.Support.V4.App.Fragment` , можно использовать в приложениях, предназначенных для версий API до 11.
 
-Один раз `OnCreate` выполнен метод, пользовательский Интерфейс определен в Xamarin.Forms `PhonewordPage` будет отображаться класса, как показано на следующем снимке экрана:
+Один раз `OnCreate` успешного выполнения метода, определенного пользовательского интерфейса в Xamarin.Forms `PhonewordPage` класс будет отображаться, как показано на следующем снимке экрана:
 
 [![](native-forms-images/android-phonewordpage.png "Android PhonewordPage")](native-forms-images/android-phonewordpage-large.png#lightbox "Android PhonewordPage")
 
-Взаимодействие с пользовательским Интерфейсом, например, коснувшись [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), приведет к обработчиков событий в `PhonewordPage` выполнение кода. Например, когда пользователь касается **журнал звонков** выполняется кнопки следующий обработчик событий:
+Взаимодействие с пользовательским Интерфейсом, например, коснувшись [ `Button` ](xref:Xamarin.Forms.Button), приведет к обработчиков событий в `PhonewordPage` выполнение кода. Например, когда пользователь касается **Call History** выполняется следующий обработчик событий кнопки:
 
 ```csharp
 void OnCallHistory(object sender, EventArgs e)
@@ -172,7 +172,7 @@ void OnCallHistory(object sender, EventArgs e)
 }
 ```
 
-`static` `MainActivity.Instance` Поле позволяет `MainActivity.NavigateToCallHistoryPage` вызываемого метода, как показано в следующем примере кода:
+`static` `MainActivity.Instance` Поле позволяет `MainActivity.NavigateToCallHistoryPage` метод должен быть вызван, как показано в следующем примере кода:
 
 ```csharp
 public void NavigateToCallHistoryPage()
@@ -186,15 +186,15 @@ public void NavigateToCallHistoryPage()
 }
 ```
 
-`NavigateToCallHistoryPage` Метод преобразует Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-страницу, чтобы производный `Fragment` с `CreateFragment` метод расширения и добавляет `Fragment` на фрагмент обратно в стек. Таким образом, определен пользовательский Интерфейс в Xamarin.Forms `CallHistoryPage` будет отображаться, как показано на следующем снимке экрана:
+`NavigateToCallHistoryPage` Метод преобразует Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-страница для производной `Fragment` с `CreateFragment` метод расширения и добавляет `Fragment` в тот фрагмент обратно в стек. Таким образом, пользовательский Интерфейс определен в Xamarin.Forms `CallHistoryPage` будет отображаться, как показано на следующем снимке экрана:
 
 [![](native-forms-images/android-callhistorypage.png "Android CallHistoryPage")](native-forms-images/android-callhistorypage-large.png#lightbox "Android CallHistoryPage")
 
-При `CallHistoryPage` отображается, нажимая на задний план стрелка отобразит `Fragment` для `CallHistoryPage` из этот фрагмент стек возвращение пользователю `Fragment` для `PhonewordPage` класса.
+При `CallHistoryPage` отображается, коснувшись обратной стрелки появится всплывающее `Fragment` для `CallHistoryPage` из фрагмента стек переходов назад, возвращая пользователю `Fragment` для `PhonewordPage` класса.
 
 ### <a name="enabling-back-navigation-support"></a>Включение поддержки переходов назад
 
-`FragmentManager` Класс имеет `BackStackChanged` события, которое возникает при каждом изменении содержимого этот фрагмент стек. `OnCreate` Метод в `MainActivity` класс содержит анонимный обработчик этого события:
+`FragmentManager` Класс имеет `BackStackChanged` события, возникающего при каждом изменении содержимого фрагмента стек переходов назад. `OnCreate` Метод в `MainActivity` класс содержит анонимный обработчик для этого события:
 
 ```csharp
 FragmentManager.BackStackChanged += (sender, e) =>
@@ -206,7 +206,7 @@ FragmentManager.BackStackChanged += (sender, e) =>
 };
 ```
 
-Этот обработчик событий отображает кнопки "Назад" на панели действий, при условии, что имеется один или несколько `Fragment` экземпляров в фрагменте обратно в стек. Ответ, нажав кнопку "Назад", обрабатывается `OnOptionsItemSelected` переопределения:
+Этот обработчик событий отображает кнопки "Назад" на панели действий, при условии, что имеется один или несколько `Fragment` свернет во фрагменте стека. Ответ при нажатии кнопки "Назад", обрабатывается `OnOptionsItemSelected` переопределить:
 
 ```csharp
 public override bool OnOptionsItemSelected(Android.Views.IMenuItem item)
@@ -220,18 +220,18 @@ public override bool OnOptionsItemSelected(Android.Views.IMenuItem item)
 }
 ```
 
-`OnOptionsItemSelected` Переопределение вызывается каждый раз при выборе элемента в меню «Параметры». Эта реализация извлекает текущий фрагмент из этот фрагмент стек, если был выбран кнопки "Назад", а также один или несколько `Fragment` экземпляров в фрагменте обратно в стек.
+`OnOptionsItemSelected` Переопределение вызывается каждый раз при выборе элемента в меню "Параметры". Эта реализация извлекает текущий фрагмент из фрагмента стек переходов назад, если был выбран "Назад", а также есть один или несколько `Fragment` свернет во фрагменте стека.
 
 ### <a name="multiple-activities"></a>Несколько действий
 
-Если приложение состоит из нескольких действий [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производных страниц могут быть внедрены в каждое из действий. В этом сценарии `Forms.Init` метод должны вызываться только в `OnCreate` переопределить первого `Activity` , внедряет Xamarin.Forms `ContentPage`. Однако при этом существуют следующие последствия:
+Если приложение состоит из нескольких действий [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производных страниц могут быть внедрены в каждое из действий. В этом случае `Forms.Init` метод должны вызываться только в `OnCreate` переопределить первого `Activity` , внедряет Xamarin.Forms `ContentPage`. Тем не менее это имеет следующие последствия:
 
 - Значение `Xamarin.Forms.Color.Accent` будет взято из `Activity` вызвавшую `Forms.Init` метод.
-- Значение `Xamarin.Forms.Application.Current` будет связан с `Activity` вызвавшую `Forms.Init` метод.
+- Значение `Xamarin.Forms.Application.Current` будут связаны с `Activity` вызвавшую `Forms.Init` метод.
 
 ### <a name="choosing-a-file"></a>Выбор файла
 
-При внедрении [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производный страницы, использующей [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) , требуется для поддержки HTML «Выберите файл» кнопку, `Activity` необходимо переопределить `OnActivityResult` метод:
+При внедрении [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производным страницы, использующей [ `WebView` ](xref:Xamarin.Forms.WebView) , требуется для поддержки HTML «Выбрать файл» кнопки, `Activity` необходимо переопределить `OnActivityResult` метод:
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -243,9 +243,9 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ## <a name="uwp"></a>UWP
 
-На UWP, собственный `App` класс обычно является местом для выполнения приложения при запуске задач, связанных с. Xamarin.Forms обычно инициализации, в приложениях Xamarin.Forms UWP в `OnLaunched` переопределить в машинном коде `App` класса, чтобы передать `LaunchActivatedEventArgs` аргумент `Forms.Init` метод. По этой причине собственных приложений UWP, использующие Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производном страницы проще всего можно вызвать `Forms.Init` метод `App.OnLaunched` метод.
+На UWP, собственного `App` класса обычно является местом для выполнения приложения задач, связанных с запуска. Xamarin.Forms обычно инициализируется, в приложениях универсальной платформы Windows в `OnLaunched` переопределить в собственной `App` класс, для передачи `LaunchActivatedEventArgs` аргумент `Forms.Init` метод. По этой причине собственных приложений универсальной платформы Windows, которые используют Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производных от page, проще всего можно вызвать `Forms.Init` метода из `App.OnLaunched` метод.
 
-По умолчанию, собственный `App` класса запускает `MainPage` класс как первая страница приложения. В следующем примере кода показан `MainPage` класса в примере приложения:
+По умолчанию, собственного `App` класса запускает `MainPage` класс как первая страница приложения. В следующем коде показано в примере `MainPage` класс в приложении-примере:
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -266,14 +266,14 @@ public sealed partial class MainPage : Page
 `MainPage` Конструктор выполняет следующие задачи:
 
 - На странице включено кэширование, чтобы новый `MainPage` не создается, когда пользователь переходит на страницу.
-- Ссылку на `MainPage` класс хранится в `static` `Instance` поля. Это позволит обеспечить механизм для других классов для вызова методов, определенных в `MainPage` класса.
-- `PhonewordPage` Класса, который является Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производный страницы, определенные в XAML, создается и преобразовать `FrameworkElement` с помощью `CreateFrameworkElement` метод расширения, а затем задайте, как содержимое `MainPage` класса.
+- Ссылку на `MainPage` класса хранится в `static` `Instance` поля. Это позволяет предоставить механизм для других классов для вызова методов, определенных в `MainPage` класса.
+- `PhonewordPage` Класс, являющийся Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производным страницы, определенные в XAML, создается и преобразовать `FrameworkElement` с помощью `CreateFrameworkElement` метод расширения, а затем задайте как содержимое `MainPage` класса.
 
-Один раз `MainPage` конструктор выполнен, определен пользовательский Интерфейс в Xamarin.Forms `PhonewordPage` будет отображаться класса, как показано на следующем снимке экрана:
+Один раз `MainPage` конструктор выполнен, пользовательский Интерфейс определен в Xamarin.Forms `PhonewordPage` класс будет отображаться, как показано на следующем снимке экрана:
 
-[![](native-forms-images/uwp-phonewordpage.png "UWP PhonewordPage")](native-forms-images/uwp-phonewordpage-large.png#lightbox "UWP PhonewordPage")
+[![](native-forms-images/uwp-phonewordpage.png "UWP PhonewordPage")](native-forms-images/uwp-phonewordpage-large.png#lightbox "PhonewordPage универсальной платформы Windows")
 
-Взаимодействие с пользовательским Интерфейсом, например, коснувшись [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), приведет к обработчиков событий в `PhonewordPage` выполнение кода. Например, когда пользователь касается **журнал звонков** выполняется кнопки следующий обработчик событий:
+Взаимодействие с пользовательским Интерфейсом, например, коснувшись [ `Button` ](xref:Xamarin.Forms.Button), приведет к обработчиков событий в `PhonewordPage` выполнение кода. Например, когда пользователь касается **Call History** выполняется следующий обработчик событий кнопки:
 
 ```csharp
 void OnCallHistory(object sender, EventArgs e)
@@ -282,7 +282,7 @@ void OnCallHistory(object sender, EventArgs e)
 }
 ```
 
-`static` `MainPage.Instance` Поле позволяет `MainPage.NavigateToCallHistoryPage` вызываемого метода, как показано в следующем примере кода:
+`static` `MainPage.Instance` Поле позволяет `MainPage.NavigateToCallHistoryPage` метод должен быть вызван, как показано в следующем примере кода:
 
 ```csharp
 public void NavigateToCallHistoryPage()
@@ -291,15 +291,15 @@ public void NavigateToCallHistoryPage()
 }
 ```
 
-Навигация в UWP обычно выполняется с `Frame.Navigate` метод, который принимает `Page` аргумент. Определяет Xamarin.Forms `Frame.Navigate` метод расширения, который принимает [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производного экземпляра страницы. Таким образом, когда `NavigateToCallHistoryPage` выполняется метод, пользовательский Интерфейс, определенный в Xamarin.Forms `CallHistoryPage` будет отображаться, как показано на следующем снимке экрана:
+Навигация в универсальной платформы Windows обычно выполняется с помощью `Frame.Navigate` метод, который принимает `Page` аргумент. Xamarin.Forms определяет `Frame.Navigate` метод расширения, который принимает [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производный экземпляр страницы. Таким образом, когда `NavigateToCallHistoryPage` выполняет метод, пользовательский Интерфейс, определенный в Xamarin.Forms `CallHistoryPage` будет отображаться, как показано на следующем снимке экрана:
 
-[![](native-forms-images/uwp-callhistorypage.png "UWP CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png#lightbox "UWP CallHistoryPage")
+[![](native-forms-images/uwp-callhistorypage.png "UWP CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png#lightbox "CallHistoryPage универсальной платформы Windows")
 
-При `CallHistoryPage` отображается, коснувшись обратной стрелки отобразит `FrameworkElement` для `CallHistoryPage` из стека назад в приложении, возвращая пользователю `FrameworkElement` для `PhonewordPage` класса.
+При `CallHistoryPage` отображается, коснувшись обратной стрелки появится всплывающее `FrameworkElement` для `CallHistoryPage` из стек переходов назад в приложении, возвращая пользователю `FrameworkElement` для `PhonewordPage` класса.
 
 ### <a name="enabling-back-navigation-support"></a>Включение поддержки переходов назад
 
-На UWP приложения необходимо включить переходов назад все оборудование и программное обеспечение назад кнопками для различных устройств. Это можно сделать путем регистрации обработчика событий для `BackRequested` событие, которое может быть выполнена в `OnLaunched` метод в машинном коде `App` класса:
+На универсальной платформы Windows приложения необходимо включить переходов назад для всех оборудования и программного обеспечения назад кнопок, на другое устройство конструктивными. Это можно сделать, зарегистрировав обработчик событий для `BackRequested` событие, которое может быть выполнена в `OnLaunched` метод в собственной `App` класса:
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -318,7 +318,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-При запуске приложения `GetForCurrentView` метод извлекает `SystemNavigationManager` объект связанный с текущим представлением, а затем регистрирует обработчик событий для `BackRequested` события. Приложение получает это событие, только если его активным, а в ответ, вызывает `OnBackRequested` обработчик событий:
+При запуске приложения, `GetForCurrentView` метод извлекает `SystemNavigationManager` объект связанный с текущим представлением, а затем регистрирует обработчик событий для `BackRequested` событий. Приложение получает это событие, только если его активным, а в ответ, вызывает `OnBackRequested` обработчик событий:
 
 ```csharp
 void OnBackRequested(object sender, BackRequestedEventArgs e)
@@ -332,9 +332,9 @@ void OnBackRequested(object sender, BackRequestedEventArgs e)
 }
 ```
 
-`OnBackRequested` Вызовов обработчика событий `GoBack` метода на корневой кадр приложения и наборы `BackRequestedEventArgs.Handled` свойства `true` пометить событие как обработанное. Чтобы пометить событие как обработанное может привести к системе покидая приложения (на семейства мобильных устройств) или пропуск события (семейство устройств рабочего стола).
+`OnBackRequested` Вызовов обработчика событий `GoBack` метод корневого фрейма приложения и наборы `BackRequestedEventArgs.Handled` свойства `true` пометить событие как обработанное. Пометить событие как обработанное может появиться в системе или события (семейство настольных устройств) в переходе от приложения (на семейства мобильных устройств).
 
-Приложение зависит от системы, предоставленной кнопка "Назад" на телефоне, но выбирает, нужно ли отображать кнопки "Назад" в строке заголовка на настольных компьютеров. Это достигается путем установки `AppViewBackButtonVisibility` в одно из `AppViewBackButtonVisibility` значений перечисления:
+Приложение полагается на предоставленном системой кнопки возврата на телефоне, но выбирает, нужно ли отображать кнопки "Назад" в строке заголовка для настольных компьютеров. Это достигается путем установки `AppViewBackButtonVisibility` задается одно из `AppViewBackButtonVisibility` значений перечисления:
 
 ```csharp
 void OnNavigated(object sender, NavigationEventArgs e)
@@ -344,13 +344,13 @@ void OnNavigated(object sender, NavigationEventArgs e)
 }
 ```
 
-`OnNavigated` Обработчик событий, который выполняется в ответ на `Navigated` события, обновляет видимость заголовка кнопки "Назад", когда происходит переход на страницу. Благодаря данному Назад кнопка панели заголовка отображается, если в приложении стек не пуст, либо удален из строки заголовка, если в приложении стек пуст.
+`OnNavigated` Обработчик событий, который выполняется в ответ на `Navigated` события, обновляет видимость заголовка окна кнопки "Назад", когда происходит переход по страницам. Это гарантирует, что Назад кнопка панели заголовка является видимым, если стек переходов назад в приложении не является пустым или удалены из заголовка, если стек переходов назад в приложении является пустым.
 
-Дополнительные сведения о поддержке переходов назад на UWP в разделе [журнал переходов и обратной навигации для приложений UWP](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/).
+Дополнительные сведения о поддержке переходов назад на UWP, см. в разделе [истории переходов и обратной навигации для приложений UWP](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/).
 
 ## <a name="summary"></a>Сводка
 
-Собственный формы позволяют Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производный страниц для использования собственных проектов Xamarin.iOS, Xamarin.Android и универсальной платформы Windows (UWP). Можно использовать в собственных проектах `ContentPage`-производный страниц, которые напрямую добавляются в проект или из проекта .NET Standard библиотеки или общий проект. В этой статье описано, как использовать `ContentPage`-производный страниц, которые напрямую добавляются в собственных проектах, а также для перемещения между ними.
+Исходные формы разрешить Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производным страниц для использования в собственных проектах Xamarin.iOS, Xamarin.Android и универсальной платформы Windows (UWP). Способные подключаться к собственным проектам `ContentPage`-производным страниц, которые добавляются непосредственно в проект, или из проекта библиотеки .NET Standard и общий проект. В этой статье описано, как использовать `ContentPage`-производным страниц, которые напрямую добавляются в собственные проекты, а также перемещаться между ними.
 
 
 ## <a name="related-links"></a>Связанные ссылки

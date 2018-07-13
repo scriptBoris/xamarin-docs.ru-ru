@@ -1,26 +1,26 @@
 ---
-title: Добавление распознавателя жестом сжатия
-description: В этой статье объясняется, как использовать жест жестом сжатия для выполнения интерактивных масштаба изображения на месте жестом сжатия.
+title: Добавление распознавателя жестов жестом сжатия
+description: В этой статье объясняется, как использовать жест «щипок» для выполнения интерактивного масштабирования изображения в расположении жестом сжатия.
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 3600a8bf059bf29429cce35a233cc6618daa4d79
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 37befdcd4ccbcd49e3cebda92d55ae6f70da2ad6
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241781"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998707"
 ---
-# <a name="adding-a-pinch-gesture-recognizer"></a>Добавление распознавателя жестом сжатия
+# <a name="adding-a-pinch-gesture-recognizer"></a>Добавление распознавателя жестов жестом сжатия
 
-_Жест сжатие используется для выполнения интерактивных масштаба и реализуется с помощью класса PinchGestureRecognizer. Обычный сценарий для жестов жестом сжатия — для выполнения интерактивных масштаба изображения на месте жестом сжатия. Это достигается путем масштабирования окна просмотра содержимого и описанные в этой статье._
+_Жест «щипок» используется для выполнения интерактивного масштабирования и реализуется с помощью класса PinchGestureRecognizer. Распространенный сценарий для жест «щипок» — для выполнения интерактивного масштабирования изображения в расположении жестом сжатия. Это достигается путем масштабирования содержимого окна просмотра и демонстрируется в этой статье._
 
 ## <a name="overview"></a>Обзор
 
-Чтобы сделать элемент пользовательского интерфейса масштабируемым с жестом жестом сжатия, создать [ `PinchGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/) экземпляра, обрабатывать [ `PinchUpdated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.PinchGestureRecognizer.PinchUpdated/) события, и добавьте распознаватель жестов для [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) коллекции элемента пользовательского интерфейса. В следующем примере кода показан `PinchGestureRecognizer` присоединяется к [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) элемента:
+Чтобы сделать элемент пользовательского интерфейса, масштабируемый с жест «щипок», создать [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) экземпляра, обрабатывать [ `PinchUpdated` ](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) событий, и добавьте новый распознаватель жестов для [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) коллекции элемента пользовательского интерфейса. В следующем коде показано в примере `PinchGestureRecognizer` подключен к [ `Image` ](xref:Xamarin.Forms.Image) элемент:
 
 ```csharp
 var pinchGesture = new PinchGestureRecognizer();
@@ -40,7 +40,7 @@ image.GestureRecognizers.Add(pinchGesture);
 </Image>
 ```
 
-Код для `OnPinchUpdated` затем добавляется обработчик событий в файл кода:
+Код для `OnPinchUpdated` обработчик событий добавляется в файл с выделенным кодом:
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -51,7 +51,7 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 
 ## <a name="creating-a-pinchtozoom-container"></a>Создание контейнера PinchToZoom
 
-Обработка жестов жестом сжатия для выполнения операции масштабирования требует некоторых математических для преобразования пользовательского интерфейса. Этот раздел содержит обобщенный вспомогательного класса для выполнения математических операций, который может использоваться для интерактивного изменения масштаба любой элемент пользовательского интерфейса. Следующий пример кода демонстрирует класс `PinchToZoomContainer`:
+Обработка жест «щипок», чтобы выполнить операцию масштабирования требуются некоторые расчеты для преобразования пользовательского интерфейса. Этот раздел содержит универсальный вспомогательный класс для выполнения математических операций, который может использоваться для интерактивного изменения масштаба любой элемент пользовательского интерфейса. Следующий пример кода демонстрирует класс `PinchToZoomContainer`:
 
 ```csharp
 public class PinchToZoomContainer : ContentView
@@ -72,7 +72,7 @@ public class PinchToZoomContainer : ContentView
 }
 ```
 
-Этот класс может быть перенесено вокруг элемента пользовательского интерфейса, чтобы жестов сжатие будет увеличен перенесенного элемента. В следующем примере показан код XAML `PinchToZoomContainer` упаковки [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) элемента:
+Этот класс можно обернуть вокруг элемента пользовательского интерфейса таким образом, жест «щипок» будет масштаб элемент оболочку пользовательского интерфейса. В следующем примере показан код XAML `PinchToZoomContainer` упаковки [ `Image` ](xref:Xamarin.Forms.Image) элемент:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,7 +91,7 @@ public class PinchToZoomContainer : ContentView
 </ContentPage>
 ```
 
-В следующем примере кода показан способ `PinchToZoomContainer` заключает в оболочку [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) элемента на странице C#:
+В следующем примере кода показано как `PinchToZoomContainer` заключает в оболочку [ `Image` ](xref:Xamarin.Forms.Image) элемента на странице C#:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -110,7 +110,7 @@ public class HomePageCS : ContentPage
 }
 ```
 
-Когда [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) элемент получает жест жестом сжатия, отображаемому изображению будет быть увеличения in или out. Выполняется увеличение `PinchZoomContainer.OnPinchUpdated` метода, как показано в следующем примере кода:
+Когда [ `Image` ](xref:Xamarin.Forms.Image) элемент получает жест жестом сжатия, изображение, показываемое будет быть увеличена или уменьшить. Масштабирование выполняется путем `PinchZoomContainer.OnPinchUpdated` метод, который показан в следующем примере кода:
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -160,15 +160,15 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-Этот метод обновляет уровень масштаба оболочку элемента основании жестом сжатия жест пользователя. Это достигается с помощью значения [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale/), [ `ScaleOrigin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin/) и [ `Status` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.Status/) свойства [ `PinchGestureUpdatedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureUpdatedEventArgs/) для расчета коэффициента масштабирования, применяемый в источнике жестов жестом сжатия. Оболочку элемента затем развернуто в источнике жестов жестом сжатия, установив его [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/), [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/), и [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) вычисляемые значения свойств.
+Этот метод обновляет уровень масштаба элементом оболочку пользовательского интерфейса, в соответствии с жестом сжатия жест пользователя. Это достигается с помощью значения [ `Scale` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale), [ `ScaleOrigin` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) и [ `Status` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) свойства [ `PinchGestureUpdatedEventArgs` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) экземпляра, для которого требуется вычислить коэффициент масштабирования, применяемый в начале координат жест «щипок». Элемент оболочку пользовательского затем развернуто в начале координат жест «щипок», задав его [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX), [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY), и [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) вычисляемые значения свойств.
 
 ## <a name="summary"></a>Сводка
 
-Используется для выполнения интерактивных масштаба жестов жестом сжатия и реализуется с помощью [ `PinchGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/) класса.
+Жест «щипок» используется для выполнения интерактивного масштабирования и реализуется с помощью [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) класса.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [PinchGesture (пример)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PinchGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [PinchGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [PinchGestureRecognizer](xref:Xamarin.Forms.PinchGestureRecognizer)

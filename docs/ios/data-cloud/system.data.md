@@ -1,21 +1,21 @@
 ---
 title: System.Data в Xamarin.iOS
-description: В этом документе описывается использование System.Data и Mono.Data.Sqlite.dll для доступа к данным приложения Xamarin.iOS SQLite.
+description: В этом документе описывается использование System.Data и Mono.Data.Sqlite.dll для доступа к данным SQLite в приложении Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: f20bdbdb9fe0d25e1ba545633e271af912aab3ba
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 183079c150ad4df05424d4dbf2980a307a889352
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784720"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997202"
 ---
 # <a name="systemdata-in-xamarinios"></a>System.Data в Xamarin.iOS
 
-Xamarin.iOS 8.10 добавляет поддержку для [System.Data](https://developer.xamarin.com/api/namespace/System.Data/), в том числе `Mono.Data.Sqlite.dll` поставщика ADO.NET. Поддержка включает в себя добавление следующих [сборки](~/cross-platform/internals/available-assemblies.md):
+Xamarin.iOS 8.10 добавлена поддержка [System.Data](xref:System.Data), в том числе `Mono.Data.Sqlite.dll` поставщика ADO.NET. Поддержка включает в себя добавление следующих [сборки](~/cross-platform/internals/available-assemblies.md):
 
 -  `System.Data.dll`
 -  `System.Data.Service.Client.dll`
@@ -27,7 +27,7 @@ Xamarin.iOS 8.10 добавляет поддержку для [System.Data](http
 
 ## <a name="example"></a>Пример
 
-Следующая программа создает базу данных в `Documents/mydb.db3`, и если база данных не существует ранее он заполняется с образцами данных. Затем запрашивается базы данных, с записывать вывод `stderr`.
+Следующая программа создает базу данных в `Documents/mydb.db3`, и если базы данных не существует, ранее он заполняется с образцами данных. Затем запрашивается базы данных, с помощью выходных данных, записанных `stderr`.
 
 ### <a name="add-references"></a>Добавление ссылок
 
@@ -37,7 +37,7 @@ Xamarin.iOS 8.10 добавляет поддержку для [System.Data](http
 
 ### <a name="sample-code"></a>Пример кода
 
-Ниже приведен простой пример создания таблицы и их вставка строк с помощью команд SQL:
+Ниже приведен простой пример. Создание таблицы и вставка строк с применением внедренные команды SQL:
 
 ```csharp
 using System;
@@ -107,12 +107,12 @@ class Demo {
 ```
 
 > [!IMPORTANT]
-> Как упоминалось в приведенном выше примере, считается плохой практикой для внедрения строки в командах SQL, поскольку делает код уязвимым для [атаки SQL injection](http://en.wikipedia.org/wiki/SQL_injection).
+> Как упоминалось в приведенном выше примере, не рекомендуется, чтобы внедрять строки в командах SQL, так как он делает код уязвимым для [путем внедрения кода SQL](http://en.wikipedia.org/wiki/SQL_injection).
 
 
 ### <a name="using-command-parameters"></a>С помощью параметров команды
 
-Ниже показано использование параметров команды вставляемый текст, введенный пользователем безопасно в базу данных (даже если текст содержит специальные символы SQL, такие как апостроф один):
+Приведенный ниже показано использование параметров команды вставляемый введенный пользователем текст безопасно в базе данных (даже если текст содержит специальные символы SQL, такие как апостроф один):
 
 ```csharp
 // user input from Textbox control
@@ -141,32 +141,32 @@ using (var addCmd = conn.CreateCommand ()) {
 
 Функциональные возможности, отсутствующие на **System.Data.dll** состоит из:
 
--  Любое требование [System.CodeDom](https://developer.xamarin.com/api/namespace/System.CodeDom/) (например)  [System.Data.TypedDataSetGenerator](https://developer.xamarin.com/api/type/System.Data.TypedDataSetGenerator/) )
--  XML-файл конфигурации файл поддержки (например)  [System.Data.Common.DbProviderConfigurationHandler](https://developer.xamarin.com/api/type/System.Data.Common.DbProviderConfigurationHandler/) )
--   [System.Data.Common.DbProviderFactories](https://developer.xamarin.com/api/type/System.Data.Common.DbProviderFactories/) (зависит от поддержки файла конфигурации XML)
--   [System.Data.OleDb](https://developer.xamarin.com/api/namespace/System.Data.OleDb/)
--   [System.Data.Odbc](https://developer.xamarin.com/api/namespace/System.Data.Odbc/)
--  `System.EnterpriseServices.dll` Зависимость — *удалены* из `System.Data.dll` , что может привести к удалению [SqlConnection.EnlistDistributedTransaction(ITransaction)](https://developer.xamarin.com/api/member/System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction/(System.EnterpriseServices.ITransaction)) метод.
+-  Все, что требование [System.CodeDom](xref:System.CodeDom) (например)  [System.Data.TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
+-  XML-ФАЙЛ конфигурации файл поддержки (например)  [System.Data.Common.DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) )
+-   [System.Data.Common.DbProviderFactories](xref:System.Data.Common.DbProviderFactories) (зависит от поддержки файла конфигурации XML)
+-   [System.Data.OleDb](xref:System.Data.OleDb)
+-   [System.Data.Odbc](xref:System.Data.Odbc)
+-  `System.EnterpriseServices.dll` Зависимость была *удалены* из `System.Data.dll` , что может привести к удалению [SqlConnection.EnlistDistributedTransaction(ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*) метод.
 
 
 <a name="Mono.Data.Sqlite" />
 
 ### <a name="monodatasqlite"></a>Mono.Data.Sqlite
 
-В то же время **Mono.Data.Sqlite.dll** обязанность вносить изменения в исходный код, но вместо этого может быть узла ряд *среды выполнения* проблемы с момента `Mono.Data.Sqlite.dll` привязывает SQLite 3.5. iOS 8, в свою очередь, поставляется с SQLite 3.8.5. Достаточно, чтобы сказать между двумя версиями изменились некоторые вещи.
+В то же время **Mono.Data.Sqlite.dll** обязанность без изменения исходного кода, но вместо этого может должна быть размещена ряд *среды выполнения* проблемы с момента `Mono.Data.Sqlite.dll` привязывает SQLite 3.5. iOS 8, в то же время поставляется с SQLite 3.8.5. Достаточно сказать между двумя версиями изменились некоторые принципы.
 
-Старая версия iOS поставляются со следующими версиями SQLite:
+Более старые версии iOS поставляются со следующими версиями SQLite:
 
 - **iOS 7** -версии 3.7.13.
 - **iOS 6** -версии 3.7.13.
 - **iOS 5** -версии 3.7.7.
-- **iOS 4** -версии 3.6.22.
+- **операций ввода-вывода 4** -версии 3.6.22.
 
-По-видимому, наиболее распространенные проблемы, связанные с запросом схемы базы данных, например определение во время выполнения, в которой столбцы существует для данной таблицы, такие как `Mono.Data.Sqlite.SqliteConnection.GetSchema` (переопределение [DbConnection.GetSchema](https://developer.xamarin.com/api/member/System.Data.Common.DbConnection.GetSchema/)) и `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` () переопределение [DbDataReader.GetSchemaTable](https://developer.xamarin.com/api/member/System.Data.Common.DbDataReader.GetSchemaTable/)). Иными словами, кажется, что-либо с помощью [DataTable](https://developer.xamarin.com/api/type/System.Data.DataTable/) маловероятно, что для работы.
+Наиболее распространенных проблем могут быть связаны с запрос для схемы базы данных, например определение во время выполнения, в которой столбцы существуют на данной таблице, такие как `Mono.Data.Sqlite.SqliteConnection.GetSchema` (переопределение [DbConnection.GetSchema](xref:System.Data.Common.DbConnection.GetSchema) и `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` (переопределение [DbDataReader.GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable). Короче говоря, кажется, что-либо с помощью [DataTable](xref:System.Data.DataTable) не будет работать.
 
 <a name="Data_Binding" />
 
 ## <a name="data-binding"></a>Привязка данных
 
-Привязка данных в настоящее время не поддерживается.
+В настоящее время не поддерживается привязка данных.
 

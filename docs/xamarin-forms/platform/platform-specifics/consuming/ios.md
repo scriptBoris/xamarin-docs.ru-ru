@@ -6,13 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/30/2018
-ms.openlocfilehash: be378a60a9d9a7b206b64f07ee70edb432cec8e3
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.date: 07/11/2018
+ms.openlocfilehash: 68a38fc43cd744e0382f35baa83643a9f0f7e53d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935658"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998990"
 ---
 # <a name="ios-platform-specifics"></a>Особенности платформы iOS
 
@@ -20,23 +20,25 @@ _Особенности платформы позволяют использов
 
 В iOS Xamarin.Forms содержит следующие особенности платформы:
 
-- Размытие поддержки для любого [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/). Дополнительные сведения см. в разделе [применения размытия](#blur).
+- Размытие поддержки для любого [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Дополнительные сведения см. в разделе [применения размытия](#blur).
 - Управление, отображается ли заголовок страницы как крупным заголовком на панели навигации страницы. Дополнительные сведения см. в разделе [отображения крупных названий](#large_title).
 - Обеспечение содержимое этой страницы находится на области экрана, которое безопасно для всех устройств iOS. Дополнительные сведения см. в разделе [включение безопасного направляющая макета области](#safe_area_layout).
 - Панель навигации прозрачным. Дополнительные сведения см. в разделе [внесения прозрачные панели навигации](#translucent_navigation_bar).
-- Управление цветом ли текст строки состояния на [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) настраивается в соответствии с яркость панели навигации. Дополнительные сведения см. в разделе [Настройка цветовой режим текст строки состояния](#status_bar_color_mode).
-- Обеспечение, введена текст встраивается в [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) , корректируя размер шрифта. Дополнительные сведения см. в разделе [увеличением размера шрифта записи](#adjust_font_size).
-- Управление, когда происходит выбор элементов в [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/). Дополнительные сведения см. в разделе [управление Выбор элемента](#picker_update_mode).
-- Установка видимость полосы состояния [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Дополнительные сведения см. в разделе [установки видимость полосы состояния на странице](#set_status_bar_visibility).
-- Управление ли [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) жест касания обрабатывает или передает его на его содержимое. Дополнительные сведения см. в разделе [задержки содержимого штрихи в ScrollView](#delay_content_touches).
+- Управление цветом ли текст строки состояния на [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) настраивается в соответствии с яркость панели навигации. Дополнительные сведения см. в разделе [Настройка цветовой режим текст строки состояния](#status_bar_color_mode).
+- Обеспечение, введена текст встраивается в [ `Entry` ](xref:Xamarin.Forms.Entry) , корректируя размер шрифта. Дополнительные сведения см. в разделе [увеличением размера шрифта записи](#adjust_font_size).
+- Управление, когда происходит выбор элементов в [ `Picker` ](xref:Xamarin.Forms.Picker). Дополнительные сведения см. в разделе [управление Выбор элемента](#picker_update_mode).
+- Установка видимость полосы состояния [ `Page` ](xref:Xamarin.Forms.Page). Дополнительные сведения см. в разделе [установки видимость полосы состояния на странице](#set_status_bar_visibility).
+- Управление ли [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) жест касания обрабатывает или передает его на его содержимое. Дополнительные сведения см. в разделе [задержки содержимого штрихи в ScrollView](#delay_content_touches).
 - Установка стиль разделителя [ `ListView` ](xref:Xamarin.Forms.ListView). Дополнительные сведения см. в разделе [параметр стиль разделителя на ListView](#listview-separatorstyle).
 - Отключение режима устаревших цвет в поддерживаемой [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Дополнительные сведения см. в разделе [отключение цветовой режим прежних версий](#legacy-color-mode).
+- Включение тень [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Дополнительные сведения см. в разделе [Включение падающую тень](#drop-shadow).
+- Включение [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) в области прокрутки для записи и совместно использовать жест pan с представления с прокруткой. Дополнительные сведения см. в разделе [Включение одновременных распознавания жестов Pan](#simultaneous-pan-gesture).
 
 <a name="blur" />
 
 ## <a name="applying-blur"></a>Применение размытия
 
-Этой платформы используется Размытие содержимого располагаются под ним, а также используется в XAML, задав [ `VisualElement.BlurEffect` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty/) присоединенное свойство в значение [ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/) перечисления:
+Этой платформы используется Размытие содержимого располагаются под ним, а также используется в XAML, задав [ `VisualElement.BlurEffect` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty) присоединенное свойство в значение [ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) перечисления:
 
 ```xaml
 <ContentPage ...
@@ -60,11 +62,14 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 ```
 
-`BoxView.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `VisualElement.UseBlurEffect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.UseBlurEffect/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, используется для применения эффекта размытия, с помощью [ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) перечисления, предоставляя четыре значения: [ `None` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None), [ `ExtraLight` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight), [ `Light` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light), и [ `Dark` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark).
+`BoxView.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `VisualElement.UseBlurEffect` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.UseBlurEffect(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle)) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, используется для применения эффекта размытия, с помощью [ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) перечисления, предоставляя четыре значения: [ `None` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None), [ `ExtraLight` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight), [ `Light` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light), и [ `Dark` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark).
 
-Результатом является то, что указанный [ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/) применяется к [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) какие Размытие, экземпляр [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) располагаются под ним:
+Результатом является то, что указанный [ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) применяется к [ `BoxView` ](xref:Xamarin.Forms.BoxView) какие Размытие, экземпляр [ `Image` ](xref:Xamarin.Forms.Image) располагаются под ним:
 
 ![](ios-images/blur-effect.png "Чтобы минимизировать эффект от платформы")
+
+> [!NOTE]
+> При добавлении эффект размытия для [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), события касания будет по-прежнему получать `VisualElement`.
 
 <a name="large_title" />
 
@@ -93,9 +98,9 @@ var navigationPage = new Xamarin.Forms.NavigationPage(new iOSLargeTitlePageCS())
 navigationPage.On<iOS>().SetPrefersLargeTitles(true);
 ```
 
-`NavigationPage.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `NavigationPage.SetPrefersLargeTitle` Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) пространства имен, управляющий включением крупных названий.
+`NavigationPage.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `NavigationPage.SetPrefersLargeTitle` Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, управляющий включением крупных названий.
 
-Условии, что включены крупных названий [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/), все страницы в стеке навигации будут отображены в крупных названий. Это поведение можно переопределить на страницах, задав `Page.LargeTitleDisplay` присоединенное свойство в значение `LargeTitleDisplayMode` перечисления:
+Условии, что включены крупных названий [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage), все страницы в стеке навигации будут отображены в крупных названий. Это поведение можно переопределить на страницах, задав `Page.LargeTitleDisplay` присоединенное свойство в значение `LargeTitleDisplayMode` перечисления:
 
 ```xaml
 <ContentPage ...
@@ -124,7 +129,7 @@ public class iOSLargeTitlePageCS : ContentPage
 }
 ```
 
-`Page.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `Page.SetLargeTitleDisplay` Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) пространства имен, управляет поведением большого заголовка на [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), с помощью `LargeTitleDisplayMode` перечисления, предоставляя три возможных значения:
+`Page.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `Page.SetLargeTitleDisplay` Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, управляет поведением большого заголовка на [ `Page` ](xref:Xamarin.Forms.Page), с помощью `LargeTitleDisplayMode` перечисления, предоставляя три возможных значения:
 
 - `Always` — Принудительное панели навигации и шрифт размер для использования большого формата.
 - `Automatic` — использовать один и тот же стиль (больших или маленьких) с предыдущим элементом в стеке навигации.
@@ -147,7 +152,7 @@ switch (On<iOS>().LargeTitleDisplay())
 }
 ```
 
-Результатом является то, что указанный `LargeTitleDisplayMode` применяется к [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), которое управляет поведением большого заголовка:
+Результатом является то, что указанный `LargeTitleDisplayMode` применяется к [ `Page` ](xref:Xamarin.Forms.Page), которое управляет поведением большого заголовка:
 
 ![](ios-images/large-title.png "Чтобы минимизировать эффект от платформы")
 
@@ -178,16 +183,16 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 On<iOS>().SetUseSafeArea(true);
 ```
 
-`Page.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `Page.SetUseSafeArea` Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) пространства имен, определяет, включена ли направляющая макета безопасной области.
+`Page.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `Page.SetUseSafeArea` Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, определяет, включена ли направляющая макета безопасной области.
 
 Результатом является то, что содержимое страницы может располагаться на той части экрана, которое безопасно для всех iPhone:
 
 [![](ios-images/safe-area-layout.png "Направляющая макета безопасной области")](ios-images/safe-area-layout-large.png#lightbox "направляющая макета безопасной области")
 
 > [!NOTE]
-> Безопасные области, определяемой Apple, используемый для задания в Xamarin.Forms [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) свойство и переопределяет все предыдущие значения этого свойства, которые были установлены.
+> Безопасные области, определяемой Apple, используемый для задания в Xamarin.Forms [ `Page.Padding` ](xref:Xamarin.Forms.Page.Padding) свойство и переопределяет все предыдущие значения этого свойства, которые были установлены.
 
-Безопасной области можно настраивать путем извлечения его [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) со значением `Page.SafeAreaInsets` метода из [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) пространства имен. Его можно изменить как требуется и переназначается `Padding` свойства в конструкторе страниц или [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing()/) переопределить:
+Безопасной области можно настраивать путем извлечения его [ `Thickness` ](xref:Xamarin.Forms.Thickness) со значением `Page.SafeAreaInsets` метода из [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен. Его можно изменить как требуется и переназначается `Padding` свойства в конструкторе страниц или [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) переопределить:
 
 ```csharp
 protected override void OnAppearing()
@@ -204,7 +209,7 @@ protected override void OnAppearing()
 
 ## <a name="making-the-navigation-bar-translucent"></a>Что делает прозрачным на панели навигации
 
-Используется для изменения прозрачности панели навигации этой платформы и обрабатывается в XAML, задав [ `NavigationPage.IsNavigationBarTranslucent` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty/) вложенное свойство, чтобы `boolean` значение:
+Используется для изменения прозрачности панели навигации этой платформы и обрабатывается в XAML, задав [ `NavigationPage.IsNavigationBarTranslucent` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty) вложенное свойство, чтобы `boolean` значение:
 
 ```xaml
 <NavigationPage ...
@@ -226,7 +231,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 (App.Current.MainPage as Xamarin.Forms.NavigationPage).On<iOS>().EnableTranslucentNavigationBar();
 ```
 
-`NavigationPage.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `NavigationPage.EnableTranslucentNavigationBar` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.EnableTranslucentNavigationBar/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) пространства имен, используется для выполнения на панели навигации прозрачным. Кроме того [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage/) в класс `Xamarin.Forms.PlatformConfiguration.iOSSpecific` пространство имен также содержит [ `DisableTranslucentNavigationBar` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.DisableTranslucentNavigationBar/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/) метод, который восстанавливает состояние по умолчанию, на панели навигации и [ `SetIsNavigationBarTranslucent` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetIsNavigationBarTranslucent/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/System.Boolean/) метод, который может использоваться для переключения прозрачность панель навигации, вызвав [ `IsNavigationBarTranslucent` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucent/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/) метод:
+`NavigationPage.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `NavigationPage.EnableTranslucentNavigationBar` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.EnableTranslucentNavigationBar(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, используется для выполнения на панели навигации прозрачным. Кроме того [ `NavigationPage` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage) в класс `Xamarin.Forms.PlatformConfiguration.iOSSpecific` пространство имен также содержит [ `DisableTranslucentNavigationBar` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.DisableTranslucentNavigationBar(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) метод, который восстанавливает состояние по умолчанию, на панели навигации и [ `SetIsNavigationBarTranslucent` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetIsNavigationBarTranslucent(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage},System.Boolean)) метод, который может использоваться для переключения прозрачность панель навигации, вызвав [ `IsNavigationBarTranslucent` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucent(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) метод:
 
 ```csharp
 (App.Current.MainPage as Xamarin.Forms.NavigationPage)
@@ -242,7 +247,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 ## <a name="adjusting-the-status-bar-text-color-mode"></a>Настройка строки текстовый режим цвета состояния
 
-Эта определяет специфические для платформы ли текст строки состояния цвета на [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) настраивается в соответствии с яркость панели навигации. Он используется в XAML, задав [ `NavigationPage.StatusBarTextColorMode` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty/) присоединенное свойство в значение [ `StatusBarTextColorMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/) перечисления:
+Эта определяет специфические для платформы ли текст строки состояния цвета на [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) настраивается в соответствии с яркость панели навигации. Он используется в XAML, задав [ `NavigationPage.StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty) присоединенное свойство в значение [ `StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) перечисления:
 
 ```xaml
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -287,14 +292,14 @@ IsPresentedChanged += (sender, e) =>
 };
 ```
 
-`NavigationPage.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `NavigationPage.SetStatusBarTextColorMode` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) пространства имен, элементы управления цветом ли текст строки состояния на [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) настраивается в соответствии с яркость панели навигации с [ `StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) перечисления, предоставляя два возможных значения:
+`NavigationPage.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `NavigationPage.SetStatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetStatusBarTextColorMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage},Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode)) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, элементы управления цветом ли текст строки состояния на [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) настраивается в соответствии с яркость панели навигации с [ `StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) перечисления, предоставляя два возможных значения:
 
 - [`DoNotAdjust`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.DoNotAdjust) — Указывает, что состояние цвет текста столбца не должно изменяться.
 - [`MatchNavigationBarTextLuminosity`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.MatchNavigationBarTextLuminosity) — Указывает, что строки цвет текста состояния должен искать яркость панели навигации.
 
-Кроме того [ `GetStatusBarTextColorMode` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.GetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/) метод может использоваться для получения текущего значения [ `StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) перечисления, который применяется к [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage).
+Кроме того [ `GetStatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.GetStatusBarTextColorMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) метод может использоваться для получения текущего значения [ `StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) перечисления, который применяется к [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage).
 
-Результатом является, строке цвета текста и состояния [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) можно изменить в соответствии с яркость панели навигации. В этом примере состояние изменения цвета текста строки как пользователь переключается между [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) и [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) страницы [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
+Результатом является, строке цвета текста и состояния [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) можно изменить в соответствии с яркость панели навигации. В этом примере состояние изменения цвета текста строки как пользователь переключается между [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) и [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) страницы [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
 
 ![](ios-images/status-bar-text-color-mode.png "Строка состояния текста цветов режим платформы")
 
@@ -302,7 +307,7 @@ IsPresentedChanged += (sender, e) =>
 
 ## <a name="adjusting-the-font-size-of-an-entry"></a>Изменение размера шрифта записи
 
-Этой платформы позволяет масштабировать размер шрифта [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) чтобы убедиться, что введено текст помещается в элемент управления. Он используется в XAML, задав [ `Entry.AdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty/) вложенное свойство, чтобы `boolean` значение:
+Этой платформы позволяет масштабировать размер шрифта [ `Entry` ](xref:Xamarin.Forms.Entry) чтобы убедиться, что введено текст помещается в элемент управления. Он используется в XAML, задав [ `Entry.AdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) вложенное свойство, чтобы `boolean` значение:
 
 ```xaml
 <ContentPage ...
@@ -327,13 +332,13 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 entry.On<iOS>().EnableAdjustsFontSizeToFitWidth();
 ```
 
-`Entry.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `Entry.EnableAdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.EnableAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) пространства имен, используется для масштабирования размер шрифта текста введено, чтобы убедиться, что она помещается в [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/). Кроме того [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry/) в класс `Xamarin.Forms.PlatformConfiguration.iOSSpecific` пространство имен также содержит [ `DisableAdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.DisableAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/) метод, который отключает этой платформой, и [ `SetAdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.SetAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/System.Boolean/) метод, который может использоваться для переключения размер шрифта, масштабирование, вызвав [ `AdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/) метод:
+`Entry.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `Entry.EnableAdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.EnableAdjustsFontSizeToFitWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry})) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, используется для масштабирования размер шрифта текста введено, чтобы убедиться, что она помещается в [ `Entry` ](xref:Xamarin.Forms.Entry). Кроме того [ `Entry` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry) в класс `Xamarin.Forms.PlatformConfiguration.iOSSpecific` пространство имен также содержит [ `DisableAdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.DisableAdjustsFontSizeToFitWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry})) метод, который отключает этой платформой, и [ `SetAdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.SetAdjustsFontSizeToFitWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry},System.Boolean)) метод, который может использоваться для переключения размер шрифта, масштабирование, вызвав [ `AdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry})) метод:
 
 ```csharp
 entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToFitWidth());
 ```
 
-Результатом является, размер шрифта [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) масштабируется, чтобы убедиться, что введено текст помещается в элемент управления:
+Результатом является, размер шрифта [ `Entry` ](xref:Xamarin.Forms.Entry) масштабируется, чтобы убедиться, что введено текст помещается в элемент управления:
 
 ![](ios-images/entry-font-size.png "Настроить запись шрифта размер платформы")
 
@@ -341,7 +346,7 @@ entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToF
 
 ## <a name="controlling-picker-item-selection"></a>Выбор элементов управления средства выбора
 
-Управляет этой платформы, при возникновении Выбор элементов в [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/), позволяя пользователю указать, что выбор элементов срабатывает при просмотре элементов в элементе управления или только в том случае, когда **сделать** нажата кнопка. Он используется в XAML, задав `Picker.UpdateMode` присоединенное свойство в значение `UpdateMode` перечисления:
+Управляет этой платформы, при возникновении Выбор элементов в [ `Picker` ](xref:Xamarin.Forms.Picker), позволяя пользователю указать, что выбор элементов срабатывает при просмотре элементов в элементе управления или только в том случае, когда **сделать** нажата кнопка. Он используется в XAML, задав `Picker.UpdateMode` присоединенное свойство в значение `UpdateMode` перечисления:
 
 ```xaml
 <ContentPage ...
@@ -365,10 +370,10 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 picker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
 ```
 
-`Picker.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `Picker.SetUpdateMode` Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) пространства имен, используется для управления, когда происходит выбор элементов, с помощью `UpdateMode` перечисления, предоставляя два возможных значения:
+`Picker.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `Picker.SetUpdateMode` Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, используется для управления, когда происходит выбор элементов, с помощью `UpdateMode` перечисления, предоставляя два возможных значения:
 
-- `Immediately` — Выбор элемента происходит, когда пользователь выбирает элементы в [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/). Это поведение по умолчанию в Xamarin.Forms.
-- `WhenFinished` — Выбор элементов только происходит, когда пользователь нажал **сделать** кнопку [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/).
+- `Immediately` — Выбор элемента происходит, когда пользователь выбирает элементы в [ `Picker` ](xref:Xamarin.Forms.Picker). Это поведение по умолчанию в Xamarin.Forms.
+- `WhenFinished` — Выбор элементов только происходит, когда пользователь нажал **сделать** кнопку [ `Picker` ](xref:Xamarin.Forms.Picker).
 
 Кроме того `SetUpdateMode` метод может использоваться для включения значений перечисления, вызвав `UpdateMode` метод, который возвращает текущий `UpdateMode`:
 
@@ -384,7 +389,7 @@ switch (picker.On<iOS>().UpdateMode())
 }
 ```
 
-Результатом является то, что указанный `UpdateMode` применяется к [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/), какие элементы управления, когда происходит выбор элементов:
+Результатом является то, что указанный `UpdateMode` применяется к [ `Picker` ](xref:Xamarin.Forms.Picker), какие элементы управления, когда происходит выбор элементов:
 
 [![](ios-images/picker-updatemode.png "Средство выбора UpdateMode специфические для платформы")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
 
@@ -392,7 +397,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 ## <a name="setting-the-status-bar-visibility-on-a-page"></a>Параметр в строке состояния видимости на странице
 
-Этой платформы позволяет настроить видимость для строки состояния на [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), а также возможность управлять как строка состояния или исключается из `Page`. Он используется в XAML, задав `Page.PrefersStatusBarHidden` присоединенное свойство в значение `StatusBarHiddenMode` перечисления и при необходимости `Page.PreferredStatusBarUpdateAnimation` присоединенное свойство в значение `UIStatusBarAnimation` перечисления:
+Этой платформы позволяет настроить видимость для строки состояния на [ `Page` ](xref:Xamarin.Forms.Page), а также возможность управлять как строка состояния или исключается из `Page`. Он используется в XAML, задав `Page.PrefersStatusBarHidden` присоединенное свойство в значение `StatusBarHiddenMode` перечисления и при необходимости `Page.PreferredStatusBarUpdateAnimation` присоединенное свойство в значение `UIStatusBarAnimation` перечисления:
 
 ```xaml
 <ContentPage ...
@@ -414,22 +419,22 @@ On<iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True)
          .SetPreferredStatusBarUpdateAnimation(UIStatusBarAnimation.Fade);
 ```
 
-`Page.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `Page.SetPrefersStatusBarHidden` Метод в `Xamarin.Forms.PlatformConfiguration.iOSSpecific` пространства имен, используемый для задания видимость строки состояния на [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) , указав одно из `StatusBarHiddenMode` значений перечисления: `Default`, `True` , или `False`. `StatusBarHiddenMode.True` И `StatusBarHiddenMode.False` видимость полосы состояния вне зависимости от ориентации устройства, вы задаете и `StatusBarHiddenMode.Default` значение скрывает строку состояния в среде по вертикали compact.
+`Page.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `Page.SetPrefersStatusBarHidden` Метод в `Xamarin.Forms.PlatformConfiguration.iOSSpecific` пространства имен, используемый для задания видимость строки состояния на [ `Page` ](xref:Xamarin.Forms.Page) , указав одно из `StatusBarHiddenMode` значений перечисления: `Default`, `True` , или `False`. `StatusBarHiddenMode.True` И `StatusBarHiddenMode.False` видимость полосы состояния вне зависимости от ориентации устройства, вы задаете и `StatusBarHiddenMode.Default` значение скрывает строку состояния в среде по вертикали compact.
 
-Результатом является, видимость строки состояния [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) можно задать:
+Результатом является, видимость строки состояния [ `Page` ](xref:Xamarin.Forms.Page) можно задать:
 
 ![](ios-images/hide-status-bar.png "Строка состояния видимости специфические для платформы")
 
 > [!NOTE]
-> На [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/), указанный `StatusBarHiddenMode` значение перечисления также будет обновить строку состояния на все дочерние страницы. Во всех остальных [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)-производные типы, указанного `StatusBarHiddenMode` значение перечисления будут обновлены только строке состояния на текущей странице.
+> На [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), указанный `StatusBarHiddenMode` значение перечисления также будет обновить строку состояния на все дочерние страницы. Во всех остальных [ `Page` ](xref:Xamarin.Forms.Page)-производные типы, указанного `StatusBarHiddenMode` значение перечисления будут обновлены только строке состояния на текущей странице.
 
-`Page.SetPreferredStatusBarUpdateAnimation` Метод используется для задания как в строке состояния или исключается из [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) , указав одно из `UIStatusBarAnimation` значений перечисления: `None`, `Fade`, или `Slide`. Если `Fade` или `Slide` указано значение перечисления, 0,25 второй анимации выполняются как строка состояния или исключается из `Page`.
+`Page.SetPreferredStatusBarUpdateAnimation` Метод используется для задания как в строке состояния или исключается из [ `Page` ](xref:Xamarin.Forms.Page) , указав одно из `UIStatusBarAnimation` значений перечисления: `None`, `Fade`, или `Slide`. Если `Fade` или `Slide` указано значение перечисления, 0,25 второй анимации выполняются как строка состояния или исключается из `Page`.
 
 <a name="delay_content_touches" />
 
 ## <a name="delaying-content-touches-in-a-scrollview"></a>Задержка содержимого штрихи в ScrollView
 
-Таймеру неявное активируется в том случае, когда начинается жест касания в [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) в iOS и `ScrollView` решает, в зависимости от действий пользователя в течение интервала таймера, он должен обрабатывать жест или передайте его на его содержимое. По умолчанию iOS `ScrollView` содержимого штрихи задержки, но это может вызвать проблемы в некоторых случаях при работе с `ScrollView` содержимое, не выиграть жест, когда это требуется. Таким образом, эта определяет специфические для платформы ли `ScrollView` жест касания обрабатывает или передает его на его содержимое. Он используется в XAML, задав `ScrollView.ShouldDelayContentTouches` вложенное свойство, чтобы `boolean` значение:
+Таймеру неявное активируется в том случае, когда начинается жест касания в [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) в iOS и `ScrollView` решает, в зависимости от действий пользователя в течение интервала таймера, он должен обрабатывать жест или передайте его на его содержимое. По умолчанию iOS `ScrollView` содержимого штрихи задержки, но это может вызвать проблемы в некоторых случаях при работе с `ScrollView` содержимое, не выиграть жест, когда это требуется. Таким образом, эта определяет специфические для платформы ли `ScrollView` жест касания обрабатывает или передает его на его содержимое. Он используется в XAML, задав `ScrollView.ShouldDelayContentTouches` вложенное свойство, чтобы `boolean` значение:
 
 ```xaml
 <MasterDetailPage ...
@@ -460,13 +465,13 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 scrollView.On<iOS>().SetShouldDelayContentTouches(false);
 ```
 
-`ScrollView.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `ScrollView.SetShouldDelayContentTouches` Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) пространства имен, используемый для управления ли [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) жест касания обрабатывает или передает его на его содержимое. Кроме того `SetShouldDelayContentTouches` метод можно использовать для переключения задержки содержимого штрихи, вызвав `ShouldDelayContentTouches` метод для возврата, отложена ли штрихи содержимого:
+`ScrollView.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `ScrollView.SetShouldDelayContentTouches` Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, используемый для управления ли [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) жест касания обрабатывает или передает его на его содержимое. Кроме того `SetShouldDelayContentTouches` метод можно использовать для переключения задержки содержимого штрихи, вызвав `ShouldDelayContentTouches` метод для возврата, отложена ли штрихи содержимого:
 
 ```csharp
 scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDelayContentTouches());
 ```
 
-В результате [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) можно отключить, задерживая получение содержимого штрихи, таким образом, в этом сценарии [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) получает жест, а не [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) странице [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
+В результате [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) можно отключить, задерживая получение содержимого штрихи, таким образом, в этом сценарии [ `Slider` ](xref:Xamarin.Forms.Slider) получает жест, а не [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) странице [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
 
 [![](ios-images/scrollview-delay-content-touches.png "Задержка ScrollView содержимое затрагивает специфические для платформы")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
 
@@ -550,13 +555,101 @@ _legacyColorModeDisabledButton.On<iOS>().SetIsLegacyColorModeEnabled(false);
 > [!NOTE]
 > При задании [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) для представления, устаревшие цветовой режим полностью игнорируется. Дополнительные сведения о визуальных состояниях см. в разделе [Xamarin.Forms Диспетчер визуальных состояний](~/xamarin-forms/user-interface/visual-state-manager.md).
 
+<a name="drop-shadow" />
+
+## <a name="enabling-a-drop-shadow"></a>Включение тени
+
+Этой платформы будет использоваться для включения тени на [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Он используется в XAML, задав [ `VisualElement.IsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) вложенное свойство, чтобы `true`, а также ряд дополнительных необязательно присоединенного свойства, которые управляют тени:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+        <BoxView ...
+                 ios:VisualElement.IsShadowEnabled="true"
+                 ios:VisualElement.ShadowColor="Purple"
+                 ios:VisualElement.ShadowOpacity="0.7"
+                 ios:VisualElement.ShadowRadius="12">
+            <ios:VisualElement.ShadowOffset>
+                <Size>
+                    <x:Arguments>
+                        <x:Double>10</x:Double>
+                        <x:Double>10</x:Double>
+                    </x:Arguments>
+                </Size>
+            </ios:VisualElement.ShadowOffset>
+         </BoxView>
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Кроме того его можно будет использовать с помощью C# с помощью текучего API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+var boxView = new BoxView { Color = Color.Aqua, WidthRequest = 100, HeightRequest = 100 };
+boxView.On<iOS>()
+       .SetIsShadowEnabled(true)
+       .SetShadowColor(Color.Purple)
+       .SetShadowOffset(new Size(10,10))
+       .SetShadowOpacity(0.7)
+       .SetShadowRadius(12);
+```
+
+`VisualElement.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `VisualElement.SetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean)) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, используется для управления отвечает за включение тени на `VisualElement`. Кроме того можно вызвать следующие методы для управления тени:
+
+- [`SetShadowColor`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Color)) — Задает цвет тени. Цвет по умолчанию [ `Color.Default` ](xref:Xamarin.Forms.Color.Default*).
+- [`SetShadowOffset`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Size)) — Задает смещение тени. Смещение меняет направление тени приводится и указываются в виде [ `Size` ](xref:Xamarin.Forms.Size) значение. `Size` Структуры значения выражаются в аппаратно независимых единицах, первое значение, что расстояние до (отрицательное значение) или влево (положительное значение), а второе значение, что расстояние выше (отрицательное значение) или ниже (положительное значение) . Значение этого свойства по умолчанию — (0.0, 0.0), тень, что приводит к приведение вокруг каждая сторона `VisualElement`.
+- [`SetShadowOpacity`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) — Задает уровень непрозрачности тени, со значением, в диапазоне от 0.0 (прозрачный) до версии 1.0 (Непрозрачный). Значение непрозрачности по умолчанию — 0,5.
+- [`SetShadowRadius`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) — Задает радиуса размытия, используемую для отрисовки тени. Значение радиуса по умолчанию — 10.0.
+
+> [!NOTE]
+> Состояние тени можно запрашивать путем вызова [ `GetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowOffset` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowOpacity` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), и [ `GetShadowRadius` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})) методы.
+
+Результатом является то, что тень можно включить на [ `VisualElement` ](xref:Xamarin.Forms.VisualElement):
+
+![](ios-images/drop-shadow.png "Тень включена")
+
+<a name="simultaneous-pan-gesture" />
+
+## <a name="enabling-simultaneous-pan-gesture-recognition"></a>Включение распознавания жестов одновременных Pan
+
+Когда [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) прикреплено к представлению внутри прокрутки, все pan, охватывает жесты `PanGestureRecognizer` и не передаются представления с прокруткой. Таким образом больше не прокручивается представления с прокруткой.
+
+Этой платформы позволяет `PanGestureRecognizer` в области прокрутки для записи и совместно использовать жест pan с представления с прокруткой. Он используется в XAML, задав [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.pangesturerecognizershouldrecognizesimultaneouslyproperty?view=xamarin-forms) вложенное свойство, чтобы `true`:
+
+```xaml
+<Application ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Application.PanGestureRecognizerShouldRecognizeSimultaneously="true">
+    ...
+</Application>
+```
+
+Кроме того его можно будет использовать с помощью C# с помощью текучего API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
+```
+
+`Application.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.setpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, используется для управления ли распознавателя жестов pan в области прокрутки будет захват жест pan, или записи, так и совместное использование pan жестов с помощью представления с прокруткой. Кроме того [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.getpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) метод может использоваться для возврата ли жест pan используется совместно с прокруткой представление, содержащее [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
+
+Таким образом, с помощью этой платформы включен, когда [ `ListView` ](xref:Xamarin.Forms.ListView) содержит [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer), оба `ListView` и `PanGestureRecognizer` получит жест pan и Обрабатывайте его. Однако при использовании этой платформы отключен, если `ListView` содержит `PanGestureRecognizer`, `PanGestureRecognizer` помещается жест pan и обработать его и `ListView` не будут получать pan жест.
+
 ## <a name="summary"></a>Сводка
 
 В этой статье было показано, как использовать iOS особенностей платформы, которые встроены в Xamarin.Forms. Особенности платформы позволяют использовать функциональные возможности, доступные только на определенной платформе, без реализации пользовательских модулей подготовки отчетов или эффектов.
-
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Создание особенностей платформы](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (пример)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [iOSSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)
+- [iOSSpecific](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -1,65 +1,65 @@
 ---
-title: Страница Xamarin.Forms основной подробности
-description: Xamarin.Forms MasterDetailPage — это страница, который управляет две связанные страницы данных — Главная страница, которая представляет элементы и страницу сведений, которая представляет сведения об элементах на главной странице. В этой статье объясняется, как использовать MasterDetailPage и перейти между страницами его сведения.
+title: Xamarin.Forms страницы
+description: Xamarin.Forms MasterDetailPage — это страница, которая управляет два связанных страниц данных – главной страницы, которая представляет элементы и страницу сведений, в которой представлены сведения об элементах на главной странице. В этой статье объясняется, как использовать MasterDetailPage и переходить между страницами, его данных.
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 46fa32fc8203b32378f4a4fbe07cb8c9f8dbb854
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: a3d0edbd933339ee8b8a0a277a4f2493cc8dc70e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209210"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997469"
 ---
-# <a name="xamarinforms-master-detail-page"></a>Страница Xamarin.Forms основной подробности
+# <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms страницы
 
-_Xamarin.Forms MasterDetailPage — это страница, который управляет две связанные страницы данных — Главная страница, которая представляет элементы и страницу сведений, которая представляет сведения об элементах на главной странице. В этой статье объясняется, как использовать MasterDetailPage и перейти между страницами его сведения._
+_Xamarin.Forms MasterDetailPage — это страница, которая управляет два связанных страниц данных – главной страницы, которая представляет элементы и страницу сведений, в которой представлены сведения об элементах на главной странице. В этой статье объясняется, как использовать MasterDetailPage и переходить между страницами, его данных._
 
 ## <a name="overview"></a>Обзор
 
 Главная страница обычно отображает список элементов, как показано на следующем снимке экрана:
 
-[![](master-detail-page-images/masterpage-components.png "Компоненты основной страницы")](master-detail-page-images/masterpage-components-large.png#lightbox "компоненты основной страницы")
+[![](master-detail-page-images/masterpage-components.png "Компоненты страницы master")](master-detail-page-images/masterpage-components-large.png#lightbox "компоненты образца страницы")
 
-Расположение списка элементов идентична на каждой платформе, и выбрав один из элементов, можно перейти к соответствующей странице сведений. Кроме того Главная страница также включает панель навигации, который содержит кнопку, которую можно использовать для перехода к странице сведения об активном:
+Расположение списка элементов идентична на каждой платформе, и выбрав один из элементов будет перейти к соответствующей странице сведений. Кроме того Главная страница также содержит панель навигации, содержащий кнопку, которая может использоваться для перехода к странице сведения об активном:
 
-- На iOS на панели навигации присутствует в верхней части страницы и содержит кнопки, которая переходит к странице сведений. Кроме того сведения об активном страницу можно перейти, проведя главной страницы слева.
-- На Android на панели навигации в верхней части страницы и отображает заголовок, значок и кнопку, который осуществляет переход к странице сведений. Значок определяется в `[Activity]` атрибут, который оформляет `MainActivity` класса в проекте специфический для платформы Android. Кроме того, сведения об активном страницу можно перейти, проведя главной страницы влево, коснувшись страница сведений в правой части экрана и, нажав *обратно* , расположенную в нижней части экрана.
-- На панели навигации на универсальной платформы Windows (UWP), присутствует в верхней части страницы и имеет кнопки перехода к странице сведений.
+- В iOS на панели навигации находится в верхней части страницы и имеет кнопку, которая переходит к странице сведений. Кроме того сведения об активном страницы можно перейти, проводя пальцем главной страницы слева.
+- На Android на панели навигации в верхней части страницы и отображает заголовок, значок и кнопку, которая выполняет переход на страницу сведений о. Значок определяется в `[Activity]` атрибут, который оформляет `MainActivity` класс в проекте специфические для платформы Android. Кроме того, сведения об активном страницы можно перейти, проводя пальцем главной страницы слева, коснувшись странице сведений в правой части экрана и можно просмотреть, выбрав *обратно* расположенную в нижней части экрана.
+- В универсальной платформы Windows (UWP), на панели навигации присутствует в верхней части страницы и имеет кнопку, которая переходит к странице сведений.
 
-Подробные данные отображаются страницы, соответствующий элемент выбран в образце страницы и показаны основные компоненты страницу с подробными сведениями в следующих снимках экрана.
+Подробных данных отображает страницы, который соответствует элементу выбранной на главной странице, и на следующих снимках экрана показаны основные компоненты на страницу сведений о:
 
 ![](master-detail-page-images/detailpage-components.png "Компоненты страницы сведений")
 
-Страница сведений содержит панель навигации, содержимое которого зависят от платформы.
+Страница сведений содержит панель навигации, содержимое которой представлено зависят от платформы:
 
-- На iOS, на панели навигации присутствует в верхней части страницы отображается заголовок и имеет кнопку, которая возвращает для главной страницы, при условии, что экземпляр страницы сведений упаковывается в [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) экземпляра. Кроме того главной страницы можно вернуть в путем считывания страницы сведений справа.
-- На Android панель навигации в верхней части страницы и отображает заголовок, значок и кнопку, которая возвращает на главную страницу. Значок определяется в `[Activity]` атрибут, который оформляет `MainActivity` класса в проекте специфический для платформы Android.
-- На UWP на панели навигации в верхней части страницы и отображается заголовок и имеет кнопку, которая возвращает на главную страницу.
+- В iOS, на панели навигации находится в верхней части страницы отображает заголовок и имеет кнопку, которая возвращает на главную страницу, при условии, что экземпляр страницы сведений упаковывается в [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) экземпляра. Кроме того главной страницы могут быть возвращены для прокручивая страницу сведений справа.
+- В Android панель навигации присутствует в верхней части страницы и отображает заголовок, значок и кнопку, которая возвращает на главную страницу. Значок определяется в `[Activity]` атрибут, который оформляет `MainActivity` класс в проекте специфические для платформы Android.
+- В универсальной платформы Windows на панели навигации находится в верхней части страницы и отображает заголовок и имеет кнопку, которая возвращает на главную страницу.
 
 ### <a name="navigation-behavior"></a>Поведения навигации
 
-Это происходит взаимодействие переходов между основной страницы и страницы сведений зависит от используемой платформы:
+Поведение навигацию между основными и подробными страниц не зависит от платформы:
 
-- На странице сведений iOS *слайды* справа как слайды главной страницы из слева и левая часть сведений по-прежнему отображается страница.
-- В Android подробные сведения и образец страницы являются *накладывается* друг от друга.
+- В iOS, на страницу сведений о *слайды* справа как слайды главной страницы из левого и левую часть подробные данные по-прежнему отображается страница.
+- В Android, подробные сведения и образец страницы являются *накладывается* друг от друга.
 - На UWP, подробные сведения и образец страницы являются *местами*.
 
-Аналогичное поведение будет наблюдаться в альбомном режиме, за исключением того, главной страницы в iOS и Android имеет аналогичные ширину как Главная страница в книжной ориентации, чтобы более подробно страницы будут отображаться.
+Аналогичное поведение будет наблюдаться в альбомном режиме, за исключением того, что главная страница в iOS и Android имеет аналогичные ширины как Главная страница в книжной ориентации, поэтому большая часть страницы сведений будет отображаться.
 
-Дополнительные сведения об управлении поведения навигации в разделе [управление поведение при отображении страницы сведений](#Controlling_the_Detail_Page_Display_Behavior).
+Сведения об управлении поведение навигации, см. в разделе [управление поведение при отображении страницы сведений](#Controlling_the_Detail_Page_Display_Behavior).
 
 ## <a name="creating-a-masterdetailpage"></a>Создание MasterDetailPage
 
-Объект [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) содержит [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) и [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) свойства, которые имеют тип [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), которые используются для получения и задания страниц главных и подчиненных соответственно.
+Объект [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) содержит [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) и [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) свойства, которые имеют тип [ `Page` ](xref:Xamarin.Forms.Page), которые используются для получения и задания основные и подробные страницы соответственно.
 
 > [!IMPORTANT]
-> Объект [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) предназначен для корневую страницу и использовать его как на дочернюю страницу в другие типы страниц может привести к непредвиденным и несогласованное поведение. Кроме того, рекомендуется на главную страницу [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) всегда должен быть [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) экземпляра и что страницу подробных сведений о заполняются только с [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/), [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/), и `ContentPage` экземпляры. Это поможет обеспечить целостное взаимодействие с пользователем на всех платформах.
+> Объект [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) должен быть корневой страницы и использовать его как на дочернюю страницу в другие типы страниц может привести к непредвиденным и несогласованное поведение. Кроме того, рекомендуется на главную страницу [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) всегда должно быть [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) экземпляра и что на страницу сведений о заполняются только с [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage), и `ContentPage` экземпляров. Это позволит обеспечить согласованность пользовательского интерфейса на всех платформах.
 
-В следующем примере показан код XAML [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) , которая устанавливает [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) и [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) свойства:
+В следующем примере показан код XAML [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) , задает [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) и [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) свойства:
 
 ```xaml
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -79,7 +79,7 @@ _Xamarin.Forms MasterDetailPage — это страница, который уп
 </MasterDetailPage>
 ```
 
-В следующем примере кода показан соответствующий [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) созданных в C#:
+В следующем примере кода показан эквивалент [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) созданном на C#:
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -97,11 +97,11 @@ public class MainPageCS : MasterDetailPage
 }
 ```
 
-[ `MasterDetailPage.Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) Свойству [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) экземпляра. [ `MasterDetailPage.Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) Свойству [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) содержащий `ContentPage` экземпляра.
+[ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) Свойству [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) экземпляра. [ `MasterDetailPage.Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) Свойству [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) содержащий `ContentPage` экземпляра.
 
 ### <a name="creating-the-master-page"></a>Создание главной страницы
 
-В следующем примере кода XAML показано объявление `MasterPage` объекта, который осуществляется с помощью [ `MasterDetailPage.Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) свойства:
+В следующем примере кода XAML показано объявление `MasterPage` объект, который указан через [ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) свойство:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -139,16 +139,16 @@ public class MainPageCS : MasterDetailPage
 </ContentPage>
 ```
 
-Страница состоит из [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) , заполняется данными в XAML, установив его [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemsSource/) свойства в виде массива `MasterPageItem` экземпляров. Каждый `MasterPageItem` определяет `Title`, `IconSource`, и `TargetType` свойства.
+Страница состоит из [ `ListView` ](xref:Xamarin.Forms.ListView) , заполняется данными в XAML, задав его [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) свойство к массиву `MasterPageItem` экземпляров. Каждый `MasterPageItem` определяет `Title`, `IconSource`, и `TargetType` свойства.
 
-Объект [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) назначается [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/) свойство для отображения `MasterPageItem`. `DataTemplate` Содержит [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) , включающая в себя [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) и [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/). [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) Отображает `IconSource` значение свойства и [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) отображает `Title` значение свойства, для каждого `MasterPageItem`.
+Объект [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) назначается [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) свойства, чтобы вывести все `MasterPageItem`. `DataTemplate` Содержит [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) , состоящий из [ `Image` ](xref:Xamarin.Forms.Image) и [ `Label` ](xref:Xamarin.Forms.Label). [ `Image` ](xref:Xamarin.Forms.Image) Отображает `IconSource` значение свойства и [ `Label` ](xref:Xamarin.Forms.Label) отображает `Title` значение свойства, для каждого `MasterPageItem`.
 
-На странице его [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) и [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) набором свойств. Значок будет отображаться на странице сведений при условии, что страница сведений имеет заголовок. Оно должно быть включено в iOS, заключив экземпляр страницы сведений в [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) экземпляра.
+На странице имеется его [ `Title` ](xref:Xamarin.Forms.Page.Title) и [ `Icon` ](xref:Xamarin.Forms.Page.Icon) заданными свойствами. Значок будет отображаться на странице сведений, при условии, что на страницу сведений о имеет заголовок. Оно должно быть включено в iOS, заключая экземпляр страницы сведений в [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) экземпляра.
 
 > [!NOTE]
-> [ `MasterDetailPage.Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) Страницы должен быть его [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) свойство или возникнет исключение.
+> [ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) Страницы должен быть его [ `Title` ](xref:Xamarin.Forms.Page.Title) свойству значение, или возникнет исключение.
 
-В следующем примере кода показан эквивалентный страницы, созданные на языке C#:
+В следующем примере кода показан эквивалентный страницы, созданной в C#:
 
 ```csharp
 public class MasterPageCS : ContentPage
@@ -206,13 +206,13 @@ public class MasterPageCS : ContentPage
 }
 ```
 
-Следующих снимках экрана показано главной страницы для каждой платформы.
+На следующих снимках экрана показано главной страницы на каждой платформе:
 
 ![](master-detail-page-images/masterpage.png "Пример страницы основных")
 
-### <a name="creating-and-displaying-the-detail-page"></a>Создание и отображение страницу с подробными сведениями
+### <a name="creating-and-displaying-the-detail-page"></a>Создание и отображение на страницу сведений о
 
-`MasterPage` Содержит экземпляр `ListView` свойство, которое обеспечивает доступ к его [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) экземпляра, чтобы `MainPage` [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) можно зарегистрировать экземпляр обработчик событий для обработки [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/) событий. Это позволяет `MainPage` для установки [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) свойства страницы, которую представляет выбранный `ListView` элемента. В следующем примере кода показан обработчик событий:
+`MasterPage` Экземпляр содержит `ListView` свойства, предоставляющего его [ `ListView` ](xref:Xamarin.Forms.ListView) экземпляр таким образом, чтобы `MainPage` [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) можно зарегистрировать экземпляр обработчик событий для обработки [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) событий. Это позволяет `MainPage` для установки [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) свойство на страницу, представляющий выбранный `ListView` элемента. В следующем примере кода показан обработчик событий:
 
 ```csharp
 public partial class MainPage : MasterDetailPage
@@ -237,27 +237,27 @@ public partial class MainPage : MasterDetailPage
 
 `OnItemSelected` Метод выполняет следующие действия:
 
-- Он извлекает [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/) из [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) экземпляром и если он не `null`, задает страницу с подробными сведениями на новый экземпляр типа страницы, хранящиеся в `TargetType`свойство `MasterPageItem`. Тип страницы упаковывается в [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) экземпляра, чтобы убедиться, что значок для ссылок на [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) свойство `MasterPage` отображается на странице сведений в iOS.
-- Элемент, выбранный в [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) равно `null` чтобы убедиться, что ни один из `ListView` элементы будут выбираться при очередном `MasterPage` представлены.
-- Страницы сведений о представляется пользователю, задав [ `MasterDetailPage.IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/) свойства `false`. Это свойство определяет, выводится ли страница основной или подробности. Должно быть задано `true` для отображения главной страницы, а в `false` отображение страницы «подробности».
+- Он извлекает [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) из [ `ListView` ](xref:Xamarin.Forms.ListView) экземпляром и если он не `null`, присваивается новый экземпляр типа страницы, хранящиеся в настраницусведенийо`TargetType`свойство `MasterPageItem`. Тип страницы упаковывается в [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) экземпляра, чтобы убедиться, что значок для ссылок на [ `Icon` ](xref:Xamarin.Forms.Page.Icon) свойство `MasterPage` отображается на странице сведений в iOS.
+- Элемент, выбранный в [ `ListView` ](xref:Xamarin.Forms.ListView) присваивается `null` чтобы убедиться, что ни один из `ListView` элементы будут выбраны при очередном `MasterPage` представлены.
+- На страницу сведений о будет отображаться для пользователя, задав [ `MasterDetailPage.IsPresented` ](xref:Xamarin.Forms.MasterDetailPage.IsPresented) свойства `false`. Это свойство контролирует, представлен ли страница основной или подробности. Оно должно быть присвоено `true` для отображения главной страницы, а в `false` на страницу детализации.
 
-В следующих снимках экрана показано `ContactPage` странице сведений отображается после выбран на главной странице:
+Ниже показаны снимки экрана `ContactPage` странице сведений отображается после выбран на главной странице:
 
 ![](master-detail-page-images/detailpage.png "Пример страницы сведений")
 
 <a name="Controlling_the_Detail_Page_Display_Behavior" />
 
-### <a name="controlling-the-detail-page-display-behavior"></a>Управление поведением отображения страницы сведений
+### <a name="controlling-the-detail-page-display-behavior"></a>Управление поведением отображением страницы сведений
 
-Как [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) управляет страницами главных и подчиненных зависит от того, работает ли приложение на телефон или планшетный ПК, ориентации устройства, а значение [ `MasterBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) свойство. Это свойство определяет, как будет отображаться страницу с подробными сведениями. Возможными значениями являются:
+Как [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) управляет основными и подробными страницы зависит от того, работает ли приложение на телефоне или планшете, ориентации устройства, а для параметра [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) свойство. Это свойство определяет, как будет отображаться на странице детализации. Возможными значениями являются:
 
-- **По умолчанию** — страницы отображаются с использованием платформы по умолчанию.
-- **Popover** — страницу подробных сведений о охватывает или частично рассматриваются главной страницы.
-- **Разбиение** — слева отображается главной страницы и страницы сведений находится справа.
+- **По умолчанию** — страницы отображаются с помощью платформы по умолчанию.
+- **Контекстном** — на страницу сведений о охватывает или частично рассматриваются главной страницы.
+- **Разбиение** — Главная страница отображается в левой части и страницы сведений находится справа.
 - **SplitOnLandscape** — С разделенным экраном используется в том случае, когда устройство находится в альбомной ориентации.
 - **SplitOnPortrait** — С разделенным экраном используется в том случае, когда устройство находится в книжной ориентации.
 
-В следующем примере кода XAML показано, как задать [ `MasterBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) свойство [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
+В следующем примере кода XAML показано, как задать [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) свойство [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -269,7 +269,7 @@ public partial class MainPage : MasterDetailPage
 </MasterDetailPage>
 ```
 
-В следующем примере кода показан соответствующий [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) созданных в C#:
+В следующем примере кода показан эквивалент [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) созданном на C#:
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -284,15 +284,15 @@ public class MainPageCS : MasterDetailPage
 }
 ```
 
-Тем не менее значение [ `MasterBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) свойство влияет только на приложения, запущенные на планшетных ПК или на рабочем столе. Приложения, работающие на телефонах, всегда иметь *Popover* поведение.
+Тем не менее значение [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) свойство влияет только на приложения, работающие на планшетных ПК или на рабочем столе. Приложения, выполняющиеся на телефонах, всегда имеют *контекстном* поведение.
 
 ## <a name="summary"></a>Сводка
 
-В этой статье показано, как использовать [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) и переходить между его страницы данных. Xamarin.Forms `MasterDetailPage` — страница, которая управляет двумя страницами связанных данных, — Главная страница, которая представляет элементы и страницу сведений, которая представляет сведения об элементах на главной странице.
+В этой статье было показано, как использовать [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) и переходить между страницами, его данных. Xamarin.Forms `MasterDetailPage` — это страница, которая управляет связанных данных — две страницы, главной страницы, которая представляет элементы и страницу сведений, в которой представлены сведения об элементах на главной странице.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Создание страницы](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [MasterDetailPage (пример)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/)
-- [MasterDetailPage](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)
+- [MasterDetailPage](xref:Xamarin.Forms.MasterDetailPage)

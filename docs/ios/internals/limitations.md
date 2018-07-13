@@ -1,42 +1,42 @@
 ---
 title: Ограничения Xamarin.iOS
-description: В этом документе описываются ограничения Xamarin.iOS в обсуждении универсальных шаблонов, универсальный подклассов NSObjects, P/Invoke в универсальных объектов и многое другое.
+description: В этом документе описаны ограничения для Xamarin.iOS, посвященные универсальные шаблоны, общие подклассы NSObjects, P/Invoke в универсальных объектов и многое другое.
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/09/2018
-ms.openlocfilehash: 8eb2cd5a749beab6f089479f5992fe3fbc16dd0a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: e154e4e1688b8a3d03459956934409fa9d5aef35
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786233"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998089"
 ---
 # <a name="limitations-of-xamarinios"></a>Ограничения Xamarin.iOS
 
-Поскольку приложения на iPhone, с помощью Xamarin.iOS компилируются для статического кода, не позволяет использовать все функции, для которых требуется создание кода во время выполнения.
+Так как приложения для iPhone с помощью Xamarin.iOS компилируются для статического кода, не можно использовать все функции, для которых требуется создание кода во время выполнения.
 
-Существуют следующие ограничения Xamarin.iOS по сравнению с рабочего стола моно:
+Существуют следующие ограничения Xamarin.iOS, по сравнению с рабочего стола Mono:
 
  <a name="Limited_Generics_Support" />
 
 
-## <a name="limited-generics-support"></a>Поддержка ограниченный универсальных типов
+## <a name="limited-generics-support"></a>Поддержка ограниченного универсальных типов
 
-В отличие от традиционных моно и .NET код на iPhone статически компилируется заранее вместо компиляции по требованию с помощью JIT-компилятора.
+В отличие от традиционных Mono и .NET код на iPhone статически компилируется заранее вместо компиляции по требованию с помощью JIT-компилятора.
 
-Моно [полный AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot) технологии имеет несколько ограничений, применительно к универсальным типам, они связаны, так как не все возможные универсального экземпляра может заранее определить во время компиляции. Это не проблему для регулярных .NET или Mono среды выполнения, поскольку во время выполнения с помощью непосредственно в компиляторе время всегда компиляции кода. Однако это создает проблему для статических компилятора как Xamarin.iOS.
+Mono [полный AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot) технология имеет ряд ограничений по отношению к универсальные шаблоны, они возникают, так как не все возможные универсального экземпляра можно определить заранее во время компиляции. Это не проблема для регулярного сред выполнения .NET и Mono как во время выполнения, используя непосредственно в компилятор всегда компиляции кода. Но это препятствие для статическим компилятором как Xamarin.iOS.
 
-Ниже перечислены некоторые общие проблемы, которые сталкиваются разработчики.
+Ниже перечислены некоторые из распространенных проблем, с которыми разработчики столкнуться.
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
 
 
-### <a name="generic-subclasses-of-nsobjects-are-limited"></a>Универсальный подклассов NSObjects ограничены.
+### <a name="generic-subclasses-of-nsobjects-are-limited"></a>Универсальный подклассы NSObjects ограничены
 
-Xamarin.iOS в настоящее время имеет ограниченную поддержку для создания универсального подклассы класса NSObject, таких как поддержка универсальных методов. Начиная с 7.2.1 с помощью универсального подклассов NSObjects невозможна, похожее на следующее:
+В настоящее время Xamarin.iOS имеет ограниченную поддержку создания общие подклассы NSObject класса, такие как поддержка универсальных методов. По состоянию на 7.2.1 с помощью универсального подклассы NSObjects возможна, похожее на следующее:
 
 ```csharp
 class Foo<T> : UIView {
@@ -45,13 +45,13 @@ class Foo<T> : UIView {
 ```
 
 > [!NOTE]
-> Универсальный подклассов NSObjects возможны, существуют некоторые ограничения. Чтение [универсального подклассов NSObject](~/ios/internals/api-design/nsobject-generics.md) Дополнительные сведения
+> Хотя универсальные подклассы NSObjects возможны, существуют некоторые ограничения. Чтение [подклассы nsobject](~/ios/internals/api-design/nsobject-generics.md) Дополнительные сведения
 
 
 
-### <a name="pinvokes-in-generic-types"></a>P/Invokes в универсальных типах
+### <a name="pinvokes-in-generic-types"></a>P/вызывает в универсальных типах
 
-Методы P/Invoke в универсальных классах не поддерживаются:
+P/Invoke в универсальных классах не поддерживаются:
 
 ```csharp
 class GenericType<T> {
@@ -63,20 +63,20 @@ class GenericType<T> {
  <a name="Property.SetInfo_on_a_Nullable_Type_is_not_supported" />
 
 
-### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>Property.SetInfo для типа Nullable не поддерживается.
+### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>Property.SetInfo на тип Nullable не поддерживается.
 
-С помощью отражения Property.SetInfo значение Nullable&lt;T&gt; в настоящее время не поддерживается.
+С помощью отражения Property.SetInfo значение Nullable&lt;T&gt; сейчас не поддерживается.
 
  <a name="Value_types_as_Dictionary_Keys" />
 
 
-### <a name="value-types-as-dictionary-keys"></a>Типы значений, что ключи словаря
+### <a name="value-types-as-dictionary-keys"></a>Типы значений в качестве ключей словаря
 
-Использовании типа значения в виде словаря&lt;TKey, TValue&gt; проблемный ключ, по умолчанию словарь конструктор пытается использовать EqualityComparer&lt;TKey&gt;. По умолчанию. EqualityComparer&lt;TKey&gt;. По умолчанию, в свою очередь, пытается использовать отражение для создания нового типа, который реализует компаратор IEqualityComparer&lt;TKey&gt; интерфейса.
+С помощью типа значения как словарь&lt;TKey, TValue&gt; ключ является проблематичным, по умолчанию словарь конструктор пытается использовать EqualityComparer&lt;TKey&gt;. По умолчанию. EqualityComparer&lt;TKey&gt;. По умолчанию, в свою очередь, пытается использовать отражение для создания нового типа, реализующего IEqualityComparer&lt;TKey&gt; интерфейс.
 
-Это работает для ссылочных типов (как отражение + создать новый тип шаг пропускается), но значение его тип сбоев и затемнению довольно быстро, как только вы пытаетесь использовать его на устройстве.
+Это работает для ссылочных типов (как отражение + создать новый тип шаг пропускается), но для значения типов это сбоев и записывает довольно быстро, при попытке использовать его на устройстве.
 
- **Инструкции по решению**: реализация вручную [IEqualityComparer&lt;TKey&gt; ](https://developer.xamarin.com/api/type/System.Collections.Generic.IEqualityComparer%601/) интерфейс в новый тип, а также предоставить экземпляр этого типа для [словарь&lt;TKey, TValue&gt; ](https://developer.xamarin.com/api/type/System.Collections.Generic.Dictionary%3CTKey,TValue%3E/) [(IEqualityComparer&lt;TKey&gt;)](https://developer.xamarin.com/api/type/System.Collections.Generic.IEqualityComparer%601/) конструктор.
+ **Инструкции по решению**: вручную реализовать [IEqualityComparer&lt;TKey&gt; ](xref:System.Collections.Generic.IEqualityComparer`1) интерфейс в новом типе и укажем экземпляр этого типа [словарь&lt;TKey, TValue&gt; ](xref:System.Collections.Generic.Dictionary`2) [(IEqualityComparer&lt;TKey&gt;)](xref:System.Collections.Generic.IEqualityComparer`1) конструктор.
 
 
  <a name="No_Dynamic_Code_Generation" />
@@ -84,12 +84,12 @@ class GenericType<T> {
 
 ## <a name="no-dynamic-code-generation"></a>Без создания динамического кода
 
-Так как iPhone ядра не позволяет приложению динамически формировать код Mono на iPhone не поддерживает динамическое создание кода в любой форме. Сюда входит следующее.
+Поскольку iPhone ядра не позволяет приложению динамически создания кода Mono на iPhone не поддерживает динамическое создание кода в любой форме. Сюда входит следующее.
 
--  System.Reflection.Emit недоступен.
+-  System.Reflection.Emit недоступна.
 -  Отсутствует поддержка System.Runtime.Remoting.
 -  Отсутствует поддержка динамического создания типов (не Type.GetType («MyType "1»)), несмотря на то, что поиск существующих типов (Type.GetType («System.String»), отлично работает). 
--  Обратная обратные вызовы должны быть зарегистрированы с помощью среды выполнения во время компиляции.
+-  Необходимо зарегистрировать обратный обратных вызовов со средой выполнения во время компиляции.
 
 
  
@@ -98,25 +98,25 @@ class GenericType<T> {
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-Отсутствие System.Reflection. **Порождение** означает, что будет работать без кода, зависящего от создания кода среды выполнения. Сюда входят, например:
+Отсутствие System.Reflection. **Выдавать** означает, что будет работать без кода, который зависит от создания кода среды выполнения. Сюда входят, например:
 
 -  Среда выполнения динамического языка.
--  Все языки, построена на базе среды DLR.
--  TransparentProxy удаленного взаимодействия либо все, что приведет к среде выполнения динамически создавать код. 
+-  Любых языков, созданная на основе выполнения динамического языка.
+-  TransparentProxy системе удаленного взаимодействия или все, что приведет к среде выполнения динамически создавать код. 
 
 
- **Важно:** не следует путать **Reflection.Emit** с **отражения**. Reflection.Emit — о создании кода динамически у этого кода JIT-компилируются и компилируются в машинный код. Из-за ограничений, накладываемых на iPhone (не JIT-компиляции) не поддерживается.
+ **Важно:** не следует путать **Reflection.Emit** с **отражения**. Reflection.Emit — о создании кода динамически и у этого кода JIT-компилироваться и компилируются в машинный код. Из-за ограничений, налагаемых на iPhone (не JIT-компиляции) не поддерживается.
 
-Но весь API отражения, включая Type.GetType («someClass»), список методов, список свойств, выборка атрибуты и значения работает нормально.
+Но весь API отражения, включая Type.GetType («someClass»), методы, список свойств, получение, атрибуты и значения работает нормально.
 
-### <a name="using-delegates-to-call-native-functions"></a>Использование делегатов для вызова собственной функции
+### <a name="using-delegates-to-call-native-functions"></a>Использование делегатов для вызова неуправляемых функций
 
-Чтобы вызвать собственную функцию в делегате C#, объявление делегата должен быть снабжен атрибутом один из следующих атрибутов:
+Чтобы вызвать собственную функцию через делегат C#, объявление делегата должен быть снабжен атрибутом один из следующих атрибутов:
 
-- [UnmanagedFunctionPointerAttribute](https://developer.xamarin.com/api/type/System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute/) (предпочтительно, так как это кросс платформенных и совместимы с .NET Standard 1.1 +)
+- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (предпочтительно, поскольку это кросс платформенные и совместимых с .NET Standard 1.1 +)
 - [MonoNativeFunctionWrapperAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
-Если клиент не получит один из этих атрибутов приведет ошибку во время выполнения, такие как:
+Не удалось предоставить один из этих атрибутов приведет к ошибку во время выполнения, такие как:
 
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
@@ -125,11 +125,11 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
  <a name="Reverse_Callbacks" />
 
 
-### <a name="reverse-callbacks"></a>Обратная обратных вызовов
+### <a name="reverse-callbacks"></a>Обратный обратные вызовы
 
-В стандартных моно можно передать экземпляры делегата C# в неуправляемый код за счет указатель на функцию. Среда выполнения обычно будет преобразовывать эти указатели на функции в небольших преобразователя, который позволяет неуправляемым кодом обратный вызов управляемого кода.
+В стандартных Mono можно передать в неуправляемый код вместо указатель на функцию экземпляры делегата в C#. Среда выполнения обычно будет преобразовывать эти указатели функций в небольшой преобразователя, который позволяет неуправляемого кода для обратного вызова в управляемом коде.
 
-В моно этих мостах реализуются только время компилятора. Если с помощью компилятора упреждающего времени, необходимый для iPhone имеется два важных ограничения на этом этапе:
+В Mono этих мостах реализуются Just-in-Time компилятора. При использовании компилятора ahead-of-time, необходимый для iPhone, существуют два важных ограничения на этом этапе:
 
 -  Необходимо пометить все методы обратного вызова с [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
 -  Методы должны быть статическими методами, не поддерживается для экземпляра метода. 
@@ -146,14 +146,14 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ## <a name="runtime-disabled-features"></a>Среда выполнения отключены функции
 
-Следующие функции были отключены на iOS Mono среды выполнения:
+В iOS Mono среды выполнения были отключены следующие функции:
 
 -  профилировщик
 -  Reflection.Emit
 -  Функциональные возможности Reflection.Emit.Save
 -  Привязки модели COM
--  Подсистема JIT-компилятора
--  Средство проверки метаданных (поскольку нет JIT)
+-  JIT-модуль
+-  Средство проверки метаданных (поскольку без JIT)
 
 
  <a name=".NET_API_Limitations" />
@@ -161,8 +161,8 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ## <a name="net-api-limitations"></a>Ограничения API .NET
 
-API .NET, представляемый является подмножеством полной инфраструктуры как не все элементы, доступные в iOS. В разделе часто задаваемые вопросы по [список сборок, поддерживаемых в настоящее время](~/cross-platform/internals/available-assemblies.md).
+.NET API, предоставляемого — это подмножество полной платформы виде не все, что доступно в iOS. См. в разделе часто задаваемые вопросы о [список сборок, поддерживаемых в настоящее время](~/cross-platform/internals/available-assemblies.md).
 
 
 
-В частности API профиля, используемого Xamarin.iOS не включает System.Configuration, поэтому невозможно использовать внешний XML-файлы можно настроить поведение среды выполнения.
+В частности профиль API, используемый в Xamarin.iOS не входит System.Configuration, поэтому невозможно использовать внешние файлы XML позволяют настроить поведение среды выполнения.

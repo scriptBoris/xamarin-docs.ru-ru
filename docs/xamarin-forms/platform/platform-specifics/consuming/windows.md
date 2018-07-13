@@ -6,13 +6,13 @@ ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/30/2018
-ms.openlocfilehash: 52895564ef327845940d687a58b007fb1502e62b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.date: 07/10/2018
+ms.openlocfilehash: 43a681350035c3e965798bd63f49cd39f472ebfd
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935133"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998420"
 ---
 # <a name="windows-platform-specifics"></a>Особенности платформы Windows
 
@@ -20,19 +20,21 @@ _Особенности платформы позволяют использов
 
 В универсальной платформы Windows (UWP), Xamarin.Forms содержит следующие особенности платформы:
 
-- Настройка параметров размещения панели инструментов. Дополнительные сведения см. в разделе [изменения расположения инструментов](#toolbar_placement).
-- Свертывание [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) панели навигации. Дополнительные сведения см. в разделе [свертывание панель навигации MasterDetailPage](#collapsable_navigation_bar).
+- Настройка параметров размещения панели инструментов. Дополнительные сведения см. в разделе [изменения расположения панели инструментов страницы](#toolbar_placement).
+- Свертывание [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) панели навигации. Дополнительные сведения см. в разделе [свертывание панель навигации MasterDetailPage](#collapsable_navigation_bar).
 - Включение [ `WebView` ](xref:Xamarin.Forms.WebView) на отображение оповещений JavaScript в диалоговом окне сообщения универсальной платформы Windows. Дополнительные сведения см. в разделе [отображения предупреждения JavaScript](#webview-javascript-alert).
 - Включение [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) для взаимодействия с подсистемой проверки орфографии. Дополнительные сведения см. в разделе [Включение проверки орфографии SearchBar](#searchbar-spellcheck).
 - Обнаружение, порядок чтения из текстового содержимого в [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), и [ `Label` ](xref:Xamarin.Forms.Label) экземпляров. Дополнительные сведения см. в разделе [обнаружение порядок чтения из содержимого](#inputview-readingorder).
 - Отключение режима устаревших цвет в поддерживаемой [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Дополнительные сведения см. в разделе [отключение цветовой режим прежних версий](#legacy-color-mode).
 - Включение поддержки жест касания в [ `ListView` ](xref:Xamarin.Forms.ListView). Дополнительные сведения см. в разделе [Включение коснитесь поддержки жестов в ListView](#listview-selectionmode).
+- Включение значков страниц, отображаемых на [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) панели инструментов. Дополнительные сведения см. в разделе [включения значков на TabbedPage](#tabbedpage-icons).
+- Установка ключа доступа для [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Дополнительные сведения см. в разделе [задание VisualElement сочетаний клавиш](#visualelement-accesskeys).
 
 <a name="toolbar_placement" />
 
-## <a name="changing-the-toolbar-placement"></a>Изменения расположения панели инструментов
+## <a name="changing-the-page-toolbar-placement"></a>Изменение панели инструментов страницы размещения
 
-Этой платформы можно изменять расположение панели инструментов на [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)и используется в XAML, задав [ `Page.ToolbarPlacement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty/) присоединенное свойство в значение [ `ToolbarPlacement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/) перечисления:
+Этой платформы можно изменять расположение панели инструментов на [ `Page` ](xref:Xamarin.Forms.Page)и используется в XAML, задав [ `Page.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty) присоединенное свойство в значение [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) перечисления:
 
 ```xaml
 <TabbedPage ...
@@ -52,9 +54,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 ```
 
-`Page.On<Windows>` Метод указывает, что этой платформы будет выполняться только в Windows. [ `Page.SetToolbarPlacement` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/) Метод в [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) пространства имен, используемый для задания размещения панели инструментов, с помощью [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) предоставляя перечисления три значения: [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default), [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top), и [ `Bottom` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom).
+`Page.On<Windows>` Метод указывает, что этой платформы будет выполняться только в Windows. [ `Page.SetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)) Метод в [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) пространства имен, используемый для задания размещения панели инструментов, с помощью [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) предоставляя перечисления три значения: [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default), [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top), и [ `Bottom` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom).
 
-Результатом является размещение выбранной панели инструментов назначается [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) экземпляр:
+Результатом является размещение выбранной панели инструментов назначается [ `Page` ](xref:Xamarin.Forms.Page) экземпляр:
 
 [![](windows-images/toolbar-placement.png "Панель инструментов размещения платформы")](windows-images/toolbar-placement-large.png#lightbox "платформы размещения панели инструментов")
 
@@ -62,7 +64,7 @@ page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
 ## <a name="collapsing-a-masterdetailpage-navigation-bar"></a>Свертывание MasterDetailPage панель навигации
 
-Этой платформы позволяет свернуть панель навигации на [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)и используется в XAML, задав [ `MasterDetailPage.CollapseStyle` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty/) и [ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty/)присоединенных свойств:
+Этой платформы позволяет свернуть панель навигации на [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)и используется в XAML, задав [ `MasterDetailPage.CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty) и [ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty)присоединенных свойств:
 
 ```xaml
 <MasterDetailPage ...
@@ -84,9 +86,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetCollapseStyle(CollapseStyle.Partial).CollapsedPaneWidth(148);
 ```
 
-`MasterDetailPage.On<Windows>` Метод указывает, что этой платформы будет выполняться только в Windows. [ `Page.SetCollapseStyle` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) Метод в [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/) пространства имен, используется для указания стиль свернуть с [ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) перечисления, предоставляя два значения: [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full) и [ `Partial` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial). [ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/System.Double/) Метод позволяет задать ширину частично свернутой областью навигации.
+`MasterDetailPage.On<Windows>` Метод указывает, что этой платформы будет выполняться только в Windows. [ `Page.SetCollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle)) Метод в [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) пространства имен, используется для указания стиль свернуть с [ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle) перечисления, предоставляя два значения: [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full) и [ `Partial` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial). [ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},System.Double)) Метод позволяет задать ширину частично свернутой областью навигации.
 
-Результатом является то, что указанный [ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) применяется к [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) экземпляра с шириной также указан:
+Результатом является то, что указанный [ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle) применяется к [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) экземпляра с шириной также указан:
 
 [![](windows-images/collapsed-navigation-bar.png "Свернуть панель навигации с платформой")](windows-images/collapsed-navigation-bar-large.png#lightbox "свернуть панель навигации с платформой")
 
@@ -293,6 +295,153 @@ listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 
 Результат является то, что указанный [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) применяется к [ `ListView` ](xref:Xamarin.Forms.ListView), какие элементы управления ли элементы в `ListView` может отвечать на коснитесь жестов и, следовательно ли собственный `ListView` активируется `ItemClick` или `Tapped` событий.
 
+<a name="tabbedpage-icons" />
+
+## <a name="enabling-icons-on-a-tabbedpage"></a>Включение значков на TabbedPage
+
+Этой платформы позволяет значков страниц, отображаемых на [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) инструментов и предоставляет возможность при необходимости укажите размер значка. Он используется в XAML, задав [ `TabbedPage.HeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty) вложенное свойство, чтобы `true`и при необходимости задавая [ `TabbedPage.HeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty) вложенное свойство, чтобы [ `Size` ](xref:Xamarin.Forms.Size) значение:
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+            windows:TabbedPage.HeaderIconsEnabled="true">
+    <windows:TabbedPage.HeaderIconsSize>
+        <Size>
+            <x:Arguments>
+                <x:Double>24</x:Double>
+                <x:Double>24</x:Double>
+            </x:Arguments>
+        </Size>
+    </windows:TabbedPage.HeaderIconsSize>
+    <ContentPage Title="Todo" Icon="todo.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Reminders" Icon="reminders.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Contacts" Icon="contacts.png">
+        ...
+    </ContentPage>
+</TabbedPage>
+```
+
+Кроме того его можно будет использовать с помощью C# с помощью текучего API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
+{
+  public WindowsTabbedPageIconsCS()
+    {
+    On<Windows>().SetHeaderIconsEnabled(true);
+    On<Windows>().SetHeaderIconsSize(new Size(24, 24));
+
+    Children.Add(new ContentPage { Title = "Todo", Icon = "todo.png" });
+    Children.Add(new ContentPage { Title = "Reminders", Icon = "reminders.png" });
+    Children.Add(new ContentPage { Title = "Contacts", Icon = "contacts.png" });
+  }
+}
+```
+
+`TabbedPage.On<Windows>` Метод указывает, что этой платформы будет выполняться только на универсальной платформе Windows. [ `TabbedPage.SetHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},System.Boolean)) Метод в [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) используется пространство имен, включить или отключить значки заголовка. [ `TabbedPage.SetHeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsSize(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},Xamarin.Forms.Size)) Метод при необходимости указывает размер значка заголовка с [ `Size` ](xref:Xamarin.Forms.Size) значение.
+
+Кроме того `TabbedPage` в класс `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` пространство имен также содержит [ `EnableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.EnableHeaderIcons*) метод, позволяющий значки заголовка [ `DisableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.DisableHeaderIcons*) метод, который отключает значки заголовка и [ `IsHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.IsHeaderIconsEnabled*) метод, возвращающий `boolean` значение, указывающее, включены ли значки заголовка.
+
+Результатом является страницы могут отображаться значки [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) панель инструментов с размер значка, при необходимости задать требуемый размер:
+
+![TabbedPage значков с поддержкой платформы](windows-images/tabbedpage-icons.png "TabbedPage значков с поддержкой платформы")
+
+<a name="visualelement-accesskeys" />
+
+## <a name="setting-visualelement-access-keys"></a>Задание VisualElement сочетаний клавиш
+
+Ключи доступа, сочетания клавиш, повышении практичности и доступности приложений на универсальной платформе Windows, предоставляя интуитивно понятного для пользователей, для быстрого перехода и взаимодействия с приложения видимого пользовательского интерфейса клавиатуры, а не с помощью сенсорного ввода или При нажатии мышью. Они являются сочетаниями клавишу Alt и один или несколько буквенно-цифровых ключей, обычно нажата последовательно. Сочетания клавиш автоматически поддерживаются для ключей доступа, использующих один буквенно-цифровой символ.
+
+Сочетания клавиш доступа представляют собой перемещаемые эмблемы, отображаемого рядом с элементами управления, которые включают ключи доступа. Каждый совет ключа доступа содержит буквенно-цифровые ключи, активирующих сопоставленного элемента управления. Когда пользователь нажимает клавишу Alt, отображаются сочетания клавиш доступа.
+
+Можно указать ключ доступа для этой платформы [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Он используется в XAML, задав [ `VisualElement.AccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty) присоединенного свойства, чтобы буквы или цифры и при необходимости задавая [ `VisualElement.AccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty) присоединенное свойство в значение [ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement) перечисления, [ `VisualElement.AccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty) вложенное свойство, чтобы `double`и [ `VisualElement.AccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty) присоединенное свойство `double`:
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <ContentPage Title="Page 1"
+                 windows:VisualElement.AccessKey="1">
+        <StackLayout Margin="20">
+            ...
+            <Switch windows:VisualElement.AccessKey="A" />
+            <Entry Placeholder="Enter text here"
+                   windows:VisualElement.AccessKey="B" />
+            ...
+            <Button Text="Access key F, placement top with offsets"
+                    Margin="20"
+                    Clicked="OnButtonClicked"
+                    windows:VisualElement.AccessKey="F"
+                    windows:VisualElement.AccessKeyPlacement="Top"
+                    windows:VisualElement.AccessKeyHorizontalOffset="20"
+                    windows:VisualElement.AccessKeyVerticalOffset="20" />
+            ...
+        </StackLayout>
+    </ContentPage>
+    ...
+</TabbedPage>
+```
+
+Кроме того его можно будет использовать с помощью C# с помощью текучего API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+var page = new ContentPage { Title = "Page 1" };
+page.On<Windows>().SetAccessKey("1");
+
+var switchView = new Switch();
+switchView.On<Windows>().SetAccessKey("A");
+var entry = new Entry { Placeholder = "Enter text here" };
+entry.On<Windows>().SetAccessKey("B");
+...
+
+var button4 = new Button { Text = "Access key F, placement top with offsets", Margin = new Thickness(20) };
+button4.Clicked += OnButtonClicked;
+button4.On<Windows>()
+    .SetAccessKey("F")
+    .SetAccessKeyPlacement(AccessKeyPlacement.Top)
+    .SetAccessKeyHorizontalOffset(20)
+    .SetAccessKeyVerticalOffset(20);
+...
+```
+
+`VisualElement.On<Windows>` Метод указывает, что этой платформы будет выполняться только на универсальной платформе Windows. [ `VisualElement.SetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.String)) Метод в [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) пространства имен, используемый для задания значения ключа доступа для `VisualElement`. [ `VisualElement.SetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},Xamarin.Forms.AccessKeyPlacement)) Метод, при необходимости указывает позицию будет использоваться для отображения ключевых подсказок доступ, с помощью [ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement) перечисления, предоставляя следующие возможные значения:
+
+- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) — Указывает, что размещение ключевых подсказок доступ будет определяться операционной системой.
+- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top) — Указывает, что ключевых подсказок доступа будет отображаться над верхним краем `VisualElement`.
+- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom) — Указывает, что ключевых подсказок доступа отображается под нижней границе `VisualElement`.
+- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right) — Указывает, что ключевых подсказок доступа будет отображаться справа от правого края `VisualElement`.
+- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left) — Указывает, что ключевых подсказок доступа будет отображаться слева от левого края `VisualElement`.
+- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center) — Указывает, что ключевых подсказок доступа будет отображаться перекрывающимся по центру `VisualElement`.
+
+> [!NOTE]
+> Как правило [ `Auto` ](xref:Xamarin.Forms.AccessKeyPlacement.Auto) размещения ключевых подсказок достаточно, который включает в себя поддержку адаптивной пользовательских интерфейсов.
+
+[ `VisualElement.SetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double)) И [ `VisualElement.SetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double)) методы могут использоваться для более детального контроля доступа расположения ключевых подсказок. Аргумент `SetAccessKeyHorizontalOffset` метод указывает далеко перемещение доступа ключевых подсказок влево или вправо, а аргумент `SetAccessKeyVerticalOffset` метод показывает, как далеко необходимо переместить ключевых подсказок доступа вверх или вниз.
+
+>[!NOTE]
+> Смещения ключевых подсказок доступа невозможно установить, если задать расположение ключа доступа `Auto`.
+
+Кроме того [ `GetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), [ `GetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), [ `GetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), и [ `GetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})) можно использовать методы Для получения доступа значение и его расположение ключа.
+
+Результатом является то, что сочетания клавиш доступа могут отображаться рядом с любой [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) экземплярам, которые определяют доступ к ключам, нажав клавишу Alt:
+
+![Доступ VisualElement разделам платформы](windows-images/visualelement-accesskeys.png "VisualElement доступ разделам платформы")
+
+При активации пользователем ключ доступа, нажав клавишу Alt, а затем доступ ключа, по умолчанию действия для `VisualElement` будет выполняться. Например, когда пользователь активирует ключ доступа на [ `Switch` ](xref:Xamarin.Forms.Switch), `Switch` переключается. Когда пользователь активирует ключ доступа на [ `Entry` ](xref:Xamarin.Forms.Entry), `Entry` получает фокус. Когда пользователь активирует ключ доступа на [ `Button` ](xref:Xamarin.Forms.Button), обработчик событий для [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) выполнено событие.
+
+Дополнительные сведения о ключах доступа см. в разделе [ключи доступа](/windows/uwp/design/input/access-keys#key-tip-positioning).
+
 ## <a name="summary"></a>Сводка
 
 В этой статье было показано, как использовать Windows особенностей платформы, которые встроены в Xamarin.Forms. Особенности платформы позволяют использовать функциональные возможности, доступные только на определенной платформе, без реализации пользовательских модулей подготовки отчетов или эффектов.
@@ -301,4 +450,4 @@ listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 
 - [Создание особенностей платформы](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (пример)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [WindowsSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)
+- [WindowsSpecific](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

@@ -7,16 +7,16 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c10a3c1a0ed2755734fe351df39caadc88dd61c4
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: a02239906f5a30c068cb7eebd31308ad188696b3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935135"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998102"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Сводка Глава 28. Расположение и карты
 
-Xamarin.Forms поддерживает [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) элемент, производный от `View`. Из-за специальные требования к платформе связанные с использованием карт, они реализуются в отдельной сборке, **Xamarin.Forms.Maps**и они используют другое пространство имен: `Xamarin.Forms.Maps`.
+Xamarin.Forms поддерживает [ `Map` ](xref:Xamarin.Forms.Maps.Map) элемент, производный от `View`. Из-за специальные требования к платформе связанные с использованием карт, они реализуются в отдельной сборке, **Xamarin.Forms.Maps**и они используют другое пространство имен: `Xamarin.Forms.Maps`.
 
 ## <a name="the-geographic-coordinate-system"></a>Используется географическая система координат
 
@@ -118,13 +118,13 @@ Windows или Windows Phone приложение должно иметь `locat
 
 [ **MapDemos** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28/MapDemos) Образец состоит из [MapsDemoHomePage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml) файл и [MapsDemoHomePage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml.cs) файл фонового кода, допускает переход к различным демонстрационными программами.
 
-[BasicMapPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/BasicMapPage.xaml) демонстрирует, как отобразить [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) представления. По умолчанию он отображает города Рим, но карты можно управлять этим пользователем.
+[BasicMapPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/BasicMapPage.xaml) демонстрирует, как отобразить [ `Map` ](xref:Xamarin.Forms.Maps.Map) представления. По умолчанию он отображает города Рим, но карты можно управлять этим пользователем.
 
-Чтобы отключить горизонтальной и вертикальной прокрутки, задайте [ `HasScrollEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.HasScrollEnabled/) свойства `false`. Чтобы отключить масштабирование, задайте [ `HasZoomEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.HasZoomEnabled/) для `false`. Эти свойства могут не работать на всех платформах.
+Чтобы отключить горизонтальной и вертикальной прокрутки, задайте [ `HasScrollEnabled` ](xref:Xamarin.Forms.Maps.Map.HasScrollEnabled) свойства `false`. Чтобы отключить масштабирование, задайте [ `HasZoomEnabled` ](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled) для `false`. Эти свойства могут не работать на всех платформах.
 
 ### <a name="streets-and-terrain"></a>Улиц и ландшафта
 
-Различные типы карт можно отобразить, задав `Map` свойство [ `MapType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.MapType/) типа [ `MapType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapType/), перечисление с тремя элементами:
+Различные типы карт можно отобразить, задав `Map` свойство [ `MapType` ](xref:Xamarin.Forms.Maps.Map.MapType) типа [ `MapType` ](xref:Xamarin.Forms.Maps.MapType), перечисление с тремя элементами:
 
 - [`Street`](xref:Xamarin.Forms.Maps.MapType.Street), значение по умолчанию
 - [`Satellite`](xref:Xamarin.Forms.Maps.MapType.Satellite)
@@ -134,32 +134,32 @@ Windows или Windows Phone приложение должно иметь `locat
 
 ### <a name="map-coordinates"></a>Координаты
 
-Программа может получить текущую область, `Map` отображение через [ `VisibleRegion` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.VisibleRegion/) свойство. Это свойство является *не* поддерживаемый привязываемые свойства, и отсутствует механизм уведомлений указать после его изменения, чтобы программа, которая хочет отслеживать свойство, возможно, следует использовать таймер для этой цели.
+Программа может получить текущую область, `Map` отображение через [ `VisibleRegion` ](xref:Xamarin.Forms.Maps.Map.VisibleRegion) свойство. Это свойство является *не* поддерживаемый привязываемые свойства, и отсутствует механизм уведомлений указать после его изменения, чтобы программа, которая хочет отслеживать свойство, возможно, следует использовать таймер для этой цели.
 
-`VisibleRegion` имеет тип [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/), класс с четырьмя свойствами только для чтения:
+`VisibleRegion` имеет тип [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan), класс с четырьмя свойствами только для чтения:
 
-- [`Center`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.Center/) типа [`Position`](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/)
-- [`LatitudeDegrees`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.LatitudeDegrees/) типа `double`, указывающее высоту отображаемую область карты
-- [`LongitudeDegrees`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.LongitudeDegrees/) типа `double`, указывающее ширину отображаемую область карты
-- [`Radius`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.Radius/) типа [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/), показывающее размер наибольшего круговой области, видимой на карте
+- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) типа [`Position`](xref:Xamarin.Forms.Maps.Position)
+- [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) типа `double`, указывающее высоту отображаемую область карты
+- [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) типа `double`, указывающее ширину отображаемую область карты
+- [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) типа [ `Distance` ](xref:Xamarin.Forms.Maps.Distance), показывающее размер наибольшего круговой области, видимой на карте
 
-`Position` и `Distance` — обе структуры. `Position` Определяет два свойства только для чтения, настроенных с помощью [ `Position` конструктор](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Position.Position/p/System.Double/System.Double/):
+`Position` и `Distance` — обе структуры. `Position` Определяет два свойства только для чтения, настроенных с помощью [ `Position` конструктор](xref:Xamarin.Forms.Maps.Position.%23ctor(System.Double,System.Double)):
 
-- [`Latitude`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Position.Latitude/)
-- [`Longitude`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Position.Longitude/)
+- [`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude)
+- [`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude)
 
 `Distance` должны давать расстояние независимые единицы путем преобразования между метрики и английской системе мер. Объект `Distance` значение могут создаваться несколькими способами:
 
-- [`Distance` Конструктор](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Distance.Distance/p/System.Double/) с расстояние в метрах
-- [`Distance.FromMeters`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromMeters/p/System.Double/) статический метод
-- [`Distance.FromKilometers`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromKilometers/p/System.Double/) статический метод
-- [`Distance.FromMiles`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromMiles/p/System.Double/) статический метод
+- [`Distance` Конструктор](xref:Xamarin.Forms.Maps.Distance.%23ctor(System.Double)) с расстояние в метрах
+- [`Distance.FromMeters`](xref:Xamarin.Forms.Maps.Distance.FromMeters(System.Double)) статический метод
+- [`Distance.FromKilometers`](xref:Xamarin.Forms.Maps.Distance.FromKilometers(System.Double)) статический метод
+- [`Distance.FromMiles`](xref:Xamarin.Forms.Maps.Distance.FromMiles(System.Double)) статический метод
 
 Значение можно получить из трех свойств:
 
-- [`Meters`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Meters/) типа `double`
-- [`Kilometers`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Kilometers/) типа `double`
-- [`Miles`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Miles/) типа `double`
+- [`Meters`](xref:Xamarin.Forms.Maps.Distance.Meters) типа `double`
+- [`Kilometers`](xref:Xamarin.Forms.Maps.Distance.Kilometers) типа `double`
+- [`Miles`](xref:Xamarin.Forms.Maps.Distance.Miles) типа `double`
 
 [MapCoordinatesPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml) файл содержит несколько `Label` элементов для отображения `MapSpan` сведения. [MapCoordinatesPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml.cs) файл с выделенным кодом используется таймер для сохранения согласованности сведений, обновлять, так как он управляет карты.
 
@@ -169,16 +169,16 @@ Windows или Windows Phone приложение должно иметь `locat
 
 ### <a name="setting-an-initial-location"></a>Настройка начальной местоположения
 
-Можно вызвать [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion/p/Xamarin.Forms.Maps.MapSpan/) метод `Map` программно задать расположение и масштабирования уровня на карте. Аргумент имеет тип `MapSpan`. Можно создать `MapSpan` с помощью одной из следующих:
+Можно вызвать [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)) метод `Map` программно задать расположение и масштабирования уровня на карте. Аргумент имеет тип `MapSpan`. Можно создать `MapSpan` с помощью одной из следующих:
 
-- [`MapSpan` Конструктор](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.MapSpan.MapSpan/p/Xamarin.Forms.Maps.Position/System.Double/System.Double/) с `Position`и диапазон широты и долготы
-- [`MapSpan.FromCenterAndRadius`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius/p/Xamarin.Forms.Maps.Position/Xamarin.Forms.Maps.Distance/) с помощью `Position` и radius
+- [`MapSpan` Конструктор](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double)) с `Position`и диапазон широты и долготы
+- [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance)) с помощью `Position` и radius
 
-Можно также создать новую `MapSpan` из существующей структуры с помощью методов [ `ClampLatitude` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.ClampLatitude/p/System.Double/System.Double/) или [ `WithZoom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.WithZoom/p/System.Double/).
+Можно также создать новую `MapSpan` из существующей структуры с помощью методов [ `ClampLatitude` ](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude(System.Double,System.Double)) или [ `WithZoom` ](xref:Xamarin.Forms.Maps.MapSpan.WithZoom(System.Double)).
 
 [WyomingPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml) файл и [WyomingPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml.cs) файл кода демонстрируется использование `MoveToRegion` метод для отображения состояния Вайоминг.
 
-Также можно использовать [ `Map` конструктор](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Map.Map/p/Xamarin.Forms.Maps.MapSpan/) с `MapSpan` для инициализации расположения карты. [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml) демонстрирует, как это сделать полностью в XAML для отображения Xamarin штаб-квартиру в Сан-Франциско.
+Также можно использовать [ `Map` конструктор](xref:Xamarin.Forms.Maps.Map.%23ctor(Xamarin.Forms.Maps.MapSpan)) с `MapSpan` для инициализации расположения карты. [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml) демонстрирует, как это сделать полностью в XAML для отображения Xamarin штаб-квартиру в Сан-Франциско.
 
 ### <a name="dynamic-zooming"></a>Динамическое масштабирование
 
@@ -188,7 +188,7 @@ Windows или Windows Phone приложение должно иметь `locat
 
 ### <a name="the-phones-location"></a>Расположение телефона
 
-[ `IsShowingUser` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.IsShowingUser/) Свойство `Map` работает немного по-разному на трех платформах, как [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml) демонстрирует файл:
+[ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser) Свойство `Map` работает немного по-разному на трех платформах, как [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml) демонстрирует файл:
 
 - В iOS синяя точка обозначает расположение телефона, но вам необходимо вручную перейти туда
 - В Android, отображается значок, что при передаче перемещает карту, чтобы расположение телефона
@@ -200,12 +200,12 @@ Windows или Windows Phone приложение должно иметь `locat
 
 ### <a name="pins-and-science-museums"></a>ПИН-кодов и музеи обработки и анализа
 
-Наконец `Map` класс определяет [ `Pins` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.Pins/) свойство типа `IList<Pin>`. [ `Pin` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Pin/) Класс определяет четыре свойства:
+Наконец `Map` класс определяет [ `Pins` ](xref:Xamarin.Forms.Maps.Map.Pins) свойство типа `IList<Pin>`. [ `Pin` ](xref:Xamarin.Forms.Maps.Pin) Класс определяет четыре свойства:
 
-- [`Label`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Label/) типа `string`— обязательное свойство
-- [`Address`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Address/) типа `string`, удобное для восприятия дополнительный адрес
-- [`Position`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Position/) типа `Position`, указывающее, где отображается ПИН-кода на карте
-- [`Type`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Type/) типа [ `PinType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.PinType/), перечисление, которое не используется
+- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label) типа `string`— обязательное свойство
+- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address) типа `string`, удобное для восприятия дополнительный адрес
+- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) типа `Position`, указывающее, где отображается ПИН-кода на карте
+- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) типа [ `PinType` ](xref:Xamarin.Forms.Maps.PinType), перечисление, которое не используется
 
 **MapDemos** проект содержит файл [ScienceMuseums.xml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml), обработки и анализа музеи, в США, в котором перечислены и [ `Locations` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs) и [ `Site` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs) классы для десериализации данных.
 
@@ -223,7 +223,7 @@ Windows или Windows Phone приложение должно иметь `locat
 
 ## <a name="geocoding-and-back-again"></a>Геокодирование и обратно
 
-[ **Xamarin.Forms.Maps** ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) сборка также содержит [ `Geocoder` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Geocoder/) класса [ `GetPositionsForAddressAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync/p/System.String/) метод, который преобразует адрес текста в ноль или более возможных географического положения и другой метод [ `GetAddressesForPositionAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync/p/Xamarin.Forms.Maps.Position/) , преобразует в другом направлении.
+[ **Xamarin.Forms.Maps** ](xref:Xamarin.Forms.Maps) сборка также содержит [ `Geocoder` ](xref:Xamarin.Forms.Maps.Geocoder) класса [ `GetPositionsForAddressAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String)) метод, который преобразует адрес текста в ноль или более возможных географического положения и другой метод [ `GetAddressesForPositionAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)) , преобразует в другом направлении.
 
 [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml) файл и [GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs) эта функция позволяет продемонстрировать файл с выделенным кодом.
 

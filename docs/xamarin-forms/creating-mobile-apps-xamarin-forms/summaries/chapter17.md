@@ -7,28 +7,28 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b71859d0848d7bf790b3cc4beddc67a5ea86d340
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 5f5b934b5f828bf6f5e8d4a0f0738c7db633aefb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935482"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995844"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Сводка Глава 17. Совершенствование навыков работы в сетке
 
-[ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) — Это набор мощных механизм, который упорядочивает его дочерние элементы в строки и столбцы ячеек. В отличие от HTML-код, аналогичный `table` элемент, `Grid` , предназначенное исключительно для целей макета, а не презентации.
+[ `Grid` ](xref:Xamarin.Forms.Grid) — Это набор мощных механизм, который упорядочивает его дочерние элементы в строки и столбцы ячеек. В отличие от HTML-код, аналогичный `table` элемент, `Grid` , предназначенное исключительно для целей макета, а не презентации.
 
 ## <a name="the-basic-grid"></a>Основные сетки
 
-`Grid` является производным от [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/), который определяет [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) свойство, `Grid` наследует. Вы можете заполнить эту коллекцию на XAML или кода.
+`Grid` является производным от [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1), который определяет [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) свойство, `Grid` наследует. Вы можете заполнить эту коллекцию на XAML или кода.
 
 ### <a name="the-grid-in-xaml"></a>Сетка в XAML
 
-Определение `Grid` в XAML обычно начинается с заполнения [ `RowDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowDefinitions/) и [ `ColumnDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnDefinitions/) коллекции `Grid` с [ `RowDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/) и [ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/) объектов. Это, как установить число строк и столбцов `Grid`и их свойства.
+Определение `Grid` в XAML обычно начинается с заполнения [ `RowDefinitions` ](xref:Xamarin.Forms.Grid.RowDefinitions) и [ `ColumnDefinitions` ](xref:Xamarin.Forms.Grid.ColumnDefinitions) коллекции `Grid` с [ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition) и [ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition) объектов. Это, как установить число строк и столбцов `Grid`и их свойства.
 
-`RowDefinition` имеет [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.RowDefinition.Height/) свойство и `ColumnDefinition` имеет [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ColumnDefinition.Width/) свойство, оба типа [ `GridLength` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLength/), структуру.
+`RowDefinition` имеет [ `Height` ](xref:Xamarin.Forms.RowDefinition.Height) свойство и `ColumnDefinition` имеет [ `Width` ](xref:Xamarin.Forms.ColumnDefinition.Width) свойство, оба типа [ `GridLength` ](xref:Xamarin.Forms.GridLength), структуру.
 
-В XAML [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/) преобразует простые текстовые строки в `GridLength` значения. На самом деле [ `GridLength` конструктор](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/) создает `GridLength` значение, основанное на число и значение типа [ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/), перечисление с тремя элементами:
+В XAML [ `GridLengthTypeConverter` ](xref:Xamarin.Forms.GridLengthTypeConverter) преобразует простые текстовые строки в `GridLength` значения. На самом деле [ `GridLength` конструктор](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType)) создает `GridLength` значение, основанное на число и значение типа [ `GridUnitType` ](xref:Xamarin.Forms.GridUnitType), перечисление с тремя элементами:
 
 - [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute) &mdash; Ширина или высота задается в аппаратно независимых единицах (число в XAML)
 - [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto) &mdash; Высота или ширина будет определяться автоматически, основываясь на содержимом ячейки («Auto» в XAML)
@@ -36,17 +36,17 @@ ms.locfileid: "37935482"
 
 Каждый дочерний элемент элемента `Grid` также должен быть назначен строк и столбцов (явно или неявно). Охватывает строки и столбца диапазонов являются необязательными. Они все указываются с помощью присоединенного свойства связывания &mdash; свойства, которые определяются `Grid` но устанавливаться для дочерних элементов `Grid`. `Grid` Определяет четыре статических присоединенного привязываемые свойства:
 
-- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; Отсчитываемый от нуля строку; значение по умолчанию — 0
-- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; Отсчитываемый от нуля столбец; значение по умолчанию — 0
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; число строк распространяется на дочерние; по умолчанию — 1
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; число столбцов распространяется на дочерние; по умолчанию — 1
+- [`RowProperty`](xref:Xamarin.Forms.Grid.RowProperty) &mdash; Отсчитываемый от нуля строку; значение по умолчанию — 0
+- [`ColumnProperty`](xref:Xamarin.Forms.Grid.ColumnProperty) &mdash; Отсчитываемый от нуля столбец; значение по умолчанию — 0
+- [`RowSpanProperty`](xref:Xamarin.Forms.Grid.RowSpanProperty) &mdash; число строк распространяется на дочерние; по умолчанию — 1
+- [`ColumnSpanProperty`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) &mdash; число столбцов распространяется на дочерние; по умолчанию — 1
 
 В коде программа может использовать восемь статические методы для задания и получения этих значений:
 
-- [`Grid.SetRow`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetRow/p/Xamarin.Forms.BindableObject/System.Int32/) и [`Grid.GetRow`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetRow/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetColumn`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetColumn/p/Xamarin.Forms.BindableObject/System.Int32/) и [`Grid.GetColumn`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetColumn/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetRowSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetRowSpan/p/Xamarin.Forms.BindableObject/System.Int32/) и [`Grid.GetRowSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetRowSpan/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetColumnSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetColumnSpan/p/Xamarin.Forms.BindableObject/System.Int32/) и [`Grid.GetColumnSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetColumnSpan/p/Xamarin.Forms.BindableObject/)
+- [`Grid.SetRow`](xref:Xamarin.Forms.Grid.SetRow(Xamarin.Forms.BindableObject,System.Int32)) и [`Grid.GetRow`](xref:Xamarin.Forms.Grid.GetRow(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumn`](xref:Xamarin.Forms.Grid.SetColumn(Xamarin.Forms.BindableObject,System.Int32)) и [`Grid.GetColumn`](xref:Xamarin.Forms.Grid.GetColumn(Xamarin.Forms.BindableObject))
+- [`Grid.SetRowSpan`](xref:Xamarin.Forms.Grid.SetRowSpan(Xamarin.Forms.BindableObject,System.Int32)) и [`Grid.GetRowSpan`](xref:Xamarin.Forms.Grid.GetRowSpan(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumnSpan`](xref:Xamarin.Forms.Grid.SetColumnSpan(Xamarin.Forms.BindableObject,System.Int32)) и [`Grid.GetColumnSpan`](xref:Xamarin.Forms.Grid.GetColumnSpan(Xamarin.Forms.BindableObject))
 
 В XAML о настройке этих значений можно использовать следующие атрибуты:
 
@@ -57,10 +57,10 @@ ms.locfileid: "37935482"
 
 [ **SimpleGridDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SimpleGridDemo) в нем демонстрируется создание и инициализация `Grid` в XAML.
 
-`Grid` Наследует [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) свойства из `Layout` и определяет две дополнительные свойства, которые предоставляют расстояние между строками и столбцами:
+`Grid` Наследует [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) свойства из `Layout` и определяет две дополнительные свойства, которые предоставляют расстояние между строками и столбцами:
 
-- [`RowSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowSpacing/) имеет значение по умолчанию из 6
-- [`ColumnSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnSpacing/) имеет значение по умолчанию из 6
+- [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) имеет значение по умолчанию из 6
+- [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) имеет значение по умолчанию из 6
 
 `RowDefinitions` И `ColumnDefinitions` коллекции не является обязательным. Если значение отсутствует, `Grid` создает строки и столбцы для `Grid` дочерних элементов и присваивает им все значения по умолчанию `GridLength` из "\*" (звездочка).
 

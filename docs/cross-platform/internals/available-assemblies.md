@@ -1,58 +1,58 @@
 ---
-title: Доступных сборок
-description: В этом документе перечислены доступные для использования в Xamarin.iOS, Xamarin.Android и Xamarin.Mac сборки. Также приводятся ссылки на документацию по .NET стандартные библиотеки и переносимой библиотеки классов.
+title: Доступные сборки
+description: В этом документе перечислены сборок, доступных для использования в Xamarin.iOS, Xamarin.Android и Xamarin.Mac. Также содержит ссылки на документацию по .NET Standard библиотек и переносимых библиотек классов.
 ms.prod: xamarin
 ms.assetid: AEF4ED0E-391F-4FA4-9F18-842BC24C272D
 author: asb3993
 ms.author: amburns
 ms.date: 03/13/2018
-ms.openlocfilehash: b73a818d3864c7c4d1d776e104d95090e87f5877
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: d005d6c5e1dcfe7e9bcff44b308cea0ce7ab73e9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781911"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998658"
 ---
-# <a name="available-assemblies"></a>Доступных сборок
+# <a name="available-assemblies"></a>Доступные сборки
 
-Xamarin.iOS, Xamarin.Android и Xamarin.Mac все поставляются с различных сборок. Так же, как Silverlight является расширенной подмножество системной сборки .NET, Xamarin платформы также является расширенной подмножество несколько Silverlight и сборками рабочего стола .NET.
+Xamarin.iOS, Xamarin.Android и Xamarin.Mac все поставляются вместе с более чем десяти различных сборок. Так же, как Silverlight является расширенной подмножество классические сборки .NET, платформы Xamarin также является расширенной подмножеством несколько Silverlight и классические сборки .NET.
 
-Xamarin платформы не совместимы с существующими сборками, скомпилированы для разных профиля ABI. Необходимо повторно компилировать исходный код для создания сборки, предназначенные для профиля (так же, как необходимо перекомпилировать предназначены для Silverlight и .NET 3.5 отдельно в исходном коде).
+Платформы Xamarin не ABI, совместимый с существующей сборки, скомпилированные для другой профиль. Необходимо выполнить повторную компиляцию исходного кода для создания сборки, предназначенные для нужной конфигурации (так же, как вам потребуется выполнить повторную компиляцию исходного кода для работы с Silverlight и .NET 3.5 отдельно).
 
-Xamarin.Mac приложения может быть скомпилирован в трех режимах: одна с помощью Xamarin курируемый Mobile Profile, .NET Framework 4.5 Xamarin.Mac, на котором можно выбирать существующих сборок настольные и не поддерживается, использующих API-Интерфейсы .NET содержится в системе моно Установка. Дополнительные сведения см. в разделе нашей [целевые платформы](~/mac/platform/target-framework.md) документации.
+Приложения Xamarin.Mac можно скомпилировать в трех режимах:, использующую Xamarin проверенный Mobile Profile, .NET Framework 4.5 Xamarin.Mac, на котором можно выбирать существующие сборки настольные и найден неподдерживаемый тот, который использует API-Интерфейс .NET в системе Mono Установка. Дополнительные сведения см. в разделе наших [целевых платформ](~/mac/platform/target-framework.md) документации.
 
 
 ## <a name="net-standard-libraries"></a>Стандартные библиотеки .NET
 
-В дополнение к Android, iOS и Mac привязок проекты могут использовать Xamarin [.NET стандартные библиотеки](~/cross-platform/app-fundamentals/net-standard.md).
+В дополнение к iOS, Android и Mac привязки, могут использовать проекты Xamarin [библиотеки .NET Standard](~/cross-platform/app-fundamentals/net-standard.md).
 
 ## <a name="portable-class-libraries"></a>Переносимые библиотеки классов
  
-Можно также использовать проектов Xamarin [переносимой библиотеки классов .NET](~/cross-platform/app-fundamentals/pcl.md), несмотря на то, что эта технология рекомендован к использованию пользу .NET Standard.
+Можно также использовать проекты Xamarin [переносимые библиотеки классов .NET](~/cross-platform/app-fundamentals/pcl.md), несмотря на то, что эта технология будет заменен .NET Standard.
 
-## <a name="supported-assemblies"></a>Поддерживаемых сборок
+## <a name="supported-assemblies"></a>Поддерживаемые сборки
 
 > [!div class="mx-tdCol2BreakAll"]
 > |Assembly|Совместимость API|Xamarin iOS|Xamarin Android|Xamarin Mac|
 > |--------|-----------------|-----------|---------------|-----------|
 > |FSharp.Core.dll| |✓|✓|✓|
-> |l18N.dll|Включает CJK MidEast других, редко, Запад|✓|✓|✓|
+> |l18N.dll|Включает ККЯ, MidEast, другие, используется редко, Запад|✓|✓|✓|
 > |Microsoft.CSharp.dll| |✓|✓|✓|
 > |Mono.CSharp.dll| |✓|✓|✓|
-> |Mono.Data.Sqlite.dll|Поставщик ADO.NET для SQLite; см. ограничения.|✓|✓|✓|
-> |Mono.Data.Tds.dll|Поддержка протокола потока табличных данных; используется для [System.Data.SqlClient](https://developer.xamarin.com/api/namespace/System.Data.SqlClient/) поддерживают в [System.Data](https://developer.xamarin.com/api/namespace/System.Data/).|✓|✓|✓|
+> |Mono.Data.Sqlite.dll|Поставщик ADO.NET для SQLite; см. в разделе ограничения.|✓|✓|✓|
+> |Mono.Data.Tds.dll|Поддержка протокола потока табличных данных; используется для [System.Data.SqlClient](xref:System.Data.SqlClient) поддерживают в [System.Data](xref:System.Data).|✓|✓|✓|
 > |Mono.Dynamic. &#8203;Interpreter.dll| |✓| | |
-> |Mono.Security.dll|Интерфейсы API шифрования.|✓|✓|✓|
-> |monotouch.dll|Эта сборка содержит привязки к CocoaTouch API. Такая возможность доступна только в классическом проекты iOS.|✓| | |
+> |Mono.Security.dll|Криптографические API.|✓|✓|✓|
+> |monotouch.dll|Эта сборка содержит привязку к платформе CocoaTouch API C#. Эта возможность доступна только в проекты iOS Classic.|✓| | |
 > |MonoTouch. &#8203;1.dll диалоговое окно| |✓| | |
 > |MonoTouch.&#8203;NUnitLite.dll| |✓| | |
 > |mscorlib.dll|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|✓|✓|✓|
-> |OpenTK-1.0.dll|Объект OpenGL/OpenAL ориентированной API-интерфейсы, расширен для обеспечения поддержки устройства iPhone.|✓|✓|✓|
+> |OpenTK-1.0.dll|OpenGL/OpenAL объектно ориентированного API, расширенная с целью предоставления поддержки устройства iPhone.|✓|✓|✓|
 > |System.dll|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx), а также типы из следующих пространств имен:<br />System.Collections.Specialized<br />Система. &#8203;ComponentModel<br />System.ComponentModel.Design<br />System.Diagnostics<br />System.IO<br />System.IO.Compression<br />System.IO.Compression.FileSystem<br />System.Net<br />System.Net.Cache<br />System.Net.Mail<br />System.Net.Mime<br />System.Net. &#8203;NetworkInformation, соответствующей выбранному<br />System.Net.Security<br />System.Net.Sockets<br />System.Runtime. &#8203;InteropServices<br />System.Runtime.Versioning<br />System.Security. &#8203;AccessControl<br />System.Security.Authentication<br />System.Security. &#8203;Криптографии<br />System.Security.Permissions<br />System.Threading<br />System.Timers|✓|✓|✓|
 > |Система. &#8203;ComponentModel. &#8203;Composition.dll| |✓|✓|✓|
 > |Система. &#8203;ComponentModel. &#8203;DataAnnotations.dll| |✓|✓|✓|
 > |System.Core.dll|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|✓|✓|✓|
-> |System.Data.dll|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx) , с [удалены некоторые функциональные возможности](~/ios/data-cloud/system.data.md).|✓|✓|✓|
+> |System.Data.dll|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx) , с помощью [удалены некоторые функциональные возможности](~/ios/data-cloud/system.data.md).|✓|✓|✓|
 > |System.Data. &#8203;Служб. &#8203;Client.dll|Клиент полный oData.|✓|✓|✓|
 > |System.IO. &#8203;Сжатия| |✓|✓|✓|
 > |System.IO. &#8203;Сжатия. &#8203;Файловой системы| |✓|✓|✓|
@@ -64,12 +64,12 @@ Xamarin.Mac приложения может быть скомпилирован 
 > |Система. &#8203;ServiceModel. &#8203;Internals.dll| |✓|✓|✓|
 > |Система. &#8203;ServiceModel. &#8203;Web.dll|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx), а также типы из следующих пространств имен: <br />Система<br />System.ServiceModel.Channels<br />System.ServiceModel.Description<br />System.ServiceModel.Web|✓|✓|✓|
 > |Система. &#8203;Transactions.dll|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx); частью [System.Data](~/ios/data-cloud/system.data.md) поддержки.|✓|✓|✓|
-> |System.Web. &#8203;Services.dll|Основные веб-службы из профиля .NET 3.5, с удаленные компоненты сервера.|✓|✓|✓|
+> |System.Web. &#8203;Services.dll|Основные веб-службы из профиля .NET 3.5, с сервера компоненты, удаленные.|✓|✓|✓|
 > |Система. &#8203;Windows.dll| |✓|✓|✓|
 > |Система. &#8203;Xml.dll|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)|✓|✓|✓|
 > |System.Xml. &#8203;Linq.dll|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)|✓|✓|✓|
 > |System.Xml.Serialization.dll| |✓|✓|✓|
-> |Xamarin.iOS.dll|Эта сборка содержит привязки к CocoaTouch API. Используется только в проектах единой операций ввода-вывода.|✓| | |
+> |Xamarin.iOS.dll|Эта сборка содержит привязку к платформе CocoaTouch API C#. Используется только в единой системе проектов iOS.|✓| | |
 > |Java.Interop.dll| | |✓| |
 > |Mono.Android.dll| | |✓| |
 > |Mono.Android. &#8203;Export.dll| | |✓| |
@@ -78,4 +78,4 @@ Xamarin.Mac приложения может быть скомпилирован 
 > |Xamarin.Android. &#8203;NUnitLite.dll| | |✓| |
 > |Mono.CompilerServices. &#8203;SymbolWriter.dll|Для компиляторов.| | |✓|
 > |Xamarin.Mac.dll| | | |✓|
-> |Система. &#8203;Drawing.dll|System.Drawing API - интерфейс классический API. System.Drawing не поддерживается в единой API для Xamarin.Mac .NET 4.5 или мобильных платформ. Можно добавить поддержку System.Drawing iOS и OS X с помощью [sysdrawing coregraphics](https://github.com/mono/sysdrawing-coregraphics) библиотеки|✓| |✓|
+> |Система. &#8203;Drawing.dll|System.Drawing API — только классический API. System.Drawing не поддерживается на единый API Xamarin.Mac .NET 4.5 или мобильных платформ. Можно добавить поддержку System.Drawing iOS и OS X с помощью [sysdrawing coregraphics](https://github.com/mono/sysdrawing-coregraphics) библиотеки|✓| |✓|

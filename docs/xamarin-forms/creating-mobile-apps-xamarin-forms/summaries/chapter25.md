@@ -7,32 +7,32 @@ ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9c7fd87579d0c35c9efe31edf5c25b8ed8f40658
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 148388b80137bd335bbb977ea230726da1f4a32d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935402"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995889"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Сводка главе 25. Создание страницы
 
 Теперь вы знаете двух классов, производных от `Page`: `ContentPage` и `NavigationPage`. Эта глава представляет два других:
 
-- [`MasterDetailPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) Управляет две страницы, главной и сведений
-- [`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) Управляет несколько дочерних страниц через вкладки
+- [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) Управляет две страницы, главной и сведений
+- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) Управляет несколько дочерних страниц через вкладки
 
 Эти типы страницы обеспечивают более сложные параметры навигации, чем `NavagationPage` подробно [Глава 24. Странице навигации](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter24.md).
 
 ## <a name="master-and-detail"></a>Основные и подробные
 
-[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) Определяет два свойства типа `Page`: [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) и [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/). Обычно каждое из этих свойств, чтобы задать `ContentPage`. `MasterDetailPage` Отображает и переключается между этим двум страницам.
+[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) Определяет два свойства типа `Page`: [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) и [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail). Обычно каждое из этих свойств, чтобы задать `ContentPage`. `MasterDetailPage` Отображает и переключается между этим двум страницам.
 
 Существуют два основных способа для переключения между этими двумя страницами:
 
 - *разделить* где основные и подробные находятся рядом друг с другом
 - *контекстном* где на страницу сведений о охватывает или частично рассматриваются главной странице
 
-Существует несколько вариантов *контекстном* подход (*слайд*, *перекрываются*, и *замены*), но они обычно платформы зависимые. Можно задать [ `MasterDetailBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) свойство `MasterDetailPage` члену [ `MasterBehavior` ](xref:Xamarin.Forms.MasterBehavior) перечисления:
+Существует несколько вариантов *контекстном* подход (*слайд*, *перекрываются*, и *замены*), но они обычно платформы зависимые. Можно задать [ `MasterDetailBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) свойство `MasterDetailPage` члену [ `MasterBehavior` ](xref:Xamarin.Forms.MasterBehavior) перечисления:
 
 - [`Default`](xref:Xamarin.Forms.MasterBehavior.Default)
 - [`Split`](xref:Xamarin.Forms.MasterBehavior.Split)
@@ -54,7 +54,7 @@ ms.locfileid: "37935402"
 
 `Master` И `Detail` свойства определяются с помощью визуальных деревьев в [SchoolAndDetailPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml) файл, который является производным от `MasterDetailPage`. Такой подход позволяет задать между основными и подробными страницами привязки данных.
 
-Также устанавливает файл XAML [ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/) свойство `MasterDetailPage` для `True`. Это приводит к главной страницы для отображения при запуске; по умолчанию отображается страница сведений. [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) файле задает `IsPresented` для `false` при выборе элемента из `ListView` на главной странице. Затем открывается страница сведений:
+Также устанавливает файл XAML [ `IsPresented` ](xref:Xamarin.Forms.MasterDetailPage.IsPresented) свойство `MasterDetailPage` для `True`. Это приводит к главной страницы для отображения при запуске; по умолчанию отображается страница сведений. [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) файле задает `IsPresented` для `false` при выборе элемента из `ListView` на главной странице. Затем открывается страница сведений:
 
 [![Тройной снимок деталей и School](images/ch25fg09-small.png "страницу сведений из MasterDetailPage")](images/ch25fg09-large.png#lightbox "страницу сведений из MasterDetailPage")
 
@@ -62,8 +62,8 @@ ms.locfileid: "37935402"
 
 Несмотря на то, что Xamarin.Forms предоставляет пользовательский интерфейс для переключения между представлениями основные и подробные, вы можете предоставить свои собственные. Для этого сделайте следующее:
 
-- Задайте [ `IsGestureEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsGestureEnabled/) свойства `false` отключение проведение пальцем по экрану
-- Переопределить [ `ShouldShowToolbarButton` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton()/) метода и верните `false` для скрытия кнопки панели инструментов в Windows 8.1 и Windows Phone 8.1.
+- Задайте [ `IsGestureEnabled` ](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabled) свойства `false` отключение проведение пальцем по экрану
+- Переопределить [ `ShouldShowToolbarButton` ](xref:Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton) метода и верните `false` для скрытия кнопки панели инструментов в Windows 8.1 и Windows Phone 8.1.
 
 Затем необходимо предоставить средства для переключения между основными и подробными страницами, таким образом, как показано [ **ColorsDetail** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/ColorsDetails) образца.
 
@@ -71,28 +71,28 @@ ms.locfileid: "37935402"
 
 ## <a name="tabbedpage"></a>TabbedPage
 
-[ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) — Это коллекция страниц, которые можно переключать с помощью вкладок. Он является производным от `MultiPage<Page>` и определяет не открытые свойства или методы свои собственные. [`MultiPage<T>`](https://developer.xamarin.com/api/type/Xamarin.Forms.MultiPage%3CT%3E/), тем не менее, определить свойство:
+[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) — Это коллекция страниц, которые можно переключать с помощью вкладок. Он является производным от `MultiPage<Page>` и определяет не открытые свойства или методы свои собственные. [`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1), тем не менее, определить свойство:
 
-- [`Children`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.Children/) свойство типа `IList<T>`
+- [`Children`](xref:Xamarin.Forms.MultiPage`1.Children) свойство типа `IList<T>`
 
 Заполните эту `Children` коллекции с объектами страницы.
 
 Другой подход позволяет определять `TabbedPage` дочерние элементы во многом аналогично `ListView` с помощью этих двух свойств, которые автоматически создают страницам с вкладками:
 
-- [`ItemsSource`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemsSource/) типа `IEnumerable`
-- [`ItemTemplate`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemTemplate/) типа `DataTemplate`
+- [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) типа `IEnumerable`
+- [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) типа `DataTemplate`
 
 Тем не менее этот подход не работает на iOS, если коллекция содержит несколько элементов.
 
 `MultiPage<T>` Определяет два дополнительные свойства, которые позволяют хранить список какая страница просматривается в настоящее время:
 
-- [`CurrentPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.CurrentPage/) типа `T`, ссылающегося на страницу
-- [`SelectedItem`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.SelectedItem/) типа `Object`, ссылающегося на объект в `ItemsSource` коллекции
+- [`CurrentPage`](xref:Xamarin.Forms.MultiPage`1.CurrentPage) типа `T`, ссылающегося на страницу
+- [`SelectedItem`](xref:Xamarin.Forms.MultiPage`1.SelectedItem) типа `Object`, ссылающегося на объект в `ItemsSource` коллекции
 
 `MultiPage<T>` также определяет два события:
 
-- [`PagesChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.MultiPage%3CT%3E.PagesChanged/) Когда `ItemsSource` изменения коллекции
-- [`CurrentPageChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.MultiPage%3CT%3E.CurrentPageChanged/) При изменении просматриваемой страницы
+- [`PagesChanged`](xref:Xamarin.Forms.MultiPage`1.PagesChanged) Когда `ItemsSource` изменения коллекции
+- [`CurrentPageChanged`](xref:Xamarin.Forms.MultiPage`1.CurrentPageChanged) При изменении просматриваемой страницы
 
 ### <a name="discrete-tab-pages"></a>Дискретные вкладок
 

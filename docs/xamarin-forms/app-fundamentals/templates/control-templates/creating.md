@@ -1,26 +1,26 @@
 ---
 title: Создание шаблона ControlTemplate
-description: Шаблоны элементов управления можно задать на уровне приложения или страницы. В этой статье показано, как создавать и использовать шаблоны элементов управления.
+description: Шаблоны элементов управления можно определять на уровне приложения или страницы. В этой статье показано, как создавать и использовать шаблоны элементов управления.
 ms.prod: xamarin
 ms.assetid: A9AEB052-FBF5-4589-9BD4-6D6F62BED7F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 214f967ccc07a7c952ba87927c34c3ab32623391
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b83668f6836b1d5d98f67592bf3e2b01e7319edc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848282"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998194"
 ---
 # <a name="creating-a-controltemplate"></a>Создание шаблона ControlTemplate
 
-_Шаблоны элементов управления можно задать на уровне приложения или страницы. В этой статье показано, как создавать и использовать шаблоны элементов управления._
+_Шаблоны элементов управления можно определять на уровне приложения или страницы. В этой статье показано, как создавать и использовать шаблоны элементов управления._
 
-## <a name="creating-a-controltemplate-in-xaml"></a>Создание шаблона элемента управления в XAML
+## <a name="creating-a-controltemplate-in-xaml"></a>Создания объекта ControlTemplate в XAML
 
-Для определения [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) на уровне приложения, [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) должны быть добавлены `App` класс. По умолчанию используют все Xamarin.Forms приложения, созданные из шаблона **приложения** класса для реализации [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/) подкласс. Для объявления `ControlTemplate` на уровне приложения, в приложении `ResourceDictionary` с помощью XAML, значение по умолчанию **приложения** класса должны быть заменены XAML **приложения** класса и связанный с выделенным кодом, как показано в следующем примере кода:
+Для определения [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) на уровне приложения, [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) должны добавляться `App` класса. По умолчанию используют все приложения Xamarin.Forms, созданные на основе шаблона **приложения** класс для реализации [ `Application` ](xref:Xamarin.Forms.Application) подкласс. Для объявления `ControlTemplate` на уровне приложения, в приложении `ResourceDictionary` с помощью XAML, значение по умолчанию **приложения** класса должны быть заменены XAML **приложения** класс и связанные с выделенным кодом, как в следующем примере кода показан:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.App">
@@ -48,9 +48,9 @@ _Шаблоны элементов управления можно задать 
 </Application>
 ```
 
-Каждый [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) экземпляр создается как объект для повторного использования в [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/).  Это достигается путем предоставления каждое объявление уникальный `x:Key` атрибут, который предоставляет ему описательное ключ в `ResourceDictionary`.
+Каждый [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) в виде многократного использования объекта создается экземпляр [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary).  Это достигается путем предоставления каждое объявление уникальный `x:Key` атрибут, который предоставляет ему описательное ключа в `ResourceDictionary`.
 
-В следующем примере кода показано, связанный с ним `App` кода:
+В следующем примере кода показано связанного `App` кода:
 
 ```csharp
 public partial class App : Application
@@ -63,9 +63,9 @@ public partial class App : Application
 }
 ```
 
-А также параметр [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) свойства, код программной части также необходимо вызвать `InitializeComponent` метод, чтобы загрузить и проанализировать связанные XAML.
+А также параметр [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage) свойства кода необходимо также вызвать `InitializeComponent` метод, чтобы загрузить и проанализировать связанные XAML.
 
-В следующем примере кода показан [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) применения `TealTemplate` для [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+В следующем коде показано в примере [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) применение `TealTemplate` для [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -79,13 +79,13 @@ public partial class App : Application
 </ContentPage>
 ```
 
-`TealTemplate` Назначается [ `ContentView.ControlTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TemplatedView.ControlTemplate/) свойства с помощью `StaticResource` расширения разметки. [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) Свойству [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) , определяющий содержимое, отображаемое на [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/). Это содержимое будет отображаться для [ `ContentPresenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) содержащихся в `TealTemplate`. Это приводит к появлению показано на следующем снимке экрана:
+`TealTemplate` Назначается [ `ContentView.ControlTemplate` ](xref:Xamarin.Forms.TemplatedView.ControlTemplate) свойства с помощью `StaticResource` расширение разметки. [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) Свойству [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) , определяющий содержимое, отображаемое на [ `ContentPage` ](xref:Xamarin.Forms.ContentPage). Это содержимое будет отображаться по [ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter) содержащихся в `TealTemplate`. Это приводит к появлению, показано на следующем снимке экрана:
 
-![](creating-images/teal-theme.png "Шаблон элемента управления бирюзовой")
+![](creating-images/teal-theme.png "Сине-зеленый шаблона элемента управления")
 
 ### <a name="re-theming-an-application-at-runtime"></a>RE темы приложения во время выполнения
 
-Щелкнув **изменить тему** кнопка выполняет `OnButtonClicked` метод, как показано в следующем примере кода:
+Щелкнув **изменить тему** нажатию кнопки выполняется `OnButtonClicked` метод, который показан в следующем примере кода:
 
 ```csharp
 void OnButtonClicked (object sender, EventArgs e)
@@ -95,16 +95,16 @@ void OnButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Этот метод заменяет активного [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) экземпляр с вместо `ControlTemplate` экземпляра, возникающие на следующем снимке экрана:
+Этот метод заменяет активного [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) экземпляр с альтернативой `ControlTemplate` экземпляр, полученный на следующем снимке экрана:
 
-![](creating-images/aqua-theme.png "Шаблон элемента управления синей")
+![](creating-images/aqua-theme.png "Шаблон элемента управления зеленовато-голубой")
 
 > [!NOTE]
-> На `ContentPage`, `Content` свойству может быть присвоено и `ControlTemplate` можно также задать свойство. Когда это происходит, если `ControlTemplate` содержит `ContentPresenter` экземпляр содержимого, назначенного `Content` презентация свойство `ContentPresenter` в `ControlTemplate`.
+> На `ContentPage`, `Content` свойство может быть присвоено и `ControlTemplate` также можно задать свойство. Когда это происходит, если `ControlTemplate` содержит `ContentPresenter` экземпляр содержимого, назначенного `Content` будет должно быть представлено свойство `ContentPresenter` в `ControlTemplate`.
 
-### <a name="setting-a-controltemplate-with-a-style"></a>Установка шаблона элемента управления, с помощью стиля
+### <a name="setting-a-controltemplate-with-a-style"></a>Установка шаблона элемента управления, используя стиль
 
-Объект [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) могут также применяться через [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) для дальнейшего расширения возможность темы. Это можно сделать путем создания *неявное* или *явных* стиль представление целевого объекта в [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)и параметр `ControlTemplate` свойства целевого объекта Просмотр в [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) экземпляра. В следующем примере кода показан *неявное* стиль, который добавляется к уровню приложения [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/):
+Объект [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) также могут устанавливаться через [ `Style` ](xref:Xamarin.Forms.Style) Дополнительно расширить возможности темы. Это можно сделать, создав *неявное* или *явные* стиль для представление целевого объекта в [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)и параметр `ControlTemplate` свойства целевого объекта Просмотр в [ `Style` ](xref:Xamarin.Forms.Style) экземпляра. В следующем коде показано в примере *неявное* стиль, который добавляется к уровню приложения [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
 
 ```xaml
 <Style TargetType="ContentView">
@@ -112,7 +112,7 @@ void OnButtonClicked (object sender, EventArgs e)
 </Style>
 ```
 
-Поскольку [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) экземпляр *неявное*, оно будет применяться ко всем `ContentView` экземпляров в приложении. Таким образом, он больше не требуется задать [ `ContentView.ControlTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TemplatedView.ControlTemplate/) свойства, как показано в следующем примере кода:
+Так как [ `Style` ](xref:Xamarin.Forms.Style) экземпляр *неявное*, он применяется ко всем `ContentView` экземпляров в приложении. Таким образом, он больше не необходимо задать [ `ContentView.ControlTemplate` ](xref:Xamarin.Forms.TemplatedView.ControlTemplate) свойства, как показано в следующем примере кода:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -124,9 +124,9 @@ void OnButtonClicked (object sender, EventArgs e)
 
 Дополнительные сведения о стилях см. в разделе [стили](~/xamarin-forms/user-interface/styles/index.md).
 
-### <a name="creating-a-controltemplate-at-page-level"></a>Создание шаблона элемента управления на уровне страниц
+### <a name="creating-a-controltemplate-at-page-level"></a>Создания объекта ControlTemplate на уровне страниц
 
-Помимо создания [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) экземпляров на уровне приложения, они могут также создаваться на уровне страницы, как показано в следующем примере кода:
+В дополнение к созданию [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) экземпляров на уровне приложения, они также могут создаваться на уровне страницы, как показано в следующем примере кода:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -146,11 +146,11 @@ void OnButtonClicked (object sender, EventArgs e)
 </ContentPage>
 ```
 
-При добавлении [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) на уровне страницы, [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) добавляется [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), а затем `ControlTemplate` экземпляры включены в `ResourceDictionary`.
+При добавлении [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) на уровне страницы, [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) добавляется [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), а затем `ControlTemplate` экземпляры включены в `ResourceDictionary`.
 
-## <a name="creating-a-controltemplate-in-c35"></a>Создание шаблона элемента управления в C&#35;
+## <a name="creating-a-controltemplate-in-c35"></a>Создания объекта ControlTemplate в C&#35;
 
-Для определения [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) на уровне приложения, `class` должны создаваться, представляющий `ControlTemplate`. Класс должен наследоваться от [макета](~/xamarin-forms/user-interface/layouts/index.md) используется в шаблоне, как показано в следующем примере кода:
+Для определения [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) на уровне приложения, `class` должны создаваться, представляющий `ControlTemplate`. Класс должен наследоваться от [макета](~/xamarin-forms/user-interface/layouts/index.md) используется шаблон, как показано в следующем примере кода:
 
 ```csharp
 class TealTemplate : Grid
@@ -171,9 +171,9 @@ class AquaTemplate : Grid
 }
 ```
 
-`AquaTemplate` Класс идентичен `TealTemplate` класса, за исключением того, что используются разные цвета для [ `BoxView.Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) и [ `Label.TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/) свойства.
+`AquaTemplate` Класс идентичен `TealTemplate` класса, за исключением того, что используются разные цвета для [ `BoxView.Color` ](xref:Xamarin.Forms.BoxView.Color) и [ `Label.TextColor` ](xref:Xamarin.Forms.Label.TextColor) свойства.
 
-В следующем примере кода показан [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) применения `TealTemplate` для [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+В следующем коде показано в примере [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) применение `TealTemplate` для [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -202,20 +202,20 @@ public class HomePageCS : ContentPage
 }
 ```
 
-[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) Экземпляры создаются путем указания типа классы, определяющие шаблонов элементов управления, в `ControlTemplate` конструктора.
+[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) Экземпляры создаются путем указания типа классов, которые определяют шаблоны элементов управления, в `ControlTemplate` конструктор.
 
-[ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) Свойству [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) , определяющий содержимое, отображаемое на [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/). Это содержимое будет отображаться для [ `ContentPresenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) содержащихся в `TealTemplate`. Тот же механизм описанные ранее используется для изменения темы во время выполнения для `AquaTheme`.
+[ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) Свойству [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) , определяющий содержимое, отображаемое на [ `ContentPage` ](xref:Xamarin.Forms.ContentPage). Это содержимое будет отображаться по [ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter) содержащихся в `TealTemplate`. Тот же механизм описанные ранее используется для изменения темы во время выполнения для `AquaTheme`.
 
 ## <a name="summary"></a>Сводка
 
-В этой статье показано, как создавать и использовать шаблоны элементов управления. Шаблоны элементов управления можно задать на уровне приложения или страницы.
+В этой статье было показано, как создавать и использовать шаблоны элементов управления. Шаблоны элементов управления можно определять на уровне приложения или страницы.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Стили](~/xamarin-forms/user-interface/styles/index.md)
 - [Тема «простой» (образец)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simpletheme/)
-- [ControlTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)
-- [ContentPresenter](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)
-- [ContentView](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
+- [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
+- [ContentPresenter](xref:Xamarin.Forms.ContentPresenter)
+- [ContentView](xref:Xamarin.Forms.ContentView)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)

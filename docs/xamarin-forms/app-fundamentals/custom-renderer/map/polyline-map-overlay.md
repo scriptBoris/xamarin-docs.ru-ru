@@ -1,45 +1,45 @@
 ---
 title: Выделение маршрута на карте
-description: В этой статье описывается добавление наложения ломаной линии на карту. Наложение ломаной линии — это ряд сегментов линии, которые обычно используются для отображения на карте маршрута или форме любой фигуры, необходимый.
+description: В этой статье описывается добавление наложения ломаной линии на карту. Наложение ломаной линии — это последовательность соединенных отрезков, которые обычно используются для отображения маршрута на карте или формируют любой фигуры, который требуется.
 ms.prod: xamarin
 ms.assetid: FBFDC715-1654-4188-82A0-FC522548BCFF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 8b80f9569e9377ca76798911cda64d8c0ee28d93
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 786f050495d4682b719178f2723c482929544678
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846647"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998726"
 ---
 # <a name="highlighting-a-route-on-a-map"></a>Выделение маршрута на карте
 
-_В этой статье описывается добавление наложения ломаной линии на карту. Наложение ломаной линии — это ряд сегментов линии, которые обычно используются для отображения на карте маршрута или форме любой фигуры, необходимый._
+_В этой статье описывается добавление наложения ломаной линии на карту. Наложение ломаной линии — это последовательность соединенных отрезков, которые обычно используются для отображения маршрута на карте или формируют любой фигуры, который требуется._
 
 ## <a name="overview"></a>Обзор
 
-Наложение находится многоуровневого график на карте. Перекрытия поддерживает рисование графического содержимого, которая масштабируется с картой, как оно развернуто. Следующих снимках экрана показано результат сложения наложения ломаной линии на карту.
+Наложение — это многоуровневая изображение на карте. Наложений поддерживает рисование графического содержимого, которые масштабируются вместе с карты, так как оно увеличивается. На следующих снимках экрана показано результат сложения наложении ломаной линии на карту:
 
 ![](polyline-map-overlay-images/screenshots.png)
 
-Когда [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) элемент управления отрисовывается приложением Xamarin.Forms в iOS `MapRenderer` создается экземпляр класса, который в свою очередь создает собственный `MKMapView` элемента управления. На платформе Android `MapRenderer` класс создает экземпляр собственного `MapView` элемента управления. В универсальной платформы Windows (UWP), `MapRenderer` класс создает экземпляр собственного `MapControl`. Процесс подготовки отчета можно считать преимущества реализации настроек карты платформой путем создания пользовательского средства визуализации для `Map` на каждой платформе. Это выполняется следующим образом:
+Когда [ `Map` ](xref:Xamarin.Forms.Maps.Map) элемент управления отрисовывается в приложении Xamarin.Forms в iOS `MapRenderer` создается экземпляр класса, который в свою очередь создает экземпляр собственного `MKMapView` элемента управления. На платформе Android `MapRenderer` класс создает экземпляр собственного `MapView` элемента управления. В универсальной платформы Windows (UWP), `MapRenderer` класс создает экземпляр собственного `MapControl`. Процесс подготовки отчета можно задействуем преимущества реализации настроек карты конкретных платформ путем создания пользовательского средства визуализации для `Map` на каждой платформе. Таким образом процесс выглядит следующим образом:
 
-1. [Создание](#Creating_the_Custom_Map) Xamarin.Forms пользовательской карты.
-1. [Использовать](#Consuming_the_Custom_Map) пользовательской карты с помощью Xamarin.Forms.
-1. [Настройка](#Customizing_the_Map) карты путем создания пользовательского средства отрисовки карты для каждой платформы.
+1. [Создание](#Creating_the_Custom_Map) пользовательской карты Xamarin.Forms.
+1. [Использовать](#Consuming_the_Custom_Map) пользовательских карт с помощью Xamarin.Forms.
+1. [Настройка](#Customizing_the_Map) карты, создав пользовательское средство отрисовки карты на каждой платформе.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) необходимо инициализировать и настроить перед использованием. Дополнительные сведения см. на веб-сайте [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) необходимо инициализировать и настроить перед использованием. Дополнительные сведения см. на веб-сайте [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
-Сведения о настройке карты с помощью пользовательского средства отрисовки см. в разделе [Настройка ПИН-код карты](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
+Сведения о настройке карты с помощью пользовательского средства визуализации, см. в разделе [Настройка закрепления карты](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
 <a name="Creating_the_Custom_Map" />
 
 ### <a name="creating-the-custom-map"></a>Создание пользовательской карты
 
-Создать подкласс [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) класс, который добавляет `RouteCoordinates` свойство:
+Создать подкласс [ `Map` ](xref:Xamarin.Forms.Maps.Map) класс, который добавляет `RouteCoordinates` свойство:
 
 ```csharp
 public class CustomMap : Map
@@ -53,13 +53,13 @@ public class CustomMap : Map
 }
 ```
 
-`RouteCoordinates` Свойство будет сохранять коллекцию координаты, определяющие изменяемый маршрут, который будет выделен.
+`RouteCoordinates` Свойство будет хранить коллекцию координат, определяющих маршрут к выделению.
 
 <a name="Consuming_the_Custom_Map" />
 
 ### <a name="consuming-the-custom-map"></a>Использование пользовательской карты
 
-Использовать `CustomMap` управления, объявив его экземпляр в экземпляре страницы XAML:
+Использовать `CustomMap` элемента управления, объявив его экземпляр в экземпляр страницы XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -72,7 +72,7 @@ public class CustomMap : Map
 </ContentPage>
 ```
 
-Можно также использовать `CustomMap` управления, объявив его экземпляр в экземпляре страницы C#:
+В качестве альтернативы использовать `CustomMap` элемента управления, объявив его экземпляр в экземпляр страницы C#:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -90,7 +90,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-Инициализация `CustomMap` управления при необходимости:
+Инициализировать `CustomMap` управления:
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -108,17 +108,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-Инициализация задает набор координат широты и долготы, для определения маршрута на карте, который будет выделен. Позиционирует представление карты с [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/) метод, который изменяет положение и масштаб карты, создав [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/) из [ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/) и [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/).
+Эта инициализация указывает ряд координаты широты и долготы, для определения маршрута на карте, чтобы быть выделенным. Затем оно располагает представление карты с [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) метод, который изменяет положение и уровень масштаба карты, создав [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) из [ `Position` ](xref:Xamarin.Forms.Maps.Position) и [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
 
 <a name="Customizing_the_Map" />
 
 ### <a name="customizing-the-map"></a>Настройка карты
 
-Пользовательское средство отрисовки теперь должны добавляться в каждый проект приложения для добавления наложения ломаной линии на карту.
+Пользовательское средство отрисовки теперь должны добавляться в каждый проект приложения для добавления в оверлей ломаной линии на карту.
 
-#### <a name="creating-the-custom-renderer-on-ios"></a>Создание пользовательского средства визуализации для iOS
+#### <a name="creating-the-custom-renderer-on-ios"></a>Создание пользовательского средства визуализации на iOS
 
-Создать подкласс `MapRenderer` класса и переопределить его `OnElementChanged` метод, чтобы добавить наложения ломаной линии:
+Создать подкласс `MapRenderer` класса и переопределять его `OnElementChanged` метод для добавления в оверлей ломаной линии:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -164,14 +164,14 @@ namespace MapOverlay.iOS
 
 ```
 
-Этот метод выполняет следующую конфигурацию, при условии, что пользовательское средство отрисовки присоединяется новый элемент Xamarin.Forms.
+Этот метод выполняет следующую конфигурацию, при условии, что пользовательское средство отрисовки подключен к новому элементу Xamarin.Forms.
 
-- `MKMapView.OverlayRenderer` Задано значение соответствующего делегата.
-- Коллекция координаты широты и долготы извлекаются из `CustomMap.RouteCoordinates` свойство и хранится в виде массива `CLLocationCoordinate2D` экземпляров.
-- Ломаной линии создается путем вызова статического `MKPolyline.FromCoordinates` метод, который указывает широту и долготу каждой точки.
-- Ломаной линии добавляется в схему путем вызова `MKMapView.AddOverlay` метод.
+- `MKMapView.OverlayRenderer` Свойству соответствующий делегат.
+- Коллекция координаты широты и долготы, извлекаются из `CustomMap.RouteCoordinates` свойство и хранятся в виде массива `CLLocationCoordinate2D` экземпляров.
+- Ломаной линии создается путем вызова статического `MKPolyline.FromCoordinates` метод, который задает широту и долготу каждой точки.
+- Ломаной линии добавляется на карту путем вызова `MKMapView.AddOverlay` метод.
 
-Затем реализуйте `GetOverlayRenderer` метод для настройки обработки наложения:
+Затем запустите `GetOverlayRenderer` метод для настройки оформления наложения:
 
 ```csharp
 public class CustomMapRenderer : MapRenderer
@@ -195,9 +195,9 @@ public class CustomMapRenderer : MapRenderer
 }
 ```
 
-#### <a name="creating-the-custom-renderer-on-android"></a>Создание пользовательского средства визуализации на Android
+#### <a name="creating-the-custom-renderer-on-android"></a>Создание пользовательского средства визуализации на устройстве Android
 
-Создать подкласс `MapRenderer` класса и переопределить его `OnElementChanged` и `OnMapReady` методы для добавления в оверлей ломаной линии:
+Создать подкласс `MapRenderer` класса и переопределять его `OnElementChanged` и `OnMapReady` методы для добавления в оверлей ломаной линии:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -246,11 +246,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-`OnElementChanged` Метод получает коллекцию координаты широты и долготы из `CustomMap.RouteCoordinates` свойства и сохраняет их в переменной-члена. Затем он вызывает `MapView.GetMapAsync` метод, который возвращает базовый `GoogleMap` привязывается к представлению, при условии, что пользовательское средство отрисовки присоединяется новый элемент Xamarin.Forms. Один раз `GoogleMap` экземпляр доступен `OnMapReady` метод будет вызван, где ломаной линии создается путем создания экземпляра `PolylineOptions` объекта, указывающее широту и долготу каждой точки. Ломаной линии затем добавляется в схему путем вызова `NativeMap.AddPolyline` метод.
+`OnElementChanged` Метод получает коллекцию координаты широты и долготы из `CustomMap.RouteCoordinates` свойство и сохраняет их в переменную-член. Затем он вызывает `MapView.GetMapAsync` метод, который возвращает базовый `GoogleMap` привязывается к представлению, при условии, что пользовательское средство отрисовки подключен к новому элементу Xamarin.Forms. Один раз `GoogleMap` экземпляр доступен, `OnMapReady` вызывается метод, где ломаной линии создается путем создания экземпляра `PolylineOptions` , указывающий широту и долготу каждой точки. Ломаной линии затем добавляется к схеме, вызвав `NativeMap.AddPolyline` метод.
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Создание пользовательского средства визуализации для универсальной платформы Windows
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Создание пользовательского средства визуализации на платформе универсальных Windows
 
-Создать подкласс `MapRenderer` класса и переопределить его `OnElementChanged` метод, чтобы добавить наложения ломаной линии:
+Создать подкласс `MapRenderer` класса и переопределять его `OnElementChanged` метод для добавления в оверлей ломаной линии:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -289,19 +289,19 @@ namespace MapOverlay.UWP
 }
 ```
 
-Этот метод выполняет следующие операции, при условии, что пользовательское средство отрисовки присоединяется новый элемент Xamarin.Forms.
+Этот метод выполняет следующие операции, при условии, что пользовательское средство отрисовки подключен к новому элементу Xamarin.Forms:
 
-- Коллекция координаты широты и долготы извлекаются из `CustomMap.RouteCoordinates` свойство и он преобразуется в `List` из `BasicGeoposition` координаты.
-- Ломаной линии создается путем создания экземпляра `MapPolyline` объекта. `MapPolygon` Класс используется для отображения линии на карте, установив его `Path` свойства `Geopath` , содержащий координаты строки.
-- К просмотру многоугольника на карте, добавляя его в `MapControl.MapElements` коллекции.
+- Коллекция координаты широты и долготы, извлекаются из `CustomMap.RouteCoordinates` свойство и преобразовано в `List` из `BasicGeoposition` координаты.
+- Ломаной линии создается путем создания экземпляра `MapPolyline` объекта. `MapPolygon` Класс используется для отображения линии на карте, задав его `Path` свойства `Geopath` , содержащий координаты линии.
+- К просмотру ломаной линии на карте, добавив его `MapControl.MapElements` коллекции.
 
 ## <a name="summary"></a>Сводка
 
-В этой статье описывается добавление наложения ломаной линии на карту для отображения на карте маршрута или форме любой фигуры, необходимый.
+В этой статье описываются способы добавления наложения ломаной линии на карту для отображения маршрута на карте или формируют любой фигуры, который требуется.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Ovlerlay ломаной линии карты (пример)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
 - [Настройка закрепления карты](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
-- [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)
+- [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

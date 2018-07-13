@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 7f68b7c8affc11b50bdb4a2fc9589f8dcbfb45ec
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 34fb58f44e3f341fa34eef512d61f20f5d035a9b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830484"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998209"
 ---
 # <a name="gtk-platform-setup"></a>Программа установки платформы GTK #
 
@@ -211,7 +211,7 @@ GtkThemes.LoadCustomTheme ("Themes/gtkrc");
 
 ### <a name="native-forms"></a>Исходные формы
 
-Исходные формы позволяет Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производным страницы мог использоваться собственные проекты, включая проекты GTK #. Это можно сделать, создав экземпляр [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-производным страницы и преобразование ее в собственном GTK # типа с помощью `CreateContainer` метод расширения:
+Исходные формы позволяет Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производным страницы мог использоваться собственные проекты, включая проекты GTK #. Это можно сделать, создав экземпляр [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производным страницы и преобразование ее в собственном GTK # типа с помощью `CreateContainer` метод расширения:
 
 ```csharp
 var settingsView = new SettingsView().CreateContainer();

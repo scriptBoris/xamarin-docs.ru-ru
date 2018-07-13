@@ -7,36 +7,36 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7860df998fbfe580362aff0f4f01374a4ae1f923
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 3571774ddec4182f35cac6f13d4582235e2ff31a
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935557"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997430"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Сводка Глава 4. Раскрутка стека
 
 В этой главе в основном посвящен понятие *макета*, это общий термин, классы и методы, которые использует Xamarin.Forms для организации визуальное отображение элемента несколько представлений на странице.
 
-Макет включает в себя несколько классов, производных от [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) и [ `Layout<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/). Эта глава посвящена [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/).
+Макет включает в себя несколько классов, производных от [ `Layout` ](xref:Xamarin.Forms.Layout) и [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1). Эта глава посвящена [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
 
-Также введена в этой главе, [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/), [ `Frame` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/), и [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) классы.
+Также введена в этой главе, [ `ScrollView` ](xref:Xamarin.Forms.ScrollView), [ `Frame` ](xref:Xamarin.Forms.Frame), и [ `BoxView` ](xref:Xamarin.Forms.BoxView) классы.
 
 ## <a name="stacks-of-views"></a>Стеки представлений
 
-[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) является производным от `Layout<View>` и наследует [ `Children` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) свойство типа `IList<View>`. Добавьте несколько элементов представления в эту коллекцию и `StackLayout` отображает их в виде стека горизонтальную или вертикальную.
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) является производным от `Layout<View>` и наследует [ `Children` ](xref:Xamarin.Forms.Layout`1) свойство типа `IList<View>`. Добавьте несколько элементов представления в эту коллекцию и `StackLayout` отображает их в виде стека горизонтальную или вертикальную.
 
 Задайте [ `Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation) свойство `StackLayout` члену [ `StackOrientation` ](xref:Xamarin.Forms.StackOrientation) перечисления, либо [ `Vertical` ](xref:Xamarin.Forms.StackOrientation.Vertical) или [ `Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal). Значение по умолчанию — `Vertical`.
 
-Задайте [ `Spacing` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Spacing/) свойство `StackLayout` для `double` значение, указывающее расстояние между дочерние элементы. Значение по умолчанию — 6.
+Задайте [ `Spacing` ](xref:Xamarin.Forms.StackLayout.Spacing) свойство `StackLayout` для `double` значение, указывающее расстояние между дочерние элементы. Значение по умолчанию — 6.
 
 В коде, можно добавить элементы к `Children` коллекцию `StackLayout` в `for` или `foreach` цикл, как показано в [ **ColorLoop** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorLoop) образец кода, или вы можете инициализировать `Children` коллекцией со списком отдельных представлений, как показано в [ **ColorList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorList). Дочерние элементы должны быть производными от `View` , но может включать другие `StackLayout` объектов.
 
 ## <a name="scrolling-content"></a>Прокрутка содержимого
 
-Если `StackLayout` содержит слишком много дочерних элементов, отображаемых на странице, можно поместить `StackLayout` в [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) позволяет прокрутку.
+Если `StackLayout` содержит слишком много дочерних элементов, отображаемых на странице, можно поместить `StackLayout` в [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) позволяет прокрутку.
 
-Задайте [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ScrollView.Content/) свойство `ScrollView` к представлению, для прокрутки. Это часто `StackLayout`, но это может быть любое представление.
+Задайте [ `Content` ](xref:Xamarin.Forms.ScrollView.Content) свойство `ScrollView` к представлению, для прокрутки. Это часто `StackLayout`, но это может быть любое представление.
 
 Задайте [ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation) свойство `ScrollView` члену [ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation) свойство, [ `Vertical` ](xref:Xamarin.Forms.ScrollOrientation.Vertical), [ `Horizontal` ](xref:Xamarin.Forms.ScrollOrientation.Horizontal), или [ `Both` ](xref:Xamarin.Forms.ScrollOrientation.Both). Значение по умолчанию — `Vertical`. Если содержимое `ScrollView` является `StackLayout`, две ориентации должны быть согласованы.
 
@@ -53,14 +53,14 @@ ms.locfileid: "37935557"
 
 Для удобства `LayoutOptions` структура также определяет восемь статические поля только для чтения типа `LayoutOptions` , охватывающих все комбинации два экземпляра свойств:
 
-- [`LayoutOptions.Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/)
-- [`LayoutOptions.Center`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Center/)
-- [`LayoutOptions.End`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.End/)
-- [`LayoutOptions.Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/)
-- [`LayoutOptions.StartAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.StartAndExpand/)
-- [`LayoutOptions.CenterAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.CenterAndExpand/)
-- [`LayoutOptions.EndAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.EndAndExpand/)
-- [`LayoutOptions.FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/)
+- [`LayoutOptions.Start`](xref:Xamarin.Forms.LayoutOptions.Start)
+- [`LayoutOptions.Center`](xref:Xamarin.Forms.LayoutOptions.Center)
+- [`LayoutOptions.End`](xref:Xamarin.Forms.LayoutOptions.End)
+- [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)
+- [`LayoutOptions.StartAndExpand`](xref:Xamarin.Forms.LayoutOptions.StartAndExpand)
+- [`LayoutOptions.CenterAndExpand`](xref:Xamarin.Forms.LayoutOptions.CenterAndExpand)
+- [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
+- [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
 Включает в себя следующее обсуждение `StackLayout` с вертикальной ориентацией по умолчанию. Горизонтальное `StackLayout` является аналогом.
 
@@ -78,21 +78,21 @@ ms.locfileid: "37935557"
 
 Эти два представления прямоугольный часто используются для целей представления.
 
-[ `Frame` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/) Представление отображает прямоугольную рамку вокруг другое представление, которое может быть макета, такие как `StackLayout`. `Frame` наследует [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) свойства из [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) , задайте режим, который необходимо отобразить в `Frame`. `Frame` Прозрачен по умолчанию. Задайте следующие три свойства для настройки внешнего вида рамки:
+[ `Frame` ](xref:Xamarin.Forms.Frame) Представление отображает прямоугольную рамку вокруг другое представление, которое может быть макета, такие как `StackLayout`. `Frame` наследует [ `Content` ](xref:Xamarin.Forms.ContentView.Content) свойства из [ `ContentView` ](xref:Xamarin.Forms.ContentView) , задайте режим, который необходимо отобразить в `Frame`. `Frame` Прозрачен по умолчанию. Задайте следующие три свойства для настройки внешнего вида рамки:
 
-- [ `OutlineColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.OutlineColor/) Свойство, чтобы сделать его видимым. Обычно для задания `OutlineColor` для `Color.Accent` вы не знаете, когда основной цвет.
-- [ `HasShadow` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.HasShadow/) Можно присвоить свойство `true` для отображения черный тень на устройствах iOS.
-- Задайте [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) свойства `Thickness` значение вставлять пробелы между и кадром содержимого. Значение по умолчанию — 20 единиц со всех сторон.
+- [ `OutlineColor` ](xref:Xamarin.Forms.Frame.OutlineColor) Свойство, чтобы сделать его видимым. Обычно для задания `OutlineColor` для `Color.Accent` вы не знаете, когда основной цвет.
+- [ `HasShadow` ](xref:Xamarin.Forms.Frame.HasShadow) Можно присвоить свойство `true` для отображения черный тень на устройствах iOS.
+- Задайте [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) свойства `Thickness` значение вставлять пробелы между и кадром содержимого. Значение по умолчанию — 20 единиц со всех сторон.
 
 `Frame` Имеет значение по умолчанию `HorizontalOptions` и `VerticalOptions` значения `LayoutOptions.Fill`, означающее, что `Frame` заполнит его контейнера. С другими параметрами, размер `Frame` зависимости от размера его содержимого.
 
 `Frame` Демонстрируется в [ **FramedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FramedText) образца.
 
-[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) Отображается прямоугольная область цветов, заданных его [ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) свойство.
+[ `BoxView` ](xref:Xamarin.Forms.BoxView) Отображается прямоугольная область цветов, заданных его [ `Color` ](xref:Xamarin.Forms.BoxView.Color) свойство.
 
 Если `BoxView` ограничен (его `HorizontalOptions` и `VerticalOptions` свойства имеют свои параметры по умолчанию `LayoutOptions.Fill`), `BoxView` заполняет доступное место для него. Если `BoxView` — без ограничений (с `HorizontalOptions` и `LayoutOptions` параметры `Start`, `Center`, или `End`), он имеет квадрата 40 единиц измерения по умолчанию. Объект `BoxView` может быть ограничен в одно измерение и без ограничений в другой.
 
-Часто, необходимо установить [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) и [ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) свойства `BoxView` ему определенный размер. Это продемонстрировано [ **SizedBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView) образца.
+Часто, необходимо установить [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) и [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) свойства `BoxView` ему определенный размер. Это продемонстрировано [ **SizedBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView) образца.
 
 Можно использовать несколько экземпляров `StackLayout` для объединения `BoxView` и несколько `Label` экземпляров в `Frame` для отображения определенного цвета, а затем размещать каждый из этих представлений в `StackLayout` в `ScrollView` для создания привлекательных Список цветов, отображаемых в [ **ColorBlocks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks) пример:
 

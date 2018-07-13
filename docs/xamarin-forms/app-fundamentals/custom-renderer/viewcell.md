@@ -7,36 +7,36 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 3cb4d7f152e0f9540275f12f0ade568cd0552784
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b1ebe2694ad5fa996b8b679cfb31a203588de05c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935580"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999003"
 ---
 # <a name="customizing-a-viewcell"></a>Настройка ViewCell
 
 _Xamarin.Forms ViewCell представляет собой ячейку, который может быть добавлен к ListView или TableView, который содержит представления, определяемые разработчиком. В этой статье показано, как создать пользовательское средство отрисовки для ViewCell, который размещается в элементе управления ListView Xamarin.Forms. Это предотвратит вычисления макета Xamarin.Forms не многократно вызывается во время прокрутки ListView._
 
-Каждая ячейка Xamarin.Forms имеет сопутствующий модуль подготовки отчетов для каждой платформы, который создает экземпляр собственного элемента управления. Когда [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) отображается в приложении Xamarin.Forms в iOS `ViewCellRenderer` создается экземпляр класса, который в свою очередь создает экземпляр собственного `UITableViewCell` элемента управления. На платформе Android `ViewCellRenderer` класс создает экземпляр собственного `View` элемента управления. В универсальной платформы Windows (UWP), `ViewCellRenderer` класс создает экземпляр собственного `DataTemplate`. Дополнительные сведения о визуализации и классы собственного элемента управления, которые сопоставляются с элементами управления Xamarin.Forms, см. в разделе [модуль подготовки отчетов базовые классы и собственные элементы управления](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Каждая ячейка Xamarin.Forms имеет сопутствующий модуль подготовки отчетов для каждой платформы, который создает экземпляр собственного элемента управления. Когда [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) отображается в приложении Xamarin.Forms в iOS `ViewCellRenderer` создается экземпляр класса, который в свою очередь создает экземпляр собственного `UITableViewCell` элемента управления. На платформе Android `ViewCellRenderer` класс создает экземпляр собственного `View` элемента управления. В универсальной платформы Windows (UWP), `ViewCellRenderer` класс создает экземпляр собственного `DataTemplate`. Дополнительные сведения о визуализации и классы собственного элемента управления, которые сопоставляются с элементами управления Xamarin.Forms, см. в разделе [модуль подготовки отчетов базовые классы и собственные элементы управления](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-На следующей схеме показана связь между [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) и соответствующие собственные элементы управления, которые реализуют его:
+На следующей схеме показана связь между [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) и соответствующие собственные элементы управления, которые реализуют его:
 
 ![](viewcell-images/viewcell-classes.png "Связь между элементом управления ViewCell и реализации собственных элементов управления")
 
-Процесс подготовки отчета можно задействуем преимущества реализации настроек конкретных платформ путем создания пользовательского средства визуализации для [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) на каждой платформе. Таким образом процесс выглядит следующим образом:
+Процесс подготовки отчета можно задействуем преимущества реализации настроек конкретных платформ путем создания пользовательского средства визуализации для [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) на каждой платформе. Таким образом процесс выглядит следующим образом:
 
 1. [Создание](#Creating_the_Custom_Cell) настраиваемой ячейки Xamarin.Forms.
 1. [Использовать](#Consuming_the_Custom_Cell) пользовательской ячейки с Xamarin.Forms.
 1. [Создание](#Creating_the_Custom_Renderer_on_each_Platform) пользовательского средства визуализации для ячейки на каждой платформе.
 
-Каждый элемент теперь обсуждаются в свою очередь, для реализации `NativeCell` модуль подготовки, который использует преимущества платформы макета для каждой ячейки в Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) элемента управления. Это предотвратит вычисления макета Xamarin.Forms многократно вызова во время `ListView` прокрутка.
+Каждый элемент теперь обсуждаются в свою очередь, для реализации `NativeCell` модуль подготовки, который использует преимущества платформы макета для каждой ячейки в Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) элемента управления. Это предотвратит вычисления макета Xamarin.Forms многократно вызова во время `ListView` прокрутка.
 
 <a name="Creating_the_Custom_Cell" />
 
 ## <a name="creating-the-custom-cell"></a>Создание пользовательской ячейки
 
-Элемент управления пользовательской ячейки могут создаваться путем создания подклассов [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) класса, как показано в следующем примере кода:
+Элемент управления пользовательской ячейки могут создаваться путем создания подклассов [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) класса, как показано в следующем примере кода:
 
 ```csharp
 public class NativeCell : ViewCell
@@ -143,9 +143,9 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) элемент управления используется для отображения списка данных, который заполняется с помощью [ `ItemSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemsSource/) свойство. [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) Стратегию кэширования пытается свести к минимуму `ListView` объем занимаемой памяти и выполнение ускорить, повторное использование ячеек списка. Дополнительные сведения см. в разделе [стратегии кэширования](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
+Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) элемент управления используется для отображения списка данных, который заполняется с помощью [ `ItemSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) свойство. [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) Стратегию кэширования пытается свести к минимуму `ListView` объем занимаемой памяти и выполнение ускорить, повторное использование ячеек списка. Дополнительные сведения см. в разделе [стратегии кэширования](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
 
-Каждая строка в списке содержит три элемента данных — имя, категорию и имя файла изображения. Макет каждой строки в списке определяется `DataTemplate` , можно только через [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemTemplate/) может быть привязано. `DataTemplate` Определяет, что каждая строка данных в списке будет `NativeCell` , отображающий его `Name`, `Category`, и `ImageFilename` свойства посредством привязки данных. Дополнительные сведения о `ListView` управления, см. в разделе [ListView](~/xamarin-forms/user-interface/listview/index.md).
+Каждая строка в списке содержит три элемента данных — имя, категорию и имя файла изображения. Макет каждой строки в списке определяется `DataTemplate` , можно только через [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) может быть привязано. `DataTemplate` Определяет, что каждая строка данных в списке будет `NativeCell` , отображающий его `Name`, `Category`, и `ImageFilename` свойства посредством привязки данных. Дополнительные сведения о `ListView` управления, см. в разделе [ListView](~/xamarin-forms/user-interface/listview/index.md).
 
 Пользовательское средство отрисовки теперь могут добавляться в каждый проект приложения для настройки макета платформы для каждой ячейки.
 
@@ -315,9 +315,9 @@ internal class NativeiOSCell : UITableViewCell, INativeElementView
 }
 ```
 
-Этот класс определяет элементы управления, используемые для отображения содержимого ячейки и их размещения. Этот класс реализует [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/) интерфейс, который является обязательным, если [ `ListView` ](xref:Xamarin.Forms.ListView) использует [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) стратегию кэширования. Этот интерфейс указывает, что класс должен реализовывать [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/) свойство, которое должен вернуть данным пользовательских ячеек для очистки ячейки.
+Этот класс определяет элементы управления, используемые для отображения содержимого ячейки и их размещения. Этот класс реализует [ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView) интерфейс, который является обязательным, если [ `ListView` ](xref:Xamarin.Forms.ListView) использует [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) стратегию кэширования. Этот интерфейс указывает, что класс должен реализовывать [ `Element` ](xref:Xamarin.Forms.INativeElementView.Element) свойство, которое должен вернуть данным пользовательских ячеек для очистки ячейки.
 
-`NativeiOSCell` Конструктор инициализирует вида `HeadingLabel`, `SubheadingLabel`, и `CellImageView` свойства. Эти свойства используются для отображения данных, хранящихся в `NativeCell` экземпляра, с помощью `UpdateCell` метод, вызываемый для задания значения каждого свойства. Кроме того, когда [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) использует [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) стратегию, данных, отображаемых объектом кэширования `HeadingLabel`, `SubheadingLabel`, и `CellImageView` свойства могут быть обновление с `OnNativeCellPropertyChanged` метод в пользовательское средство отрисовки.
+`NativeiOSCell` Конструктор инициализирует вида `HeadingLabel`, `SubheadingLabel`, и `CellImageView` свойства. Эти свойства используются для отображения данных, хранящихся в `NativeCell` экземпляра, с помощью `UpdateCell` метод, вызываемый для задания значения каждого свойства. Кроме того, когда [ `ListView` ](xref:Xamarin.Forms.ListView) использует [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) стратегию, данных, отображаемых объектом кэширования `HeadingLabel`, `SubheadingLabel`, и `CellImageView` свойства могут быть обновление с `OnNativeCellPropertyChanged` метод в пользовательское средство отрисовки.
 
 Макет ячейки осуществляется `LayoutSubviews` переопределить, который задает координаты `HeadingLabel`, `SubheadingLabel`, и `CellImageView` в ячейке.
 
@@ -358,19 +358,19 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`GetCellCore` Метод вызывается для создания каждой ячейки для отображения. Каждая ячейка является `NativeAndroidCell` экземпляр, который определяет макет элемента ячейки и ее данных. Операция `GetCellCore` метод зависит от [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) стратегию кэширования:
+`GetCellCore` Метод вызывается для создания каждой ячейки для отображения. Каждая ячейка является `NativeAndroidCell` экземпляр, который определяет макет элемента ячейки и ее данных. Операция `GetCellCore` метод зависит от [ `ListView` ](xref:Xamarin.Forms.ListView) стратегию кэширования:
 
-- Когда [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) стратегию кэширования является [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement), `GetCellCore` метод будет вызываться для каждой ячейки. Объект `NativeAndroidCell` будут создаваться для каждого `NativeCell` экземпляр, который отображается на экране. Как пользователь прокручивает `ListView`, `NativeAndroidCell` экземпляры будут использовать повторно. Дополнительные сведения о Android ячейки повторного использования, см. в разделе [повторное использование представления строк](~/android/user-interface/layouts/list-view/populating.md).
+- Когда [ `ListView` ](xref:Xamarin.Forms.ListView) стратегию кэширования является [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement), `GetCellCore` метод будет вызываться для каждой ячейки. Объект `NativeAndroidCell` будут создаваться для каждого `NativeCell` экземпляр, который отображается на экране. Как пользователь прокручивает `ListView`, `NativeAndroidCell` экземпляры будут использовать повторно. Дополнительные сведения о Android ячейки повторного использования, см. в разделе [повторное использование представления строк](~/android/user-interface/layouts/list-view/populating.md).
 
   > [!NOTE]
-  > Обратите внимание, что этот код пользовательское средство отрисовки выполнит некоторые ячейки повторного использования, даже когда [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) установлено сохранение ячеек.
+  > Обратите внимание, что этот код пользовательское средство отрисовки выполнит некоторые ячейки повторного использования, даже когда [ `ListView` ](xref:Xamarin.Forms.ListView) установлено сохранение ячеек.
 
   Данные, отображаемые каждым `NativeAndroidCell` экземпляра, созданных или повторно используются, будут ли обновлены с данными из каждого `NativeCell` экземпляра с `UpdateCell` метод.
 
   > [!NOTE]
-  > Обратите внимание, что, хотя `OnNativeCellPropertyChanged` метод будет вызываться при [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) является значение сохранить ячеек, не будет обновлен `NativeAndroidCell` значения свойств.
+  > Обратите внимание, что, хотя `OnNativeCellPropertyChanged` метод будет вызываться при [ `ListView` ](xref:Xamarin.Forms.ListView) является значение сохранить ячеек, не будет обновлен `NativeAndroidCell` значения свойств.
 
-- Когда [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) стратегию кэширования является [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement), `GetCellCore` метод будет вызываться для каждой ячейки, которое изначально отображается на экране. Объект `NativeAndroidCell` будет создан экземпляр для каждого `NativeCell` экземпляр, который отображается на экране. Данные, отображаемые каждым `NativeAndroidCell` экземпляры будут обновляться данными из `NativeCell` экземпляра с `UpdateCell` метод. Тем не менее `GetCellCore` не будет вызван метод как прокручивая `ListView`. Вместо этого `NativeAndroidCell` экземпляры будут использовать повторно.  `PropertyChanged` события вызываются на `NativeCell` экземпляра при изменении данных и `OnNativeCellPropertyChanged` обработчик событий будет обновлять данные в каждом повторно использоваться `NativeAndroidCell` экземпляра.
+- Когда [ `ListView` ](xref:Xamarin.Forms.ListView) стратегию кэширования является [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement), `GetCellCore` метод будет вызываться для каждой ячейки, которое изначально отображается на экране. Объект `NativeAndroidCell` будет создан экземпляр для каждого `NativeCell` экземпляр, который отображается на экране. Данные, отображаемые каждым `NativeAndroidCell` экземпляры будут обновляться данными из `NativeCell` экземпляра с `UpdateCell` метод. Тем не менее `GetCellCore` не будет вызван метод как прокручивая `ListView`. Вместо этого `NativeAndroidCell` экземпляры будут использовать повторно.  `PropertyChanged` события вызываются на `NativeCell` экземпляра при изменении данных и `OnNativeCellPropertyChanged` обработчик событий будет обновлять данные в каждом повторно использоваться `NativeAndroidCell` экземпляра.
 
 В следующем коде показано в примере `OnNativeCellPropertyChanged` метод, который вызывается, когда `PropertyChanged` события:
 
@@ -474,7 +474,7 @@ internal class NativeAndroidCell : LinearLayout, INativeElementView
 }
 ```
 
-Этот класс определяет элементы управления, используемые для отображения содержимого ячейки и их размещения. Этот класс реализует [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/) интерфейс, который является обязательным, если [ `ListView` ](xref:Xamarin.Forms.ListView) использует [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) стратегию кэширования. Этот интерфейс указывает, что класс должен реализовывать [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/) свойство, которое должен вернуть данным пользовательских ячеек для очистки ячейки.
+Этот класс определяет элементы управления, используемые для отображения содержимого ячейки и их размещения. Этот класс реализует [ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView) интерфейс, который является обязательным, если [ `ListView` ](xref:Xamarin.Forms.ListView) использует [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) стратегию кэширования. Этот интерфейс указывает, что класс должен реализовывать [ `Element` ](xref:Xamarin.Forms.INativeElementView.Element) свойство, которое должен вернуть данным пользовательских ячеек для очистки ячейки.
 
 `NativeAndroidCell` Увеличивает конструктор `NativeAndroidCell` макета и инициализирует `HeadingTextView`, `SubheadingTextView`, и `ImageView` свойства в элементы управления в увеличенную макета. Эти свойства используются для отображения данных, хранящихся в `NativeCell` экземпляра, с помощью `UpdateCell` метод, вызываемый для задания значения каждого свойства. Кроме того, когда [ `ListView` ](xref:Xamarin.Forms.ListView) использует [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) стратегию, данных, отображаемых объектом кэширования `HeadingTextView`, `SubheadingTextView`, и `ImageView` свойства могут быть обновление с `OnNativeCellPropertyChanged` метод в пользовательское средство отрисовки.
 
@@ -569,7 +569,7 @@ namespace CustomRenderer.UWP
 
 ## <a name="summary"></a>Сводка
 
-В этой статье показано, как создать пользовательское средство отрисовки для [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) , размещенного в Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) элемента управления. Это предотвратит вычисления макета Xamarin.Forms многократно вызова во время `ListView` прокрутка.
+В этой статье показано, как создать пользовательское средство отрисовки для [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) , размещенного в Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) элемента управления. Это предотвратит вычисления макета Xamarin.Forms многократно вызова во время `ListView` прокрутка.
 
 
 ## <a name="related-links"></a>Связанные ссылки
