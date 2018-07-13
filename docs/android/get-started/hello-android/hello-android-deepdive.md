@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: bae3e7323596cc88f2b76aceeb5a4d1df4ce2d0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f62842c3b2aea93d28303b7f47c5d50df6381387
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774386"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998431"
 ---
 # <a name="hello-android-deep-dive"></a>Привет, Android: теперь подробнее
 
@@ -98,9 +98,9 @@ Visual Studio для Mac — это бесплатная интегрирова
 
 Ниже перечислены все папки, входящие в проект, и их назначение:
 
--   **Properties** &ndash; содержит файл [AndroidManifest.xml](~/android/platform/android-manifest.md), в котором описываются все требования для приложения Xamarin.Android, включая его имя, номер версии и разрешения. В папке **Properties** также находится файл [AssemblyInfo.cs](http://msdn.microsoft.com/en-us/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx) с метаданными сборки .NET. В этот файл рекомендуется внести некоторые основные сведения о приложении.
+-   **Properties** &ndash; содержит файл [AndroidManifest.xml](~/android/platform/android-manifest.md), в котором описываются все требования для приложения Xamarin.Android, включая его имя, номер версии и разрешения. В папке **Properties** также находится файл [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo) с метаданными сборки .NET. В этот файл рекомендуется внести некоторые основные сведения о приложении.
 
--   **References** &ndash; содержит сборки, необходимые для создания и запуска приложения. Если развернуть каталог References, вы увидите ссылки на сборки .NET, такие как [System](http://msdn.microsoft.com/en-us/library/system%28v=vs.110%29.aspx), System.Core и [System.Xml](http://msdn.microsoft.com/en-us/library/system.xml%28v=vs.110%29.aspx), а также ссылку на сборку Xamarin Mono.Android.
+-   **References** &ndash; содержит сборки, необходимые для создания и запуска приложения. Если развернуть каталог References, вы увидите ссылки на сборки .NET, такие как [System](xref:System), System.Core и [System.Xml](xref:System.Xml), а также ссылку на сборку Xamarin Mono.Android.
 
 
 -   **Assets** &ndash; содержит файлы, необходимые для работы приложения, в том числе шрифты, локальные файлы данных и текстовые файлы. Файлы в этом каталоге доступны посредством создаваемого класса `Assets`. Дополнительные сведения о ресурсах Android см. в руководстве по Xamarin [Использование ресурсов Android](~/android/app-fundamentals/resources-in-android/android-assets.md).

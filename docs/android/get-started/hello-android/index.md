@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/02/2016
-ms.openlocfilehash: da6dabed58bedcbcaf1191c16a790e055184c95a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 188d4b89354f97341c22036d90b55924650203ce
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762803"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996633"
 ---
 # <a name="hello-android"></a>Привет, Android
 
@@ -31,5 +31,5 @@ _Из этого руководства из двух частей вы узна
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Начало работы с Android](http://developer.android.com/training/index.html)
-- [Отладка в Visual Studio](http://msdn.microsoft.com/en-us/library/k0k771bt%28v=vs.90%29.aspx)
+- [Отладка в Visual Studio](https://docs.microsoft.com/visualstudio/debugger/)
 - [Руководство по отладке в Visual Studio для Mac](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/)

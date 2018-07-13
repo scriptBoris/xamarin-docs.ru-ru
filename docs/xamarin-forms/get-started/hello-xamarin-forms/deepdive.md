@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 7c8eee5fc7075f23221c06dab29b83b1d5e01ffc
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: f51992ec5311bdf0c7df7478651398f6ed8491a9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269072"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996237"
 ---
 # <a name="xamarinforms-deep-dive"></a>Подробное знакомство с Xamarin.Forms
 
@@ -118,7 +118,7 @@ namespace Phoneword
 }
 ```
 
-Этот код присваивает свойству `MainPage` класса `App` в качестве значения новый экземпляр класса [`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/). Кроме того, атрибут [`XamlCompilation`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationAttribute/) включает компилятор XAML, что позволяет компилировать код XAML непосредственно в промежуточный язык. Дополнительные сведения см. в разделе [Компиляция XAML](~/xamarin-forms/xaml/xamlc.md).
+Этот код присваивает свойству `MainPage` класса `App` в качестве значения новый экземпляр класса [`MainPage`](xref:Xamarin.Forms.Application.MainPage). Кроме того, атрибут [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) включает компилятор XAML, что позволяет компилировать код XAML непосредственно в промежуточный язык. Дополнительные сведения см. в разделе [Компиляция XAML](~/xamarin-forms/xaml/xamlc.md).
 
 ## <a name="launching-the-application-on-each-platform"></a>Запуск приложения на каждой платформе
 
@@ -214,14 +214,14 @@ namespace Phoneword.UWP
 
 Для создания пользовательского интерфейса приложения Xamarin.Forms используются четыре основные группы элементов управления.
 
-1. **Страницы** — страницы Xamarin.Forms представляют экраны в кроссплатформенных мобильных приложениях. В приложении Phoneword для отображения отдельного экрана используется класс [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/). Дополнительные сведения о страницах см. в статье [Страницы Xamarin.Forms](~/xamarin-forms/user-interface/controls/pages.md).
-1. **Макеты** — макеты Xamarin.Forms представляют собой контейнеры, которые служат для объединения представлений в логические структуры. В приложении Phoneword для упорядочения элементов управления в горизонтальный стек используется класс [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/). Дополнительные сведения о макетах см. в статье [Макеты Xamarin.Forms](~/xamarin-forms/user-interface/controls/layouts.md).
-1. **Представления** — представления Xamarin.Forms являются элементами управления, отображаемыми в пользовательском интерфейсе, например метки, кнопки и поля ввода текста. В приложении Phoneword используются элементы управления [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) и [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/). Дополнительные сведения о представлениях см. в статье [Представления Xamarin.Forms](~/xamarin-forms/user-interface/controls/views.md).
+1. **Страницы** — страницы Xamarin.Forms представляют экраны в кроссплатформенных мобильных приложениях. В приложении Phoneword для отображения отдельного экрана используется класс [`ContentPage`](xref:Xamarin.Forms.ContentPage). Дополнительные сведения о страницах см. в статье [Страницы Xamarin.Forms](~/xamarin-forms/user-interface/controls/pages.md).
+1. **Макеты** — макеты Xamarin.Forms представляют собой контейнеры, которые служат для объединения представлений в логические структуры. В приложении Phoneword для упорядочения элементов управления в горизонтальный стек используется класс [`StackLayout`](xref:Xamarin.Forms.StackLayout). Дополнительные сведения о макетах см. в статье [Макеты Xamarin.Forms](~/xamarin-forms/user-interface/controls/layouts.md).
+1. **Представления** — представления Xamarin.Forms являются элементами управления, отображаемыми в пользовательском интерфейсе, например метки, кнопки и поля ввода текста. В приложении Phoneword используются элементы управления [`Label`](xref:Xamarin.Forms.Label), [`Entry`](xref:Xamarin.Forms.Entry) и [`Button`](xref:Xamarin.Forms.Button). Дополнительные сведения о представлениях см. в статье [Представления Xamarin.Forms](~/xamarin-forms/user-interface/controls/views.md).
 1. **Ячейки** — ячейки Xamarin.Forms являются специальными объектами, представляющими элементы списка и описывающими способ их отрисовки. В приложении Phoneword ячейки не используются. Дополнительные сведения о ячейках см. в статье [Ячейки Xamarin.Forms](~/xamarin-forms/user-interface/controls/cells.md).
 
 Во время выполнения каждый элемент управления сопоставляется с собственным аналогом, который и будет отрисовываться.
 
-При выполнении приложения Phoneword на любой платформе отображается один экран, который соответствует [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) в Xamarin.Forms. Класс `Page` представляет *ViewGroup* в Android, *контроллер представления* в iOS или *страницу* на универсальной платформе Windows. Приложение Phoneword также создает экземпляр объекта [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), представляющий класс `MainPage`, разметка XAML которого показана в следующем примере кода:
+При выполнении приложения Phoneword на любой платформе отображается один экран, который соответствует [`Page`](xref:Xamarin.Forms.Page) в Xamarin.Forms. Класс `Page` представляет *ViewGroup* в Android, *контроллер представления* в iOS или *страницу* на универсальной платформе Windows. Приложение Phoneword также создает экземпляр объекта [`ContentPage`](xref:Xamarin.Forms.ContentPage), представляющий класс `MainPage`, разметка XAML которого показана в следующем примере кода:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -238,13 +238,13 @@ namespace Phoneword.UWP
 </ContentPage>
 ```
 
-Класс `MainPage` использует элемент управления [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) для автоматического упорядочения элементов управления на экране независимо от размера экрана. Дочерние элементы размещаются поочередно по вертикали в порядке добавления. Элемент управления `StackLayout` содержит элементы управления [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) (отображает текст на странице), [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) (принимает вводимый пользователем текст), а также два элемента управления [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) (используются для выполнения кода в ответ на события касания).
+Класс `MainPage` использует элемент управления [`StackLayout`](xref:Xamarin.Forms.StackLayout) для автоматического упорядочения элементов управления на экране независимо от размера экрана. Дочерние элементы размещаются поочередно по вертикали в порядке добавления. Элемент управления `StackLayout` содержит элементы управления [`Label`](xref:Xamarin.Forms.Label) (отображает текст на странице), [`Entry`](xref:Xamarin.Forms.Entry) (принимает вводимый пользователем текст), а также два элемента управления [`Button`](xref:Xamarin.Forms.Button) (используются для выполнения кода в ответ на события касания).
 
 Дополнительные сведения о XAML в Xamarin.Forms см. в разделе [Основы XAML в Xamarin.Forms](~/xamarin-forms/xaml/xaml-basics/index.md).
 
 ### <a name="responding-to-user-interaction"></a>Реакция на действия пользователей
 
-Объект, определенный в XAML, может инициировать событие, которое обрабатывается в файле кода программной части. В следующем примере кода показан метод `OnTranslate` в коде программной части для класса `MainPage`, который выполняется в ответ на событие [`Clicked`](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/), инициируемое при нажатии кнопки *Translate* (Преобразовать).
+Объект, определенный в XAML, может инициировать событие, которое обрабатывается в файле кода программной части. В следующем примере кода показан метод `OnTranslate` в коде программной части для класса `MainPage`, который выполняется в ответ на событие [`Clicked`](xref:Xamarin.Forms.Button.Clicked), инициируемое при нажатии кнопки *Translate* (Преобразовать).
 
 ```csharp
 void OnTranslate(object sender, EventArgs e)
@@ -272,13 +272,13 @@ void OnTranslate(object sender, EventArgs e)
 
 В приложении Phoneword для Xamarin.Forms представлено несколько понятий, не охваченных этой статьей. В их число входят следующие:
 
-- Включение и отключение кнопок. Чтобы включить или отключить объект [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), необходимо изменить его свойство [`IsEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/). Например, в следующем примере кода отключается объект `callButton`:
+- Включение и отключение кнопок. Чтобы включить или отключить объект [`Button`](xref:Xamarin.Forms.Button), необходимо изменить его свойство [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled). Например, в следующем примере кода отключается объект `callButton`:
 
     ```csharp
     callButton.IsEnabled = false;
     ```
 
-- Отображение диалогового окна оповещения. Когда пользователь нажимает **кнопку звонка**, приложение Phoneword отображает *диалоговое окно оповещения*, в котором можно выполнить или отменить звонок. Для создания этого диалогового окна используется метод [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/System.String/), как показано в следующем примере кода:
+- Отображение диалогового окна оповещения. Когда пользователь нажимает **кнопку звонка**, приложение Phoneword отображает *диалоговое окно оповещения*, в котором можно выполнить или отменить звонок. Для создания этого диалогового окна используется метод [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String,System.String)), как показано в следующем примере кода:
 
     ```csharp
     await this.DisplayAlert (
@@ -288,7 +288,7 @@ void OnTranslate(object sender, EventArgs e)
             "No");
     ```
 
-- Доступ к собственным функциям осуществляется с помощью класса [`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/). В приложении Phoneword используется класс `DependencyService`, который разрешает интерфейс `IDialer` для реализации набора номера телефона в соответствии с конкретной платформой, как показано в следующем примере кода из проекта Phoneword:
+- Доступ к собственным функциям осуществляется с помощью класса [`DependencyService`](xref:Xamarin.Forms.DependencyService). В приложении Phoneword используется класс `DependencyService`, который разрешает интерфейс `IDialer` для реализации набора номера телефона в соответствии с конкретной платформой, как показано в следующем примере кода из проекта Phoneword:
 
     ```csharp
     async void OnCall (object sender, EventArgs e)
@@ -299,7 +299,7 @@ void OnTranslate(object sender, EventArgs e)
     }
     ```
 
-  Дополнительные сведения о классе [`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) см. в разделе [Доступ к собственным функциям через DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+  Дополнительные сведения о классе [`DependencyService`](xref:Xamarin.Forms.DependencyService) см. в разделе [Доступ к собственным функциям через DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
 - Выполнение телефонного звонка по URL-адресу. Приложение Phoneword использует метод `OpenURL` для запуска системного приложения телефона. URL-адрес состоит из префикса `tel:` и вызываемого номера телефона, как показано в следующем примере кода для проекта iOS:
 
@@ -307,7 +307,7 @@ void OnTranslate(object sender, EventArgs e)
     return UIApplication.SharedApplication.OpenUrl (new NSUrl ("tel:" + number));
     ```
 
-- Настройка параметров макета платформы. С помощью класса [`Device`](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) разработчики могут настраивать макет и функции приложений для отдельных платформ. Это показано в следующем примере кода, в котором на разных платформах используются разные значения [`Padding`](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) для корректного отображения каждой страницы:
+- Настройка параметров макета платформы. С помощью класса [`Device`](xref:Xamarin.Forms.Device) разработчики могут настраивать макет и функции приложений для отдельных платформ. Это показано в следующем примере кода, в котором на разных платформах используются разные значения [`Padding`](xref:Xamarin.Forms.Layout.Padding) для корректного отображения каждой страницы:
 
     ```xaml
     <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" ... >

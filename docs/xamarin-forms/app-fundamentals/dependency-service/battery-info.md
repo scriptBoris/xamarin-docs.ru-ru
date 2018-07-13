@@ -1,40 +1,40 @@
 ---
 title: Проверка состояния батареи
-description: В этой статье объясняется, как использовать класс помощью Xamarin.Forms DependencyService для доступа к сведениям батареи в собственном коде для каждой платформы.
+description: В этой статье объясняется, как использовать класс Xamarin.Forms DependencyService для доступа к информации батареи, скомпилированных в собственном коде для каждой платформы.
 ms.prod: xamarin
 ms.assetid: CF1C5A73-84ED-407D-BDC5-EB1D83D2D3DB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 74e191cd6a87626e887d45f823e65d57000d7463
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cbb4a01ac2c6d933fe40a0b3c2571d1fe3ce75c0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241088"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998405"
 ---
 # <a name="checking-battery-status"></a>Проверка состояния батареи
 
-В этой статье описывается создание приложения, которое проверяет состояние аккумулятора. Эта статья основана на подключаемый модуль батареи, Джеймсом Монтеманьо. Дополнительные сведения см. в разделе [в репозитории GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery).
+В этой статье описывается создание приложения, которое проверяет состояние батареи. Эта статья основана на подключаемый модуль аккумулятора, Монтеманьо. Дополнительные сведения см. в разделе [репозиторий GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery).
 
-Поскольку Xamarin.Forms не содержит функциональные возможности для проверки текущего состояния батареи, это приложение потребуется использовать [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) пользоваться преимуществами собственных API.  В этой статье будут рассмотрены следующие шаги по использованию `DependencyService`:
+Поскольку Xamarin.Forms не содержит функциональность для проверки текущего состояния батареи, это приложение будет нужно использовать [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) пользоваться преимуществами собственных API-интерфейсов.  В этой статье будут рассмотрены следующие действия по использованию `DependencyService`:
 
 - **[Создание интерфейса](#Creating_the_Interface)**  &ndash; понять, как интерфейс создается в общем коде.
-- **[Реализация iOS](#iOS_Implementation)**  &ndash; Узнайте, как реализовать интерфейс в машинный код для iOS.
-- **[Реализация Android](#Android_Implementation)**  &ndash; Узнайте, как реализовать интерфейс в машинном коде для Android.
-- **[Универсальные реализации платформы Windows](#UWPImplementation)**  &ndash; Узнайте, как реализовать интерфейс в машинном коде для универсальной платформы Windows (UWP).
-- **[Реализация в общем коде](#Implementing_in_Shared_Code)**  &ndash; использование `DependencyService` вызывать собственную реализацию из общего кода.
+- **[iOS реализация](#iOS_Implementation)**  &ndash; Узнайте, как реализовать интерфейс в машинном коде для iOS.
+- **[Android реализации](#Android_Implementation)**  &ndash; Узнайте, как реализовать интерфейс в машинном коде для Android.
+- **[Универсальная реализация платформы Windows](#UWPImplementation)**  &ndash; Узнайте, как реализовать интерфейс в машинном коде для универсальной платформы Windows (UWP).
+- **[Реализация в общем коде](#Implementing_in_Shared_Code)**  &ndash; сведения об использовании `DependencyService` выполнить вызов собственной реализации из общего кода.
 
 После завершения приложения с помощью `DependencyService` будет иметь следующую структуру:
 
-![](battery-info-images/battery-diagram.png "Структура приложений помощью DependencyService")
+![](battery-info-images/battery-diagram.png "Структура приложений DependencyService")
 
 <a name="Creating_the_Interface" />
 
 ## <a name="creating-the-interface"></a>Создание интерфейса
 
-Сначала необходимо Создайте интерфейс в общий код, который выражает нужной функции. В случае батареи, проверка приложения соответствующую информацию — это доля аккумулятора, является ли устройство заряжается или нет, и как устройство получает power:
+Во-первых необходимо создаете интерфейс в общем коде, который выражает нужной функции. В случае батареи, проверка приложения соответствующие сведения выполняется процент аккумулятора, является ли устройство взимать плату или нет, и как устройство получает power:
 
 ```csharp
 namespace DependencyServiceSample
@@ -66,16 +66,16 @@ namespace DependencyServiceSample
 }
 ```
 
-Процесс разработки для этого интерфейса в общий код позволит приложению доступ к API управления питанием на каждой платформе Xamarin.Forms.
+Создания кода для этого интерфейса в общем коде позволит приложению доступ к API управления питанием на каждой платформе Xamarin.Forms.
 
 > [!NOTE]
-> Классы, реализующие интерфейс должен иметь конструктор для работы с `DependencyService`. Не удается определить конструкторы интерфейсами.
+> Классы, реализующие интерфейс должен иметь конструктор без параметров для работы с `DependencyService`. Конструкторы не могут быть определены интерфейсы.
 
 <a name="iOS_Implementation" />
 
 ## <a name="ios-implementation"></a>Реализация iOS
 
-`IBattery` Интерфейс должен быть реализован в каждом проекте специфический для платформы приложений. Реализация операций ввода-вывода будет использовать собственный [ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/) API-интерфейсы для доступа к данным батареи. Обратите внимание, что класс имеет конструктор, чтобы `DependencyService` можно создавать новые экземпляры:
+`IBattery` Интерфейс должен быть реализован в каждом проекте приложения для конкретной платформы. Реализация iOS будет применять собственную [ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/) API-интерфейсы для доступа к данным батареи. Обратите внимание, что класс имеет конструктор без параметров, чтобы `DependencyService` можно создавать новые экземпляры:
 
 ```csharp
 using UIKit;
@@ -138,7 +138,7 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-Наконец, добавьте это `[assembly]` атрибута выше класса (и за пределами любого пространства имен, которые были определены), включая все необходимые `using` инструкции:
+Наконец, добавьте это `[assembly]` атрибут над классом (и, вне любого пространства имен, определено), включая все необходимые `using` инструкции:
 
 ```csharp
 using UIKit;
@@ -152,13 +152,13 @@ namespace DependencyServiceSample.iOS
     ...
 ```
 
-Этот атрибут класс регистрируется как реализация `IBattery` интерфейс, который означает, что `DependencyService.Get<IBattery>` можно использовать для создания его экземпляра общего кода:
+Этот атрибут регистрирует класс как реализация `IBattery` интерфейс, который означает, что `DependencyService.Get<IBattery>` может использоваться в общем коде, чтобы создать его экземпляр:
 
 <a name="Android_Implementation" />
 
 ## <a name="android-implementation"></a>Реализация Android
 
-Реализация Android использует [ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) API. Эта реализация сложнее, чем версия iOS, требуя проверки для обработки отсутствия разрешений батареи:
+В Android реализации используется [ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) API. Эта реализация сложнее, чем версия iOS, требуя проверки для обработки нехватки разрешений аккумулятора:
 
 ```csharp
 using System;
@@ -295,7 +295,7 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-Добавьте это `[assembly]` атрибута выше класса (и за пределами любого пространства имен, которые были определены), включая все необходимые `using` инструкции:
+Добавьте этот `[assembly]` атрибут над классом (и, вне любого пространства имен, определено), включая все необходимые `using` инструкции:
 
 ```csharp
 ...
@@ -309,13 +309,13 @@ namespace DependencyServiceSample.Droid
     ...
 ```
 
-Этот атрибут класс регистрируется как реализация `IBattery` интерфейс, который означает, что `DependencyService.Get<IBattery>` может использоваться в общий код можно создать его экземпляр.
+Этот атрибут регистрирует класс как реализация `IBattery` интерфейс, который означает, что `DependencyService.Get<IBattery>` может использоваться в общий код можно создать его экземпляр.
 
 <a name="UWPImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>Реализация платформы универсальных приложений Windows
+## <a name="universal-windows-platform-implementation"></a>Реализация платформы универсальной Windows
 
-Реализация UWP использует `Windows.Devices.Power` API, чтобы получить сведения о состоянии батареи:
+Реализация универсальной платформы Windows использует `Windows.Devices.Power` API-интерфейсы для получения информации о состоянии аккумулятора:
 
 ```csharp
 using DependencyServiceSample.UWP;
@@ -409,13 +409,13 @@ namespace DependencyServiceSample.UWP
 }
 ```
 
-`[assembly]` Над ним атрибут объявления пространства имен класс регистрируется как реализация `IBattery` интерфейс, который означает, что `DependencyService.Get<IBattery>` может использоваться в общий код для создания его экземпляра.
+`[assembly]` Атрибут декларацией namespace регистрирует класс как реализация `IBattery` интерфейс, который означает, что `DependencyService.Get<IBattery>` может использоваться в общем коде, чтобы создать его экземпляр.
 
 <a name="Implementing_in_Shared_Code" />
 
-## <a name="implementing-in-shared-code"></a>Реализация в общий код
+## <a name="implementing-in-shared-code"></a>Реализация в общем коде
 
-Теперь, когда интерфейс реализован для каждой платформы, общий приложение может быть написано таким образом, чтобы воспользоваться преимуществами его. Это приложение будет состоять из страницы с кнопкой, что при касании обновлений свой текст текущее состояние батареи. Она использует `DependencyService` для получения экземпляра `IBattery` интерфейса. Во время выполнения этот экземпляр будет реализации платформой, имеет полный доступ к собственного пакета SDK.
+Теперь, когда интерфейс реализован для каждой платформы, общий приложение может быть написано таким образом, чтобы воспользоваться его преимуществами. Приложение будет состоять страницы с кнопкой, что когда касание обновлений свой текст текущее состояние батареи. Она использует `DependencyService` для получения экземпляра `IBattery` интерфейс. Во время выполнения этот экземпляр будет реализацию платформы, которая имеет полный доступ к собственным пакетом SDK для.
 
 ```csharp
 public MainPage ()
@@ -469,13 +469,13 @@ public MainPage ()
 }
 ```
 
-Запуск этого приложения в iOS, Android или UWP и нажав кнопку приведет к текст кнопки, обновление, чтобы отразить текущее состояние питания устройства.
+Выполнение этого приложения в iOS, Android, или UWP и нажатие кнопки приведет к текст кнопки, обновление, чтобы отразить текущее состояние питания устройства.
 
 ![](battery-info-images/battery.png "Пример состояние батареи")
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Помощью DependencyService (пример)](https://developer.xamarin.com/samples/DependencyService)
-- [С помощью с помощью DependencyService (пример)](https://developer.xamarin.com/samples/UsingDependencyService/)
+- [DependencyService (пример)](https://developer.xamarin.com/samples/DependencyService)
+- [С помощью DependencyService (пример)](https://developer.xamarin.com/samples/UsingDependencyService/)
 - [Примеры Xamarin.Forms](https://github.com/xamarin/xamarin-forms-samples)

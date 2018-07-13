@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 15a26ce633e8321e9101289276c9da302e5bd8cc
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 95b0744cdd52ac1c3f5d7c62c18139a30400ab04
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35243698"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999021"
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Введение в Xamarin.Forms
 
@@ -47,9 +47,9 @@ Xamarin.Forms позволяет быстро разрабатывать про�
 
 [![](introduction-to-xamarin-forms-images/image05-sml.png "Приложение Xamarin.Forms по умолчанию")](introduction-to-xamarin-forms-images/image05.png#lightbox "Приложение Xamarin.Forms по умолчанию")
 
-Каждый экран на снимках экрана соответствует объекту *Page* в Xamarin.Forms. Класс [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) представляет *действие* в Android, *контроллер представления* в iOS или *страницу* в универсальной платформе Windows (UWP). В представленном примере на снимках экрана выше создается объект [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), который служит для отображения элемента [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/).
+Каждый экран на снимках экрана соответствует объекту *Page* в Xamarin.Forms. Класс [`Page`](xref:Xamarin.Forms.Page) представляет *действие* в Android, *контроллер представления* в iOS или *страницу* в универсальной платформе Windows (UWP). В представленном примере на снимках экрана выше создается объект [`ContentPage`](xref:Xamarin.Forms.ContentPage), который служит для отображения элемента [`Label`](xref:Xamarin.Forms.Label).
 
-Чтобы код запуска как можно больше использовался повторно, в приложениях Xamarin.Forms есть класс `App`, который отвечает за создание первого отображаемого объекта [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Пример класса `App` приведен в следующем коде:
+Чтобы код запуска как можно больше использовался повторно, в приложениях Xamarin.Forms есть класс `App`, который отвечает за создание первого отображаемого объекта [`Page`](xref:Xamarin.Forms.Page). Пример класса `App` приведен в следующем коде:
 
 ```csharp
 public class App : Application
@@ -68,13 +68,13 @@ public class App : Application
 }
 ```
 
-Этот код создает объект [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), который отображает один элемент [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), размещаемый в центре страницы как по вертикали, так и по горизонтали.
+Этот код создает объект [`ContentPage`](xref:Xamarin.Forms.ContentPage), который отображает один элемент [`Label`](xref:Xamarin.Forms.Label), размещаемый в центре страницы как по вертикали, так и по горизонтали.
 
 <a name="Launching_the_Initial_Xamarin_Forms_Page_on_Each_Platform" />
 
 ### <a name="launching-the-initial-xamarinforms-page-on-each-platform"></a>Запуск начальной страницы Xamarin.Forms на каждой платформе
 
-Для использования объекта [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) приложение для каждой платформы должно инициализировать платформу Xamarin.Forms и предоставить экземпляр [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) при запуске. Способы инициализации зависят от платформы и рассматриваются в следующих разделах.
+Для использования объекта [`Page`](xref:Xamarin.Forms.Page) приложение для каждой платформы должно инициализировать платформу Xamarin.Forms и предоставить экземпляр [`ContentPage`](xref:Xamarin.Forms.ContentPage) при запуске. Способы инициализации зависят от платформы и рассматриваются в следующих разделах.
 
 <a name="Launching_in_iOS" />
 
@@ -101,14 +101,14 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 
 #### <a name="android"></a>Android
 
-Для запуска начальной страницы Xamarin.Forms в Android проект платформы включает в себя код, который создает объект `Activity` с атрибутом `MainLauncher`, причем действие наследуется от класса `FormsApplicationActivity`, как показано в следующем примере кода:
+Для запуска начальной страницы Xamarin.Forms в Android проект платформы включает в себя код, который создает объект `Activity` с атрибутом `MainLauncher`, причем действие наследуется от класса `FormsAppCompatActivity`, как показано в следующем примере кода:
 
 ```csharp
 namespace HelloXamarinFormsWorld.Android
 {
-    [Activity(Label = "HelloXamarinFormsWorld", MainLauncher = true,
+    [Activity(Label = "HelloXamarinFormsWorld", Theme = "@style/MainTheme", MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -163,15 +163,15 @@ public partial class MainPage
 
 Во время выполнения каждый элемент управления сопоставляется с собственным аналогом, который и будет отрисовываться.
 
-Элементы управления размещаются внутри макета. Теперь мы рассмотрим класс [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), который реализует стандартный макет.
+Элементы управления размещаются внутри макета. Теперь мы рассмотрим класс [`StackLayout`](xref:Xamarin.Forms.StackLayout), который реализует стандартный макет.
 
 <a name="StackLayout" />
 
 #### <a name="stacklayout"></a>StackLayout
 
-Класс [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) упрощает разработку кроссплатформенных приложений благодаря автоматической компоновке элементов управления на экране независимо от его размера. Дочерние элементы размещаются поочередно (по горизонтали или по вертикали) в порядке добавления. Область, занимаемая макетом `StackLayout`, зависит от значений свойств [`HorizontalOptions`](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) и [`VerticalOptions`](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/), но по умолчанию макет `StackLayout` будет пытаться использовать весь экран.
+Класс [`StackLayout`](xref:Xamarin.Forms.StackLayout) упрощает разработку кроссплатформенных приложений благодаря автоматической компоновке элементов управления на экране независимо от его размера. Дочерние элементы размещаются поочередно (по горизонтали или по вертикали) в порядке добавления. Область, занимаемая макетом `StackLayout`, зависит от значений свойств [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) и [`VerticalOptions`](xref:Xamarin.Forms.View.HorizontalOptions), но по умолчанию макет `StackLayout` будет пытаться использовать весь экран.
 
-Следующий код XAML представляет собой пример использования макета [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) для размещения трех элементов управления [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/):
+Следующий код XAML представляет собой пример использования макета [`StackLayout`](xref:Xamarin.Forms.StackLayout) для размещения трех элементов управления [`Label`](xref:Xamarin.Forms.Label):
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -214,11 +214,11 @@ public class StackLayoutExample : ContentPage
 }
 ```
 
-По умолчанию макет [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) предполагает вертикальную ориентацию, как показано на следующих снимках экрана:
+По умолчанию макет [`StackLayout`](xref:Xamarin.Forms.StackLayout) предполагает вертикальную ориентацию, как показано на следующих снимках экрана:
 
 [![](introduction-to-xamarin-forms-images/image09-sml.png "Вертикальный макет StackLayout")](introduction-to-xamarin-forms-images/image09.png#lightbox "Вертикальный макет StackLayout")
 
-Ориентацию макета [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) можно изменить на горизонтальную, как показано в следующем примере кода XAML:
+Ориентацию макета [`StackLayout`](xref:Xamarin.Forms.StackLayout) можно изменить на горизонтальную, как показано в следующем примере кода XAML:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -298,15 +298,15 @@ Content = new StackLayout
 
 [![](introduction-to-xamarin-forms-images/image11-sml.png "Горизонтальный макет StackLayout с LayoutOptions")](introduction-to-xamarin-forms-images/image11.png#lightbox "Горизонтальный макет StackLayout с LayoutOptions")
 
-Дополнительные сведения о классе [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) см. в статье [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
+Дополнительные сведения о классе [`StackLayout`](xref:Xamarin.Forms.StackLayout) см. в статье [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
 
 <a name="Lists_in_Xamarin_Forms" />
 
 ## <a name="lists-in-xamarinforms"></a>Списки в Xamarin.Forms
 
-Элемент управления [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) отвечает за отображение коллекции элементов на экране. Каждый элемент `ListView` содержится в отдельной ячейке. По умолчанию элемент управления `ListView` использует встроенный шаблон [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) и отображает одну строку текста.
+Элемент управления [`ListView`](xref:Xamarin.Forms.ListView) отвечает за отображение коллекции элементов на экране. Каждый элемент `ListView` содержится в отдельной ячейке. По умолчанию элемент управления `ListView` использует встроенный шаблон [`TextCell`](xref:Xamarin.Forms.TextCell) и отображает одну строку текста.
 
-Ниже представлен простой пример кода [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/):
+Ниже представлен простой пример кода [`ListView`](xref:Xamarin.Forms.ListView):
 
 ```csharp
 var listView = new ListView
@@ -324,17 +324,17 @@ Content = new StackLayout
 };
 ```
 
-На следующем снимке экрана показан получившийся элемент управления [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/):
+На следующем снимке экрана показан получившийся элемент управления [`ListView`](xref:Xamarin.Forms.ListView):
 
  ![](introduction-to-xamarin-forms-images/image13.png "ListView")
 
-Дополнительные сведения об элементе управления [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) см. в статье [ListView](~/xamarin-forms/user-interface/listview/index.md).
+Дополнительные сведения об элементе управления [`ListView`](xref:Xamarin.Forms.ListView) см. в статье [ListView](~/xamarin-forms/user-interface/listview/index.md).
 
 <a name="Binding_to_a_Custom_Class" />
 
 ### <a name="binding-to-a-custom-class"></a>Привязка к пользовательскому классу
 
-Элемент управления [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) может также применяться для отображения пользовательских объектов с помощью шаблона [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) по умолчанию.
+Элемент управления [`ListView`](xref:Xamarin.Forms.ListView) может также применяться для отображения пользовательских объектов с помощью шаблона [`TextCell`](xref:Xamarin.Forms.TextCell) по умолчанию.
 
 Следующий пример кода демонстрирует класс `TodoItem`:
 
@@ -346,7 +346,7 @@ public class TodoItem
 }
 ```
 
-Элемент управления [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) можно заполнить, как показано в следующем примере кода:
+Элемент управления [`ListView`](xref:Xamarin.Forms.ListView) можно заполнить, как показано в следующем примере кода:
 
 ```csharp
 listView.ItemsSource = new TodoItem [] {
@@ -358,7 +358,7 @@ listView.ItemsSource = new TodoItem [] {
 };
 ```
 
-Чтобы указать, какое свойство `TodoItem` должно отображаться элементом управления [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/), можно создать привязку, как показано в следующем примере кода:
+Чтобы указать, какое свойство `TodoItem` должно отображаться элементом управления [`ListView`](xref:Xamarin.Forms.ListView), можно создать привязку, как показано в следующем примере кода:
 
 ```csharp
 listView.ItemTemplate = new DataTemplate(typeof(TextCell));
@@ -373,7 +373,7 @@ listView.ItemTemplate.SetBinding(TextCell.TextProperty, "Name");
 
 ### <a name="selecting-an-item-in-a-listview"></a>Выбор элемента в ListView
 
-Чтобы обеспечить реакцию на прикосновение пользователя к ячейке в списке [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/), необходимо обработать событие [`ItemSelected`](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/), как показано в следующем примере кода:
+Чтобы обеспечить реакцию на прикосновение пользователя к ячейке в списке [`ListView`](xref:Xamarin.Forms.ListView), необходимо обработать событие [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected), как показано в следующем примере кода:
 
 ```csharp
 listView.ItemSelected += async (sender, e) => {
@@ -381,7 +381,7 @@ listView.ItemSelected += async (sender, e) => {
 };
 ```
 
-Если метод [`PushAsync`](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync/p/Xamarin.Forms.Page/) содержится в объекте [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/), его можно использовать для открытия новой страницы с помощью встроенной функции обратной навигации. Событие [`ItemSelected`](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/) может обратиться к объекту, связанному с ячейкой, посредством свойства [`e.SelectedItem`](https://developer.xamarin.com/api/property/Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem/), привязать его к новой странице и отобразить новую страницу с помощью метода `PushAsync`, как показано в следующем примере кода:
+Если метод [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)) содержится в объекте [`NavigationPage`](xref:Xamarin.Forms.NavigationPage), его можно использовать для открытия новой страницы с помощью встроенной функции обратной навигации. Событие [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) может обратиться к объекту, связанному с ячейкой, посредством свойства [`e.SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem), привязать его к новой странице и отобразить новую страницу с помощью метода `PushAsync`, как показано в следующем примере кода:
 
 ```csharp
 listView.ItemSelected += async (sender, e) => {
@@ -393,19 +393,19 @@ listView.ItemSelected += async (sender, e) => {
 
 Встроенная обратная навигация реализуется в каждой платформе особым образом. Дополнительные сведения см. в разделе [Переходы](#Navigation).
 
-Дополнительные сведения о выборе элементов [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) см. в статье [Взаимодействие с элементом управления ListView](~/xamarin-forms/user-interface/listview/interactivity.md).
+Дополнительные сведения о выборе элементов [`ListView`](xref:Xamarin.Forms.ListView) см. в статье [Взаимодействие с элементом управления ListView](~/xamarin-forms/user-interface/listview/interactivity.md).
 
 <a name="Customizing_the_appearance_of_a_cell" />
 
 ### <a name="customizing-the-appearance-of-a-cell"></a>Настройка внешнего вида ячейки
 
-Чтобы настроить внешний вид ячейки, можно создать подкласс класса [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) и задать в качестве его типа значение свойства [`ItemTemplate`](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/) элемента управления [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/).
+Чтобы настроить внешний вид ячейки, можно создать подкласс класса [`ViewCell`](xref:Xamarin.Forms.ViewCell) и задать в качестве его типа значение свойства [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) элемента управления [`ListView`](xref:Xamarin.Forms.ListView).
 
-Ячейка, показанная на следующем снимке экрана, состоит из одного элемента управления [`Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) и двух элементов управления [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/):
+Ячейка, показанная на следующем снимке экрана, состоит из одного элемента управления [`Image`](xref:Xamarin.Forms.Image) и двух элементов управления [`Label`](xref:Xamarin.Forms.Label):
 
  ![](introduction-to-xamarin-forms-images/image14.png "Настроенный внешний вид ячейки ListView")
 
-Для создания этого пользовательского макета необходимо создать подкласс класса [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), как показано в следующем примере кода:
+Для создания этого пользовательского макета необходимо создать подкласс класса [`ViewCell`](xref:Xamarin.Forms.ViewCell), как показано в следующем примере кода:
 
 ```csharp
 class EmployeeCell : ViewCell
@@ -456,11 +456,11 @@ class EmployeeCell : ViewCell
 
 Этот код выполняет указанные ниже задачи:
 
--  Добавляет элемент управления [`Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) и привязывает его к свойству `ImageUri` объекта `Employee`. Дополнительные сведения о привязке данных см. в разделе [Привязка данных](#Data_Binding).
--  Создает макет [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) с вертикальной ориентацией для размещения двух элементов управления [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/). Элементы управления `Label` привязываются к свойствам `DisplayName` и `Twitter` объекта `Employee`.
--  Создает макет [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) для размещения существующего элемента управления [`Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) и макета `StackLayout`. Дочерние объекты размещаются по вертикали.
+-  Добавляет элемент управления [`Image`](xref:Xamarin.Forms.Image) и привязывает его к свойству `ImageUri` объекта `Employee`. Дополнительные сведения о привязке данных см. в разделе [Привязка данных](#Data_Binding).
+-  Создает макет [`StackLayout`](xref:Xamarin.Forms.StackLayout) с вертикальной ориентацией для размещения двух элементов управления [`Label`](xref:Xamarin.Forms.Label). Элементы управления `Label` привязываются к свойствам `DisplayName` и `Twitter` объекта `Employee`.
+-  Создает макет [`StackLayout`](xref:Xamarin.Forms.StackLayout) для размещения существующего элемента управления [`Image`](xref:Xamarin.Forms.Image) и макета `StackLayout`. Дочерние объекты размещаются по вертикали.
 
-После создания пользовательской ячейки она может использоваться элементом управления [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Для этого она заключается в шаблон [`DataTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), как показано в следующем примере кода:
+После создания пользовательской ячейки она может использоваться элементом управления [`ListView`](xref:Xamarin.Forms.ListView). Для этого она заключается в шаблон [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), как показано в следующем примере кода:
 
 ```csharp
 List<Employee> myListOfEmployeeObjects = GetAListOfAllEmployees();
@@ -472,7 +472,7 @@ listView.ItemsSource = myListOfEmployeeObjects;
 listView.ItemTemplate = new DataTemplate(typeof(EmployeeCell));
 ```
 
-Этот код предоставляет список `List` элементов `Employee` в [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Каждая ячейка отрисовывается с помощью класса `EmployeeCell`. Элемент управления `ListView` передает объект `Employee` в `EmployeeCell` в качестве [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/).
+Этот код предоставляет список `List` элементов `Employee` в [`ListView`](xref:Xamarin.Forms.ListView). Каждая ячейка отрисовывается с помощью класса `EmployeeCell`. Элемент управления `ListView` передает объект `Employee` в `EmployeeCell` в качестве [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext).
 
 Дополнительные сведения о настройке внешнего вида ячеек см. в статье [Внешний вид ячеек](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
 
@@ -480,7 +480,7 @@ listView.ItemTemplate = new DataTemplate(typeof(EmployeeCell));
 
 ### <a name="using-xaml-to-create-and-customize-a-list"></a>Создание и настройка списка с помощью XAML
 
-В следующем примере показан код XAML, эквивалентный элементу управления [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) из предыдущего раздела:
+В следующем примере показан код XAML, эквивалентный элементу управления [`ListView`](xref:Xamarin.Forms.ListView) из предыдущего раздела:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -510,13 +510,13 @@ listView.ItemTemplate = new DataTemplate(typeof(EmployeeCell));
 </ContentPage>
 ```
 
-В этом коде XAML определяется объект [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), содержащий элемент [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Источник данных для `ListView` задается с помощью атрибута [`ItemsSource`](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemsSource/). Макет каждой строки в `ItemsSource` определяется в элементе [`ListView.ItemTemplate`](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/).
+В этом коде XAML определяется объект [`ContentPage`](xref:Xamarin.Forms.ContentPage), содержащий элемент [`ListView`](xref:Xamarin.Forms.ListView). Источник данных для `ListView` задается с помощью атрибута [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource). Макет каждой строки в `ItemsSource` определяется в элементе [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate).
 
 <a name="Data_Binding" />
 
 ## <a name="data-binding"></a>Привязка данных
 
-Привязка данных связывает два объекта, которые называются *источником* и *целевым объектом*. *Источник* предоставляет данные. *Целевой* объект будет использовать (и часто отображать) данные из источника. Например, свойство [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) элемента [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) (*целевого* объекта) часто связывается с открытым свойством `string` *источника*. На следующей схеме показано отношение привязки:
+Привязка данных связывает два объекта, которые называются *источником* и *целевым объектом*. *Источник* предоставляет данные. *Целевой* объект будет использовать (и часто отображать) данные из источника. Например, свойство [`Text`](xref:Xamarin.Forms.Label.Text) элемента [`Label`](xref:Xamarin.Forms.Label) (*целевого* объекта) часто связывается с открытым свойством `string` *источника*. На следующей схеме показано отношение привязки:
 
 ![](introduction-to-xamarin-forms-images/data-binding.png "Привязка данных")
 
@@ -524,8 +524,8 @@ listView.ItemTemplate = new DataTemplate(typeof(EmployeeCell));
 
 Установление привязки данных состоит из двух этапов:
 
-- Свойству [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) *целевого* объекта должен быть присвоен *источник*.
-- Между *целевым* объектом и *источником* должна быть установлена привязка. В XAML для этого используется расширение разметки [`Binding`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/). В C# для этого применяется метод [`SetBinding`](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/).
+- Свойству [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) *целевого* объекта должен быть присвоен *источник*.
+- Между *целевым* объектом и *источником* должна быть установлена привязка. В XAML для этого используется расширение разметки [`Binding`](xref:Xamarin.Forms.Xaml.BindingExtension). В C# для этого применяется метод [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)).
 
 Дополнительные сведения о привязке данных см. в статье [Основы привязки данных](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
@@ -537,9 +537,9 @@ listView.ItemTemplate = new DataTemplate(typeof(EmployeeCell));
 <Entry Text="{Binding FirstName}" ... />
 ```
 
-Создается привязка между свойством [`Entry.Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Text/) и свойством `FirstName` *источника*. Изменения, вносимые в элементе управления `Entry`, будут автоматически применяться к объекту `employeeToDisplay`. Аналогичным образом, при внесении изменений в свойство `employeeToDisplay.FirstName` подсистема привязки Xamarin.Forms будет также обновлять содержимое элемента управления `Entry`. Это называется *двусторонней привязкой*. Чтобы двусторонняя привязка работала, класс модели должен реализовывать интерфейс `INotifyPropertyChanged`.
+Создается привязка между свойством [`Entry.Text`](xref:Xamarin.Forms.Entry.Text) и свойством `FirstName` *источника*. Изменения, вносимые в элементе управления `Entry`, будут автоматически применяться к объекту `employeeToDisplay`. Аналогичным образом, при внесении изменений в свойство `employeeToDisplay.FirstName` подсистема привязки Xamarin.Forms будет также обновлять содержимое элемента управления `Entry`. Это называется *двусторонней привязкой*. Чтобы двусторонняя привязка работала, класс модели должен реализовывать интерфейс `INotifyPropertyChanged`.
 
-Хотя свойство [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) класса `EmployeeDetailPage` можно задавать в XAML, в этом случае ему присваивается экземпляр `Employee` в коде программной части:
+Хотя свойство [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) класса `EmployeeDetailPage` можно задавать в XAML, в этом случае ему присваивается экземпляр `Employee` в коде программной части:
 
 ```csharp
 public EmployeeDetailPage(Employee employee)
@@ -549,7 +549,7 @@ public EmployeeDetailPage(Employee employee)
 }
 ```
 
-Хотя свойство [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) каждого *целевого* объекта можно задавать по отдельности, это не является обязательным. `BindingContext` — это особое свойство, которое наследуется всеми дочерними объектами. Поэтому когда свойству `BindingContext` объекта [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) присваивается экземпляр `Employee`, все дочерние объекты `ContentPage` имеют то же значение `BindingContext` и могут привязываться к открытым свойствам объекта `Employee`.
+Хотя свойство [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) каждого *целевого* объекта можно задавать по отдельности, это не является обязательным. `BindingContext` — это особое свойство, которое наследуется всеми дочерними объектами. Поэтому когда свойству `BindingContext` объекта [`ContentPage`](xref:Xamarin.Forms.ContentPage) присваивается экземпляр `Employee`, все дочерние объекты `ContentPage` имеют то же значение `BindingContext` и могут привязываться к открытым свойствам объекта `Employee`.
 
 ### <a name="c35"></a>C&#35;
 
@@ -568,15 +568,15 @@ public EmployeeDetailPage(Employee employeeToDisplay)
 }
 ```
 
-В конструктор [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) передается экземпляр `Employee`, а свойству [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) присваивается объект, к которому необходимо выполнить привязку. Создается экземпляр элемента управления [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) и привязка между свойством [`Entry.Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Text/) и свойством `FirstName` *источника*. Изменения, вносимые в элементе управления `Entry`, будут автоматически применяться к объекту `employeeToDisplay`. Аналогичным образом, при внесении изменений в свойство `employeeToDisplay.FirstName` подсистема привязки Xamarin.Forms будет также обновлять содержимое элемента управления `Entry`. Это называется *двусторонней привязкой*. Чтобы двусторонняя привязка работала, класс модели должен реализовывать интерфейс `INotifyPropertyChanged`.
+В конструктор [`ContentPage`](xref:Xamarin.Forms.ContentPage) передается экземпляр `Employee`, а свойству [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) присваивается объект, к которому необходимо выполнить привязку. Создается экземпляр элемента управления [`Entry`](xref:Xamarin.Forms.Entry) и привязка между свойством [`Entry.Text`](xref:Xamarin.Forms.Entry.Text) и свойством `FirstName` *источника*. Изменения, вносимые в элементе управления `Entry`, будут автоматически применяться к объекту `employeeToDisplay`. Аналогичным образом, при внесении изменений в свойство `employeeToDisplay.FirstName` подсистема привязки Xamarin.Forms будет также обновлять содержимое элемента управления `Entry`. Это называется *двусторонней привязкой*. Чтобы двусторонняя привязка работала, класс модели должен реализовывать интерфейс `INotifyPropertyChanged`.
 
-Метод `SetBinding` принимает два параметра. В первом параметре указываются сведения о типе привязки. Второй параметр служит для предоставления сведений о привязываемых объектах и способе привязки. В большинстве случаев он представляет собой просто строку, содержащую имя свойства [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/). Для прямой привязки к свойству `BindingContext` используется следующий синтаксис:
+Метод `SetBinding` принимает два параметра. В первом параметре указываются сведения о типе привязки. Второй параметр служит для предоставления сведений о привязываемых объектах и способе привязки. В большинстве случаев он представляет собой просто строку, содержащую имя свойства [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext). Для прямой привязки к свойству `BindingContext` используется следующий синтаксис:
 
 ```csharp
 someLabel.SetBinding(Label.TextProperty, new Binding("."));
 ```
 
-Синтаксис с точечной нотацией предписывает Xamarin.Forms использовать в качестве источника данных [`BindingContext`](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) вместо свойства `BindingContext`. Это полезно, если `BindingContext` имеет простой тип, например `string` или `int`.
+Синтаксис с точечной нотацией предписывает Xamarin.Forms использовать в качестве источника данных [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) вместо свойства `BindingContext`. Это полезно, если `BindingContext` имеет простой тип, например `string` или `int`.
 
 <a name="INotifyPropertyChanged" />
 
@@ -627,20 +627,20 @@ public class MyObject : INotifyPropertyChanged
 
 ## <a name="navigation"></a>Навигация
 
-Xamarin.Forms предоставляет ряд различных способов перехода по страницам в зависимости от используемого типа объекта [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Для экземпляров [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) доступны два способа перехода:
+Xamarin.Forms предоставляет ряд различных способов перехода по страницам в зависимости от используемого типа объекта [`Page`](xref:Xamarin.Forms.Page). Для экземпляров [`ContentPage`](xref:Xamarin.Forms.ContentPage) доступны два способа перехода:
 
 - [Иерархическая навигация](#Hierarchical_Navigation)
 - [Модальная навигация](#Modal_Navigation)
 
-Классы [`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/), [`MasterDetailPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) и [`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) предоставляют альтернативные способы перехода. Дополнительные сведения см. в разделе [Переходы](~/xamarin-forms/app-fundamentals/navigation/index.md).
+Классы [`CarouselPage`](xref:Xamarin.Forms.CarouselPage), [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) и [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) предоставляют альтернативные способы перехода. Дополнительные сведения см. в разделе [Переходы](~/xamarin-forms/app-fundamentals/navigation/index.md).
 
 <a name="Hierarchical_Navigation" />
 
 ### <a name="hierarchical-navigation"></a>Иерархическая навигация
 
-Класс [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) обеспечивает иерархическую навигацию, при которой пользователь может переходить по страницам вперед и назад по своему желанию. Этот класс реализует навигацию на основе стека объектов [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) по методу LIFO (последним поступил — первым обслужен).
+Класс [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) обеспечивает иерархическую навигацию, при которой пользователь может переходить по страницам вперед и назад по своему желанию. Этот класс реализует навигацию на основе стека объектов [`Page`](xref:Xamarin.Forms.Page) по методу LIFO (последним поступил — первым обслужен).
 
-При иерархической навигации класс [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) используется для перехода по стеку объектов [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/). Для перехода с одной страницы на другую приложение помещает новую страницу в стек навигации, где она становится активной страницей. Для возврата к предыдущей странице приложение выбирает текущую страницу из стека навигации, после чего активной становится верхняя страница в стеке.
+При иерархической навигации класс [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) используется для перехода по стеку объектов [`ContentPage`](xref:Xamarin.Forms.ContentPage). Для перехода с одной страницы на другую приложение помещает новую страницу в стек навигации, где она становится активной страницей. Для возврата к предыдущей странице приложение выбирает текущую страницу из стека навигации, после чего активной становится верхняя страница в стеке.
 
 Первая страница, добавленная в стек навигации, называется *корневой* страницей приложения, что демонстрируется в следующем примере кода:
 
@@ -651,7 +651,7 @@ public App ()
 }
 ```
 
-Для перехода к странице `LoginPage` необходимо вызвать метод [`PushAsync`](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync/p/Xamarin.Forms.Page/) свойства [`Navigation`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) текущей страницы, как показано в следующем примере кода:
+Для перехода к странице `LoginPage` необходимо вызвать метод [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)) свойства [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) текущей страницы, как показано в следующем примере кода:
 
 ```csharp
 await Navigation.PushAsync(new LoginPage());
@@ -659,7 +659,7 @@ await Navigation.PushAsync(new LoginPage());
 
 В результате в стек навигации помещается новый объект `LoginPage`, где он становится активной страницей.
 
-Активная страница может быть извлечена из стека навигации путем нажатия кнопки *Назад* на устройстве, причем это может быть как физическая кнопка, так и кнопка на экране. Чтобы вернуться на предыдущую страницу программным образом, экземпляр `LoginPage` должен вызвать метод [`PopAsync`](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/), как показано в следующем примере кода:
+Активная страница может быть извлечена из стека навигации путем нажатия кнопки *Назад* на устройстве, причем это может быть как физическая кнопка, так и кнопка на экране. Чтобы вернуться на предыдущую страницу программным образом, экземпляр `LoginPage` должен вызвать метод [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync), как показано в следующем примере кода:
 
 ```csharp
 await Navigation.PopAsync();
@@ -673,14 +673,14 @@ await Navigation.PopAsync();
 
 Xamarin.Forms поддерживает модальные страницы. На модальной странице пользователь должен выполнить отдельную задачу, причем он не может уйти с этой страницы, пока задача не будет выполнена или отменена.
 
-Модальная страница может быть любого из типов [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), поддерживаемых Xamarin.Forms. Для отображения модальной страницы приложение помещает ее в стек навигации, где она становится активной страницей. Для возврата к предыдущей странице приложение выбирает текущую страницу из стека навигации, после чего активной становится верхняя страница в стеке.
+Модальная страница может быть любого из типов [`Page`](xref:Xamarin.Forms.Page), поддерживаемых Xamarin.Forms. Для отображения модальной страницы приложение помещает ее в стек навигации, где она становится активной страницей. Для возврата к предыдущей странице приложение выбирает текущую страницу из стека навигации, после чего активной становится верхняя страница в стеке.
 
-Методы модальной навигации предоставляются свойством [`Navigation`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) любых типов, производных от класса [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Свойство [`Navigation`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) также предоставляет свойство [`ModalStack`](https://developer.xamarin.com/api/property/Xamarin.Forms.INavigation.ModalStack/), из которого могут быть получены модальные страницы в стеке навигации. Однако не существует средств для работы с модальным стеком или перехода к корневой странице модальной навигации. Причина в том, что такие операции поддерживаются не всеми базовыми платформами.
+Методы модальной навигации предоставляются свойством [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) любых типов, производных от класса [`Page`](xref:Xamarin.Forms.Page). Свойство [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) также предоставляет свойство [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack), из которого могут быть получены модальные страницы в стеке навигации. Однако не существует средств для работы с модальным стеком или перехода к корневой странице модальной навигации. Причина в том, что такие операции поддерживаются не всеми базовыми платформами.
 
 > [!NOTE]
-> Экземпляр [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) не требуется для навигации по модальным страницам.
+> Экземпляр [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) не требуется для навигации по модальным страницам.
 
-Для модального перехода к странице `LoginPage` необходимо вызвать метод [`PushModalAsync`](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page)/) свойства [`Navigation`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) текущей страницы, как показано в следующем примере кода:
+Для модального перехода к странице `LoginPage` необходимо вызвать метод [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) свойства [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) текущей страницы, как показано в следующем примере кода:
 
 ```csharp
 await Navigation.PushModalAsync(new LoginPage());
@@ -688,7 +688,7 @@ await Navigation.PushModalAsync(new LoginPage());
 
 В результате в стек навигации помещается экземпляр `LoginPage`, где он становится активной страницей.
 
-Активная страница может быть извлечена из стека навигации путем нажатия кнопки *Назад* на устройстве, причем это может быть как физическая кнопка, так и кнопка на экране. Чтобы вернуться на исходную страницу программным образом, экземпляр `LoginPage` должен вызвать метод [`PopModalAsync`](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PopModalAsync()/), как показано в следующем примере кода:
+Активная страница может быть извлечена из стека навигации путем нажатия кнопки *Назад* на устройстве, причем это может быть как физическая кнопка, так и кнопка на экране. Чтобы вернуться на исходную страницу программным образом, экземпляр `LoginPage` должен вызвать метод [`PopModalAsync`](xref:Xamarin.Forms.INavigation.PopModalAsync), как показано в следующем примере кода:
 
 ```csharp
 await Navigation.PopModalAsync();
@@ -706,10 +706,10 @@ await Navigation.PopModalAsync();
 
 - Шаблоны элементов управления дают возможность легко применять темы к страницам приложения и отменять их во время выполнения. Дополнительные сведения см. в статье [Шаблоны элементов управления](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md).
 - Шаблоны данных дают возможность настраивать представление данных в поддерживаемых элементах управления. Дополнительные сведения см. в статье [Шаблоны данных](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
-- Общий код может получать доступ к собственным функциональным возможностям посредством класса [`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/). Дополнительные сведения см. в статье, посвященной [доступу к собственным функциональным возможностям с помощью DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+- Общий код может получать доступ к собственным функциональным возможностям посредством класса [`DependencyService`](xref:Xamarin.Forms.DependencyService). Дополнительные сведения см. в статье, посвященной [доступу к собственным функциональным возможностям с помощью DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 - Платформа Xamarin.Forms включает в себя простую службу обмена сообщениями для отправки и получения сообщений, которая сокращает потребность в обеспечении взаимодействия между классами. Дополнительные сведения см. в статье, посвященной [публикации и подписке с помощью MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md).
 - Каждая страница, макет и элемент управления отрисовываются по-разному на разных платформах с помощью класса `Renderer`, который создает собственный элемент управления, размещает его на экране и реализует поведение, определенное в общем коде. Разработчики могут реализовывать пользовательские классы `Renderer` для настройки внешнего вида или работы элемента управления. Дополнительные сведения см. в статье [Пользовательские отрисовщики](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
-- Эффекты также позволяют настраивать собственные элементы управления на каждой платформе. Эффекты создаются в проектах для конкретных платформ путем создания подклассов элемента управления [`PlatformEffect`](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E/) и используются путем их присоединения к соответствующему элементу управления Xamarin.Forms. Дополнительные сведения см. в статье [Эффекты](~/xamarin-forms/app-fundamentals/effects/index.md).
+- Эффекты также позволяют настраивать собственные элементы управления на каждой платформе. Эффекты создаются в проектах для конкретных платформ путем создания подклассов элемента управления [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) и используются путем их присоединения к соответствующему элементу управления Xamarin.Forms. Дополнительные сведения см. в статье [Эффекты](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 Много полезных сведений о платформе Xamarin.Forms можно получить в книге "Creating Mobile Apps with Xamarin.Forms" (Создание мобильных приложений с помощью Xamarin.Forms) Чарльза Петцольда (Charles Petzold). Дополнительные сведения см. на странице [Создание мобильных приложений с помощью Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md).
 
@@ -725,6 +725,6 @@ await Navigation.PopModalAsync();
 - [Пользовательский интерфейс](~/xamarin-forms/user-interface/index.md)
 - [Примеры Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Примеры для начала работы](https://developer.xamarin.com/samples/xamarin-forms/GettingStarted/)
-- [Xamarin.Forms](https://developer.xamarin.com/api/namespace/Xamarin.Forms/)
+- [Xamarin.Forms](xref:Xamarin.Forms)
 - [Бесплатное самостоятельное обучение (видео)](https://university.xamarin.com/self-guided)
 - [Начало работы с Xamarin.Forms (книга для iOS)](https://developer.xamarin.com/workbooks/xamarin-forms/getting-started/GettingStartedWithXamarinForms-ios.workbook)

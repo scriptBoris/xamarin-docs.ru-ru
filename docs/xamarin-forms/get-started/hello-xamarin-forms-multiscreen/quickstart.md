@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 538ca831e51069f345a8a7a53aa844352c207faa
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: a4e27f1810a16b5d13838d2e2c1067950586fab3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268840"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996185"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Краткое руководство по работе с приложением Xamarin.Forms с несколькими экранами
 
@@ -63,7 +63,7 @@ ms.locfileid: "36268840"
 
     ![](quickstart-images/vs/open-app-class.png "Открытие файла App.xaml.cs")
 
-6. В файле **App.xaml.cs** импортируйте пространство имен `System.Collections.Generic`, добавьте объявление свойства `PhoneNumbers`, инициализируйте это свойство в конструкторе `App` и инициализируйте свойство [`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) значением [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/). Коллекция `PhoneNumbers` будет использоваться для хранения списка всех преобразованных номеров телефона, вызываемых из приложения:
+6. В файле **App.xaml.cs** импортируйте пространство имен `System.Collections.Generic`, добавьте объявление свойства `PhoneNumbers`, инициализируйте это свойство в конструкторе `App` и инициализируйте свойство [`MainPage`](xref:Xamarin.Forms.Application.MainPage) значением [`NavigationPage`](xref:Xamarin.Forms.NavigationPage). Коллекция `PhoneNumbers` будет использоваться для хранения списка всех преобразованных номеров телефона, вызываемых из приложения:
 
     ```csharp
     using System.Collections.Generic;
@@ -94,7 +94,7 @@ ms.locfileid: "36268840"
 
     ![](quickstart-images/vs/open-mainpage-xaml.png "Открытие файла MainPage.xaml")
 
-8. В файле **MainPage.xaml** добавьте элемент управления [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) в конце элемента управления [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/). Эта кнопка будет использоваться для перехода по странице журнала вызовов:
+8. В файле **MainPage.xaml** добавьте элемент управления [`Button`](xref:Xamarin.Forms.Button) в конце элемента управления [`StackLayout`](xref:Xamarin.Forms.StackLayout). Эта кнопка будет использоваться для перехода по странице журнала вызовов:
 
     ```xaml
     <StackLayout VerticalOptions="FillAndExpand"
@@ -209,7 +209,7 @@ ms.locfileid: "36268840"
 
     ![](quickstart-images/xs/open-app-class.png "Открытие файла App.xaml.cs")
 
-7. В файле **App.xaml.cs** импортируйте пространство имен `System.Collections.Generic`, добавьте объявление свойства `PhoneNumbers`, инициализируйте это свойство в конструкторе `App` и инициализируйте свойство [`MainPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) значением [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/). Коллекция `PhoneNumbers` будет использоваться для хранения списка всех преобразованных номеров телефона, вызываемых из приложения:
+7. В файле **App.xaml.cs** импортируйте пространство имен `System.Collections.Generic`, добавьте объявление свойства `PhoneNumbers`, инициализируйте это свойство в конструкторе `App` и инициализируйте свойство [`MainPage`](xref:Xamarin.Forms.Application.MainPage) значением [`NavigationPage`](xref:Xamarin.Forms.NavigationPage). Коллекция `PhoneNumbers` будет использоваться для хранения списка всех преобразованных номеров телефона, вызываемых из приложения:
 
     ```csharp
     using System.Collections.Generic;
@@ -240,7 +240,7 @@ ms.locfileid: "36268840"
 
     ![](quickstart-images/xs/open-mainpage-xaml.png "Открытие файла MainPage.xaml")
 
-9. В файле **MainPage.xaml** добавьте элемент управления [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) в конце элемента управления [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/). Эта кнопка будет использоваться для перехода по странице журнала вызовов:
+9. В файле **MainPage.xaml** добавьте элемент управления [`Button`](xref:Xamarin.Forms.Button) в конце элемента управления [`StackLayout`](xref:Xamarin.Forms.StackLayout). Эта кнопка будет использоваться для перехода по странице журнала вызовов:
 
     ```xaml
     <StackLayout VerticalOptions="FillAndExpand"
