@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/22/2018
-ms.openlocfilehash: 323174b4a37a12828a32acb398fef63cd9b849e3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a0c3179dc8e349c23d5521230e0957d1be9384ec
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785821"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986191"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Автоматическая подготовка для Xamarin.iOS
 
@@ -71,7 +71,7 @@ _Установив Xamarin.iOS для разработки приложений
 
 1. Свяжите Visual Studio 2017 с компьютером Mac, как описано в руководстве [Связывание с компьютером Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
-2. Откройте параметры подготовки, выбрав **Проект > Параметры подготовки к работе...**
+2. В **обозревателе решений** щелкните правой кнопкой мыши имя проекта и выберите **Свойства**. Затем откройте вкладку **Подписывание пакета iOS**.
 
 3. Выберите схему **Автоматическая подготовка**:
 
