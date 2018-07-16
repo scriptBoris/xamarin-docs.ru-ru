@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 806ed841ec4db037a063bb458e1eed13226e08bd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: bf8dfb43115806f28935c6dec0ebd2d6d7bd2cdc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2018
-ms.locfileid: "32019715"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998264"
 ---
 # <a name="build-process"></a>Процесс сборки
 
@@ -76,7 +76,7 @@ ms.locfileid: "32019715"
 
 ## <a name="build-properties"></a>Свойства сборки
 
-Свойства MSBuild управляют поведением целевых объектов. Они указаны в файле проекта, например **MyApp.csproj**, в элементе [MSBuild PropertyGroup](http://msdn.microsoft.com/en-us/library/t4w159bs.aspx). 
+Свойства MSBuild управляют поведением целевых объектов. Они указаны в файле проекта, например **MyApp.csproj**, в элементе [MSBuild PropertyGroup](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild).
 
 -   **Configuration** — указывает конфигурацию сборки, например "отладка" или "выпуск". Свойство Configuration используется для определения значений по умолчанию для других свойств, которые определяют поведение целевого объекта. В вашей среде IDE можно создать дополнительные конфигурации.
 
@@ -86,7 +86,7 @@ ms.locfileid: "32019715"
 
 -   **DebugSymbols** — логическое значение, которое определяет, является ли пакет Android *отлаживаемым*, в сочетании со свойством `$(DebugType)`. Отлаживаемый пакет содержит отладочные символы, устанавливает для атрибута `//application/@android:debuggable` значение `true` и автоматически добавляет разрешение `INTERNET`, чтобы отладчик мог подключиться к процессу. Приложение отлаживается, если `DebugSymbols` имеет значение `True` *, а* `DebugType` является пустой строкой или имеет значение `Full`.
 
--   **DebugType** — определяет &ndash;[тип отладочных символов ](http://msdn.microsoft.com/en-us/library/s5c8athz.aspx), которые следует создать как часть сборки, что также влияет на возможность отладки приложения. Возможные допустимые значения приведены ниже.
+-   **DebugType** — определяет &ndash;[тип отладочных символов ](https://docs.microsoft.com/visualstudio/msbuild/csc-task), которые следует создать как часть сборки, что также влияет на возможность отладки приложения. Возможные допустимые значения приведены ниже.
 
     - **Full**: создаются все символы. Если свойство `DebugSymbols` MSBuild также имеет значение `True`, то пакет приложения является отлаживаемым.
 
@@ -315,7 +315,7 @@ ms.locfileid: "32019715"
     <MandroidI18n>West</MandroidI18n>
     ```
 
--   **MonoSymbolArchive** — логическое свойство, которое определяет, следует ли создавать артефакты `.mSYM` для последующего использования в `mono-symbolicate`, чтобы извлечь "реальные" имя файла и номер строки из трассировки стека выпуска.
+-   **MonoSymbolArchive** — логическое свойство, которое определяет, следует ли создавать артефакты `.mSYM` для последующего использования в `mono-symbolicate`, чтобы извлечь &ldquo;"реальные"&rdquo; имя файла и номер строки из трассировки стека выпуска.
 
     Для приложений &ldquo;выпуска&rdquo; значением по умолчанию является True с включенными отладочными символами: `$(EmbedAssembliesIntoApk)` — True, `$(DebugSymbols)` — True и `$(Optimize)` — True.
 
@@ -484,7 +484,7 @@ Enter key password for keystore.alias
 
 ## <a name="build-actions"></a>Действия при сборке
 
-*Действия сборки* [применяются к файлам](http://msdn.microsoft.com/en-us/library/bb629388.aspx) в рамках проекта и контролируют обработку файла. 
+*Действия сборки* [применяются к файлам](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items) в рамках проекта и контролируют обработку файла. 
 
 <a name="AndroidEnvironment" />
 
