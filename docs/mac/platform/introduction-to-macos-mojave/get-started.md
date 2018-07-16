@@ -6,13 +6,13 @@ ms.assetid: E9A7B68A-E164-4C5C-86AC-B2A3E7A30DA1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 06/25/2018
-ms.openlocfilehash: ee5269bf314401328d0184631e817b37ce091479
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 07/08/2018
+ms.openlocfilehash: cf2725eafa18330a07a08db4235bad1a1ecd47b6
+ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831349"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39030630"
 ---
 # <a name="getting-started-with-macos-mojave"></a>Приступая к работе с macOS Mojave
 
@@ -23,7 +23,7 @@ ms.locfileid: "38831349"
 > Используйте его только для экспериментов.
 
 > [!NOTE]
-> Дополнительные сведения в статье [заметки о выпуске](https://releases.xamarin.com/preview-release-xcode-10-beta/) предварительной версии выпуска для Xamarin.
+> Дополнительные сведения см. предварительной версии Xamarin [выпуске блога](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
 
 В этом документе описывается, как получить настройки предусматривают сборки macOS Mojave приложений с помощью Xamarin.Mac. Он описывает, как загрузка Xcode 10 и обновление Visual Studio для Mac.
 
@@ -36,7 +36,7 @@ ms.locfileid: "38831349"
 
 2. **Запустите Xcode 10** — запустить Xcode 10 до обновления и запуска Visual Studio для Mac; он устанавливает некоторые средства, необходимые для Xamarin.
 
-3. **Обновление Visual Studio для Mac** — следуйте инструкциям в [заметки о выпуске](https://releases.xamarin.com/preview-release-xcode-10-beta/) Установка предварительной версии Xamarin.
+3. **Обновление Visual Studio для Mac** — следуйте инструкциям на [выпуска блог](https://releases.xamarin.com/preview-release-xcode-10-beta-3/) Установка предварительной версии Xamarin.
 
 4. _(необязательно)_  **Установить последнюю бета-версию macOS Mojave на компьютере Mac** — для тестирования приложений Xamarin.Mac, которые впервые представлена macOS Mojave API, зарегистрированных Apple разработчики могут использовать [загрузить](https://developer.apple.com/download/) и установить последнюю macOS Mojave разработчика бета-версию.
 
@@ -46,9 +46,9 @@ ms.locfileid: "38831349"
    > [!IMPORTANT]
    > Перед обновлением компьютера Mac для macOS Mojave, позволяющие создавать и тестировать приложения Xamarin.Mac, которые вызывают новый macOS Mojave API-интерфейсы:
    > - Чтение [заметки о выпуске Apple](https://developer.apple.com/download/) для обновления операционной системы.
-   > - Чтение [заметки о выпуске](https://releases.xamarin.com/preview-release-xcode-10-beta/) предварительной версии выпуска для Xamarin. Обратите внимание на то, что это первая предварительная версия не поддерживает привязки для новых macOS Mojave AppKit API (например, темно-режим).
+   > - Чтение предварительной версии Xamarin [выпуске блога](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Скачать Xcode 10](https://developer.apple.com/download/)
-- Предварительная версия Xamarin [заметки о выпуске](https://releases.xamarin.com/preview-release-xcode-10-beta/)
+- Предварительная версия Xamarin [выпуска записи блога](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)
