@@ -370,6 +370,7 @@
 #### [Меню (Force Touch)](watchos/user-interface/menu.md)
 #### [Текстовый ввод](watchos/user-interface/text-input.md)
 ### [Функции платформы](watchos/platform/index.md)
+#### [Введение в watchOS 5](watchos/platform/introduction-to-watchos5/index.md)
 #### [Введение в watchOS 4](watchos/platform/introduction-to-watchos4.md)
 #### [Введение в watchOS 3](watchos/platform/introduction-to-watchos3/index.md)
 ##### [Дополнительные изменения платформы watchOS 3](watchos/platform/introduction-to-watchos3/additional-framework-changes.md)
