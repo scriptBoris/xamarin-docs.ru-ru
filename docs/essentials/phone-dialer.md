@@ -1,22 +1,22 @@
 ---
 title: 'Xamarin.Essentials: Телефон'
-description: Класс PhoneDialer в Xamarin.Essentials позволяет приложения, чтобы открыть веб-ссылку в браузере предпочтительный оптимизированного системы или внешнем браузере.
+description: Класс PhoneDialer в Xamarin.Essentials позволяет приложения, чтобы открыть в программе номер телефона
 ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 6733e43ed4174d1dd78b2e8f70268eb54adadb98
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 34a6c80836d8cb42b1f8fd95718fe248d4701c0f
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831401"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130797"
 ---
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: Телефон
 
 ![Предварительные версии NuGet](~/media/shared/pre-release.png)
 
-**PhoneDialer** класс позволяет приложения, чтобы открыть веб-ссылку в браузере предпочтительный оптимизированного системы или внешнем браузере.
+**PhoneDialer** класс позволяет приложения, чтобы открыть номер телефона в программе.
 
 ## <a name="using-phone-dialer"></a>С помощью телефона
 

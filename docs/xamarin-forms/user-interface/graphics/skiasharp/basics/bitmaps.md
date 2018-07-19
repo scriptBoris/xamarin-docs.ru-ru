@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
-ms.date: 04/03/2017
-ms.openlocfilehash: dec6fa1534f14836ae98677ad33e280ff510fb97
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/17/2018
+ms.openlocfilehash: cbce6f414586597dc2b2788aa18b03228c128018
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995193"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130963"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Основы растрового изображения в SkiaSharp
 
@@ -22,7 +22,7 @@ _Загрузка точечных рисунков из различных ис
 
 ![](bitmaps-images/bitmapssample.png "Отображение двух точечных рисунков")
 
-Битовая карта SkiaSharp — это объект типа [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Существует много способов создания растрового изображения, но в этой статье задействует, чтобы [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/) метод, который загружает точечный рисунок из [ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/) объект, который ссылается на файл точечного рисунка. Его удобно использовать [ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/) класс, производный от `SKStream` так как он имеет конструктор, принимающий .NET [ `Stream` ](xref:System.IO.Stream) объекта.
+Битовая карта SkiaSharp — это объект типа [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Существует много способов создания растрового изображения, но в этой статье задействует, чтобы [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/) метод, который загружает точечный рисунок из .NET `Stream` объекта.
 
 **Основные точечные рисунки** странице в **SkiaSharpFormsDemos** программа демонстрирует, как загрузить точечных рисунков из трех различных источников:
 
@@ -55,39 +55,46 @@ public class BasicBitmapsPage : ContentPage
 
 ## <a name="loading-a-bitmap-from-the-web"></a>Загрузка точечный рисунок из Интернета
 
-Для загрузки точечного рисунка по URL-АДРЕСУ, можно использовать [ `WebRequest` ](xref:System.Net.WebRequest) класса, как показано в следующем коде выполняется `BasicBitmapsPage` конструктор. URL-адрес указывает на область веб-сайте Xamarin с некоторые образцы рисунков. Пакет веб-сайте позволяет добавления спецификацию для изменения размеров точечного рисунка для конкретного ширины:
+Для загрузки точечного рисунка по URL-АДРЕСУ, можно использовать [ `HttpClient` ](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0) класса. Следует создавать экземпляр только один экземпляр `HttpClient` и повторно использовать ее, поэтому сохраните его как поле:
 
 ```csharp
-Uri uri = new Uri("http://developer.xamarin.com/demo/IMG_3256.JPG?width=480");
-WebRequest request = WebRequest.Create(uri);
-request.BeginGetResponse((IAsyncResult arg) =>
+HttpClient httpClient = new HttpClient();
+```
+
+При использовании `HttpClient` с помощью приложений iOS и Android, необходимо задать свойства проекта, как описано в документах на  **[уровня безопасности транспорта (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**.
+
+Так как это наиболее удобный для использования `await` оператор с `HttpClient`, код не может быть выполнен в `BasicBitmapsPage` конструктор. Вместо этого он является частью `OnAppearing` переопределить. URL-адрес указывает на область веб-сайте Xamarin с некоторые образцы рисунков. Пакет веб-сайте позволяет добавления спецификацию для изменения размеров точечного рисунка для конкретного ширины:
+
+
+```csharp
+protected override async void OnAppearing()
 {
+    base.OnAppearing();
+
+    // Load web bitmap.
+    string url = "https://developer.xamarin.com/demo/IMG_3256.JPG?width=480";
+
     try
     {
-        using (Stream stream = request.EndGetResponse(arg).GetResponseStream())
+        using (Stream stream = await httpClient.GetStreamAsync(url))
         using (MemoryStream memStream = new MemoryStream())
         {
-            stream.CopyTo(memStream);
+            await stream.CopyToAsync(memStream);
             memStream.Seek(0, SeekOrigin.Begin);
 
-            using (SKManagedStream skStream = new SKManagedStream(memStream))
-            {
-                webBitmap = SKBitmap.Decode(skStream);
-            }
-        }
+            webBitmap = SKBitmap.Decode(stream);
+            canvasView.InvalidateSurface();
+        };
     }
     catch
     {
     }
-
-    Device.BeginInvokeOnMainThread(() => canvasView.InvalidateSurface());
-
-}, null);
+}
 ```
 
-Растровое изображение после успешной загрузки, метод обратного вызова передается `BeginGetResponse` выполнения метода. `EndGetResponse` Вызов должен быть в `try` блокировки в случае, если произошла ошибка. `Stream` Полученный из `GetResponseStream` не подходит на некоторых платформах, поэтому содержимое растрового изображения копируются в `MemoryStream` объекта. На этом этапе `SKManagedStream` объект может быть создан. Теперь ссылается на файл точечного рисунка, который вероятнее всего, файл JPEG или PNG. `SKBitmap.Decode` Метод декодирует файл точечного рисунка и сохраняет результаты во внутреннем формате SkiaSharp.
+При использовании Android приведет к появлению исключения `Stream` возвращаемые `GetStreamAsync` в `SKBitmap.Decode` метод так как он выполняет длительных операций на основной поток. По этой причине содержимое файла точечного рисунка копируются `MemoryStream` с помощью `CopyToAsync`.
 
-Метод обратного вызова передается `BeginGetResponse` выполняется после завершения конструктора выполнения, т. е `SKCanvasView` необходимо сделать недействительным, чтобы разрешить `PaintSurface` обработчик для обновления отображения. Тем не менее `BeginGetResponse` обратного вызова выполняется дополнительный поток выполнения, поэтому необходимо использовать `Device.BeginInvokeOnMainThread` для запуска `InvalidateSurface` метод в потоке пользовательского интерфейса.
+Статический `SKBitmap.Decode` метод отвечает за декодирование файлы растровых изображений. Она работает в JPEG, PNG, GIF и нескольких других форматов популярных растровое изображение и сохраняет результаты во внутреннем формате SkiaSharp. На этом этапе `SKCanvasView` необходимо сделать недействительным, чтобы разрешить `PaintSurface` обработчик для обновления отображения. 
 
 ## <a name="loading-a-bitmap-resource"></a>Загрузка ресурса точечного рисунка
 
@@ -100,19 +107,18 @@ string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
 Assembly assembly = GetType().GetTypeInfo().Assembly;
 
 using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-using (SKManagedStream skStream = new SKManagedStream(stream))
 {
-    resourceBitmap = SKBitmap.Decode(skStream);
+    resourceBitmap = SKBitmap.Decode(stream);
 }
 ```
 
-Это `Stream` объекта могут быть преобразованы прямо в `SKManagedStream` объекта.
+Это `Stream` объект можно передать непосредственно в `SKBitmap.Decode` метод.
 
 ## <a name="loading-a-bitmap-from-the-photo-library"></a>Загрузка точечный рисунок из Медиатеки
 
 Можно также для пользователя для загрузки фотографии из библиотеки рисунков устройства. Эта функция позволяет Xamarin.Forms, сам не предоставляется. Задание требует службы зависимостей, подобного описанному в статье [комплектации фотографии из библиотеки рисунков](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-**IPicturePicker.cs** файл и три **PicturePickerImplementation.cs** различные проекты были скопированы файлы из этой статьи **SkiaSharpFormsDemos**решения и новые имена пространств имен. Кроме того, если в Android **MainActivity.cs** файл был изменен таким образом, как описано в статье, и проект iOS предоставлены разрешения на доступ к библиотеке фотографий с помощью двух строк в конце **info.plist**  файл.
+**IPhotoLibrary.cs** файл **SkiaSharpFormsDemos** проекта, а также три **PhotoLibrary.cs** файлов в проектах платформы была взята из этой статьи. Кроме того, если в Android **MainActivity.cs** файл был изменен таким образом, как описано в статье, и проект iOS предоставлены разрешения на доступ к библиотеке фотографий с помощью двух строк в конце **info.plist**  файл.
 
 `BasicBitmapsPage` Конструктор добавляет `TapGestureRecognizer` для `SKCanvasView` для получения уведомлений об касания. При получении касание `Tapped` обработчик получает доступ к рисунок выбора зависимостей службы и вызывает `GetImageStreamAsync`. Если `Stream` , то возвращается объект, а затем содержимое копируется в `MemoryStream`, как требуется в некоторых платформ. Остальной код похож на двух других методов:
 
@@ -122,22 +128,13 @@ TapGestureRecognizer tapRecognizer = new TapGestureRecognizer();
 tapRecognizer.Tapped += async (sender, args) =>
 {
     // Load bitmap from photo library
-    IPicturePicker picturePicker = DependencyService.Get<IPicturePicker>();
+    IPhotoLibrary photoLibrary = DependencyService.Get<IPhotoLibrary>();
 
-    using (Stream stream = await picturePicker.GetImageStreamAsync())
+    using (Stream stream = await photoLibrary.PickPhotoAsync())
     {
         if (stream != null)
         {
-            using (MemoryStream memStream = new MemoryStream())
-            {
-                stream.CopyTo(memStream);
-                memStream.Seek(0, SeekOrigin.Begin);
-
-                using (SKManagedStream skStream = new SKManagedStream(memStream))
-                {
-                    libraryBitmap = SKBitmap.Decode(skStream);
-                }
-            }
+            libraryBitmap = SKBitmap.Decode(stream);
             canvasView.InvalidateSurface();
         }
     }

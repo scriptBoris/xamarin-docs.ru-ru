@@ -1,30 +1,30 @@
 ---
-title: Обрезка с использованием пути и областей
-description: В этой статье объясняется, как использовать SkiaSharp пути к коллекции графики для конкретной области и для создания областей и это демонстрируется с примерами кода.
+title: Отсеченные области с помощью путей
+description: В этой статье объясняется, как использовать пути SkiaSharp клипов графики для конкретной области, а также для создания областей и демонстрирует это с помощью примера кода.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: 0d246dc4a5304b56560deb1095149e52c1f82335
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 52e426c8788ca017f36ba49b338b04a64dc0ef3d
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243893"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130821"
 ---
-# <a name="clipping-with-paths-and-regions"></a>Обрезка с использованием пути и областей
+# <a name="clipping-with-paths-and-regions"></a>Отсеченные области с помощью путей
 
 _Использование пути к коллекции графики для конкретной области и для создания областей_
 
-Иногда бывает необходимо ограничить отрисовки графики для конкретной области. Это называется *отсечения*. Можно использовать отсечения для специальные эффекты, такие как этот образ monkey, представляемые стенка с замочной:
+Иногда бывает необходимо ограничить отрисовки графики к определенной области. Этот процесс называется *обрезки*. Можно использовать обрезки для специальные эффекты, такие как этот образ monkey, реализуемой по принципу стенка с замочной:
 
 ![](clipping-images/clippingsample.png "Monkey через стенка с замочной")
 
-*Области обрезки* — это область экрана, в котором отображаются графики. Все, что отображается вне области обрезки не отображается. Области отсечения обычно определяется [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) объект, но также можно определить области обрезки с помощью [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) объекта. Эти два типа объектов сначала показаться связанные, так как можно создать область из пути. Не удается создать путь из области, но они сильно отличаются внутренне: путь состоит из рядов линий и кривых, пока область определен ряд строк горизонтальной развертки.
+*Области отсечения* — это область экрана, в котором отображаются графики. Все, что отображается за пределами области обрезки не подготавливается к просмотру. Обычно определяется области отсечения [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) объект, но также можно определить область отсечения с помощью [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) объекта. Эти два типа объектов на сначала показаться связанных, так как можно создать область из пути. Тем не менее, нельзя создавать путь из области, и они сильно отличаются внутренне: путь включает в себя последовательность линий и кривых, пока регион определен ряд строк развертки по горизонтали.
 
-На рисунке выше созданные **Monkey через стенка с замочной** страницы. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Класс определяет путь, используя данные SVG и использует конструктор для загрузки растрового изображения из ресурсов программы:
+На рисунке выше было создано **Monkey через стенка с замочной** страницы. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Класс определяет путь, используя данные SVG и использует конструктор для загрузки точечного рисунка из ресурсов программы:
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -45,16 +45,15 @@ public class MonkeyThroughKeyholePage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
     ...
 }
 ```
 
-Несмотря на то что `keyholePath` объект, который описывает структуру стенка с замочной, полностью произвольны и отражать, что было удобно, если был разработан данных пути. По этой причине `PaintSurface` обработчик получает границы этого пути и вызовы `Translate` и `Scale` перемещение путь к центру экрана, а также почти как высота экрана:
+Несмотря на то что `keyholePath` объект описывает очертания объекта стенка с замочной, координаты, является совершенно произвольные и что было удобно, если было придумано данные пути. По этой причине `PaintSurface` обработчик получает границы данного пути и вызовы `Translate` и `Scale` для перемещения путь относительно центральной части экрана и сделать его практически по высоте экрана:
 
 
 ```csharp
@@ -91,35 +90,35 @@ public class MonkeyThroughKeyholePage : ContentPage
 }
 ```
 
-Но путь не отображаются. Вместо этого после преобразования, чтобы задать область обрезки при использовании этой инструкции используется путь:
+Но путь не отображаются. Вместо этого после преобразования, чтобы задать область отсечения с этим Заявлением используется путь:
 
 ```csharp
 canvas.ClipPath(keyholePath);
 ```
 
-`PaintSurface` Обработчик затем сбрасывает преобразований с помощью вызова `ResetMatrix` и рисуется растровое изображение, чтобы расширить до полного размера экрана. Данный код предполагает точечного рисунка квадратом, являющегося конкретной растрового изображения. Растровое изображение отображается только в пределах области, определяемой контура обрезки:
+`PaintSurface` Обработчик затем сбрасывает преобразований с помощью вызова `ResetMatrix` и рисует растровое изображение, чтобы расширить до полного размера экрана. Этот код предполагается, что точечный рисунок квадрат, который является конкретной точечного рисунка. Растровое изображение отображается только в пределах области, определяемой контура обрезки:
 
-[![](clipping-images/monkeythroughkeyhole-small.png "Снимок экрана тройной Monkey через страницу стенка с замочной")](clipping-images/monkeythroughkeyhole-large.png#lightbox "тройной экрана Monkey через страницу стенка с замочной")
+[![](clipping-images/monkeythroughkeyhole-small.png "Тройной снимок Monkey через страницу стенка с замочной")](clipping-images/monkeythroughkeyhole-large.png#lightbox "тройной снимок Monkey через страницу стенка с замочной")
 
-Контура обрезки действует подчиняется преобразования при `ClipPath` вызове метода, а не для преобразования в силе при графического объекта (например, битовая карта) отображается. Контур обрезки — часть состояния холст, сохраняется вместе с `Save` метод и восстанавливаться с `Restore` метод.
+Контур обрезки подчиняется преобразований в силе при `ClipPath` вызывается метод, а не для преобразований в силе при графического объекта (например, точечный рисунок) отображается. Контур обрезки — часть состояния canvas, сохраняется вместе с `Save` метод и восстанавливаться с `Restore` метод.
 
-## <a name="combining-clipping-paths"></a>Объединение контура обрезки
+## <a name="combining-clipping-paths"></a>Объединение контуров обрезки
 
-Строго говоря, область обрезки не» задается» `ClipPath` метод. Вместо этого он объединяется с существующие контура обрезки, начинается в виде прямоугольника размер равен экрана. Вы можете получить прямоугольник, ограничивающий область обрезки с помощью [ `ClipBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipBounds/) свойство или [ `ClipDeviceBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipDeviceBounds/) свойство. `ClipBounds` Возвращает `SKRect` значение, отражающее любого преобразования, могут применяться. `ClipDeviceBounds` Возвращает `RectI` значение. Это представляет собой прямоугольник с измерениями целое число со знаком и описывает области отсечения в фактические пикселах.
+Строго говоря, области отсечения «установлен» `ClipPath` метод. Вместо этого он объединяется с существующего контура обрезки, начинающейся с прямоугольника одного размера на экран. Вы можете получить прямоугольник, ограничивающий область отсечения с помощью [ `ClipBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipBounds/) свойство или [ `ClipDeviceBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipDeviceBounds/) свойство. `ClipBounds` Возвращает `SKRect` значение, которое отражает любые преобразования, который может быть фактически. `ClipDeviceBounds` Возвращает `RectI` значение. Это представляет собой прямоугольник с измерениями целое число и описывает области отсечения в фактические размеры.
 
-Каждый вызов `ClipPath` уменьшает области отсечения путем объединения области отсечения с новой областью. Полный синтаксис [ `ClipPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipPath/p/SkiaSharp.SKPath/SkiaSharp.SKClipOperation/System.Boolean/) является метод:
+Любой вызов `ClipPath` уменьшает области отсечения путем объединения области отсечения с новой области. Полный синтаксис [ `ClipPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipPath/p/SkiaSharp.SKPath/SkiaSharp.SKClipOperation/System.Boolean/) метод:
 
 ```csharp
 public void ClipPath(SKPath path, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-Имеется также [ `ClipRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRect/p/SkiaSharp.SKRect/SkiaSharp.SKClipOperation/System.Boolean/) метод, который объединяет прямоугольником отсечения области:
+Имеется также [ `ClipRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRect/p/SkiaSharp.SKRect/SkiaSharp.SKClipOperation/System.Boolean/) метод, который объединяет области отсечения прямоугольником:
 
 ```csharp
 public Void ClipRect(SKRect rect, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-По умолчанию области отсечения итоговые является пересечение существующей области обрезки и `SKPath` или `SKRect` , указанным в `ClipPath` или `ClipRect` метод. Это показано в **Intersect-Clip четыре круги** страницы. `PaintSurface` Обработчик в [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) класс использует же `SKPath` объекта создаваемого четыре круга, каждый из которых уменьшает области отсечения через последовательные вызовы `ClipPath`:
+По умолчанию области отсечения результирующий представляют собой пересечение существующей области обрезки и `SKPath` или `SKRect` , указанный в `ClipPath` или `ClipRect` метод. Это показано в **четыре коллекции пересекаются круги** страницы. `PaintSurface` Обработчик в [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) класс повторно использует же `SKPath` объект для создания четырех круга, каждый из которых уменьшает области отсечения через последовательные вызовы `ClipPath`:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -164,9 +163,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Остается пересечение этих четырех кругов:
+Остается найти пересечение этих четырех кругах:
 
-[![](clipping-images//fourcircleintersectclip-small.png "Тройной снимок экрана со страницей Intersect-Clip четыре круг")](clipping-images/fourcircleintersectclip-large.png#lightbox "тройной снимок экрана со страницей Intersect-Clip четыре окружности")
+[![](clipping-images//fourcircleintersectclip-small.png "Тройной снимок экрана страницы четыре коллекции пересекаются круг")](clipping-images/fourcircleintersectclip-large.png#lightbox "тройной снимок экрана страницы четыре коллекции пересекаются круг")
 
 [ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/) Перечисление имеет только два члена:
 
@@ -174,17 +173,17 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 - [`Intersect`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Intersect/) пересекает указанный путь или прямоугольник с существующей области обрезки
 
-Если заменить четыре `SKClipOperation.Intersect` аргументов в `FourCircleIntersectClipPage` класса `SKClipOperation.Difference`, вы увидите следующее:
+При замене четыре `SKClipOperation.Intersect` аргументов в `FourCircleIntersectClipPage` класса `SKClipOperation.Difference`, вы увидите следующее:
 
-[![](clipping-images//fourcircledifferenceclip-small.png "Тройной снимок экрана со страницей Intersect-Clip четыре круг с операцией разницы")](clipping-images/fourcircledifferenceclip-large.png#lightbox "тройной снимок экрана со страницей Intersect-Clip четыре круг с операцией разницы")
+[![](clipping-images//fourcircledifferenceclip-small.png "Тройной снимок экрана страницы четыре коллекции пересекаются круг с помощью операции по различению")](clipping-images/fourcircledifferenceclip-large.png#lightbox "тройной снимок экрана страницы четыре коллекции пересекаются круг с помощью операции разности")
 
 Четыре круга были удалены из области отсечения.
 
-**Clip операций** страницы показано различие между эти две операции с парой кругов. Первый круг в левой части добавляется в область обрезки с операцией обрезки по умолчанию из `Intersect`, а второй круг справа добавляется области отсечения с операцией обрезки, обозначенном текстовую метку:
+**Операций клипов** страницы показаны различия в этих двух операций с парой кругов. Первый круг в левой части добавляется в область отсечения с операцией обрезки по умолчанию из `Intersect`, тогда как второй круга в правой части добавляется в области отсечения с операцией обрезки, обозначается текстовую метку:
 
-[![](clipping-images//clipoperations-small.png "Тройной снимок экрана со страницей Clip операции")](clipping-images/clipoperations-large.png#lightbox "тройной снимок экрана со страницей Clip операций")
+[![](clipping-images//clipoperations-small.png "Тройной снимок экрана страницы операции клипов")](clipping-images/clipoperations-large.png#lightbox "тройной снимок экрана страницы операции клипов")
 
-[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Класс определяет два `SKPaint` объектов как поля, а затем разделяет экрана на две прямоугольной области. Эти области различаются в зависимости от того, является ли телефона в книжном или альбомном режиме. `DisplayClipOp` Класс затем отображает текст и вызовы `ClipPath` кружок с двумя путями для иллюстрации каждой операцией обрезки:
+[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Класс определяет два `SKPaint` объектов как поля и затем разделяет экран на две прямоугольной области. Эти области различаются в зависимости от того, находится ли телефон в книжном или альбомном режиме. `DisplayClipOp` Класс затем отображает текст и вызывает `ClipPath` кружок с двумя путями для иллюстрации каждого операцией обрезки:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -245,11 +244,11 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKClipOperation clipOp)
 }
 ```
 
-Вызов `DrawPaint` обычно вызывает весь холст, заполняемый `SKPaint` объекта, но в этом случае метод просто закрашивает внутри области обрезки.
+Вызов `DrawPaint` обычно приводит к весь холст, заполняемый `SKPaint` объекта, но в этом случае метод просто закрашивает в пределах области отсечения.
 
-## <a name="exploring-regions"></a>Просмотр областей
+## <a name="exploring-regions"></a>Изучение области
 
-Если вы изучили документацию по API для `SKCanvas`, возможно, вы заметили перегрузки `ClipPath` и `ClipRect` методы, которые похожи на методы, описанные выше, но вместо этого имеют параметр с именем [ `SKRegionOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegionOperation/) вместо `SKClipOperation`. `SKRegionOperation` имеет шесть членов, обеспечивающий более гибко объединения путей к областям формы обрезки.
+Если вы изучили документацию по API для `SKCanvas`, вы могли заметить перегрузки `ClipPath` и `ClipRect` методы, которые похожи на методы, описанные выше, но вместо этого имеют параметр с именем [ `SKRegionOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegionOperation/) вместо `SKClipOperation`. `SKRegionOperation` содержит шесть членов, в некоторой степени большая гибкость при выборе объединения путей к областям формы обрезки:
 
 - [`Difference`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.Difference/)
 
@@ -263,31 +262,31 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKClipOperation clipOp)
 
 - [`Replace`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.Replace/)
 
-Тем не менее перегруженные версии `ClipPath` и `ClipRect` с `SKRegionOperation` параметры устарели и не может использоваться.
+Тем не менее перегрузки `ClipPath` и `ClipRect` с `SKRegionOperation` параметры устарели, и они не могут использоваться.
 
-Вы можете продолжать использовать `SKRegionOperation` перечисления, но он требует определения область обрезки в виде [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) объекта.
+Вы можете продолжать использовать `SKRegionOperation` перечисления, но его необходимо определить область обрезки на основе [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) объекта.
 
-Только что созданный объект `SKRegion` объект, который описывает пустую область. Обычно является первый вызов в объекте [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) , чтобы прямоугольную область описания области. Параметр, чтобы `SetRect` — `SKRectI` значение &mdash; значение прямоугольника со свойствами целое число со знаком. Затем можно вызвать [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) с `SKPath` объекта. При этом создается область, совпадает со значением внутреннюю часть пути, но ограничивается начальной прямоугольной области.
+Вновь созданный `SKRegion` объект описывает пустую область. Обычно является первый вызов в объекте [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) таким образом, чтобы область описания прямоугольной области. Параметр `SetRect` — `SKRectI` значение &mdash; значение прямоугольника с помощью свойства целого числа. Затем можно вызвать [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) с `SKPath` объекта. При этом создается область, совпадает со значением внутреннюю часть пути, но была выполнена Обрезка начальной прямоугольной области.
 
-`SKRegionOperation` Перечисления только вступает в действие при вызове одного из [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) перегрузки метода, подобные следующему:
+`SKRegionOperation` Перечисления только вступает в действие при вызове одного из [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) перегрузок метода, например такая:
 
 ```csharp
 public Boolean Op(SKRegion region, SKRegionOperation op)
 ```
 
-Регион, вы вносите `Op` вызов объединяется с областью, указанное в качестве параметра на основе `SKRegionOperation` член. Получив наконец область подходит для обрезки, можно задать в качестве области отсечения холст, используя [ `ClipRegion` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRegion/p/SkiaSharp.SKRegion/SkiaSharp.SKClipOperation/) метод `SKCanvas`:
+Регион, вы вносите `Op` вызов объединяется с регионом, указанным в качестве параметра, на основе `SKRegionOperation` член. Получив наконец регион подходит для обрезки, который можно задать в качестве области отсечения canvas с помощью [ `ClipRegion` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRegion/p/SkiaSharp.SKRegion/SkiaSharp.SKClipOperation/) метод `SKCanvas`:
 
 ```csharp
 public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperation.Intersect)
 ```
 
-На следующем рисунке показан области обрезки, в зависимости от операций шесть области. Левой круг — регион, `Op` метод будет вызван на, и правой круг области передаваемый `Op` метод:
+На следующем рисунке показаны области обрезки на основе операций шесть регион. Круг слева — это регион, `Op` вызывается метод, и правой круг области, передаваемый `Op` метод:
 
-[![](clipping-images//regionoperations-small.png "Тройной снимок экрана со страницей операций области")](clipping-images/regionoperations-large.png#lightbox "тройной снимок экрана со страницей операций области")
+[![](clipping-images//regionoperations-small.png "Тройной снимок экрана страницы операции над областями")](clipping-images/regionoperations-large.png#lightbox "тройной снимок экрана страницы операции над областями")
 
-Эти все возможные сочетания этих двух кругов такое Рассматривать как сочетание трех компонентов, что сами по себе, видны в итоговый образ `Difference`, `Intersect`, и `ReverseDifference` операций. Общее число сочетаний является в третьей степени, так и до восьми. Отсутствующие они первоначальном регионе (получаемое в результате вызова не `Op` вообще) и полностью пустая область.
+Такое этих все возможные сочетания эти два круга Итоговый образ можно считать сочетания трех компонентов, что сами по себе, будут видны в `Difference`, `Intersect`, и `ReverseDifference` операций. Общее число сочетаний определяется, двух-третьей степени или восемь. Отсутствующие они исходный регион (который полученный в результате вызова не `Op` вообще) и полностью пустая область.
 
-Трудно области можно использовать для обрезки, поскольку необходимо сначала создать путь, а затем область с помощью этого пути, а затем объедините несколько областей. Общая структура **операций области** страница очень похожа на **Clip операции** , но [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) класс делит, экрана на шесть категорий и Показывает дополнительную работу, необходимые для использования области для этого задания:
+Он является трудным в использовании областей для обрезки, так как вам нужно сначала создать путь, а затем область по этому пути, а затем объедините несколько регионов. Общая структура **операции над областями** страница очень похожа на **операций клипов** , но [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) класс разделяет экран на шесть категорий и Показывает дополнительной работы, необходимые для использования области для этого задания:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -358,20 +357,20 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 }
 ```
 
-Вот Существенная разница между `ClipPath` метод и `ClipRegion` метод:
+Здесь находится большая разница между `ClipPath` метод и `ClipRegion` метод:
 
 > [!IMPORTANT]
-> В отличие от `ClipPath` метода `ClipRegion` метод не зависит от преобразования.
+> В отличие от `ClipPath` метод, `ClipRegion` метод не зависит от преобразования.
 
-Чтобы понять обоснование это различие, необходимо понять, какие область. Если предполагается о как клип операции или операций области может быть реализована внутренне, скорее всего, кажется очень сложным. Объединяются несколько путей потенциально очень сложными и структуре результирующий путь, скорее всего, алгоритмической кошмаром.
+Чтобы понять основной причиной такой разницы, полезно понять, какой регион. Если предполагается о как клипов операции или операции над областями может быть реализована внутренне, вероятно, кажется слишком сложны. Несколько потенциально очень сложным траекториям объединяются и контура результирующий путь, скорее всего, является алгоритмического кошмар.
 
-Но это задание упрощено значительно, если каждый путь сокращается до ряд строк горизонтальной развертки, такие как в традиционные вакуумных трубку телевизоры. Каждая строка сканирования является просто горизонтальную линию с начальной и конечной точки. Например круг с радиусом 10 может быть разложено на 20 строк горизонтальной развертки, каждый из которых начинается с левой части круга и заканчивается в правой части. Объединение двух кругов с любой области операции становится очень простой, так как он является просто проверка координаты начальной и конечной каждой пары соответствующих строк развертки.
+Но это задание значительно упрощена Если каждый путь сокращается в ряд строк горизонтальной развертки, например, в старом пылесоса туристического велосипеда телевизоры. Каждой строки — просто горизонтальная линия с начальной и конечной точки. Например окружность с радиусом 10 может быть разложено на 20 строк развертки по горизонтали, каждый из которых начинается в левую часть круга и заканчивается в правой части. Объединяя два круга с любой операции регион становится очень простым, так как он является просто изучение координаты начала и окончания каждой пары соответствующих строк развертки.
 
-Это то, что область: набора строк-горизонтальной проверки, определяющий область.
+Вот что регион: ряда горизонтальной сканирование строк, определяющий область.
 
-Тем не менее, когда область сокращается до ряд сканирования линий, эти строки основаны на измерении пикселя сканирования. Строго говоря область не графический объект vector. Она будет ближе по своей природе сжатых монохромный точечный рисунок чем пути. Следовательно областей нельзя масштабировать или поворачивать без потери точности и поэтому они не преобразуются при использовании для области обрезки.
+Тем не менее, когда область уменьшится до ряд сканирования "строки", эти проверки строк на основании измерения определенный пиксель. Строго говоря область не графический объект vector. Она будет ближе по своей природе в сжатый монохромный точечный рисунок чем путь. Следовательно области не может быть масштабировании или повороте без ухудшения качества и поэтому они не преобразуются при использовании для областей обрезки.
 
-Тем не менее можно применить преобразования в области рисования в целях. **Область рисования** программе наглядно показано внутреннее характер регионов. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Класс создает `SKRegion` объекта, основанного на `SKPath` окружности radius блок-10. Затем преобразование разворачивается, вращающимся для заполнения страницы.
+Тем не менее можно применить преобразования к регионам, для целей рисования. **Область рисования** программа наглядно демонстрирует внутреннее характер регионов. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Класс создает `SKRegion` на основе `SKPath` круга с 10-единица radius. Преобразования затем расширяет круг, что для заполнения страницы:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -422,13 +421,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`DrawRegion` Вызов заполняет область оранжевым цветом, хотя `DrawPath` вызов обводки исходный путь синего цвета для сравнения:
+`DrawRegion` Вызов заполняет область оранжевым цветом, хотя `DrawPath` вызов Обводка исходный путь синим цветом для сравнения:
 
-[![](clipping-images//regionpaint-small.png "Тройной снимок экрана со страницей области рисования")](clipping-images/regionpaint-large.png#lightbox "тройной снимок экрана со страницей области рисования")
+[![](clipping-images//regionpaint-small.png "Тройной снимок экрана страницы области рисования")](clipping-images/regionpaint-large.png#lightbox "тройной снимок экрана страницы области рисования")
 
-Область — это именно ряд дискретных координаты.
+Области, очевидно, что представляет собой ряд дискретных координаты.
 
-Если не требуется использовать в связи с вашей области обрезки преобразования, можно использовать области отсечения, как **клевера конечные – четырех** демонстрирует страницы. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) Класса составного регион из четырех областей циклические конструкции, задает в качестве области отсечения этого составного региона, а затем выводит ряд 360 прямых линий, при в центре страницы:
+Если не нужно использовать преобразования в связи с вашей области обрезки, можно использовать регионов для обрезки, как **клевера конечного – четыре** страница демонстрирует. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) Класса составного регион из четырех регионах циклические конструкции, задает в качестве области отсечения этого составного региона и затем Рисует последовательность 360 прямых линий, вытекающих из центра страницы:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -508,9 +507,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Он не действительно выглядит клевера конечные – четырех, но это изображение, которое может быть трудно отрисовки без усечения:
+Он не очень похоже клевера конечного – четыре, но это изображение, в противном случае может оказаться непросто для подготовки к просмотру без усечения:
 
-[![](clipping-images//fourleafclover-small.png "Тройной снимок экрана со страницей четырех – конечного клевера")](clipping-images/fourleafclover-large.png#lightbox "тройной снимок экрана со страницей четырех – конечного клевера")
+[![](clipping-images//fourleafclover-small.png "Тройной снимок экрана страницы клевера конечного – четыре")](clipping-images/fourleafclover-large.png#lightbox "тройной снимок экрана клевера конечного – четыре страницы")
 
 
 ## <a name="related-links"></a>Связанные ссылки
