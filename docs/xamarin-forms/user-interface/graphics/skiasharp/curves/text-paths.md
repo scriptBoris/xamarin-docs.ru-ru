@@ -1,52 +1,52 @@
 ---
-title: Пути и текст в SkiaSharp
-description: В этой статье анализирует пересечение SkiaSharp пути и текст и это демонстрируется с примерами кода.
+title: Путей и текста в SkiaSharp
+description: В этой статье рассматриваются пересечение SkiaSharp путей и текста и демонстрирует это с помощью примера кода.
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 305ee2946d3a291e6237d5a2860eda7331193b23
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e7ce6994541ae947fa714d3c67acbc5d5d816975
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243909"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130784"
 ---
-# <a name="paths-and-text-in-skiasharp"></a>Пути и текст в SkiaSharp
+# <a name="paths-and-text-in-skiasharp"></a>Путей и текста в SkiaSharp
 
-_Просмотр пересечение путей и текста_
+_Изучите пересечение путей и текста_
 
-В современных графических систем шрифты текста являются коллекциями контуров символов, обычно определяется кривых Безье второго порядка. Следовательно для многих современных графических систем включают средства для преобразования символов текста в графический контур.
+В современных графических систем шрифты, представляют собой коллекции контуров символов, обычно определяется кривых Безье второго порядка. Следовательно во многих современных графических системах включают средства для преобразования символов текста в графический контур.
 
-Вы уже видели, вы может вычерчивания контуров символов текста а также их заполнения. Это позволяет отображать этих контуров символов с определенной толщина и даже эффект, как описано в [ **эффекты путь** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) статьи. Но можно также преобразовать строку символов в `SKPath` объекта. Это означает, что рамку текста можно использовать для обрезки с методами, которые были описаны в [ **Обрезка с использованием пути и областей** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) статьи.
+Вы уже видели, что вы можете обводки контуров символов текста как также их заполнения. Благодаря этому можно для отображения этих контуров символов, с помощью определенного толщина и даже эффект, как описано в разделе [ **эффекты пути** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) статьи. Но это также можно преобразовать строку символов в `SKPath` объекта. Это означает, что контуры текста может использоваться для обрезки с помощью методик, которые были описаны в [ **отсеченные области с помощью путей** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) статьи.
 
-Помимо использования эффект пути для вычерчивания структуры символов, также можно создать путь эффекты, которые основаны на путях к являются производными от символьных строк и можно даже комбинировать два последствия:
+Наряду с использованием эффект для вычерчивания контур символа, вы также можете создать путь эффекты, которые основаны на путях являются производными от символьных строк, и можно даже комбинировать два эффекта:
 
-![](text-paths-images/pathsandtextsample.png "Эффект пути текста")
+![](text-paths-images/pathsandtextsample.png "Текстовый эффект путь")
 
-В [предыдущей статьи](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) вы узнали, как [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) метод `SKPaint` можно получить контуром пунктирный путь. Этот метод также можно использовать с путями, производным от контуров символов.
+В [предыдущей статье](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) вы узнали, как [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) метод `SKPaint` можно получить контур обведенные пути. Этот метод также можно использовать с путями, производным от контуров символов.
 
-Наконец, в этой статье демонстрируется другой пересечение путей и текста: [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) метод `SKCanvas` позволяет отображать строку текста базовой линии текста после пути кривой.
+Наконец, в этой статье демонстрируется другой пересечение путей и текста: [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) метод `SKCanvas` позволяет отображать строку текста, чтобы базовый план текста соответствует изогнутого пути.
 
 ## <a name="text-to-path-conversion"></a>Текст для преобразования пути
 
-[ `GetTextPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetTextPath/p/System.String/System.Single/System.Single/) Метод `SKPaint` преобразует строку символов в `SKPath` объекта:
+[ `GetTextPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetTextPath/p/System.String/System.Single/System.Single/) Метод `SKPaint` преобразует символьную строку в `SKPath` объекта:
 
 ```csharp
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-`x` И `y` аргументы указывает начальную точку показателя в левой части текста. Они играют ту же роль здесь в качестве `DrawText` метод `SKCanvas`. В пути базовых показателей в левой части текста будет иметь координаты (x, y).
+`x` И `y` аргументы указания начальной точки базовой линии слева от текста. Они играют ту же роль здесь в качестве `DrawText` метод `SKCanvas`. В пути базовой линии слева от текста будет иметь координаты (x, y).
 
-`GetTextPath` Метод является избыточным, если требуется просто добавить заливку или обводку результирующий путь. Нормали `DrawText` метод позволяет это сделать. `GetTextPath` Метод более полезен для других задач, связанных с пути.
+`GetTextPath` Метод является избыточным, если вы просто хотите, чтобы заполнить или обводки результирующий путь. Нормали `DrawText` метод позволяет это сделать. `GetTextPath` Метод более полезен для других задач, связанных с пути.
 
-Одной из этих задач обрезки. **Обрезки текста** страница создает контура обрезки, основанных на структуре символ слова «CODE». Этот путь растягивается на размер страницы для обрезки точечного рисунка, который содержит изображение **обрезки текста** исходный код:
+Одной из этих задач обрезки. **Обрезки текста** страница создает контура обрезки, в зависимости от контур символа слова «Код». Этот путь будет растянуто, чтобы размер страницы, чтобы обрезать Битовая карта, содержащий образ **обрезки текста** исходный код:
 
-[![](text-paths-images/clippingtext-small.png "Тройной снимок экрана со страницей обрезки текста")](text-paths-images/clippingtext-large.png#lightbox "тройной снимок экрана со страницей обрезки текста")
+[![](text-paths-images/clippingtext-small.png "Тройной снимок экрана страницы обрезки текста")](text-paths-images/clippingtext-large.png#lightbox "тройной снимок экрана страницы обрезки текста")
 
-[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Конструктор класса загружает точечного рисунка, который хранится в виде внедренного ресурса в **Media** папки решения:
+[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Конструктор класса загружает точечный рисунок, который хранится в виде внедренного ресурса в **мультимедиа** папки решения:
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -65,18 +65,17 @@ public class ClippingTextPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
     ...
 }
 ```
 
-`PaintSurface` Обработчик начинается с создания `SKPaint` подходит для текста объекта. `Typeface` Свойству а также `TextSize`, хотя для этого конкретного приложения `TextSize` свойство является исключительно arbirtrary. Также Обратите внимание, не `Style` параметр.
+`PaintSurface` Обработчик начинается с создания `SKPaint` подходит для текста объекта. `Typeface` Свойство имеет значение, а также `TextSize`, несмотря на то что для этого конкретного приложения `TextSize` свойство является чисто arbirtrary. Также Обратите внимание, что не `Style` параметр.
 
-`TextSize` И `Style` не нужны параметры свойств так как это `SKPaint` объект используется исключительно для `GetTextPath` вызовы с использованием текстовая строка «CODE». Обработчик затем измеряет итоговые `SKPath` объекта и применяет три преобразования, которые его по центру и масштабировать его размер страницы. Путь можно затем задать в качестве контура обрезки:
+`TextSize` И `Style` параметры свойств не обязательны так как это `SKPaint` объект используется исключительно для `GetTextPath` вызов с использованием текстовая строка «Код». Обработчик затем измеряет результирующего `SKPath` объект и область применения трех преобразований, чтобы отцентрировать ее увеличить или уменьшить масштаб по размеру страницы. Путь можно затем задать в качестве контура обрезки:
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -121,13 +120,13 @@ public class ClippingTextPage : ContentPage
 }
 ```
 
-После задания контура обрезки растрового изображения могут быть отображены, и он будет обрезан по ее контур символа. Обратите внимание на использование [ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/) метод `SKRect` , вычисляет прямоугольник для заполнения страницы, сохраняя пропорции.
+После задания контура обрезки растрового изображения могут отображаться, и он будет обрезан к контурам символов. Обратите внимание на использование [ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/) метод `SKRect` , который вычисляет прямоугольник для заполнения страницы при сохранении пропорций.
 
-**Эффект текста пути** страницы преобразует символ амперсанда в путь для создания эффекта пути 1 D. Объект paint с этого пути используется для вычерчивания контура увеличенную версию того же символа:
+**Текстового эффекта: путь** страницы преобразует символ амперсанда путь для создания эффекта пути 1 D. Объект paint с эффектом этот путь используется для вычерчивания контура большую версию этого же символа:
 
-[![](text-paths-images/textpatheffect-small.png "Тройной снимок экрана со страницей эффект текста пути")](text-paths-images/textpatheffect-large.png#lightbox "тройной снимок экрана со страницей эффект пути текста")
+[![](text-paths-images/textpatheffect-small.png "Тройной снимок экрана текстового эффекта: путь страницы")](text-paths-images/textpatheffect-large.png#lightbox "тройной снимок экрана текстового эффекта: путь страницы")
 
-Большую часть работы в [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) класс происходит в полях и на конструктор. Два `SKPaint` объекты, определенные как поля используются для двух разных целей: первый (с именем `textPathPaint`) используется для преобразования амперсанда с `TextSize` 50 пути для эффект пути 1 D. Второй (`textPaint`) используется для отображения больших версий амперсанд эффект этого пути. По этой причине `Style` этот второй краски, присваивается значение `Stroke`, но `StrokeWidth` свойство не задано, так как это свойство не является обязательным при использовании эффект пути 1 D:
+Значительная часть работы в [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) класс происходит в поля и конструктор. Два `SKPaint` объекты, определенные как поля используются для двух различных целей: первый (с именем `textPathPaint`) используется для преобразования амперсанда с `TextSize` 50 в путь для эффект пути 1 D. Второй (`textPaint`) используется для отображения большую версию амперсанд эффект этого пути. По этой причине `Style` этой второй paint объекта задано значение `Stroke`, но `StrokeWidth` свойство не задано, так как это свойство не является обязательным при использовании эффект 1 D:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -172,9 +171,9 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-Конструктор сначала использует `textPathPaint` объект для измерения амперсанда с `TextSize` 50. Далее передаются отрицательных результатов координат центра этого прямоугольника `GetTextPath` метод для преобразования текста в контур. Результирующий путь имеет (0, 0) на момент center символа, который идеально подходит для эффекта пути 1D.
+Конструктор сначала использует `textPathPaint` объект для измерения амперсанда с `TextSize` 50. Далее передаются отрицательных координат центра этого прямоугольника `GetTextPath` метод для преобразования текста в путь. Результирующий путь имеет (0, 0) точки в центре символа, который идеально подходит для эффекта пути 1D.
 
-Может показаться, что `SKPathEffect` может принимать значение объекта, созданного в конце конструктора `PathEffect` свойство `textPaint` , а не сохранены как поле. Но этот отключен out не очень хорошо работает, поскольку она искажение результаты `MeasureText` вызов в `PaintSurface` обработчика:
+Может показаться, что `SKPathEffect` объект, созданный в конце конструктора может быть присвоено `PathEffect` свойство `textPaint` , а не сохранен в виде поля. Но это не очень хорошо работать, так как он искажено результаты `MeasureText` вызов в `PaintSurface` обработчика:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -206,17 +205,17 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-Что `MeasureText` используется вызов по центру символов на странице. Чтобы избежать проблем, `PathEffect` свойству рисования объекта после измерить текст, но перед отображением.
+Что `MeasureText` вызов используется для размещения в центре символов на странице. Чтобы избежать проблем, `PathEffect` свойству объекта paint после для замеряли текст, но перед его отображением.
 
-## <a name="outlines-of-character-outlines"></a>Контуры символов
+## <a name="outlines-of-character-outlines"></a>Контуры контуров символов
 
-Обычно [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) метод `SKPaint` преобразует один путь в другой, применяя свойства paint особенно штриха ширины и путь эффект. При использовании без эффектов путь `GetFillPath` фактически создает путь, описывающий другой путь. Это было продемонстрировано в **коснитесь, чтобы структуры путь** страницы в [ **эффекты путь** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) статьи.
+Обычно [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) метод `SKPaint` преобразует один путь в другой, применяя свойства paint, особенно stroke ширины и путь эффект. При использовании без эффекты пути `GetFillPath` фактически создает путь, описывающий другой путь. Это было продемонстрировано в **коснитесь, чтобы структуры путь** странице в [ **эффекты пути** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) статьи.
 
-Можно также вызвать `GetFillPath` на путь, возвращаемый из `GetTextPath` , но сначала может быть полностью убедиться, что, должен выглядеть следующим образом.
+Можно также вызвать `GetFillPath` на пути, возвращаемая из `GetTextPath` , но вначале вы может быть не совсем уверены какие должен выглядеть следующим образом.
 
-**Контуров символов структуры** метод продемонстрирован страницы. Соответствующий код находится в `PaintSurface` обработчик [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) класса.
+**Контуров символов структуры** странице показано, как. Весь соответствующий код находится в `PaintSurface` обработчик [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) класса.
 
-Конструктор начинается с создания `SKPaint` объект с именем `textPaint` с `TextSize` свойство на основе размера страницы. Это преобразуется в пути с помощью `GetTextPath` метод. Координат аргументы `GetTextPath` эффективно центру пути на экране:
+Конструктор начинается с создания `SKPaint` объект с именем `textPaint` с `TextSize` свойство зависимости от размера страницы. Это преобразуется в пути, используя `GetTextPath` метод. Аргументы, координат `GetTextPath` эффективно центру пути на экране:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -268,27 +267,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`PaintSurface` Обработчик затем создается новый путь с именем `outlinePath`. Это становится целевой путь в вызове `GetFillPath`. `StrokeWidth` Свойство 25 причины `outlinePath` для описания структуры пути 25 пикселей всей срезом символов текста. Затем этот путь отображается красным цветом толщину обводки 5:
+`PaintSurface` Обработчик создает новый путь с именем `outlinePath`. Это становится пути назначения в вызове `GetFillPath`. `StrokeWidth` Свойство из 25 причин `outlinePath` для описания структуры пути 25 пикселей уровня Обводка текстовых символов. Этот путь отображается красным цветом ширина штриха 5:
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Тройной снимок экрана со страницей контуров символов структуры")](text-paths-images/characteroutlineoutlines-large.png#lightbox "тройной снимок экрана со страницей контуров символов структуры")
+[![](text-paths-images/characteroutlineoutlines-small.png "Тройной снимок экрана страницы контуров символов структуры")](text-paths-images/characteroutlineoutlines-large.png#lightbox "тройной снимок экрана страницы контуров символов структуры")
 
-Внимательно посмотрите и вы увидите перекрытия, когда структура пути делает острого угла. Это обычный артефакты этого процесса.
+Внимательно проверьте, и вы увидите перекрытия, где контура делает острого угла. Это обычный артефакты этого процесса.
 
-## <a name="text-along-a-path"></a>Текст в пути
+## <a name="text-along-a-path"></a>Текста вдоль пути
 
-Обычно текст отображается по горизонтальной базовой линии. Для запуска по вертикали или по диагонали можно вращать текст, но базового плана по-прежнему является прямая линия.
+Текст обычно отображается на план по горизонтали. Текст, которые могут быть повернуты для запуска по вертикали или по диагонали, но базовый план по-прежнему представляет собой прямую линию.
 
-Бывают случаи, тем не менее, когда требуется текст, пройдите кривой. Это назначение [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) метод `SKCanvas`:
+Бывают случаи, тем не менее, когда требуется текст, пройдите кривую. Это назначение [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) метод `SKCanvas`:
 
 ```csharp
 public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOffset, SKPaint paint)
 ```
 
-Текст, указанный в качестве первого аргумента выполняется Пройдите путь, указанный в качестве второго аргумента. Можно начать текст со смещением от начала пути с `hOffset` аргумент. Обычно путь forms линии шрифта: верхний выносной элемент текста — на одной стороне пути, а подстрочные элементы текста — на другом. Но можно смещения базовой линии текста из пути с `vOffset` аргумент.
+Текст, заданный в первом аргументе производится Пройдите путь, указанный в качестве второго аргумента. Можно начать текст со смещением в начале пути с `hOffset` аргумент. Обычно путь forms базового плана текста: текст верхние выносные элементы находятся на одной стороне пути, а подстрочные элементы текста находятся в другой. Но можно смещать базового плана текста из пути с `vOffset` аргумент.
 
-Этот метод не содержит средств для предоставления рекомендации о параметр `TextSize` свойство `SKPaint` для выравнивания текста, размера идеально для запуска с начала пути до конца. Иногда можно понять, такой размер текста самостоятельно. В других случаях необходимо использовать функции измерения путь для описано в следующей статье.
+Этот метод не содержит средств по обеспечению параметр `TextSize` свойство `SKPaint` текст размера идеально для выполнения в начале пути до конца. Иногда вы можете выяснить, размер текста самостоятельно. В других случаях необходимо использовать функции измерения путь описываемый в одной из будущих статей.
 
-**Циклические текст** программа переносит текст вокруг круга. Можно легко определить длины окружности, поэтому его легко изменение размера текста по размеру точно. `PaintSurface` Обработчик [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) класс вычисляет радиус окружности, исходя из размера страницы. Становится, вращающимся `circularPath`:
+**Циклическая текст** программы переносит текст вокруг круга. Это легко определить длину окружности круга, что позволяет легко выбрать размер текста, чтобы точно соответствовать. `PaintSurface` Обработчик [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) класс вычисляет радиус круга на основе размера страницы. Этот круг становится `circularPath`:
 
 ```csharp
 public class CircularTextPage : ContentPage
@@ -321,11 +320,11 @@ public class CircularTextPage : ContentPage
 }
 ```
 
-`TextSize` Свойство `textPaint` затем корректируются таким образом, чтобы ширина текста соответствует окружности круга:
+`TextSize` Свойство `textPaint` затем корректируются таким образом, чтобы ширина текста соответствует длины окружности круга:
 
-[![](text-paths-images/circulartext-small.png "Тройной снимок экрана со страницей циклические текст")](text-paths-images/circulartext-large.png#lightbox "тройной снимок экрана со страницей циклические текста")
+[![](text-paths-images/circulartext-small.png "Тройной снимок экрана страницы циклическая текст")](text-paths-images/circulartext-large.png#lightbox "тройной снимок экрана страницы циклическая текста")
 
-Сам текст был выбран для так же оказаться довольно циклические: слова «circle», как субъект предложения и объект предложная фраза.
+Сам текст был выбран для также быть в некоторой степени циклическая: слово «circle» является предметом предложения и объект предложная фразы.
 
 ## <a name="related-links"></a>Связанные ссылки
 

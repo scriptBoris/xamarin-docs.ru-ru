@@ -1,48 +1,48 @@
 ---
-title: 'UrhoSharp программирование на F #'
-description: 'В этом документе описывается создание приложения UrhoSharp простой hello world, с помощью F # в Visual Studio для Mac.'
+title: 'Программирование UrhoSharp с помощью F #'
+description: 'В этом документе описывается создание простого приложения hello world UrhoSharp с помощью F # в Visual Studio для Mac.'
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 64d69de70d6bc6f23b9907b498622b00c42b6f50
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a4e1a31a2591c799a153e1333e4a4a4a0719a107
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783276"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111203"
 ---
-# <a name="programming-urhosharp-with-f"></a>UrhoSharp программирование на F #
+# <a name="programming-urhosharp-with-f"></a>Программирование UrhoSharp с помощью F #
 
-UrhoSharp могут быть запрограммированы на F #, используя те же библиотеки и основные понятия, используемые программистами C#. [С помощью UrhoSharp](~/graphics-games/urhosharp/using.md) статья Общие сведения о подсистеме UrhoSharp и необходимо ознакомиться перед этой статьи.
+UrhoSharp могут быть запрограммированы с F #, используя те же библиотеки и основные понятия, используемые программистами C#. [UrhoSharp с помощью](~/graphics-games/urhosharp/using.md) статье представлен обзор ядра UrhoSharp и должны считываться перед в этой статье.
 
-Как многие библиотеки, созданные в мире C++ многие функции UrhoSharp возвращают логические значения или целые числа, об успехе или неудаче. Следует использовать `|> ignore` пропускать эти значения.
+Как и многие библиотеки, изначально созданные в мире C++ многие функции UrhoSharp возвращают логические значения или целые числа, об успехе или неудаче. Следует использовать `|> ignore` игнорировать эти значения.
 
-[Образец программы](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) возможности UrhoSharp из F # «Hello World».
+[Пример программы](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) — «Hello World» для UrhoSharp с помощью F #.
 
-## <a name="creating-an-empty-project"></a>Создавая пустой проект
+## <a name="creating-an-empty-project"></a>Создание пустого проекта
 
-Нет шаблонов F # для UrhoSharp еще доступны, поэтому для создания проекта UrhoSharp, вы можете либо начинаются с [пример](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) или выполните следующие действия:
+Нет шаблонов F # для UrhoSharp еще доступны, поэтому для создания собственного проекта UrhoSharp, вы можете либо начинаются с [пример](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) или выполните следующие действия:
 
-1. Создать новую из Visual Studio для Mac **решения**. Выберите **iOS > приложения > одного представления приложения** и выберите **F #** как реализация языка. 
-1. Удалить **Main.storyboard** файла. Откройте **Info.plist** файл и в **iPhone / iPod данных развертывания** области удалить `Main` строка в **главного интерфейса** раскрывающегося списка.
+1. Из Visual Studio для Mac, создайте новый **решение**. Выберите **iOS > приложение > приложение с одним представлением** и выберите **F #** в качестве языка реализации. 
+1. Удалить **Main.storyboard** файла. Откройте **Info.plist** файл и в **iPhone / iPod сведения о развертывании** области удалить `Main` строка в **главный интерфейс** раскрывающегося списка.
 1. Удалить **ViewController.fs** также файл.
 
 ## <a name="building-hello-world-in-urho"></a>Построение Hello World в Urho
 
-Теперь вы готовы начать определение классов в игру. Как минимум, необходимо определить подкласс `Urho.Application` и переопределите его `Start` метод. Чтобы создать этот файл, щелкните правой кнопкой мыши на проекте F #, выберите **добавить новый файл...**  и добавьте к проекту пустой класс F #. Новый файл будет добавлен в конец списка файлов в проекте, но его необходимо перетащить его отображения *перед* используется в **AppDelegate.fs**.
+Теперь вы готовы начать определение классов при продаже игры. Как минимум, необходимо определить подкласс `Urho.Application` и переопределите его `Start` метод. Чтобы создать этот файл, щелкните правой кнопкой мыши на проекте F #, выберите **добавить новый файл...**  и добавьте в проект пустой класс F #. Новый файл будет добавлен в конец списка файлов в проекте, но его необходимо перетащить, чтобы он отображался *перед* используется в **AppDelegate.fs**.
 
 1. Добавьте ссылку на пакет Urho NuGet.
-1. Из существующего проекта Urho копирования (крупный) каталогов **coredata в методе или** и **данных /** в ваш проект **ресурсы или** каталога. В проекте F #, щелкните правой кнопкой мыши **ресурсов** папок и использование **Добавление или добавить существующую папку** и добавьте все эти файлы в проект.
+1. Из существующего проекта Urho, скопировать (крупный) каталога **CoreData /** и **данных /** в ваш проект **ресурсы /** каталога. В проекте F #, щелкните правой кнопкой мыши **ресурсы** папки и использование **добавить / добавить существующую папку** для добавления всех файлов в проект.
 
-Структуры проекта должен выглядеть так:
+Структуры проекта теперь должен выглядеть так:
 
-![](fsharp-images/solutionpane.png "Структура проекта должен выглядеть так")
+![](fsharp-images/solutionpane.png "Структура проекта теперь должен выглядеть так")
 
-Определить к только что созданный класс в качестве подтипа `Urho.Application` и переопределите его `Start` метод:
+Определить только что созданный класс как подтипом `Urho.Application` и переопределите его `Start` метод:
 
-```csharp
+```fsharp
 namespace HelloWorldUrho1
 
 open Urho
@@ -69,13 +69,13 @@ override this.Start() =
             
 ```
 
-Код выполняется очень просто. Она использует `Urho.Gui.Text` класса для отображения строки с выравниванием по центру определенного размера шрифта и цвета. 
+Код выполняется очень просто. Она использует `Urho.Gui.Text` класс, чтобы отобразить строку с выравниванием по центру с определенного размера шрифта и цвета. 
 
-Перед запуском этого кода, однако UrhoSharp необходимо инициализировать. 
+Перед запуском этого кода, однако необходимо инициализировать UrhoSharp. 
 
-Откройте файл AppDelegate.fs и изменить `FinishedLaunching` метод следующим образом:
+Откройте файл AppDelegate.fs и измените `FinishedLaunching` метод следующим образом:
 
-```csharp
+```fsharp
 namespace HelloWorldUrho1
 
 open System
@@ -97,13 +97,13 @@ type AppDelegate () =
         true
 ```
 
-`ApplicationOptions.Default` Предоставляет параметры по умолчанию для приложения альбомной ориентации. Передайте эти `ApplicationOptions` конструктора по умолчанию для вашего `Application` подкласс (Обратите внимание, что при определении `HelloWorld` класса строки `inherit Application(o)` вызывает конструктор базового класса). 
+`ApplicationOptions.Default` Предоставляет значения по умолчанию для приложения альбомной ориентации. Передавать их `ApplicationOptions` конструктора по умолчанию для вашей `Application` подкласс (Обратите внимание, что при определении `HelloWorld` класса строке `inherit Application(o)` вызывает конструктор базового класса). 
 
-`Run` Метод вашей `Application` инициирует программы. Он определяется как возврат `int`, который может быть выведен `ignore`. 
+`Run` Метод вашей `Application` инициирует программы. Он определяется как возврат `int`, который можно передать в `ignore`. 
 
-Итоговая программа должно иметь вид:
+Программы должен выглядеть так:
 
-![](fsharp-images/helloworldfsharp.png "Итоговая программа должна выглядеть")
+![](fsharp-images/helloworldfsharp.png "Программы должны выглядеть так")
 
 
 
@@ -114,4 +114,4 @@ type AppDelegate () =
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Просмотр на GitHub (пример)](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
+- [Посмотрите на GitHub (пример)](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
