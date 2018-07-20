@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 1ee19d96e39534ccce5238eca3a90ba5c8d9d451
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 74f7e2846a9e8d8390a8322c57db0845718bbba7
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997520"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39157007"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Сводка Глава 10. Расширения разметки XAML
 
@@ -91,9 +91,8 @@ ms.locfileid: "38997520"
 
 [ **CustomExtensionDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo) образце показано, как сослаться на эту библиотеку, и использовать пользовательское расширение разметки.
 
-
-
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Глава 10 полнотекстового поиска (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf)
 - [Глава 10 выборок](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
+- [Расширения разметки XAML](~/xamarin-forms/xaml/markup-extensions/index.md)

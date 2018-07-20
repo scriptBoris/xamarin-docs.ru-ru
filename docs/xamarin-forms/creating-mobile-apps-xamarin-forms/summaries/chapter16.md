@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: c4ad067778203759a54ed8141db0b82602e40f6c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 083cb4ed57df989a55a26394cbf8440d53a9e769
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997456"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156669"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>Сводка Глава 16. привязка данных,
+
+> [!NOTE] 
+> Заметки на этой странице указывать области, где различаются Xamarin.Forms материал, представленный в книге.
 
 Программистов часто оказываются написания обработчиков событий, которые позволяют обнаружить при изменении свойства одного объекта и использовать его для изменения значения свойства в другой объект. Этот процесс можно автоматизировать при помощи метод *привязки данных*. Привязки данных обычно определяется в XAML и становятся частью определения пользовательского интерфейса.
 
@@ -85,6 +88,9 @@ ms.locfileid: "38997456"
 - [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) Чтобы изменения в исходной и целевой влияют друг на друга
 - [`Default`](xref:Xamarin.Forms.BindingMode.Default) Чтобы использовать [ `DefaultBindingMode` ](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) указываться, если целевой объект `BindableProperty` был создан. Если не указаны, по умолчанию используется `OneWay` для обычного свойства для привязки и `OneWayToSource` для связывания свойства только для чтения.
 
+> [!NOTE]
+> `BindingMode` Перечисления теперь также включает `OnTime` применения привязки только в том случае, при изменении контекста привязки, а не при изменении свойства источника.
+
 Свойства, которые могут быть целевыми для привязки данных в сценариях MVVM, обычно имеют `DefaultBindingMode` из `TwoWay`. Эти особые значения приведены ниже.
 
 - `Value` Свойство `Slider` и `Stepper`
@@ -137,3 +143,4 @@ ms.locfileid: "38997456"
 
 - [Глава 16 полнотекстового поиска (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
 - [Глава 16-примеры](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
+- [Привязка данных](~/xamarin-forms/app-fundamentals/data-binding/index.md)

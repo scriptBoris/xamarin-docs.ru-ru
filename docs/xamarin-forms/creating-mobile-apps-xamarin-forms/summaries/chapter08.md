@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: b08355db6cc90381b16f51ce7bf23be8e8bd4e14
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 1aa5226e1e6867f77eea4d7679650e8d62f5b981
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994537"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156994"
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>Сводка Глава 8. Код и XAML в гармонии
 
@@ -75,10 +75,9 @@ ms.locfileid: "38994537"
 
 Но **MonkeyTap** программа должна звук. (См. в разделе [следующей главе](chapter09.md).)
 
-
-
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Полный текст главе 8 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
 - [Примеры в главе 8](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
 - [Пример главе 8 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
+- [Передача аргументов в XAML](~/xamarin-forms/xaml/passing-arguments.md)

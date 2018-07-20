@@ -6,21 +6,27 @@ ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 2ff54b65b1dca9798c91f147da7e8482649e40d2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d606432174807498fd458470647109de4fa0b6b4
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996286"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156734"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Сводка Глава 20. Асинхронный и файловый ввод-вывод
+
+> [!NOTE] 
+> Заметки на этой странице указывать области, где различаются Xamarin.Forms материал, представленный в книге.
 
  Графический пользовательский интерфейс должен реагировать на ввод пользователя события последовательно. Это означает, что вся обработка данных — события должно находиться в одном потоке, который часто называют *основной поток* или *поток пользовательского интерфейса*.
 
 Пользователи ожидают, что графические интерфейсы пользователя реагировать. Это означает, что программа быстрой обработки событий ввода пользователя. Если это невозможно, то обработка необходимо перейти на роль второстепенных потоков выполнения.
 
 Несколько примеров программ в этой книге использовали [ `WebRequest` ](xref:System.Net.WebRequest) класса. В этом классе [ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)) метод запускает рабочий поток, который вызывает функцию обратного вызова, после ее завершения. Однако такой функции обратного вызова выполняется в рабочий поток, поэтому необходимо вызвать программу [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) метод для доступа к интерфейсу пользователя.
+
+> [!NOTE]
+> Следует использовать программы Xamarin.Forms [ `HttpClient` ](xref:System.Net.Http.HttpClient) вместо [ `WebRequest` ](xref:System.Net.WebRequest) для доступа к файлам через Интернет. `HttpClient` поддерживает асинхронные операции.
 
 Более современный подход к асинхронной обработки на .NET и C#. Это включает в себя [ `Task` ](xref:System.Threading.Tasks.Task) и [ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1) классов и других типов в [ `System.Threading` ](xref:System.Threading) и [ `System.Threading.Tasks` ](xref:System.Threading.Tasks) пространства имен, а также в C# 5.0 `async` и `await` ключевые слова. Это, что рассматривается в этой главе.
 
@@ -74,13 +80,16 @@ ms.locfileid: "38996286"
 
 Это означает, что необходимо использовать [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (впервые было рассказано в [ **Глава 9. Вызовы API конкретных платформ** ](chapter09.md) для реализации файлового ввода-вывода.
 
+> [!NOTE]
+> Переносимые библиотеки классов были заменены библиотеки .NET Standard 2.0 и .NET Standard 2.0 поддерживает [ `System.IO` ](xref:System.IO) типы для всех платформ Xamarin.Forms. Нет необходимости использовать `DependencyService` для выполнения большинства задач файлового ввода-вывода. См. в разделе [обработка файлов в Xamarin.Forms](~/xamarin-forms/app-fundamentals/files.md) для более современный подход к файлового ввода-вывода.
+
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>Первый снимок при кросс платформенных файлового ввода-вывода
 
 [ **TextFileTryout** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileTryout) образец определяет [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/TextFileTryout/TextFileTryout/TextFileTryout/IFileHelper.cs) интерфейс для файлового ввода-вывода и реализации этого интерфейса на всех платформах. Тем не менее реализации среды выполнения Windows не работают с методы в этом интерфейсе, так как методы ввода-вывода файла среды выполнения Windows являются асинхронными.
 
 ### <a name="accommodating-windows-runtime-file-io"></a>При размещении среды выполнения Windows файлового ввода-вывода
 
-Программы, работающие в среде выполнения Windows используются классы в [ `Windows.Storage` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) и [ `Windows.Storage.Streams` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.aspx) пространства имен для файлового ввода-вывода, включая приложения локального хранилища. Поскольку корпорация Майкрософт определила, что любая операция, которая требует от более чем 50 миллисекунд должны выполняться асинхронно, чтобы избежать блокирования потока пользовательского интерфейса, эти методы ввода-вывода файла большей части являются асинхронными.
+Программы, работающие в среде выполнения Windows используются классы в [ `Windows.Storage` ](/uwp/api/Windows.Storage) и [ `Windows.Storage.Streams` ](/uwp/api/Windows.Storage.Streams) пространства имен для файлового ввода-вывода, включая приложения локального хранилища. Поскольку корпорация Майкрософт определила, что любая операция, которая требует от более чем 50 миллисекунд должны выполняться асинхронно, чтобы избежать блокирования потока пользовательского интерфейса, эти методы ввода-вывода файла большей части являются асинхронными.
 
 Код, демонстрирующий этот новый подход будет в библиотеке, чтобы он может использоваться другими приложениями.
 
@@ -94,8 +103,6 @@ ms.locfileid: "38996286"
 - [**Xamarin.FormsBook.Platform.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS), библиотека классов iOS
 - [**Xamarin.FormsBook.Platform.Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android), библиотеки классов Android
 - [**Xamarin.FormsBook.Platform.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP), библиотеку классов универсальных Windows
-- [**Xamarin.FormsBook.Platform.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Windows), переносимую библиотеку Классов для Windows 8.1.
-- [**Xamarin.FormsBook.Platform.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinPhone), переносимую библиотеку Классов для Windows Phone 8.1
 - [**Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT), общий проект для кода, который является общим для всех платформ Windows
 
 Все проекты для отдельных платформ (за исключением элемента **Xamarin.FormsBook.Platform.WinRT**) содержат ссылки на **Xamarin.FormsBook.Platform**. Три проекта Windows иметь ссылку на **Xamarin.FormsBook.Platform.WinRT**.

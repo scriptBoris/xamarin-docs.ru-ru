@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: cbce6f414586597dc2b2788aa18b03228c128018
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 5a535d60dd01e32dc1d888d3372db13312cc069a
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130963"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156968"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Основы растрового изображения в SkiaSharp
 
@@ -21,6 +21,8 @@ _Загрузка точечных рисунков из различных ис
 Поддержка точечных рисунков в SkiaSharp является достаточно большим. В этой статье рассматриваются только основные &mdash; как загружать точечные рисунки и способ их отображения:
 
 ![](bitmaps-images/bitmapssample.png "Отображение двух точечных рисунков")
+
+Гораздо более глубокого исследования, точечных рисунков, можно найти в разделе [точечные рисунки SkiaSharp](../bitmaps/index.md).
 
 Битовая карта SkiaSharp — это объект типа [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Существует много способов создания растрового изображения, но в этой статье задействует, чтобы [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/) метод, который загружает точечный рисунок из .NET `Stream` объекта.
 

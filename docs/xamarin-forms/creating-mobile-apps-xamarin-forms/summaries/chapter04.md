@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 3571774ddec4182f35cac6f13d4582235e2ff31a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 49f2d96fb7f95ab880d5cfafa420afbbe933c1ad
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997430"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156721"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Сводка Глава 4. Раскрутка стека
 
@@ -20,13 +20,16 @@ ms.locfileid: "38997430"
 
 Макет включает в себя несколько классов, производных от [ `Layout` ](xref:Xamarin.Forms.Layout) и [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1). Эта глава посвящена [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
 
+> [!NOTE]
+> [ `FlexLayout` ](~/xamarin-forms/user-interface/layouts/flex-layout.md) В Xamarin.Forms 3.0 можно использовать одним из способов, которые похожи на `StackLayout` , но с большей гибкостью.
+
 Также введена в этой главе, [ `ScrollView` ](xref:Xamarin.Forms.ScrollView), [ `Frame` ](xref:Xamarin.Forms.Frame), и [ `BoxView` ](xref:Xamarin.Forms.BoxView) классы.
 
 ## <a name="stacks-of-views"></a>Стеки представлений
 
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) является производным от `Layout<View>` и наследует [ `Children` ](xref:Xamarin.Forms.Layout`1) свойство типа `IList<View>`. Добавьте несколько элементов представления в эту коллекцию и `StackLayout` отображает их в виде стека горизонтальную или вертикальную.
 
-Задайте [ `Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation) свойство `StackLayout` члену [ `StackOrientation` ](xref:Xamarin.Forms.StackOrientation) перечисления, либо [ `Vertical` ](xref:Xamarin.Forms.StackOrientation.Vertical) или [ `Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal). Значение по умолчанию — `Vertical`.
+Задайте [ `Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation) свойство `StackLayout` члену [ `StackOrientation` ](xref:Xamarin.Forms.StackOrientation) перечисления, либо [ `Vertical` ](xref:Xamarin.Forms.StackOrientation.Vertical) или [ `Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal). Значение по умолчанию — `Vertical`.
 
 Задайте [ `Spacing` ](xref:Xamarin.Forms.StackLayout.Spacing) свойство `StackLayout` для `double` значение, указывающее расстояние между дочерние элементы. Значение по умолчанию — 6.
 
@@ -38,7 +41,7 @@ ms.locfileid: "38997430"
 
 Задайте [ `Content` ](xref:Xamarin.Forms.ScrollView.Content) свойство `ScrollView` к представлению, для прокрутки. Это часто `StackLayout`, но это может быть любое представление.
 
-Задайте [ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation) свойство `ScrollView` члену [ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation) свойство, [ `Vertical` ](xref:Xamarin.Forms.ScrollOrientation.Vertical), [ `Horizontal` ](xref:Xamarin.Forms.ScrollOrientation.Horizontal), или [ `Both` ](xref:Xamarin.Forms.ScrollOrientation.Both). Значение по умолчанию — `Vertical`. Если содержимое `ScrollView` является `StackLayout`, две ориентации должны быть согласованы.
+Задайте [ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation) свойство `ScrollView` члену [ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation) свойство, [ `Vertical` ](xref:Xamarin.Forms.ScrollOrientation.Vertical), [ `Horizontal` ](xref:Xamarin.Forms.ScrollOrientation.Horizontal), или [ `Both` ](xref:Xamarin.Forms.ScrollOrientation.Both). Значение по умолчанию — `Vertical`. Если содержимое `ScrollView` является `StackLayout`, две ориентации должны быть согласованы.
 
 [ **ReflectedColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ReflectedColors) в нем демонстрируется использование `ScrollView` и `StackLayout` для отображения доступных цветов. Образец также демонстрирует использование отражения .NET для получения все открытые статические свойства и поля `Color` структуры не требуется явным образом перечислить их.
 
@@ -104,7 +107,7 @@ ms.locfileid: "38997430"
 
 Для этого достаточно для предоставления `ScrollView` потомком `StackLayout` `VerticalOptions` параметр `FillAndExpand`. Это показано в [ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat) образца.
 
-**BlackCat** образце также показано, как определить и получить доступ к ресурсам программы, которые внедряются в переносимой библиотеки классов (PCL). Это можно сделать также с проектами общих ресурсов (SAPs), но процесс несколько сложнее, как [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) в нем демонстрируется.
+**BlackCat** образце также показано, как определить и получить доступ к ресурсам программы, которые внедряются в общей библиотеке. Это можно сделать также с проектами общих ресурсов (SAPs), но процесс несколько сложнее, как [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) в нем демонстрируется.
 
 
 
@@ -115,3 +118,4 @@ ms.locfileid: "38997430"
 - [Глава 4 F #-Примеры](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
 - [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
+- [BoxView](~/xamarin-forms/user-interface/boxview.md)
