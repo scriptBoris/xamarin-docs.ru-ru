@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 8a035da3dec468df291a19849ca89964c6707589
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: e7b2eea22758155db7d79fa26f3376e16cf16a45
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994761"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39157020"
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>Сводка Глава 9. Вызовы API конкретных платформ
+
+> [!NOTE] 
+> Заметки на этой странице указывать области, где различаются Xamarin.Forms материал, представленный в книге.
 
 Иногда бывает необходимо выполнять определенный код, которая зависит от платформы. В этой главе рассматриваются методы.
 
@@ -32,19 +35,20 @@ ms.locfileid: "38994761"
 
 ## <a name="dependencyservice-and-the-portable-class-library"></a>DependencyService и переносимой библиотеки классов
 
-Библиотеки не может получить доступ к обычно классов в проекты приложений. Кажется, что это ограничение для предотвращения метод, описанный в **PlatInfoSap2** больше не использовался в PCL. Тем не менее, Xamarin.Forms содержит класс с именем [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) , использует отражение .NET для доступа к открытых классов в проекте приложения из библиотеки PCL.
+> [!NOTE] 
+> Переносимые библиотеки классов были заменены библиотеки .NET Standard. Все примеры кода из книги будет преобразована использовать стандартные библиотеки .NET.
 
-Переносимая библиотека Классов необходимо определить `interface` с элементами, которые нужны для работы каждой из платформ. Затем в каждой из платформ содержит реализацию этого интерфейса. Класс, реализующий интерфейс должен быть идентифицирован по [DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute) на уровне сборки.
+Библиотеки не может получить доступ к обычно классов в проекты приложений. Кажется, что это ограничение для предотвращения метод, описанный в **PlatInfoSap2** используется в библиотеке. Тем не менее, Xamarin.Forms содержит класс с именем [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) , использует отражение .NET для доступа к открытых классов в проекте приложения из библиотеки.
 
-Переносимая библиотека Классов, затем использует универсальный [ `Get` ](xref:Xamarin.Forms.DependencyService.Get*) метод `DependencyService` для получения экземпляра класса платформы, который реализует интерфейс.
+Необходимо определить библиотеку `interface` с элементами, которые нужны для работы каждой из платформ. Затем в каждой из платформ содержит реализацию этого интерфейса. Класс, реализующий интерфейс должен быть идентифицирован по [DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute) на уровне сборки.
+
+Затем используется универсальный [ `Get` ](xref:Xamarin.Forms.DependencyService.Get*) метод `DependencyService` для получения экземпляра класса платформы, который реализует интерфейс.
 
 Это показано в [ **DisplayPlatformInfo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/DisplayPlatformInfo) образца.
 
 ## <a name="platform-specific-sound-generation"></a>Генерация звука платформы
 
 [ **MonkeyTapWithSound** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound) пример добавляет звуковых сигналов для **MonkeyTap** программы, обратившись к звуковому средства каждой из платформ.
-
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

@@ -1,5 +1,4 @@
 # [Создание мобильных приложений с помощью Xamarin.Forms (книга)](index.md)
-## [Глава сводок](summaries/index.md)
 ## [1. Как подобрать размер Xamarin.Forms?](summaries/chapter01.md)
 ## [2. Анатомия приложения](summaries/chapter02.md)
 ## [3. Более подробная информация](summaries/chapter03.md)

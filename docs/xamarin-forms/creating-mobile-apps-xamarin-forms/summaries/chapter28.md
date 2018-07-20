@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: a02239906f5a30c068cb7eebd31308ad188696b3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: da8ce02a0185364c2b833238ee04ebc29e8d3bb2
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998102"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156617"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Сводка Глава 28. Расположение и карты
+
+> [!NOTE] 
+> Заметки на этой странице указывать области, где различаются Xamarin.Forms материал, представленный в книге.
 
 Xamarin.Forms поддерживает [ `Map` ](xref:Xamarin.Forms.Maps.Map) элемент, производный от `View`. Из-за специальные требования к платформе связанные с использованием карт, они реализуются в отдельной сборке, **Xamarin.Forms.Maps**и они используют другое пространство имен: `Xamarin.Forms.Maps`.
 
@@ -48,6 +51,9 @@ Xamarin.Forms поддерживает [ `Map` ](xref:Xamarin.Forms.Maps.Map) э
 
 Xamarin.Forms `Map` классы не включают средства для получения географическое расположение пользователя, но это часто желательно при работе с картами, поэтому службы зависимостей необходимо обработать его.
 
+> [!NOTE]
+> Вместо этого можно использовать приложения Xamarin.Forms [ `Geolocation` ](~/essentials/geolocation.md) классов, включенных в Xamarin.Essentials.
+
 ### <a name="the-location-tracker-api"></a>Расположение инспектор API
 
 [ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) решение содержит код для расположения средство отслеживания API. [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs) Структура инкапсулирует широты и долготы. [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs) Интерфейс определяет два метода для запуска и приостановки инспектор расположение и событие, если доступно новое расположение.
@@ -60,9 +66,9 @@ Xamarin.Forms `Map` классы не включают средства для �
 
 Android реализация `ILocationTracker` — [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs) класс, который использует Android [ `LocationManager` ](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/) класса.
 
-#### <a name="the-windows-runtime-geo-locator"></a>Географическая указателя среды выполнения Windows
+#### <a name="the-uwp-geo-locator"></a>Локатор географически универсальной платформы Windows
 
-Реализация среды выполнения Windows `ILocationTracker` — [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs) класс, который использует UWP [ `Geolocator` ](https://msdn.microsoft.com/library/windows/apps/br225534).
+Реализация универсальной платформы Windows `ILocationTracker` — [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs) класс, который использует UWP [ `Geolocator` ](/uwp/api/Windows.Devices.Geolocation.Geolocator).
 
 ### <a name="display-the-phones-location"></a>Отобразить расположение телефона
 
@@ -82,9 +88,9 @@ Android реализация `ILocationTracker` — [ `LocationTracker` ](https:
 
 Android приложениях, которые извлекают из местоположения пользователя необходимо разрешение ACCESS_FILE_LOCATION в файле AndroidManifest.xml.
 
-#### <a name="location-permissions-for-the-windows-runtime"></a>Разрешения расположения для среды выполнения Windows
+#### <a name="location-permissions-for-the-uwp"></a>Разрешения расположения для универсальной платформы Windows
 
-Windows или Windows Phone приложение должно иметь `location` возможность устройства помечены в файл Package.appxmanifest.
+Приложение универсальной платформы Windows должен иметь `location` возможность устройства помечены в файл Package.appxmanifest.
 
 ## <a name="working-with-xamarinformsmaps"></a>Работа с Xamarin.Forms.Maps
 
@@ -110,9 +116,9 @@ Windows или Windows Phone приложение должно иметь `locat
 
 Ключ авторизации является обязательным для использования служб Google карты. Этот ключ будет вставлена в **AndroidManifest.xml** файла. Кроме того **AndroidManifest.xml** файла требуется `manifest` теги, участвующих в получении из местоположения пользователя.
 
-#### <a name="enabling-windows-runtime-maps"></a>Включение среды выполнения Windows сопоставляет
+#### <a name="enabling-uwp-maps"></a>Включение UWP сопоставляет
 
-Приложения среды выполнения Windows требует наличия ключа авторизации за использование карт Bing. Этот ключ передается в качестве аргумента `Xamarin.FormsMaps.Init` метод. Приложение необходимо также включить для службы определения местоположения.
+Приложение универсальной платформы Windows требует наличия ключа авторизации за использование карт Bing. Этот ключ передается в качестве аргумента `Xamarin.FormsMaps.Init` метод. Приложение необходимо также включить для службы определения местоположения.
 
 ### <a name="the-unadorned-map"></a>Недекорируемое карты
 
@@ -233,4 +239,4 @@ Windows или Windows Phone приложение должно иметь `locat
 
 - [Глава 28 полнотекстового поиска (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch28-Aug2016.pdf)
 - [Глава 28-примеры](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
-- [Элемент управления картой](~/xamarin-forms/user-interface/map.md)
+- [Xamarin.Forms карты](~/xamarin-forms/user-interface/map.md)

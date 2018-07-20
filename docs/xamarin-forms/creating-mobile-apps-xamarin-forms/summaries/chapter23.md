@@ -7,12 +7,12 @@ ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b5257ca6df09c95b425b8a0929d25e3575bc9d8c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 83a445555f9f184f735c105370de20665ad704a3
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996146"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156760"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>Сводка Глава 23. Триггеры и поведения
 

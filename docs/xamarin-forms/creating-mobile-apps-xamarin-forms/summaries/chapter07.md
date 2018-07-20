@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 02e4ea44d87360deed361d161759fa3a2808100f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: d04012d5d2ea6a7617d5c7559aa3e1532dad15d1
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995161"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156916"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Сводка Глава 7. XAML и кода
+
+> [!NOTE] 
+> Заметки на этой странице указывать области, где различаются Xamarin.Forms материал, представленный в книге.
 
 Xamarin.Forms поддерживает язык разметки на основе XML, называемый Extensible Application Markup Language или XAML (произносится «это»). XAML представляет собой альтернативу C# в определении макета пользовательского интерфейса приложения Xamarin.Forms и определения привязок между элементами пользовательского интерфейса и базовые данные.
 
@@ -35,6 +38,9 @@ Xamarin.Forms классы и структуры становятся XML-эле
 ## <a name="adding-a-xaml-page-to-your-project"></a>Добавление страницы XAML в проект
 
 Может содержать страницы XAML Xamarin.Forms переносимой библиотеки классов, при ее создании или страницу XAML можно добавить в существующий проект. В диалоговом окне, чтобы добавить новый элемент, выберите элемент, который ссылается на страницу XAML или `ContentPage` и XAML. (Не `ContentView`.)
+
+> [!NOTE] 
+> В этой главе было написано с момента изменения параметров Visual Studio.
 
 Будут созданы два файла: файл XAML с .xaml расширение имени файла и файла с расширением на C#. xaml.cs. Файл C# часто называют *кода* файла XAML. Файл с выделенным кодом является определение разделяемого класса, производного от `ContentPage`. Во время сборки XAML анализируется и другом определении разделяемого класса создается для того же класса. Этот созданный класс содержит метод с именем `InitializeComponent` , вызывается из конструктора файл с выделенным кодом.
 
@@ -72,10 +78,9 @@ Xamarin.Forms есть компилятор XAML, но его использов
 
  [![Тройной снимок экрана: текст варианты совместного использования](images/ch07fg03-small.png "вариации текст в формате")](images/ch07fg03-large.png#lightbox "вариантов форматирования текста")
 
-
-
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Глава 7 полнотекстового поиска (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
 - [Глава 7 примеры](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
 - [Пример Глава 7 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [Основы XAML](~/xamarin-forms/xaml/xaml-basics/index.md)

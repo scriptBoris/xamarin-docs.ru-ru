@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: d1daceba29e45adf64947c89555cc4e75a850d32
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/17/2018
+ms.openlocfilehash: fe6a8c3d17cf1fe6f489f6425bbdaa3cd30f390a
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995281"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156688"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Сводка Глава 2. Анатомия приложения
+
+> [!NOTE] 
+> Заметки на этой странице указывать области, где различаются Xamarin.Forms материал, представленный в книге.
 
 В приложении Xamarin.Forms объектов, занимающих место на экране, называются *визуальные элементы*, инкапсулированный с [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) класса. Визуальные элементы можно разделить на три категории, соответствующие этих классов:
 
@@ -28,7 +31,12 @@ ms.locfileid: "38995281"
 
 ## <a name="say-hello"></a>Поприветствуйте
 
-На платформе Xamarin установлен можно создать новое решение Xamarin.Forms в Visual Studio или Visual Studio для Mac. [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) решение использует переносимую библиотеку классов, общий код. Он демонстрирует решение Xamarin.Forms, созданные в Visual Studio без изменений. Решение состоит из шести проектов (последние два из которых не создаются с помощью текущего шаблонов решения Xamarin.Forms):
+На платформе Xamarin установлен можно создать новое решение Xamarin.Forms в Visual Studio или Visual Studio для Mac. [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) решение использует переносимую библиотеку классов, общий код. 
+
+> [!NOTE] 
+> Переносимые библиотеки классов были заменены библиотеки .NET Standard. Все примеры кода из книги будет преобразована использовать стандартные библиотеки .NET.
+
+В этом примере демонстрируется решение Xamarin.Forms, созданные в Visual Studio без изменений. Решение состоит из шести проектов:
 
 - [**Hello**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello), переносимой библиотеки классов (PCL), общим для других проектов
 - [**Hello.Droid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid), проект приложения для Android
@@ -37,13 +45,19 @@ ms.locfileid: "38995281"
 - [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows), проект приложения для Windows 8.1
 - [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone), проект приложения для Windows Phone 8.1
 
+> [!NOTE] 
+> Xamarin.Forms больше не поддерживает Windows 8.1, Windows Phone 8.1 или Windows 10 Mobile, но приложения Xamarin.Forms выполняются на рабочем столе Windows 10. 
+
 Внесите любые из этих проектов приложений запускаемого проекта и затем постройте и запустите программу на устройства или симулятора.
 
-Во многих приложениях Xamarin.Forms не изменяя проектов приложений. Они часто остаются tiny заглушки просто для того, чтобы запустить программу. Большая часть фокус будет переносимой библиотеки классов, общие для всех приложений.
+Во многих приложениях Xamarin.Forms не изменяя проектов приложений. Они часто остаются tiny заглушки просто для того, чтобы запустить программу. Большая часть фокус будет библиотека, общими для всех приложений.
 
 ## <a name="inside-the-files"></a>В файлах
 
 Визуальные элементы, отображаемые **Hello** программы определяются в конструкторе класса [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) класса. `App` является производным от класса Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application).
+
+> [!NOTE] 
+> Шаблоны решений Visual Studio для Xamarin.Forms создайте страницу с файлом XAML. В этой книге, пока не рассматривается XAML [Глава 7](chapter07.md).
 
 **Ссылки** раздел **Hello** проект переносимой библиотеки Классов включает следующие сборки Xamarin.Forms:
 
@@ -60,21 +74,20 @@ ms.locfileid: "38995281"
 - **Xamarin.Forms.Platform.WinRT.Tablet**
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
+> [!NOTE] 
+> **Ссылки** разделах эти проекты не перечислены сборки. Вместо этого файл проекта содержит **PackageReference** теги, ссылающиеся на пакет Xamarin.Forms NuGet. **Ссылки** раздел в списках Visual Studio **Xamarin.Forms** пакета вместо сборки Xamarin.Forms. 
+
 Каждый из проектов приложений содержит вызов статического `Forms.Init` метод в `Xamarin.Forms` пространства имен. Это инициализирует библиотеку Xamarin.Forms. Другая версия `Forms.Init` определяется для каждой платформы. Вызовы этого метода можно найти в следующих классов:
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UWP: [ `App` класс, `OnLaunched` метод](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- Windows 8.1: [ `App` класс, `OnLaunched` метод](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/App.xaml.cs#L65)
-- Windows Phone 8.1: [ `App` класс, `OnLaunched` метод](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WinPhone/App.xaml.cs#L67)
 
-Кроме того, необходимо создать экземпляр каждой платформы `App` класса расположение в переносимой библиотеке Классов. Это происходит при вызове `LoadApplication` в следующие классы:
+Кроме того, необходимо создать экземпляр каждой платформы `App` класса расположение в общей библиотеке. Это происходит при вызове `LoadApplication` в следующие классы:
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UWP: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
-- Windows 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/MainPage.xaml.cs)
-- Windows Phone 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WindowsPhone/MainPage.xaml.cs)
 
 В противном случае эти проекты приложений — это обычный программы «ничего не делать».
 
@@ -82,30 +95,20 @@ ms.locfileid: "38995281"
 
 Имеется возможность создать решение Xamarin.Forms с общим кодом в переносимой библиотеки классов (PCL) или общего ресурса проекта (SAP). Создание решения SAP, выберите параметр Shared в Visual Studio. [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) решение демонстрирует SAP шаблон без изменений.
 
-Пакеты подход PCL, общего кода в проекте библиотеки ссылаться проекты приложения платформы. При использовании SAP общий код фактически существует во всех проектах приложения платформы и распределяется между ними.
+> [!NOTE] 
+> Переносимые библиотеки классов была заменена библиотеки .NET Standard. Все примеры кода из книги будет преобразована использовать стандартные библиотеки .NET. В противном случае библиотеки PCL и .NET Standard концептуально очень похожи.
 
-Большинство разработчиков Xamarin.Forms предпочитают подход переносимой библиотеки Классов. В этой книге большинство решений, PCL. Те, которые используют SAP включают **Sap** суффикс имени проекта.
+Пакеты библиотеки подход, общего кода в проекте библиотеки ссылаться проекты приложения платформы. При использовании SAP общий код фактически существует во всех проектах приложения платформы и распределяется между ними.
 
-Для поддержки всех платформ Xamarin.Forms, версию .NET, используемые в переносимую библиотеку Классов должны включать следующие платформы:
-
-- .NET Framework 4,5
-- Windows 8
-- Windows Phone 8.1
-- Xamarin.Android
-- Xamarin.iOS
-- Xamarin.IOS (Классическая модель)
-
-Это называется 111 профиля ПК.
+Большинство разработчиков Xamarin.Forms предпочитают подход библиотеки. В этой книге большую часть решений использовать библиотеку. Те, которые используют SAP включают **Sap** суффикс имени проекта.
 
 При использовании SAP код в общем проекте можно выполнить разный код для различных платформ с помощью директивы препроцессора C# (`#if`, #`elif`, и `#endif`) с помощью этих предопределенных идентификаторов:
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
 - UWP: `WINDOWS_UWP`
-- Windows 8.1: `WINDOWS_APP`
-- Windows Phone 8.1: `WINDOWS_PHONE_APP`
 
-В переносимую библиотеку Классов платформы вы используете во время выполнения, можно определить, как вы увидите далее в этой главе.
+В общей библиотеке выяснить, какие платформы, вы используете во время выполнения, как вы увидите далее в этой главе.
 
 ## <a name="labels-for-text"></a>Метки для текста
 
@@ -138,17 +141,13 @@ ms.locfileid: "38995281"
 
 - [`iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)
 - [`Android`](xref:Xamarin.Forms.TargetPlatform.Android)
-- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) для Windows 8.1, Windows Phone 8.1 и все устройства универсальной платформы Windows.
-- [`WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone), ранее используется для идентификации Windows Phone 8.0, а также является неиспользуемого сейчас
-- [`Other`](xref:Xamarin.Forms.TargetPlatform.Other) не используется
+- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) для устройств универсальной платформы Windows.
 
 `Device.OnPlatform` Методы, `Device.OS` свойство и `TargetPlatform` перечисления отменяется, теперь устарело. Вместо этого используйте [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform) свойство и сравнение `string` возвращаемое значение с следующие статические поля:
 
 - [`iOS`](xref:Xamarin.Forms.Device.iOS), строка «iOS»
 - [`Android`](xref:Xamarin.Forms.Device.Android), строка «Android»
-- [`UWP`](xref:Xamarin.Forms.Device.UWP), строка «UWP», ссылающийся на платформы среды выполнения Windows
-- `Windows`, строка «Windows» для среды выполнения Windows (Windows 8.1 и Windows Phone 8.1, устарело)
-- `WinPhone`, строка «WinPhone» для Windows Phone 8.0 (устаревшая версия)
+- [`UWP`](xref:Xamarin.Forms.Device.UWP), строка «UWP», ссылающийся на универсальную платформу Windows
 
 [ `Device.Idiom` ](xref:Xamarin.Forms.Device.Idiom) Связана статическое свойство только для чтения. Возвращает член [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom), который содержит следующие члены:
 
@@ -157,7 +156,7 @@ ms.locfileid: "38995281"
 - [`Phone`](xref:Xamarin.Forms.TargetIdiom.Phone)
 - [`Unsupported`](xref:Xamarin.Forms.TargetIdiom.Unsupported) не используется
 
-Для iOS и Android, отсечение между `Tablet` и `Phone` с книжной шириной 600 единиц. На платформе Windows `Desktop` указывает приложения универсальной платформы Windows, под управлением Windows 10, `Tablet` — это программа Windows 8.1 и `Phone` указывает приложения универсальной платформы Windows, под управлением Windows 10 или приложение Windows Phone 8.1.
+Для iOS и Android, отсечение между `Tablet` и `Phone` с книжной шириной 600 единиц. На платформе Windows `Desktop` указывает приложения универсальной платформы Windows, под управлением Windows 10 и `Phone` указывает приложения универсальной платформы Windows, под управлением Windows 10 приложение.
 
 ## <a name="solution-3a-set-margin-on-the-label"></a>Решение 3a. Задание границы метки
 
@@ -199,8 +198,6 @@ ms.locfileid: "38995281"
 - [`End`](xref:Xamarin.Forms.TextAlignment.End), то есть правую или нижнюю (в зависимости от ориентации)
 
 Эти свойства определяются только `Label`, тогда как `HorizontalAlignment` и `VerticalAlignment` свойства, определенные в `View` и наследуют все `View` производные от него. Результаты visual покажутся схожими, но они сильно отличаются как показано в следующей главе.
-
-
 
 ## <a name="related-links"></a>Связанные ссылки
 
