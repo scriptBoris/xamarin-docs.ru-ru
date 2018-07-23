@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 241f38cbfe013776b2e36b8102ae4b90cf610d80
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 1d13a3dae509fea4a2e955c4ad206a81a57e75ed
+ms.sourcegitcommit: 6433b424410a850f504e0f934bbb5baf8f093e49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935286"
+ms.lasthandoff: 07/16/2018
+ms.locfileid: "39067338"
 ---
 # <a name="android-emulator-troubleshooting"></a>Устранение неполадок в Android Emulator
 
@@ -87,7 +87,7 @@ SERVICE_NAME: intelhaxm
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
 
-Начиная с Visual Studio для Mac версии 7.2 (сборка 559), могут появляться предупреждения о производительности при первом развертывании приложения в Android Emulator. Причины появления этих предупреждений описываются ниже.
+Начиная с Visual Studio для Mac версии 7.2 (сборка 559) могут появляться предупреждения о производительности при первом развертывании приложения в Android Emulator. Причины появления этих предупреждений описываются ниже.
 
 ### <a name="haxm-is-not-installed"></a>HAXM не установлен
 
