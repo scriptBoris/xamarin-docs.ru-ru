@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 68a38fc43cd744e0382f35baa83643a9f0f7e53d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: ab810a2fdfc659e2f5f24d2646c044e9c8638258
+ms.sourcegitcommit: 3697c2aa4208fe2ac954a8c0297394d3bcb53ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998990"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175194"
 ---
-# <a name="ios-platform-specifics"></a>Особенности платформы iOS
+# <a name="ios-platform-specifics"></a>Особенности платформы iOS 
 
 _Особенности платформы позволяют использовать функциональные возможности, доступные только на определенной платформе, без реализации пользовательских модулей подготовки отчетов или эффектов. В этой статье показано, как использовать iOS особенностей платформы, которые встроены в Xamarin.Forms._
 
@@ -620,7 +620,7 @@ boxView.On<iOS>()
 
 Когда [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) прикреплено к представлению внутри прокрутки, все pan, охватывает жесты `PanGestureRecognizer` и не передаются представления с прокруткой. Таким образом больше не прокручивается представления с прокруткой.
 
-Этой платформы позволяет `PanGestureRecognizer` в области прокрутки для записи и совместно использовать жест pan с представления с прокруткой. Он используется в XAML, задав [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.pangesturerecognizershouldrecognizesimultaneouslyproperty?view=xamarin-forms) вложенное свойство, чтобы `true`:
+Этой платформы позволяет `PanGestureRecognizer` в области прокрутки для записи и совместно использовать жест pan с представления с прокруткой. Он используется в XAML, задав [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty) вложенное свойство, чтобы `true`:
 
 ```xaml
 <Application ...
@@ -640,7 +640,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
 ```
 
-`Application.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.setpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, используется для управления ли распознавателя жестов pan в области прокрутки будет захват жест pan, или записи, так и совместное использование pan жестов с помощью представления с прокруткой. Кроме того [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.getpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) метод может использоваться для возврата ли жест pan используется совместно с прокруткой представление, содержащее [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
+`Application.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.SetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application},System.Boolean)) Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, используется для управления ли распознавателя жестов pan в области прокрутки будет захват жест pan, или записи, так и совместное использование pan жестов с помощью представления с прокруткой. Кроме того [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.GetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application})) метод может использоваться для возврата ли жест pan используется совместно с прокруткой представление, содержащее [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
 
 Таким образом, с помощью этой платформы включен, когда [ `ListView` ](xref:Xamarin.Forms.ListView) содержит [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer), оба `ListView` и `PanGestureRecognizer` получит жест pan и Обрабатывайте его. Однако при использовании этой платформы отключен, если `ListView` содержит `PanGestureRecognizer`, `PanGestureRecognizer` помещается жест pan и обработать его и `ListView` не будут получать pan жест.
 
