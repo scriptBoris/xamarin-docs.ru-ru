@@ -6,34 +6,25 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: ce602a84ea1024dc22298a3ec1567a9a34ad4a82
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/16/2018
+ms.openlocfilehash: b5069381126db0859508480df5596ed5ec85686f
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995970"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203040"
 ---
 # <a name="xamarinforms-label"></a>Метка Xamarin.Forms
 
 _Отображаемый текст в Xamarin.Forms_
 
-`Label` Представление используется для отображения текста, одной или нескольких строк. Метки могут иметь пользовательские шрифты (семейств, размеры и параметры) и цветным текстом. В этой статье рассматриваются следующие темы:
-
-- **[Усечение и поддерживающего перенос](#Truncation_and_Wrapping)**  &ndash; усечение и параметры для обработки ситуации, когда текст не помещается на одной строке переноса.
-- **[Шрифт](#Font)**  &ndash; параметры шрифта.
-- **[Цвет](#Color)**  &ndash; текст метки параметры цвета.
-- **[Форматированный текст](#Formatted_Text)**  &ndash; варианты отображения текста с помощью нескольких встроенных форматов и стили.
-
-## <a name="styling-label"></a>Метка стиля
-
-В следующих разделах описаны свойства параметра `Label` вручную на основе каждого экземпляра. Обратите внимание, что наборов свойств могут быть сгруппированы в один стиль, который последовательно применяется для одного или нескольких представлений. Это может повысить читаемость кода и делать изменения дизайна проще в реализации. См. в разделе [стили](~/xamarin-forms/user-interface/text/styles.md) Дополнительные сведения.
+[ `Label` ](xref:Xamarin.Forms.Label) Представление используется для отображения текста, одной или нескольких строк. Метки могут иметь пользовательские шрифты (семейств, размеры и параметры) и цветным текстом.
 
 <a name="Truncation_and_Wrapping" />
 
 ## <a name="truncation-and-wrapping"></a>Усечение и поддерживающего перенос
 
-Метки можно задать для обработки текста, которые не помещаются на одной строке в одном из нескольких способов, предоставляемых `LineBreakMode` свойство. [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode) Это перечисление из следующих вариантов:
+Метки можно задать для обработки текста, которые не помещаются на одной строке в одном из нескольких способов, предоставляемых `LineBreakMode` свойство. [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode) представляет собой перечисление со следующими значениями:
 
 - **HeadTruncation** &ndash; усекает заголовок текста, отображение окончания.
 - **CharacterWrap** &ndash; переносит текст на новую строку на границе символ.
@@ -42,19 +33,30 @@ _Отображаемый текст в Xamarin.Forms_
 - **TailTruncation** &ndash; показано начало текста, усечение окончания.
 - **WordWrap** &ndash; переносит текст на границе слова.
 
-## <a name="font"></a>Шрифт
+## <a name="fonts"></a>Шрифты
 
-См. в разделе [работа со шрифтами](~/xamarin-forms/user-interface/text/fonts.md) Дополнительные сведения.
+Дополнительные сведения о задании шрифты в `Label`, см. в разделе [шрифты](~/xamarin-forms/user-interface/text/fonts.md).
 
-## <a name="color"></a>Цвет
+## <a name="colors"></a>Цвета
 
-`Label`использовать пользовательский цвет с помощью привязки можно задать s `TextColor` свойство.
+`Label`использовать пользовательский цвет с помощью привязки можно задать s [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor) свойство.
 
 Особое внимание необходимо, чтобы гарантировать, что цвета будет доступна для использования на каждой платформе. Так как каждая платформа имеет различные значения по умолчанию для цветов текста и фона, необходимо соблюдать осторожность выбрать умолчания, которое работает на каждом.
 
-Чтобы задать цвет текста метки, используйте следующий код:
+Чтобы задать цвет текста метки, используйте следующий XAML:
 
-В коде:
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TextSample.LabelPage"
+             Title="Label Demo">
+    <StackLayout Padding="5,10">
+      <Label TextColor="#77d065" FontSize = "20" Text="This is a label." />
+    </StackLayout>
+</ContentPage>
+```
+
+Ниже приведен аналогичный код C#:
 
 ```csharp
 public partial class LabelPage : ContentPage
@@ -62,94 +64,91 @@ public partial class LabelPage : ContentPage
     public LabelPage ()
     {
         InitializeComponent ();
+
         var layout = new StackLayout { Padding = new Thickness(5,10) };
-        this.Content = layout;
         var label = new Label { Text="This is a label.", TextColor = Color.FromHex("#77d065"), FontSize = 20 };
         layout.Children.Add(label);
+        this.Content = layout;
     }
 }
 ```
 
-В XAML:
-
-```xaml
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-x:Class="TextSample.LabelPage"
-Title="Label Demo">
-    <ContentPage.Content>
-        <StackLayout Padding="5,10">
-      <Label TextColor="#77d065" FontSize = "20" Text="This is a label." />
-    </StackLayout>
-  </ContentPage.Content>
-</ContentPage>
-```
+На следующих снимках экрана показано результат действия параметра `TextColor` свойство:
 
 ![](label-images/textcolor.png "Пример TextColor")
+
+Дополнительные сведения о цветах см. в разделе [цвета](~/xamarin-forms/user-interface/colors.md).
 
 <a name="Formatted_Text" />
 
 ## <a name="formatted-text"></a>Форматированный текст
 
-Предоставлять метки `FormattedText` свойство, которое позволяет отображать текст с использованием нескольких шрифтов и цветов в одном представлении.
+Предоставлять метки [ `FormattedText` ](xref:Xamarin.Forms.Label.FormattedText) свойство, которое позволяет представления текста с использованием нескольких шрифтов и цветов в одном представлении.
 
-`FormattedText` Свойство имеет тип [ `FormattedString` ](xref:Xamarin.Forms.FormattedString). Форматированные строки состоят из одного или нескольких `Span`s, каждый из них со следующими свойствами:
+`FormattedText` Свойство имеет тип [ `FormattedString` ](xref:Xamarin.Forms.FormattedString), который состоит из одного или нескольких [ `Span` ](xref:Xamarin.Forms.Span) экземпляров, настроенных с помощью [ `Spans` ](xref:Xamarin.Forms.FormattedString.Spans) свойство . Каждый `Span` обладает следующими свойствами:
 
-- **BackgroundColor** &ndash; может использоваться для задания фонового цвета, например для создания эффекта выделения.
-- **FontAttributes** &ndash; может быть набор полужирный, курсив или ни одного.
-- **FontFamily** &ndash; задает шрифт для использования.
-- **FontSize** &ndash; задает размер текста.
-- **ForegroundColor** &ndash; задает цвет текста.
-- **Текст** &ndash; текст представления.
+- [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) — цвет фона span.
+- [`Font`](xref:Xamarin.Forms.Span.Font) — шрифт для текста в элементе управления span.
+- [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes) — атрибуты шрифта для текста в элементе управления span.
+- [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily) — Семейство шрифтов, к которой принадлежит шрифт для текста в элементе управления span.
+- [`FontSize`](xref:Xamarin.Forms.Span.FontSize) — размер шрифта для текста в элементе управления span.
+- [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) — цвет для текста в элементе управления span. Это свойство является устаревшим и будет заменен `TextColor` свойство.
+- [`Style`](xref:Xamarin.Forms.Span.Style) — стиль, применяемый к нему.
+- [`Text`](xref:Xamarin.Forms.Span.Text) — текст диапазона.
+- [`TextColor`](xref:Xamarin.Forms.Span.TextColor) — цвет для текста в элементе управления span.
 
-Следующий код C# демонстрирует метки, где первое слово отображается полужирным шрифтом, и последнее слово отображается красным цветом:
+Ниже приведен пример XAML `FormattedText` свойство, которое состоит из трех `Span` экземпляров:
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TextSample.LabelPage"
+             Title="Label Demo - XAML">
+    <StackLayout Padding="5,10">
+        ...
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Red Bold, " TextColor="Red" FontAttributes="Bold" />
+                    <Span Text="default, " Style="{DynamicResource BodyStyle}" />
+                    <Span Text="italic small." FontAttributes="Italic" FontSize="Small" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>
+</ContentPage>
+```
+
+Ниже приведен аналогичный код C#:
 
 ```csharp
-public partial class LabelPage : ContentPage
+public class LabelPageCode : ContentPage
 {
-    public LabelPage ()
+    public LabelPageCode ()
     {
-        InitializeComponent ();
-        var layout = new StackLayout { Padding = new Thickness(5,10) };
+        var layout = new StackLayout{ Padding = new Thickness (5, 10) };
+        ...
+        var formattedString = new FormattedString ();
+        formattedString.Spans.Add (new Span{ Text = "Red bold, ", ForegroundColor = Color.Red, FontAttributes = FontAttributes.Bold });
+        formattedString.Spans.Add (new Span { Text = "default, ", Style = Device.Styles.BodyStyle });
+        formattedString.Spans.Add (new Span { Text = "italic small.", FontAttributes = FontAttributes.Italic, FontSize =  Device.GetNamedSize(NamedSize.Small, typeof(Label)) });
+
+        layout.Children.Add (new Label { FormattedText = formattedString });
         this.Content = layout;
-    var label = new Label { FontSize = 20 };
-    var s = new FormattedString ();
-    s.Spans.Add (new Span{ Text = "Red Bold", FontAttributes = FontAttributes.Bold });
-    s.Spans.Add (new Span{ Text = "Default" });
-    s.Spans.Add (new Span{ Text = "italic small", FontSize =  Device.GetNamedSize(NamedSize.Small, typeof(Label)), FontAttributes = FontAttributes.Italic});
-    label.FormattedText = s;
-        layout.Children.Add(label);
     }
 }
 ```
 
-В XAML:
+> [!NOTE]
+> [ `Text` ](xref:Xamarin.Forms.Span.Text) Свойство `Span` можно задать с помощью привязки данных. Дополнительные сведения см. в разделе [привязки данных](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
-```xaml
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-x:Class="TextSample.LabelPage"
-Title="Label Demo">
-    <ContentPage.Content>
-        <StackLayout Padding="5,10">
-      <Label FontSize=20>
-        <Label.FormattedText>
-          <FormattedString>
-            <Span Text="Red Bold" ForegroundColor="Red" FontAttributes="Bold" />
-            <Span Text="Default" />
-            <Span Text="italic small" FontAttributes="Italic" FontSize="Small" />
-          </FormattedString>
-        </Label.FormattedText>
-      </Label>
-    </StackLayout>
-  </ContentPage.Content>
-</ContentPage>
-```
+На следующих снимках экрана показано результат действия параметра `FormattedString` свойство до трех `Span` экземпляров:
 
 ![](label-images/formattedtext.png "Пример FormattedText")
 
+## <a name="styling-a-label"></a>Задание стиля метки
+
+Предыдущих разделах описаны параметр [ `Label` ](xref:Xamarin.Forms.Label) свойств для каждого экземпляра. Тем не менее наборы свойств могут быть сгруппированы в один стиль, который последовательно применяется для одного или нескольких представлений. Это может повысить читаемость кода и делать изменения дизайна проще в реализации. Дополнительные сведения см. в разделе [стили](~/xamarin-forms/user-interface/text/styles.md).
 
 ## <a name="related-links"></a>Связанные ссылки
 

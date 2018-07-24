@@ -6,13 +6,13 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: 95afdfde878759d4a598e200d16fe6fb1fa2005e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/16/2018
+ms.openlocfilehash: 57304f2f07a0834c31e32bb89a4742a2de7e861c
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998251"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202998"
 ---
 # <a name="xamarinforms-entry"></a>Запись Xamarin.Forms
 
@@ -59,26 +59,98 @@ var entry = new Entry { ... MaxLength = 10 };
 
 Объект [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) свойства значение 0 указывает, что входные данные не будет разрешено и значение `int.MaxValue`, который является значением по умолчанию для [ `Entry` ](xref:Xamarin.Forms.Entry), указывает, что не действующие ограничения на число символов, которые могут быть введены.
 
-### <a name="keyboards"></a>Клавиатуры
+### <a name="customizing-the-keyboard"></a>Настройка клавиатуры
 
-Клавиатуры, выводится тогда, когда пользователи взаимодействуют с `Entry` могут быть заданы программно с помощью `Keyboard` свойство.
+Клавиатуры, выводится тогда, когда пользователи взаимодействуют с [ `Entry` ](xref:Xamarin.Forms.Entry) могут быть заданы программно с помощью [ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard) свойства, чтобы одно из следующих свойств из [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) класса:
 
-Доступны следующие параметры для типа клавиатуры.
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) — используется для сообщения и мест, где полезны эмодзи.
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) — клавиатуры по умолчанию.
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) — используется при вводе адреса электронной почты.
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) — используется при вводе чисел.
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) — используется при вводе текста, без каких-либо [ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags) указанного.
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) — используется при вводе телефонных номеров.
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) — используется при вводе текста.
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) — используется для ввода пути к файлам веб-адреса.
 
-- **По умолчанию** &ndash; клавиатуры по умолчанию
-- **Чат** &ndash; используется для сообщения и местах где полезны эмодзи
-- **Адрес электронной почты** &ndash; используется при вводе адреса электронной почты
-- **Числовые** &ndash; используется при вводе чисел
-- **Телефон** &ndash; используется при вводе телефонных номеров
-- **URL-адрес** &ndash; используется для ввода пути к файлам и веб-адреса
+Это можно сделать в XAML следующим образом:
 
-Существует [пример каждого сочетания](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) нашего раздела «инструкции».
+```xaml
+<Entry Keyboard="Chat" />
+```
+
+Ниже приведен аналогичный код C#:
+
+```csharp
+var entry = new Entry { Keyboard = Keyboard.Chat };
+```
+
+Примеры каждого клавиатуры можно найти в нашей [рецепты](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) репозитория.
+
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Класс также имеет [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) фабричный метод, который может использоваться для настройки клавиатуры, указав режим регистр букв, проверка орфографии и предложения. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) значения перечисления как указано в качестве аргументов метода с настраиваемый `Keyboard` возвращению. `KeyboardFlags` Перечисление содержит следующие значения:
+
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) — появившихся с клавиатурой.
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) — Указывает, будет автоматически прописной первую букву каждого введенного предложения первое слово.
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) — Указывает, что проверка орфографии выполняется на введенный текст.
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) — Указывает, что варианты завершения будут предоставляться на введенный текст.
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) — Указывает, будет автоматически прописной первую букву каждого слова.
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) — Указывает, будет автоматически капитализация каждого символа.
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) — Указывает, что будет выполняться без автоматического использования прописных букв.
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) — Указывает, что проверка орфографии и завершение слова, содержащего будет выполняться на введенный текст.
+
+В следующем примере кода XAML показано, как настроить значение по умолчанию [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) предлагаем завершение слова и реализуйте весь потенциал каждого введенного символа:
+
+```xaml
+<Entry Placeholder="Enter text here">
+    <Entry.Keyboard>
+        <Keyboard x:FactoryMethod="Create">
+            <x:Arguments>
+                <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+            </x:Arguments>
+        </Keyboard>
+    </Entry.Keyboard>
+</Entry>
+```
+
+Ниже приведен аналогичный код C#:
+
+```csharp
+var entry = new Entry { Placeholder = "Enter text here" };
+entry.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
+```
+
+#### <a name="customizing-the-return-key"></a>Настройка клавиша Return
+
+Внешний вид возвращаемого значения ключа на Экранная клавиатура, который является отображается, когда [ `Entry` ](xref:Xamarin.Forms.Entry) имеет фокус, можно настроить, задав [ `ReturnType` ](xref:Xamarin.Forms.Entry.ReturnType) свойства со значением [ `ReturnType` ](xref:Xamarin.Forms.ReturnType) перечисления:
+
+- [`Default`](xref:Xamarin.Forms.ReturnType.Default) — Указывает, что нет определенного ключа возвращаемого значения не требуется и что будет использоваться значение по умолчанию платформы.
+- [`Done`](xref:Xamarin.Forms.ReturnType.Done) — Указывает, «Готово» клавиша return.
+- [`Go`](xref:Xamarin.Forms.ReturnType.Go) — Указывает ключ return «Далее».
+- [`Next`](xref:Xamarin.Forms.ReturnType.Next) — Указывает ключ return «Далее».
+- [`Search`](xref:Xamarin.Forms.ReturnType.Search) — Указывает ключ возвращаемого значения «Поиск».
+- [`Send`](xref:Xamarin.Forms.ReturnType.Send) — Указывает ключ возвращаемого значения «Отправить».
+
+В следующем примере XAML показано, как задать возвращаемое ключ:
+
+```xaml
+<Entry ReturnType="Send" />
+```
+
+Ниже приведен аналогичный код C#:
+
+```csharp
+var entry = new Entry { ReturnType = ReturnType.Send };
+```
+
+> [!NOTE]
+> Клавиша return точный вид зависит от платформы. В iOS клавиша return — это кнопка, основанные на тексте. Тем не менее Android и универсальной платформы Windows, клавиша return находится кнопка значки.
+
+При нажатии клавиши ВВОД, [ `Completed` ](xref:Xamarin.Forms.Entry.Completed) вызывает событие и любые `ICommand` определяется [ `ReturnCommand` ](xref:Xamarin.Forms.Entry.ReturnCommand) свойство выполняется. Кроме того любой `object` определяется [ `ReturnCommandParameter` ](xref:Xamarin.Forms.Entry.ReturnCommandParameter) свойства будут передаваться `ICommand` как параметр. Дополнительные сведения о командах см. в разделе [интерфейс команда](~/xamarin-forms/app-fundamentals/data-binding/commanding.md).
 
 ### <a name="enabling-and-disabling-spell-checking"></a>Включение и отключение проверка орфографии
 
 [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Свойство, управляет ли проверка орфографии включена. По умолчанию задано значение `true`. Как пользователь вводит текст, заданный опечаток.
 
-Однако для некоторых сценариях записи текста, например ввода имени пользователя, проверка орфографии дает негативной, поэтому следует отключить, задав [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) свойства `false`:
+Тем не менее для некоторых сценариев входа текст, таких, как ввод имени пользователя, проверка орфографии предоставляет негативной и должен быть отключен, задав [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) свойства `false`:
 
 ```xaml
 <Entry ... IsSpellCheckEnabled="false" />
@@ -90,6 +162,23 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 
 > [!NOTE]
 > Когда [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) свойству `false`и пользовательских сочетаний не используется, средство проверки орфографии собственного будет отключена. Тем не менее если [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) имеет был набор, который отключает орфографии поиска, например [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` свойство учитывается. Таким образом, свойство не позволяет включить проверку орфографии для `Keyboard` , явно отключает его.
+
+### <a name="enabling-and-disabling-text-prediction"></a>Включение и отключение прогнозирования текста
+
+[ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) Свойство, управляет ли прогнозирование текста и автоматическое исправление текста включен. По умолчанию задано значение `true`. Как пользователь вводит текст, представляется word прогнозов.
+
+Тем не менее, для некоторых сценариев входа текст, например ввода имени пользователя, прогнозирование текста и текста исправление обеспечивает взаимодействие с отрицательным и следует отключить, задав [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) свойства `false`:
+
+```xaml
+<Entry ... IsTextPredictionEnabled="false" />
+```
+
+```csharp
+var entry = new Entry { ... IsTextPredictionEnabled = false };
+```
+
+> [!NOTE]
+> При [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) свойству `false`, и пользовательских сочетаний не используется, прогнозирование текста и автоматическое исправление текста отключено. Тем не менее если [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) было задано, прогнозирование текста отключает, `IsTextPredictionEnabled` свойство учитывается. Таким образом, свойство не может использоваться для прогнозирования текста для `Keyboard` , явно отключает его.
 
 ### <a name="placeholders"></a>Заполнители
 
@@ -141,7 +230,6 @@ var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 
 ![](entry-images/passwordplaceholder.png "Запись IsPassword и примере заполнитель")
 
-
 ### <a name="colors"></a>Цвета
 
 Использовать настраиваемый фон и цвета текста с помощью следующих привязываемые свойства можно задать запись.
@@ -191,12 +279,12 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 Запись предоставляет два события:
 
-- [TextChanged](xref:Xamarin.Forms.Entry.TextChanged) &ndash; возникает при изменении текста в записи. Содержит текст до и после изменения.
-- [Завершено](xref:Xamarin.Forms.Entry.Completed) &ndash; вызывается, когда пользователь завершен входные данные с помощью возвращаемого значения клавиши на клавиатуре.
+- [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) &ndash; возникает при изменении текста в записи. Содержит текст до и после изменения.
+- [`Completed`](xref:Xamarin.Forms.Entry.Completed) &ndash; вызывается, когда пользователь завершен входные данные с помощью возвращаемого значения клавиши на клавиатуре.
 
 ### <a name="completed"></a>Завершено
 
-`Completed` Событие используется для реагирования на завершение взаимодействия с записью. `Completed` вызывается, когда пользователь завершает входных данных с полем, введя клавиша return на клавиатуре. Обработчик для события представляет собой Универсальное событие обработчика, используя отправителя и `EventArgs`:
+`Completed` Событие используется для реагирования на завершение взаимодействия с записью. `Completed` вызывается, когда пользователь завершает входных данных с полем по нажатию клавиши возврат на клавиатуре. Обработчик для события представляет собой Универсальное событие обработчика, используя отправителя и `EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -217,6 +305,8 @@ void Entry_Completed (object sender, EventArgs e)
 var entry = new Entry ();
 entry.Completed += Entry_Completed;
 ```
+
+После [ `Completed` ](xref:Xamarin.Forms.Entry.Completed) любое событие запускается `ICommand` определяется [ `ReturnCommand` ](xref:Xamarin.Forms.Entry.ReturnCommand) выполняется свойство, с помощью `object` определяется [ `ReturnCommandParameter` ](xref:Xamarin.Forms.Entry.ReturnCommandParameter) свойства, передаваемые `ICommand`.
 
 ### <a name="textchanged"></a>TextChanged
 

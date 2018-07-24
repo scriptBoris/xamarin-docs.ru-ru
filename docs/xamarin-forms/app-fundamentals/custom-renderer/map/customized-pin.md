@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 4fee67f08e86c40709aa226c40c0f7721dc26800
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 351119a8b0089f78d4ce98729a1516c3cd7bae7b
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998321"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203089"
 ---
 # <a name="customizing-a-map-pin"></a>Настройка закрепления карты
 
@@ -240,7 +240,7 @@ namespace CustomRenderer.iOS
 `GetViewForAnnotation` Метод принимает `IMKAnnotation` , содержащий заметки данных и возвращает `MKAnnotationView` для отображения на карте и показано в следующем примере кода:
 
 ```csharp
-MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
+protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
 {
     MKAnnotationView annotationView = null;
 
@@ -273,12 +273,12 @@ MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotatio
 1. `GetCustomPin` Метод вызывается для возвращения данных пользовательского ПИН-код для заметки.
 1. Для экономии памяти, представление заметки заносится в пул для повторного использования при вызове [ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/).
 1. `CustomMKAnnotationView` Класс расширяет `MKAnnotationView` класса `Id` и `Url` свойства, которые соответствуют идентичны свойствам в `CustomPin` экземпляра. Новый экземпляр класса `CustomMKAnnotationView` создания условии, что заметка `null`:
-  - `CustomMKAnnotationView.Image` Свойству образ, который будет представлять заметки на карте.
-  - `CustomMKAnnotationView.CalloutOffset` Свойству `CGPoint` , указывающий, что будет центрировано по выноски выше заметки.
-  - `CustomMKAnnotationView.LeftCalloutAccessoryView` Свойству образ monkey, которое будет отображаться слева от заметки название и адрес.
-  - `CustomMKAnnotationView.RightCalloutAccessoryView` Свойству *сведения* кнопки, которое будет отображаться справа от заголовка заметки и адрес.
-  - `CustomMKAnnotationView.Id` Свойству `CustomPin.Id` свойства, возвращенное `GetCustomPin` метод. Это позволяет заметки веб-API, чтобы он включал [выноски можно выполнить дальнейшую настройку](#Selecting_the_Annotation)при необходимости.
-  - `CustomMKAnnotationView.Url` Свойству `CustomPin.Url` свойства, возвращенное `GetCustomPin` метод. URL-адрес будет открыт при пользователь [нажимает кнопку в представлении аксессуаров правой выноски](#Tapping_on_the_Right_Callout_Accessory_View).
+    - `CustomMKAnnotationView.Image` Свойству образ, который будет представлять заметки на карте.
+    - `CustomMKAnnotationView.CalloutOffset` Свойству `CGPoint` , указывающий, что будет центрировано по выноски выше заметки.
+    - `CustomMKAnnotationView.LeftCalloutAccessoryView` Свойству образ monkey, которое будет отображаться слева от заметки название и адрес.
+    - `CustomMKAnnotationView.RightCalloutAccessoryView` Свойству *сведения* кнопки, которое будет отображаться справа от заголовка заметки и адрес.
+    - `CustomMKAnnotationView.Id` Свойству `CustomPin.Id` свойства, возвращенное `GetCustomPin` метод. Это позволяет заметки веб-API, чтобы он включал [выноски можно выполнить дальнейшую настройку](#Selecting_the_Annotation)при необходимости.
+    - `CustomMKAnnotationView.Url` Свойству `CustomPin.Url` свойства, возвращенное `GetCustomPin` метод. URL-адрес будет открыт при пользователь [нажимает кнопку в представлении аксессуаров правой выноски](#Tapping_on_the_Right_Callout_Accessory_View).
 1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) Свойству `true` так что выноски отображается при нажатии заметки.
 1. Заметка возвращается для отображения на карте.
 
