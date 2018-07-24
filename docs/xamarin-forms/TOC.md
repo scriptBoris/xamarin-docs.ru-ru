@@ -310,6 +310,7 @@
 ## [Дополнительные понятия и внутренние компоненты](internals/index.md)
 ### [Быстрые отрисовщики](internals/fast-renderers.md)
 ### [.NET Standard](internals/net-standard.md)
+### [Разрешение зависимостей](internals/dependency-resolution.md)
 ## [Устранение неполадок](troubleshooting/index.md)
 ### [Часто задаваемые вопросы](troubleshooting/questions/index.md)
 #### [Можно ли обновить шаблон по умолчанию Xamarin.Forms до более поздней версии пакета NuGet?](troubleshooting/questions/update-forms-template.md)
