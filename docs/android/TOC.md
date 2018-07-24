@@ -113,6 +113,8 @@
 ## [Функции платформы](platform/index.md)
 ### [Android Beam](platform/android-beam.md)
 ### [Манифест Android](platform/android-manifest.md)
+### [Доступ к файлам с помощью Xamarin.Android](platform/files/index.md)
+#### [Внешнее хранилище](platform/files/external-storage.md)
 ### [Проверка подлинности по отпечаткам](platform/fingerprint-authentication/index.md)
 #### [Начало работы](platform/fingerprint-authentication/get-started.md)
 #### [Сканирование отпечатков](platform/fingerprint-authentication/scanning.md)
