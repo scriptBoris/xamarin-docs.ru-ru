@@ -1,49 +1,49 @@
 ---
-title: Работа с использованием списков свойств в Xamarin.iOS
-description: В этом документе рассматривается Visual Studio для Mac в редактор списка (.plist) графический и расширенные свойства для работы с Info.plist и Entitlements.plist. Он иллюстрирует параметр значки и запуска изображений для приложений iOS в Visual Studio для Mac.
+title: Работа со списками свойств в Xamarin.iOS
+description: В этом документе представлены Visual Studio для Mac графический и расширенные свойства списка (.plist) редактор для работы с Info.plist и Entitlements.plist. Он иллюстрирует параметр значков и изображений при запуске для приложений iOS из среды Visual Studio для Mac.
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 6b22acab3fb19a6209fac8dcf6a0870763e601d2
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b102f268fd457ca42f3d64b5766a2b3824e3849d
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784472"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242333"
 ---
-# <a name="working-with-property-lists-in-xamarinios"></a>Работа с использованием списков свойств в Xamarin.iOS
+# <a name="working-with-property-lists-in-xamarinios"></a>Работа со списками свойств в Xamarin.iOS
 
-_В этом документе рассматривается Visual Studio для Mac в редактор списка (.plist) графический и расширенные свойства для работы с Info.plist и Entitlements.plist. Он иллюстрирует параметр значки и запуска изображений для приложений iOS в Visual Studio для Mac._
+_В этом документе представлены Visual Studio для Mac графический и расширенные свойства списка (.plist) редактор для работы с Info.plist и Entitlements.plist. Он иллюстрирует параметр значков и изображений при запуске для приложений iOS из среды Visual Studio для Mac._
 
-Visual Studio для Mac включает .plist графический редактор, позволяющая редактировать свойства приложения и возможности проще. Visual Studio для Mac имеет два .plists - `Info.plist` для редактирования свойств приложения и значки, и `Entitlements.plist` для управления возможностями приложения. В этом руководстве представлены Info.plists и общие сведения о работе с ними в Visual Studio для Mac. Сведения о Entitlements.plist см. в разделе [работа с данными](~/ios/deploy-test/provisioning/entitlements.md) руководства.
+Visual Studio для Mac функции это plist-файл в графический редактор, который затрудняет внесение изменений в свойства приложения и возможности проще. Visual Studio для Mac имеет два .plists - `Info.plist` для редактирования свойств приложения и значки, и `Entitlements.plist` для управления функциями приложений. В этом руководстве представлены Info.plists и общие сведения о работе с ними в Visual Studio для Mac. Сведения о Entitlements.plist, см. в разделе [работа с назначениями](~/ios/deploy-test/provisioning/entitlements.md) руководства.
 
 ## <a name="infoplist"></a>Info.plist
 
-Список свойств сведения ( `Info.plist`) — iOS требуется файл, который содержит сведения о конфигурации вашего приложения в системе. Visual Studio для Mac пользовательских `Info.plist` функций редактора, три панели управляются вкладок в нижней левой части окна редактора:
+В списке свойств сведения ( `Info.plist`) — файл требуется iOS, который предоставляет сведения о конфигурации вашего приложения в системе. Visual Studio для Mac пользовательских `Info.plist` функций редактора, три панели, контролируются вкладок в нижней левой части окна редактора:
 
  [![](property-lists-images/tabs.png "Вкладки редактора Info.plist в нижней левой части окна редактора")](property-lists-images/tabs.png#lightbox)
 
 Каждой панели на различных свойств элементов управления, как показано ниже:
 
--  **Панель приложения** -графический интерфейс для настройки общих свойств приложения, а также значки и запуска образов; укажите интеграции карты и backgrounding режимы.
--  **Дополнительные панели** -«Дополнительно» служит для указания типов поддерживаемых документов, UTIs и типы URL-адрес.
--  **Панель источника** -панели «Источник» управляет менее общие свойства, а также настраиваемые свойства для приложения.
+-  **Панель приложения** -графический интерфейс для установки общих свойств приложения, а также значки и запуска образов; укажите интеграция с картами и фоновая обработка режимов.
+-  **Дополнительные панели** -«Дополнительно» — это место для указания типов поддерживаемых документов, Uti и типы URL-адресов.
+-  **Панель источника** -панели «Источник» управляет менее общие свойства, а также пользовательские свойства для приложения.
 
 
-Следующих трех разделах изучить функции каждой панели более подробно.
+Следующих трех разделах Изучите функции каждой панели, более подробно.
 
-## <a name="application-panel"></a>Панель приложений
+## <a name="application-panel"></a>Панель приложения
 
 Графический интерфейс для редактирования общих функций Visual Studio для Mac `Info.plist` записи для приложения:
 
 1.  Свойства приложения
 1.  Типы поддерживаемых устройств
-1.  Поддержка ориентации для каждого типа устройств
-1.  Строки, стиль и цвет состояния
-1.  Значки и экраны при запуске
+1.  Поддерживаемые ориентации для каждого типа устройств
+1.  Строки стиль и цвет состояния
+1.  Значки и экраны запуска
 1.  Карты и фоновые режимы
 
 
@@ -52,22 +52,22 @@ Visual Studio для Mac включает .plist графический реда
  <a name="iOS_Application_Target" />
 
 
-### <a name="ios-application-target"></a>iOS целевого приложения
+### <a name="ios-application-target"></a>Целевая платформа приложения iOS
 
-Этот раздел содержит важные сведения, описывающие ваше приложение.
-**Идентификатор** хранятся здесь должен совпадать с идентификатором пакета, который вводится в iTunes Connect (для приложения для магазина), а также в списке инициализации идентификаторы приложений портала iOS и разработку и распространения сертификатов.
+Этот раздел содержит важные сведения, описывающие приложение.
+**Идентификатор** хранятся здесь должен совпадать с идентификатором пакета, указанным в iTunes Connect (для приложений App Store), а также в списке подготовки идентификаторов приложений портала для iOS и разработки и распространения сертификатов.
 
- [![](property-lists-images/image24.png "iOS целевого приложения")](property-lists-images/image24.png#lightbox)
+ [![](property-lists-images/image24.png "Целевая платформа приложения iOS")](property-lists-images/image24.png#lightbox)
 
 ### <a name="device-deployment"></a>Развертывание устройств
 
  [![](property-lists-images/deployment.png "Развертывание устройств")](property-lists-images/deployment.png#lightbox)
 
-Устройство **развертывания** сведения о разделах отображаются выборочно, в зависимости от выбора в **устройств** раскрывающийся список в **целевого приложения** выше. **Главного интерфейса** имеет значение раскрывающегося списка **MainStoryboard** в приложения на основе раскадровки. Если пользовательский интерфейс полностью записывается в коде, то это может быть пустым.
+Устройство **развертывания** выборочно, отображаются сведения о разделах в зависимости от выбора в **устройств** раскрывающийся список в **целевая платформа приложения** предыдущем разделе. **Главный интерфейс** раскрывающегося списка присваивается **MainStoryboard** в приложения на основе раскадровки. Если пользовательский интерфейс полностью написана в коде, то это может быть пустым.
 
-### <a name="supported-device-orientations"></a>Поддерживаемое устройство ориентации
+### <a name="supported-device-orientations"></a>Поддерживаемые ориентации устройства
 
- **Поддерживаемые ориентации устройства** определяет, как приложение реагирует на поворот устройства. Очень часто для iPhone и iPad приложений для поддержки только **Книжная**, или все данные, но **сверху вниз**. Обычно все приложения iPad, за исключением игры должен поддерживать все ориентации.
+ **Поддерживаемые ориентации устройства** контролирует, как приложение реагирует на поворот экрана. Очень часто для iPhone и iPad приложений для поддержки только **книжной**, или все, но **сверху вниз**. Обычно все приложения iPad, кроме игры должны поддерживать все ориентации.
 
 ### <a name="status-bar-styles"></a>Стили строки состояния
 
@@ -78,28 +78,28 @@ Visual Studio для Mac включает .plist графический реда
  <a name="Icons" />
 
 
-### <a name="icons-launch-images-and-itunes-artwork"></a>Значки, изображения, запуска и iTunes иллюстрации
+### <a name="icons-launch-images-and-itunes-artwork"></a>Значки, изображения при запуске и иллюстрации iTunes
 
-Сведения об использовании значки, изображения и изображения в файле Info.plist можно найти в [работа с образами](~/ios/app-fundamentals/images-icons/index.md) руководства.
-
-
+Сведения об использовании значки, изображения и иллюстрации в файле Info.plist можно найти в [работа с образами](~/ios/app-fundamentals/images-icons/index.md) руководства.
 
 
-### <a name="maps-integration-and-background-modes"></a>Интеграция карты и фоновые режимы
 
-`Info.plist` Содержит специальные разделы для указания интеграции карты и backgrounding режимы. Выбор параметров, которые требуется поддерживать добавит необходимые свойства приложение за вас.
 
- [![](property-lists-images/maps.png "Интеграция карты")](property-lists-images/maps.png#lightbox)
+### <a name="maps-integration-and-background-modes"></a>Интеграция с картами и фоновые режимы
 
-Дополнительные сведения о работе с картами, см. на странице Xamarin [iOS Maps](~/ios/user-interface/controls/ios-maps/index.md) руководства.
+`Info.plist` Содержит специальные разделы для указания интеграция с картами и фоновая обработка режимов. Выбрав параметры, которые требуется поддерживать добавит необходимые свойства для вашего приложения за вас.
+
+ [![](property-lists-images/maps.png "Интеграция с картами")](property-lists-images/maps.png#lightbox)
+
+Дополнительные сведения о работе с картами, см. Xamarin [iOS Maps](~/ios/user-interface/controls/ios-maps/index.md) руководства.
 
  [![](property-lists-images/bging.png "Фоновые режимы")](property-lists-images/bging.png#lightbox)
 
-Дополнительные сведения о фоновых режимов см. на странице Xamarin [Backgrounding в iOS](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md) руководства.
+Дополнительные сведения о фоновых режимов см. Xamarin [фоновый режим в iOS](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md) руководства.
 
 ## <a name="advanced-panel"></a>«Дополнительно»
 
-«Дополнительно» для управления типов документов и URL-схем, которые поддерживает приложение.
+«Дополнительно» для управления типов документов и схемы URL-адресов, которые поддерживает приложение.
 
  [![](property-lists-images/image34.png "«Дополнительно»")](property-lists-images/image34.png#lightbox)
 
@@ -108,33 +108,33 @@ Visual Studio для Mac включает .plist графический реда
 
 ## <a name="document-types"></a>Типы документов
 
-Для приложений, которые поддерживает открытие определенных типов файлов, предоставляет iOS `CFBundleDocumentTypes` ключа. Если мы хотим нашего приложения для поддержки определенных зарегистрированных типов файлов - например, PDF - мы бы добавили PDF значение для ключа. В этом разделе предоставляет удобный способ для ввода данных, которая будет храниться в `CFBundleDocumentTypes` ключа в `Info.plist` файла.
+Для приложений, которые поддерживают открытие файлов определенных типов, предоставляет iOS `CFBundleDocumentTypes` ключ. Если мы хотим наше приложение для поддержки определенных известных типов файлов — например, PDF - мы бы добавили значение PDF на ключ. В этом разделе предоставляет удобный способ для ввода данных, которая будет храниться в `CFBundleDocumentTypes` в `Info.plist` файл.
 
-Обратитесь к документации на [регистрация файл типы Your App поддерживает](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html) подробные сведения о настройке этих значений.
+Обратитесь к документации на [Регистрация типов файлов, Your поддерживает приложения](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html) Дополнительные сведения о настройке этих значений.
 
-## <a name="utis"></a>UTIs
+## <a name="utis"></a>Uti
 
-Иногда приложения должен поддерживать Открытие пользовательского типа файлов. Например, нужно открыть файлы изображений с расширением пользовательских *.xam*. Для указания пользовательского типа файлов, мы создадим пользовательской UTI - универсальный идентификатор типа - с использованием `UIExportedTypeDeclarations` ключа. На снимке экрана ниже показано создание пользовательского UTI для расширения .xam:
+Иногда необходимо приложение поддерживает открытие пользовательского типа файлов. Например, можно открыть файлы изображений с помощью пользовательского расширения *.xam*. Для указания пользовательского типа файлов, мы создадим пользовательский UTI - универсальный идентификатор типа — с помощью `UIExportedTypeDeclarations` ключ. На следующем снимке экрана показано, как создать пользовательские UTI для расширения .xam:
 
- [![](property-lists-images/uti.png "Редактор UTIs")](property-lists-images/uti.png#lightbox)
+ [![](property-lists-images/uti.png "Редактор Uti")](property-lists-images/uti.png#lightbox)
 
-Как только что экспортированный тип UTIs указать пользовательские UTIs определенному приложению, *импортированный тип UTIs* ( `UIImportedTypeDeclarations` ключ) укажите пользовательские типы поддерживаются, но не принадлежат приложения.
+Как только что экспортированный Uti типов укажите пользовательские Uti определенному приложению, *импортированные Uti типов* ( `UIImportedTypeDeclarations` ключ) укажите пользовательские типы поддерживаются, но не принадлежит приложения.
 
-Дополнительные сведения об использовании пользовательских UTIs посвящены Apple [регистрация файл типы Your App поддерживает](https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_declare/understand_utis_declare.html#//apple_ref/doc/uid/TP40001319-CH204-SW1) руководства.
+Дополнительные сведения об использовании пользовательских Uti см Apple [регистрации файла типы Your поддерживает приложения](https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_declare/understand_utis_declare.html#//apple_ref/doc/uid/TP40001319-CH204-SW1) руководства.
 
-## <a name="custom-urls"></a>Пользовательский URL-адреса
+## <a name="custom-urls"></a>Пользовательские URL-адреса
 
-Имя схемы URL-адрес (также называемые протокол) — первая часть URL-адрес. Например `http://` и `https://` приведены распространенные схемы URL-адрес. У вас есть возможность создания пользовательской схемы URL-адрес для вашего приложения. Пользовательский URL-схем используются для взаимодействия и передачи данных и обратно с другими приложениями. Следующем снимке экрана показано создание новой пользовательской схемы URL-адрес вызывается `monkeys://`:
+Имя схемы URL-адрес (также называется "протокол") — это первая часть URL-адрес. Например `http://` и `https://` общих схем URL-адрес. У вас есть возможность создать схему URL-адрес для приложения. Пользовательские схемы URL-адреса используются для взаимодействия и передачи данных туда и обратно с другими приложениями. Снимке экрана ниже показано создание нового URL-адрес схему вызывается `monkeys://`:
 
- [![](property-lists-images/url.png "Пользовательский URL-адреса")](property-lists-images/url.png#lightbox)
+ [![](property-lists-images/url.png "Пользовательские URL-адреса")](property-lists-images/url.png#lightbox)
 
 
 
-Дополнительные сведения о реализации пользовательской схемы URL-адресов см. Apple [реализации пользовательские схемы URL-адрес раздела этого руководства](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
+Дополнительные сведения о реализации пользовательских схем URL-адреса см. Apple [реализации настраиваемых схем URL-адреса разделе данного руководства](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
 
 ## <a name="source-panel"></a>«Источник»
 
-**Источника** вкладке `Info.plist` файл позволяет пользовательские значения, которое необходимо добавить или изменить. Visual Studio для Mac приведен список наиболее общих свойств.
+**Источника** вкладке `Info.plist` файл позволяет пользовательские значения добавить или изменить. Visual Studio для Mac предоставляет список наиболее распространенных свойств:
 
  [![](property-lists-images/image31.png "Добавление нового свойства из раскрывающегося списка")](property-lists-images/image31.png#lightbox)
 
@@ -146,19 +146,19 @@ Visual Studio для Mac также определяет тип свойства
 
  [![](property-lists-images/image33.png "Доступные типы свойств")](property-lists-images/image33.png#lightbox)
 
-Просмотрите Apple [связанные ресурсы приложения](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) содержатся ссылки на дополнительные сведения о дополнительных свойств.
+Просмотрите Apple [связанные ресурсы приложения](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) ссылки на дополнительные сведения о необязательных свойств.
 
  <a name="Entitlements" />
 
 ## <a name="summary"></a>Сводка
 
-В этой статье демонстрируется использование .plist графический и расширенные редакторы для редактирования стандартных конфигураций приложений также указать значки и запустите изображения. Он также появился `Entitlements.plist` для добавления и управления ими возможностей приложения.
+В этой статье демонстрируется использование редакторов графический и расширенные plist-файл для редактирования стандартных конфигураций приложений также указать значки и изображения при запуске. Он также появился `Entitlements.plist` для добавления и управления ими возможности приложений.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [ИНТЕГРИРОВАННАЯ СРЕДА РАЗРАБОТКИ](https://developer.xamarin.com/recipes/cross-platform/ide)
-- [Ресурсы, связанные с приложения](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
-- [Файл регистрации типов поддерживается данным приложения](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
-- [Реализация пользовательских URL-схем](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
-- [О каталогах активов](https://developer.apple.com/library/ioshttps://developer.xamarin.com/recipes/xcode_help-image_catalog-1.0/Recipe.html)
+- [ИНТЕГРИРОВАННАЯ СРЕДА РАЗРАБОТКИ](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide)
+- [Приложения, связанные с ней ресурсы](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
+- [Регистрация файла типы поддерживает ваше приложение](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
+- [Реализация схемы пользовательский URL-адрес](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
+- [Справочнике по формату каталог активов](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/index.html#//apple_ref/doc/uid/TP40015170-CH18-SW1)
