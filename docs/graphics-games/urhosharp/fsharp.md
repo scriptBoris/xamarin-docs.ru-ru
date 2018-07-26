@@ -6,12 +6,12 @@ ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: a4e1a31a2591c799a153e1333e4a4a4a0719a107
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 430c4eca7c6dbd7107692246b70ff93bafa44d01
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111203"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241838"
 ---
 # <a name="programming-urhosharp-with-f"></a>Программирование UrhoSharp с помощью F #
 
@@ -19,11 +19,11 @@ UrhoSharp могут быть запрограммированы с F #, исп�
 
 Как и многие библиотеки, изначально созданные в мире C++ многие функции UrhoSharp возвращают логические значения или целые числа, об успехе или неудаче. Следует использовать `|> ignore` игнорировать эти значения.
 
-[Пример программы](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) — «Hello World» для UrhoSharp с помощью F #.
+[Пример программы](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) — «Hello World» для UrhoSharp с помощью F #.
 
 ## <a name="creating-an-empty-project"></a>Создание пустого проекта
 
-Нет шаблонов F # для UrhoSharp еще доступны, поэтому для создания собственного проекта UrhoSharp, вы можете либо начинаются с [пример](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) или выполните следующие действия:
+Нет шаблонов F # для UrhoSharp еще доступны, поэтому для создания собственного проекта UrhoSharp, вы можете либо начинаются с [пример](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) или выполните следующие действия:
 
 1. Из Visual Studio для Mac, создайте новый **решение**. Выберите **iOS > приложение > приложение с одним представлением** и выберите **F #** в качестве языка реализации. 
 1. Удалить **Main.storyboard** файла. Откройте **Info.plist** файл и в **iPhone / iPod сведения о развертывании** области удалить `Main` строка в **главный интерфейс** раскрывающегося списка.
@@ -114,4 +114,4 @@ type AppDelegate () =
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Посмотрите на GitHub (пример)](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
+- [Посмотрите на GitHub (пример)](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)

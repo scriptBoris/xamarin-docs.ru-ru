@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2017
-ms.openlocfilehash: 292b0814cba446c97042ba1fe52ad9414ba74760
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: ac9a90373878035ffa8ac0be9da8993bf189b6b3
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203063"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241257"
 ---
 # <a name="advanced-concepts--internals"></a>Дополнительные понятия и внутренние компоненты
 
@@ -26,4 +26,4 @@ ms.locfileid: "39203063"
 
 ## <a name="dependency-resolutiondependency-resolutionmd"></a>[Разрешение зависимостей](dependency-resolution.md)
 
-В этой статье объясняется, как внедрить метод разрешения зависимостей в Xamarin.Forms, таким образом, чтобы контейнера внедрения зависимостей приложения имеет контроль над конструкции и пользовательские модули подготовки отчетов, эффекты, время существования и `DependencyService` реализаций.
+В этой статье объясняется, как внедрить метод разрешения зависимостей в Xamarin.Forms, чтобы контейнера внедрения зависимостей приложения имеет контроль над конструкции и пользовательские модули подготовки отчетов, эффекты, время существования и `DependencyService` реализаций.

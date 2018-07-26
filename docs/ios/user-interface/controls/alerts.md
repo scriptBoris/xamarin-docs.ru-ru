@@ -1,48 +1,48 @@
 ---
 title: Отображение оповещений в Xamarin.iOS
-description: В этом документе описывается отображение оповещений в Xamarin.iOS с помощью UIAlertController API-интерфейсы, представленные в iOS 8.
+description: В этом документе описывается, как на отображение оповещений в Xamarin.iOS с помощью UIAlertController API, появившихся в iOS 8.
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 88233cb1ac31b2669fdc38bbc9b0835a45c6b0ce
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 788e62b30dbf533df059b0c3805e04ecf7b857aa
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789600"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241344"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>Отображение оповещений в Xamarin.iOS
 
-Начиная с iOS 8, UIAlertController имеет завершенного замененного UIActionSheet и UIAlertView оба из которых являются устаревшими.
+Начиная с iOS 8, UIAlertController имеет завершенной замененного UIActionSheet и UIAlertView оба из которых уже устарели.
 
-В отличие от классов, которые он заменен которых являются подклассами UIView, UIAlertController является подклассом UIViewController.
+В отличие от классов, замененные, которые являются подклассами класса UIView, UIAlertController является подклассом UIViewController.
 
-Используйте `UIAlertControllerStyle` для указания типа предупреждение для отображения. Ниже приведены эти типы оповещений.
+Используйте `UIAlertControllerStyle` для указания типа оповещений для отображения. Ниже приведены эти типы оповещений.
 
 - **UIAlertControllerStyleActionSheet**
-    * Предварительная iOS 8. это было бы UIActionSheet
+    * До iOS 8 это было бы UIActionSheet
 - **UIAlertControllerStyleAlert**
-    * Предварительная iOS 8. это было бы UIAlertView 
+    * До iOS 8 это было бы UIAlertView 
 
-Существует три необходимые действия, выполняемые при создании предупреждения контроллера:
+Существует три необходимые действия, выполняемые при создании контроллер оповещения:
 
-- Создайте и настройте оповещения с a:
+- Создайте и настройте оповещение со следующими характеристиками:
     * заголовок
     * сообщение
     * preferredStyle
     
 - (Необязательно) Добавление текстового поля
 - Добавьте необходимые действия
-- Представления View Controller
+- Представления контроллера представления
 
-Простейший оповещение содержит одну кнопку, как показано на этом снимке экрана:
+Самый простой такое оповещение содержит одну кнопку, как показано на следующем снимке экрана:
 
- ![Предупреждение с одной кнопки](alerts-images/alert1.png)
+ ![Оповещение с одной кнопки](alerts-images/alert1.png)
 
-Код, чтобы показать простое предупреждение выглядит следующим образом:
+В коде для отображения простое предупреждение выглядит следующим образом:
 
 ```csharp
 okayButton.TouchUpInside += (sender, e) => {
@@ -58,9 +58,9 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-Отображение оповещение с несколькими действиями, выполняется таким же образом, но добавить два действия. Например на следующем рисунке показан оповещение две кнопки:
+Отображение оповещения с несколькими действиями, выполняется таким же образом, но добавить два действия. Например на следующем рисунке показан оповещение с двумя кнопками:
 
- ![ Предупреждение с две кнопки](alerts-images/alert2.png)
+ ![ Оповещение с двумя кнопками](alerts-images/alert2.png)
 
 ```csharp
 okayCancelButton.TouchUpInside += ((sender, e) => {
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-Оповещения можно также отобразить лист действия, аналогичные на следующий снимок экрана:
+Оповещения можно также отобразить лист действия, как на снимке экрана ниже:
 
- ![Предупреждение листа](alerts-images/alert3.png)
+ ![Предупреждение таблицы стилей](alerts-images/alert3.png)
 
-Добавлены кнопки предупреждение с `AddAction` метод:
+Оповещение можно с помощью добавления кнопок `AddAction` метод:
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -114,4 +114,4 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Элементы управления (пример)](https://developer.xamarin.com/samples/Controls/)
-- [Предупреждения контроллера](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/)
+- [Контроллер оповещения](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

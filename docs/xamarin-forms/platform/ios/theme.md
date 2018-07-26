@@ -1,27 +1,27 @@
 ---
 title: Добавление форматирование конкретных операций ввода-вывода
-description: В этой статье объясняется, как настроить внешний вид конкретных операций ввода-вывода не с помощью Xamarin.Forms пользовательское средство отрисовки.
+description: В этой статье объясняется, как задать внешний вид конкретного iOS без использования пользовательского средства визуализации Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: 74a3cdc340cb09e8adf15ed0dd09315c985d18b5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3b8a440617dedfbe23f869e865b3cedae21d6c5b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243536"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241381"
 ---
 # <a name="adding-ios-specific-formatting"></a>Добавление форматирование конкретных операций ввода-вывода
 
-Один способ для задания конкретного iOS форматирования — создать [пользовательское средство отрисовки](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) для элемента управления и стили специфический для платформы набор цветов для каждой платформы.
+Один из способов задать iOS конкретных форматирования — создать [пользовательское средство отрисовки](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) для элемента управления и стили специфические для платформы набор и цвета для каждой платформы.
 
-Другие параметры для управления способом внешний вид приложения iOS Xamarin.Forms:
+Другие параметры для управления способом, внешний вид приложения iOS Xamarin.Forms включают:
 
 * Настройка отображения параметров в [ **Info.plist**](#info-plist)
-* Настройка стилей элемента управления через [ `UIAppearance` API](#uiappearance)
+* Настройка стилей элемента управления с помощью [ `UIAppearance` API](#uiappearance)
 
 Эти возможности описаны ниже.
 
@@ -29,9 +29,9 @@ ms.locfileid: "35243536"
 
 ## <a name="customizing-infoplist"></a>Настройка Info.plist
 
-**Info.plist** файла позволяет настроить некоторые аспекты приложения iOS типы, такие как способ (и необходимость) отображается в строке состояния.
+**Info.plist** файл позволяет настраивать некоторые аспекты renderering приложения iOS, такие как способ (и необходимость) отображается в строке состояния.
 
-Например [Todo образец](https://developer.xamarin.com/samples/xamarin-forms/Todo/) используется следующий код, чтобы задать цвет и цвет текста на панели навигации на всех платформах:
+Например [примере Todo](https://developer.xamarin.com/samples/xamarin-forms/Todo/) использует следующий код, чтобы задать цвет и цвет текста на панели навигации на всех платформах:
 
 ```csharp
 var nav = new NavigationPage (new TodoListPage ());
@@ -39,13 +39,13 @@ nav.BarBackgroundColor = Color.FromHex("91CA47");
 nav.BarTextColor = Color.White;
 ```
 
-Результат показан в приведенном ниже фрагменте кода экрана. Обратите внимание, что элементы строки состояния черный (не может быть установлен в Xamarin.Forms, так как она является компонентом платформы).
+Результат показан на приведенном ниже фрагменте кода экрана. Обратите внимание, что элементы строки состояния черный (не может быть установлен в Xamarin.Forms, так как она является компонентом платформы).
 
 ![](theme-images/status-default-sml.png "iOS темы")
 
-В идеальном случае в строке состояния, также будут белый — что-то можно выполнить непосредственно в проекте iOS. Добавьте следующие строки для **Info.plist** для принудительного строке состояния белым цветом:
+В идеале в строке состояния, также будет белый — что-то можно выполнить непосредственно в проекте iOS. Добавьте следующие записи для **Info.plist** заставить в строке состояния, чтобы быть добавлены в:
 
-![](theme-images/info-plist.png "операций ввода-вывода записи Info.plist")
+![](theme-images/info-plist.png "операций ввода-вывода записей Info.plist")
 
 или изменение соответствующего **Info.plist** непосредственно включаемых файлов:
 
@@ -56,7 +56,7 @@ nav.BarTextColor = Color.White;
 <false/>
 ```
 
-Теперь при запуске приложения на панели навигации имеет зеленый цвет, и его текст отображается белый цвет (из-за форматирование Xamarin.Forms) *и* текст строки состояния, также очень белый благодаря конфигурации iOS:
+Теперь при запуске приложения на панели навигации отображается зеленым цветом, а его текст белого (из-за форматирования Xamarin.Forms) *и* текст строки состояния, также очень белый благодаря конфигурации iOS:
 
 ![](theme-images/status-white-sml.png "iOS темы")
 
@@ -64,11 +64,11 @@ nav.BarTextColor = Color.White;
 
 ## <a name="uiappearance-api"></a>UIAppearance API
 
-[ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) можно использовать для задания свойств visual многие элементы управления iOS *без* создавать [пользовательское средство отрисовки](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
+[ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) может использоваться для задания свойства визуальных элементов на многие элементы управления iOS *без* того, чтобы создавать [пользовательское средство отрисовки](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
-При добавлении одной строки кода, чтобы **AppDelegate.cs** `FinishedLaunching` метод задать стиль всех элементов управления данного типа, используя их `Appearance` свойство. В следующем коде содержатся два примера - глобально стиля на вкладке панели и переключите управления:
+Добавление одной строки кода для **AppDelegate.cs** `FinishedLaunching` метод задать стиль всех элементов управления данного типа с помощью их `Appearance` свойство. Следующий код содержит два примера - глобально стиля на вкладке панели и переключите управления:
 
-**AppDelegate.cs** в проекте iOS
+**AppDelegate.cs** в проект iOS
 
 ```csharp
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
@@ -86,7 +86,7 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 ### <a name="uitabbar"></a>UITabBar
 
-По умолчанию значок панели выбранная вкладка в [ `TabbedPage` ](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md) бы синий:
+По умолчанию значок панели выбранной вкладки в [ `TabbedPage` ](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md) бы синяя:
 
 ![](theme-images/tabbar-default.png "По умолчанию значок панели вкладки в TabbedPage iOS")
 
@@ -96,31 +96,31 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-В результате выбранная вкладка с:
+Это приводит к выбранной вкладки зеленым цветом:
 
 ![](theme-images/tabbar-custom.png "Зеленый значок панели вкладки в TabbedPage iOS")
 
-С помощью этого API позволяет настраивать внешний вид Xamarin.Forms `TabbedPage` в iOS с помощью очень небольшого объема кода. Ссылаться на [настройки вкладки рецепт](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/customize-tabs/) Дополнительные сведения об использовании пользовательского средства визуализации для задания определенного шрифта для вкладки.
+Этот API позволяет настраивать внешний вид Xamarin.Forms `TabbedPage` на iOS с помощью очень небольшого объема кода. Ссылаться на [Настройка вкладки рецепт](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs) Дополнительные сведения об использовании пользовательского средства визуализации, чтобы задать определенный шрифт для вкладки.
 
 ### <a name="uiswitch"></a>UISwitch
 
-`Switch` Управления еще один пример, который можно легко со стилем:
+`Switch` Управления приведен еще один пример, который можно легко стили:
 
 ```csharp
 UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-Эти снимки экрана два Показать значение по умолчанию `UISwitch` управления слева и настроенную версию (параметр `Appearance`) в правой [Todo образец](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
+Эти снимки экрана два Показать значение по умолчанию `UISwitch` элемента управления в левой части и настроенную версию (параметр `Appearance`) в правой [примере Todo](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
 
 ![](theme-images/switch-default.png "По умолчанию цвет UISwitch") ![ ] (theme-images/switch-custom.png "настроить цвет UISwitch")
 
 ### <a name="other-controls"></a>Другие элементы управления
 
-Многие элементы управления пользовательского интерфейса iOS может иметь их цвета по умолчанию и другие атрибуты, заданные с помощью [ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md).
+Многие элементы управления пользовательского интерфейса iOS может иметь их по умолчанию цвета и другие атрибуты, заданные с помощью [ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md).
 
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [UIAppearance](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)
-- [Настройка вкладок](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/customize-tabs/)
+- [Настраивать вкладки](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs)

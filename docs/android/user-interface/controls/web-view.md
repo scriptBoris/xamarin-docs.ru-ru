@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 2baf7dae71ce7607c629b570ad25f477dec66c17
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8d7b0e1abc8eb11bf812a111764b9cccfb41e041
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765312"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241179"
 ---
 # <a name="web-view"></a>Веб-представление
 
-[`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) можно создать собственные окно для просмотра веб-страниц (или даже создавать полный браузера). В этом учебнике вы создадите простой [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/) , можно просматривать и перейдите на веб-страницы.
+[`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) можно создать собственные окно просмотра веб-страниц (или даже разрабатывать полный браузера). В этом руководстве вы создадите простой [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/) , можно просматривать и веб-страницы.
 
 Создайте новый проект с именем **HelloWebView**.
 
@@ -29,11 +29,11 @@ ms.locfileid: "30765312"
     android:layout_height="fill_parent" />
 ```
 
-Поскольку это приложение будет доступ в Интернет, следует добавить соответствующие разрешения для Android в файле манифеста. Откройте свойства проекта, чтобы указать, какие разрешения приложению для работы. Включить `INTERNET` разрешения, как показано ниже:
+Так как это приложение будет получить доступ к Интернету, необходимо добавить соответствующие разрешения на Android файл манифеста. Откройте свойства проекта, чтобы указать, какие разрешения приложению для работы. Включить `INTERNET` разрешения, как показано ниже:
 
-![Настройка разрешения ИНТЕРНЕТА в манифесте Android](web-view-images/01-set-internet-permissions.png)
+![Разрешение INTERNET в манифест Android](web-view-images/01-set-internet-permissions.png)
 
-Теперь откройте **MainActivity.cs** и добавить с помощью директивы Webkit:
+Теперь откройте **MainActivity.cs** и добавить с помощью директив для Webkit:
 
 ```csharp
 using Android.Webkit;
@@ -45,7 +45,7 @@ using Android.Webkit;
 WebView web_view;
 ```
 
-Когда **WebView** будет предложено загрузить URL-адрес, он будет по умолчанию делегировать запрос в браузере по умолчанию. Чтобы **WebView** загрузить URL-адрес (а не браузер по умолчанию), необходимо подкласс `Android.Webkit.WebViewClient` и Переопределите `ShouldOverriderUrlLoading` метод. Эта пользовательская экземпляр `WebViewClient` передается `WebView`. Чтобы сделать это, добавьте следующие вложенные `HelloWebViewClient` класса внутри `MainActivity`:
+Когда **WebView** — запрос на URL-адрес, он будет по умолчанию делегировать запрос к браузеру по умолчанию. Чтобы **WebView** загрузить URL-адрес (вместо браузер по умолчанию), вам необходимо подкласс `Android.Webkit.WebViewClient` и переопределить `ShouldOverriderUrlLoading` метод. Экземпляр эта пользовательская `WebViewClient` предоставляется `WebView`. Чтобы сделать это, добавьте следующие вложенные `HelloWebViewClient` класс `MainActivity`:
 
 ```csharp
 public class HelloWebViewClient : WebViewClient
@@ -58,9 +58,9 @@ public class HelloWebViewClient : WebViewClient
 }
 ```
 
-Когда `ShouldOverrideUrlLoading` возвращает `false`, сообщает для Android, текущий `WebView` экземпляр обработки запроса, и никаких дальнейших действий не требуется. 
+Когда `ShouldOverrideUrlLoading` возвращает `false`, он сообщает о для Android, текущего `WebView` экземпляр обработал запрос, и никаких дальнейших действий не требуется. 
 
-Если вы используете уровень API, 24 или более поздней версии, используйте перегруженный `ShouldOverrideUrlLoading` , который принимает `IWebResourceRequest` второго аргумента вместо `string`:
+Если вы используете API уровня 24 или более поздней версии, воспользуйтесь перегрузкой `ShouldOverrideUrlLoading` , принимающий `IWebResourceRequest` второго аргумента вместо `string`:
 
 ```csharp
 public class HelloWebViewClient : WebViewClient
@@ -91,20 +91,20 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Инициализирует элемент [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) , из [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/) макета и позволяет JavaScript для [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) с [ `JavaScriptEnabled` ](https://developer.xamarin.com/api/property/Android.Webkit.WebSettings.JavaScriptEnabled/) 
- `= true` (см. [вызова C\# из JavaScript](https://developer.xamarin.com/recipes/android/controls/webview/call_csharp_from_javascript) рецепт сведения о способах вызова C\# функции из кода JavaScript). Наконец, веб-страницу начальной загрузки с [ `LoadUrl(String)` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/%2fM%2fLoadUrl).
+Это инициализирует член [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) , из [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/) макета и позволяет JavaScript для [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) с [ `JavaScriptEnabled` ](https://developer.xamarin.com/api/property/Android.Webkit.WebSettings.JavaScriptEnabled/) 
+ `= true` (см. в разделе [C, вызовите\# из JavaScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript) рецепт сведения о том, как вызов C\# функции из кода JavaScript). Наконец, веб-страницу начальной загружается с [ `LoadUrl(String)` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/%2fM%2fLoadUrl).
 
-Выполните сборку и запуск приложения. Вы увидите приложении просмотра простой веб-страницы, как показано на следующем снимке экрана:
+Выполните сборку и запуск приложения. Вы должны увидеть приложение для просмотра простой веб-страницы, как показано на следующем снимке экрана:
 
 [![Пример приложения, отображение веб-представление](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
 
-Для обработки **ОБРАТНО** нажатие клавиши, добавьте следующие инструкции с помощью:
+Для обработки **ОБРАТНО** "Кнопка" клавиши, добавьте следующий оператор using:
 
 ```csharp
 using Android.Views;
 ```
 
-Добавьте следующий метод внутри `HelloWebView` действия:
+Добавьте следующий метод в `HelloWebView` действия:
 
 ```csharp
 public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.KeyEvent e)
@@ -118,19 +118,19 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 }
 ```
 
-Это [ `OnKeyDown(int, KeyEvent)` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnKeyDown/(Android.Views.Keycode%2cAndroid.Views.KeyEvent)) метод обратного вызова вызывается при каждом нажатии кнопки во время выполнения действия. Условие в использует [ `KeyEvent` ](https://developer.xamarin.com/api/type/Android.Views.KeyEvent/) для проверки ли нажата клавиша — **ОБРАТНО** кнопки и необходимость [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) способен фактически Переход обратно (если таковой имеется журнал). Если выполняются оба условия, то [ `GoBack()` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.GoBack/) вызывается метод, в которой можно перейти назад один шаг в [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) журнала. Возвращение `true` указывает, что событие было обработано. Если это условие не выполняется, это событие отправляется обратно в систему.
+Это [ `OnKeyDown(int, KeyEvent)` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnKeyDown/(Android.Views.Keycode%2cAndroid.Views.KeyEvent)) метод обратного вызова будет вызываться при каждом нажатии кнопки во время выполнения действия. Условие в использует [ `KeyEvent` ](https://developer.xamarin.com/api/type/Android.Views.KeyEvent/) проверяемый ли нажата клавиша является **ОБРАТНО** кнопку и был ли [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) способен фактически Переход назад (если он имеет журнал). Если выполняются оба условия, а затем [ `GoBack()` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.GoBack/) вызывается метод, которому будет перемещаться назад на одну этапом [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) журнал. Возвращение `true` указывает, что событие было обработано. Если это условие не соблюдено, это событие отправляется обратно в систему.
 
-Снова запустите приложение. Теперь можно переходить по ссылкам и переход назад по журналу страницы:
+Снова запустите приложение. Теперь можно переходить по ссылкам, а также переходить журнала страниц:
 
-[![Снимки экрана примера кнопки «Назад» в действии](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
+[![Снимки экрана с кнопкой «Назад» в действии](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
 
 
-*Некоторые части этой страницы, изменения на основе работы создан и совместно используются Android открыть исходный проект и используются в соответствии с условиями, описанной в*
-[*Creative Commons 2.5 однозначного соответствия лицензий* ](http://creativecommons.org/licenses/by/2.5/).
+*Некоторые части этой страницы, изменения с учетом работы создана и совместно используется Android откройте исходный проект и используются в соответствии с условиями, описанными в*
+[*лицензии Creative Commons 2.5 Attribution* ](http://creativecommons.org/licenses/by/2.5/).
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [C# вызова из кода JavaScript](https://developer.xamarin.com/recipes/android/controls/webview/call_csharp_from_javascript)
+- [C# вызов из JavaScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)
 - [Android.Webkit.WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView)
 - [KeyEvent](https://developer.xamarin.com/api/type/Android.Webkit.WebView/Client)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: f6ca8f0900c8bc325cc49a7484dabe5bf2534257
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7f0e1c27f7d6a62dc43ac447c4f796d685a6cd91
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38999093"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241215"
 ---
 # <a name="device-orientation"></a>Ориентации устройства
 
@@ -91,7 +91,7 @@ Xamarin.Android поддерживает несколько параметров
 
 ## <a name="reacting-to-changes-in-orientation"></a>Реагирование на изменения в ориентации
 
-Xamarin.Forms не предлагает все собственные события для уведомления приложения ориентации изменений в общем коде. Тем не менее `SizeChanged` событие `Page` применяется, когда доля ширины или высоты `Page` изменения. Если ширина `Page` больше, чем высота, устройство находится в альбомной ориентации. Дополнительные сведения см. в разделе [отобразить изображение, в зависимости от ориентации экрана](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
+Xamarin.Forms не предлагает все собственные события для уведомления приложения ориентации изменений в общем коде. Тем не менее `SizeChanged` событие `Page` применяется, когда доля ширины или высоты `Page` изменения. Если ширина `Page` больше, чем высота, устройство находится в альбомной ориентации. Дополнительные сведения см. в разделе [отобразить изображение, в зависимости от ориентации экрана](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation).
 
 > [!NOTE]
 > Нет существующих, бесплатный пакет NuGet для получения уведомлений об изменениях ориентации в общем коде. См. в разделе [репозиторий GitHub](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Дополнительные сведения.
@@ -475,4 +475,4 @@ protected override void OnSizeAllocated (double width, double height){
 - [Макет (пример)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [Пример BusinessTumble (пример)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [Гибкий макет (пример)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [Вывод изображения в зависимости от ориентации экрана](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)
+- [Вывод изображения в зависимости от ориентации экрана](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)
