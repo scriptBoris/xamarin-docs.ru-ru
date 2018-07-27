@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 1292db3534570dace90639958a3d5be9f6466716
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 886cc1de87bd8225bd0389d2e7b84b546ffb39d7
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765250"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241501"
 ---
 # <a name="gdb"></a>GDB
 
@@ -145,7 +145,7 @@ GNU gdb (GDB) 7.3.1-gg2
 2.  Включить отладку приложения.
 3.  Предоставить доступный `gdbserver`.
 
-Разрешение `INTERNET` по умолчанию включается в приложениях для отладки. Если в вашем приложении оно отсутствует, добавьте его, отредактировав файл **Properties/AndroidManifest.xml** или изменив [свойства проекта](https://developer.xamarin.com/recipes/android/general/projects/add_permissions_to_android_manifest/).
+Разрешение `INTERNET` по умолчанию включается в приложениях для отладки. Если в вашем приложении оно отсутствует, добавьте его, отредактировав файл **Properties/AndroidManifest.xml** или изменив [свойства проекта](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest).
 
 Чтобы включить отладку приложений, установите свойство настраиваемого атрибута [ApplicationAttribute.Debugging](https://developer.xamarin.com/api/property/Android.App.ApplicationAttribute.Debuggable/) в значение `true` или отредактируйте файл **Properties/AndroidManifest.xml**, присвоив атрибуту `//application/@android:debuggable` значение`true`:
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 1b017f282a1295dba4b2a051928b54fc16ff746b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 4f5f3ab00b55de270c209d6fa7082c3acc40b5ef
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35243744"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241309"
 ---
 # <a name="hello-xamarinforms"></a>Привет, Xamarin.Forms
 
@@ -34,7 +34,7 @@ _В этом руководстве содержатся вводные свед
 
 - [Общие сведения о Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Отладка в Visual Studio](http://msdn.microsoft.com/library/k0k771bt%28v=vs.90%29.aspx)
-- [Руководство по отладке в Visual Studio для Mac](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/)
+- [Руководство по отладке в Visual Studio для Mac](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging)
 - [Бесплатное самостоятельное обучение (видео)](https://university.xamarin.com/self-guided)
 - [Начало работы с Xamarin (видео)](https://developer.xamarin.com/videos/)
 - [Начало работы с Xamarin.Forms (книга для iOS)](https://developer.xamarin.com/workbooks/xamarin-forms/getting-started/GettingStartedWithXamarinForms-ios.workbook)

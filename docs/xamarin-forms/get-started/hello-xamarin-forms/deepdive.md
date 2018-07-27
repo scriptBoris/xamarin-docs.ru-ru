@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: f51992ec5311bdf0c7df7478651398f6ed8491a9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7eff7f4413b533caadcf2aa8b5eed8c4ab65449d
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996237"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242229"
 ---
 # <a name="xamarinforms-deep-dive"></a>Подробное знакомство с Xamarin.Forms
 
@@ -79,7 +79,7 @@ Visual Studio для Mac — это бесплатная интегрирова
 - **MainPage.xaml.cs** — код программной части для класса `MainPage`, который содержит бизнес-логику, выполняемую при взаимодействии пользователя со страницей.
 - **PhoneTranslator.cs** — бизнес-логика, отвечающая за преобразования номера телефона из текстового в цифровой формат. Вызывается из файла **MainPage.xaml.cs**.
 
-Дополнительные сведения о структуре приложения Xamarin.iOS см. [здесь](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Дополнительные сведения о структуре приложения Xamarin.Android см. [здесь](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
+Дополнительные сведения о структуре приложения Xamarin.iOS см. [здесь](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy-of-a-xamarinios-application). Дополнительные сведения о структуре приложения Xamarin.Android см. [здесь](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
 
 ## <a name="architecture-and-application-fundamentals"></a>Архитектура и принципы работы приложения
 
@@ -325,7 +325,7 @@ void OnTranslate(object sender, EventArgs e)
 
 ## <a name="testing-and-deployment"></a>Тестирование и развертывание
 
-Как Visual Studio для Mac, так и Visual Studio предоставляют множество возможностей для тестирования и развертывания приложения. Одной из неотъемлемых стадий жизненного цикла приложения является отладка, которая позволяет выявить проблемы в коде. Дополнительные сведения см. в разделах [Установка точки останова](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [Пошаговая отладка кода](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/) и [Вывод данных в окно журнала](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
+Как Visual Studio для Mac, так и Visual Studio предоставляют множество возможностей для тестирования и развертывания приложения. Одной из неотъемлемых стадий жизненного цикла приложения является отладка, которая позволяет выявить проблемы в коде. Дополнительные сведения см. в разделах [Установка точки останова](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint), [Пошаговая отладка кода](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code) и [Вывод данных в окно журнала](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window).
 
 Симуляторы позволяют начать тестирование и развертывание приложения, реализуя полезные функции для тестирования приложений. Тем не менее пользователи будут работать с готовым приложением не в симуляторе, поэтому любое приложение необходимо тестировать на реальных устройствах как можно раньше и чаще. Дополнительные сведения о процессе подготовки для устройств iOS см. в разделе [Подготовка устройства](~/ios/get-started/installation/device-provisioning/index.md). Дополнительные сведения о процессе подготовки для устройств Android см. в разделе [Настройка устройства для разработки](~/android/get-started/installation/set-up-device-for-development.md).
 

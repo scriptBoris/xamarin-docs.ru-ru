@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 494dfad0ba3d26147604ce1bca1de49fac318811
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4b21a69e49c8c7fd79de8edac9858c4714657f1c
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785438"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242320"
 ---
 # <a name="debugging-xamarinios-apps"></a>Отладка приложений Xamarin.iOS
 
@@ -30,7 +30,7 @@ _Для отладки приложений Xamarin.iOS можно исполь�
 
 ## <a name="setting-breakpoints"></a>Задание точек останова
 
-Приступая к процессу отладки, в первую очередь необходимо [задать для приложения точки останова](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/). Для этого щелкните на полях редактора рядом с номером той строки кода, где нужно установить точку:
+Приступая к процессу отладки, в первую очередь необходимо [задать для приложения точки останова](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Для этого щелкните на полях редактора рядом с номером той строки кода, где нужно установить точку:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
 
@@ -121,7 +121,7 @@ _Для отладки приложений Xamarin.iOS можно исполь�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Чтобы задать условную точку останова в Visual Studio 2015, сначала [задайте обычную точку останова](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/). Щелкните точку останова правой кнопкой мыши, чтобы открыть контекстное меню:
+Чтобы задать условную точку останова в Visual Studio 2015, сначала [задайте обычную точку останова](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Щелкните точку останова правой кнопкой мыши, чтобы открыть контекстное меню:
 
  [![](debugging-in-xamarin-ios-images/image4vs.png "Контекстное меню точки останова")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
@@ -241,6 +241,6 @@ Xamarin.iOS поставляется с исходным кодом для би�
 
 - [Отладка с помощью Xamarin](/visualstudio/mac/debugging/)
 - [Визуализация данных](/visualstudio/mac/data-visualizations/)
-- [Задание точки останова](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)
-- [Пошаговое прохождение кода](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/)
-- [Вывод информации в окно журнала](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/)
+- [Задание точки останова](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)
+- [Пошаговое прохождение кода](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)
+- [Вывод информации в окно журнала](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)
