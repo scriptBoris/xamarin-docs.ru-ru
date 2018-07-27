@@ -1,69 +1,67 @@
 ---
-title: Проекты NuGet (Nugetizer 3000)
-description: В этом документе описывается использование Nugetizer 3000 средство для автоматического создания пакетов NuGet для совместного использования кода между платформами.
+title: Проекты библиотеки многоплатформенных NuGet (также называемые Nugetizer 3000)
+description: В этом документе описывается, как использовать средство Nugetizer 3000 для автоматического создания пакетов NuGet для совместного использования кода между платформами.
 ms.prod: xamarin
 ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
-author: asb3993
-ms.author: amburns
-ms.date: 11/22/2017
-ms.openlocfilehash: f79ed775173e05dd850fbc74c53127b63c0d5f34
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: conceptdev
+ms.author: crdun
+ms.date: 07/25/2018
+ms.openlocfilehash: 1d48bc28aa4477361ca8057fda91ee3258f36a73
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780774"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270432"
 ---
-# <a name="nuget-projects-nugetizer-3000"></a>Проекты NuGet (Nugetizer 3000)
+# <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>Проекты многоплатформенная библиотека NuGet (Nugetizer 3000)
 
-_Автоматически создайте пакеты NuGet, чтобы совместное использование кода между платформами, с помощью «3000 Nugetizer"!_
+_Автоматически создайте пакеты NuGet для совместного использования кода между платформами с использованием «Nugetizer 3000"!_
 
-Можно автоматически создавать пакеты NuGet для совместного использования кода на платформах с помощью _Nugetizer 3000_. Это делает имеется возможность создания пакетов NuGet с существующие проекты библиотеки или путем создания нового **проекта библиотеки многоплатформенных**.
+Можно автоматически создавать пакеты NuGet для совместного использования кода между платформами с использованием _Nugetizer 3000_. В результате можно создать пакеты NuGet из имеющиеся проекты библиотеки или создав новый **проект библиотеки многоплатформенных**.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
-Nugetizer 3000 входит в состав Visual Studio для Mac 6.2.
+Nugetizer 3000 входит в состав Visual Studio для Mac &ndash; искать **библиотеки > Библиотека Mulitplatform** проекта в **файл > создать** окна:
 
-[![](images/mulitplatform-library-sml.png "Создать новое окно многоплатформенных библиотеки")](images/mulitplatform-library.png#lightbox)
+[![](images/mulitplatform-library-sml.png "Создать новое окно многоплатформенные библиотеки")](images/mulitplatform-library.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Для использования Nugetizer 3000 в Visual Studio, см. [Загрузите и запустите установщик VSIX](http://bit.ly/nugetizer-2017).
+Чтобы использовать Nugetizer 3000 в Visual Studio, воспользуйтесь ссылкой [скачайте и запустите установщик VSIX](http://bit.ly/nugetizer-2017).
 
 -----
 
 ## <a name="building-nuget-packages"></a>Построение пакетов NuGet
 
-После настройки каждой сборки проекта выводит полный пакет NuGet, который используется для внутренних целей совместного использования кода с другими приложениями или отправлены [NuGet.org](https://www.nuget.org).
+После настройки каждой сборки проекта выводит полный пакет NuGet, который используется внутренне совместное использование кода с другими приложениями или переданные [NuGet.org](https://www.nuget.org).
 
 Существует три варианта использования этой функции:
 
 - [Имеющиеся проекты библиотеки](existing-library.md)
 
-  Создайте пакет NuGet из существующих проектов PCL (или .NET Standard).
+  Создание пакета NuGet из существующих проектов переносимой библиотеки Классов (или .NET Standard).
 
-- [Создание нового проекта многоплатформенного библиотеки](single-codebase.md)
+- [Создание нового проекта многоплатформенная библиотека](single-codebase.md)
 
-  Создайте новую библиотеку для совместного использования кода через NuGet, с помощью PCL или .NET Standard.
+  Создайте новую библиотеку для совместного использования общего кода с помощью NuGet, с помощью переносимой библиотеки Классов или .NET Standard.
 
-- [Создание новых проектов библиотекой для определенной платформы](platform-specific.md)
+- [Создание новых проектов библиотеки платформы](platform-specific.md)
 
-  Создайте новую библиотеку и NuGet, включая специфический для платформы код для iOS и Android и использует общий проект для хранения общего кода и проекты под конкретные платформы для поддержки функциональных возможностей конкретного iOS или Android.
+  Создайте новую библиотеку и NuGet, которая включает в себя специфические для платформы код для iOS и Android, а также использует общий проект для размещения общего кода и проекты под конкретные платформы для поддержки функциональных возможностей конкретного iOS или Android.
 
-Ссылаться на [руководство метаданных](metadata.md) Подробнее об обязательных и необязательных метаданных, которые необходимо добавить в любой пакет NuGet.
-
+Ссылаться на [руководство по метаданным](metadata.md) сведения об обязательных и необязательных метаданных, которая должна быть добавлена для любого пакета NuGet.
 
 ## <a name="further-nuget-information"></a>Дополнительные сведения о NuGet
 
-Дополнительные сведения о [вручную создание NuGets для Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md) и [включить пакет NuGet в приложении](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+Дополнительные сведения о [ручного создания пакеты NuGet для Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md) и [включить пакет NuGet в приложении](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
-Корпорации Майкрософт [документации по NuGet](https://docs.microsoft.com/nuget/) содержит более подробные сведения о **.nupkg** формат и использования пакетов NuGet в Visual Studio.
+Корпорации Майкрософт [документации по NuGet](https://docs.microsoft.com/nuget/) содержат более подробную информацию на **.nupkg** формат и использование пакетов NuGet в Visual Studio.
 
-Обсуждение разработки для проектов пакета NuGet (так) NuGetizer 3000) можно найти в [репозитории NuGet GitHub](https://github.com/NuGet/Home/wiki/NuGetizer-3000).
-
+Обсуждение разработки для проектов пакет NuGet (так называемые) NuGetizer 3000) можно найти в [репозитории NuGet GitHub](https://github.com/NuGet/Home/wiki/NuGetizer-3000).
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Варианты использования NuGetizer 3000](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
 - [Вручную создайте пакеты NuGet для Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md)
-- [Документации по NuGet](https://docs.microsoft.com/nuget/)
+- [Документация по NuGet](https://docs.microsoft.com/nuget/)
 - [Заметки о выпуске](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#NuGetizer_3000)

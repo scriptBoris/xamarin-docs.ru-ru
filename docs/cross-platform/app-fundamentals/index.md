@@ -1,43 +1,42 @@
 ---
 title: Совместное использование кода на нескольких платформах
-description: Документ содержит ссылки на различные руководства, описывающие методы для совместного использования кода, включая переносимые библиотеки классов, общие проекты, .NET Standard и NuGet.
+description: Этот документ содержит ссылки на различные руководства, описывающие способы совместного использования кода, включая переносимые библиотеки классов, общие проекты, .NET Standard и NuGet.
 ms.prod: xamarin
 ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
-author: asb3993
-ms.author: amburns
-ms.date: 02/18/2018
-ms.openlocfilehash: 61377afa61e2c2006c2fdf8ef9b21fe7d567b3de
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: conceptdev
+ms.author: crdun
+ms.date: 07/18/2018
+ms.openlocfilehash: 3a2c3f98e3ba83db0794a68ff1d62a9845a111c0
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780077"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270193"
 ---
 # <a name="sharing-code-on-multiple-platforms"></a>Совместное использование кода на нескольких платформах
 
-В этом разделе содержится руководство для некоторых наиболее распространенных задач действия или концепции, разработчики должны иметь в виду при разработке приложений для мобильных устройств.
+В этой статье рассматривается различные параметры, доступные для совместного использования кода на платформах, включая Windows, Android, iOS и многое другое.
 
-## <a name="code-sharing-overviewcode-sharingmd"></a>[Общие сведения о совместное использование кода](code-sharing.md)
+## <a name="code-sharing-overviewcode-sharingmd"></a>[Совместное использование Обзор кода](code-sharing.md)
 
-Дополнительные сведения о различных кода, параметры, доступные для проектов Xamarin, включая переносимой библиотеки классов (PCLs), общих проектов и стандартные библиотеки .NET для управления доступом.
+Дополнительные сведения о различных параметры, доступные для проектов Xamarin, включая стандартные библиотеки .NET и проектах общих совместного использования кода. Переносимые библиотеки классов, также поддерживаются, однако считается устаревшим в связи с .NET Standard.
 
+## <a name="net-standardcross-platformapp-fundamentalsnet-standardmd"></a>[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
 
-##  <a name="portable-class-librariescross-platformapp-fundamentalspclmd"></a>[Переносимые библиотеки классов](~/cross-platform/app-fundamentals/pcl.md)
+.NET standard является предпочтительным при совместное использование кода несколькими платформами. Код создан для конкретной версии (2.0 обеспечивает лучший API совместимости с существующим кодом .NET Framework) и может быть принято элементом других проектов, которые поддерживают этот уровень или более поздней версии. Проектов .NET standard, поддерживаются в Visual Studio 2017 и Visual Studio для Mac.
 
-Проекты переносимой библиотеки классов позволяют создавать и распространять сборки, содержащие общий код на нескольких платформах. Для создания переносимой библиотеки классов (или «PCL») сначала выбрать какие платформы целевого, а затем написать код для подмножество .NET Framework, которая доступна в профиле, определенные для этих платформ. В этом документе описывается создание и использование PCLs с помощью Xamarin.
+## <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[Общие проекты](~/cross-platform/app-fundamentals/shared-projects.md)
 
-##  <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[Общие проекты](~/cross-platform/app-fundamentals/shared-projects.md)
+Общие проекты позволяют писать общий код, на который ссылается несколько проектов различных приложений. Код компилируется как часть каждого ссылающийся проект и могут включать директивы компилятора для внедрения функциональных возможностей платформы базы общего кода. В этой статье рассматриваются как общие проекты работают и как создать и использовать их с проектами Xamarin.
 
-Общие проекты позволяют писать общий код, который ссылается на несколько проектов различных приложений. Код компилируется как часть каждого ссылающийся проект и могут включать директивы компилятора для внедрения функциональных возможностей платформой базы общего кода. Здесь рассматривается работа общие проекты и как создать и использовать их с проектами Xamarin.
+## <a name="portable-class-librariescross-platformapp-fundamentalspclmd"></a>[Переносимые библиотеки классов](~/cross-platform/app-fundamentals/pcl.md)
 
-##  <a name="net-standardcross-platformapp-fundamentalsnet-standardmd"></a>[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
+Проекты переносимой библиотеки классов можно создавать и распространять сборки, содержащие общий код для запуска на нескольких платформах. Для создания переносимой библиотеки классов (или «PCL») сначала выбрать какие платформы для целевой, а затем написать код для подмножество .NET Framework, которая доступна в профиле, определенных для этих платформ. PCL считается устаревшим в последних версиях Visual Studio; Разработчики, рекомендуется вместо этого использовать .NET Standard 2.0.
 
-Стандартная .NET — это новая возможность для совместное использование кода несколькими платформами. Он работает сходным образом в переносимой библиотеки классов; Код построена на основе конкретной версии (в настоящее время 1.0 до версии 1.6) и может быть использовано в других проектах, которые поддерживают этот уровень или более поздней версии. Проекты .NET standard, поддерживаются в Xamarin Studio 6.2, Visual Studio для Windows и Visual Studio для Mac.
+## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[Проекты NuGet: многоплатформенного библиотек для совместного использования кода](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
 
-##  <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[Проекты NuGet: Многоплатформенного библиотек для совместного использования кода](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
+Пакеты NuGet можно автоматически создавать из проектов переносимой библиотеки Классов или .NET standard; и проектах общих можно упаковать в пакеты NuGet «с подменой», с помощью отдельный тип проекта NuGet. В этом разделе описывается создание пакетов NuGet для каждого сценария совместного использования кода.
 
-Пакеты NuGet можно создавать автоматически из проектов PCL или .NET standard. и общие проекты, которые могут быть упакованы в пакеты NuGet «заманить и подменить», с помощью отдельный тип проекта NuGet. В этом разделе описывается создание пакетов NuGet для каждого сценария совместного использования кода.
+## <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[Вручную созданию пакетов NuGet для Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md)
 
-##  <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[Создание вручную пакетов NuGet для Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md)
-
-Советы по созданию пакеты NuGet, которые работают с платформе Xamarin.
+Советы по созданию пакетов NuGet, которые работают на платформе Xamarin.

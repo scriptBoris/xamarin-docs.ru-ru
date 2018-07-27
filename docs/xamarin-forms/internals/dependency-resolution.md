@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2379c8ddc4bea6dd97bc4febd055dd8dfef39beb
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242385"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270492"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Разрешение зависимостей в Xamarin.Forms
 
@@ -111,7 +111,7 @@ public partial class App : Application
 
 После регистрации типа в проекте платформы `IContainer` объекта должны быть построены, который выполняется путем вызова метода `BuildContainer` метод. Этот метод вызывает метод в Autofac `Build` метод `ContainerBuilder` экземпляр, который создает новый контейнер внедрения зависимостей, содержащий регистрации, которые были внесены.
 
-В последующих разделах `Logger` класс, который реализует `ILogger` интерфейсом, внедряется в конструкторы класса. `Logger` Функциональность реализует простую регистрацию класса с помощью `Debug.WriteLine` метод и используется для демонстрации того, как службы могут внедряться в пользовательские отрисовщики, эффекты, и [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) реализаций.
+В последующих разделах `Logger` класс, реализующий `ILogger` интерфейс внедряется в конструкторы класса. `Logger` Функциональность реализует простую регистрацию класса с помощью `Debug.WriteLine` метод и используется для демонстрации того, как службы могут внедряться в пользовательские отрисовщики, эффекты, и [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) реализаций.
 
 ### <a name="registering-custom-renderers"></a>Регистрация пользовательских модулей подготовки отчетов
 

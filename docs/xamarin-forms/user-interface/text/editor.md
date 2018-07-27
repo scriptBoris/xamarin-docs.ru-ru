@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/13/2018
-ms.openlocfilehash: 9774dcad14c2e2fc7e1203ef887a19f4b96218ba
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 6e3cf12431440823b1d32d91927bc634f60fd5e2
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241479"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270460"
 ---
 # <a name="xamarinforms-editor"></a>Редактор Xamarin.Forms
 
@@ -108,7 +108,7 @@ var editor = new Editor { Keyboard = Keyboard.Chat };
 
 Примеры каждого клавиатуры можно найти в нашей [рецепты](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) репозитория.
 
-[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Класс также имеет [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) фабричный метод, который может использоваться для настройки клавиатуры, указав режим регистр букв, проверка орфографии и предложения. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) значения перечисления как указано в качестве аргументов метода с настраиваемый `Keyboard` возвращению. `KeyboardFlags` Перечисление содержит следующие значения:
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Класс также имеет [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) фабричный метод, который может использоваться для настройки клавиатуры, указав режим регистр букв, проверка орфографии и предложения. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) значения перечисления заданы как аргументы для метода с настраиваемый `Keyboard` возвращению. `KeyboardFlags` Перечисление содержит следующие значения:
 
 - [`None`](xref:Xamarin.Forms.KeyboardFlags.None) — появившихся с клавиатурой.
 - [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) — Указывает, будет автоматически прописной первую букву каждого введенного предложения первое слово.
