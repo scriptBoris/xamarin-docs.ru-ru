@@ -6,6 +6,7 @@
 ## [Принципы работы приложения](app-fundamentals/index.md)
 ### [Специальные возможности](app-fundamentals/accessibility.md)
 ### [Общие шаблоны и способы](app-fundamentals/patterns.md)
+### [Консольные приложения](app-fundamentals/console.md)
 ### [API в macOS](app-fundamentals/mac-apis.md)
 ### [XIB-файлы](app-fundamentals/xib.md)
 ### [Проектирование пользовательского интерфейса .storyboard/.xib-less](app-fundamentals/xibless-ui.md)
