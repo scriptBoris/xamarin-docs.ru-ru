@@ -1,41 +1,41 @@
 ---
-title: Новые возможности в MapKit на iOS 11
-description: 'Этот документ описывает новые возможности MapKit iOS 11: группирование маркеры, компаса кнопки, масштабе и кнопки отслеживания пользователя.'
+title: Новые возможности в MapKit в iOS 11
+description: 'Этом документе описываются новые возможности iOS 11 MapKit: группирование маркеры, компаса кнопки, масштабированного представления и кнопки отслеживания пользователя.'
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/30/2016
-ms.openlocfilehash: f73078a2dcbaeefeb5608ce7ec1e2c12b261acad
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/30/2017
+ms.openlocfilehash: c060a7bbc8d5968aeaca5f84743cdf22513dfbec
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787410"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350590"
 ---
-# <a name="new-features-in-mapkit-on-ios-11"></a>Новые возможности в MapKit на iOS 11
+# <a name="new-features-in-mapkit-on-ios-11"></a>Новые возможности в MapKit в iOS 11
 
 iOS 11 MapKit добавляет следующие новые функции:
 
 - [Заметка кластеризации](#clustering)
-- [Компас кнопки](#compass)
-- [Масштаб представления](#scale)
+- [Компаса кнопки](#compass)
+- [Масштабированного представления](#scale)
 - [Кнопка отслеживания пользователя](#user-tracking)
 
-![Карта, отображающая кластеризованный маркеры и компас кнопки](mapkit-images/cyclemap-heading.png)
+![Схема демонстрирующая кластеризованный маркеры и компаса кнопки](mapkit-images/cyclemap-heading.png)
 
 <a name="clustering" />
 
-## <a name="automatically-grouping-markers-while-zooming"></a>Автоматическое группирование маркеры при сохранении масштабирования
+## <a name="automatically-grouping-markers-while-zooming"></a>Автоматическое группирование маркеров во время масштабирования
 
-Образец [MapKit образца «Tandm»](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) показано, как реализовать новые заметки iOS 11 кластеров.
+Образец [MapKit образец «Tandm»](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) показан способ реализации новой заметки iOS 11 кластеров.
 
 ### <a name="1-create-an-mkpointannotation-subclass"></a>1. Создание `MKPointAnnotation` подкласс
 
-Класс заметки точка представляет каждый маркер на карте. Они могут быть добавлены по отдельности с помощью `MapView.AddAnnotation()` или из массива, используя `MapView.AddAnnotations()`.
+Класс заметки точка представляет каждый маркер на карте. Могут быть добавлены по отдельности, используя `MapView.AddAnnotation()` или из массива с помощью `MapView.AddAnnotations()`.
 
-Классы точки заметки не имеют визуальное представление, они требуются только для представления данных, связанного с маркером (самое главное, `Coordinate` свойство, которое является его широту и долготу на карте) и любые пользовательские свойства:
+Классы точки заметки не имеют визуального представления, они необходимы только для представления данных, связанное с маркером (что самое важное, `Coordinate` свойство, которое является его широты и долготы на карте) и любые пользовательские свойства:
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -57,18 +57,18 @@ public class Bike : MKPointAnnotation
 }
 ```
 
-### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. Создание `MKMarkerAnnotationView` подкласс одного маркеров
+### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. Создание `MKMarkerAnnotationView` подкласса для одного маркеры
 
-Представление маркера заметки — визуальное представление каждого примечания и реализуется с помощью свойств, например:
+Представление маркера заметки — визуальное представление каждого примечания и реализуется с помощью свойств, таких как:
 
 - **MarkerTintColor** — цвет маркера.
-- **GlyphText** — отображение текста в маркере.
-- **GlyphImage** — задает изображение, отображаемое в маркере.
-- **DisplayPriority** — определяет z порядке (наложения поведение) при переполнении карты с маркерами. Используйте один из `Required`, `DefaultHigh`, или `DefaultLow`.
+- **GlyphText** — отображение текста в маркер.
+- **GlyphImage** — задает изображение, отображаемое в маркер.
+- **DisplayPriority** — определяет z порядок (наложения поведение) при переполнении карты с маркерами. Используйте один из `Required`, `DefaultHigh`, или `DefaultLow`.
 
-Чтобы обеспечить поддержку автоматического кластеризации, необходимо также задать:
+Для поддержки автоматической кластеризации, необходимо также задать:
 
-- **ClusteringIdentifier** — определяет, какие маркеры получить компактными группами. Можно использовать тот же идентификатор для всех маркеров или использовать разные идентификаторы для управления способом, группируются вместе.
+- **ClusteringIdentifier** — определяет, какие маркеры получить компактными группами. Можно использовать тот же идентификатор для всех маркеров, или использовать разные идентификаторы для управления способом, они группируются вместе.
 
 ```csharp
 [Register("BikeView")]
@@ -104,15 +104,15 @@ public class BikeView : MKMarkerAnnotationView
   }
 ```
 
-### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. Создать `MKAnnotationView` для представления кластеров маркеров
+### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. Создание `MKAnnotationView` для представления кластеров маркеров
 
-При представлении заметки, который представляет собой кластер маркеры _удалось_ быть простой образ, пользователи ожидают, что приложению предоставлять визуальные подсказки сколько маркеры были сгруппированы вместе.
+При представлении заметки, который представляет кластер маркеров _удалось_ быть простого образа, пользователи ожидают, что приложению предоставлять визуальные подсказки о времени были сгруппированы количества маркерами.
 
-[Пример кода](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) использует CoreGraphics число маркеров в кластере, а также представление графа круг долю каждого типа маркера.
+[Пример кода](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) использует CoreGraphics для подготовки к просмотру число маркеров в кластере, а также представление графа круг долю каждого типа маркера.
 
 Также следует задать:
 
-- **DisplayPriority** — определяет z порядке (наложения поведение) при переполнении карты с маркерами. Используйте один из `Required`, `DefaultHigh`, или `DefaultLow`.
+- **DisplayPriority** — определяет z порядок (наложения поведение) при переполнении карты с маркерами. Используйте один из `Required`, `DefaultHigh`, или `DefaultLow`.
 - **CollisionMode** — `Circle` или `Rectangle`.
 
 ```csharp
@@ -181,7 +181,7 @@ public class ClusterView : MKAnnotationView
 
 ### <a name="4-register-the-view-classes"></a>4. Регистрация классов представления
 
-Когда создается представление элемента управления карты и добавленными к представлению, регистрация типы представлений заметки включить автоматическое поведение кластеризации, как карты развернуто и выхода из системы:
+Когда создается элемент управления map представление и добавлены к представлению, зарегистрировать типы представлений заметки, чтобы включить автоматическое поведение кластеризации, как карты является одновременное увеличение и уменьшение:
 
 ```csharp
 MapView.Register(typeof(BikeView), MKMapViewDefault.AnnotationViewReuseIdentifier);
@@ -190,23 +190,23 @@ MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReus
 
 ### <a name="5-render-the-map"></a>5. Визуализации карты!
 
-При отображении карты заметки маркеры кластеризованный или к просмотру в зависимости от масштаба. При изменении масштаба маркеров анимирование кластеры и из них.
+При отображении карты маркеры заметок кластеризованный или подготовке к просмотру в зависимости от масштаба. По мере изменения масштаба и из него кластеров анимировать маркеры.
 
-![Симулятор, показывающая кластеризованный маркеров на карте](mapkit-images/cyclemap-sml.png)
+![Симулятор, показывающий кластеризованный маркеров на карте](mapkit-images/cyclemap-sml.png)
 
-Ссылаться на [сопоставляет раздел](~/ios/user-interface/controls/ios-maps/index.md) Дополнительные сведения по отображению данных с MapKit.
+Ссылаться на [сопоставляет разделе](~/ios/user-interface/controls/ios-maps/index.md) Дополнительные сведения об отображении данных с помощью MapKit.
 
 <a name="compass" />
 
-## <a name="compass-button"></a>Компас кнопки
+## <a name="compass-button"></a>Компаса кнопки
 
-iOS 11 дает возможность извлечь компас из карты и вывести ее в другом месте в представлении. В разделе [Tandm пример приложения](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) в качестве примера.
+iOS 11 добавляет возможность pop компас уменьшение карты и визуализировать его в другом месте в представлении. См. в разделе [Tandm пример приложения](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) пример.
 
-Кнопка «Создать», который выглядит как компаса (включая динамической анимации при изменении ориентации карты), и отображает его на другой элемент управления.
+Создание кнопки, выглядит следующим образом (включая динамической анимации при изменении ориентации карты), компас и готовит его к просмотру в другом элементе управления.
 
-![Компаса кнопки в панели навигации](mapkit-images/compass-sml.png)
+![Компаса кнопки на панели навигации](mapkit-images/compass-sml.png)
 
-В следующем примере кода создается компаса кнопка и отображает его на панели навигации:
+Приведенный ниже код создает компаса кнопку и отображает его на панели навигации:
 
 ```csharp
 var compass = MKCompassButton.FromMapView(MapView);
@@ -215,15 +215,15 @@ NavigationItem.RightBarButtonItem = new UIBarButtonItem(compass);
 MapView.ShowsCompass = false; // so we don't have two compasses!
 ```
 
-`ShowsCompass` Свойство можно использовать для управления видимостью компас по умолчанию в представлении карты.
+`ShowsCompass` Свойство может использоваться для управления видимостью ориентиры по умолчанию в представлении карты.
 
 <a name="scale" />
 
-## <a name="scale-view"></a>Масштаб представления
+## <a name="scale-view"></a>Масштабированного представления
 
-Добавить масштаб в любом другом месте представления с помощью `MKScaleView.FromMapView()` метод для получения экземпляра масштабированного представления для добавления в другом месте в иерархии представления.
+Добавление масштаб в любом месте в представление, используя `MKScaleView.FromMapView()` метод для получения экземпляра для добавления в другом месте в иерархии представлений масштабированного представления.
 
-![Масштаб представления накладывается на карте](mapkit-images/scale-sml.png)
+![Масштабированного представления, выводимое на карте](mapkit-images/scale-sml.png)
 
 ```csharp
 var scale = MKScaleView.FromMapView(MapView);
@@ -233,13 +233,13 @@ View.AddSubview(scale); // constraints omitted for simplicity
 MapView.ShowsScale = false; // so we don't have two scale displays!
 ```
 
-`ShowsScale` Свойство можно использовать для управления видимостью компас по умолчанию в представлении карты.
+`ShowsScale` Свойство может использоваться для управления видимостью ориентиры по умолчанию в представлении карты.
 
 <a name="user-tracking" />
 
 ## <a name="user-tracking-button"></a>Кнопка отслеживания пользователя
 
-Кнопка отслеживания пользователя на карте отображается текущее расположение пользователя. Используйте `MKUserTrackingButton.FromMapView()` метод, чтобы получить экземпляр кнопки, примените изменения форматирования и добавить в другом месте в иерархии представления.
+Кнопка отслеживания пользователя на карте отображается текущее местоположение пользователя. Используйте `MKUserTrackingButton.FromMapView()` метод для получения экземпляра кнопки, применять форматирование и добавить в другом месте в иерархии представлений.
 
 ![Расположение кнопки пользователя, накладывается на карте](mapkit-images/user-location-sml.png)
 
@@ -256,6 +256,6 @@ View.AddSubview(button); // constraints omitted for simplicity
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Образец MapKit «Tandm»](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)
+- [Пример MapKit «Tandm»](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)
 - [MKCompassButton](https://developer.apple.com/documentation/mapkit/mkcompassbutton)
-- [Что такое New в MapKit (WWDC) (видео)](https://developer.apple.com/videos/play/wwdc2017/237/)
+- [Новые возможности в MapKit (WWDC) (видео)](https://developer.apple.com/videos/play/wwdc2017/237/)

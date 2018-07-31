@@ -5,12 +5,12 @@ ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a5c559653bff38c692f0b1d881d5d8f4cac3d383
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 8c471f64c14a2e41693c450e02f89e7ac845d060
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831415"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353364"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: фонариком
 
@@ -42,7 +42,7 @@ ms.locfileid: "38831415"
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-Или щелкните правой кнопкой проект Anroid и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **ФОНАРИКОМ** и **КАМЕРЫ** разрешения. Будет автоматически обновлена **AndroidManifest.xml** файла.
+Или щелкнуть правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **ФОНАРИКОМ** и **КАМЕРЫ** разрешения. Будет автоматически обновлена **AndroidManifest.xml** файла.
 
 Добавив эти разрешения [Google Play будет автоматически отфильтровать устройства](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features) без конкретного оборудования. Можно обойти это, добавив следующее в файл AssemblyInfo.cs в проекте Android:
 
@@ -96,9 +96,9 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>Особенности реализации платформы
 
-### <a name="androidtabandroid-specifics"></a>[Android](#tab/android-specifics)
+### <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Класс фонариком был optmized, в зависимости от операционной системы устройства.
+Класс фонариком был оптимизирован в зависимости от операционной системы устройства.
 
 #### <a name="api-level-23-and-higher"></a>Уровень API 23 и более поздних версий
 
@@ -108,11 +108,11 @@ catch (Exception ex)
 
 Чтобы включить или отключить создается текстура поверхности камеры `FlashMode` единицы камеры. 
 
-### <a name="iostabios-specifics"></a>[iOS](#tab/ios-specifics)
+### <a name="iostabios"></a>[iOS](#tab/ios)
 
 [AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) используется для включения и отключения Torch и флэш-режим устройства.
 
-### <a name="uwptabuwp-specifics"></a>[UWP](#tab/uwp-specifics)
+### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 [LAMP](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) используется для обнаружения первого lamp на задней панели устройства, чтобы включить или отключить.
 

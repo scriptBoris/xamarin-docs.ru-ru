@@ -5,12 +5,12 @@ ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 1deafed85e9400bf7d4592fc06f71c22cc0015f0
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855059"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353458"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: батареи
 
@@ -29,7 +29,7 @@ ms.locfileid: "37855059"
 Откройте **AssemblyInfo.cs** файл **свойства** папку и добавьте:
 
 ```csharp
-[assembly: UsesPermission(Android.Manifest.Permission.Battery)]
+[assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
 ```
 
 ИЛИ обновите манифест Android:
@@ -37,10 +37,10 @@ ms.locfileid: "37855059"
 Откройте **AndroidManifest.xml** файл **свойства** папку и добавьте следующий код внутри класса **манифеста** узла.
 
 ```xml
-<uses-permission android:name="android.permission.BATTERY" />
+<uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
-Или щелкните правой кнопкой проект Anroid и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **батареи** разрешение. Будет автоматически обновлена **AndroidManifest.xml** файла.
+Или щелкнуть правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **батареи** разрешение. Будет автоматически обновлена **AndroidManifest.xml** файла.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -93,7 +93,7 @@ switch (source)
     case BatteryPowerSource.Battery:
         // Being powered by the battery
         break;
-    case BatteryPowerSource.Ac:
+    case BatteryPowerSource.AC:
         // Being powered by A/C unit
         break;
     case BatteryPowerSource.Usb:
@@ -138,12 +138,12 @@ public class BatteryTest
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 * Устройство должно использовать для тестирования интерфейсов API. 
-* Будет возвращать только `Ac` или `Battery` для `PowerSource`. 
+* Будет возвращать только `AC` или `Battery` для `PowerSource`.
 * Не удается отменить вибрации.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* Будет возвращать только `Ac` или `Battery` для `PowerSource`. 
+* Будет возвращать только `AC` или `Battery` для `PowerSource`.
 
 -----
 

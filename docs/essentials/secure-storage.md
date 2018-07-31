@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: fae5f5f0f15d80e2f3bdce26b8beb5f6fae2f81f
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 2dfdb7051b269e73c68290a557849b9ae606c165
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830457"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353299"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Безопасное хранение
 
@@ -51,13 +51,27 @@ using Xamarin.Essentials;
 Для сохранения значения для заданного _ключ_ в защищенного хранилища:
 
 ```csharp
-await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+try
+{
+  await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 Для извлечения значения из защищенного хранилища:
 
 ```csharp
-var oauthToken = await SecureStorage.GetAsync("oauth_token");
+try
+{
+  var oauthToken = await SecureStorage.GetAsync("oauth_token");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 > [!NOTE]
@@ -80,7 +94,7 @@ SecureStorage.RemoveAll();
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-[Хранилища ключей Android](https://developer.android.com/training/articles/keystore.html) используется для хранения шифра ключ, используемый для шифрования значения, до его сохранения в [общих настроек](https://developer.android.com/training/data-storage/shared-preferences.html) с помощью имени файла **.xamarinessentials [YOUR-APP-пакет-ID]** .  Ключ, используемый в общего файла настроек является _хэш MD5_ ключа, переданные `SecureStorage` интерфейса API.
+[Хранилища ключей Android](https://developer.android.com/training/articles/keystore.html) используется для хранения шифра ключ, используемый для шифрования значения, до его сохранения в [общих настроек](https://developer.android.com/training/data-storage/shared-preferences.html) с помощью имени файла **.xamarinessentials [YOUR-APP-пакет-ID]** .  Ключ, используемый в общего файла настроек является _хэш MD5_ ключа, переданные `SecureStorage` API-интерфейсы.
 
 ## <a name="api-level-23-and-higher"></a>Уровень API 23 и более поздних версий
 
@@ -90,7 +104,7 @@ SecureStorage.RemoveAll();
 
 В более старых API уровней хранилища ключей Android поддерживает только хранение **RSA** ключи, которые используются с **RSA/ECB/PKCS1Padding** шифрования для шифрования **AES** ключа (случайным образом создаются во время выполнения) и хранится в файле Общие настройки в разделе _SecureStorageKey_, если он уже не был создан.
 
-Будут удалены все зашифрованные значения, когда приложение удаляется с устройства.
+**SecureStorage** использует [предпочтения](preferences.md) API и следующим же сохраняемости данных описано в [предпочтения](preferences.md#persistence) документации. Если устройства будут обновлены с API уровня 22 или нижний уровень API 23 и более поздних версий, этот тип шифрования будут продолжать использоваться только в случае удаления приложения или **RemoveAll** вызывается.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -100,11 +114,11 @@ SecureStorage.RemoveAll();
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) используется имя зашифрованного значений безопасно на устройствах универсальной платформы Windows.
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) используется для зашифрованных значений безопасно на устройствах универсальной платформы Windows.
 
-Имя зашифрованного значения хранятся в `ApplicationData.Current.LocalSettings`, внутри контейнера с именем **.xamarinessentials [YOUR-APP-ID]**.
+Зашифрованные значения хранятся в `ApplicationData.Current.LocalSettings`, внутри контейнера с именем **.xamarinessentials [YOUR-APP-ID]**.
 
-При удалении приложения приведет к _LocalSettings_и все зашифрованные значения также удаляются.
+**SecureStorage** использует [предпочтения](preferences.md) API и следующим же сохраняемости данных описано в [предпочтения](preferences.md#persistence) документации.
 
 -----
 

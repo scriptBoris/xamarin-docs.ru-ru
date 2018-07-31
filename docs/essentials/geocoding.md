@@ -5,18 +5,18 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 063adba82d96e7fcc64d7ec49a0c0133e1cef8ef
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: a4d6e4d9b32e665893d82693a3c858630b63d372
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831452"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353679"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: геокодирования
 
 ![Предварительные версии NuGet](~/media/shared/pre-release.png)
 
-**Геокодирования** класс предоставляет API-интерфейсы выполним геокодирование placemark позиционные координаты и обратная geocode coordincates на placemark.
+**Геокодирования** класс предоставляет API-интерфейсы выполним геокодирование placemark позиционные координаты и обратную координаты geocode на placemark.
 
 ## <a name="getting-started"></a>Начало работы
 
@@ -32,7 +32,7 @@ ms.locfileid: "38831452"
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Для использования геокодирования funcationality необходим ключ Bing maps API. Зарегистрируйтесь для получения бесплатной [Bing Maps](https://www.bingmapsportal.com/) учетной записи. В разделе **моей учетной записи > Мои ключи** создайте новый раздел и заполните сведения, в зависимости от типа приложения (которое должно быть **общедоступному приложению Windows (UWP, 8.x и более ранних версий)** для приложений универсальной платформы Windows).
+Для использования геокодирования требуется ключ API карт Bing. Зарегистрируйтесь для получения бесплатной [Bing Maps](https://www.bingmapsportal.com/) учетной записи. В разделе **моей учетной записи > Мои ключи** создайте новый раздел и заполните сведения, в зависимости от типа приложения (которое должно быть **общедоступному приложению Windows (UWP, 8.x и более ранних версий)** для приложений универсальной платформы Windows).
 
 На раннем этапе жизненного цикла вашего приложения до вызова любого **геокодирования** методы задание ключа API:
 
@@ -70,11 +70,11 @@ catch (FeatureNotSupportedException fnsEx)
 }
 catch (Exception ex)
 {
-    // Handle exception that may have occured in geocoding
+    // Handle exception that may have occurred in geocoding
 }
 ```
 
-Высота над уровнем моря не всегда доступна. Если она недоступна, `Altitude` свойство может быть `null` или значение может быть равно нулю. При наличии Высота над уровнем моря в метрах выше над уровнем моря является значение. 
+Высота над уровнем моря не всегда доступна. Если она недоступна, `Altitude` свойство может быть `null` или значение может быть равно нулю. При наличии Высота над уровнем моря в метрах выше над уровнем моря является значение.
 
 Начало [placemarks](xref:Xamarin.Essentials.Placemark) для существующего набора координат:
 

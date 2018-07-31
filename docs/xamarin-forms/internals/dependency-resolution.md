@@ -1,33 +1,33 @@
 ---
 title: Разрешение зависимостей в Xamarin.Forms
-description: В этой статье объясняется, как вставить метод разрешения зависимостей в Xamarin.Forms, таким образом, чтобы контейнера внедрения зависимостей приложения имеет контроль над конструкции и временем существования пользовательские модули подготовки отчетов, эффекты и DependencyService реализации.
+description: В этой статье объясняется, как вставить метод разрешения зависимостей в Xamarin.Forms, таким образом, чтобы контейнера внедрения зависимостей приложения имеет контроль над созданием и временем существования пользовательские модули подготовки отчетов, эффекты и DependencyService реализации.
 ms.prod: xamarin
 ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/23/2018
-ms.openlocfilehash: 2379c8ddc4bea6dd97bc4febd055dd8dfef39beb
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 07/27/2018
+ms.openlocfilehash: 8952f98045d9830e9b8f25a7d4b93a5e4310cb32
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270492"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351591"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Разрешение зависимостей в Xamarin.Forms
 
-_В этой статье объясняется, как вставить метод разрешения зависимостей в Xamarin.Forms, таким образом, чтобы контейнера внедрения зависимостей приложения имеет контроль над конструкции и временем существования пользовательские модули подготовки отчетов, эффекты и DependencyService реализации. В примерах кода взяты из [разрешение зависимостей](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) образца._
+_В этой статье объясняется, как вставить метод разрешения зависимостей в Xamarin.Forms, таким образом, чтобы контейнера внедрения зависимостей приложения имеет контроль над созданием и временем существования пользовательские модули подготовки отчетов, эффекты и DependencyService реализации. В примерах кода в этой статье взяты из [разрешение зависимостей с помощью контейнеров](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/) образца._
 
 Контейнер внедрения зависимостей в контексте приложения Xamarin.Forms, использующая шаблон Model-View-ViewModel (MVVM), можно использовать для регистрации и разрешения на просмотр моделей, а также для регистрации служб и вставляя их в модели представления. Во время создания модели представления контейнер внедряет зависимые компоненты, которые необходимы. Если не были созданы эти зависимости, создает контейнер и сначала устраняет зависимости. Дополнительные сведения о внедрения зависимостей, включая примеры внедрение зависимостей в модели представления, см. в разделе [внедрения зависимостей](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 
-Контроль над созданием и временем существования типов в проектах платформы обычно осуществляется Xamarin.Forms, который использует `Activator.CreateInstance` метод, чтобы создать экземпляры пользовательских модулей подготовки отчетов, эффекты, и [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) в реализации. К сожалению это ограничивает контроль разработчика над созданием и временем существования этих типов, а также возможность внедрения зависимостей в них. Тем не менее это поведение можно изменить, внедряя метод разрешения зависимостей в Xamarin.Forms, который определяет, как будут созданы типы — или контейнера внедрения зависимостей приложения, по Xamarin.Forms.
+Контроль над созданием и временем существования типов в проектах платформы обычно осуществляется Xamarin.Forms, который использует `Activator.CreateInstance` метод, чтобы создать экземпляры пользовательских модулей подготовки отчетов, эффекты, и [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) в реализации. К сожалению это ограничивает контроль разработчика над созданием и временем существования этих типов, а также возможность внедрения зависимостей в них. Это поведение можно изменить, внедряя метод разрешения зависимостей в Xamarin.Forms, который определяет, как будут созданы типы — или контейнера внедрения зависимостей приложения, по Xamarin.Forms. Тем не менее Обратите внимание на то, что нет необходимости внедрять метод разрешения зависимостей в Xamarin.Forms. Xamarin.Forms будет продолжать создавать и управлять временем существования типов в проектах платформы, если метод разрешения зависимостей не вставлен.
 
 > [!NOTE]
-> Необязательно для вставки метода разрешения зависимостей на Xamarin.Forms. Xamarin.Forms будет продолжать создавать и управлять временем существования типов в проектах платформы, если метод разрешения зависимостей не вставлен.
+> Хотя эта статья посвящена Включение метод разрешения зависимостей в Xamarin.Forms, которое разрешается зарегистрированные типы, с помощью контейнера внедрения зависимостей, можно также внедрить метод разрешения зависимостей, который использует фабричные методы для решения Зарегистрированные типы. Дополнительные сведения см. в разделе [разрешение зависимостей с помощью методов фабрики](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/FactoriesDemo/) образца.
 
 ## <a name="injecting-a-dependency-resolution-method"></a>Добавление метода разрешения зависимостей
 
-[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) Предоставляет возможность внедрить метод разрешения зависимостей в Xamarin.Forms, используя один из [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) методы. Затем когда Xamarin.Forms требуется экземпляр определенного типа, этот метод разрешения зависимостей присваивается возможность предоставить экземпляр. Если этот метод разрешения зависимостей возвращает `null` для запрошенного типа, возвращается Xamarin.Forms к попытке создать тип экземпляр с помощью `Activator.CreateInstance` метод.
+[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) Класс предоставляет возможность внедрения зависимостей метод разрешения в Xamarin.Forms, используя [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) метод. Затем когда Xamarin.Forms требуется экземпляр определенного типа, этот метод разрешения зависимостей присваивается возможность предоставить экземпляр. Если этот метод разрешения зависимостей возвращает `null` для запрошенного типа, возвращается Xamarin.Forms к попытке создать тип экземпляр с помощью `Activator.CreateInstance` метод.
 
 В следующем примере показано, как установить метод разрешения зависимостей с [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) метод:
 
@@ -97,6 +97,18 @@ public partial class App : Application
                 (pi, ctx) => pi.ParameterType == param2Type && pi.Name == param2Name,
                 (pi, ctx) => ctx.Resolve(param2Type))
         });
+    }
+
+    public static void RegisterTypeWithParameters<TInterface, T>(Type param1Type, object param1Value, Type param2Type, string param2Name) where TInterface : class where T : class, TInterface
+    {
+        builder.RegisterType<T>()
+               .WithParameters(new List<Parameter>()
+        {
+            new TypedParameter(param1Type, param1Value),
+            new ResolvedParameter(
+                (pi, ctx) => pi.ParameterType == param2Type && pi.Name == param2Name,
+                (pi, ctx) => ctx.Resolve(param2Type))
+        }).As<TInterface>();
     }
 
     public static void BuildContainer()
@@ -219,7 +231,7 @@ public interface IPhotoPicker
 
 В каждом проекте платформы `PhotoPicker` класс реализует `IPhotoPicker` интерфейса с помощью API платформы. Дополнительные сведения об этих службах зависимостей см. в разделе [комплектации фотографии из библиотеки рисунков](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-На всех трех платформах `PhotoPicker` класс имеет следующий конструктор, который требует `ILogger` аргумент:
+В iOS и UWP `PhotoPicker` классы имеют следующий конструктор, который требует `ILogger` аргумент:
 
 ```csharp
 public PhotoPicker(ILogger logger)
@@ -239,7 +251,32 @@ void RegisterTypes()
 }
 ```
 
-В этом примере `Logger` конкретный тип зарегистрирован с помощью сопоставления с его тип интерфейса и `PhotoPicker` типа также регистрируется через сопоставление интерфейса. Когда пользователь переходит на страницу выбора фотографии и выбирает фотографию, `OnSelectPhotoButtonClicked` выполняется обработчик:
+В этом примере `Logger` конкретный тип зарегистрирован с помощью сопоставления с его тип интерфейса и `PhotoPicker` типа также регистрируется через сопоставление интерфейса.
+
+`PhotoPicker` Конструктор на платформе Android немного сложнее, так как требует `Context` аргумент в дополнение к `ILogger` аргумент:
+
+```csharp
+public PhotoPicker(Context context, ILogger logger)
+{
+    _context = context ?? throw new ArgumentNullException(nameof(context));
+    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+}
+```
+
+В следующем примере показан `RegisterTypes` метод на платформе Android:
+
+```csharp
+void RegisterTypes()
+{
+    App.RegisterType<ILogger, Logger>();
+    App.RegisterTypeWithParameters<IPhotoPicker, Services.Droid.PhotoPicker>(typeof(Android.Content.Context), this, typeof(ILogger), "logger");
+    App.BuildContainer();
+}
+```
+
+В этом примере `App.RegisterTypeWithParameters` регистры метод `PhotoPicker` с помощью контейнера внедрения зависимостей. Метод регистрации гарантирует, что `MainActivity` экземпляр внедряются как `Context` аргумента и создает `Logger` тип внедряются как `ILogger` аргумент.
+
+Когда пользователь переходит на страницу выбора фотографии и выбирает фотографию, `OnSelectPhotoButtonClicked` выполняется обработчик:
 
 ```csharp
 async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
@@ -262,7 +299,7 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Разрешение зависимостей (пример)](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/)
+- [Разрешение зависимостей с помощью контейнеров (пример)](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
 - [Внедрение зависимостей](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [Реализация видеопроигрывателя](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [Вызов событий из эффектов](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

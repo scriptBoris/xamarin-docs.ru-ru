@@ -6,27 +6,49 @@ ms.assetid: B5571660-1E82-4379-95C3-0725288CF5D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 17c353844a7ddc808e5d9f0632434472913170a4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/30/2018
+ms.openlocfilehash: 71e1655b6bc05c621ee97fcf826ce8b468f0dd48
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995210"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351500"
 ---
 # <a name="listview-data-sources"></a>Источники данных ListView
 
-ListView используется для отображения списков данных. Вы узнаете о заполнении ListView с данными, и как можно привязать к выбранному элементу.
+Объект [ `ListView` ](xref:Xamarin.Forms.ListView) используется для отображения списков данных. Вы узнаете о заполнении ListView с данными, и как можно привязать к выбранному элементу.
 
 - **[Параметр ItemsSource](#ItemsSource)**  &ndash; использует простой список или массив.
 - **[Привязка данных](#Data_Binding)**  &ndash; устанавливает связь между моделью и ListView. Привязка идеально подходит для шаблона MVVM.
 
 ## <a name="itemssource"></a>ItemsSource
-ListView заполняется данными с помощью `ItemsSource` свойство, которое может принимать любое коллекция, реализующая `IEnumerable`. Самый простой способ заполнения `ListView` предполагает использование массива строк:
+
+Объект [ `ListView` ](xref:Xamarin.Forms.ListView) заполняется данными с помощью [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) свойство, которое может принимать любое коллекция, реализующая `IEnumerable`. Самый простой способ заполнения `ListView` предполагает использование массива строк:
+
+```xaml
+<ListView>
+      <ListView.ItemsSource>
+          <x:Array Type="{x:Type x:String}">
+            <x:String>mono</x:String>
+            <x:String>monodroid</x:String>
+            <x:String>monotouch</x:String>
+            <x:String>monorail</x:String>
+            <x:String>monodevelop</x:String>
+            <x:String>monotone</x:String>
+            <x:String>monopoly</x:String>
+            <x:String>monomodal</x:String>
+            <x:String>mononucleosis</x:String>
+          </x:Array>
+      </ListView.ItemsSource>
+</ListView>
+```
+
+Ниже приведен аналогичный код C#:
 
 ```csharp
 var listView = new ListView();
-listView.ItemsSource = new string[]{
+listView.ItemsSource = new string[]
+{
   "mono",
   "monodroid",
   "monotouch",
@@ -145,10 +167,6 @@ Title="Employee List">
 
 При условии, что `listView` `ItemsSource` является список строк, `SomeLabel` будет иметь свойства text, привязанного к `SelectedItem`.
 
-
-
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Двусторонней привязки (пример)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
-- [заметки о выпуске 1.4](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [заметки о выпуске версии 1.3](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

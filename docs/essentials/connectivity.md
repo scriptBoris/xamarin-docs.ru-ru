@@ -5,12 +5,12 @@ ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 54c165e15e725caaecb1573b74cfe295170db141
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 96b4ee0487034c651bec1dfb168fed7567b63c96
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38848613"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353702"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: подключение
 
@@ -40,7 +40,7 @@ ms.locfileid: "38848613"
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-Или щелкните правой кнопкой проект Anroid и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **состояние доступа к сети** разрешение. Будет автоматически обновлена **AndroidManifest.xml** файла.
+Или щелкнуть правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **состояние доступа к сети** разрешение. Будет автоматически обновлена **AndroidManifest.xml** файла.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 

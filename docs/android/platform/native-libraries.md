@@ -1,36 +1,36 @@
 ---
-title: С помощью собственных библиотек
+title: Использование собственных библиотек
 ms.prod: xamarin
 ms.assetid: 7AA6CEC8-C09E-BBDA-FDD6-E40559143548
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 0fa66f3a16047c18af19cb7257c778b498bc0c9b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9175996f516a980d915d1501b4b18ea23ec86cef
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774815"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353584"
 ---
-# <a name="using-native-libraries"></a>С помощью собственных библиотек
+# <a name="using-native-libraries"></a>Использование собственных библиотек
 
-Xamarin.Android поддерживает использование собственных библиотек через стандартный механизм PInvoke. Также можно связать дополнительные собственные библиотеки, которые не являются частью операционной системы в вашей .apk.
+Xamarin.Android поддерживает использование собственных библиотек с помощью стандартного механизма PInvoke. Также можно связать дополнительные собственные библиотеки, которые не являются частью операционной системы в вашей apk-файла.
 
-Для развертывания с приложением Xamarin.Android собственной библиотеки, добавьте в проект библиотеки двоичных и задать его **действие при построении** для **AndroidNativeLibrary**.
+Для развертывания собственной библиотеки с помощью приложения Xamarin.Android, добавьте в проект библиотеку двоичные и задать его **действие при построении** для **AndroidNativeLibrary**.
 
-Чтобы развернуть в проекте библиотеки Xamarin.Android собственной библиотеки, добавьте в проект библиотеки двоичных и задайте его **действие при построении** для **EmbeddedNativeLibrary**.
+Чтобы развернуть собственной библиотеки в проекте библиотеки Xamarin.Android, добавьте двоичные библиотеку в проект и задайте его **действие при построении** для **EmbeddedNativeLibrary**.
 
-Обратите внимание, что поскольку Android поддерживает несколько интерфейсов двоичных приложения (ABIs), Xamarin.Android необходимо знать, какие ABI собственной библиотеки, созданного для.
+Обратите внимание на то, что так как Android поддерживает несколько бинарных интерфейсов приложений (ABI), Xamarin.Android необходимо знать какого ABI создана собственная библиотека для.
 Это можно сделать двумя способами:
 
 1.  Путь «проверки»
-1.  С помощью `AndroidNativeLibrary/Abi` элемента в файле проекта
+1.  С помощью `AndroidNativeLibrary/Abi` элемент в файле проекта
 
 
-При сканировании пути имя родительского каталога собственной библиотеки используется для указания целевого ABI библиотеки. Таким образом при добавлении `lib/armeabi/libfoo.so` в проект, затем ABI будет иметь «вносятся» как `armeabi`.
+При сканировании пути имя родительского каталога собственной библиотеки используется для указания целевого ABI библиотеки. Таким образом при добавлении `lib/armeabi/libfoo.so` в проект, затем ABI будет быть «сканируются» как `armeabi`.
 
-Кроме того можно изменить файл проекта для явного указания ABI для использования:
+Кроме того можно изменить файл проекта, чтобы явно указать интерфейс ABI для использования:
 
 ```xml
 <ItemGroup>
@@ -40,17 +40,24 @@ Xamarin.Android поддерживает использование собств
 </ItemGroup>
 ```
 
-Дополнительные сведения об использовании собственных библиотек см. в разделе [взаимодействия с собственным библиотекам](http://www.mono-project.com/docs/advanced/pinvoke/).
+Дополнительные сведения об использовании собственных библиотек см. в разделе [взаимодействия с собственными библиотеками](http://www.mono-project.com/docs/advanced/pinvoke/).
 
-## <a name="debugging-native-code-with-visual-studio-2015"></a>Отладка машинного кода с помощью Visual Studio 2015
+## <a name="debugging-native-code-with-visual-studio-2017"></a>Отладка машинного кода в Visual Studio 2017
 
-Если вы используете *Visual Studio 2015*, не нужно изменять файлы проекта (как описано выше).
-Создавать и отлаживать C++ внутри решения Xamarin.Android, просто добавив ссылку на проект C++ **динамической общей библиотеки (Android)** проекта.
+Если вы используете *Visual Studio 2017* или более поздней версии, нет необходимости изменять файлы проекта, как описано выше.
+Для построения и отладки C++ в решении Xamarin.Android, добавив ссылку проекта на C++ **динамической общей библиотеки (Android)** проекта. 
 
-Visual Studio C++ разработчики могут видеть [SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/) образца попытаться осуществить отладку C++ из Visual Studio 2015 с Xamarin; и ссылаться на наш [блога](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/) для получения дополнительной информации.
+Чтобы выполнить отладку машинного кода C++ в проекте, выполните следующие действия.
+
+1. Дважды щелкните проект **свойства** и выберите **параметры Android** страницы.
+2. Прокрутите вниз до раздела **параметры отладки**.
+3. В **отладчик** раскрывающемся меню выберите **C++** (вместо значения по умолчанию **.Net (Xamarin)**).
+
+Visual Studio C++ разработчики могут видеть [SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/) выборку, чтобы попробовать выполнить отладку C++ от Visual Studio 2017 с Xamarin; и ссылаться на наш [блога](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/) Дополнительные сведения.
 
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [SanAngeles_NativeDebug (sample)](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
+- [SanAngeles_NativeDebug (пример)](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
+- [Разработка собственных приложений Xamarin Android](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

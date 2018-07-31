@@ -5,12 +5,12 @@ ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ca6d4f1ec60a80b483c79dd75267144e67d80c0b
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 4a45587c79cfbbcd1198f100915e698289f74950
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831768"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353754"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: параметры
 
@@ -83,6 +83,10 @@ Preferences.Clear();
 [ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer) используется для хранения значений на устройстве. Если не `sharedName` указан `LocalSettings` , используется, в противном случае имя используется для создания нового контейнера внутри `LocalSettings`.
 
 --------------
+
+## <a name="persistence"></a>Сохраняемость
+
+Удалить приложение вызовет все _предпочтения_ для удаления. Есть одно исключение для этого, которого для приложений, предназначенных для и запускаемых на базе Android 6.0 (уровень API 23) или более поздней версии, которые используют [ __Автоматическая архивация__](https://developer.android.com/guide/topics/data/autobackup). Эта функция включена по умолчанию и сохраняет данные приложения, включая __общих настроек__, которых **предпочтения** использует API. Вы можете отключить, следующие Google [документации](https://developer.android.com/guide/topics/data/autobackup).
 
 ## <a name="limitations"></a>Ограничения
 

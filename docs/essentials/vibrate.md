@@ -5,12 +5,12 @@ ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 530273543c6cb71038613c22fa4a6bfbde4928d7
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 622689342dd961a63318a88f098dea4d1a60e277
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947261"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353871"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: вибрация
 
@@ -40,7 +40,7 @@ ms.locfileid: "37947261"
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-Или щелкните правой кнопкой проект Anroid и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **VIBRATE** разрешение. Будет автоматически обновлена **AndroidManifest.xml** файла.
+Или щелкнуть правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **VIBRATE** разрешение. Будет автоматически обновлена **AndroidManifest.xml** файла.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
