@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 685a29eea4b03361b185e25ae0e146be7b5e69b6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9c81138aea57c0027ad0f53e3116878ffb800eae
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792040"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39276045"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Значок приложения для приложений Xamarin.Mac
 
@@ -23,9 +23,9 @@ _В этой статье описано, как создавать изобра
 
 При работе с C# и .NET в приложении Xamarin.Mac разработчик может использовать те же средства создания изображений и значков, что и при работе с *Objective-C* и *Xcode*.
 
-Первоклассный значок должен передавать основное назначение приложения Xamarin.Mac и давать представление об ожидаемых действиях при использовании приложения. В этой статье рассматриваются все шаги по созданию необходимых для значка ресурсов изображений, упаковке этих ресурсов в файл `AppIcons.appiconset` и использовании этого файла в приложении Xamarin.Mac.
+Первоклассный значок должен передавать основное назначение приложения Xamarin.Mac и давать представление об ожидаемых действиях при использовании приложения. В этой статье рассматриваются все шаги по созданию необходимых для значка ресурсов изображений, упаковке этих ресурсов в файл `AppIcon.appiconset` и использовании этого файла в приложении Xamarin.Mac.
 
-![Редактор AppIcons.appiconset](app-icon-images/intro01.png "The AppIcons.appiconset editor")
+![Редактор AppIcons.appiconset](app-icon-images/intro01.png "The AppIcon.appiconset editor")
 
 
 ## <a name="application-icon"></a>Значок приложения
@@ -85,7 +85,7 @@ _В этой статье описано, как создавать изобра
 
 1. На **Панели решения** откройте **Assets.xcassets** > **AppIcons.appiconset**: 
 
-    ![Редактирование AppIcons.appiconset](app-icon-images/intro01.png "Editing the AppIcons.appiconset")
+    ![Редактирование AppIcon.appiconset](app-icon-images/intro01.png "Editing the AppIcon.appiconset")
 2. Для каждого необходимого размера значка щелкните значок и выберите соответствующий файл изображения, созданный выше: 
 
     [![Выбор изображения значка](app-icon-images/intro02.png "Selecting an icon image")](app-icon-images/intro02-large.png#lightbox)
@@ -94,12 +94,12 @@ _В этой статье описано, как создавать изобра
 
 ## <a name="using-the-icon"></a>Использование значка
 
-Созданный файл `AppIcons.appiconset` необходимо назначить проекту Xamarin.Mac в Visual Studio для Mac.
+Созданный файл `AppIcon.appiconset` необходимо назначить проекту Xamarin.Mac в Visual Studio для Mac.
 
 Выполните следующие действия:
 
 1. Дважды щелкните **Info.plist** на **Панели решения**, чтобы открыть окно **Параметры проекта**.
-2. В разделе **Целевая платформа приложения Mac OS X** щелкните **Значки приложений**, чтобы выбрать файл `AppIcons.appiconset`: 
+2. В разделе **Целевая платформа приложения Mac OS X** щелкните **Значки приложений**, чтобы выбрать файл `AppIcon.appiconset`: 
 
     [![Настройка набора значков](app-icon-images/icon01.png "Setting the icon set")](app-icon-images/icon01-large.png#lightbox)
 3. Сохраните изменения.

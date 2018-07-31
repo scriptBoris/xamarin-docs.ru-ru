@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9b6168eba91a87af88891b9e07e3dd395301cc48
+ms.sourcegitcommit: 021027b78cb2f8061b03a7c6ae59367ded32d587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785616"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39182212"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Профилирование приложений Xamarin.iOS с помощью Instruments
 
@@ -27,11 +27,11 @@ Xcode Instruments работает только на компьютерах Ma
 
 Выберите устройство и запустите приложение Instruments:
 
-1.  Откройте проект Xamarin.iOS в Visual Studio для Mac.
-2.  Выберите конфигурацию **Отладка|iPhone**.
-3.  Подключите устройство iOS к компьютеру.
-4.  В меню **Запуск** выберите пункт **Отправить на устройство**. После этого приложение будет собрано и отправлено на устройство.
-5.  В меню **Сервис** выберите пункт **Запустить Instruments**.
+1. Откройте проект Xamarin.iOS в Visual Studio для Mac.
+2. Выберите конфигурацию **Отладка|iPhone**.
+3. Подключите устройство iOS к компьютеру.
+4. В меню **Запуск** выберите пункт **Отправить на устройство**. После этого приложение будет собрано и отправлено на устройство.
+5. В меню **Сервис** выберите пункт **Запустить Instruments**.
 
 
 Instruments откроется со следующим диалоговым окном:
@@ -65,4 +65,4 @@ Instruments откроется со следующим диалоговым ок
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Пошаговое руководство по работе с Instruments](~/ios/deploy-test/walkthrough-apples-instrument.md)
-- [Сборка мусора Xamarin.iOS](https://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)
+- [Сборка мусора Xamarin.iOS (запись блога)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

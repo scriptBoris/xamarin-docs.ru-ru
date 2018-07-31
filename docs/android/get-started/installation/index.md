@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 5991c907b85188581db105a8db9d17460954f56f
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 776e2b52d6b8860c5fb5fa16253c2e1d42aa962a
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935494"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241419"
 ---
 # <a name="setup-and-installation"></a>Настройка и установка
 
@@ -38,3 +38,7 @@ ms.locfileid: "36935494"
 ## <a name="android-device-setupandroidget-startedinstallationset-up-device-for-developmentmd"></a>[Настройка устройства Android](~/android/get-started/installation/set-up-device-for-development.md)
 
 В этой статье описывается установка физического устройства Android и его подключение к компьютеру разработчика для использования в целях запуска и отладки приложений Xamarin.Android.
+
+## <a name="microsoft-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Предварительная версия Microsoft OpenJDK](~/android/get-started/installation/openjdk.md)
+
+В этом руководстве описаны шаги по переходу на предварительную версию дистрибутива OpenJDK от Майкрософт.

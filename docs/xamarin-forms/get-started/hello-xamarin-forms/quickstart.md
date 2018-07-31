@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 5b5f8c80e49d66ed3bd8b008c975d1cfeda93ed4
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 7399cab611b726eb7bb72928f504086fb842fb74
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38832388"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242437"
 ---
 # <a name="xamarinforms-quickstart"></a>Краткое руководство по Xamarin.Forms
 
@@ -306,7 +306,7 @@ ms.locfileid: "38832388"
     }
     ```
 
-    Сохраните изменения в **PhoneDialer.cs**, нажав клавиши **CTRL+S**, и закройте файл.
+    Обратите внимание: в этом коде предполагается, что вы используете последний API Android. Сохраните изменения в **PhoneDialer.cs**, нажав клавиши **CTRL+S**, и закройте файл.
 
 21. В **обозревателе решений** откройте проект **Phoneword.Android**, двойным щелчком откройте файл **MainActivity.cs**, удалите весь код шаблона и замените его следующим фрагментом кода:
 
@@ -729,7 +729,7 @@ ms.locfileid: "38832388"
     }
     ```
 
-    Сохраните изменения в **PhoneDialer.cs**, выбрав **Файл > Сохранить** или нажав клавиши **&#8984;+S**, и закройте файл.
+    Обратите внимание: в этом коде предполагается, что вы используете последний API Android. Сохраните изменения в **PhoneDialer.cs**, выбрав **Файл > Сохранить** или нажав клавиши **&#8984;+S**, и закройте файл.
 
 21. На **панели решения** откройте проект **Phoneword.Droid**, двойным щелчком откройте файл **MainActivity.cs**, удалите весь код шаблона и замените его следующим фрагментом кода:
 

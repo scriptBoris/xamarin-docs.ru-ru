@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 438bb8141818ccdb1aaf2fa604707d2fb7601cd5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f06bf6736b427a4d77ac34957d75cd321f3dae3a
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792789"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39275941"
 ---
 # <a name="hello-mac--walkthrough"></a>Пошаговое руководство по приложению "Привет, Mac"
 
@@ -249,7 +249,7 @@ namespace Hello_Mac
 
 [![](hello-mac-images/infoplist01.png "Редактор plist в Visual Studio для Mac")](hello-mac-images/infoplist01.png#lightbox)
 
-А также определяет _раскадровку_, которая будет использоваться для отображения пользовательского интерфейса приложения Xamarin.Mac в раскрывающемся списке **Главный интерфейс**. В приведенном выше примере `Main` в раскрывающемся списке относится к `Main.storyboard` в дереве исходного кода проекта в **обозревателе решений**. Он также определяет значки приложения, указывая содержащий их *каталог ресурсов* (в данном случае AppIcons).
+А также определяет _раскадровку_, которая будет использоваться для отображения пользовательского интерфейса приложения Xamarin.Mac в раскрывающемся списке **Главный интерфейс**. В приведенном выше примере элемент `Main` в раскрывающемся списке относится к элементу `Main.storyboard` в дереве исходного кода проекта в **обозревателе решений**. Он также определяет значки приложения, указывая содержащий их *каталог ресурсов* (в этом случае **AppIcon**).
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
