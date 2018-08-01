@@ -528,7 +528,7 @@ Enter key password for keystore.alias
 </PropertyGroup>
 ```
 
-**LogicalName** — явно указывает путь к ресурсу. Позволяет присваивать файлам псевдонимы, чтобы файлы были доступны как различные ресурсы.
+**LogicalName** &ndash; явно указывает путь к ресурсу. Позволяет &ldquo;сглаживание&rdquo; файлах таким образом, чтобы они были доступны как различные ресурсы.
 
 ```xml
 <ItemGroup Condition="'$(Configuration)'!='Debug'">
