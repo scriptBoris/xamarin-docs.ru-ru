@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: f2bccc9140c4c1c9d5d543a4240178f9301852bb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 54fdec74a6e1d0aee71ec0ca6809a5b40680de9f
+ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997365"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39360816"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
@@ -22,11 +22,11 @@ ms.locfileid: "38997365"
 
 В этой статье рассматриваются следующие действия:
 
-- **[Назначение](#Purpose)**  &ndash; цели и задачи `ScrollView` и когда она используется.
-- **[Использование](#Usage)**  &ndash; способы использования `ScrollView` на практике.
-- **[Свойства](#Properties)**  &ndash; открытых свойств, которые можно считывать и изменять.
-- **[Методы](#Methods)**  &ndash; открытые методы, которые могут быть вызваны для прокручивания представления.
-- **[События](#Events)**  &ndash; события, которые могут использоваться для прослушивания изменения состояния представления.
+- **[Назначение](#purpose)**  &ndash; цели и задачи `ScrollView` и когда она используется.
+- **[Использование](#usage)**  &ndash; способы использования `ScrollView` на практике.
+- **[Свойства](#properties)**  &ndash; открытых свойств, которые можно считывать и изменять.
+- **[Методы](#methods)**  &ndash; открытые методы, которые могут быть вызваны для прокручивания представления.
+- **[События](#events)**  &ndash; события, которые могут использоваться для прослушивания изменения состояния представления.
 
 ## <a name="purpose"></a>Цель
 
