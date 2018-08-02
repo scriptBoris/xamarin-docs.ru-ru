@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 6f0c15976871129362fb3d6d3287215d1fba2cb9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a630d7c2acb95b7551c9f5f870078a0efcfc075c
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995986"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393676"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Использование расширения разметки XAML
 
@@ -24,12 +24,12 @@ ms.locfileid: "38995986"
 - [`x:Array`](#array) &ndash; Создает массив объектов определенного типа.
 - [`x:Null`](#null) &ndash; значение атрибута `null` значение.
 
-Три других расширений разметки XAML Исторически поддерживаются в других реализациях XAML и также поддерживаются в Xamarin.Forms. Более подробно они описаны в других статьях:
+Дополнительные расширения разметки XAML Исторически поддерживаются в других реализациях XAML и также поддерживаются в Xamarin.Forms. Более подробно они описаны в других статьях:
 
 - `StaticResource` &ndash; ссылок на объекты из словаря ресурсов, как описано в статье [ **словари ресурсов**](~/xamarin-forms/xaml/resource-dictionaries.md).
 - `DynamicResource` &ndash; реагирование на изменения в объекты в словаре ресурсов, как описано в статье [ **динамические стили**](~/xamarin-forms/user-interface/styles/dynamic.md).
 - `Binding` &ndash; установить связь между свойствами из двух объектов, как описано в статье [ **привязки данных**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` &ndash; выполняет привязку данных на основе шаблона элемента управления, как описано в статье [**привязки из шаблона элемента управления**] / направляющие/xamarin-forms/приложения основы/шаблоны/управления шаблонов/привязки шаблонов /)
+- `TemplateBinding` &ndash; выполняет привязку данных на основе шаблона элемента управления, как описано в статье [ **привязки из шаблона элемента управления**](/guides/xamarin-forms/application-fundamentals/templates/control-templates/template-binding/).
 
 [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Макета используется пользовательское расширение разметки [ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression). В этой статье описан данного расширения разметки [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 

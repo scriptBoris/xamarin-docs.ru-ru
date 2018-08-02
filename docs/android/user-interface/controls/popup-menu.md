@@ -1,55 +1,53 @@
 ---
-title: Всплывающее меню
+title: Во всплывающем меню
+description: Как добавить в контекстном меню, к которому привязана к конкретному представлению.
 ms.prod: xamarin
 ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 08/18/2017
-ms.openlocfilehash: e7fad84133ca712c531ab0d12a67db78103c7cdd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/31/2018
+ms.openlocfilehash: d7cadde88e9ae7ee30815ee9323785038dbb1a39
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763154"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393663"
 ---
-# <a name="popup-menu"></a>Всплывающее меню
+# <a name="popup-menu"></a>Во всплывающем меню
 
-`PopupMenu` Класс добавляет поддержку отображение всплывающих меню, прикрепленных к конкретному представлению. На следующем рисунке показано всплывающее меню, откроется второй элемент выделен так же, как он установлен с помощью кнопки:
+[PopupMenu](https://developer.xamarin.com/api/type/Android.Widget.PopupMenu/) (также называется _контекстное меню_) — это меню, к которому привязана к конкретному представлению. В следующем примере одно действие содержит кнопку. Когда пользователь нажимает кнопку, отображается три элемента всплывающего меню:
 
- [![Пример о PopopMenu с тремя трех элементов](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png#lightbox)
-
-Android 4 добавлено несколько новых возможностей в `PopupMenu` сделать более удобным для работы, а именно:
-
--   **Inflate** &ndash; увеличению метод теперь доступен в классе PopupMenu напрямую.
--   **DismissEvent** &ndash; PopupMenu класс теперь имеет DismissEvent.
-
-Давайте рассмотрим эти усовершенствования. В этом примере у нас есть одно действие, которое содержит кнопку. Когда пользователь нажимает кнопку, отображается всплывающего меню, как показано ниже:
-
- [![Пример приложения в эмуляторе с кнопками и 3 элемента всплывающего меню](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png#lightbox)
+[![Пример приложения с помощью кнопки и три элемента всплывающего меню](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
 
 
 ## <a name="creating-a-popup-menu"></a>Создание всплывающего меню
 
-Когда создается экземпляр `PopupMenu`, нам нужно передать ссылку на его конструктор `Context`, а также представления, к которому присоединяется меню. В этом случае мы создадим `PopupMenu` в обработчик события нажатия кнопки для наших кнопки, которая называется `showPopupMenu`.
-Эта кнопка также имеет представление, к которому будет присоединить `PopupMenu`, как показано в следующем коде:
+Первым шагом является создание файла ресурсов меню для меню и поместите его в **ресурсы/меню**. К примеру, следующий код XML-код для трех элементов меню, которое выводится в предыдущем снимке экрана, **Resources/menu/popup_menu.xml**:
 
-```csharp
-showPopupMenu.Click += (s, arg) => {
-    PopupMenu menu = new PopupMenu (this, showPopupMenu);
-}
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item1"
+          android:title="item 1" />
+    <item android:id="@+id/item1"
+          android:title="item 2" />
+    <item android:id="@+id/item1"
+          android:title="item 3" />
+</menu>
 ```
 
-В Android 3, код, на которую требуется увеличить меню из ресурса XML необходимо сначала получить ссылку на `MenuInflator`, а затем вызвать его `Inflate` метод с Идентификатором ресурса XML, содержащийся в меню и меню экземпляра, на которую увеличится в. Такой подход по-прежнему работает в Android 4 и более поздней версии в качестве кода ниже показано:
+Создайте экземпляр `PopupMenu` и привязать его к виду. При создании экземпляра `PopupMenu`, вы передаете конструктору ссылку `Context` а также представления, к которому будет присоединен меню. Таким образом во всплывающем меню привязанный к этому представлению во время ее создания.
+
+В следующем примере `PopupMenu` создается в обработчик событий click для кнопки (которая называется `showPopupMenu`). Эта кнопка также имеет представление, к которому `PopupMenu` привязан, как показано в следующем примере кода:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
     PopupMenu menu = new PopupMenu (this, showPopupMenu);
-    menu.MenuInflater.Inflate (Resource.Menu.popup_menu, menu.Menu);
 };
 ```
 
-Начиная с Android 4 тем не менее, теперь можно вызвать `Inflate` непосредственно на экземпляре `PopupMenu`. Это делает код более компактные, как показано ниже:
+Наконец, во всплывающем меню должен быть *увеличенную* меню ресурсом, который был создан ранее. В следующем примере вызов меню [Inflate](https://developer.xamarin.com/api/member/Android.Views.LayoutInflater.Inflate/p/System.Int32/Android.Views.ViewGroup/) добавляется метод и его [Показать](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Show%28%29/) вызывается метод, чтобы отобразить ее:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -59,12 +57,10 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-В приведенном выше коде после дало бы ошибку в меню мы просто вызвать `menu.Show` для его отображения на экране.
-
 
 ## <a name="handling-menu-events"></a>Обработка событий меню
 
-Когда пользователь выбирает пункт меню `MenuItemClick` возникает событие и меню будет закрыт. Коснувшись в любом месте за пределами меню будет просто закрыть его. В любом случае, начиная с Android 4, при закрытии меню его `DismissEvent` будет вызываться. Следующий код добавляет обработчики событий для обоих `MenuItemClick` и `DismissEvent` событий:
+Когда пользователь выбирает пункт меню, [MenuItemClick](https://developer.xamarin.com/api/event/Android.Widget.PopupMenu.MenuItemClick/) щелкните событие будет вызываться и меню будет закрыто. При касании в любом месте за пределами меню будет просто закройте его. В любом случае после закрытия меню его [DismissEvent](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Dismiss%28%29/) будет вызываться. Следующий код добавляет обработчики событий для обоих `MenuItemClick` и `DismissEvent` события:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -78,7 +74,7 @@ showPopupMenu.Click += (s, arg) => {
     menu.DismissEvent += (s2, arg2) => {
         Console.WriteLine ("menu dismissed");
     };
-            menu.Show ();
+    menu.Show ();
 };
 ```
 
@@ -87,5 +83,3 @@ showPopupMenu.Click += (s, arg) => {
 ## <a name="related-links"></a>Связанные ссылки
 
 - [PopupMenuDemo (пример)](https://developer.xamarin.com/samples/monodroid/PopupMenuDemo/)
-- [Знакомство с приложением Сандвичевы мороженого](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 платформы](http://developer.android.com/sdk/android-4.0.html)
