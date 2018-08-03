@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
-ms.openlocfilehash: 22ac17e211562eccbc49cc213e06079e77dd08c0
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 0f2418994e02c9e83506071f14901d22af4b8a66
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111161"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353325"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Бесплатная подготовка для приложений Xamarin.iOS
 
@@ -35,7 +35,7 @@ ms.locfileid: "39111161"
 - В вашем приложении должен использоваться явный идентификатор приложения Xamarin.iOS, а не шаблон идентификатора приложения.
 - Идентификатор пакета, используемый в приложении Xamarin.iOS, должен быть уникальным. Этот идентификатор не должен использоваться ранее в другом приложении. Идентификатор пакета, применяемый для бесплатной подготовки, **не может** использоваться повторно.
 - Если приложение уже распространяется, оно не может быть развернуто с помощью бесплатной подготовки.
-- Если в приложении используются службы приложений, необходимо создать профиль подготовки, как описано в руководстве по [подготовке устройства](~/ios/get-started/installation/device-provisioning/index.md#appservices). 
+- Если в приложении используются службы приложений, необходимо создать профиль подготовки, как описано в руководстве по [подготовке устройства](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services). 
 
 Дополнительные сведения об ограничениях, связанных с бесплатной подготовкой, см. в разделе [Ограничения](#limitations). Дополнительные сведения о распространении приложений iOS см. в разделе [Руководство по распространению приложений](~/ios/deploy-test/app-distribution/index.md).
 
@@ -144,4 +144,4 @@ ms.locfileid: "39111161"
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Подготовка устройств](~/ios/get-started/installation/device-provisioning/index.md)
-- [Подготовка служб приложений](~/ios/get-started/installation/device-provisioning/index.md#appservices)
+- [Подготовка служб приложений](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)

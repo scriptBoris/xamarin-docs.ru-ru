@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 657370705233e923b482b67fc5afed12631c8187
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1dff0e614943805930cf7d838110c4a42eee6f48
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785032"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353208"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Внутреннее распространение для приложений Xamarin.iOS
 
@@ -98,7 +98,7 @@ _Этот документ содержит краткий обзор распр
 1. В [центре разработчиков Apple](https://developer.apple.com/account/overview.action) перейдите в раздел *Certificates, Identifiers and Profiles* (Сертификаты, идентификаторы и профили). В разделе **Identifiers** (Идентификаторы) выберите элемент **App IDs** (ИД приложений).
 2. Нажмите кнопку **+** и укажите **Name** (Имя) для идентификации приложения на портале.
 3. Префикс приложения уже должен быть задан в качестве идентификатора вашей команды. Изменить его невозможно. Выберите "Explicit" (Явный) или "Wildcard App ID" (Шаблон ИД приложения), а затем введите идентификатор пакета (имя DNS в обратном порядке): **Explicit**: com.[доменное_имя].[имя_приложения] **Wildcard**:com.[доменное_имя].*
-4. Выберите любые [службы приложений](~/ios/get-started/installation/device-provisioning/index.md#appservices), которые требуются вашему приложению.
+4. Выберите любые [службы приложений](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services), которые требуются вашему приложению.
 5. Нажмите кнопку **Continue** (Продолжить) и следуйте инструкциям на экране, чтобы создать идентификатор приложения.
 
 Получив компоненты, необходимые для создания профиля распределения, выполните следующие действия, чтобы создать его:
