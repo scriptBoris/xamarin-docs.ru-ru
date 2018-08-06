@@ -62,11 +62,11 @@ Xamarin.Forms DataPages Nuget включает в себя ряд элемент
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Элемент управления имиджевое изображение на Android") ![ ] (controls-images/heroimage-dark-android.png "имиджевое изображение элемента управления на устройстве Android")
+![](controls-images/heroimage-light-android.png "Элемент управления имиджевое изображение на Android") ![](controls-images/heroimage-dark-android.png "имиджевое изображение элемента управления на устройстве Android")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "Имиджевое изображение элемента управления в iOS") ![ ] (controls-images/heroimage-dark-ios.png "имиджевое изображение элемента управления в iOS")
+![](controls-images/heroimage-light-ios.png "Имиджевое изображение элемента управления в iOS") ![](controls-images/heroimage-dark-ios.png "имиджевое изображение элемента управления в iOS")
 
 
 <a name="listitem" />
@@ -97,11 +97,11 @@ Xamarin.Forms DataPages Nuget включает в себя ряд элемент
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Элемента управления ListItem в Android") ![ ] (controls-images/listitem-dark-android.png "элемента управления ListItem в Android")
+![](controls-images/listitem-light-android.png "Элемента управления ListItem в Android") ![](controls-images/listitem-dark-android.png "элемента управления ListItem в Android")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "Элемента управления ListItem в iOS") ![ ] (controls-images/listitem-dark-ios.png "элемента управления ListItem в iOS")
+![](controls-images/listitem-light-ios.png "Элемента управления ListItem в iOS") ![](controls-images/listitem-dark-ios.png "элемента управления ListItem в iOS")
 
 
 ## <a name="custom-control-example"></a>Пример пользовательского элемента управления
@@ -128,11 +128,11 @@ Xamarin.Forms DataPages Nuget включает в себя ряд элемент
 
 **Android**
 
-![](controls-images/cardview-light-android.png "CardView пользовательский элемент управления на устройстве Android") ![ ] (controls-images/cardview-dark-android.png "CardView пользовательский элемент управления на устройстве Android")
+![](controls-images/cardview-light-android.png "CardView пользовательский элемент управления на устройстве Android") ![](controls-images/cardview-dark-android.png "CardView пользовательский элемент управления на устройстве Android")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "CardView пользовательский элемент управления в iOS") ![ ] (controls-images/cardview-dark-ios.png "CardView пользовательский элемент управления в iOS")
+![](controls-images/cardview-light-ios.png "CardView пользовательский элемент управления в iOS") ![](controls-images/cardview-dark-ios.png "CardView пользовательский элемент управления в iOS")
 
 <a name="custom" />
 

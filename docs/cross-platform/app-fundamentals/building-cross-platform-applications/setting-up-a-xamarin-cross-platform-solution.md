@@ -121,7 +121,7 @@ Xamarin подход — код группы на два типа проекто
 
 Проекты приложений ссылку на общий проект и содержать код пользовательского интерфейса, необходимый для присутствует функциональные возможности для пользователя, как показано на эти снимки экрана:
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Приложение проекты каждой ссылки на общий проект") ![ ] (setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "приложение проекты каждой ссылки на общий проект")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Приложение проекты каждой ссылки на общий проект") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "приложение проекты каждой ссылки на общий проект")
 
 
 Конкретные примеры структуру проекты указываются в конкретные случаи.

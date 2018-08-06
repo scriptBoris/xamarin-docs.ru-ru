@@ -109,8 +109,8 @@ Apple должен утвердить каждый продукт, прежде 
 
 Процесс добавления новых продуктов состоит из двух шагов:
 
-1.   Выберите тип продукта: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "выберите тип продукта")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   Введите атрибуты продуктов, включая идентификатор продукта, Ценовая категория и локализованного описания: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "ввода атрибутов продуктов")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1.   Выберите тип продукта: [![](in-app-purchase-basics-and-configuration-images/image8.png "выберите тип продукта")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   Введите атрибуты продуктов, включая идентификатор продукта, Ценовая категория и локализованного описания: [![](in-app-purchase-basics-and-configuration-images/image9.png "ввода атрибутов продуктов")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 Ниже описаны поля, необходимые для каждого продукта покупки из приложений:
 

@@ -63,7 +63,7 @@ var userName = shared.StringForKey ("name_preference");
 
 Пользователи смогут с параметрами через новое **Apple Watch** приложения на их iPhone. Это приложение позволяет пользователю отображать приложений на контрольные значения, а также изменить параметры, предоставляемые с помощью **Watch.bundle параметры**.
 
-![](settings-images/applewatch-1.png "Пример параметров приложения") ![ ] (settings-images/applewatch-2.png "пример параметров приложения")
+![](settings-images/applewatch-1.png "Пример параметров приложения") ![](settings-images/applewatch-2.png "пример параметров приложения")
 
 
 

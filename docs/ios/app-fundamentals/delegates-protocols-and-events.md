@@ -29,7 +29,7 @@ Xamarin.iOS использует элементы управления для п
 
 Чтобы проиллюстрировать протоколы и делегаты, мы выполним сборку простой схемы приложения, которое добавляет заметки к схеме, как показано ниже:
 
- [![](delegates-protocols-and-events-images/01-map.png "Пример приложения простой схемы, который добавляет заметки к схеме") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "пример заметки, добавление на карту")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+ [![](delegates-protocols-and-events-images/01-map.png "Пример приложения простой схемы, который добавляет заметки к схеме")](delegates-protocols-and-events-images/01-map.png#lightbox) [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "пример заметки, добавление на карту")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Перед выполняемой этого приложения, давайте начнем, просмотрев события .NET с UIKit.
 
