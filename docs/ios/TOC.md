@@ -329,6 +329,7 @@
 ### [Правила анализа Xamarin.iOS](troubleshooting/xamarin-ios-analysis.md)
 ### [Сообщения об ошибке (mtouch)](troubleshooting/mtouch-errors.md)
 ### [Часто задаваемые вопросы](troubleshooting/questions/index.md)
+#### [Отладка с Xcode](troubleshooting/questions/debugging-with-xcode.md)
 #### [Можно ли использовать виртуальную машину Mac с Xamarin?](troubleshooting/questions/mac-vm.md)
 #### [Скачивание предыдущей версии Xcode](troubleshooting/questions/previous-xcode.md)
 #### [Где можно задать свои расположения пакета SDK для iOS?](troubleshooting/questions/ios-sdk.md)
