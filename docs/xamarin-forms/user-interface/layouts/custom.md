@@ -409,8 +409,8 @@ async Task<ImageList> GetImageListAsync()
 Ниже показаны снимки экрана `WrapLayout` после поворачивается на альбомную ориентацию:
 
 ![](custom-images/landscape-ios.png "Пример iOS снимок экрана альбомной ориентации приложения")
-![](custom-images/landscape-android.png "Android приложения альбомная снимок экрана") 
- ![ ] (custom-images/landscape-uwp.png " Снимок экрана альбомной ориентации приложения универсальной платформы Windows")
+![](custom-images/landscape-android.png "Android приложения альбомная снимок экрана")
+![](custom-images/landscape-uwp.png " Снимок экрана альбомной ориентации приложения универсальной платформы Windows")
 
 Число столбцов в каждой строке зависит от того, размер фотографии, ширину экрана и количество точек в аппаратно независимая единица. [ `Image` ](xref:Xamarin.Forms.Image) Элементы асинхронная загрузка фотографии и поэтому `WrapLayout` класс получит часто обращаются к его [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) метод, так как каждое `Image` элемент получает новый размер, в зависимости от загрузки фотографии.
 
