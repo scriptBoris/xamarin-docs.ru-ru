@@ -266,7 +266,7 @@ Xamarin.Mac требует файлы заголовков, из пакета SD
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Только первые {0} из {1} «Ссылается» предупреждений, отображаемых. ** Это сообщение относится к 2009 г. **
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Только первые {0} из {1} «Ссылается» предупреждений, отображаемых. ** Это сообщение относится к 2009 г. \*\*
 
 <a name="MM2013" />
 
@@ -274,7 +274,7 @@ Xamarin.Mac требует файлы заголовков, из пакета SD
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac модули не поддерживают связывание. Запрос компоновки будет игнорироваться. ** Это сообщение является устаревшим в XM 3.6 + **
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac модули не поддерживают связывание. Запрос компоновки будет игнорироваться. ** Это сообщение является устаревшим в XM 3.6 + \*\*
 
 <!-- 2015 used by mtouch -->
 

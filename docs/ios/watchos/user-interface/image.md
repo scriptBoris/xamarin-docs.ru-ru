@@ -18,7 +18,7 @@ ms.locfileid: "34791255"
 
 предоставляет watchOS [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) управления для отображения изображений и простых анимаций. Некоторые элементы управления могут также иметь фоновое изображение (например, кнопки, группы и контроллеры интерфейс).
 
-![](image-images/image-walkway.png "Рисунок отображение Apple Watch") ![ ] (image-images/image-animation.png "Apple Watch с простая анимация")
+![](image-images/image-walkway.png "Рисунок отображение Apple Watch") ![](image-images/image-animation.png "Apple Watch с простая анимация")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 Добавление изображений в комплект средств для наблюдения за приложениями с помощью средства каталога изображений.
