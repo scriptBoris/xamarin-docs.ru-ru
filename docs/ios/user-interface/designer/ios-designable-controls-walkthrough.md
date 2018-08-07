@@ -1,38 +1,38 @@
 ---
-title: Использование пользовательских элементов управления с iOS конструктора
-description: В этом документе описывается создание пользовательского элемента управления и использовать ее с помощью Xamarin конструктора для операций ввода-вывода. Показано, как сделать элемент управления в панели элементов конструктора операций ввода-вывода, реализация элемента управления, чтобы он правильно отображает и времени разработки и многое другое.
+title: Использование пользовательских элементов управления в конструкторе IOS
+description: В этом документе описывается, как создать пользовательский элемент управления и использовать его с помощью конструктора Xamarin для iOS. Показано, как сделать элемент управления в панели элементов конструктора iOS, реализовать элемент управления, таким образом, чтобы правильно отображаются и времени разработки и многое другое.
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: dae675d65cb2be93ac828a1aebe560354630ab54
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0097cdf006944a51d938ea91d3ea0b0c2aee08cf
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790169"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573585"
 ---
-# <a name="using-custom-controls-with-the-ios-designer"></a>Использование пользовательских элементов управления с iOS конструктора
+# <a name="using-custom-controls-with-the-ios-designer"></a>Использование пользовательских элементов управления в конструкторе IOS
 
 ## <a name="requirements"></a>Требования
 
-Конструктор Xamarin для операций ввода-вывода доступна в Visual Studio для Mac и Visual Studio 2015 и 2017 г. в Windows.
+Конструктор iOS Xamarin доступна в Visual Studio для Mac и Visual Studio 2015 и 2017 в Windows.
 
-В этом руководстве предполагается Знакомство с содержимым, охваченных [Приступая к работе проводит](~/ios/get-started/index.md).
+В этом руководстве предполагается Знакомство с содержимым, охваченных [руководства по началу работы](~/ios/get-started/index.md).
 
 ## <a name="walkthrough"></a>Пошаговое руководство
 
 > [!IMPORTANT]
-> Начиная с версии Xamarin.Studio 5.5, способ создания пользовательских элементов управления несколько отличается в более ранних версиях. Чтобы создать пользовательский элемент управления, либо `IComponent` (с помощью связанной реализации методов) требуется интерфейс или класс может быть сопровождаться `[DesignTimeVisible(true)]`. Последний способ используется в следующем примере пошагового руководства.
+> Начиная с версии Xamarin.Studio 5.5, немного отличается от более ранних версиях способ создания пользовательских элементов управления. Чтобы создать пользовательский элемент управления, либо `IComponent` интерфейс необходим (с помощью соответствующей реализации методов) или класс может быть сопровождаться атрибутом `[DesignTimeVisible(true)]`. Последний способ используется в следующем примере пошагового руководства.
 
 
-1. Создайте новое решение из **iOS > приложения > одним приложением представление > C#** шаблона, назовите его `ScratchTicket`и продолжайте работу мастера создания проекта:
+1. Создайте новое решение из **iOS > приложение > приложение одного представления > C#** шаблона, назовите его `ScratchTicket`и следуйте указаниям мастера создания проекта:
 
     [![](ios-designable-controls-walkthrough-images/01new.png "Создание нового решения")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
-1. Создать новый файл пустым классом с именем `ScratchTicketView`:
+1. Создайте файл пустой класс с именем `ScratchTicketView`:
 
     [![](ios-designable-controls-walkthrough-images/02new.png "Создайте новый класс ScratchTicketView")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
 
@@ -158,60 +158,60 @@ ms.locfileid: "34790169"
     ```
 
 
-1. Добавить `FillTexture.png`, `FillTexture2.png` и `Monkey.png` файлов (доступных [из GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) для **ресурсов** папки.
+1. Добавить `FillTexture.png`, `FillTexture2.png` и `Monkey.png` файлов (доступные [из GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) для **ресурсы** папки.
     
 1. Дважды щелкните `Main.storyboard` файл, чтобы открыть его в конструкторе:
 
     [![](ios-designable-controls-walkthrough-images/03new.png "Конструктор iOS")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
 
-1. Перетаскивание **представление изображения** из **элементов** на представление в раскадровку.
+1. Перетащите **представление изображений** из **элементов** на представление в раскадровке.
 
-    [![](ios-designable-controls-walkthrough-images/04new.png "Добавить представление изображения в макет")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/04new.png "Это представление изображения, добавить в макет")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
 
-1. Выберите **представление изображения** и изменить его **изображения** свойства `Monkey.png`.
+1. Выберите **представление изображений** и измените его **изображение** свойства `Monkey.png`.
 
-    [! [] (ios проектирование-элементы управления-Пошаговое руководство образы и 05new.png «изображение представления изображения параметр свойства Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/05new.png "Изображение представления изображение свойству присвоить значение Monkey.png")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
-1. Как мы используем классы размер нам нужно будет ограничивать это представление изображения. Щелкните изображение дважды, чтобы перевести в режим ограничения. Давайте ограничить его центр, нажав кнопку закрепления center дескриптор и его выравнивание по вертикали и горизонтали:
+1. Так как мы используем классы размера необходимо ограничить в этом представлении изображения. Щелкните дважды, чтобы перевести в режим ограничения изображения. Давайте ограничить ее в центре, нажав кнопку закрепления center дескриптор и выравнивание по вертикали и горизонтали:
 
-    [![](ios-designable-controls-walkthrough-images/06new.png "Выравнивание по центру изображения")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/06new.png "Центрирование изображения")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
 
-1. Чтобы ограничить значения высоты и ширины, щелкните закрепление размер маркеров (маркеры костей форме) и выберите ширины и высоты соответственно:
+1. Чтобы ограничить высоту и ширину, щелкните закрепление размер маркеров (маркеры кости форме) и выберите ширины и высоты соответственно:
 
     [![](ios-designable-controls-walkthrough-images/07new.png "Добавление ограничений")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
 
-1. Обновление кадра, в зависимости от ограничений, нажав кнопку "Обновить" на панели инструментов:
+1. Обновите рамку, в зависимости от ограничений, щелкнув кнопкой "Обновить" на панели инструментов:
 
-    [![](ios-designable-controls-walkthrough-images/08new.png "Ограничения инструментов")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
-
-
-1. Затем выполните построение проекта, чтобы **Scratch представление билет** будет отображаться в разделе **настраиваемых компонентов** на панели инструментов:
-
-    [![](ios-designable-controls-walkthrough-images/09new.png "Компоненты пользовательских элементов")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/08new.png "Панель инструментов ограничений")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 
-1. Перетаскивание **Scratch представление билет** , чтобы он отображался над изображением monkey. Измените перетащите маркеры, чтобы представление билет Scratch охватывает monkey полностью, как показано ниже:
+1. Затем выполнить сборку проекта, чтобы **Scratch представление билет** будет отображаться в разделе **настраиваемые компоненты** на панели элементов:
 
-    [![](ios-designable-controls-walkthrough-images/10new.png "Представление временных файлов билет через представление изображения")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/09new.png "Настраиваемые компоненты панели элементов")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
-1. Ограничить представление билет Scratch представление изображения, нарисовав ограничивающий прямоугольник, чтобы выбрать оба представления. Выберите параметры, чтобы ограничить его ширину, высоту, Center и среднего и обновление рамки, в зависимости от ограничений, как показано ниже:
+
+1. Перетаскивание **Scratch представление билет** таким образом, чтобы она размещалась над monkey изображение. Настройте маркеры перетаскивания, так, чтобы представление билет Scratch охватывает monkey полностью, как показано ниже:
+
+    [![](ios-designable-controls-walkthrough-images/10new.png "Представление временных файлов билета через представление изображений")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
+
+1. Ограничить представление билет временных файлов в представление изображения, нарисовав ограничивающий прямоугольник, чтобы выбрать оба представления. Выберите параметры, чтобы ограничить ее ширину, высоту, Center и среднего и обновления кадров, в зависимости от ограничений, как показано ниже:
 
     [![](ios-designable-controls-walkthrough-images/11new.png "Центрирование и добавление ограничений")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
 
 
-1. Запустите приложение и «scratch off» изображение для отображения полей monkey.
+1. Запустите приложение и «scratch off» образа, чтобы отобразить monkey.
 
-    [![](ios-designable-controls-walkthrough-images/10-app.png "Запустите образец приложения")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/10-app.png "Запустите пример приложения")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
-## <a name="adding-design-time-properties"></a>Добавление свойств во время разработки
+## <a name="adding-design-time-properties"></a>Добавление свойства времени разработки
 
-Конструктор также включает поддержку во время разработки для пользовательских элементов управления свойство числового типа, перечисления, строки, bool, CGSize, UIColor и UIImage. Чтобы продемонстрировать, добавим свойство `ScratchTicketView` для задания изображения, которое является «верхушку Выкл.»
+Конструктор также включает в себя поддержку времени разработки для пользовательских элементов управления свойство числового типа, перечисления, строка, bool, CGSize, UIColor и UIImage. Чтобы продемонстрировать, давайте добавим свойство `ScratchTicketView` задать изображение, которое является «поцарапан Выкл.»
 
-Добавьте следующий код в `ScratchTicketView` класса для свойства:
+Добавьте следующий код, чтобы `ScratchTicketView` класса для свойства:
 
 ```csharp
 [Export("Image"), Browsable(true)]
@@ -225,7 +225,7 @@ public UIImage Image
 }
 ```
 
-Мы также можно добавить проверку, значение null для `Draw` метода, следующим образом:
+Мы также может потребоваться добавить проверку значений null для `Draw` метода, следующим образом:
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -265,17 +265,17 @@ public override void Draw(CGRect rect)
 }
 ```
 
-Включая `ExportAttribute` и `BrowsableAttribute` со значением аргумента `true` результатов в свойстве, будет отображаться в конструкторе **свойство** панель. Изменение свойства в другое изображение, входящий в состав проекта, такие как `FillTexture2.png`, приводит к обновление элемента управления во время разработки, как показано ниже:
+Включая `ExportAttribute` и `BrowsableAttribute` со значением аргумента `true` приводит свойство, отображаемое в конструкторе **свойство** панели. Изменение значения свойства на другое изображение, включенный в проект, такие как `FillTexture2.png`, результаты при обновлении элемента управления во время разработки, как показано ниже:
 
  [![](ios-designable-controls-walkthrough-images/11-customproperty.png "Изменение свойства времени разработки")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>Сводка
 
-В этой статье мы рассмотрения как создать настраиваемый элемент управления, а также использовать в приложения iOS с помощью конструктора операций ввода-вывода. Мы узнали, как создание и построение элемента управления, чтобы сделать его доступным для приложения в конструкторе **элементов**. Кроме того мы рассмотрели способы реализации элемента управления, таким образом, что он правильно отображает во время разработки и среды выполнения, а также способ предоставления свойств пользовательского элемента управления в конструкторе.
+В этой статье мы рассмотрели способы создания пользовательского элемента управления, а также использовать его в приложении iOS с помощью конструктора iOS. Мы узнали, как создать и построить элемент управления, чтобы сделать его доступным для приложения в конструкторе **элементов**. Кроме того мы рассмотрели способы реализации элемента управления, таким образом, чтобы он правильно отображает во время разработки и среды выполнения, а также способ предоставления свойства пользовательского элемента управления в конструкторе.
 
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [ScratchTicket (пример)](https://developer.xamarin.com/samples/monotouch/ScratchTicket/)
-- [требуемые изображения (пример)](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)
+- [необходимые изображения (пример)](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)
