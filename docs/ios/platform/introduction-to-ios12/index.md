@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/08/2018
-ms.openlocfilehash: 865a06e9fa430e195ce4ea3c6088785d9513dbf6
-ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
+ms.openlocfilehash: 4e1249b7a9c1e9797cbc758c3bd1b83f87d47431
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39030708"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615152"
 ---
 # <a name="introduction-to-ios-12"></a>Введение в iOS 12
 
@@ -21,11 +21,12 @@ ms.locfileid: "39030708"
 > [!WARNING]
 > 12 поддержки Xamarin iOS в настоящее время в предварительной версии, что означает, что он может содержать ошибки, не все компоненты, и могут измениться. Используйте его только для экспериментов.
 
-> [!NOTE]
-> - Просмотрите [Приступая к работе](get-started.md) руководстве инструкции о том, как приступить к созданию приложений iOS 12 с помощью Xamarin.
-> - Дополнительные сведения см. предварительной версии Xamarin [выпуске блога](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
-
 Этот документ содержит подробное описание некоторые интерфейсы API iOS 12, для какой Xamarin предварительной версии выпуска предоставляет привязки C#.
+
+Чтобы приступить к созданию приложений iOS 12 с помощью Xamarin, взгляните на:
+
+- [Руководство по началу работы](get-started.md)
+- Предварительная версия Xamarin [выпуска записи блога](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
 
 ## <a name="arkit-2"></a>ARKit 2
 
@@ -69,8 +70,12 @@ iOS 11.3 появился [болезни](https://www.apple.com/healthcare/heal
 
 В iOS 12 iMessage приложения поддерживают контексты презентации, которые позволяют приложениям выполнять как обычные iMessage приложение или в контексте фотографии или видео эффект.
 
+## <a name="vision-framework"></a>Framework концепции
+
+Платформа Vision включает обнаружение улучшенные лиц, которые можно обнаружить лица в разных направлениях. Кроме того изменения запроса теперь можно выбрать конкретную редакцию framework алгоритм компьютерного зрения.
+
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Подготовьтесь к iOS 12 (Apple)](https://developer.apple.com/ios/)
 - [iOS 12 предварительной версии (Apple)](https://www.apple.com/ios/ios-12-preview/)
-- Предварительная версия Xamarin [выпуска записи блога](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)
+- Предварительная версия Xamarin [выпуска записи блога](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

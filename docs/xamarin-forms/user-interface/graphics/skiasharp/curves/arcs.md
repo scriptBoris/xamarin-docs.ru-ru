@@ -1,34 +1,34 @@
 ---
-title: Три способа, чтобы нарисовать дугу
-description: В этой статье объясняется, как использовать SkiaSharp для определения дуги тремя разными способами и это демонстрируется с примерами кода.
+title: Три способа нарисовать дугу
+description: В этой статье описывается использование SkiaSharp для определения дуги тремя различными способами и демонстрирует это с помощью примера кода.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 9e0ed04543436ec7a83d13fa6a56637fc7916338
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e862a663b35124c1470ae5239c93409c298b19ba
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244156"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615409"
 ---
-# <a name="three-ways-to-draw-an-arc"></a>Три способа, чтобы нарисовать дугу
+# <a name="three-ways-to-draw-an-arc"></a>Три способа нарисовать дугу
 
-_Узнайте, как определять дуги тремя разными способами в SkiaSharp_
+_Сведения об использовании для определения дуги в три разных способа SkiaSharp_
 
-Дуга — кривой на окружности эллипса, например со скругленными части это знак бесконечности:
+Дуга — кривую на длины окружности эллипса, например скругленными части это знак бесконечности:
 
 ![](arcs-images/arcsample.png "Знак бесконечности")
 
-Несмотря на простоту этому определению, нет возможности для определения функции Рисование окружности, удовлетворяющий все потребности и, следовательно, не согласие между системами графики об оптимальном способе, чтобы нарисовать дугу. По этой причине `SKPath` класса не ограничивает сам лишь одним из подходов.
+Несмотря на простоту этого определения, не существует способа определить функцию рисования дуги, удовлетворяющий все потребности, и, следовательно, не консенсус между системами графики о наилучшем способе нарисовать дугу. По этой причине `SKPath` класса не ограничивает сам лишь одним из подходов.
 
-`SKPath` Определяет `AddArc` метод, пять различных `ArcTo` методы и два относительно `RArcTo` методы. Эти методы делятся на три категории, представляющая три различных подхода к указанию дуги. Используемая один зависит от сведений, доступных для определения дуги и как это дуги сочетается с другими графики, которая рисование.
+`SKPath` Определяет `AddArc` метод, пять различных `ArcTo` методов и два относительно `RArcTo` методы. Эти методы можно разделить на три категории, представляющая три различных подхода к указанию дуги. Используемый тот, который зависит от сведений, доступных для определения дуги и как это arc дополняют другие графические, рисовании.
 
 ## <a name="the-angle-arc"></a>Угол дуги
 
-Угол дуги способ рисования дуги, необходимо указать прямоугольник, ограничивающий эллипс. Дуги на окружности этот эллипса, который обозначается углов в центре эллипса, делая начало дуги и его длина. Два метода draw угол дуги. Это [ `AddArc` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) метод и [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKRect/System.Single/System.Single/System.Boolean/) метод:
+Угол дуги способ рисования дуги, необходимо указать прямоугольник, ограничивающий эллипс. Дугу на длины окружности этого эллипса обозначается углы от центра эллипса, делая начало дуги и его длины. Два различных способа рисования угол дуги. Это [ `AddArc` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) метод и [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKRect/System.Single/System.Single/System.Boolean/) метод:
 
 ```csharp
 public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
@@ -36,45 +36,45 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-Эти методы идентичны Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) и [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) методы. IOS [ `AddArc` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) метода аналогичен, но будет ограничен дуг на длины окружности, а не обобщены, чтобы эллипса.
+Эти методы аналогичны Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) и [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) методы. IOS [ `AddArc` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) метод аналогичен, но будет ограничен дуг на длину окружности круга, а не обобщить как эллипс.
 
-Оба метода начинается с `SKRect` значение, которое определяет расположение и размер эллипса:
+Оба метода начинаются с `SKRect` значение, которое определяет расположение и размер эллипса:
 
-![](arcs-images/anglearcoval.png "Овал начала дугу угол")
+![](arcs-images/anglearcoval.png "Овала, начинает угол дуги")
 
-Дуга является частью данного эллипса по окружности.
+Дуга является частью длины окружности этого эллипса.
 
-`startAngle` Аргумент — по часовой стрелке в градусах относительно горизонтальной линии, соединяющей центра эллипса справа. `sweepAngle` Аргумент является относительно `startAngle`. Ниже приведены `startAngle` и `sweepAngle` значения 60 и 100 градусов, соответственно:
+`startAngle` Аргумент — по часовой стрелке в градусах относительно горизонтальной линии, рисуемой из центра эллипса справа. `sweepAngle` Аргумент задается по отношению к `startAngle`. Ниже приведены `startAngle` и `sweepAngle` значения 60 и 100 градусов, соответственно:
 
-![](arcs-images/anglearcangles.png "Углы, определяющие дугу угол")
+![](arcs-images/anglearcangles.png "Углы, которые определяют угол дуги")
 
-Начальный угол начинается дуги. Его длина регулируется угол поворота:
+Начальный угол дуги начинается. Его длина регулируется угол поворота:
 
-![](arcs-images/anglearchighlight.png "Выделенная угол дуги")
+![](arcs-images/anglearchighlight.png "Выделенные угол дуги")
 
-Добавляется к пути с кривой `AddArc` или `ArcTo` метод является просто этой части эллипса окружности, здесь показаны красным цветом:
+Кривая, добавляется к пути с `AddArc` или `ArcTo` метод является просто той части параметра окружности эллипса, здесь показано красным цветом:
 
-![](arcs-images/anglearc.png "Угол дуги сам по себе")
+![](arcs-images/anglearc.png "Угол дуги сама по себе")
 
-`startAngle` Или `sweepAngle` аргументов может быть отрицательным: дуги по часовой стрелке для положительных значений `sweepAngle` и против часовой стрелки для отрицательных значений.
+`startAngle` Или `sweepAngle` аргументов может быть отрицательным: дуги по часовой стрелке для положительных значений из `sweepAngle` и против часовой стрелки для отрицательных значений.
 
-Тем не менее `AddArc` does *не* определить закрытый профиль. При вызове метода `LineTo` после `AddArc`, линия берет начало от конца дуги к моменту `LineTo` метод и тот же самое справедливо для `ArcTo`.
+Тем не менее `AddArc` does *не* определить закрытый профиль. При вызове метода `LineTo` после `AddArc`, линия берет начало от конца дуги к моменту `LineTo` метода и это справедливо для `ArcTo`.
 
-`AddArc` автоматически запускает новый профиль и функционально эквивалентен вызов `ArcTo` с последним аргументом для `true`:
+`AddArc` автоматически запускает новый профиль и функционально эквивалентен вызов `ArcTo` с последний аргумент `true`:
 
 ```csharp
 path.ArcTo (oval, startAngle, sweepAngle, true);
 ```
 
-Последний аргумент вызывается `forceMoveTo`, в результате чего он фактически `MoveTo` вызывать в начале дуги. Новый профиль, который начинается. То есть не так с последнего аргумента `false`:
+Что вызывается последним аргументом `forceMoveTo`, и фактически вызывает `MoveTo` вызвать в начале дуги. Новый профиль, который начинается. Это не так с последним аргументом `false`:
 
 ```csharp
 path.ArcTo (oval, startAngle, sweepAngle, false);
 ```
 
-Эта версия `ArcTo` проводит линию, начиная с текущей позиции в начало дуги. Это означает, что дуги может быть где-нибудь середине большего профиль.
+Эта версия `ArcTo` проводит линию из текущей позиции в начале дуги. Это означает, что дуги может быть где-то посередине профиль большего размера.
 
-**Угол дуги** страница позволяет использовать два ползунки для задания начала и углы поворота. В файле XAML создает два `Slider` элементы и `SKCanvasView`. `PaintCanvas` Обработчик в [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) файл рисует Овал и дуги с использованием двух `SKPaint` объекты, определенные как поля:
+**Угол дуги** страница позволяет указать начало и углы поворота с помощью двух ползунков. Файл XAML создает два `Slider` элементов и `SKCanvasView`. `PaintCanvas` Обработчик в [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) файл рисует Овал и дуги, с использованием двух `SKPaint` объекты, определенные как поля:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -99,11 +99,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Как видите, начальный угол и угол поворота может принимать отрицательные значения.
+Как вы видите, начальный угол и угол поворота, выполняемых с отрицательными значениями:
 
-[![](arcs-images/anglearc-small.png "Тройной снимок экрана со страницей угол дуги")](arcs-images/anglearc-large.png#lightbox "тройной снимок экрана со страницей угол дуги")
+[![](arcs-images/anglearc-small.png "Тройной снимок экрана страницы угол дуги")](arcs-images/anglearc-large.png#lightbox "тройной снимок экрана страницы угол дуги")
 
-Такой подход к созданию дугу является типовой простым и легко производные параметрического уравнения, которые описывают дуги. Знание размера и расположения эллипса и угла начала и очистка, начальная и конечная точки дуги можно вычислить с помощью простого тригонометрические функции:
+Этот подход к созданию дугу является алгоритмически наиболее простым и легко являются производными параметрические уравнения, которые описывают дуги. Зная, размер и расположение элемента эллипса и угла начала и поворота, начальную и конечную точки дуги можно вычислить по простой тригонометрических вычислений:
 
 x = oval. MidX + (овал. Ширина / 2) * cos(angle)
 
@@ -111,7 +111,7 @@ y = oval. MidY + (овал. Высота / 2) * sin(angle)
 
 `angle` Значение `startAngle` или `startAngle + sweepAngle`.
 
-Использование двух углов для определения дугу лучше всего подходит для случаев, когда вы знаете углового длина окружности, необходимого для отрисовки, например, чтобы убедиться в круговой диаграмме. **Разрезанная круговая диаграмма** страницы это показано. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Класс использует внутренний класс для определения некоторых данных создано и цвета:
+Использование двух углов для определения дугу является наилучшим образом подходит для случаев, когда вы знаете angular длина окружности, необходимый для рисования, например, чтобы убедиться в круговой диаграмме. **Разрезанная круговая диаграмма** страница демонстрирует это. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Класс использует внутренний класс для определения некоторых данных создано и цвета:
 
 ```csharp
 class ChartData
@@ -140,7 +140,7 @@ ChartData[] chartData =
 
 ```
 
-`PaintSurface` Обработчик сначала просматривает элементы для вычисления `totalValues` номер. Таким образом он может определить размер каждого элемента как часть общего количества и преобразовать их значение угла:
+`PaintSurface` Обработчик сначала перебирает элементы для вычисления `totalValues` номер. Таким образом его можно определить размер каждого элемента долях от общего количества и преобразовать их значение угла:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -204,19 +204,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Новый `SKPath` объекта создается для каждого среза круговой диаграммы. Путь состоит из строки в центре то `ArcTo` обратно нарисовать дуги, а другая строка результаты center `Close` вызова. Эта программа отображает «Разрезанная» сегментами, перемещая их все в центре на 50 пикселей. Эта задача требует вектор в направлении среднюю угол поворота для каждого среза:
+Новый `SKPath` объекта создается для каждого среза круговой диаграммы. Путь состоит из строки из центра, то `ArcTo` для рисования дуги и еще одну строку обратно в центр результаты из `Close` вызова. Эта программа отображает «Разрезанная» секторов диаграммы, перемещая их все в центре на 50 пикселей. Эта задача требует вектор в направлении среднюю угол поворота для каждого среза:
 
-[![](arcs-images/explodedpiechart-small.png "Тройной снимок экрана со страницей Разрезанная круговая диаграмма")](arcs-images/explodedpiechart-large.png#lightbox "тройной снимок экрана со страницей Разрезанная круговая диаграмма")
+[![](arcs-images/explodedpiechart-small.png "Тройной снимок экрана страницы Разрезанная круговая диаграмма")](arcs-images/explodedpiechart-large.png#lightbox "тройной снимок экрана страницы Разрезанная круговая диаграмма")
 
-Чтобы увидеть, как оно выглядит без «развертывание», просто закомментировать `Translate` вызова:
+Чтобы увидеть, как выглядит без «развертывание», просто задокомментируем `Translate` вызова:
 
-[![](arcs-images/explodedpiechartunexploded-small.png "Тройной снимок экрана со страницей Разрезанная круговая диаграмма без развертывания")](arcs-images/explodedpiechartunexploded-large.png#lightbox "тройной снимок экрана со страницей Разрезанная круговая диаграмма без развертывания")
+[![](arcs-images/explodedpiechartunexploded-small.png "Тройной снимок экрана страницы Разрезанная круговая диаграмма без развертывания")](arcs-images/explodedpiechartunexploded-large.png#lightbox "тройной снимок экрана страницы Разрезанная круговая диаграмма без развертывания")
 
 ## <a name="the-tangent-arc"></a>Касательной дуги
 
-Второй тип дуги, поддерживаемых `SKPath` — *касательной дуги*, так называемые, так как длина окружности по касательной две соединенные линии, дуги.
+Второй тип дуги, поддерживаемых `SKPath` — *касательных arc*, так называемых поскольку дуги окружности круга, была касательной к две соединенные линии.
 
-Касательной дуги добавляется путь с помощью вызова [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) метод с двумя `SKPoint` параметры, или [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) перегрузку с отдельными `Single` параметры для точки:
+Касательной arc добавляется путь с помощью вызова [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) метод с двумя `SKPoint` параметры, или [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) перегрузка с помощью отдельных `Single` параметры для следующие моменты.
 
 ```csharp
 public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
@@ -224,43 +224,43 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-Это `ArcTo` аналогичен методу PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) функции (страницы 532 в документе PDF) и iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) метод.
+Это `ArcTo` метод аналогичен методу PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) функции (страницы 532 в документе PDF) и iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) метод.
 
-`ArcTo` Метод состоит из трех точек:
+`ArcTo` Метод включает в себя три точки:
 
-- Текущий точки контура или точку (0, 0), если `MoveTo` не вызывается
-- Первый аргумент точки `ArcTo` метод с именем *углов точки*
+- Текущий точек контура или точки (0, 0), если `MoveTo` не был вызван
+- Первый аргумент точки `ArcTo` метод, именуемый *углу точки*
 - Второй аргумент точки `ArcTo`, который называется *конечная точка*:
 
-![](arcs-images/tangentarcthreepoints.png "Три точки, начинающиеся касательной дуги")
+![](arcs-images/tangentarcthreepoints.png "Три точки, которые начинаются касательных дуги")
 
 Эти три точки определяют две соединенные линии:
 
-![](arcs-images/tangentarcconnectinglines.png "Линии, соединяющие три точки тангенса дуги")
+![](arcs-images/tangentarcconnectinglines.png "Линии, соединяющие три точки касания дуги")
 
-Если colinear три точки &mdash; то есть если они находятся на одной прямой линии &mdash; будет рисуется дуга.
+Если colinear три точки &mdash; то есть если они находятся в той же строке прямой &mdash; рисуется дуга.
 
-`ArcTo` Также включает `radius` параметра. Этот параметр определяет радиус окружности:
+`ArcTo` Также включает `radius` параметра. Определяет радиус круга:
 
-![](arcs-images/tangentarccircle.png "Касательной дуги окружности")
+![](arcs-images/tangentarccircle.png "Круг касательных дуги")
 
-Касательной дуги не обобщенная для эллипса.
+Касательной дуги для эллипс не генерализована.
 
-Если две строки соответствует углом, круг, может быть вставлен между этими строками, чтобы оно было тангенс для обеих строк:
+Если две строки соответствует под любым углом, которым могут вставляться между эти строки, чтобы она была касательной к обе строки:
 
-![](arcs-images/tangentarctangentcircle.png "Круг касательной дугу между двумя строками")
+![](arcs-images/tangentarctangentcircle.png "Элемент управления circle касательных дуга между двумя строками")
 
-Кривой, которая добавляется в профиль не затрагивает либо точек, заданных в `ArcTo` метод. Он состоит из прямую линию от текущей точки первой точки тангенса и дугу, которая заканчивается на второй точке касания.
+Кривую, которая добавляется в профиль не затрагивает любой из точки, указанные в `ArcTo` метод. Она состоит из прямую линию с текущего момента первой точке касания и дугу, которая заканчивается на второй точке касания:
 
-![](arcs-images/tangentarchighlight.png "Выделенная касательной дугу между двумя строками")
+![](arcs-images/tangentarchighlight.png "Выделенные касательных дуга между двумя линиями")
 
-Ниже приведен последний прямой линии и дуги, который добавляется в профиль.
+Ниже приведен окончательный прямой линии и дуги, который добавляется в профиль.
 
-![](arcs-images/tangentarc.png "Выделенная касательной дугу между двумя строками")
+![](arcs-images/tangentarc.png "Выделенные касательных дуга между двумя линиями")
 
 Профиль может быть продолжен из второй точке касания.
 
-**Дуги тангенс** страницы позволяет экспериментировать с касательной дуги. Это первое из нескольких страниц, которые являются производными от [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs), который определяет несколько удобных `SKPaint` объектов и выполняет `TouchPoint` обработки:
+**Дуги тангенс** страница позволяет экспериментировать с касательной дуги. Это первое из нескольких страниц, которые являются производными от [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs), который определяет некоторые удобные `SKPaint` объектов и выполняет `TouchPoint` обработки:
 
 ```csharp
 public class InteractivePage : ContentPage
@@ -310,7 +310,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-Класс `TangentArcPage` является производным от класса `InteractivePage`. Конструктор в [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) файла отвечает за создание и инициализация `touchPoints` массива, а параметр `baseCanvasView` (в `InteractivePage`) для `SKCanvasView` создать экземпляр объекта в [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) файла:
+Класс `TangentArcPage` является производным от класса `InteractivePage`. Конструктор в [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) файл отвечает за создание и инициализация `touchPoints` массива, а параметр `baseCanvasView` (в `InteractivePage`) для `SKCanvasView` создать экземпляр объекта в [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) файла:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -346,7 +346,7 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-`PaintSurface` Обработчик использует `ArcTo` Чтобы нарисовать дугу на основании точки касания и `Slider`, но также типовой вычисляет круг, угол основана на:
+`PaintSurface` Обработчик использует `ArcTo` на основе методов, чтобы нарисовать дугу на точки касания и `Slider`, но также алгоритмически вычисляет круг, угол основан на:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -414,11 +414,11 @@ public partial class TangentArcPage : InteractivePage
 
 Вот **дуги тангенс** страница, выполняемая на всех трех платформах:
 
-[![](arcs-images/tangentarc-small.png "Тройной снимок экрана со страницей дуги тангенс")](arcs-images/tangentarc-large.png#lightbox "тройной снимок экрана со страницей тангенс дуги")
+[![](arcs-images/tangentarc-small.png "Тройной снимок экрана страницы Arc тангенс")](arcs-images/tangentarc-large.png#lightbox "тройной снимок экрана страницы тангенс дуги")
 
-Касательной дуги идеально подходит для создания прямоугольника с закругленными углами, например прямоугольник с закругленными углами. Поскольку `SKPath` уже включает в себя `AddRoundedRect` метод, **округленное Heptagon** страницы демонстрируется использование `ArcTo` для округления углов семь сторонний многоугольник. (Для любого правильного многоугольника обобщенный код.)
+Касательной дуги идеально подходит для создания скругленных углов, например прямоугольник с закругленными углами. Так как `SKPath` уже включает в себя `AddRoundedRect` метод, **округленное Heptagon** странице рассказывается, как использовать `ArcTo` для скругление углов семь стороны многоугольника. (Код обобщается для любого регулярных многоугольника.)
 
-`PaintSurface` Обработчик [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) класса содержит один `for` цикл для вычисления координат семь вершины heptagon и второй для вычисления средние семь сторон этих вершины. Затем эти средние точки используются для построения пути:
+`PaintSurface` Обработчик [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) класса содержит один `for` цикла, для которого требуется вычислить координаты семь вершины heptagon, во-вторых, для которого требуется вычислить средние точки этих семи сторон вершины. Затем эти средние точки используются для создания пути:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -487,13 +487,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Вот программу на трех платформ.
+Ниже приведен программу на трех платформ.
 
-[![](arcs-images/roundedheptagon-small.png "Тройной снимок экрана со страницей округленное Heptagon")](arcs-images/roundedheptagon-large.png#lightbox "тройной снимок экрана со страницей округленное Heptagon")
+[![](arcs-images/roundedheptagon-small.png "Тройной снимок экрана страницы округленное Heptagon")](arcs-images/roundedheptagon-large.png#lightbox "тройной снимок экрана страницы округленное Heptagon")
 
 ## <a name="the-elliptical-arc"></a>Эллиптической дуги
 
-Эллиптической дуги добавляется путь с помощью вызова [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/SkiaSharp.SKPoint/) метод, который имеет два `SKPoint` параметры, или [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/System.Single/System.Single/) перегрузка с отдельной X и Y координаты:
+Эллиптической дуги добавляется к пути с помощью вызова [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/SkiaSharp.SKPoint/) метод, который имеет два `SKPoint` параметры, или [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/System.Single/System.Single/) перегрузка с отдельной X и Y координаты:
 
 ```csharp
 public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, SKPoint xy)
@@ -501,48 +501,48 @@ public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPath
 public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, Single x, Single y)
 ```
 
-Эллиптической дуги согласуется с [эллиптической дуги](http://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands) в составе масштабируемой векторной графикой (SVG), а также универсальная платформа Windows [ `ArcSegment` ](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/) класса.
+Эллиптической дуги согласуется с [эллиптической дуги](http://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands) входящих в масштабируемый векторный рисунок (SVG) и универсальной платформы Windows [ `ArcSegment` ](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/) класса.
 
-Эти `ArcTo` методы нарисовать дугу между двумя точками, является текущей точкой контуру, и последний параметр `ArcTo` метод ( `xy` параметр или отдельной `x` и `y` параметров):
+Эти `ArcTo` методы нарисовать дугу между двумя точками, является текущей точки контура, и последний параметр `ArcTo` метод ( `xy` параметр или отдельные `x` и `y` параметров):
 
-![](arcs-images/ellipticalarcpoints.png "Две точки, определенные эллиптическую дугу")
+![](arcs-images/ellipticalarcpoints.png "Две точки, которые определены эллиптической дуги")
 
-Первый параметр точки `ArcTo` метод (`r`, или `rx` и `ry`) вообще не является точкой, но вместо этого задает горизонтальный и вертикальный радиусы эллипса;
+Первый параметр точки для `ArcTo` метод (`r`, или `rx` и `ry`) вообще не является точкой, но вместо этого задает горизонтальный и вертикальный радиусы эллипса;
 
 ![](arcs-images/ellipticalarcellipse.png "Эллипса, который определен эллиптической дуги")
 
-`xAxisRotate` Представляет собой число градусов по часовой стрелке поворот эллипса это:
+`xAxisRotate` Параметр — это число градусов по часовой стрелке для поворота этого эллипса:
 
-![](arcs-images/ellipticalarctiltedellipse.png "Tilted эллипса, который определен эллиптической дуги")
+![](arcs-images/ellipticalarctiltedellipse.png "Мозаичный эллипса, который определен эллиптической дуги")
 
-Если этот tilted эллипса, который располагается нажмите, чтобы он соприкасается две точки, точки соединяются два разных дуги:
+Если это мозаичный эллипс находится затем таким образом, чтобы он соприкасается двумя точками, точки соединяются два разных дуги:
 
-![](arcs-images/ellipticalarcellipse1.png "Первый набор эллиптической дуги.")
+![](arcs-images/ellipticalarcellipse1.png "Первый набор эллиптической дуги")
 
-Можно отличить эти две дуги двумя способами: верхний дуги больше, чем нижней дуги и как дуги слева направо, top дуги по часовой стрелке пока нижней дуги в направлении против часовой стрелки.
+Можно отличить эти две дуги двумя способами: верхний дуги больше, чем нижней дуги и как дуга которого отображается слева направо, верхнем дуги по часовой стрелке хотя нижней дуга рисуется против часовой стрелки.
 
 Можно также в соответствии с эллипса между двумя точками другим способом:
 
-![](arcs-images/ellipticalarcellipse2.png "Второй набор эллиптической дуги.")
+![](arcs-images/ellipticalarcellipse2.png "Второй набор эллиптической дуги")
 
-Теперь имеется меньших дуг в верхней части, которая рисуется по часовой стрелке, а большего размера дуги в нижней, которая рисуется против часовой стрелки.
+Теперь имеется меньшего размера дуги в верхней части, которая рисуется по часовой стрелке и большего размера дуги внизу, рисуется против часовой стрелки.
 
-Эти две точки может быть подключено дугой определяется tilted эллипса всего из четырех способов:
+Этих двух точек может быть подключено дугой определением мозаичный эллипс в общей сложности состоит из четырех способов:
 
 ![](arcs-images/ellipticalarccolors.png "Все четыре эллиптической дуги")
 
-Эти четыре дуги различаются по четыре комбинации [ `SKPathArcSize` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathArcSize/) и [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/) перечисления аргументов типа для `ArcTo` метод:
+Эти четыре дуги различаются по четыре комбинации [ `SKPathArcSize` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathArcSize/) и [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/) аргументов типа перечисления в `ArcTo` метод:
 
 - красный: SKPathArcSize.Large и SKPathDirection.Clockwise
 - Зеленый: SKPathArcSize.Small и SKPathDirection.Clockwise
 - Синий: SKPathArcSize.Small и SKPathDirection.CounterClockwise
 - Пурпурный: SKPathArcSize.Large и SKPathDirection.CounterClockwise
 
-Если tilted эллипс не является достаточно большой между двумя точками, затем он равномерно масштабируется до достаточный размер. Только две уникальные дуги в этом случае подключение двумя точками. Их можно отличить с `SKPathDirection` параметра.
+Если мозаичный эллипс не достаточное для размещения между двумя точками, затем он равномерно масштабируется, пока она не будет достаточно большим. Только два уникальных дуги в этом случае подключиться двумя точками. Их можно отличить с `SKPathDirection` параметра.
 
-Несмотря на то, что этот подход к определению дугу звучит сложных при первом возникновении, это единственный подход, который позволяет определить дуги с поворотом эллипса и часто является простой подход при необходимости интегрировать с другими частями контуру дуги.
+Несмотря на то, что этот подход к определению дугу звучит на первом возникновении сложных, это единственный подход, который позволяет определять дуги с повернутый эллипс, и это часто самый простой подход, если вам нужно провести интеграцию с другими частями компании contour дуги.
 
-**Эллиптической дуги** страница позволяет интерактивно установить две точки и размер и поворот эллипса. `EllipticalArcPage` Класс является производным от `InteractivePage`и `PaintSurface` обработчик в [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) четыре дуги строит файл кода программной части:
+**Эллиптической дуги** страница позволяет интерактивно установить две точки и размер и поворот эллипса. `EllipticalArcPage` Класс является производным от `InteractivePage`и `PaintSurface` обработчик в [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) файл с выделенным кодом рисует четыре дуги:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -582,35 +582,35 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Здесь выполняется на трех платформах:
+Здесь он работает под управлением трех платформ:
 
-[![](arcs-images/ellipticalarc-small.png "Тройной снимок экрана со страницей эллиптической дуги")](arcs-images/ellipticalarc-large.png#lightbox "тройной снимок экрана со страницей эллиптической дуги")
+[![](arcs-images/ellipticalarc-small.png "Тройной снимок экрана страницы эллиптической дуги")](arcs-images/ellipticalarc-large.png#lightbox "тройной снимок экрана страницы эллиптической дуги")
 
-**Дуги бесконечность** страница использует эллиптической дуги для рисования знак бесконечности. Знак бесконечности основана на двух кругов с радиусы 100 единиц измерения, разделенные 100 единиц.
+**Бесконечность Arc** страница использует эллиптической дуги для рисования знак бесконечности. Знак бесконечности основана на два круга с радиусы 100 единиц, разделенных 100 единиц.
 
 ![](arcs-images/infinitycircles.png "Два круга")
 
-Две строки, пересекающие друг с другом, касательной обоих круги:
+Две строки, пересекающих друг с другом приведены касательной оба окружности.
 
 ![](arcs-images/infinitycircleslines.png "Два круга с касательные")
 
-Значок «бесконечность» представляет собой сочетание части этих окружностей и две строки. Использование эллиптической дуги для рисования знак бесконечности, необходимо определить координаты, где две строки представляют касательной кругов.
+Знак бесконечности состоит из части этих кругах и две строки. Чтобы использовать эллиптической дуги для рисования знак бесконечности, необходимо определить координаты, где две строки представляют касательной кругов.
 
-Создайте правый прямоугольник в одном из кругов.
+Создайте прямоугольник справа в один из кругов.
 
-![](arcs-images/infinitytriangle.png "Два круга с касательные и внедренные окружности")
+![](arcs-images/infinitytriangle.png "Два круга с касательные и embedded круг")
 
-Радиус окружности 100 единиц, который гипотенузы треугольник 150 единиц, поэтому угол α арксинус (арксинус) 100 разделить по 150 или 41,8 градусов. Длина стороны треугольника — 150 раз косинус 41,8 градусов или 112, который также может быть рассчитана теоремы Пифагоров.
+Радиус круга составляет 100 единиц и гипотенузы треугольника составляет 150 единиц, поэтому угол α арксинус 100 на 150, или 41,8 градусов (обратный синус). Длина другой стороне треугольник — 150 раз косинус 41,8 градусов или 112, который также можно вычислить по необходимости знать теорему Пифагора.
 
-Координаты точки тангенса затем может быть вычислено с помощью этих сведений:
+Координаты точки касания, затем может быть вычислено с помощью этой информации:
 
 x = 112·cos(41.8) = 83
 
 y = 112·sin(41.8) = 75
 
-Четыре точки тангенса приведены все необходимое для рисования круга радиусы 100 знак бесконечности по центру в точке (0, 0).
+Четыре касательных приведены все необходимое для рисования знак бесконечности по центру в точке (0, 0) с радиусы круг 100.
 
-![](arcs-images/infinitycoordinates.png "Два круга с касательные и координаты")
+![](arcs-images/infinitycoordinates.png "Два круга с касательные и координатами")
 
 `PaintSurface` Обработчик в [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) класс размещает знак бесконечности, чтобы (0, 0) точка располагается по центру страницы и масштабирует путь, по размеру экрана:
 
@@ -650,19 +650,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Код использует `Bounds` свойство `SKPath` определяет размеры синус бесконечность его масштабированию размер полотна:
+Код использует `Bounds` свойство `SKPath` определяет размеры бесконечность синус для его масштабирования размер холста:
 
-[![](arcs-images/arcinfinity-small.png "Тройной снимок экрана со страницей бесконечность дуги")](arcs-images/arcinfinity-large.png#lightbox "тройной снимок экрана со страницей бесконечность дуги")
+[![](arcs-images/arcinfinity-small.png "Тройной снимок экрана страницы бесконечность Arc")](arcs-images/arcinfinity-large.png#lightbox "тройной снимок экрана страницы бесконечность дуги")
 
-Результат кажется слишком маленьким, подразумевает, что `Bounds` свойство `SKPath` сообщает размером, превышающим путь.
+Результат выглядит немного мало, поэтому, предположительно, `Bounds` свойство `SKPath` сообщает, размер, превышающий путь.
 
-На внутреннем уровне Skia предусматривает аппроксимацию дуги, используя несколько кривых Безье второго порядка. Эти кривые (как можно будет увидеть в следующем разделе) содержат контрольные точки, которые определяют способ рисования кривой, но не являются частью отображаемой кривой. `Bounds` Свойства включает эти контрольные точки.
+На внутреннем уровне Skia аппроксимирует дуги, с помощью нескольких кривых Безье второго порядка. Эти кривые (как можно будет увидеть в следующем разделе) содержат контрольные точки, которые определяют, каким образом кривой, но не являются частью отображаемой кривой. `Bounds` Свойство включает эти контрольные точки.
 
-Чтобы получить более строгого соответствия, используйте `TightBounds` свойство, которое исключает контрольные точки. Ниже приведен в альбомном режиме и с помощью программы `TightBounds` , чтобы получить границы пути:
+Чтобы получить более тесную подходит, используйте `TightBounds` свойство, которое исключает контрольные точки. Вот программа работает в альбомном режиме и с помощью `TightBounds` свойство, чтобы получить границы путей:
 
-[![](arcs-images/arcinfinitytightbounds-small.png "Тройной снимок экрана со страницей бесконечность дуги с границами тесной")](arcs-images/arcinfinitytightbounds-large.png#lightbox "тройной снимок экрана со страницей бесконечность дуги с тесной границами")
+[![](arcs-images/arcinfinitytightbounds-small.png "Тройной снимок экрана страницы бесконечность Arc с тесной границами")](arcs-images/arcinfinitytightbounds-large.png#lightbox "тройной снимок экрана страницы бесконечность Arc с тесной границы")
 
-Несмотря на то, что соединения между дуги, а также прямые линии, математически smooth, может показаться немного внезапные изменение дуги на прямой линии. На следующей странице представлен лучше знак бесконечности.
+Несмотря на то, что подключения между дуги, а также прямые линии — математически smooth, может показаться немного внезапные изменение дугу на прямую линию. Знак бесконечности лучше представлены на следующей странице.
 
 
 ## <a name="related-links"></a>Связанные ссылки

@@ -1,23 +1,24 @@
 ---
-title: Заметки о SkiaSharp платформы
-description: Этот документ описывает платформой детально SkiaSharp. Он предоставляет образец кода для iOS, Android, macOS, Windows и Xamarin.Forms.
+title: Заметки о платформе SkiaSharp
+description: В этом документе описаны специфические для платформы детально SkiaSharp. Также пример кода для iOS, Android, macOS, Windows и Xamarin.Forms.
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: bcec8f2c850396f45cba795555b924d3cbc4ef22
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 05c6ae6553a2e869b9eb7e038abd7b1c34350551
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783533"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615812"
 ---
-# <a name="skiasharp-platform-specific-notes"></a>Заметки о SkiaSharp платформы
+# <a name="skiasharp-platform-specific-notes"></a>Заметки о платформе SkiaSharp
 
-В приведенных ниже примерах выделить буферы изображения вручную, это делается для того, чтобы проиллюстрировать общий шаблон платформы, используемого для отрисовки в существующий буфер RBGA, предоставляемых платформой.
+В приведенных ниже примерах выделить буферы образа вручную, это делается для иллюстрации общий шаблон платформы, используемого для рисования на существующий RBGA буфер, предоставляемый платформой.
 
-Необходимо использовать эту идиому, если не требуется.  Нет перегрузку, которая создает и обслуживает резервного хранилища для изображения для вас.
+Необходимо использовать эту идиому, если вы не хотите.  Нет перегрузку, которая создает и обслуживает резервного хранилища для образа для вас.
 
 ## <a name="ios"></a>iOS
 
@@ -99,7 +100,7 @@ try {
 }
 ```
 
-## <a name="windows-desktop--mac-desktop"></a>Рабочий стол Windows или Mac рабочего стола
+## <a name="windows-desktop--mac-desktop"></a>Рабочий стол Windows / Desktop для Mac
 
 ```csharp
 var width = Width;
@@ -118,8 +119,8 @@ using (var bitmap = new Bitmap(width, height, PixelFormat.Format32bppPArgb)) {
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-Для включения в вашей Xamarin.Forms SkiaSharp приложений см. в руководстве [с помощью SkiaSharp в Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
+Для включения SkiaSharp в Xamarin.Forms вашего приложения, см. в руководстве [использование SkiaSharp в Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [IOS SkiaSharp книги](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)
+- [Книга для iOS SkiaSharp](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)

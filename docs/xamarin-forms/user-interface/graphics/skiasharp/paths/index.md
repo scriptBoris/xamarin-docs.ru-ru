@@ -1,52 +1,52 @@
 ---
-title: SkiaSharp строки и пути
-description: В этой статье объясняется, как использовать SkiaSharp для рисования линий и контуры в приложениях Xamarin.Forms и это демонстрируется с примерами кода.
+title: Строки и пути SkiaSharp
+description: В этой статье описывается использование SkiaSharp Рисование линий и контуры в приложениях Xamarin.Forms и демонстрирует это с помощью примера кода.
 ms.prod: xamarin
 ms.assetid: 316A15FE-383D-4D06-8641-BAC7EE7474CA
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: a922f7ec91624e20a9afedb8063328bdb7a4d42d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 9febfabb7b44b1ec09abda4b352691b37565cb48
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243757"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615139"
 ---
-# <a name="skiasharp-lines-and-paths"></a>SkiaSharp строки и пути
+# <a name="skiasharp-lines-and-paths"></a>Строки и пути SkiaSharp
 
-_Используйте SkiaSharp для рисования линий и графики пути_
+_Рисование линий и графики пути с помощью SkiaSharp_
 
-[Предыдущего раздела](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md) продемонстрировал, SkiaSharp `SKCanvas` класс содержит несколько методов для рисования прямоугольники, эллипсы и прямоугольников со скругленными углами. Этот раздел и дальнейших разделах рассматриваются различные классы, для подключения, создание и Подготовка к просмотру *контуры*.
+[Выше](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md) продемонстрировал, SkiaSharp `SKCanvas` класс содержит несколько методов для рисования прямоугольники, эллипсы и прямоугольники с закругленными углами. Этот раздел и последующих разделах рассматриваются различные классы, подключенной к Создание и Подготовка к просмотру *контуры*.
 
-Путь графики является наиболее общий способ рисования линий и кривых в SkiaSharp. Этот раздел описывает использование `SKPath` для рисования прямых линий и использовать коллекцию очень мала прямых линий (называется *ломаной линии*) для рисования кривых, которые вы можете определить математически. Ниже будут рассматриваются различные виды поддерживается кривых `SKPath`.
+Графический контур наиболее общий подход для рисования линий и кривых в SkiaSharp. В этом разделе описывается использование `SKPath` объектов для рисования прямых линий, а также использовать коллекцию tiny прямых линий (вызывается *ломаной линии*) для рисования кривых, которые вы можете определить математически. Ниже будет обсуждаются различные виды кривых, поддерживаемых `SKPath`.
 
-Примеры программ в этом разделе отображаются под заголовком **строки и пути** на домашней странице [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) программы и в [ **Пути** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths) папку решения.
+Все примеры программ, в этом разделе отображаются под заголовком **строки и пути** на домашней странице [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) программы, а затем в [ **Пути** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths) папку решения.
 
 ## <a name="lines-and-stroke-capslinesmd"></a>[Линии и концы штрихов](lines.md)
 
-Сведения об использовании SkiaSharp для рисования линий с ограничениями различных штриха.
+Сведения об использовании SkiaSharp для рисования линий с ограничениями различных stroke.
 
 ## <a name="path-basicspathsmd"></a>[Основные сведения о пути](paths.md)
 
-Просмотр объектов SkiaSharp SKPath для объединения линий и кривых.
+Изучите SkiaSharp SKPath объект для объединения линий и кривых.
 
 ## <a name="the-path-fill-typesfill-typesmd"></a>[Типы заполнения пути](fill-types.md)
 
-Обнаружение различных эффектов возможных типов заполнения SkiaSharp пути.
+Обнаружение различных эффектов, поддерживаемых в средстве типы заполнения пути SkiaSharp.
 
 ## <a name="polylines-and-parametric-equationspolylinesmd"></a>[Ломаные линии и параметрические уравнения](polylines.md)
 
-Используйте SkiaSharp к просмотру любой строки, которые можно определить с помощью параметрических уравнений.
+Использование SkiaSharp для отрисовки любой строки, которые можно определить с помощью параметрические уравнения.
 
 ## <a name="dots-and-dashesdotsmd"></a>[Точки и тире](dots.md)
 
-Мастер Рисование пунктирная и пунктирных линий в SkiaSharp особенностей.
+Освойте тонкости механизмов рисования в SkiaSharp пунктирная и пунктирных линий.
 
 ## <a name="finger-paintingfinger-paintmd"></a>[Рисование пальцами](finger-paint.md)
 
-Пальцы используются для закрашивания на холсте.
+Используйте пальцы для рисования на холсте.
 
 
 ## <a name="related-links"></a>Связанные ссылки

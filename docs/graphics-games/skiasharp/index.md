@@ -2,16 +2,17 @@
 title: Двухмерного рисования в SkiaSharp
 description: В этом документе Обзор двумерные кросс платформенных рисования в SkiaSharp. Ссылки на различные руководства, описывающие SkiaSharp и его различные интерфейсы API.
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: 0c8cbc14308c8c4131e5aaa2bcc0ddfa798af610
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 7207f33e56f566a5528d93f9957e2ff780a22a65
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130924"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615526"
 ---
 # <a name="2d-drawing-with-skiasharp"></a>Двухмерного рисования в SkiaSharp
 
@@ -61,13 +62,13 @@ SkiaSharp является переносимой библиотеки и удо
   * [Пути и текст](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
   * [Сведения о пути и перечисление](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
 - [Растровые изображения](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/index.md)
-  * [Отображение точечных рисунков](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/displaying.md)
-  * [Создание и рисование на точечных рисунков](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/drawing.md)
-  * [Обрезка точечных рисунков](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/cropping.md)
-  * [Сегментированное отображение точечных рисунков](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/segmented.md)
+  * [Вывод растровых изображений](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/displaying.md)
+  * [Создание и рисование поверх растровых изображений](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/drawing.md)
+  * [Обрезка растровых изображений](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/cropping.md)
+  * [Сегментированный вывод растровых изображений](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/segmented.md)
   * [Сохранение растровых изображений в файлы](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/saving.md)
-  * [Доступ к биты пикселов точечного рисунка](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/pixel-bits.md)
-  * [Анимации точечных рисунков](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/animating.md)
+  * [Доступ к битам пикселей в растровых изображениях](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/pixel-bits.md)
+  * [Анимация растровых изображений](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/animating.md)
 
 ## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[Примечания для конкретных платформ](~/graphics-games/skiasharp/platform.md)
 

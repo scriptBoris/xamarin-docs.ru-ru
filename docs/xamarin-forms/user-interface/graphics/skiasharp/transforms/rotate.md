@@ -2,17 +2,17 @@
 title: Преобразование циклического сдвига
 description: В этой статье рассматриваются эффекты и анимации, поддерживаемых в средстве преобразования вращения SkiaSharp и демонстрирует это с помощью примера кода.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: cbb34fb4887fc3fa086fa9912d25addebd9b13f2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 1f34c64ca7c1bc9d0d0202f35602976364ab6075
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995004"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615253"
 ---
 # <a name="the-rotate-transform"></a>Преобразование циклического сдвига
 

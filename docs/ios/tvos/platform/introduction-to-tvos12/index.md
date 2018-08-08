@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/25/2018
-ms.openlocfilehash: e45d9944a2f4fc392b5a78efb4a7751d19641c73
-ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
+ms.openlocfilehash: 5cbec23aa81a4637a18f83d9955a78183dadaa21
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39030669"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615207"
 ---
 # <a name="introduction-to-tvos-12"></a>Введение в tvOS 12
 
@@ -21,11 +21,16 @@ ms.locfileid: "39030669"
 > [!WARNING]
 > Поддержка 12 tvOS Xamarin в настоящее время в предварительной версии, что означает, что он может содержать ошибки, не все компоненты, и могут измениться. Используйте его только для экспериментов.
 
-> [!NOTE]
-> - Просмотрите [Приступая к работе](~/ios/platform/introduction-to-ios12/get-started.md) инструкции о том, как приступить к созданию приложения tvOS 12 с помощью Xamarin iOS 12 и руководстве.
-> - Дополнительные сведения см. предварительной версии Xamarin [выпуске блога](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
-
 Этот документ содержит общий обзор новых и обновленных tvOS 12 функции для предварительного просмотра какой Xamarin выпуск в настоящее время предоставляет привязки C#.
+
+Чтобы приступить к созданию приложений tvOS 12 с помощью Xamarin, взгляните на:
+
+- [Руководство по началу работы](~/ios/platform/introduction-to-ios12/get-started.md)
+- Предварительная версия Xamarin [выпуска записи блога](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+
+## <a name="tvuikit"></a>TVUIKit
+
+tvOS 12 включает в себя TVUIKit, набор API, которые делают возможным для tvOS разработчиков для использования стандартных элементов управления tvOS, например плакат представления в заголовке, карты и Визитная представления. tvOS 12 также представляет свойство, которое обеспечивает метки для прокрутки текста, который является слишком много времени, чтобы быть полностью видимыми.
 
 ## <a name="password-autofill"></a>Автозаполнение пароль
 
@@ -35,10 +40,18 @@ ms.locfileid: "39030669"
 
 tvOS 12 позволяет всем приложениям, независимо от того, как они будут отображаться, взаимодействовать с ядром фокус. При взаимодействии пользователя с удаленной Siri ядро фокус можно с помощью любого приложения выберите элемент и некоторые изменения фокуса можно естественным образом обновить фокус. Эта функция включена в пользовательских приложениях через UIKit `IUIFocusItemContainer` интерфейс, `UIFocusMovementHint` класс, `IUIFocusItemScrollableContainer` интерфейс и другие связанные классы и методы.
 
+## <a name="vision-framework"></a>Framework концепции
+
+Платформа Vision включает обнаружение улучшенные лиц, которые можно обнаружить лица в разных направлениях. Кроме того изменения запроса теперь можно выбрать конкретную редакцию framework алгоритм компьютерного зрения.
+
+## <a name="natural-language-framework"></a>Framework естественного языка
+
+Платформа естественного языка позволяет приложениям выполнять различные виды анализа языка. Например его можно использовать для определения части речи и определить язык, представленный блок текста.
+
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Примеры tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS — разработчика Apple (Apple)](https://developer.apple.com/tvos/)
 - [Новые возможности в tvOS 12 (Apple) (видео)](https://developer.apple.com/videos/play/wwdc2018/208/)
 - [ТВ (Apple)](https://www.apple.com/tv/)
-- Предварительная версия Xamarin [выпуска записи блога](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)
+- Предварительная версия Xamarin [выпуска записи блога](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

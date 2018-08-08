@@ -2,17 +2,17 @@
 title: Отображение точечных рисунков SkiaSharp
 description: Узнайте, как отобразить SkiaSharp растровые изображения в пикселях, размеры и расширены для заполнения прямоугольника с сохранением пропорций.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: 31a5841c78b68b916e3df3d1d6598b86b0ec8bd4
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: cbe3166c4edb147f7179f2c719901b382db8ec80
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39131519"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615318"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>Отображение точечных рисунков SkiaSharp
 
