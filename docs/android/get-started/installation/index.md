@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 776e2b52d6b8860c5fb5fa16253c2e1d42aa962a
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: fcc2ce5e45cd9094a9987ce12267850e19da9d75
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241419"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573520"
 ---
 # <a name="setup-and-installation"></a>Настройка и установка
 
@@ -39,6 +39,6 @@ ms.locfileid: "39241419"
 
 В этой статье описывается установка физического устройства Android и его подключение к компьютеру разработчика для использования в целях запуска и отладки приложений Xamarin.Android.
 
-## <a name="microsoft-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Предварительная версия Microsoft OpenJDK](~/android/get-started/installation/openjdk.md)
+## <a name="microsoft-mobile-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Предварительная версия Microsoft Mobile OpenJDK](~/android/get-started/installation/openjdk.md)
 
-В этом руководстве описаны шаги по переходу на предварительную версию дистрибутива OpenJDK от Майкрософт.
+В этом руководстве описаны шаги по переходу на предварительную версию дистрибутива OpenJDK от Майкрософт. Этот дистрибутив OpenJDK предназначен для разработки мобильных приложений.

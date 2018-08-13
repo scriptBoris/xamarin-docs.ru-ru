@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/29/2016
-ms.openlocfilehash: afff9d3924c673edc363292efa1a9b7df43a9218
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 40a2acf28819279b2a0d5c1d50c651a79b455465
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33798594"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514467"
 ---
 # <a name="xamarinios-performance"></a>Производительность Xamarin.iOS
 
@@ -107,7 +107,7 @@ container.AddSubview (new MyView (container));
 
 #### <a name="weak-attribute"></a>Слабый атрибут
 
-В [Xamarin.iOS 11.10](https://developer.xamarin.com/releases/ios/xamarin.ios_11/xamarin.ios_11.10/#WeakAttribute) появился атрибут `[Weak]`. Как и `WeakReference <T>`, `[Weak]` можно использовать для прерывания [строгих циклических ссылок](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/performance#avoid-strong-circular-references) с помощью еще более краткого фрагмента кода.
+В [Xamarin.iOS 11.10](https://developer.xamarin.com/releases/ios/xamarin.ios_11/xamarin.ios_11.10/#WeakAttribute) появился атрибут `[Weak]`. Как и `WeakReference <T>`, `[Weak]` можно использовать для разрушения [строгих циклических ссылок](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/performance#avoid-strong-circular-references), но при этом код будет еще короче.
 
 Рассмотрим приведенный ниже код, где используется `WeakReference <T>`:
 
