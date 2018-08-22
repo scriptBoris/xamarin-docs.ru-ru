@@ -1,54 +1,55 @@
 ---
-title: Xamarin динамической проигрывателя для Xamarin.Forms
-description: В этом документе рассматриваются Live Xamarin Player для Xamarin.Forms, описывающий установки приложения Xamarin Live Player, образцы для использования с Xamarin Player Live, ограничения и устранение неполадок.
+title: Xamarin Live Player для Xamarin.Forms
+description: В этом документе рассматриваются Xamarin Live Player для Xamarin.Forms, описывающий установки, приложение Xamarin Live Player, образцов для использования с Xamarin Live Player, ограничений и устранения неполадок.
 ms.prod: xamarin
 ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
 author: topgenorth
 ms.author: toopge
-ms.date: 05/10/2017
-ms.openlocfilehash: 79cf2c790789963189d3eedd6645a6b6ae6503b6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/08/2017
+ms.openlocfilehash: c719e273d03b898984393c6be555f603a122ad4b
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793142"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251171"
 ---
-# <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin динамической проигрывателя для Xamarin.Forms
+# <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin Live Player для Xamarin.Forms
 
-Xamarin Live Player поможет вам начать работу с разработкой Xamarin.Forms обучения для создания мобильных приложений, которые можно протестировать на устройстве Android или iOS. Код выполняется внутри приложения Xamarin Live Player — не требуется для установки эмуляторов или с помощью кабелей развертывание кода! Чтобы приступить к работе, загрузить проигрыватель Xamarin Live, свяжите его в Visual Studio и развертывать код и тестирование приложения. 
+Xamarin Live Player поможет вам приступить к работе с разработки Xamarin.Forms, Научившись создавать мобильные приложения, которые можно протестировать на устройстве Android. Чтобы приступить к работе, скачайте Xamarin Live Player, свяжите его с Visual Studio и развернуть свой код и тестирование приложения.
 
-Xamarin Live Player разработана как Приступая к работе "песочницы" для разработчиков свои идеи, быстро визуализацию на устройстве. Так как исходный код интерпретируется может достигать [ограничения](limitations.md) после некоторое время и необходимость полностью компиляции приложения для устройства или эмулятора.
+Xamarin Live Player предварительной версии — простое начало работы "песочницы" для разработчиков получить свои идеи, позволяет быстро визуализировать на устройстве. Так как исходный код интерпретируется может достичь [ограничения](limitations.md) после некоторых времени и необходимости полностью компилировать приложение для устройства или эмулятора.
+
+![Функция предварительного просмотра](~/media/shared/preview.png)
 
 ## <a name="get-started-with-xamarin-live-player"></a>Начало работы с Xamarin Live Player
 
-[![Xamarin Player в режиме реального времени: Кода, тест сканирования](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
+[![Xamarin Live Player: Кода, тест сканирования](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
-1. Загрузите приложение, следуя [установки Xamarin Live Player](install.md) инструкции.
+1. Загрузить приложение, следуя [установки Xamarin Live Player](install.md) инструкции.
 2. Включить *Xamarin Live Player* в **предпочтения**, затем выберите устройство из **устройств** списка.
-2. Управление устройствами Live проигрывателя для сканирования QR-код для сопряжения Visual Studio на устройстве.
-3. Приложение запускается прямо на телефоне или планшете.
+3. Управление устройствами Live Player для сканирования QR-код, чтобы связать устройство с Visual Studio.
+4. Приложение выполняется прямо на телефоне или планшете.
 
 ## <a name="xamarin-live-player-setupinstallmd"></a>[Установка Xamarin Live Player](install.md)
 
-Загрузить Xamarin Live Player и настроить IDE таким образом, чтобы использовать с приложениями Xamarin.Forms из 2017 г. Visual Studio или Visual Studio для Mac. 
+Скачайте Xamarin Live Player и настройка интерфейса IDE, чтобы использовать его с помощью приложений Xamarin.Forms с помощью Visual Studio 2017 или Visual Studio для Mac. 
 
 ## <a name="xamarin-live-player-appplayermd"></a>[Приложение Xamarin Live Player](player.md)
 
-С помощью Xamarin Live приложения проигрывателя.
+С помощью Xamarin Live Player приложения.
 
-## <a name="samples-to-try-with-xamarin-live-playersamplesmd"></a>[Примеры, чтобы произвести с Xamarin Live Player](samples.md)
+## <a name="samples-to-try-with-xamarin-live-playersamplesmd"></a>[Примеры, чтобы попробовать сделать с Xamarin Live Player](samples.md)
 
-Ссылки на примеры для использования с Xamarin Live Player приложением.
+Ссылки на примеры для использования с приложением Xamarin Live Player.
 
 ## <a name="limitationslimitationsmd"></a>[Ограничения](limitations.md)
 
-Xamarin Live Player имеет некоторые ограничения на возможностях может поддерживать.
+Xamarin Live Player обладает некоторыми ограничениями в возможностях, может поддерживать.
 
 ## <a name="troubleshootingtroubleshootingmd"></a>[Устранение неполадок](troubleshooting.md)
 
-Поиск справки в случае сбоя.
+Если что-то пошло, поиск справки.
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [запись блога](https://blog.xamarin.com/live-player/)
-- [Образцы динамической проигрыватель Xamarin](https://developer.xamarin.com/samples/xamarin-live-player/all/)
+- [Образцы Xamarin Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

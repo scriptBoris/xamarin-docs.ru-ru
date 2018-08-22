@@ -5,36 +5,32 @@ ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2018
-ms.openlocfilehash: ea71391382f9e1ecb80cbf5f2d5bf127e0d6d1be
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 08/08/2018
+ms.openlocfilehash: 99ed8d06331ac7e423791309da79d72d5a10d70f
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815286"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251024"
 ---
 # <a name="limitations-of-xamarin-live-player"></a>Ограничения Xamarin Live Player
 
 ![Функция предварительного просмотра](~/media/shared/preview.png)
 
 ## <a name="device-requirements"></a>Требования к устройствам
-Приложение Xamarin Live Player поддерживает следующие устройства:
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+Приложение Xamarin Live Player поддерживает следующим устройствам Android:
 
 - Android 4.2 или более поздней версии.
 - ARM-v7a, ARM v8a, ARM64-v8a, x 86, x86_64 процессор или.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-- iOS 9.0 или более поздней версии.
-- Процессор ARM64.
-
------
-
 ## <a name="limitations"></a>Ограничения
 
 Существуют некоторые ограничения на задачи, которые можно запустить Xamarin Live Player, включая перечисленные ниже:
+
+### <a name="ios"></a>iOS
+
+Live Player недоступна для iOS.
 
 ### <a name="xamarinforms"></a>Xamarin.Forms
 
@@ -43,11 +39,10 @@ ms.locfileid: "38815286"
 - Пользовательские элементы управления с помощью пользовательских привязываемые свойства не поддерживаются.
 - Внедренные ресурсы не поддерживаются (т. е. внедрение изображений или других ресурсов в переносимую библиотеку Классов).
 - Сторонних инфраструктур MVVM не поддерживаются (т. е. Prism, Mvvm Cross, Mvvm Light и т. д.).
-- Каталоги активов в iOS, не поддерживаются.
 
 ### <a name="other-project-types"></a>Другие типы проектов
 
-- Live Player не предназначен для собственного Android или iOS проекты (которые используют Android XML или раскадровки для пользовательского интерфейса).
+- Live Player не предназначен для собственных проектов Android (использующие Android XML для пользовательского интерфейса).
 
 ### <a name="misc"></a>Прочее
 
@@ -55,7 +50,7 @@ ms.locfileid: "38815286"
 - Некоторые системные классы не могут быть переопределены (например, нельзя реализовать подкласс).
 - Некоторые функции платформы, требующих подготовки не может работать в приложении Xamarin Live Player (тем не менее она настроена для выполнения распространенных операций, как доступ к коллекции фотографий).
 - Пользовательские целевые объекты и этапы построения игнорируются. Например средств, таких как Fody, программу Refit, AutoFac и AutoMapper не может быть включен.
-- Проекты F # не поддерживаются в Android и ограниченную поддержку в iOS
+- Проекты F # не поддерживаются.
 - Расширенные сценарии с пользовательских универсальные классы и интерфейсы могут не поддерживаться.
 
 Сообщите любые дополнительные проблемы на [bugzilla](https://aka.ms/live-player-report-issue).

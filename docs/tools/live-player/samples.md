@@ -1,31 +1,31 @@
 ---
-title: Образцы динамической проигрыватель Xamarin
-description: Этот документ, ссылки на примеры приложений для использования при тестировании Live Xamarin Player. Связанные примеры содержат калькулятору и игр ошибки средства очистки.
+title: Образцы Xamarin Live Player
+description: Этот документ содержит ссылки на примеры приложений для использования при тестировании Xamarin Live Player. Связанные образцы включают базового калькулятора и игра sweeper ошибки.
 ms.prod: xamarin
 ms.assetid: C71D34AD-747B-4826-838D-5138F5DCD7EF
 author: topgenorth
 ms.author: toopge
-ms.date: 06/20/2017
-ms.openlocfilehash: 090b52f4ebf9ec6f46426b4364f8b57b67a79324
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/08/2017
+ms.openlocfilehash: 6f9f2ed97e03862fc7e77e4a7ff67f456dfde277
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793733"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251108"
 ---
-# <a name="xamarin-live-player-samples"></a>Образцы динамической проигрыватель Xamarin
+# <a name="xamarin-live-player-samples"></a>Образцы Xamarin Live Player
 
 ## <a name="get-started-with-xamarinforms"></a>Начало работы с Xamarin.Forms
 
 Посетите [коллекции примеров](https://developer.xamarin.com/samples/xamarin-live-player/all/) для Xamarin.Forms образцы, которые работают с Xamarin Live Player.
 
-## <a name="featured-samples"></a>Главы в популярных образцы
+## <a name="featured-samples"></a>Рекомендуемые примеры
 
-### <a name="basic-calculatorhttpsdeveloperxamarincomsamplesmobileliveplayerbasiccalculator"></a>[Калькулятору](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator/)
+### <a name="basic-calculatorhttpsdeveloperxamarincomsamplesmobileliveplayerbasiccalculator"></a>[Базового калькулятора](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator/)
 
-Это приложение Xamarin.Forms предоставляет простого калькулятора, которые можно использовать на устройстве Android или iOS.
+Это приложение Xamarin.Forms предоставляет простой калькулятор, которые можно использовать на устройстве Android.
 
-![Снимок экрана основные калькулятора](samples-images/basic-calculator-sml.png)
+![Базовый снимок экрана калькулятора](samples-images/basic-calculator-sml.png)
 
 ### <a name="bugsweeperhttpsdeveloperxamarincomsamplesmobileliveplayerbugsweeperlp"></a>[BugSweeper](https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/)
 
@@ -35,4 +35,4 @@ ms.locfileid: "34793733"
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Образцы динамической проигрыватель Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-live-player/all/)
+- [Образцы Xamarin.Forms Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

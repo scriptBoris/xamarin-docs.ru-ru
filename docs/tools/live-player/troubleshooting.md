@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: topgenorth
 ms.author: toopge
-ms.date: 05/17/2017
-ms.openlocfilehash: 3db14db2c64e024ef1c04275661f610f9407dfb7
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 08/08/2018
+ms.openlocfilehash: ceb8964ac378957dcf5883bbbfff9e984b079294
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831336"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "40251246"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>Устранение неполадок Xamarin Live Player
 
@@ -78,24 +78,6 @@ ms.locfileid: "38831336"
 </DeviceList>
 ```
 
-**Добавьте устройства iOS:**
-
-```xml
-<PlayerDevice>
-<SecretCode>ENTER-PAIR-CODE-HERE</SecretCode>
-<UniqueIdentifier>ENTER-GUID-HERE</UniqueIdentifier>
-<Name>iPhone Player</Name>
-<Platform>iOS</Platform>
-<AndroidApiLevel>0</AndroidApiLevel>
-<DebuggerEndPoint>ENTER-IP-HERE:37847</DebuggerEndPoint>
-<HostEndPoint />
-<NeedsAppInstall>false</NeedsAppInstall>
-<IsSimulator>false</IsSimulator>
-<SimulatorIdentifier />
-<LastConnectTimeUtc>2018-01-08T20:36:03.9492291Z</LastConnectTimeUtc>
-</PlayerDevice>
-```
-
 **Добавьте устройство Android:**
 
 ```xml
@@ -118,7 +100,7 @@ ms.locfileid: "38831336"
 
 ## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>«Тип или пространство имен не может найти» сообщения в интегрированной среде разработки
 
-Убедитесь, что вы выбрали **запускаемым проектом** , соответствующий своего типа устройства (iOS или Android) и что конфигурация соответствует типа устройства (например) **Отладка | iPhone симулятор** для iOS).
+Убедитесь, что вы выбрали **запускаемым проектом** , соответствующую типу вашего устройства (например) Android) и что конфигурация соответствует типа устройства (например) **Отладка** для Android).
 
 ## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>Сообщение «Конструктор «InterpretedXamarin.Forms.Button» не найден» в проигрывателе
 
