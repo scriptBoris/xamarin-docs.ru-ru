@@ -111,7 +111,7 @@ public partial class HelloBitmapPage : ContentPage
 
 `PaintSurface` Обработчик отображает точечный рисунок в несколько строк и столбцов области отображения. Обратите внимание, что `Clear` метод в `PaintSurface` обработчик имеет аргумент `SKColors.Aqua`, который цвета фона поверхности отображения:
 
-[![Привет, растрового изображения! ] (drawing-images/HelloBitmap.png "Hello, растрового изображения!")](drawing-images/HelloBitmap-Large.png#lightbox)
+[![Привет, растрового изображения! ](drawing-images/HelloBitmap.png "Hello, растрового изображения!")](drawing-images/HelloBitmap-Large.png#lightbox)
 
 Внешний вид зеленовато-голубой фон показывает, что точечный рисунок является прозрачным за исключением текста.
 
