@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: c6f0233d736c51142d6d83996361558709fd2070
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f3b1f5c11a02710de8d0ffd09741acb3017f5cb6
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781924"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780531"
 ---
 # <a name="introduction-to-mobile-development"></a>Введение в разработку мобильных приложений
 
@@ -19,7 +19,7 @@ ms.locfileid: "34781924"
 
 В этом документе содержатся вводные сведения о платформе Xamarin. Дополнительные сведения о *процессе* создания мобильных приложений, начиная с этапа проектирования и до тестирования, см. в документе [Введение в жизненный цикл разработки мобильного программного обеспечения](~/cross-platform/get-started/introduction-to-mobile-sdlc.md).
 
-Просмотрите [требования к системе](~/cross-platform/get-started/requirements.md#mac), чтобы убедиться в возможности установки Xamarin.
+Просмотрите [требования к системе](~/cross-platform/get-started/requirements.md#macos-requirements), чтобы убедиться в возможности установки Xamarin.
 
 ## <a name="introduction-to-xamarin"></a>Введение в Xamarin
 
