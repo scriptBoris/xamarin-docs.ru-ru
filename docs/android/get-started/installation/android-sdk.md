@@ -6,13 +6,13 @@ ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 08/03/2018
-ms.openlocfilehash: 92b2eec32aed27e630ac68f3522aa3b40cfc940a
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.date: 08/09/2018
+ms.openlocfilehash: 55b6c10a9014b89534c37faeac2faf84f02339cd
+ms.sourcegitcommit: b6f3e55d4f3dcdc505abc8dc9241cff0bb5bd154
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514494"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43780503"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Настройка пакета SDK для Android для Xamarin.Android
 
@@ -36,7 +36,7 @@ _Visual Studio включает диспетчер пакетов SDK для A
 
 - Visual Studio 2017 (выпуск Community, Professional или Enterprise). Требуется Visual Studio 2017 версии 15.7 или более поздней.
 
-- Инструменты Visual Studio для Xamarin версии 4.10.0 или выше. 
+- Инструменты Visual Studio для Xamarin версии 4.10.0 или более поздней версии (устанавливается как часть рабочей нагрузки **Разработка мобильных приложений на .NET**). 
 
 Диспетчер пакетов SDK для Xamarin Android несовместим с Visual Studio 2015. Пользователям Visual Studio 2015 следует использовать инструменты диспетчера пакетов SDK, предоставляемые в пакете SDK для Android от Google.
 
