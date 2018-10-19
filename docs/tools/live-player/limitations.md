@@ -3,14 +3,14 @@ title: Ограничения Xamarin Live Player
 description: В этом документе описываются ограничения в Xamarin Live Player. Он рассматриваются требования к устройствам, возможности он работает с типы проектов, а также другие различные темы.
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 99ed8d06331ac7e423791309da79d72d5a10d70f
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: aff6990df1b710190f11c2d7fa09c8399e94f8af
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "40251024"
 ---
 # <a name="limitations-of-xamarin-live-player"></a>Ограничения Xamarin Live Player
@@ -53,7 +53,7 @@ Live Player недоступна для iOS.
 - Проекты F # не поддерживаются.
 - Расширенные сценарии с пользовательских универсальные классы и интерфейсы могут не поддерживаться.
 
-Сообщите любые дополнительные проблемы на [bugzilla](https://aka.ms/live-player-report-issue).
+Используйте **сообщить о проблеме** в [Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017) или [Visual Studio для Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem) сообщить о проблемах, связанных с Xamarin Live Player.
 
 ## <a name="related-links"></a>Связанные ссылки
 

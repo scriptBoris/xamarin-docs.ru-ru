@@ -6,25 +6,25 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/16/2018
-ms.openlocfilehash: 5ccd2a653e5190df11a58477905e868b25878e44
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 07/27/2018
+ms.openlocfilehash: 08eb77878dad9c89754585b87394d2c33900fe83
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39270116"
 ---
 # <a name="xamarinforms-entry"></a>Запись Xamarin.Forms
 
 _Однострочный текст или пароля_
 
-Xamarin.Forms `Entry` используется для ввода текста на одну строку. `Entry`, Например `Editor` Просмотр, поддерживает несколько типов клавиатуры. Кроме того `Entry` можно использовать в качестве поля пароля.
+Xamarin.Forms [ `Entry` ](xref:Xamarin.Forms.Entry) используется для ввода текста на одну строку. `Entry`, Например [ `Editor` ](xref:Xamarin.Forms.Editor) Просмотр, поддерживает несколько типов клавиатуры. Кроме того `Entry` можно использовать в качестве поля пароля.
 
 ## <a name="display-customization"></a>Настройки отображения
 
 ### <a name="setting-and-reading-text"></a>Установка и чтение текста
 
-`Entry`, Как и с другими представлениями представления текста предоставляет `Text` свойство. Это свойство может использоваться для задания и считывать текст, представленный `Entry`. В следующем примере показано задание `Text` свойства в XAML:
+`Entry`, Как и с другими представлениями представления текста предоставляет [ `Text` ](xref:Xamarin.Forms.Entry.Text) свойство. Это свойство может использоваться для задания и считывать текст, представленный `Entry`. В следующем примере показано задание `Text` свойства в XAML:
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -58,6 +58,32 @@ var entry = new Entry { ... MaxLength = 10 };
 ```
 
 Объект [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) свойства значение 0 указывает, что входные данные не будет разрешено и значение `int.MaxValue`, который является значением по умолчанию для [ `Entry` ](xref:Xamarin.Forms.Entry), указывает, что не действующие ограничения на число символов, которые могут быть введены.
+
+### <a name="setting-the-cursor-position-and-text-selection-length"></a>Задание позиции курсора и длину выделения текста
+
+[ `CursorPosition` ](xref:Xamarin.Forms.Entry.CursorPosition) Свойство может использоваться для возврата или задания позиции, по которому будет вставить следующий символ в строки, хранящейся в [ `Text` ](xref:Xamarin.Forms.Entry.Text) свойство:
+
+```xaml
+<Entry Text="Cursor position set" CursorPosition="5" />
+```
+
+```csharp
+var entry = new Entry { Text = "Cursor position set", CursorPosition = 5 };
+```
+
+Значение по умолчанию [ `CursorPosition` ](xref:Xamarin.Forms.Entry.CursorPosition) свойство является 0, означающее, что текст будет вставлен в начало файла `Entry`.
+
+Кроме того [ `SelectionLength` ](xref:Xamarin.Forms.Entry.SelectionLength) свойство может использоваться для возврата или задать длину выделенного текста в пределах `Entry`:
+
+```xaml
+<Entry Text="Cursor position and selection length set" CursorPosition="2" SelectionLength="10" />
+```
+
+```csharp
+var entry = new Entry { Text = "Cursor position and selection length set", CursorPosition = 2, SelectionLength = 10 };
+```
+
+Значение по умолчанию [ `SelectionLength` ](xref:Xamarin.Forms.Entry.SelectionLength) свойство является 0, означающее, что текст не выбран.
 
 ### <a name="customizing-the-keyboard"></a>Настройка клавиатуры
 
@@ -180,21 +206,17 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 > [!NOTE]
 > При [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) свойству `false`, и пользовательских сочетаний не используется, прогнозирование текста и автоматическое исправление текста отключено. Тем не менее если [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) было задано, прогнозирование текста отключает, `IsTextPredictionEnabled` свойство учитывается. Таким образом, свойство не может использоваться для прогнозирования текста для `Keyboard` , явно отключает его.
 
-### <a name="placeholders"></a>Заполнители
+### <a name="setting-placeholder-text"></a>Параметр замещающий текст
 
-`Entry` можно задать для отображения текста заполнителя, когда он не хранит ввод данных пользователем. На практике это часто рассматривается в формах для уточнения содержимого, которое подходит для данного поля. Цвет текста заполнителя, не могут быть изменены и будет таким же, вне зависимости от `TextColor` параметр. Если проект предусматривает цвет настраиваемого заполнителя, необходимо переключиться на [пользовательское средство отрисовки](). Создаст следующие `Entry` с «Username» в качестве заполнителя в XAML:
+[ `Entry` ](xref:Xamarin.Forms.Entry) Можно задать, чтобы показать текст заполнителя, если он не хранит ввод данных пользователем. Это достигается путем установки [ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder) свойства `string`и часто используется для указания типа содержимого, которое подходит для `Entry`. Кроме того, цвет текста заполнителя можно управлять, задав [ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor) свойства [ `Color` ](xref:Xamarin.Forms.Color):
 
 ```xaml
-<Entry Placeholder="Username" />
+<Entry Placeholder="Username" PlaceholderColor="Olive" />
 ```
-
-В C#:
 
 ```csharp
-var MyEntry = new Entry { Placeholder = "Username" };
+var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
 ```
-
-![](entry-images/placeholder.png "Пример записи заполнителя")
 
 ### <a name="password-fields"></a>Поля пароля
 

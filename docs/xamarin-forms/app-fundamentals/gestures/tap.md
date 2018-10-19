@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: e602ae1f140640d9a895b65d78feab3d0a3b7861
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a28afb30770f15861aef06643e7f51070199ea9b
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38994858"
 ---
-# <a name="adding-a-tap-gesture-gesture-recognizer"></a>Добавление распознавателя жестов касания
+# <a name="adding-a-tap-gesture-recognizer"></a>Добавление распознавателя жестов касания
 
 _Жест касания используется для обнаружения tap и реализуется с помощью класса TapGestureRecognizer._
-
-## <a name="overview"></a>Обзор
 
 Чтобы сделать активным с помощью жеста касания элемента пользовательского интерфейса, создать [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) экземпляра, обрабатывать [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) событий и добавьте новый распознаватель жестов для [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) коллекции элемента пользовательского интерфейса. В следующем коде показано в примере `TapGestureRecognizer` подключен к [ `Image` ](xref:Xamarin.Forms.Image) элемент:
 
@@ -72,7 +70,7 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 
 ## <a name="using-icommand"></a>С помощью ICommand
 
-Приложения, использующие шаблон Mvvm, обычно используют `ICommand` вместо привязки обработчиков событий напрямую. [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Можно легко поддерживать `ICommand` либо задав привязку в коде:
+Приложения, использующие шаблон Model-View-ViewModel (MVVM), обычно используют `ICommand` вместо привязки обработчиков событий напрямую. [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Можно легко поддерживать `ICommand` либо задав привязку в коде:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -113,10 +111,6 @@ public class TapViewModel : INotifyPropertyChanged
     //region INotifyPropertyChanged code omitted
 }
 ```
-
-## <a name="summary"></a>Сводка
-
-Используется для обнаружения tap жеста касания и реализуется с помощью [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) класса. Можно указать числом ответвлений для распознавания дважды щелкните (или троекратного нажатия или более касается) поведение.
 
 
 ## <a name="related-links"></a>Связанные ссылки

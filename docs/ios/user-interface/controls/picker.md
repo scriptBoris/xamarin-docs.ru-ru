@@ -1,67 +1,66 @@
 ---
-title: Выбор элемента управления в Xamarin.iOS
-description: Этот документ описывает, как проектировать и работать с элементами управления средства выбора приложения Xamarin.iOS. В этом примере рассматривается реализация элемент выбора в коде и в конструкторе iOS.
+title: Средство выбора элемента управления в Xamarin.iOS
+description: В этом документе описывается, как проектировать и работать с элементами управления средства выбора в приложении Xamarin.iOS. В этом примере обсуждается реализация управляющий элемент выбора в коде и в конструкторе iOS.
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 08/02/2017
-ms.openlocfilehash: 7f46d354af86027d1e2656171c6595562d3555a6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 08/14/2018
+ms.openlocfilehash: 0ef33c2036b1ff2d5a7e2035ca5fa8af58672867
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "34789916"
 ---
-# <a name="picker-control-in-xamarinios"></a>Выбор элемента управления в Xamarin.iOS
+# <a name="picker-control-in-xamarinios"></a>Средство выбора элемента управления в Xamarin.iOS
 
-Элемент управления выбора отображает «колесо по принципу» элемент управления, содержащий прокручиваемый список значений со значением выделена. Пользователи вращайте колесико мыши, выберите параметр нужные им.
+Объект [ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/) дает возможность выбрать значение из списка прокрутив отдельные компоненты интерфейса колесика по принципу.
 
-Один конкретного пользователя вариант выбора ее, чтобы задать дату и / или время. Для обеспечения этой Apple создала пользовательскому подклассу UIPickerView класс с именем UIDatePicker.
+Выбор часто используются для выбора даты и времени; Компания Apple предоставляет [`UIDatePicker`](https://developer.xamarin.com/api/type/UIKit.UIDatePicker/)
+класс для этой цели.
 
-В статье описаны реализации и использовании [выбора](#picker) и [выбора даты](#datepicker) элементов управления.
+Статья описывает, как реализовать и использовать `UIPickerView` и `UIDatePicker` элементов управления.
 
-<a name="picker" />
+## <a name="uipickerview"></a>UIPickerView
 
-## <a name="picker"></a>Средство выбора
+### <a name="implementing-a-picker"></a>Реализация средства выбора
 
-### <a name="implementing-a-picker"></a>Реализация элемент выбора
-
-Средство выбора реализуется путем создания нового [`UIPickerView`](https://developer.xamarin.com/api/type/UIKit.UIPickerView/):
+Реализовать управляющий элемент выбора путем создания нового `UIPickerView`:
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
-                            new CGRect(
-                                UIScreen.MainScreen.Bounds.X-UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height -230, 
-                                UIScreen.MainScreen.Bounds.Width, 
-                                180));
+    new CGRect(
+        UIScreen.MainScreen.Bounds.X - UIScreen.MainScreen.Bounds.Width, 
+        UIScreen.MainScreen.Bounds.Height - 230,
+        UIScreen.MainScreen.Bounds.Width,
+        180
+    )
+);
 ```
-
 
 ### <a name="pickers-and-storyboards"></a>Выбор и раскадровки
 
-Если вы используете iOS конструктор для создания пользовательского интерфейса, средство выбора могут добавляться в макет из панели элементов:
+Чтобы создать управляющий элемент выбора в **конструктор iOS**, перетащите **выбора представления** из **элементов** в область конструктора.
 
-![](picker-images/image1.png)
+![Перетащите в область конструктора представления выбора](picker-images/image1.png "перетащите представление выбора в область конструктора")
 
+### <a name="working-with-a-picker-control"></a>Работа с элементом управления выбора
 
-### <a name="working-with-picker"></a>Работа с выбора
-
-После создания средства выбора, либо в коде или через раскадровки, вам потребуется назначить _модель_ к нему, чтобы можно было передавать и взаимодействовать с данными;
+Управляющий элемент выбора использует _модели_ для взаимодействия с данными:
 
 ```csharp
 public override void ViewDidLoad()
 {
     base.ViewDidLoad();
-
     var pickerModel = new PeopleModel(personLabel);
-
     personPicker.Model = pickerModel;
 }
 ```
 
-В следующем примере кода показан пример модели.
+[ `UIPickerViewModel` ](https://developer.xamarin.com/api/type/UIKit.UIPickerViewModel/) Базовый класс реализует два интерфейса [`IUIPickerDataSource`](https://developer.xamarin.com/api/type/UIKit.IUIPickerViewDataSource/)
+и [ `IUIPickerViewDelegate` ](https://developer.xamarin.com/api/type/UIKit.IUIPickerViewDelegate/), который объявлять различные методы, которые указывают средства выбора данных и обрабатывает взаимодействие:
 
 ```csharp
 public class PeopleModel : UIPickerViewModel
@@ -105,7 +104,7 @@ public class PeopleModel : UIPickerViewModel
     }
 
     public override void Selected(UIPickerView pickerView, nint row, nint component)
-    {   
+    {
         personLabel.Text = $"This person is: {names[pickerView.SelectedRowInComponent(0)]},\n they are number {pickerView.SelectedRowInComponent(1)}";
     }
 
@@ -123,148 +122,130 @@ public class PeopleModel : UIPickerViewModel
     }
 ```
 
-Сначала необходимо передать некоторые данные, чтобы предоставить пользователю возможность выбрать различные варианты. При попытке сохранить этот список, как можно более коротким возможно или при необходимости попробуйте использовать более одного «набрать» (называется *компоненты*):
+Управляющий элемент выбора может содержать несколько столбцов или _компоненты_. Компоненты секционировать управляющий элемент выбора на несколько секций, позволяя для выбора проще и более конкретных данных:
 
-![Выбор из двух компонентов](picker-images/image3.png)
+![Средство выбора с двумя компонентами](picker-images/image3.png "выбора с помощью двух компонентов")
 
-Чтобы задать число компонентов, необходимо переопределить `GetComponentCount` метод: 
+Чтобы указать число компонентов в средстве выбора, используйте [`GetComponentCount`](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetComponentCount/p/UIKit.UIPickerView/) 
+метод.
 
-```csharp
-public override nint GetComponentCount(UIPickerView pickerView)
-{
-    return 2;
-}
-```
+### <a name="customizing-a-pickers-appearance"></a>Настройка внешнего вида управляющий элемент выбора
 
-Возвращаемое значение обозначает количество набирает у вашего выбора.
+Чтобы настроить внешний вид управляющий элемент выбора, используйте [`UIPickerView.UIPickerViewAppearance`](https://developer.xamarin.com/api/type/UIKit.UIPickerView+UIPickerViewAppearance/)
+класс, или переопределить [ `GetView` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetView/p/UIKit.UIPickerView/System.nint/System.nint/UIKit.UIView/) и [ `GetRowHeight` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetRowHeight/p/UIKit.UIPickerView/System.nint/) методы в `UIPickerViewModel`.
 
-### <a name="customizing-appearance"></a>Настройка внешнего вида
- 
-Внешний вид `UIPickerView` можно настроить с помощью `UIPickerView.UIPickerViewAppearance` класса или путем переопределения `UIPickerViewModel.GetView` и `UIPickerViewModel.GetRowHeight` методы в `UIPickerViewModel`.
+## <a name="uidatepicker"></a>UIDatePicker
 
+### <a name="implementing-a-date-picker"></a>Реализация управляющий элемент выбора даты
 
-<a name="datepicker" />
-
-## <a name="date-picker"></a>Управляющий элемент выбора даты
-
-### <a name="implementing-a-date-picker"></a>Реализация элемент выбора даты
-
-Выбор даты реализуется путем создания нового [ `UIDatePickerView` ](https://developer.xamarin.com/api/type/UIKit.UIDatePicker/):
+Реализовать управляющий элемент выбора даты путем создания экземпляра `UIDatePicker`:
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
-                            new CGRect(
-                                UIScreen.MainScreen.Bounds.X-UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height -230, 
-                                UIScreen.MainScreen.Bounds.Width, 
-                                180));
+    new CGRect(
+        UIScreen.MainScreen.Bounds.X - UIScreen.MainScreen.Bounds.Width,
+        UIScreen.MainScreen.Bounds.Height - 230,
+        UIScreen.MainScreen.Bounds.Width,
+        180
+     )
+);
 ```
-
 
 ### <a name="date-pickers-and-storyboards"></a>Выбор даты и раскадровки
 
-Если вы используете iOS конструктор для создания пользовательского интерфейса, **выбора даты** можно добавить в макет из области элементов. В панели свойств можно изменить следующие свойства:
+Чтобы создать управляющий элемент выбора даты в **конструктор iOS**, перетащите **Date Picker** из **элементов** в область конструктора.
 
-![](picker-images/image2.png)
+![Перетащите управляющий элемент выбора даты в область конструктора](picker-images/image2.png "перетащите управляющий элемент выбора даты в область конструктора")
 
-* **Режим** — режим даты и времени. Это может быть даты, времени, даты и времени или таймер обратного отсчета. 
-* **Языковой стандарт** — языковой стандарт для выбора даты. Выберите **по умолчанию** для задания в системе по умолчанию или задать для любого определенного языкового стандарта.
-* **Интервал** — показывает инкремента, в котором отображаются параметры часов.
-* **Даты, дата минимальное, максимальное значение даты** — задает начальной даты, будут отображаться в средстве выбора и ограничения для доступный для выбора дат.
+### <a name="date-picker-properties"></a>Свойства выбора даты
 
-### <a name="configuring-the-datepicker"></a>Настройка DatePicker
+#### <a name="minimum-and-maximum-date"></a>Минимальное и максимальное значение даты
 
-Можно ограничить диапазон дат, пользователь может выбрать в с помощью `MinimumDate` и `MaximumDate` свойства. В следующем фрагменте кода показан пример того, как задать диапазон между 60 лет, но сегодня.
+[`MinimumDate`](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MinimumDate/) и [ `MaximumDate` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MaximumDate/) ограничить диапазон дат в элементе выбора даты. Например следующий код ограничивает управляющий элемент выбора даты до 60 лет, вплоть до момента присутствует:
 
 ```csharp
 var calendar = new NSCalendar(NSCalendarType.Gregorian);
 var currentDate = NSDate.Now;
 var components = new NSDateComponents();
-
 components.Year = -60;
-
 NSDate minDate = calendar.DateByAddingComponents(components, NSDate.Now, NSCalendarOptions.None);
-
 datePickerView.MinimumDate = minDate;
 datePickerView.MaximumDate = NSDate.Now;
 ```
 
-Кроме того чтобы задать диапазон дат минимальное и максимальное также можно использовать элементы управления .NET. Пример:
+> [!TIP]
+> Можно явно привести тип `DateTime` для `NSDate`:
+> ```csharp
+> DatePicker.MinimumDate = (NSDate)DateTime.Today.AddDays (-7);
+> DatePicker.MaximumDate = (NSDate)DateTime.Today.AddDays (7);
+> ```
 
-```csharp
-DatePicker.MinimumDate = (NSDate)DateTime.Today.AddDays (-7);
-DatePicker.MaximumDate = (NSDate)DateTime.Today.AddDays (7);
-```
+#### <a name="minute-interval"></a>Пятиминутный интервал
 
-Можно также задать `MinuteInterval` свойство, чтобы задать интервал, с которой средство выбора будет отображаться в минутах. В следующем фрагменте кода можно использовать для задания селектор для задания с интервалом 10 минут.
+[ `MinuteInterval` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MinuteInterval/) Свойство задает интервал, с которой средство выбора отобразит минут:
 
 ```csharp
 datePickerView.MinuteInterval = 10;
 ```
 
-Существует четыре режима, которые могут быть установлены выбора даты с помощью [ `UIDatePicker.Mode` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.Mode/) свойство. Ниже показан пример каждый из них и способ его реализации.
+#### <a name="mode"></a>Режим
 
-#### <a name="time"></a>Время
+Выбор даты поддерживают четыре [режимы](https://developer.xamarin.com/api/type/UIKit.UIDatePickerMode/), описанной ниже:
 
-Режим времени время с помощью селектора час и минуту и необязательный обозначение AM или PM. Он устанавливается с `UIDatePickerMode.Time` свойство. Пример:
+##### <a name="uidatepickermodetime"></a>UIDatePickerMode.Time
+
+`UIDatePickerMode.Time` Отображает время с помощью селектора час и минуту и необязательно обозначение AM или PM:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.Time;
 ```
 
-На следующем рисунке показан пример этого режима выбора дат:
+![UIDatePickerMode.Time](picker-images/image8.png "UIDatePickerMode.Time")
 
-![](picker-images/image8.png)
+##### <a name="uidatepickermodedate"></a>UIDatePickerMode.Date
 
-
-
-#### <a name="date"></a>Дата
-
-Режим даты отображает дату месяца, дня и года селектора. Он устанавливается с `UIDatePickerMode.Date` свойство. Пример:
+`UIDatePickerMode.Date` Отображает дату месяца, дня и года селектор:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.Date;
 ```
 
-На следующем рисунке показан пример этого DatePicker:
+![UIDatePickerMode.Date](picker-images/image7.png "UIDatePickerMode.Date")
 
-![](picker-images/image7.png)
-
-Порядок селекторы зависит от языкового стандарта `UIDatePicker`. По умолчанию это задается в системе по умолчанию. На рисунке выше показан макет селекторы в `en_US` языкового стандарта, но изменения в день | Месяц | Макет год, можно использовать следующий код для задания языкового стандарта:
+Порядок селекторы зависит от языкового стандарта элементе выбора даты, который по умолчанию использует языкового стандарта системы. На рисунке выше показан макет селекторов в `en_US` языкового стандарта, но следующие изменяет порядок день | Месяц | Год:
 
 ```csharp
 datePickerView.Locale = NSLocale.FromLocaleIdentifier("en_GB");
 ```
 
-![](picker-images/image9.png)
+![День | Месяц | Год](picker-images/image9.png "день | Месяц | Год")
 
+##### <a name="uidatepickermodedateandtime"></a>UIDatePickerMode.DateAndTime
 
-#### <a name="date-and-time"></a>Дата и время
-
-Дата и время режим отображает представление shortend даты, время в часах и минутах и необязательный dependings обозначение AM или PM на при использовании в 12 или 24-часовом. Он устанавливается с `UIDatePickerMode.DateAndTime` свойство. Пример:
+`UIDatePickerMode.DateAndTime` Отображает сокращенное представление даты, время в часах и минутах и необязательно обозначение AM или PM (в зависимости от того, используется ли в часовом 12 или 24):
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.DateAndTime;
 ```
 
-На следующем рисунке показан пример этого DatePicker:
+![UIDatePickerMode.DateAndTime](picker-images/image6.png "UIDatePickerMode.DateAndTime")
 
-![](picker-images/image6.png)
+Как и в [ `UIDatePickerMode.Date` ](#uidatepickermodedate), порядок следования селекторы и использование в 12 или 24 часовом зависит от языкового стандарта элементе выбора даты.
 
-Как и в [даты](#Date), порядок селекторы и использование 12 или 24-часовом формате зависит от языкового стандарта `UIDatePicker`.
+> [!TIP]
+> Используйте `Date` свойство, чтобы сохранить значение управляющий элемент выбора даты в режиме `UIDatePickerMode.Time`, `UIDatePickerMode.Date`, или `UIDatePickerMode.DateAndTime`. Это значение хранится в виде `NSDate`.
 
-#### <a name="countdown-timer"></a>Таймер обратного отсчета
+##### <a name="uidatepickermodecountdowntimer"></a>UIDatePickerMode.CountDownTimer
 
-Режим таймер обратного отсчета отображает час и минуту значения. Он устанавливается с `UIDatePickerMode.CountDownTimer` свойство. Пример:
+`UIDatePickerMode.CountDownTimer` Отображает значения часов и минут:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.CountDownTimer;
 ```
 
-На следующем рисунке показан пример этого DatePicker:
+![«UIDatePickerMode.CountDownTimer»](picker-images/image5.png "UIDatePickerMode.CountDownTimer")
 
-![](picker-images/image5.png)
-
-Можно использовать `CountDownDuration` свойство для записи dispayed значение путем выбора даты обратного отсчета. Например чтобы добавить значение обратного отсчета до текущей даты, можно использовать следующий код:
+`CountDownDuration` Свойство отражает ценность управляющий элемент выбора даты в `UIDatePickerMode.CountDownTimer` режиме. Например, чтобы добавить значение обратного отсчета до текущей даты:
 
 ```csharp
 var currentTime = NSDate.Now;
@@ -274,44 +255,64 @@ var finishCountdown = currentTime.AddSeconds(countDownTimerTime);
 dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown);
 ```
 
-#### <a name="formatting"></a>Форматирование 
+#### <a name="nsdateformatter"></a>NSDateFormatter
 
-Значения даты, времени и DateAndTime режимов могут быть захвачены с `Date` свойство UIDatePicker (например: `datePickerView.Date`), который относится к типу NSDate. Чтобы форматировать эта дата на что-нибудь более удобной для чтения, используйте [ `NSDateFormatter` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatter/). В приведенных ниже примерах показано, как использовать некоторые из доступных свойств данного класса.
+Для форматирования `NSDate`, использовать [ `NSDateFormatter` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatter/).
 
-`DateFormat` Задается как строка для представления, как должны отображаться Дата:
+Чтобы использовать `NSDateFormatter`, вызовите его [ `ToString` ](https://developer.xamarin.com/api/member/Foundation.NSDateFormatter.ToString/p/Foundation.NSDate/) метод. Пример:
+
+```csharp
+var date = NSDate.Now;
+var formatter = new NSDateFormatter();
+formatter.DateStyle = NSDateFormatterStyle.Full;
+formatter.TimeStyle = NSDateFormatterStyle.Full;
+var formattedDate = formatter.ToString(d);
+// Tuesday, August 14, 2018 at 11:20:42 PM Mountain Daylight Time
+```
+
+##### <a name="dateformat"></a>DateFormat
+
+[ `DateFormat` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.DateFormat/) Свойство (строка) `NSDateFormatter` обеспечивает настраиваемые даты в спецификации формата:
 
 ```csharp
 NSDateFormatter dateFormat = new NSDateFormatter();
 dateFormat.DateFormat = "yyyy-MM-dd";
 ```
 
-`TimeStyle` Наборов свойств `NSDateFormatterStyle`:
+##### <a name="timestyle"></a>TimeStyle
+
+[ `TimeStyle` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.TimeStyle/) Свойство ( [ `NSDateFormatterStyle` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatterStyle/)) из `NSDateFormatter` указывает форматирование времени на основе предопределенных стилей:
 
 ```csharp
 NSDateFormatter timeFormat = new NSDateFormatter();
 timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 ```
 
-Поля для `NSDateFormatterStyle` отображаться следующим образом:
+Различные `NSDateFormatterStyle` значения отображения времени следующим образом:
 
-![](picker-images/timestyle.png)
+- `NSDateFormatterStyle.Full`: 19:46:00 по восточному времени перехода на летнее время
+- `NSDateFormatterStyle.Long`: 7:47:00 PM ПО ЛЕТНЕМУ ВОСТОЧНОМУ ВРЕМЕНИ
+- `NSDateFormatterStyle.Medium`: 7:47:00 PM
+- `NSDateFormatterSytle.Short`: 7:47 PM
 
-`DateStyle` Наборов свойств `NSDateFormatterStyle`:
+##### <a name="datestyle"></a>DateStyle
+
+[ `DateStyle` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.DateStyle/) Свойство ( `NSDateFormatterStyle`) из `NSDateFormatter` определяет форматирование дат на основе предопределенных стилей:
 
 ```csharp
 NSDateFormatter dateTimeformat = new NSDateFormatter();
 dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 ```
 
-Поля для `NSDateFormatterStyle` отображаться следующим образом:
+Различные `NSDateFormatterStyle` значения отображение дат следующим образом:
 
-![](picker-images/datestyle.png)
+- `NSDateFormatterStyle.Full`: Среда, август 2 2017 в 7:48
+- `NSDateFormatterStyle.Long`: 2 август 2017 г. в 19:49:00
+- `NSDateFormatterStyle.Medium`: 2 августа 2017 г., 19:49:00
+- `NSDateFormatterStyle.Short`: 8/2/17, 7:50 PM
 
-Затем можно вывести форматированные NSDate в строку, используя следующий код:
-
-```csharp
-dateLabel.Text = dateTimeformat.ToString(datePickerView.Date);
-```
+> [!NOTE]
+> `DateFormat` и `DateStyle` / `TimeStyle` предоставляют различные способы указания форматирование даты и времени. Самое последнее задание свойств определяют выходной модуль форматирования даты.
 
 ## <a name="related-links"></a>Связанные ссылки
 

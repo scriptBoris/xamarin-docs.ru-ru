@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: 124fc311d5e2c8c89353ba813df60f0bf1d0b34a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 61a7d2261ac35621482e9810a0fdb69a6061ae6a
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38997075"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>Простая анимация в Xamarin.Forms
@@ -89,6 +89,9 @@ await image.ScaleTo (2, 2000);
 На следующих снимках экрана показано, масштабирование выполняется на каждой платформе:
 
 ![](simple-images/scaleto.png "Масштабирование анимации")
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Класс также определяет [ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX) и [ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY) свойства, которые можно масштабировать `VisualElement` по-разному в горизонтальном и вертикальном направлениях. Эти свойства могут быть анимированы с [ `Animation` ](xref:Xamarin.Forms.Animation) класса. Дополнительные сведения см. в разделе [Настройка анимации в Xamarin.Forms](custom.md).
 
 ### <a name="relative-scaling"></a>Масштабирование относительно
 

@@ -1,49 +1,49 @@
 ---
 title: Xamarin.Forms локальной базы данных
-description: Xamarin.Forms поддерживает приложения на основе базы данных, используя компонент database engine SQLite, что делает возможным для загрузки и сохранения объектов в общем коде. В этой статье описывается, как Xamarin.Forms приложения могут читать и записывать данные к локальной базе данных SQLite, с помощью SQLite.Net.
+description: Xamarin.Forms поддерживает приложения на основе базы данных с помощью ядра СУБД SQLite, что делает возможным для загрузки и сохранения объектов в общем коде. В этой статье описывается, как приложения Xamarin.Forms могут читать и записывать данные для локальной базы данных SQLite, используя для SQLite.Net.
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: feec4993a0719a083d713e084552b18aead8ee42
-ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
+ms.openlocfilehash: 05c77c4c47841a897d0d1de5c3ba004db524ea2d
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "36310144"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms локальной базы данных
 
-_Xamarin.Forms поддерживает приложения на основе базы данных, используя компонент database engine SQLite, что делает возможным для загрузки и сохранения объектов в общем коде. В этой статье описывается, как Xamarin.Forms приложения могут читать и записывать данные к локальной базе данных SQLite, с помощью SQLite.Net._
+_Xamarin.Forms поддерживает приложения на основе базы данных с помощью ядра СУБД SQLite, что делает возможным для загрузки и сохранения объектов в общем коде. В этой статье описывается, как приложения Xamarin.Forms могут читать и записывать данные для локальной базы данных SQLite, используя для SQLite.Net._
 
 ## <a name="overview"></a>Обзор
 
-Xamarin.Forms приложения могут использовать [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) пакета для включения операций базы данных в общий код, ссылаясь на `SQLite` классов, поставляемых в NuGet. Операции с базой данных можно определить в проекте библиотеки .NET Standard решения Xamarin.Forms.
+Приложения Xamarin.Forms могут использовать [NuGet переносимой библиотеки Классов для SQLite.NET](https://www.nuget.org/packages/sqlite-net-pcl/) пакета для включения операций базы данных в общий код, ссылаясь на `SQLite` классы, которые поставляются в NuGet. Операции с базой данных можно определить в проекте библиотеки .NET Standard решения Xamarin.Forms.
 
-Сопутствующий [образец приложения](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) это простое приложение Todo list. Следующих снимках экрана показано, как образец отображается на каждой платформе.
+Сопутствующий [пример приложения](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) представляет собой простое приложение списка задач. На следующих снимках экрана показано, как выглядит пример на каждой платформе:
 
-[![Снимки экрана примера базы данных Xamarin.Forms](databases-images/todo-list-sml.png "TodoList первой страницы, снимки экрана")](databases-images/todo-list.png#lightbox "TodoList первой страницы, снимки экрана") [ ![ Снимки экрана примера базы данных Xamarin.Forms](databases-images/todo-list-sml.png "TodoList первой страницы, снимки экрана")](databases-images/todo-list.png#lightbox "TodoList первой страницы, снимки экрана")
+[![Снимки экрана базы данных с Xamarin.Forms](databases-images/todo-list-sml.png "TodoList первой страницы, снимки экрана")](databases-images/todo-list.png#lightbox "TodoList первой страницы, снимки экрана") [ ![ Снимки экрана базы данных с Xamarin.Forms](databases-images/todo-list-sml.png "TodoList первой страницы, снимки экрана")](databases-images/todo-list.png#lightbox "TodoList первой страницы, снимки экрана")
 
 <a name="Using_SQLite_with_PCL" />
 
 ## <a name="using-sqlite"></a>С помощью SQLite
 
-Чтобы добавить поддержку SQLite Xamarin.Forms .NET стандартную библиотеку, используйте функцию поиска NuGet для поиска **sqlite-net-pcl** и установите последнюю версию пакета:
+Чтобы добавить поддержку SQLite в библиотеку Xamarin.Forms .NET Standard, используйте функцию поиска NuGet для поиска **sqlite-net-pcl** и установите последнюю версию пакета:
 
-![Добавьте пакет NuGet SQLite.NET PCL](databases-images/vs2017-sqlite-pcl-nuget.png "добавьте пакет NuGet SQLite.NET PCL")
+![Добавьте пакет NuGet для SQLite.NET PCL](databases-images/vs2017-sqlite-pcl-nuget.png "добавьте пакет NuGet для SQLite.NET PCL")
 
-Существует несколько пакетов NuGet с одинаковыми именами, правильный пакет имеет следующие атрибуты:
+Существует несколько пакетов NuGet с одинаковыми именами, правильный пакет имеет атрибуты:
 
-- **Созданные:** Krueger Михаил A.
-- **Идентификатор:** sqlite net переносимую библиотеку классов
-- **NuGet ссылку:** [sqlite net переносимую библиотеку классов](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **Созданные:** Крюгер A. франк
+- **Идентификатор:** sqlite-net-pcl
+- **Ссылку на NuGet:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
-> Несмотря на это имя пакета, используйте **sqlite-net-pcl** пакет NuGet даже в проектах .NET Standard.
+> Несмотря на название пакета, используйте **sqlite-net-pcl** даже в проектов .NET Standard пакет NuGet.
 
-После добавления ссылки Добавление свойства `App` класс, который возвращает путь к локальному файлу для хранения базы данных:
+После добавления ссылки, добавьте свойство, чтобы `App` класс, который возвращает путь к локальному файлу для хранения базы данных:
 
 ```csharp
 static TodoItemDatabase database;
@@ -72,9 +72,9 @@ public TodoItemDatabase(string dbPath)
 }
 ```
 
-Работает преимущество предоставление доступа к базе данных как единственное значение, создается подключение к одной базе данных сохраняется открытым во время выполнения приложения, таким образом избежать затрат на открытие и закрытие файла базы данных каждый раз при операции базы данных производится.
+Преимущество предоставление доступа к базе данных, как единственный экземпляр есть, что создается подключение к одной базе данных, сохраняется открытым во время выполнения приложения работает, выполняется таким образом избежать затрат на открытие и закрытие файла базы данных каждый раз, операции с базой данных.
 
-В оставшейся части `TodoItemDatabase` класс содержит SQLite запросы, которые выполняются между различными платформами. Ниже приведен пример запроса (Дополнительные сведения о синтаксисе можно найти в [с помощью SQLite.NET](~/cross-platform/app-fundamentals/index.md) статьи):
+В оставшейся части `TodoItemDatabase` класс содержит SQLite запросы, которые выполняются между различными платформами. Ниже приведен пример запроса кода (Дополнительные сведения о синтаксисе можно найти в [с помощью для SQLite.NET с помощью Xamarin.iOS](~/ios/data-cloud/data/using-sqlite-orm.md).
 
 ```csharp
 public Task<List<TodoItem>> GetItemsAsync()
@@ -110,16 +110,16 @@ public Task<int> DeleteItemAsync(TodoItem item)
 ```
 
 > [!NOTE]
-> Преимуществом использования асинхронный интерфейс API SQLite.Net является базы данных операций, перемещаются в фоновых потоках. Кроме того нет необходимости для записи дополнительных параллелизма, код обработки, так как он обеспечивает API-интерфейса.
+> Преимуществом использования асинхронный интерфейс API для SQLite.Net является базы данных operations, перемещаются в фоновых потоках. Кроме того нет необходимости писать код обработки, так как API берет на себя его повышает уровень параллелизма.
 
 ## <a name="summary"></a>Сводка
 
-Xamarin.Forms поддерживает приложения на основе базы данных, используя компонент database engine SQLite, что делает возможным для загрузки и сохранения объектов в общем коде.
+Xamarin.Forms поддерживает приложения на основе базы данных с помощью ядра СУБД SQLite, что делает возможным для загрузки и сохранения объектов в общем коде.
 
-В этой статье основное внимание уделено **доступ к** в базу данных SQLite, с помощью Xamarin.Forms. Дополнительные сведения о работе с самой SQLite.Net посвящены [SQLite.NET на Android](~/android/data-cloud/data-access/using-sqlite-orm.md) или [SQLite.NET на iOS](~/ios/data-cloud/data/using-sqlite-orm.md) документации.
+В этой статье внимание уделяется **доступ к** базой данных SQLite с помощью Xamarin.Forms. Дополнительные сведения о работе с для SQLite.Net сам см [для SQLite.NET в Android](~/android/data-cloud/data-access/using-sqlite-orm.md) или [для SQLite.NET в iOS](~/ios/data-cloud/data/using-sqlite-orm.md) документации.
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Образец TODO](https://developer.xamarin.com/samples/xamarin-forms/Todo/)
+- [Примере TODO](https://developer.xamarin.com/samples/xamarin-forms/Todo/)
 - [Примеры Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/all/)
-- [База данных книги](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/database/database.workbook)
+

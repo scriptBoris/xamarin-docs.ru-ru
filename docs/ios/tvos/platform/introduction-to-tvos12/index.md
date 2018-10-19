@@ -4,29 +4,21 @@ description: Этот документ предоставляет высокоу
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 06/25/2018
-ms.openlocfilehash: 5cbec23aa81a4637a18f83d9955a78183dadaa21
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: f7fb8cc379a070b848c5154c9c1d4fbfc8186266
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615207"
 ---
 # <a name="introduction-to-tvos-12"></a>Введение в tvOS 12
 
-![Предварительный просмотр](~/media/shared/preview.png)
+Этот документ содержит общий обзор новых и обновленных tvOS 12.
 
-> [!WARNING]
-> Поддержка 12 tvOS Xamarin в настоящее время в предварительной версии, что означает, что он может содержать ошибки, не все компоненты, и могут измениться. Используйте его только для экспериментов.
-
-Этот документ содержит общий обзор новых и обновленных tvOS 12 функции для предварительного просмотра какой Xamarin выпуск в настоящее время предоставляет привязки C#.
-
-Чтобы приступить к созданию приложений tvOS 12 с помощью Xamarin, взгляните на:
-
-- [Руководство по началу работы](~/ios/platform/introduction-to-ios12/get-started.md)
-- Предварительная версия Xamarin [выпуска записи блога](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+Чтобы приступить к созданию приложений tvOS 12 с помощью Xamarin, взгляните на [руководство по началу работы](~/ios/platform/introduction-to-ios12/get-started.md).
 
 ## <a name="tvuikit"></a>TVUIKit
 
@@ -48,10 +40,13 @@ tvOS 12 позволяет всем приложениям, независимо
 
 Платформа естественного языка позволяет приложениям выполнять различные виды анализа языка. Например его можно использовать для определения части речи и определить язык, представленный блок текста.
 
+## <a name="deprecations"></a>Устаревании
+
+С помощью tvOS 12, Apple устаревшим OpenGL ES [разработчиков](https://developer.apple.com/tvos/whats-new/) внедрить исходного состояния системы.
+
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Примеры tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS — разработчика Apple (Apple)](https://developer.apple.com/tvos/)
 - [Новые возможности в tvOS 12 (Apple) (видео)](https://developer.apple.com/videos/play/wwdc2018/208/)
 - [ТВ (Apple)](https://www.apple.com/tv/)
-- Предварительная версия Xamarin [выпуска записи блога](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
