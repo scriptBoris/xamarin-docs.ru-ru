@@ -15,7 +15,7 @@ metadata:
   ms.topic: landing-page
   ms.technology: xamarin-ios
 abstract:
-  description: 'Xamarin.iOS предоставляет полный пакет SDK для iOS для разработчиков .NET. Создавайте собственные приложения iOS с помощью C# и F # в Visual Studio.'
+  description: Xamarin.iOS предоставляет полный пакет SDK для iOS для разработчиков .NET. Создавайте собственные приложения iOS с помощью C# и F# в Visual Studio.
   menu:
     items:
     - href: ~/ios/samples/index.yml
