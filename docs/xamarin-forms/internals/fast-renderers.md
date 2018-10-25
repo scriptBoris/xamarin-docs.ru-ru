@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: e4b060c703077e140e0f0d2f8c4c2b824c890e8d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a0054c79bf0f356bcfcc48389a0a28f68f73a48b
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38997125"
 ---
 # <a name="xamarinforms-fast-renderers"></a>Модули подготовки отчетов Xamarin.Forms Fast
@@ -32,6 +32,7 @@ _В этой статье рассматриваются быстрые отри
 - [`Button`](xref:Xamarin.Forms.Button)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
+- [`Frame`](xref:Xamarin.Forms.Frame)
 
 С функциональной точки зрения эти быстрые отрисовщики ничем не отличаются, для исходного модулей подготовки отчетов. Тем не менее, они настоящее время являются экспериментальными и могут использоваться только, добавив следующую строку кода, чтобы ваши `MainActivity` класса перед вызовом метода `Forms.Init`:
 

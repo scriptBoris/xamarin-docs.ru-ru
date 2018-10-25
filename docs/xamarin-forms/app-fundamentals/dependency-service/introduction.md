@@ -6,12 +6,12 @@ ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/06/2017
-ms.openlocfilehash: 558a05b5fdc4c4f08194b708de886bca342dd860
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 09/15/2018
+ms.openlocfilehash: 28c6daa361b7de09a0d9332b21f1b6f75e035850
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38995418"
 ---
 # <a name="introduction-to-dependencyservice"></a>Общие сведения о DependencyService
@@ -20,7 +20,10 @@ ms.locfileid: "38995418"
 
 [`DependencyService`](xref:Xamarin.Forms.DependencyService) позволяет приложениям обращаться к функциям конкретной платформы из общего кода. Эта функция позволяет приложениям Xamarin.Forms делают все, что можно сделать собственного приложения.
 
-`DependencyService` Представляет Сопоставитель зависимостей. На практике, определяется интерфейс и `DependencyService` находит правильная реализация этого интерфейса в различных проектах платформы.
+`DependencyService` является служба локатора. На практике, определяется интерфейс и `DependencyService` находит правильная реализация этого интерфейса в различных проектах платформы.
+
+> [!NOTE]
+> По умолчанию [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) будет только resolve реализаций платформы, которые имеют конструкторы без параметров. Тем не менее метод разрешения зависимостей могут внедряться в Xamarin.Forms, контейнер внедрения зависимостей или фабричные методы для разрешения реализации платформы. Этот подход можно использовать для разрешения реализации платформы, которые имеют конструкторы с параметрами. Дополнительные сведения см. в разделе [разрешение зависимостей в Xamarin.Forms](~/xamarin-forms/internals/dependency-resolution.md).
 
 ## <a name="how-dependencyservice-works"></a>Как работает DependencyService
 
@@ -144,7 +147,6 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello from Xamarin Forms");
 
 > [!NOTE]
 > Вы **необходимо** предоставлять реализацию в каждом проекте платформы. Если нет реализации интерфейса зарегистрирован, то `DependencyService` будет не удается разрешить `Get<T>()` метод во время выполнения.
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

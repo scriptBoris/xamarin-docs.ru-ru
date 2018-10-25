@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 16d1970b5e9d8f9c2b7c8be875c81136525c4fb7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: b52f249b184d49731fd5decdb5877c70e29a3b84
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38998076"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Привязки Xamarin.Forms Basic
@@ -197,6 +197,9 @@ public partial class AlternativeCodeBindingPage : ContentPage
 Проблема в том, что `Slider` начальное значение 0. В результате `Scale` свойство `Label` быть также установлен в 0, переопределяя значение по умолчанию 1. В результате `Label` , первоначально невидимо. Как показано на снимках экрана Android и универсальной платформы Windows (UWP), можно управлять `Slider` вносить `Label` отображаются снова, но его начальной исчезновение неприятна.
 
 Вы можете узнать из [следующей статье](binding-mode.md) как избежать этой проблемы, инициализация `Slider` из значения по умолчанию `Scale` свойство.
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Класс также определяет [ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX) и [ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY) свойства, которые можно масштабировать `VisualElement` по-разному в горизонтальном и вертикальном направлениях.
 
 **Привязки XAML альтернатива** странице отображаются эквивалентное привязки полностью в XAML:
 

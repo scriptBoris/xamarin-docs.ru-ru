@@ -6,12 +6,12 @@ ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/07/2017
-ms.openlocfilehash: 813a913c2c2fb27456c9a489c73b16d5892c4b8d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/26/2018
+ms.openlocfilehash: 3ae2fb8110b7e0a5c6c85c489897acc1a03be8d8
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38997056"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
@@ -35,13 +35,16 @@ ms.locfileid: "38997056"
 
 ## <a name="setting-boxview-color-and-size"></a>Параметр BoxView цвет и размер
 
-Очень часто необходимо установить следующие три свойства `BoxView`:
+Обычно необходимо настроить следующие свойства `BoxView`:
 
 - [`Color`](xref:Xamarin.Forms.BoxView.Color) Чтобы указать ее цвет.
+- [`CornerRadius`](xref:Xamarin.Forms.BoxView.CornerRadius) Чтобы задать его радиус углов.
 - [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) Чтобы задать ширину `BoxView` в аппаратно независимых единицах.
 - [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) Чтобы задать высоту `BoxView`.
 
 `Color` Свойство имеет тип `Color`; свойство можно присвоить любой `Color` значение, включая 141 статические поля только для чтения класса с именем цвета в алфавитном порядке от `AliceBlue` для `YellowGreen`.
+
+`CornerRadius` Свойство имеет тип [ `CornerRadius` ](xref:Xamarin.Forms.CornerRadius); свойство может быть задано в одном `double` uniform значение радиуса угла, или `CornerRadius` структуры, определяемый четырьмя `double` значения, которые применяются к вверху слева, сверху справа, снизу слева и нижней правой части `BoxView`.
 
 `WidthRequest` И `HeightRequest` свойства играют роль, только если `BoxView` — *неограниченного* в макете. Это происходит, когда контейнер макета должен знать дочернего элемента размер, например, при `BoxView` является дочерним элементом автоматическим размером ячейки в `Grid` макета. Объект `BoxView` тоже без ограничений, когда его `HorizontalOptions` и `VerticalOptions` свойства присваиваются значения, отличные от `LayoutOptions.Fill`. Если `BoxView` — без ограничений, но `WidthRequest` и `HeightRequest` свойства не заданы, то ширина или высота присваиваются значения по умолчанию 40 единиц или примерно 1/4 дюйма на мобильных устройствах.
 
@@ -58,6 +61,7 @@ ms.locfileid: "38997056"
              x:Class="BasicBoxView.MainPage">
 
     <BoxView Color="CornflowerBlue"
+             CornerRadius="10"
              WidthRequest="160"
              HeightRequest="160"
              VerticalOptions="Center"

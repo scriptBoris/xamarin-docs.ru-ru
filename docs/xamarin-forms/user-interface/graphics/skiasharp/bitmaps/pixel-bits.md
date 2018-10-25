@@ -1,20 +1,20 @@
 ---
-title: Доступ к биты пикселов SkiaSharp
+title: Доступ к биты пикселов точечного рисунка SkiaSharp
 description: Обнаружить различные методы для доступа и изменения битов пикселов точечных рисунков SkiaSharp.
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 5d79dd89b5313d5d7ead665c54e9a27026cea38c
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 6d223dd051dccf7af84e4e6c35238f4ad026b00a
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615630"
 ---
-# <a name="accessing-skiasharp-pixel-bits"></a>Доступ к биты пикселов SkiaSharp
+# <a name="accessing-skiasharp-bitmap-pixel-bits"></a>Доступ к биты пикселов точечного рисунка SkiaSharp
 
 Как было показано в этой статье [ **SkiaSharp сохранение растровых изображений в файлы**](saving.md), растровые изображения обычно хранятся в файлах в сжатом формате, например, JPEG или PNG. В отличие от SkiaSharp растрового изображения, хранящиеся в памяти не сжимаются. Они хранятся как ряд последовательных точках. Этот формат без сжатия упрощает перенос растровые изображения на поверхность отображения.
 
@@ -39,7 +39,7 @@ SkiaSharp предоставляет несколько методов для д
 
 ### <a name="the-setpixel-method"></a>Метод SetPixel
 
-Если требуется задать или получить несколько отдельных пикселях [ `SetPixel` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.SetPixel/p/System.Int32/System.Int32/SkiaSharp.SKColor/) и [ `GetPixel` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.GetPixel/p/System.Int32/System.Int32/) идеально подходят методы. Для каждого из этих двух методов Укажите целое число столбцов и строк. Независимо от формата пикселей, эти два метода позволяют получать и устанавливать пикселя `SKColor` значение:
+Если требуется задать или получить несколько отдельных пикселях [ `SetPixel` ](xref:SkiaSharp.SKBitmap.SetPixel(System.Int32,System.Int32,SkiaSharp.SKColor)) и [ `GetPixel` ](xref:SkiaSharp.SKBitmap.GetPixel(System.Int32,System.Int32)) идеально подходят методы. Для каждого из этих двух методов Укажите целое число столбцов и строк. Независимо от формата пикселей, эти два метода позволяют получать и устанавливать пикселя `SKColor` значение:
 
 ```csharp
 bitmap.SetPixel(col, row, color);
@@ -85,7 +85,7 @@ public class GradientBitmapPage : ContentPage
 
 ### <a name="the-pixels-property"></a>Свойство пикселей
 
-`SKBitmap` Определяет [ `Pixels` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Pixels/) свойство, которое возвращает массив `SKColor` значения для всего растрового изображения. Можно также использовать `Pixels` задать массив значений цвета для растрового изображения:
+`SKBitmap` Определяет [ `Pixels` ](xref:SkiaSharp.SKBitmap.Pixels) свойство, которое возвращает массив `SKColor` значения для всего растрового изображения. Можно также использовать `Pixels` задать массив значений цвета для растрового изображения:
 
 ```csharp
 SKColor[] pixels = bitmap.Pixels;
@@ -129,7 +129,7 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 
 ### <a name="the-getpixels-pointer"></a>Указатель GetPixels
 
-Потенциально является наиболее мощным средством для доступа к пиксели точечного рисунка [ `GetPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.GetPixels()/), не следует путать с `GetPixel` метод или `Pixels` свойство. Вы сразу же увидеть разницу с `GetPixels` тем, что возвращает что-то очень часто программирования на C#:
+Потенциально является наиболее мощным средством для доступа к пиксели точечного рисунка [ `GetPixels` ](xref:SkiaSharp.SKBitmap.GetPixels), не следует путать с `GetPixel` метод или `Pixels` свойство. Вы сразу же увидеть разницу с `GetPixels` тем, что возвращает что-то очень часто программирования на C#:
 
 ```csharp
 IntPtr pixelsAddr = bitmap.GetPixels();
@@ -145,7 +145,7 @@ byte* ptr = (byte*)pixelsAddr.ToPointer();
 
 `ptr` Переменная имеет тип _указателя байта_. Это `ptr` переменной предоставляет доступ к отдельным числа байт памяти, которые используются для хранения пиксели. Считывает байт из памяти или запись байта в память использовать следующий код:
 
-```sharp
+```csharp
 byte pixelComponent = *ptr;
 
 *ptr = pixelComponent;
@@ -282,7 +282,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 
 ### <a name="the-setpixels-method"></a>Метод SetPixels
 
-`SKBitmap` также определяет метод с именем [ `SetPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.SetPixels/p/System.IntPtr/), который называется следующим образом:
+`SKBitmap` также определяет метод с именем [ `SetPixels` ](xref:SkiaSharp.SKBitmap.SetPixels(System.IntPtr)), который называется следующим образом:
 
 ```csharp
 bitmap.SetPixels(intPtr);
@@ -741,7 +741,55 @@ public partial class ColorAdjustmentPage : ContentPage
 
 Вполне вероятно, производительность этого метода может быть еще более повысить, создавая отдельные методы для различных сочетаний значений типы цвета исходного и конечного точечных рисунков что избежать проверки типа для каждого пикселя. Другой вариант — создать несколько `for` циклы для `col` переменной на основе цвета типа.
 
+## <a name="posterization"></a>Постеризации
+
+Является другой распространенных задание, которое включает в себя доступ к биты пикселов _постеризации_. Номер, если цвета кодируются в пикселей растрового изображения уменьшается таким образом, результат имеет примерно плакат нарисованные от руки с помощью ограниченной цветовую палитру.
+
+**«Постеризовать»** страница выполняет этот процесс на один из образов monkey:
+
+```csharp
+public class PosterizePage : ContentPage
+{
+    SKBitmap bitmap =
+        BitmapExtensions.LoadBitmapResource(typeof(FillRectanglePage),
+                                            "SkiaSharpFormsDemos.Media.Banana.jpg");
+    public PosterizePage()
+    {
+        Title = "Posterize";
+
+        unsafe
+        {
+            uint* ptr = (uint*)bitmap.GetPixels().ToPointer();
+            int pixelCount = bitmap.Width * bitmap.Height;
+
+            for (int i = 0; i < pixelCount; i++)
+            {
+                *ptr++ &= 0xE0E0E0FF; 
+            }
+        }
+
+        SKCanvasView canvasView = new SKCanvasView();
+        canvasView.PaintSurface += OnCanvasViewPaintSurface;
+        Content = canvasView;
+    }
+
+    void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
+    {
+        SKImageInfo info = args.Info;
+        SKSurface surface = args.Surface;
+        SKCanvas canvas = surface.Canvas;
+
+        canvas.Clear();
+        canvas.DrawBitmap(bitmap, info.Rect, BitmapStretch.Uniform;
+    }
+}
+```
+
+Код в конструктор обращается к каждого пикселя, выполняет побитовую операцию AND со значением 0xE0E0E0FF и затем сохраняет результат обратно в битовой карте. Значения 0xE0E0E0FF отслеживает старшие 3 разряда каждого компонента цвета и задает младшие 5 битов 0. Вместо того чтобы 2<sup>24</sup> или 16 777 216 цветов, растрового изображения уменьшается до 2<sup>9</sup> или 512 цвета:
+
+[![Постеризация](pixel-bits-images/Posterize.png "постеризация")](pixel-bits-images/постеризация-Large.png#lightbox)
+
 ## <a name="related-links"></a>Связанные ссылки
 
-- [API-интерфейсы SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [API-интерфейсы SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (пример)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -6,23 +6,25 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 01/05/2018
-ms.openlocfilehash: a630d7c2acb95b7551c9f5f870078a0efcfc075c
-ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
+ms.date: 08/01/2018
+ms.openlocfilehash: e483716952aa97de4411733006f4fa12c3e6da98
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39393676"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Использование расширения разметки XAML
 
-Расширения разметки XAML для повышения возможности и гибкость XAML, позволяя атрибутов элемента из различных источников. Несколько расширений разметки XAML являются частью спецификации XAML 2009 г. Они отображаются в файлах XAML с обычной `x` префикс пространства имен того они часто ссылаются с этого префикса. Они описаны в следующих разделах:
+Расширения разметки XAML для повышения возможности и гибкость XAML, позволяя атрибутов элемента из различных источников. Несколько расширений разметки XAML являются частью спецификации XAML 2009 г. Они отображаются в файлах XAML с обычной `x` префикс пространства имен того они часто ссылаются с этого префикса. В этой статье рассматриваются следующие расширения разметки.
 
-- [`x:Static`](#static) &ndash; ссылаться на статические свойства, поля или члены перечисления.
-- [`x:Reference`](#reference) &ndash; ссылка на именованные элементы на странице.
-- [`x:Type`](#type) &ndash; значение атрибута `System.Type` объекта.
-- [`x:Array`](#array) &ndash; Создает массив объектов определенного типа.
-- [`x:Null`](#null) &ndash; значение атрибута `null` значение.
+- [`x:Static`](#static) — ссылаться на статические свойства, поля или члены перечисления.
+- [`x:Reference`](#reference) — Ссылка с именем элементов на странице.
+- [`x:Type`](#type) – значение атрибута `System.Type` объекта.
+- [`x:Array`](#array) — Создайте массив объектов определенного типа.
+- [`x:Null`](#null) – значение атрибута `null` значение.
+- [`OnPlatform`](#onplatform) — настраивать внешний вид пользовательского интерфейса на каждой платформы.
+- [`OnIdiom`](#onidiom) — настраивать внешний вид пользовательского интерфейса на идиому устройства, приложения на основе.
 
 Дополнительные расширения разметки XAML Исторически поддерживаются в других реализациях XAML и также поддерживаются в Xamarin.Forms. Более подробно они описаны в других статьях:
 
@@ -453,10 +455,89 @@ public partial class TypeDemoPage : ContentPage
 
 Обратите внимание, что, четыре из `Label` элементы имеют шрифт serif, но центре `Label` имеет шрифта без засечек по умолчанию.
 
+<a name="onplatform" />
+
+## <a name="onplatform-markup-extension"></a>Расширение разметки OnPlatform
+
+`OnPlatform` Расширение разметки позволяет настраивать внешний вид пользовательского интерфейса на каждой платформы. Он предоставляет те же функции, что [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) и [ `On` ](xref:Xamarin.Forms.On) классов, но с более кратким представлением.
+
+`OnPlatform` Расширение разметки поддерживается [ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension) класс, который определяет следующие свойства:
+
+- `Default` типа `object`, присвоено значение по умолчанию для применения к свойствам, которые представляют платформ.
+- `Android` типа `object`, установленным в значение для применения на устройстве Android.
+- `GTK` типа `object`, установленным в значение для применения на платформах GTK.
+- `iOS` типа `object`, установленным в значение для применения в iOS.
+- `macOS` типа `object`, установленным в значение для применения в macOS.
+- `Tizen` типа `object`, установленным в значение для применения на платформе Tizen.
+- `UWP` типа `object`, установленным в значение для применения на универсальной платформе Windows.
+- `WPF` типа `object`, установленным в значение для применения на платформе Windows Presentation Foundation.
+- `Converter` типа `IValueConverter`, который задается для `IValueConverter` реализации.
+- `ConverterParameter` типа `object`, установленным в значение для передачи `IValueConverter` реализации.
+
+> [!NOTE]
+> Средство синтаксического анализа XAML позволяет [ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension) класса, чтобы сократить до `OnPlatform`.
+
+`Default` Свойство является свойством содержимого из `OnPlatformExtension`. Таким образом, для выражений разметки XAML, выраженными с помощью фигурных скобок, то можно исключить `Default=` часть выражения, при условии, что это первый аргумент.
+
+> [!IMPORTANT]
+> Средство синтаксического анализа XAML ожидает, что значения правильного типа будет предоставляться для использования свойства `OnPlatform` расширение разметки. Если преобразование типов, `OnPlatform` расширение разметки будет пытаться выполнить его с помощью преобразователей по умолчанию, предоставляемые Xamarin.Forms. Однако существуют некоторые преобразования типов, не может быть выполнена, то, что преобразователи по умолчанию и в этих случаях `Converter` свойство должно быть присвоено `IValueConverter` реализации.
+
+**Демонстрация OnPlatform** страницы показан способ использования `OnPlatform` расширение разметки:
+
+```xaml
+<BoxView Color="{OnPlatform Yellow, iOS=Red, Android=Green, UWP=Blue}"
+         WidthRequest="{OnPlatform 250, iOS=200, Android=300, UWP=400}"  
+         HeightRequest="{OnPlatform 250, iOS=200, Android=300, UWP=400}"
+         HorizontalOptions="Center" />
+```
+
+В этом примере все три `OnPlatform` выражения используйте сокращенную версию `OnPlatformExtension` имя класса. Три `OnPlatform` набор расширений разметки [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), и [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) свойства [ `BoxView` ](xref:Xamarin.Forms.BoxView) в разные значения для iOS, Android и универсальной платформы Windows. Расширения разметки также предоставляют значения по умолчанию для этих свойств на платформах, которые не заданы, при этом Избавляясь от `Default=` часть выражения. Обратите внимание на то, что свойства расширения разметки, заданные разделяются запятыми.
+
+Вот ее запуск на всех трех платформах:
+
+[![Демонстрация OnPlatform](consuming-images/onplatformdemo-small.png "Демонстрация OnPlatform")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform Demo")
+
+<a name="onidiom" />
+
+## <a name="onidiom-markup-extension"></a>Расширение разметки OnIdiom
+
+`OnIdiom` Расширения разметки позволяет настраивать внешний вид пользовательского интерфейса на идиому устройства, приложения на основе. Этот режим поддерживается [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) класс, который определяет следующие свойства:
+
+- `Default` типа `object`, присвоено значение по умолчанию для применения к свойствам, которые представляют стили устройства.
+- `Phone` типа `object`, установленным в значение для применения на телефонах.
+- `Tablet` типа `object`, установленным в значение для применения на планшетах.
+- `Desktop` типа `object`, установленным в значение для применения в настольных системах.
+- `TV` типа `object`, установленным в значение для применения на платформах TV.
+- `Watch` типа `object`, установленным в значение для применения на платформах контрольных значений.
+- `Converter` типа `IValueConverter`, который задается для `IValueConverter` реализации.
+- `ConverterParameter` типа `object`, установленным в значение для передачи `IValueConverter` реализации.
+
+> [!NOTE]
+> Средство синтаксического анализа XAML позволяет [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) класса, чтобы сократить до `OnIdiom`.
+
+`Default` Свойство является свойством содержимого из `OnIdiomExtension`. Таким образом, для выражений разметки XAML, выраженными с помощью фигурных скобок, то можно исключить `Default=` часть выражения, при условии, что это первый аргумент.
+
+> [!IMPORTANT]
+> Средство синтаксического анализа XAML ожидает, что значения правильного типа будет предоставляться для использования свойства `OnIdiom` расширение разметки. Если преобразование типов, `OnIdiom` расширение разметки будет пытаться выполнить его с помощью преобразователей по умолчанию, предоставляемые Xamarin.Forms. Однако существуют некоторые преобразования типов, не может быть выполнена, то, что преобразователи по умолчанию и в этих случаях `Converter` свойство должно быть присвоено `IValueConverter` реализации.
+
+**Демонстрация OnIdiom** страницы показан способ использования `OnIdiom` расширение разметки:
+
+```xaml
+<BoxView Color="{OnIdiom Yellow, Phone=Red, Tablet=Green, Desktop=Blue}"
+         WidthRequest="{OnIdiom 100, Phone=200, Tablet=300, Desktop=400}"
+         HeightRequest="{OnIdiom 100, Phone=200, Tablet=300, Desktop=400}"
+         HorizontalOptions="Center" />
+```
+
+В этом примере все три `OnIdiom` выражения используйте сокращенную версию `OnIdiomExtension` имя класса. Три `OnIdiom` набор расширений разметки [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), и [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) свойства [ `BoxView` ](xref:Xamarin.Forms.BoxView) в разные значения для phone, планшетных и настольных систем идиом. Расширения разметки также предоставляют значения по умолчанию для этих свойств на стили, которые не указаны, устраняя `Default=` часть выражения. Обратите внимание на то, что свойства расширения разметки, заданные разделяются запятыми.
+
+Вот ее запуск на всех трех платформах:
+
+[![Демонстрация OnIdiom](consuming-images/onidiomdemo-small.png "Демонстрация OnIdiom")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom Demo")
+
 ## <a name="define-your-own-markup-extensions"></a>Определить собственные расширения разметки
 
 Если возникла необходимость расширения разметки XAML, которые не доступны в Xamarin.Forms, вы можете [создать свой собственный](creating.md).
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

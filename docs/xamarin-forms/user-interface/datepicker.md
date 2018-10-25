@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/04/2018
-ms.openlocfilehash: 553957bfa06c7b7a9c5261e426ebee4190de5ebb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7917510e910223fc6ca276bf47b1878c19557a38
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38994930"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
-_Представление Xamarin.Forms, которое позволяет пользователю выбрать дату_
+_Представление Xamarin.Forms, которое позволяет пользователю выбрать дату._
 
 Xamarin.Forms [ `DatePicker` ](xref:Xamarin.Forms.DatePicker) вызывает элемент управления выбора даты платформы и позволяет пользователю выбрать дату. `DatePicker` Определяет восемь свойств:
 
@@ -184,6 +184,9 @@ public partial class MainPage : ContentPage
 Коснитесь любой из `DatePicker` отображает вызывает средство выбора даты платформы. Трех платформ реализованы средства выбора даты самыми разными способами, но каждый подход крайне знакомы пользователям функции этой платформы:
 
 [![Выберите дней между датами](datepicker-images/DaysBetweenDatesSelect.png "выберите дней между датами")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "выберите дней между датами")
+
+> [!TIP]
+> В Android `DatePicker` диалогового окна можно настроить путем переопределения `CreateDatePickerDialog` метод в пользовательское средство отрисовки. Это позволяет, например, дополнительные кнопки для добавления в диалоговое окно.
 
 После выбора двумя датами, приложение отображает количество дней в указанном интервале дат:
 

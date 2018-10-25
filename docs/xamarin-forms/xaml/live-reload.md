@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: ce48c4d271167b657505c52518e79c955e53b02e
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38860671"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin динамической перезагрузки
@@ -26,10 +26,12 @@ Xamarin Live Reload позволяет **вносить изменения в XA
 
 Динамической перезагрузки в данный момент доступна только в Visual Studio 2017.
 
+[![Беседа в https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## <a name="requirements"></a>Требования
 
-* [Visual Studio 2017 версии 15.7 или более поздней версии](https://visualstudio.microsoft.com/vs/) или более поздней версии с **разработки мобильных приложений на .NET** рабочей нагрузки.
-* [Xamarin.Forms 3.0.0 или более поздней версии](https://www.nuget.org/packages/Xamarin.Forms/) или более поздней версии.
+* [Visual Studio 2017 версии 15.7 или более поздней версии](https://visualstudio.microsoft.com/vs/) с **разработки мобильных приложений на .NET** рабочей нагрузки.
+* [Xamarin.Forms 3.0.0 или более поздней версии](https://www.nuget.org/packages/Xamarin.Forms/).
 
 ## <a name="getting-started"></a>Начало работы
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Установка динамической перезагрузки Xamarin в Visual Studio Marketplace
@@ -121,6 +123,8 @@ public partial class App : Application
 * Поддерживается только в Visual Studio.
 * Связывание должно быть присвоено **не компоновать** или **ссылку только пакеты SDK** 
 * Повторная загрузка ресурсы на уровне приложения (т. е. **App.xaml** или Общие словари ресурсов), приложение навигации сбрасывается. Это будет исправлено в следующем выпуске предварительной версии.
+* В настоящее время перезагрузки ContentView необходимо перезагрузить страницу. Это будет исправлено в следующем выпуске предварительной версии.
+* Элементами, содержащими AutomationId может вызвать сбой перезагрузки.
 * Редактирование XAML во время отладки UWP может вызвать сбой во время выполнения. Решение: Используйте **Запуск без отладки (Ctrl + F5)** вместо **начать отладку (F5)**.
 
 ## <a name="troubleshooting"></a>Устранение неполадок

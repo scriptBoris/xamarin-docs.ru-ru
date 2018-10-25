@@ -4,21 +4,21 @@ description: Thhis статья исследует преобразование 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 94105cbb83e4c6eb3558ca3fc55e505ab41f28fe
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: d4ab7ad5a0fc645c13388d76eb11cbd4e2dd72f8
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615607"
 ---
 # <a name="the-scale-transform"></a>Преобразование масштаба
 
 _Обнаружение преобразование SkiaSharp масштабирования для масштабирования объектов для различных размеров_
 
-Как вы убедились в [перевести преобразование](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md) статье преобразования переноса можно переместить графического объекта из одного расположения в другое. Напротив преобразование масштаба изменяет размер графического объекта:
+Как вы убедились в [ **перевести преобразование** ](translate.md) статье преобразования переноса можно переместить графического объекта из одного расположения в другое. Напротив преобразование масштаба изменяет размер графического объекта:
 
 ![](scale-images/scaleexample.png "Высота слово свертываться, размер")
 
@@ -38,7 +38,7 @@ y "= sy [Default] y
 
 Значения по умолчанию факторов translate равны 0; коэффициенты масштабирования значения по умолчанию — 1.
 
-`SKCanvas` Класс определяет четыре `Scale` методы. Первый [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/) метод является для вынести в случаях, когда требуется же горизонтальное и вертикальное масштабирование:
+`SKCanvas` Класс определяет четыре `Scale` методы. Первый [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single)) метод является для вынести в случаях, когда требуется же горизонтальное и вертикальное масштабирование:
 
 ```csharp
 public void Scale (Single s)
@@ -46,14 +46,14 @@ public void Scale (Single s)
 
 Этот процесс называется *мощности* масштабирование &mdash; масштабирование то же, в обоих направлениях. Масштабирование мощности сохраняет пропорции объекта.
 
-Второй [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) метод позволяет указывать разные значения для горизонтального и вертикального масштабирования:
+Второй [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single)) метод позволяет указывать разные значения для горизонтального и вертикального масштабирования:
 
 ```csharp
 public void Scale (Single sx, Single sy)
 ```
 
 В результате *анизотропная* масштабирования.
-Третий [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/SkiaSharp.SKPoint/) метод объединяет два коэффициенты масштабирования в одном `SKPoint` значение:
+Третий [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(SkiaSharp.SKPoint)) метод объединяет два коэффициенты масштабирования в одном `SKPoint` значение:
 
 ```csharp
 public void Scale (SKPoint size)
@@ -61,7 +61,7 @@ public void Scale (SKPoint size)
 
 Четвертый `Scale` метод будут описаны чуть позже.
 
-**Простой масштабируемый** страница демонстрирует `Scale` метод. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) XAML-файл содержит два `Slider` элементы, которые позволяют выбрать коэффициенты вертикального и горизонтального масштабирования от 0 до 10. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) файл кода программной части использует эти значения для вызова `Scale` до отображения прямоугольник с закругленными углами заштриховывать с пунктирной линией и уместиться какой-нибудь текст в левом верхнем углу уголок части холста.
+**Простой масштабируемый** страница демонстрирует `Scale` метод. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) файл содержит два `Slider` элементы, которые позволяют выбрать коэффициенты вертикального и горизонтального масштабирования от 0 до 10. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) файл кода программной части использует эти значения для вызова `Scale` до отображения прямоугольник с закругленными углами заштриховывать с пунктирной линией и уместиться какой-нибудь текст в левом верхнем углу уголок части холста.
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -113,7 +113,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Анизотропная масштабирование причины ширина мазков станет разных линий, согласован с горизонтальной и вертикальной осей. (Это также очевидно из первому изображению на этой странице.) Если вы не хотите ширины штриха с коэффициенты масштабирования, присвойте ей значение 0, и всегда будет иметь одному пикселю, вне зависимости от `Scale` параметр.
 
-Масштабирование — это относительно левого верхнего угла холста. Это может оказаться именно то, что нужно, но не всегда. Предположим, что нужно поместить текст и прямоугольник в другое место на холсте для его масштабирования относительно ее центра. В этом случае можно использовать в четвертой версии [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/System.Single/System.Single/) метод, который входят два дополнительных параметра для указания центра масштабирования:
+Масштабирование — это относительно левого верхнего угла холста. Это может оказаться именно то, что нужно, но не всегда. Предположим, что нужно поместить текст и прямоугольник в другое место на холсте для его масштабирования относительно ее центра. В этом случае можно использовать в четвертой версии [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single,System.Single,System.Single)) метод, который входят два дополнительных параметра для указания центра масштабирования:
 
 ```csharp
 public void Scale (Single sx, Single sy, Single px, Single py)
@@ -170,7 +170,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Slider` Элементы в этой программе имеют ряд &ndash;10 до 10. Как вы видите, отрицательные значения вертикальное масштабирование (например, в Android, экран в центре) вызвать объекты для зеркального отображения относительно горизонтальной оси, проходящих через Центр масштабирования. Отрицательные значения по горизонтали, масштабирование (например, как показано на экране UWP справа) приводят к перевернуть вокруг вертикальной оси, проходящих через Центр масштабирования объектов.
 
-Эта четвертая версия `Scale` метод — это фактически ярлык. Вы можете увидеть, как это работает, заменив `Scale` метод в этот код на следующий:
+Версия [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single,System.Single,System.Single)) метод с точками pivot является ярлыком для серии из трех `Translate` и `Scale` вызовов. Вы можете увидеть, как это работает, заменив `Scale` метод в **по центру шкалы** страницы со следующими:
 
 ```csharp
 canvas.Translate(-px, -py);
@@ -191,7 +191,7 @@ canvas.Translate(–px, –py);
 
 С помощью последовательных `Scale` и `Translate` вызовы, центр прямоугольника с закругленными углами, находится в левом верхнем углу, но теперь вы можете масштабировать его относительно верхнего левого угла canvas, который также является центр прямоугольника с закругленными углами.
 
-Теперь, до этого `Scale` вызова добавьте еще один `Translate` вызовите центровки значениями:
+Теперь, до этого `Scale` вызывать, добавьте еще один `Translate` вызовите центровки значениями:
 
 ```csharp
 canvas.Translate(px, py);
@@ -215,7 +215,7 @@ canvas.Scale(sx, sy, px, py);
 
 При объединении `Translate` и `Scale` вызовы, порядок имеет значение. Если `Translate` следует после `Scale`, translation factors эффективно масштабируется с коэффициенты масштабирования. Если `Translate` предшествует `Scale`, коэффициенты преобразования не масштабируются. Этот процесс несколько яснее (хотя и более математические) Если вводится предметом матрицы преобразования.
 
-`SKPath` Класс определяет доступное только для чтения [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) свойство, которое возвращает `SKRect` определение пространства координат в пути. Например, если `Bounds` свойство получено из пути hendecagram, созданную ранее, `Left` и `Top` Свойства прямоугольника — – примерно 100 `Right` и `Bottom` свойства приблизительно 100 и `Width` и `Height` свойства — около 200. (Большинство фактические значения, немного меньше, так как точки звездочек определяются круг с радиусом 100, но только верхней точки — параллельное выполнение с помощью горизонтальной или вертикальной оси.)
+`SKPath` Класс определяет доступное только для чтения [ `Bounds` ](xref:SkiaSharp.SKPath.Bounds) свойство, которое возвращает `SKRect` определение пространства координат в пути. Например, если `Bounds` свойство получено из пути hendecagram, созданную ранее, `Left` и `Top` Свойства прямоугольника — – примерно 100 `Right` и `Bottom` свойства приблизительно 100 и `Width` и `Height` свойства — около 200. (Большинство фактические значения, немного меньше, так как точки звездочек определяются круг с радиусом 100, но только верхней точки — параллельное выполнение с помощью горизонтальной или вертикальной оси.)
 
 Доступность этих сведений подразумевает, что она должна быть возможность являются производными масштабирования и перевод факторов, подходящий для масштабирования путь к размер холста. [ **Анизотропная масштабирование** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) страница демонстрирует это с 11 указывает звездочкой. *Анизотропная* масштабирования означает, что не эквивалентны в горизонтальном и вертикальном направлениях, что означает, что звездочка не сохранит исходных пропорций. Ниже приведен соответствующий код в `PaintSurface` обработчика:
 
@@ -337,12 +337,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Код также отображает звездочки десять раз больше, учитывать каждый раз, уменьшение масштабирования 10% и постепенно изменения цвета от красного к синему:
+Код также отображает 10 типа "звезда" несколько раз, каждый раз, уменьшение масштабирования factor, 10% и постепенно изменения цвета от красного к синему:
 
 [![](scale-images/isotropicscaling-small.png "Тройной снимок экрана страницы мощности масштабирование")](scale-images/isotropicscaling-large.png#lightbox "тройной снимок экрана страницы мощности масштабирование")
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [API-интерфейсы SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [API-интерфейсы SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (пример)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
