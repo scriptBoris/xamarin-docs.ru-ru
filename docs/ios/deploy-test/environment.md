@@ -4,15 +4,15 @@ description: Этот документ описывает настройку в�
 ms.prod: xamarin
 ms.assetid: 9801644A-89BB-4491-AD28-7F3B97D2CD62
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 5296f03cae28e1025c760004c520a2b415ec493d
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 52ae48a0cd911cd90d985b830876ec003d073d2a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351592"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119308"
 ---
 # <a name="execution-environment-for-xamarinios-apps"></a>Среда выполнения для приложений Xamarin.iOS
 

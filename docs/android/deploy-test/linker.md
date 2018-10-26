@@ -3,15 +3,15 @@ title: Компоновка в Android
 ms.prod: xamarin
 ms.assetid: 3528E195-AA74-90AF-B5F3-3B65FB4F0BB8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: bcc9617553be425ab17050a1a6fb034f6d7f596d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 07f1fbae6c4fbfcfad45fc96970339e34b5de040
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30767587"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102845"
 ---
 # <a name="linking-on-android"></a>Компоновка в Android
 

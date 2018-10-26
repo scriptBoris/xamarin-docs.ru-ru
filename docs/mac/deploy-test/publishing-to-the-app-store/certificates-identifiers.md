@@ -4,15 +4,15 @@ description: В этом руководстве описывается созд�
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: b86f731009380db7e9e8980114272ddd38d2f0da
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2f60c15ba4b57ed61405b7081ed1cc3cee99c372
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792879"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115553"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Сертификаты и идентификаторы в Xamarin.Mac
 

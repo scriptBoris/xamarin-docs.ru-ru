@@ -4,15 +4,15 @@ description: Этот документ описывает, как использ
 ms.prod: xamarin
 ms.assetid: 05460010-99E1-DC38-F855-2D691EF54484
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 4b21a69e49c8c7fd79de8edac9858c4714657f1c
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 3d1a3090318649e6f04a5b8f44dc4a9b2689a870
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242320"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119635"
 ---
 # <a name="debugging-xamarinios-apps"></a>Отладка приложений Xamarin.iOS
 
@@ -32,11 +32,11 @@ _Для отладки приложений Xamarin.iOS можно исполь�
 
 Приступая к процессу отладки, в первую очередь необходимо [задать для приложения точки останова](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Для этого щелкните на полях редактора рядом с номером той строки кода, где нужно установить точку:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/debugging1.png "Задание точек останова")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/debugging1a.png "Задание точек останова")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
@@ -44,13 +44,13 @@ _Для отладки приложений Xamarin.iOS можно исполь�
 
 Вы можете просмотреть все точки останова, заданные в коде, на **панели точек останова**:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/image0a.png "Панель точек останова")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  Если панель точки останова не отображается автоматически, выберите _"Представление" > "Отладка Windows" > "Точки останова"_
  
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/image0.png "Панель точек останова")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
@@ -60,12 +60,12 @@ _Для отладки приложений Xamarin.iOS можно исполь�
 
 Прежде чем приступать к отладке любого приложения, обязательно переведите конфигурацию в режим **Отладки**, поскольку он содержит полезный набор инструментов для выполнения отладки, включая точки останова, визуализаторы данных и просмотр стека вызовов:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/debugging7.png "Отладка в симуляторе")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
 [ ![](debugging-in-xamarin-ios-images/debugging7a.png "Отладка на физическом устройстве")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/debugging7c.png "Отладка в симуляторе")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
 [ ![](debugging-in-xamarin-ios-images/debugging7d.png "Отладка на физическом устройстве")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
@@ -75,11 +75,11 @@ _Для отладки приложений Xamarin.iOS можно исполь�
 ## <a name="start-debugging"></a>Начало отладки
 Чтобы начать отладку, выберите целевое или аналогичное устройство в IDE:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/debugging7b.png "Выбор целевого устройства")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/debugging7e.png "Выбор целевого устройства")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
@@ -101,7 +101,7 @@ _Для отладки приложений Xamarin.iOS можно исполь�
 
 Вы также можете задавать правила, определяющие условия активации точки останова. Это называется добавлением *условной точки останова*.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 Чтобы задать условную точку останова, перейдите в окно **Свойства точки останова**, что можно сделать двумя способами:
 
@@ -119,7 +119,7 @@ _Для отладки приложений Xamarin.iOS можно исполь�
 
 [![](debugging-in-xamarin-ios-images/image6.png "Ввод условия для точки останова")](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Чтобы задать условную точку останова в Visual Studio 2015, сначала [задайте обычную точку останова](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Щелкните точку останова правой кнопкой мыши, чтобы открыть контекстное меню:
 
@@ -139,7 +139,7 @@ _Для отладки приложений Xamarin.iOS можно исполь�
 
 При достижении точки останова инструменты отладки позволяют получить контроль над выполнением программы. В вашей IDE появятся четыре кнопки для запуска и пошагового выполнения кода.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 В Visual Studio для Mac они будут выглядеть так:
 
@@ -152,7 +152,7 @@ _Для отладки приложений Xamarin.iOS можно исполь�
 - **Шаг с заходом** — также выполняет следующую строку кода. Если она является вызовом функции, эта команда останавливается на первой строке функции, позволяя продолжить ее отладку по строкам. Если следующая строка не является функцией, команда работает аналогично шагу с обходом.
 - **Шаг с выходом** — возвращается к строке, где была вызвана текущая функция.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 В Visual Studio они будут выглядеть так:
 
@@ -217,7 +217,7 @@ Xamarin.iOS использует новый "мягкий" отладчик Mon
 
 Xamarin.iOS поставляется с исходным кодом для библиотек классов Mono, что позволяет вам легко изучать внутренние взаимодействия через пошаговое выполнение из отладчика.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 Поскольку эта функция требует больше памяти во время отладки, по умолчанию она отключена.
 
@@ -226,7 +226,7 @@ Xamarin.iOS поставляется с исходным кодом для би�
 
 [![](debugging-in-xamarin-ios-images/debugging6.png "Отладка библиотек классов Mono")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Для отладки библиотек классов в Visual Studio необходимо снять флажок **Только мой код** в меню _"Отладка" > "Параметры"_. В узле _"Отладка" > "Общие"_ снимите флажок **Включить только мой код**:
 

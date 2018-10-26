@@ -4,15 +4,15 @@ description: Тестирование и отладка приложения Xam
 ms.prod: xamarin
 ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 1ed6ec57365c5d3a861dd3fd947a2ad195ce5357
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 8fb647e12de621fc0772ad5c18aac21e46758715
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935390"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113109"
 ---
 # <a name="debugging"></a>Отладка
 

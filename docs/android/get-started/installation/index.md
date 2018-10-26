@@ -4,15 +4,15 @@ description: Как установить и настроить Xamarin.Android �
 ms.prod: xamarin
 ms.assetid: 4BE549B8-5696-2BA7-DA32-8C0EE90A879D
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: fcc2ce5e45cd9094a9987ce12267850e19da9d75
-ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
+ms.openlocfilehash: 3a88359eb9d5c382753566bc4d0c3b4f556490ac
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39573520"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117516"
 ---
 # <a name="setup-and-installation"></a>Настройка и установка
 

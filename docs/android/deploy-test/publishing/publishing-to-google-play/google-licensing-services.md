@@ -3,15 +3,15 @@ title: Службы лицензирования Google
 ms.prod: xamarin
 ms.assetid: E96BDCC3-454A-A797-5819-905E2BB1AC41
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 12/20/2017
-ms.openlocfilehash: ebc557ce16858c675b291f17620616a2dba4c054
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eedfcfe2ed274ddf541addec67e66250deab7899
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762250"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114630"
 ---
 # <a name="google-licensing-services"></a>Службы лицензирования Google
 

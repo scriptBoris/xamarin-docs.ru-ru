@@ -3,15 +3,15 @@ title: Публикация приложения
 ms.prod: xamarin
 ms.assetid: 51E19000-040A-2B74-C462-EC57C617085C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 99efc1b6cbef4e9004da564d433e891f36d0df49
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ef504e4bef22ac5b2bec5b6a57eb46e8b2f1baff
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30764040"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102546"
 ---
 # <a name="publishing-an-application"></a>Публикация приложения
 

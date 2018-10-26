@@ -4,15 +4,15 @@ description: Эта статья описывает создание файла 
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 4fd64a1ebf05dd149304f49d8282ee1b38bfcf03
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.openlocfilehash: 70d6b908beb0d04788365b104b5e4a2679b0ebe1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321367"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113252"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Поддержка IPA в Xamarin.iOS
 
@@ -54,7 +54,7 @@ _В этой статье описано, как создать файл IPA, к
 
 ## <a name="creating-an-ipa"></a>Создание IPA
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 Создание IPA теперь встроено в новый рабочий процесс публикации. Для этого следуйте инструкциям ниже, чтобы заархивировать приложение, подписать его и сохранить ваш IPA.
 
@@ -138,7 +138,7 @@ _В этой статье описано, как создать файл IPA, к
     /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Когда профиль подготовки создан и выбран, создан необязательный файл **iTunesMetadata.plist**, а также заданы иллюстрации iTunes в Visual Studio, вы можете выполнить сборку IPA для распространения. После этого нужно настроить проект. Выполните следующие действия:
 
@@ -233,11 +233,11 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 Новое приложение iOS будет отображаться в разделе **Мои приложения**, где его можно щелкнуть правой кнопкой мыши и получить сведения о приложении:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
  ![](ipa-support-images/installxs01.png "Новое приложение iOS в разделе \"Мои приложения\"")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  ![](ipa-support-images/installvs01.png "Новое приложение iOS в разделе \"Мои приложения\"")
 

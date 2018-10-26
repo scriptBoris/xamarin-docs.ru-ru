@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: dd0afe03adbd021717a88cd4409e3e1351ba9b50
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 3f74144f85cc045b4ea9807d3d818677e33539f2
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111190"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123470"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Ручная подготовка для Xamarin.iOS
 
@@ -73,11 +73,11 @@ _Установив Xamarin.iOS для разработки приложений
 
 ### <a name="understanding-certificate-key-pairs"></a>Основные сведения о парах ключей сертификатов
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 Профиль разработчика содержит сертификаты, связанные с ними ключи, а также профили подготовки, связанные с учетной записью. По сути, существуют две версии профиля разработчика: одна на портале разработчика, а другая на локальном компьютере Mac. Различие между ними — в типе ключей, которые они содержат: _профиль на портале вмещает все открытые ключи, связанные с вашими сертификатами, а копия на локальном компьютере Mac содержит все закрытые ключи_. Чтобы сертификаты были действительны, пары ключей должны совпадать. Храните резервную копию профиля разработчика на локальном компьютере Mac, так как в случае утери закрытых ключей все сертификаты и профили подготовки потребуется создать заново.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Профиль разработчика содержит сертификаты, связанные с ними ключи, а также профили подготовки, связанные с учетной записью. По сути, существуют две версии профиля разработчика: одна на портале разработчика, а другая на компьютере Mac. Различие между ними — в типе ключей, которые они содержат: _профиль на портале вмещает все открытые ключи, связанные с вашими сертификатами, а копия на компьютере Mac содержит все закрытые ключи_. Чтобы сертификаты были действительны, пары ключей должны совпадать. Храните резервную копию профиля разработчика на компьютере Mac с узлом сборки Xamarin, так как в случае утери закрытых ключей все сертификаты и профили подготовки потребуется создать заново.
 
@@ -204,12 +204,12 @@ _Установив Xamarin.iOS для разработки приложений
 
 Новые сертификаты или профили подготовки станут доступны для использования в Visual Studio для Mac или Visual Studio.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 > [!IMPORTANT]
 > Чтобы сертификаты или профили, созданные или измененные в Xcode, стали доступны в среде Visual Studio для Mac, ее нужно закрыть и перезапустить.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
 > Чтобы сертификаты или профили, созданные или измененные в Xcode, стали доступны в среде Visual Studio, ее нужно закрыть и перезапустить.
@@ -230,7 +230,7 @@ Apple предоставляет ряд специальных служб при
 
 На этом этапе подготовка должна быть завершена, а приложение готово к развертыванию на устройстве. Выполните указанные ниже действия:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 > [!IMPORTANT]
 > Прежде чем начать, убедитесь, что в файле **Info.plist** выбран параметр **Manual Provisioning** (Подготовка вручную).
@@ -249,7 +249,7 @@ Apple предоставляет ряд специальных служб при
 4. В качестве конфигурации сборки должно быть выбрано значение **iPhone** / **iPad**, а не симулятор.
 5. В Visual Studio для Mac нажмите кнопку **Запуск**. Приложение должно запуститься на устройстве.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
 > Для начала выберите схему **Подготовка вручную** в разделе **Проект > Свойства подготовки…**.

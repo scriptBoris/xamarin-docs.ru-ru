@@ -4,15 +4,15 @@ description: Этот документ описывает, как распрос
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: de3af76b8479562ba048c5b62167df0f2b2a51f9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209263"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115137"
 ---
 # <a name="app-store-distribution"></a>Распространение через App Store
 
@@ -121,11 +121,11 @@ ms.locfileid: "36209263"
 7. Нажмите кнопку **Generate** (Создать), чтобы создать профиль и завершить процесс.
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
  Может потребоваться выйти из программы Visual Studio для Mac, а также обновить список доступных удостоверений подписи и профилей подготовки в Xcode (в соответствии с инструкциями из раздела [Запрос удостоверений подписывания](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), прежде чем новый профиль распространения станет доступен в Visual Studio для Mac.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  Может потребоваться выйти из программы Visual Studio, а также обновить список доступных удостоверений подписи и профилей подготовки в Xcode на Mac узла сборки (в соответствии с инструкциями из раздела [Запрос удостоверений подписывания](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), прежде чем новый профиль распространения станет доступен в Visual Studio.
 
@@ -137,7 +137,7 @@ ms.locfileid: "36209263"
 
 Когда все готово к финальной сборке приложения Xamarin.iOS для продажи в iTunes App Store, выберите профиль распространения, который был создан выше.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
  В Visual Studio для Mac выполните следующие действия:
 
@@ -153,7 +153,7 @@ ms.locfileid: "36209263"
     ![](images/releasexs03.png "Выбор удостоверения подписывания и профиля распространения")
 5. Нажмите кнопку **ОК**, чтобы сохранить изменения.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  В Visual Studio выполните следующие действия:
 

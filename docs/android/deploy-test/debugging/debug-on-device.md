@@ -4,15 +4,15 @@ description: В этой статье содержатся сведения об
 ms.prod: xamarin
 ms.assetid: 153D3746-A27F-198B-48FE-D219C0133A79
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 1848bb624bf5f4bd627441a17fd077843c94edb9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3c30beadf7c2de618952bdf0cd5c03e7ceee2845
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762754"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109709"
 ---
 # <a name="debug-on-device"></a>Отладка на устройстве
 
@@ -27,7 +27,7 @@ _В этой статье содержатся сведения об отлад�
 
 После подключения устройства к компьютеру отладка приложения Xamarin.Android выполняется так же, как отладка любого продукта Xamarin или приложения .NET. Убедитесь, что в интегрированной среде разработки выбраны конфигурация **Отладка** и внешнее устройство. Это необходимо, чтобы обеспечить доступность соответствующих отладочных символов и возможность подключения среды IDE к запущенному приложению: 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Выбрана конфигурация "Отладка"](debug-on-device-images/image1-vs.png)
 
@@ -39,7 +39,7 @@ _В этой статье содержатся сведения об отлад�
 
 ![Достигнута точка останова](debug-on-device-images/image3-vs.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ![Выбрана конфигурация "Отладка"](debug-on-device-images/image1-xs.png)
 

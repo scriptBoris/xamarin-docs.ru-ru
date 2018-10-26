@@ -5,28 +5,27 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: C6474F70-3617-46AD-93E8-BE66878EEC17
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: a7740fa6ca79bc48568dc0a2cc87af51b5eb869e
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 472d17a940a78da6fcc6c6564c6e275b76302d9b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242122"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102689"
 ---
 # <a name="hello-android"></a>Привет, Android
 
 _Из этого руководства из двух частей вы узнаете, как создать первое приложение Xamarin.Android в Visual Studio для Mac или Visual Studio, а также получите представление об основах разработки приложений Android с помощью Xamarin. Кроме того, в этом руководстве описаны средства, понятия и действия, необходимые для создания и развертывания приложения Xamarin.Android._
 
-##  <a name="part-1-quickstartandroidget-startedhello-androidhello-android-quickstartmd"></a>[Часть 1. Краткое руководство](~/android/get-started/hello-android/hello-android-quickstart.md)
+## <a name="part-1-quickstartandroidget-startedhello-androidhello-android-quickstartmd"></a>[Часть 1. Краткое руководство](~/android/get-started/hello-android/hello-android-quickstart.md)
 
 В первой части этого руководства вы создадите приложение, которое преобразует введенный пользователем буквенно-цифровой телефонный номер в числовой телефонный номер и затем набирает его.
 
-##  <a name="part-2-deep-diveandroidget-startedhello-androidhello-android-deepdivemd"></a>[Часть 2. Подробные сведения](~/android/get-started/hello-android/hello-android-deepdive.md)
+## <a name="part-2-deep-diveandroidget-startedhello-androidhello-android-deepdivemd"></a>[Часть 2. Подробные сведения](~/android/get-started/hello-android/hello-android-deepdive.md)
 
 Во второй части этого документа вы проверите, что было создано, и получите полное представление о работе приложения Android.
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

@@ -4,15 +4,15 @@ description: В этой статье описано, как создавать 
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 9c81138aea57c0027ad0f53e3116878ffb800eae
-ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
+ms.openlocfilehash: 5245ce6c2c8a2317e18a90514039d36232e933ef
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39276045"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117918"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Значок приложения для приложений Xamarin.Mac
 

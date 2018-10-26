@@ -4,15 +4,15 @@ description: В этом разделе перечислены руководс�
 ms.prod: xamarin
 ms.assetid: 568C0B85-EFF3-AF6F-5605-95055193D367
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: ce86590b2d05f3b9141d1a5ba42df9274544f9ae
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 4c9ab8c14db131427329cef51e7b74e982a1c7b8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34549240"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103690"
 ---
 # <a name="deployment-and-testing"></a>Развертывание и тестирование
 

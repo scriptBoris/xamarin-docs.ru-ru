@@ -4,15 +4,15 @@ description: В этом документе рассматриваются сл�
 ms.prod: xamarin
 ms.assetid: 85BF0EC8-E581-49CD-B9E7-98BE4C5A0F6B
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 7df79cb6f225326dda6656fa9dfe9534e35f2457
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: f3315563725da7c54febd852298c60003eb056a4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241995"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104899"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Ползунки, коммутаторы и Сегментированные элементы управления в Xamarin.iOS
 

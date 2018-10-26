@@ -4,15 +4,15 @@ description: Xamarin.Android ProGuard — это средство сжатия,
 ms.prod: xamarin
 ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: efb9c73eb9bddb2b22b84fb6f3388281f32a82ab
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.openlocfilehash: 998232119159c5dc3a284dd51d55dc381271a4e0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321380"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117399"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -323,11 +323,11 @@ C:\Program Files (x86)\Java\jdk1.8.0_92\\bin\java.exe -jar C:\Android\android-sd
 
 Как правило, эта проблема возникает в Windows из-за неправильной кодировки файла `.cfg`. ProGuard не удается обработать _метку порядка следования байтов_ (BOM), которая может находиться в текстовых файлах. Если метка BOM присутствует, ProGuard завершит работу с указанной выше ошибкой. 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Чтобы избежать этой проблемы, измените настраиваемый файл конфигурации в текстовом редакторе, который позволит сохранить файл без метки BOM. Чтобы устранить эту проблему, для текстового редактора необходимо задать кодировку `UTF-8`. Например, в текстовом редакторе [Notepad ++](https://notepad-plus-plus.org/) можно сохранять файлы без отметки BOM, выбрав **Кодировка &gt; Кодировать в UTF-8 без BOM** при сохранении файла. 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 Чтобы избежать этой проблемы, сохраните настраиваемый файл конфигурации в текстовом редакторе, который позволяет пропускать метку BOM. 
 

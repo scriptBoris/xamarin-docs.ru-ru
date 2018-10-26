@@ -4,15 +4,15 @@ description: Этот документ описывает помещение п�
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 3aeda97fa4a5a63d51623335c0721026b2394d2f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3394c0ccaa25ff438bd4435321f05c55990fc674
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792064"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122040"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Объединение для магазина Mac App Store
 

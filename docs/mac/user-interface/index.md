@@ -4,15 +4,15 @@ description: Этот документ содержит ссылки на рук
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/27/2018
-ms.openlocfilehash: b2392f05a03015f903918f15013919be14b99292
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: a12553cf0b7b9584bb8ff7bc04ed326ad4a7ad2a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251177"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107837"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>элементы управления интерфейса пользователя macOS в Xamarin.Mac
 
@@ -38,7 +38,7 @@ _Этой статье приведены ссылки на руководств
 
 ## <a name="menusmacuser-interfacemenumd"></a>[Меню](~/mac/user-interface/menu.md)
 
-Меню используются в различных частях пользовательского интерфейса приложения Mac; приложения в главном меню в верхней части экрана, чтобы всплывающих меню и контекстные меню, которые могут находиться в любом месте окна. Меню являются неотъемлемой частью приложения Mac взаимодействие с пользователем. В этой статье рассматривается работа с меню Cocoa в приложении Xamarin.Mac.
+Меню используются в различных частях пользовательского интерфейса приложения Mac; приложения в главном меню в верхней части экрана, чтобы всплывающих меню и контекстные меню, которые могут находиться в любом месте окна. Меню — неотъемлемая часть пользовательского интерфейса приложений Mac. В этой статье рассматривается работа с меню Cocoa в приложении Xamarin.Mac.
 
 ## <a name="standard-controlsmacuser-interfacestandard-controlsmd"></a>[Стандартные элементы управления](~/mac/user-interface/standard-controls.md)
 
@@ -74,4 +74,4 @@ _Этой статье приведены ссылки на руководств
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [macOS рекомендациям по интерфейсам](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [Рекомендации по созданию пользовательских интерфейсов в macOS](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

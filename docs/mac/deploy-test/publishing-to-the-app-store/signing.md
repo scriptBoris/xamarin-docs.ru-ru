@@ -4,15 +4,15 @@ description: Этот документ описывает подпись при�
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 130766ef7f9ab8e311db97a7209f4ec62a2ceee4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9294080f361d280bcb61ea162320da57f44a2a95
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792308"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117672"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>Подписывание приложений Xamarin.Mac с помощью идентификатора разработчика
 

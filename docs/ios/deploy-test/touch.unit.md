@@ -4,15 +4,15 @@ description: Этот документ содержит общие сведен�
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: ce2b452d50222ac3561dab5b76915b7ae634934b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: dd590b65fdf1f83ade3453fa1266d1f6724bb8de
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785467"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121832"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>Модульное тестирование приложений Xamarin.iOS
 
@@ -21,13 +21,13 @@ ms.locfileid: "34785467"
 
 ## <a name="setting-up-a-test-project"></a>Настройка тестового проекта
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 Чтобы настроить платформу модульного тестирования для проекта, необходимо лишь добавить в решение проект типа **Проект модульных тестов iOS**. Для этого щелкните решение правой кнопкой мыши и выберите **Добавить > Добавить новый проект**. В списке выберите **iOS > Тесты > Unified API > Проект модульных тестов iOS** (можно выбрать язык C# или F#).
 
 ![](touch.unit-images/00.png "Выбор языка C# или F#")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Чтобы настроить платформу модульного тестирования для проекта, необходимо лишь добавить в решение проект типа **Проект модульных тестов iOS**. Для этого щелкните решение правой кнопкой мыши и выберите **Добавить > Новый проект**. В списке выберите **Visual C# > iOS > Приложение модульного тестирования (iOS)**.
 
@@ -37,11 +37,11 @@ ms.locfileid: "34785467"
 
 После этого будет создан базовый проект, содержащий основное средство выполнения тестов и ссылающийся на новую сборку MonoTouch.NUnitLite. Проект будет выглядеть следующим образом:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ![](touch.unit-images/01.png "Проект в обозревателе решений")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](touch.unit-images/01a.png "Проект в обозревателе решений")
 

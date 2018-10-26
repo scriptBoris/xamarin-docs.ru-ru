@@ -4,15 +4,15 @@ description: Этот документ содержит краткий обзо�
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 1dff0e614943805930cf7d838110c4a42eee6f48
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: c1e1b2d7bfb43c256c71abb62e7d85a05b096419
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353208"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103586"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Внутреннее распространение для приложений Xamarin.iOS
 
@@ -125,11 +125,11 @@ _Этот документ содержит краткий обзор распр
 
 7. Нажмите кнопку **Generate** (Создать), чтобы создать профиль и завершить процесс.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
  Может потребоваться выйти из программы Visual Studio для Mac, а также обновить список доступных удостоверений подписи и профилей подготовки в Xcode (в соответствии с инструкциями из раздела [Запрос удостоверений подписывания](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), прежде чем новый профиль распространения станет доступен в Visual Studio для Mac.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Может потребоваться выйти из программы Visual Studio, а также обновить список доступных удостоверений подписи и профилей подготовки в Xcode на Mac узла сборки (в соответствии с инструкциями из раздела [Запрос удостоверений подписывания](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)), прежде чем новый профиль распространения станет доступен в Visual Studio.
 

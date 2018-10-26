@@ -3,15 +3,15 @@ title: Эмулятор командной строки
 ms.prod: xamarin
 ms.assetid: E592AA32-5E83-B7E5-1753-12416551B23C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: b1ca1c2b441a9c9ca26de5668f318312bea156a3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 513b06749d1616e9fd10f04d22259810c0b4d265
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762075"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120727"
 ---
 # <a name="command-line-emulator"></a>Эмулятор командной строки
 

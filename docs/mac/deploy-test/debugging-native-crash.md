@@ -4,15 +4,15 @@ description: Этот документ описывает отладку иск�
 ms.prod: xamarin
 ms.assetid: B0C0CE31-2737-4969-8EA5-D39D3333E9C2
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 10/19/2016
-ms.openlocfilehash: 66ef76c4305e572d5cc45c142f38d89d6f17eeb0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 6cf19efcd2fa0f9d74034214bfa6a4e60ce0f9e2
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792129"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103885"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Отладка сбоя в машинном коде в приложении Xamarin.Mac
 
