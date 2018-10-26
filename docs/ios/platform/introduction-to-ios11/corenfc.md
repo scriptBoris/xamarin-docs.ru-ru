@@ -4,15 +4,15 @@ description: В этом документе описывается, как пр�
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 09/25/2017
-ms.openlocfilehash: 1381a4564f93fd091f181949454df3f06b31ae6b
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 6888f7147796d3c00752d10387c19d0d9f269cad
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350837"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106823"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Core NFC в Xamarin.iOS
 
@@ -29,7 +29,7 @@ CoreNFC — это новая платформа, в iOS 11, который пр
 - Приложения должны быть видны на переднем плане для сканирования.
 - CoreNFC можно протестировать только на реальных устройствах (не в симуляторе).
 
-На этой странице описывается конфигурация, необходимая для использования CoreNFC и показано, как использовать API с помощью [«TFCTagReader» пример кода](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/).
+На этой странице описывается конфигурация, необходимая для использования CoreNFC и показано, как использовать API с помощью [«NFCTagReader» пример кода](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/).
 
 ## <a name="configuration"></a>Конфигурация
 

@@ -4,15 +4,15 @@ description: 'В этом документе описывается, как ра
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: cd67c564461721ade6f3eb269b461ddea5e2d2c4
-ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
+ms.openlocfilehash: ef8e694bc3c617774035ad5cf7902ca3f5b06813
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39276006"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118517"
 ---
 # <a name="application-icons-in-xamarinios"></a>Значки приложения в Xamarin.iOS
 
@@ -109,7 +109,7 @@ ms.locfileid: "39276006"
 
 Чтобы использовать каталог ресурсов, сделайте следующее:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 1. Дважды щелкните `Info.plist` файл **обозревателе решений** чтобы открыть его для редактирования.
 2. Прокрутите вниз до раздела **значки приложений** раздел.
@@ -126,7 +126,7 @@ ms.locfileid: "39276006"
 7. Нажмите кнопку **откройте** кнопку, чтобы включить изображения в проект и задайте его в xcasset.
 8. Повторите эти действия для всех необходимых образов.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Дважды щелкните **Info.plist** файл **обозревателе решений**:
 
@@ -155,7 +155,7 @@ ms.locfileid: "39276006"
 
 Выполните следующие действия:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 1. Дважды щелкните `Info.plist` файл **обозревателе решений** чтобы открыть его для редактирования.
 2. Прокрутите вниз до раздела **значки приложений** раздел.
@@ -166,7 +166,7 @@ ms.locfileid: "39276006"
 
      ![](app-icons-images/migrate03.png "Задать изображение AppIcons в Assets.xcassets")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Дважды щелкните `Info.plist` файл **обозревателе решений** чтобы открыть его для редактирования.
 2. Щелкните на iPhone разделе "значки": 
@@ -187,7 +187,7 @@ ms.locfileid: "39276006"
 
 Чтобы указать иллюстрации iTunes, сделайте следующее:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 1. Дважды щелкните `Info.plist` файл **обозревателе решений** чтобы открыть его для редактирования.
 2. Прокрутите страницу до **иллюстрации iTunes** в редакторе: 
@@ -196,7 +196,7 @@ ms.locfileid: "39276006"
 3. Для отсутствии изображения щелкните эскиз в редакторе, выберите файл изображения для требуемой иллюстрацией iTunes в диалоговом окне открытия файла и нажмите кнопку **ОК** кнопки.
 4. Повторите этот шаг, пока все необходимые образы были указаны для приложения.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Дважды щелкните `Info.plist` файл **обозревателе решений** чтобы открыть его для редактирования.
 

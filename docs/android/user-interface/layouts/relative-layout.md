@@ -4,21 +4,24 @@ description: Как использовать RelativeLayout в приложен�
 ms.prod: xamarin
 ms.assetid: AFD9C849-02C3-E728-BC78-77A563612BC5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/29/2018
-ms.openlocfilehash: af8d37775a798fc6019106a66df75843a951c108
-ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
+ms.openlocfilehash: af2972ecc92435836a75013e6203ba47c2c04627
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403420"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113156"
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
-[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) — [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/) , отображающий дочерних [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) элементов в относительные позиции. Положение [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) может быть задан относительно одноуровневых элементов (например, относительно левой части или ниже данного элемента) или в помещает относительно [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) области (например, выравнивается по нижней, левой части center).
+[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) — [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/) , отображающий дочерний [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
+элементы в относительные позиции. Положение [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) может быть задан относительно одноуровневых элементов (например, относительно левой части или ниже данного элемента) или в помещает относительно [`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)
+область (например, выровненный по нижнему краю слева центра).
 
-Объект [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) — очень мощная служебная программа, разработке пользовательского интерфейса, так как позволяет избавиться от вложенных [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s. Если вы с помощью нескольких вложенных [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) групп, можно заменить их одним [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/).
+Объект [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) — очень мощная служебная программа, разработке пользовательского интерфейса, так как позволяет избавиться от вложенных [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s. Если вы с помощью нескольких вложенных [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+группы, можно заменить их одним [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/).
 
 Создайте новый проект с именем **HelloRelativeLayout**.
 
@@ -62,7 +65,8 @@ ms.locfileid: "37403420"
 
 Все доступные макета атрибуты определены в [ `RelativeLayout.LayoutParams` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout+LayoutParams/).
 
-Убедитесь, что вы загружаете этот макет в [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) метод:
+Убедитесь, что вы загружаете этот макет в [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
+метод:
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)

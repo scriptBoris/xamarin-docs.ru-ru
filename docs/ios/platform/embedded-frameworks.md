@@ -4,15 +4,15 @@ description: В этом документе описывается совмес�
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/05/2018
-ms.openlocfilehash: cce5356fd1d3d9a5cf16370a4843c3541b00a7c0
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: b59fd7c1a9e5f528878b90e1a76fabe5a79bab81
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351438"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108246"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Внедренные платформы в Xamarin.iOS
 
@@ -34,13 +34,13 @@ Xamarin.iOS 9.0 добавляет поддержку использования
 
 - Добавление собственных ссылок в контекстном меню
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 Правой кнопкой мыши проект и обзора, чтобы добавить собственные ссылки
 
 ![](embedded-frameworks-images/xam-native-refs.png "Выберите добавить собственные ссылки в Visual Studio для Mac")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Правой кнопкой мыши проект и обзора, чтобы добавить собственные ссылки
 

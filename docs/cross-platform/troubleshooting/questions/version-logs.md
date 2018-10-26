@@ -1,18 +1,18 @@
 ---
 title: Где найти Мои сведения о версии и журналы?
-description: Этот документ описывает область поиска для поиска сведений о версии Xamarin и журналы. Эта информация полезна при диагностике проблем, отправляя сообщения об ошибках или получение поддержки.
+description: Этот документ описывает, где можно попытаться найти сведения о версии Xamarin и журналы. Эта информация полезна при диагностике проблемы, отправляйте сообщения об ошибках, или получение технической поддержки.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 0164c5b5cad972b2d8854aefd4403e287a50a6e0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2c3ded2233810ff4e903596d65f64097aa3b0445
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782054"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118231"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>Где найти Мои сведения о версии и журналы?
 
@@ -21,28 +21,28 @@ ms.locfileid: "34782054"
 - [Сведения о версии](#version-information)
     - Сведения о версии Windows
     - Сведения о версии Mac
-    - Пакет SDK для Android, средства платформы построения средств
-- [Журналы интегрированной среды разработки и установки](#ide-and-installer-logs)
+    - Platform-tools, Android SDK Tools Build-tools
+- [Журналы интегрированной среды разработки и установщик](#ide-and-installer-logs)
     - [Журналы Windows](#windows-logs)
         - Xamarin Studio
         - Xamarin для Visual Studio
-        - Xamarin универсального установщика
+        - Универсальный установщик Xamarin
         - Отдельные `.msi` установщики, подробных журналов
         - Запуск Visual Studio, подробных журналов
     - [Журналы Mac](#mac-logs)
-        - Создавайте узла
+        - Основное приложение
     - Visual Studio для Mac
         - Xamarin Studio
-        - Программа установки Xamarin
-- [Выходные данные построения подробных сведений](#verbose-build-output-logs)
-- [Отладочный журналы для Xamarin.Android и Xamarin.iOS приложений.](#debug-logs-for-xamarin-apps)
+        - Установщик Xamarin
+- [Выходные данные подробного сборки](#verbose-build-output-logs)
+- [Отладочный журналы для приложений Xamarin.Android и Xamarin.iOS](#debug-logs-for-xamarin-apps)
     - Android `adb` logcat журналы
     - симулятор iOS входе (Mac)
     - устройство iOS входе (Mac)
 
 ## <a name="a-idversion-information-nameversion-information-version-information"></a><a id="version-information" name="version-information" />Сведения о версии
 
-Обычно резервное оптимально подходит для отправки всех данных из **сведения о копировании** кнопки. В противном случае мы часто необходимо для получения дополнительных сведений. Например версий операционной системы, Xcode версии Android API уровней, и версия .NET можно все важные при помощи в устранении проблемы.
+Обычно лучше всего для отправки обратно все сведения из **сведения о копировании** кнопки. В противном случае мы зачастую требуются для запроса дополнительной информации. К примеру, версий операционной системы, версии Xcode, установлен уровнях Android API, и версии платформы .NET можно все быть важные при помощи в устранении проблемы.
 
 ### <a name="a-idwindows-version-information-namewindows-version-information-windows-version-information"></a><a id="windows-version-information" name="windows-version-information" />Сведения о версии Windows
 
@@ -52,41 +52,37 @@ ms.locfileid: "34782054"
 
 #### <a name="visual-studio"></a>Visual Studio
 
-**Справка > о Microsoft Visual Studio > Копировать сведения [Кнопка]**
+**Справка > о Microsoft Visual Studio > Info копирования [Кнопка]**
 
 ### <a name="a-idmac-version-information-namemac-version-information-mac-version-information"></a><a id="mac-version-information" name="mac-version-information" />Сведения о версии Mac
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio для Mac
 
-**Visual Studio > о Visual Studio > Показать подробности > сведения о копировании [Кнопка]**
+**Visual Studio > о программе Visual Studio > Показать подробности > сведения о копировании [Кнопка]**
 
-### <a name="a-idandroid-sdk-tools-versions-nameandroid-sdk-tools-versions-android-sdk-tools-platform-tools-build-tools"></a><a id="android-sdk-tools-versions" name="android-sdk-tools-versions" />Пакет SDK для Android, средства платформы построения средств
+### <a name="a-idandroid-sdk-tools-versions-nameandroid-sdk-tools-versions-android-sdk-tools-platform-tools-build-tools"></a><a id="android-sdk-tools-versions" name="android-sdk-tools-versions" />Platform-tools, Android SDK Tools Build-tools
 
-Откройте диспетчер Android SDK и снимки экрана верхней **средства** раздела.
-
-![](https://kb.xamarin.com/customer/portal/attachments/337323 "Снимок экрана диспетчер Android SDK > папки \"Tools\"")
+Откройте диспетчер пакетов SDK для Android и снимки экрана верхней **средства** раздел.
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio для Mac
 
-**Сервис > Откройте диспетчер пакета SDK для Android**
+**Сервис > Диспетчер пакетов SDK для Android**
 
 #### <a name="visual-studio"></a>Visual Studio
 
-Выберите значок панели инструментов диспетчера пакета SDK:
+**Сервис > Android > Диспетчер пакетов SDK для Android...**
 
-![](https://kb.xamarin.com/customer/portal/attachments/420238 "Запустите диспетчер Android SDK Manager значок панели инструментов в Visual Studio")
+## <a name="a-idide-and-installer-logs-nameide-and-installer-logs-ide-and-installer-logs"></a><a id="ide-and-installer-logs" name="ide-and-installer-logs" />Журналы интегрированной среды разработки и установщик
 
-## <a name="a-idide-and-installer-logs-nameide-and-installer-logs-ide-and-installer-logs"></a><a id="ide-and-installer-logs" name="ide-and-installer-logs" />Журналы интегрированной среды разработки и установки
-
-Для каждого местоположения журнала убедитесь, что присоединение и архивировать папку весь журнал целиком.
+Для каждого расположения журнала не забудьте заархивировать и присоединить папке всего журнала.
 
 ### <a name="a-idwindows-logs-namewindows-logs-windows-logs"></a><a id="windows-logs" name="windows-logs" />Журналы Windows
 
-#### <a name="a-idwindows-logs-xamarin-vs-namewindows-logs-xamarin-vs--visual-studio-tools-for-xamarin"></a><a id="windows-logs-xamarin-vs" name="windows-logs-xamarin-vs" /> Набор средств Visual Studio для Xamarin
+#### <a name="a-idwindows-logs-xamarin-vs-namewindows-logs-xamarin-vs--visual-studio-tools-for-xamarin"></a><a id="windows-logs-xamarin-vs" name="windows-logs-xamarin-vs" /> Инструменты Visual Studio для Xamarin
 
 `%LOCALAPPDATA%\Xamarin\Logs`
 
-#### <a name="a-idvs-2017-namevs-2017--visual-studio-2017"></a><a id="vs-2017" name="vs-2017" /> Visual Studio 2017 г.
+#### <a name="a-idvs-2017-namevs-2017--visual-studio-2017"></a><a id="vs-2017" name="vs-2017" /> Visual Studio 2017
 
 [Как получить журналы установки Visual Studio](https://docs.microsoft.com/visualstudio/install/troubleshooting-installation-issues#how-to-get-the-visual-studio-installation-logs)
 
@@ -116,19 +112,19 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 ### <a name="a-idmac-logs-namemac-logs-mac-logs"></a><a id="mac-logs" name="mac-logs" />Журналы Mac
 
-Можно выбрать **Go > перейдите в папку** меню элемента в системе поиска, затем скопируйте и вставьте любой из этих путей в диалоговом окне.
+Можно выбрать **перейти > Перейти к папке** меню элемента в Finder, а затем скопируйте и вставьте любой из этих путей в диалоговом окне.
 
 #### <a name="a-idmac-logs-visual-studio-namemac-logs-visual-studio-visual-studio-for-mac"></a><a id="mac-logs-visual-studio" name="mac-logs-visual-studio" />Visual Studio для Mac
 
 `~/Library/Logs/VisualStudio/7.0` (это число может изменяться в зависимости от версии, которую вы используете)
 
-Эту папку можно также открыть через «Help -> открыть каталог журнала».
+Эту папку можно также открыть с помощью «"Справка"-> открыть каталог журналов».
 
 #### <a name="a-idmac-logs-xamarin-studio-namemac-logs-xamarin-studio-xamarin-studio"></a><a id="mac-logs-xamarin-studio" name="mac-logs-xamarin-studio" />Xamarin Studio
 
 `~/Library/Logs/XamarinStudio-6.0` (это число может изменяться в зависимости от версии, которую вы используете)
 
-Эту папку можно также открыть через «Help -> открыть каталог журнала».
+Эту папку можно также открыть с помощью «"Справка"-> открыть каталог журналов».
 
 #### <a name="a-idmac-universal-installer-namemac-universal-installer-xamarin-universal-installer"></a><a id="mac-universal-installer" name="mac-universal-installer" />«Универсальный» установщик Xamarin
 
@@ -136,87 +132,72 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 Это журналы из `XamarinInstaller.dmg` установщика.
 
-#### <a name="a-idmac-build-host-namemac-build-host-xamarin-build-host"></a><a id="mac-build-host" name="mac-build-host" />Узел сборок Xamarin
+#### <a name="a-idmac-build-host-namemac-build-host-xamarin-build-host"></a><a id="mac-build-host" name="mac-build-host" />Узел сборки Xamarin
 
 `~/Library/Logs/Xamarin-[MAJOR.MINOR]`
 
-## <a name="a-idverbose-build-output-logs-nameverbose-build-output-logs-verbose-build-output"></a><a id="verbose-build-output-logs" name="verbose-build-output-logs" />Выходные данные построения подробных сведений
+## <a name="a-idverbose-build-output-logs-nameverbose-build-output-logs-verbose-build-output"></a><a id="verbose-build-output-logs" name="verbose-build-output-logs" />Выходные данные подробного сборки
 
-1.  Включить [выходных данных диагностики MSBuild](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output).
+1.  Включить [вывод диагностики MSBuild](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output).
 
-2.  Для приложений iOS, следует также включить **mtouch подробного вывода** путем добавления `-v -v -v -v` под **свойства проекта > сборка iOS > Общие [tab] > Дополнительные параметры > mtouch дополнительных аргументов**.
-
-    **Visual Studio (Windows)**
-
-    [![](https://kb.xamarin.com/customer/portal/attachments/337319 "Введите в поле ввода дополнительных mtouch аргументы четырьмя тире v")](https://kb.xamarin.com/customer/portal/attachments/337319)
-
-    **Visual Studio для Mac**
-
-    [![](https://kb.xamarin.com/customer/portal/attachments/337316 "Введите в поле ввода дополнительных mtouch аргументы четырьмя тире v")](https://kb.xamarin.com/customer/portal/attachments/337316)
+2.  Для приложений iOS, следует также включить **mtouch подробного вывода** , добавив `-v -v -v -v` под **свойства проекта > сборка iOS > Общие (вкладка) > Дополнительные параметры > Дополнительные аргументы mtouch**.
 
 3.  Выполните очистку и перестройте проект.
 
-4.  Скопируйте и вставьте выходные данные построения из интегрированной среды разработки в текстовый файл.
-     - Visual Studio (Windows): **представление > выходной > Показать выходные данные от: сборка**
-     - Visual Studio для Mac: **представление > дополняет > ошибки > выходные данные построения [tab]**
+4.  Скопируйте и вставьте выходные данные построения в интегрированной среде разработки в текстовый файл.
+     - Visual Studio (Windows): **представление > выходные данные > Показать выходные данные из: построение**
+     - Visual Studio для Mac: **Вид > панели > ошибки > выходных данных сборки (вкладка ")**
 
-## <a name="a-iddebug-logs-for-xamarin-apps-namedebug-logs-for-xamarin-apps-debug-logs-for-xamarinandroid-and-xamarinios-apps"></a><a id="debug-logs-for-xamarin-apps" name="debug-logs-for-xamarin-apps" />Отладочный журналы для Xamarin.Android и Xamarin.iOS приложений.
+## <a name="a-iddebug-logs-for-xamarin-apps-namedebug-logs-for-xamarin-apps-debug-logs-for-xamarinandroid-and-xamarinios-apps"></a><a id="debug-logs-for-xamarin-apps" name="debug-logs-for-xamarin-apps" />Отладочный журналы для приложений Xamarin.Android и Xamarin.iOS
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio для Mac
 
-**Представление > дополняет > выходных данных приложения**
+**Вид > панели > выходные данные приложения**
 
-![](https://kb.xamarin.com/customer/portal/attachments/337290 "Значок планшета выходные данные приложения в Visual Studio для Mac")
-
-
-(Обратите внимание, что этот пункт меню будут отображаться только в том случае, после запуска приложения.)
+(Обратите внимание, что данный элемент меню будет отображаться только в том случае, после запуска приложения.)
 
 ### <a name="visual-studio"></a>Visual Studio
 
-**Представление > выходной > Показать выходные данные от: отладка**
-
-![](https://kb.xamarin.com/customer/portal/attachments/337292 "Панель вывода отображается параметр отладки в Visual Studio")
+**Представление > выходные данные > Показать выходные данные из: отладка**
 
 ### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [ `adb` ](http://developer.android.com/tools/help/adb.html) logcat журналы
 
-После выполнения команды `adb` команды, подключения Назад **android_logcat.txt** файл с рабочего стола. Эти инструкции предполагают, что у вас есть только одно устройство.
+После выполнения команды `adb` команды, снова подключить **android_logcat.txt** файл с рабочего стола. Эти инструкции предполагают, что у вас есть только одно устройство.
 
 См. также [Android журнал отладки](~/android/deploy-test/debugging/android-debug-log.md) страницы.
 
 #### <a name="visual-studio"></a>Visual Studio
 
-1.  **Сервис > Android > запустите Android Adb командной строки**
-2.  Очистка журнала: `adb logcat -c`
-3.  Воспроизвести проблему.
-4.  Выходные данные журнала: `adb logcat -vtime -d > "%USERPROFILE%\Desktop\android_logcat.txt"`
+1. **Сервис > Android > запустить Командная строка Android Adb**
+2. Очистка журнала: `adb logcat -c`
+3. Воспроизведите проблему.
+4. Выходные данные журнала: `adb logcat -vtime -d > "%USERPROFILE%\Desktop\android_logcat.txt"`
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio для Mac
 
-1.  **Сервис > Откройте командную строку пакета SDK для Android**
-2.  Очистка журнала: `adb logcat -c`
-3.  Воспроизвести проблему.
-4.  Выходные данные журнала: `adb logcat -vtime -d > ~/Desktop/android_logcat.txt`
+1. **Сервис > открыть командную строку пакета SDK для Android**
+2. Очистка журнала: `adb logcat -c`
+3. Воспроизведите проблему.
+4. Выходные данные журнала: `adb logcat -vtime -d > ~/Desktop/android_logcat.txt`
 
 ### <a name="a-idios-simulator-logs-nameios-simulator-logs-ios-simulator-logs-on-mac"></a><a id="ios-simulator-logs" name="ios-simulator-logs" />симулятор iOS входе (Mac)
 
-*   Чтобы открыть системный журнал, выберите **Отладка > откройте системный журнал...**  в приложении симулятор iOS.
+* Чтобы открыть журнал системы, выберите **Отладка > Открыть журнал системы...**  в приложении симулятора iOS.
 
-    ![](https://kb.xamarin.com/customer/portal/attachments/382617 "Отображение откройте системный журнал параметр меню «Отладка»")
-
-*   Чтобы просмотреть отчеты о сбоях в симуляторе, откройте Console.app и перейдите к `~/Library/Logs > DiagnosticReports`.
+* Чтобы просмотреть отчеты о сбоях в симуляторе, откройте Console.app и перейдите к `~/Library/Logs > DiagnosticReports`.
 
 ### <a name="a-idios-device-logs-nameios-device-logs-ios-device-logs-on-mac"></a><a id="ios-device-logs" name="ios-device-logs" />устройство iOS входе (Mac)
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio для Mac
 
-**Представление > дополняет > журнала устройства iOS**
+**Вид > панели > журнал устройств iOS**
 
-#### <a name="xcode"></a>Xcode 
+#### <a name="xcode"></a>Xcode
 
-**Окна > устройства > ${DeviceName}**
+**Окно > устройства > ${DeviceName}**
 
-Отчеты о сбоях можно найти в разделе **Просмотр журналов устройства** кнопки. В системном журнале устройство отображается в нижней части окна стрелку раскрытия <img alt="Disclosure arrow" src="https://kb.xamarin.com/customer/portal/attachments/382618" style="width: 15px; height: 12px;" />.
+Отчеты о сбоях можно найти в разделе **Просмотр журналов устройства** кнопки. Системный журнал на наличие устройства отображается в нижней части окна в разделе стрелки.
 
 #### <a name="xcode-5"></a>Xcode 5
 
-**Окна > Организатор > устройства [tab] > ${DeviceName}**
+**Окно > Организатор > устройств (вкладка) > ${DeviceName}**

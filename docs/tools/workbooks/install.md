@@ -1,35 +1,35 @@
 ---
 title: Требования к установке книг и
-description: В этом документе описывается Загрузите и установите Xamarin книг, обсуждение поддерживаемых платформах и требования к системе.
+description: В этом документе описывается, как загрузить и установить Xamarin Workbooks, посвященные поддерживаемых платформ и требования к системе.
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: a35038a948a89889bbf067a453b7465c1a6a7b49
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 7bef5de57b7ac709ebab4c39feedbec369e6bd14
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268996"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122430"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Требования к установке книг и
 
 <a name="install" />
 
-## <a name="download-and-install"></a>Загрузка и установка
+## <a name="download-and-install"></a>Скачайте и установите
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 1. Проверьте [требования](#requirements) ниже.
-2. Загрузите и установите [Xamarin книг для Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
-3. Запуск [воспроизведение](~/tools/workbooks/workbook.md) с книгами или испытать [образцы](https://developer.xamarin.com/workbooks)
+2. Скачайте и установите [Xamarin книг для Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
+3. Запуск [баловаться](~/tools/workbooks/workbook.md) с книгами или Испытайте [примеры](https://developer.xamarin.com/workbooks)
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
 1. Проверьте [требования](#Requirements) ниже.
-2. Загрузите и установите [Xamarin книги для Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
-3. Запуск [воспроизведение](~/tools/workbooks/workbook.md) с книгами или испытать [образцы](https://developer.xamarin.com/workbooks)
+2. Скачайте и установите [Xamarin Workbooks для Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
+3. Запуск [баловаться](~/tools/workbooks/workbook.md) с книгами или Испытайте [примеры](https://developer.xamarin.com/workbooks)
 
 -----
 
@@ -37,24 +37,24 @@ ms.locfileid: "36268996"
 
 #### <a name="supported-operating-systems"></a>Supported Operating Systems
 
-- **Mac** -OS X 10.11 или выше
-- **Windows** — Windows 7 или более поздней (с помощью Internet Explorer 11 или выше и .NET 4.6.1 или более поздней)
+- **Mac** -OS X 10.11 или более поздней версии
+- **Windows** -Windows 7 или более поздней версии (с помощью Internet Explorer 11 или более поздней версии и .NET 4.6.1 или более поздней версии)
 
 #### <a name="supported-app-platforms"></a>Поддерживаемые приложения платформы
 
 |Платформа приложений|Поддержка ОС|Примечания|
 |--- |--- |--- |
-|Mac|Поддерживаются только для Mac|
-|iOS|Поддерживается на Mac и Windows|Xamarin.iOS 11.0 и Xcode версии 9.0 или более поздней, должны быть установлены на компьютере Mac. Необходим узел построения Mac выполнения всех указанных выше, для выполнения операций ввода-вывода книг в Windows и [удаленной симулятор iOS](~/tools/ios-simulator.md) установить в Windows.|
-|Android|Поддерживается на Mac и Windows|Необходимо использовать эмулятор Google, Visual Studio или Xamarin Android, с виртуальным устройством > = 5.0|
+|Mac|Поддерживается только на компьютере Mac|
+|iOS|Поддерживается в Mac и Windows|Xamarin.iOS 11.0 и Xcode 9.0 или более поздней версии, должны быть установлены на компьютере Mac. Запускать книги iOS на Windows требует выполнения всех указанных выше, узлу сборки Mac и [удаленный симулятор iOS](~/tools/ios-simulator/index.md) установлен на Windows.|
+|Android|Поддерживается в Mac и Windows|Необходимо использовать эмулятор Google, Visual Studio или Xamarin Android, с виртуальным устройством > = 5.0|
 |WPF|Поддерживается только в Windows|
-|Консоль (.NET Framework)|Поддерживается на Mac и Windows|
-|Консоль (.NET Core)|Поддерживается на Mac и Windows|
+|Консоль (.NET Framework)|Поддерживается в Mac и Windows|
+|Консоль (.NET Core)|Поддерживается в Mac и Windows|
 
 
-## <a name="reporting-bugs"></a>Регистрации ошибок
+## <a name="reporting-bugs"></a>Сообщения об ошибках
 
-Проверьте [сообщить о проблемах на GitHub][bugs]и включают все следующие сведения:
+Пожалуйста [сообщить о проблемах на GitHub][bugs]и включают все следующие сведения:
 
 ### <a name="log-files"></a>Файлы журнала
 
@@ -63,9 +63,9 @@ ms.locfileid: "36268996"
 - MAC: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-1.4.x также включает возможность выбора файла журнала в Finder (macOS) или в проводнике (Windows) непосредственно из главного меню:
+1.4.x также предоставляет возможность выбора файла журнала в Finder (macOS) или в обозревателе (Windows) непосредственно из главного меню:
 
-- **Справка > отобразить файл журнала**
+- **Справка > открыть файл журнала**
 
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>Пути журнала для книг 1.3 и более ранних версий:
 
@@ -74,7 +74,7 @@ ms.locfileid: "36268996"
 
 ### <a name="platform-version-information"></a>Сведения о версии платформы
 
-Он очень полезно знать сведения об операционной системе и установленные продукты Xamarin.
+Это очень полезно узнать об операционной системе, установленных продуктов Xamarin.
 
 В главном меню в книгах:
 
@@ -84,30 +84,30 @@ ms.locfileid: "36268996"
 
 Visual Studio для Mac
 
-- **Visual Studio > о Visual Studio > Показать подробности > скопировать сведения**
-- Вставить в отчет об ошибках
+- **Visual Studio > о Visual Studio > Показать подробности > Копировать сведения**
+- Вставьте в отчет об ошибках
 
 Visual Studio
 
 - **Справка > о Visual Studio > скопировать сведения**
-- Сообщите нам о версии операционной системы и выполняется 32-разрядная или 64-разрядной Windows.
+- Расскажите нам о версии операционной системы и выполняется 32-разрядная или 64-разрядной Windows.
 
 ### <a name="samples"></a>Примеры
 
-Если можно присоединить или связать **.workbooks** файла возникают затруднения, которые могут помочь устранить ошибку быстрее.
+Если можно присоединить или связать **.workbooks** файл, возникают неполадки, и, которые могут помочь устранить ошибку, более быстро.
 
 ### <a name="devices"></a>Устройства
 
-Если возникают затруднения при подключении устройства iOS или Android книги, а проверка уже [нашу страницу отзывов по устранению неполадок](~/tools/workbooks/troubleshooting/index.md), нам необходимо знать:
+Если возникают проблемы с подключением, iOS или Android книги и проверка уже [нашей странице](~/tools/workbooks/troubleshooting/index.md), нам нужно будет знать:
 
 - Имя устройства, который вы пытаетесь подключиться к
 - Версия ОС устройства
 - Android: Убедитесь, что вы используете x86 эмулятора
-- Android: Какие платформы эмулятор используется? Эмулятор Google?
-  Эмулятор Android в Visual Studio? Xamarin Android Player?
-- операций ввода-вывода в Windows: какая версия эмулятора IOS удаленного Xamarin установки (проверьте **Установка и удаление программ** в **панели управления**)?
-- операций ввода-вывода в Windows: также укажите сведения о версии платформы для построения узла Mac
-- Устройство имеет подключение к сети (проверка через веб-браузер)?
+- Android — Платформы эмулятора вы используете? Эмулятор Google?
+  Эмулятор Android Visual Studio? Xamarin Android Player?
+- iOS на Windows: какая версия симулятор iOS удаленной работы для Xamarin установки (проверьте **Add/Remove Programs** в **панели управления**)?
+- iOS на Windows: также укажите сведения о версии платформы для узла сборки Mac
+- Устройство имеет сетевое подключение (Ознакомьтесь с веб-браузер)?
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
 
@@ -115,33 +115,33 @@ Visual Studio
 
 ### <a name="windows"></a>Windows
 
-В зависимости от того, как вы получили книги необходимо выполнить две процедуры удаления. Проверьте эти полностью удалить программное обеспечение.
+В зависимости от того, как вы получили книги необходимо выполнить две процедуры удаления. Проверьте оба варианта, чтобы полностью удалить программное обеспечение.
 
 #### <a name="visual-studio-installer"></a>Visual Studio Installer
 
-При наличии 2017 г. для Visual Studio, откройте **установщик Visual Studio**и найдите в **отдельные компоненты** для **книги Xamarin**. Если он установлен, снимите этот флажок и нажмите кнопку **изменить** для удаления.
+Если у вас есть Visual Studio 2017, откройте **установщик Visual Studio**и найдите в **отдельные компоненты** для **Xamarin Workbooks**. Если он установлен, снимите соответствующий флажок и нажмите кнопку **изменить** для удаления.
 
 #### <a name="system-uninstall"></a>Удаление системы
 
-Если вы установили книг самостоятельно Скачанный установщик, его необходимо установить через **приложений и возможности** страница параметров настройки системы в Windows 10 или с помощью **Установка и удаление программ** в элементе управления Панель в предыдущих версиях Windows.
+Если вы установили книг самостоятельно с помощью загруженного установщика, его необходимо удалить с помощью **приложения и возможности** страница параметров настройки системы в Windows 10 или с помощью **Add/Remove Programs** в элементе управления Панель в старых версиях Windows.
 
-> **Пуск > Параметры > Система > приложений и компонентов**
+> **Пуск > Параметры > Система > программы и компоненты**
 
-![](install-images/windows-remove.png "Xamarin книги, как указано в &quot;приложения &amp; функции&quot;")
+![](install-images/windows-remove.png "Xamarin Workbooks, как указано в &quot;приложений &amp; функции&quot;")
 
-**По-прежнему необходимо следовать процедура установщик Visual Studio, чтобы убедиться, что книги не получить переустановки без ведома пользователя.**
+**По-прежнему необходимо следовать процедуре для Visual Studio Installer, чтобы убедиться в том, книги не получить переустановлен без вашего ведома.**
 
 <a name="uninstall-macos" />
 
 ### <a name="macos"></a>macOS
 
-Начиная с [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), Xamarin книги могут быть удалены из терминала, выполнив:
+Начиная с [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), Xamarin Workbooks могут быть удалены из терминала, выполнив:
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
 ```
 
-Программа удаления подробно файлов и каталогов, она удаляет и запрашивать подтверждение перед продолжением.
+Программа удаления подробно, файлы и каталоги, она удаляет и запрашивать подтверждение, прежде чем продолжить.
 
 Передайте `-help` аргумент `uninstall` скрипт для более сложных сценариев.
 
@@ -154,11 +154,11 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 ## <a name="downgrading"></a>Понижение уровня
 
-Идентификатор пакета для **Workbooks.app/Applications/Xamarin** изменилось с `com.xamarin.Inspector` для `com.xamarin.Workbooks` 1,4 выпуска, как книг и инспектора теперь полностью разделяются.
+Идентификатор пакета для **Workbooks.app приложения/Xamarin** изменилось с `com.xamarin.Inspector` для `com.xamarin.Workbooks` в выпуск 1.4, как Workbooks и Inspector теперь полностью разделены.
 
-Из-за ошибки в более старых программ установки не удается понизить выпуски 1.4 или более поздней версии с помощью 1.3.2 или более старых программ установки.
+Из-за ошибки в более старых установщики это не возможность возврата к предыдущей версии 1.4 или более новые выпуски, с использованием 1.3.2 или более старых установщиков.
 
-Понизить 1.4 или более нового до 1.3.2 или старых:
+Понизить 1.4 или более нового до 1.3.2 или более ранней версии:
 
-1. [Вручную удалите книг & инспектора](#macOS)
-2. Запустите 1.3.2 или более ранних версий `.pkg` установщика
+1. [Удаление Workbooks и Inspector вручную](#macOS)
+2. Запустите 1.3.2 или более ранней версии `.pkg` установщика

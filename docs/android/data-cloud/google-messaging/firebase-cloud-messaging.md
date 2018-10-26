@@ -4,15 +4,15 @@ description: Firebase Cloud Messaging (FCM) — это служба, котор�
 ms.prod: xamarin
 ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 92c402085627bbe67d4cd8ccaf60a68aa979f3e7
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: bf0523a98c8e68691228b6e305265277e2925fa3
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514299"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116123"
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase Cloud Messaging
 

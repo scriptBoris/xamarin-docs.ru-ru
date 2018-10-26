@@ -6,12 +6,12 @@ ms.assetid: AEF4ED0E-391F-4FA4-9F18-842BC24C272D
 author: asb3993
 ms.author: amburns
 ms.date: 03/13/2018
-ms.openlocfilehash: d005d6c5e1dcfe7e9bcff44b308cea0ce7ab73e9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 213632ae26ae60797e39bc718a95057fb7238609
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998658"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113356"
 ---
 # <a name="available-assemblies"></a>Доступные сборки
 
@@ -21,16 +21,17 @@ Xamarin.iOS, Xamarin.Android и Xamarin.Mac все поставляются вм
 
 Приложения Xamarin.Mac можно скомпилировать в трех режимах:, использующую Xamarin проверенный Mobile Profile, .NET Framework 4.5 Xamarin.Mac, на котором можно выбирать существующие сборки настольные и найден неподдерживаемый тот, который использует API-Интерфейс .NET в системе Mono Установка. Дополнительные сведения см. в разделе наших [целевых платформ](~/mac/platform/target-framework.md) документации.
 
-
 ## <a name="net-standard-libraries"></a>Стандартные библиотеки .NET
 
 В дополнение к iOS, Android и Mac привязки, могут использовать проекты Xamarin [библиотеки .NET Standard](~/cross-platform/app-fundamentals/net-standard.md).
 
 ## <a name="portable-class-libraries"></a>Переносимые библиотеки классов
- 
+
 Можно также использовать проекты Xamarin [переносимые библиотеки классов .NET](~/cross-platform/app-fundamentals/pcl.md), несмотря на то, что эта технология будет заменен .NET Standard.
 
 ## <a name="supported-assemblies"></a>Поддерживаемые сборки
+
+Это сборки, доступных в **диспетчер ссылок > сборки > Framework** (Visual Studio 2017) и **изменить ссылки > пакеты** (Visual Studio для Mac) и их совместимости с помощью платформы Xamarin.
 
 > [!div class="mx-tdCol2BreakAll"]
 > |Assembly|Совместимость API|Xamarin iOS|Xamarin Android|Xamarin Mac|
@@ -78,4 +79,4 @@ Xamarin.iOS, Xamarin.Android и Xamarin.Mac все поставляются вм
 > |Xamarin.Android. &#8203;NUnitLite.dll| | |✓| |
 > |Mono.CompilerServices. &#8203;SymbolWriter.dll|Для компиляторов.| | |✓|
 > |Xamarin.Mac.dll| | | |✓|
-> |Система. &#8203;Drawing.dll|System.Drawing API — только классический API. System.Drawing не поддерживается на единый API Xamarin.Mac .NET 4.5 или мобильных платформ. Можно добавить поддержку System.Drawing iOS и OS X с помощью [sysdrawing coregraphics](https://github.com/mono/sysdrawing-coregraphics) библиотеки|✓| |✓|
+> |Система. &#8203;Drawing.dll|System.Drawing не поддерживается на единый API Xamarin.Mac, .NET 4.5 или мобильных платформ. Можно добавить поддержку System.Drawing iOS и macOS с помощью [sysdrawing coregraphics](https://github.com/mono/sysdrawing-coregraphics) библиотеки|✓| |✓|

@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
 author: lobrien
 ms.author: laobri
-ms.date: 10/03/2018
-ms.openlocfilehash: 06392448682a5b3be02562578542919b42242c13
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.date: 10/23/2018
+ms.openlocfilehash: 9171eeb461f2e4d363de6e01ea92fa448f04d41a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34793748"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121637"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Общие сведения о непрерывной интеграции с Xamarin
 
@@ -20,6 +20,10 @@ ms.locfileid: "34793748"
 ## <a name="introduction-to-continuous-integrationtoolsciintro-to-cimd"></a>[Общие сведения о непрерывной интеграции](~/tools/ci/intro-to-ci.md)
 
 В этом разделе рассматриваются различные компоненты, связанные с непрерывной интеграции и их связи. Здесь указаны среды непрерывной интеграции, которые рассматриваются в соответствующих разделах ниже.
+
+## <a name="devops-with-xamarintoolscidevopsmd"></a>[DevOps с помощью Xamarin](~/tools/ci/devops.md)
+
+В этом разделе указаны функции DevOps в Azure и Visual Studio, будут эффективно работать в проекте Xamarin.
 
 ## <a name="working-with-continuous-integration-environments"></a>Работа со средами непрерывной интеграции
 

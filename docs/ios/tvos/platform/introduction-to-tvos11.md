@@ -1,48 +1,48 @@
 ---
-title: Общие сведения о tvOS 11
-description: Этот документ содержит краткий обзор новых возможностей, доступных для разработчиков Xamarin в tvOS 11 и ссылки на заметки о выпуске компании Apple.
+title: Введение в tvOS 11
+description: Этот документ содержит краткий обзор новых функций, доступных для разработчиков Xamarin в tvOS 11, а также ссылки на заметки о выпуске компании Apple.
 ms.prod: xamarin
 ms.assetid: 5258F7A1-3388-4482-978C-DC33AAAEFBE6
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 02/08/2018
-ms.openlocfilehash: 83251cfa50dde4fb2089057aaaa2771956a4a3b0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4da83d5ecc7a54bcd692751e07c81e8e5bb0d94a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788918"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106524"
 ---
-# <a name="introduction-to-tvos-11"></a>Общие сведения о tvOS 11
+# <a name="introduction-to-tvos-11"></a>Введение в tvOS 11
 
 _Новые возможности, доступные для разработчиков, с помощью Xamarin для tvOS 11_
 
-Доступ к новым возможностям 11 tvOS в приложениях Xamarin.tvOS:
+Доступа к новым возможностям tvOS 11 в Xamarin.tvOS приложениях:
 
 - Поддержка языка справа налево 
 - Поддержка фокус SceneKit и SpriteKit
-- Зарезервированная область направляющих 
-- Простая кнопка стиль, который легко может быть со стилем
-- Многоуровневый образы с поддержкой интерактивной фокус
-- Пользовательской анимации, координируемых с взаимодействие
-- Пользовательские звуков, координируемых с взаимодействие
-- Машинное обучение с CoreML
-- Функция обнаружения изображения и видео
-- Поддержка высокого уровня эффективности кодирования видео (HEVC)
+- Направляющих макета безопасной области 
+- Обычная кнопка стиль, который легко можно применить различные стили
+- Многоуровневые образы с поддержкой интерактивной фокус
+- По согласованию с взаимодействие пользовательской анимации
+- Добавление собственных звуков, координируемых с взаимодействие
+- Машинное обучение с помощью CoreML
+- Обнаружение функций изображений и видео
+- Поддержка высокого эффективности кодирования видео (HEVC)
 - Высокий уровень поддержки формата изображения эффективность (HEIF)
-- Повышение уровня покупки из приложений в магазине приложений
-- Светлые и темные изображения для расширения верхней Полка
+- Повышение уровня покупки из приложений в App Store
+- Светлые и темные образы для расширения верхней полки
 - AirPlay 2
-- 2 исходного состояния системы
+- 2 состояния системы
 
-Полный список изменений, представленных в tvOS 11 Apple см. в разделе [новые возможности tvOS](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html) документа.
+Полный список изменений в tvOS 11 Apple, см. в разделе [новые возможности в tvOS](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html) документа.
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Примеры tvOS](https://developer.xamarin.com/samples/tvos/all/)
-- [Общие сведения о tvOS](~/ios/tvos/index.md)
-- [Новые возможности tvOS 11 (Руководство разработчика Apple)](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html)
-- [Новые возможности tvOS 11 (WWDC 2017 г.)](https://developer.apple.com/videos/play/wwdc2017/209/)
-- [Взаимодействие фокуса в tvOS 11 (WWDC 2017 г.)](https://developer.apple.com/videos/play/wwdc2017/224/)
+- [Введение в tvOS](~/ios/tvos/index.md)
+- [Новые возможности в tvOS 11 (Руководство разработчика Apple)](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html)
+- [Новые возможности в tvOS 11 (WWDC 2017 г.)](https://developer.apple.com/videos/play/wwdc2017/209/)
+- [Взаимодействие фокус в tvOS 11 (WWDC 2017 г.)](https://developer.apple.com/videos/play/wwdc2017/224/)
 - [tvOS для разработчиков (Apple)](https://developer.apple.com/tvos/)

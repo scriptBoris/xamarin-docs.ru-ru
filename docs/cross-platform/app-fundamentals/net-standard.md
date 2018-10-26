@@ -5,13 +5,14 @@ ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: conceptdev
 ms.author: crdun
+ms.custom: video
 ms.date: 07/18/2018
-ms.openlocfilehash: 65ba1915a2a968a14f0ce21bcada76e1b83531b0
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: d07b248b36feee909db9c863eb17f1a900f58e60
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270675"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105835"
 ---
 # <a name="net-standard-library-code-sharing"></a>Совместное использование кода библиотеки .NET standard
 
@@ -27,7 +28,7 @@ ms.locfileid: "39270675"
 
 ### <a name="creating-a-net-standard-library"></a>Создание библиотеки .NET Standard
 
-Добавление библиотеки .NET Standard в решение является достаточно прост.
+Библиотека .NET Standard можно добавить в решение, выполнив следующие действия:
 
 1. В **Добавление нового проекта** диалоговом окне выберите **.NET Core** категории, а затем выберите **библиотеки .NET Standard**:
 
@@ -86,6 +87,10 @@ ms.locfileid: "39270675"
 ![Ссылки на библиотеку .NET Standard](net-standard-images/vs04.png "в Visual Studio щелкните правой кнопкой мыши на узел \"ссылки\" и выберите команду Добавить ссылку …, затем перейдите на вкладку проекты решения, как показано")
 
 -----
+
+## <a name="net-standard-and-xamarinforms-for-the-net-developer-video"></a>.NET standard и Xamarin.Forms для разработчиков .NET (видео)
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/NET-Standard-and-XamarinForms-for-the-NET-Developer/player]
 
 ## <a name="related-links"></a>Связанные ссылки
 

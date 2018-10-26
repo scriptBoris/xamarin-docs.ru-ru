@@ -3,15 +3,15 @@ title: Образцы Xamarin Live Player
 description: Этот документ содержит ссылки на примеры приложений для использования при тестировании Xamarin Live Player. Связанные образцы включают базового калькулятора и игра sweeper ошибки.
 ms.prod: xamarin
 ms.assetid: C71D34AD-747B-4826-838D-5138F5DCD7EF
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 08/08/2017
-ms.openlocfilehash: 6f9f2ed97e03862fc7e77e4a7ff67f456dfde277
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 31312a41312ba1c82cf9f05721d122ce00cda42b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251108"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116359"
 ---
 # <a name="xamarin-live-player-samples"></a>Образцы Xamarin Live Player
 

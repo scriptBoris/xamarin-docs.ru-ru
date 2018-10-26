@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: ad633f49c1c448529fa4c2b50483ec233c1ee841
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4a1393e60422313c781010c0d70a1a85eb671d34
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996198"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112405"
 ---
 # <a name="native-views-in-c"></a>Исходные представления в C#
 
@@ -20,7 +20,7 @@ _Исходные представления из iOS, Android и UWP можно
 
 ## <a name="overview"></a>Обзор
 
-Любой элемент управления Xamarin.Forms, который позволяет `Content` , чтобы задать, или с `Children` коллекции, можно добавить представления платформы. Например, iOS `UILabel` можно напрямую добавить [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) свойство, или к [ `StackLayout.Children` ](xref:Xamarin.Forms.Layout`1.Children) коллекции. Тем не менее, обратите внимание, что эта функция требует использования `#if` определяет в решениях общий проект Xamarin.Forms и не доступна из решений Xamarin.Forms .NET Standard library.
+Любой элемент управления Xamarin.Forms, который позволяет `Content` задаваемый, или с `Children` коллекции, можно добавить представления платформы. Например, iOS `UILabel` можно напрямую добавить [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) свойство, или к [ `StackLayout.Children` ](xref:Xamarin.Forms.Layout`1.Children) коллекции. Тем не менее, обратите внимание, что эта функция требует использования `#if` определяет в решениях общий проект Xamarin.Forms и не доступна из решений Xamarin.Forms .NET Standard library.
 
 Далее на снимках экрана демонстрируют платформой представления были добавлены в Xamarin.Forms [ `StackLayout` ](xref:Xamarin.Forms.StackLayout):
 

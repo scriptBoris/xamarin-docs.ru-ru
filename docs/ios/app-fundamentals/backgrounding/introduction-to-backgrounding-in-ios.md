@@ -4,15 +4,15 @@ description: 'В этом документе описывается фоновы
 ms.prod: xamarin
 ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/24/2018
-ms.openlocfilehash: 621a2d25a8b800ad95be2c8b71a5e6cdf6abca21
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: c533dd54e3b6b11465cfd7daf5b9a93265dbe7b7
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351207"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119063"
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>Общие сведения о фоновой обработке в iOS
 

@@ -4,15 +4,15 @@ description: Этот документ содержит введение в ра
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: bd8fee1b8f1941203bb0e6f00e261cbfbbccc9a7
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: e1e5ec5d064ad7610c5b7be8d18284d3610352c9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242346"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106888"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Введение в раскадровки в Xamarin.iOS
 
@@ -82,7 +82,7 @@ ms.locfileid: "39242346"
 
 [![](images/adaptivesegue.png "В раскрывающемся списке адаптивной переходами")](images/adaptivesegue.png#lightbox)
 
-|Segue|Описание:|
+|Segue|Описание|
 |--- |--- |
 |Показать|Это очень похоже на Push-уведомления segue, но необходимое содержимое экрана в учетную запись.|
 |Показать подробности|Если в приложении отображаются основные и подробные представления (например, в контроллер разделенного представления на iPad), содержимое заменяет представлении «Подробности». Если в приложении отображается только основной или подробности, содержимое заменяет вершину стека контроллера представления.|
@@ -129,7 +129,7 @@ if (callHistoryContoller != null) {
 
 В некоторых случаях может потребоваться добавить раскадровку в файл ранее раскадровки. После этого в Visual Studio для Mac можно упростить, выполнив следующие действия:
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 1. Создайте новый файл раскадровки, перейдя по адресу **файл > новый файл > iOS > раскадровки**, как показано ниже: 
     
@@ -148,7 +148,7 @@ if (callHistoryContoller != null) {
             set;
             }
             
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Создайте новый файл раскадровки, щелкнув правой кнопкой проект, чтобы **Добавить > новый файл > iOS > пустую раскадровку**, как показано ниже: 
     

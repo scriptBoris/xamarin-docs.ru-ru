@@ -1,282 +1,282 @@
 ---
-title: С помощью мозаикой с CocosSharp
-description: Мозаичное заполнение мощный, гибкий и сопоставляет отлаженное приложение для создания плитки ортогональных и изометрическая игр для устройств. CocosSharp предоставляет встроенной интеграции для копиями в собственном формате.
+title: Использование Tiled с CocosSharp
+description: Мозаичная мощный, гибкий и сопоставляет отлаженное приложение для создания плитки самостоятельной и изометрической для игр. CocosSharp предоставляет встроенную интеграцию для копиями в собственном формате.
 ms.prod: xamarin
 ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 8a7782097324829b8150b968c5658a864d1fab4a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 4582b59a8a441c9e22761d498126898e66db08c1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33921304"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117932"
 ---
-# <a name="using-tiled-with-cocossharp"></a>С помощью мозаикой с CocosSharp
+# <a name="using-tiled-with-cocossharp"></a>Использование Tiled с CocosSharp
 
-_Мозаичное заполнение мощный, гибкий и сопоставляет отлаженное приложение для создания плитки ортогональных и изометрическая игр для устройств. CocosSharp предоставляет встроенной интеграции для копиями в собственном формате._
+_Мозаичная мощный, гибкий и сопоставляет отлаженное приложение для создания плитки самостоятельной и изометрической для игр. CocosSharp предоставляет встроенную интеграцию для копиями в собственном формате._
 
-*Копиями* приложения — это стандарт для создания *плитки карт* для использования при разработке игры. Это руководство посвящено берется существующий файл .tmx (файл, созданный копиями) и использовать его в игре CocosSharp. В частности, в этом руководстве рассматривается:
+*Копиями* приложения — это стандарт, для создания *плитку карты* для использования в разработке игр. В этом руководстве показано, как как существующий файл .tmx (файл, созданный копиями) и использовать его в CocosSharp игры. В частности, в этом руководстве рассматривается:
 
- - Назначение плитки карт
+ - Цель мозаики карты
  - Работа с файлами .tmx
- - Рекомендации для отрисовки рисунка пикселей
- - С помощью свойства мозаичного во время выполнения
+ - Рекомендации для подготовки к просмотру art пикселей
+ - С помощью свойства мозаики во время выполнения
 
-При завершении у нас будет следующие демонстрации:
+При завершении у нас есть следующие демонстрации:
 
-![](tiled-images/image1.png "Создать, выполнив действия, описанные в этом руководстве нашего примера приложения")
+![](tiled-images/image1.png "Демонстрационное приложение, созданные в рамках действия, описанные в этом руководстве")
 
 
-## <a name="the-purpose-of-tile-maps"></a>Назначение плитки карт
+## <a name="the-purpose-of-tile-maps"></a>Цель мозаики карты
 
-Плитки карт существуют в разработки игр для десятилетия, но по-прежнему часто применяются в игр 2D их эффективность и esthetics. Плитки карт имеют возможность достичь очень высокую эффективность с помощью их использование наборов плитки — используемый плитки соответствует исходному изображению. Плитка набор представляет собой коллекцию изображений, объединенные в один файл. Несмотря на то, что наборы плитки ссылаются изображений, используемых в сопоставлениях плитки, файлы, содержащие несколько небольших образов, также называются sprite листов или sprite карты в разработки игр. Можно представить как наборы плитки используются в добавление к набору плитки, мы будем использовать в наших демонстрации сетки:
+Плитка карты существуют в разработке игр в течение десятилетий, но до сих пор широко используются в двухмерных игр для их эффективности и esthetics. Плитка карты являются смогли достичь очень высокий уровень эффективности работы за счет их использования наборов плитки — исходный образ, используемый соответствует плитки. Набор плитки — это набор образов, объединены в один файл. Несмотря на то, что наборы плитки ссылки на образы, используемые в плитке maps, файлы, содержащие несколько небольших изображений, также называются спрайт листы или спрайт карты в разработке игр. Можно представить как плитку наборы используются, добавив сетку в набор плитки, мы будем использовать в нашей демоверсией в:
 
-![](tiled-images/image2.png "Визуализируемого представления использования наборов плитки, добавление сетки плитки набор, который будет использоваться в демонстрации")
+![](tiled-images/image2.png "Визуализированный представление использования наборов плитки, добавление сетки в набор плитки, который будет использоваться в демонстрационной версии")
 
-Плитки карт размещения отдельных плиток из наборов плитки. Следует отметить, что каждая карта плитки не нужно сохранить собственную копию плитки задать — вместо нескольких карт плитки могут ссылаться на один и тот же набор плитки. Это означает, что помимо наборе плитки плитки maps требуют очень мало памяти. Это позволяет создавать большое количество плитки карт, даже в том случае, если они используются для создания для области больших игры, например [прокрутка platformer](http://en.wikipedia.org/wiki/Platform_game) среды. Ниже приведен возможных порядков, используя один и тот же набор плитки.
+Плитка карты упорядочить отдельные плитки из наборов плитки. Следует отметить, что каждая Плитка карта не требуется сохранить собственную копию плитку set – вместо этого несколько карт плитки могут ссылаться на один и тот же набор плитки. Это означает, что помимо набора плитки, Плитка maps требуют очень мало памяти. Это позволяет создавать большое количество карт плитки, даже в том случае, если они используются для создания для области больших игры, например [прокрутка платформер](http://en.wikipedia.org/wiki/Platform_game) среды. Ниже показан возможных порядков, используя один и тот же набор плитки.
 
-![](tiled-images/image3.png "На данном рисунке показан возможных порядков, используя один и тот же набор плитки")
+![](tiled-images/image3.png "На этом изображении показаны возможных порядков, используя один и тот же набор плитки")
 
-![](tiled-images/image4.png "На данном рисунке показан возможных порядков, используя один и тот же набор плитки")
+![](tiled-images/image4.png "На этом изображении показаны возможных порядков, используя один и тот же набор плитки")
 
 
 ## <a name="working-with-tmx-files"></a>Работа с файлами .tmx
 
-Формат файла .tmx — это файл XML, созданных приложением копиями, который может быть [для бесплатной загрузки на веб-сайте копиями](http://www.mapeditor.org/). Формат файла .tmx хранит сведения для плитки карт. Обычно игра будет иметь один файл .tmx для каждой отдельной или уровня области.
+Формат файла .tmx — это файл XML, созданных приложением копиями, который может быть [для бесплатной загрузки на веб-сайте копиями](http://www.mapeditor.org/). Формат файла .tmx хранит данные для плитки карты. Обычно это игра будет иметь один файл .tmx для каждой области уровня или за его пределами.
 
-В этом руководстве основное внимание уделено использовать существующие файлы .tmx в CocosSharp; Однако другие учебники можно найти в Интернете, включая [вводном разделе о редакторе карты копиями](http://gamedevelopment.tutsplus.com/tutorials/introduction-to-tiled-map-editor--gamedev-2838).
+В этом руководстве описано, как использовать существующие файлы .tmx в CocosSharp; Однако дополнительные руководства можно найти в Интернете, включая [это введение в редактор карты копиями](http://gamedevelopment.tutsplus.com/tutorials/introduction-to-tiled-map-editor--gamedev-2838).
 
-Необходимо распаковать [содержимого ZIP-файл](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Tiled.zip?raw=true) ее использования в нашем игры. Первый важно отметить, что плитки карт использовать оба .tmx файла (dungeon.tmx), а также одно или дополнительные файлы изображений, которые определяют плитки набор данных (dungeon_1.png). Игры должно включать оба этих файлов для загрузки .tmx во время выполнения, поэтому добавьте оба в проект **содержимого** папку (который содержится в **активы** папку проектов Android). В частности, добавить файлы в папку с именем **tilemaps** внутри **содержимого** папки:
+Вам нужно будет распаковать [содержимого ZIP-файл](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Tiled.zip?raw=true) его использования в нашей игре. Прежде всего следует отметить, — что плитки карты использовать оба .tmx файл (dungeon.tmx), а также один или несколько файлов изображений, которые определяют плитку набор данных (dungeon_1.png). Игры должно включать оба файла для загрузки .tmx во время выполнения, поэтому необходимо добавить оба проекта **содержимого** папку (содержащийся в **активы** папку проектов Android). В частности, добавьте файлы в папку с именем **tilemaps** внутри **содержимого** папки:
 
-![](tiled-images/image5.png "Добавить файлы в папку с именем tilemaps внутри содержимого папки")
+![](tiled-images/image5.png "Добавьте файлы в папку с именем tilemaps внутри содержимого папки")
 
-**Dungeon.tmx** теперь можно загрузить файл во время выполнения в `CCTileMap` объекта. Затем измените `GameLayer` (или эквивалентный корневого контейнера объекта) содержать `CCTileMap` экземпляра и добавить его в качестве дочернего:
-
-
-```csharp
-public class GameLayer : CCLayer
-{
-    CCTileMap tileMap;
-
-    public GameLayer ()
-    {
-    }
-
-    protected override void AddedToScene ()
-    {
-        base.AddedToScene ();
-
-        tileMap = new CCTileMap ("tilemaps/dungeon.tmx");
-        this.AddChild (tileMap);
-    }
-} 
-```
-
-Если мы запустим игры, которую мы увидим карты плитки отображаются в левом нижнем углу экрана:
-
-![](tiled-images/image6.png "При запуске игры карты плитки отображаются в левом нижнем углу экрана")
-
-
-## <a name="considerations-for-rendering-pixel-art"></a>Рекомендации для отрисовки рисунка пикселей
-
-Искусство пикселей, в контексте разработки игровые ссылается 2D visual рисунка, который обычно создается при наличии и часто является низкое разрешение. Рисунок пиксель может быть restrictively времени для создания, поэтому наборы плитку рисунка пикселей часто содержат плитки с низким разрешением, например 16 или 32 пикселя ширину и высоту. Не масштабируется во время выполнения, пиксель изображения часто является слишком мало для большинства современных телефоны и планшетные ПК.
-
-Можно настроить отображенные аналитики в файле GameAppDelegate.cs нашей игры, где мы добавим вызов `CCScene.SetDefaultDesignResolution`:
+**Dungeon.tmx** теперь можно загрузить файл во время выполнения в `CCTileMap` объекта. Затем измените `GameLayer` (или эквивалентные корневом объекте-контейнере) должен содержать `CCTileMap` экземпляра и добавить его как дочерний элемент:
 
 
 ```csharp
- public override void ApplicationDidFinishLaunching (CCApplication application, CCWindow mainWindow)
+public class GameLayer : CCLayer
 {
-    application.PreferMultiSampling = false;
-    application.ContentRootDirectory = "Content";
-    application.ContentSearchPaths.Add ("animations");
-    application.ContentSearchPaths.Add ("fonts");
-    application.ContentSearchPaths.Add ("sounds");
+    CCTileMap tileMap;
 
-    CCSize windowSize = mainWindow.WindowSizeInPixels;
+    public GameLayer ()
+    {
+    }
 
-    float desiredWidth = 1024.0f;
-    float desiredHeight = 768.0f;
-    
-    // This will set the world bounds to be (0,0, w, h)
-    // CCSceneResolutionPolicy.ShowAll will ensure that the aspect ratio is preserved
-    CCScene.SetDefaultDesignResolution (desiredWidth, desiredHeight, CCSceneResolutionPolicy.ShowAll);
-    
-    // Determine whether to use the high or low def versions of our images
-    // Make sure the default texel to content size ratio is set correctly
-    // Of course you're free to have a finer set of image resolutions e.g (ld, hd, super-hd)
-    if (desiredWidth < windowSize.Width)
-    {
-        application.ContentSearchPaths.Add ("images/hd");
-        CCSprite.DefaultTexelToContentSizeRatio = 2.0f;
-    }
-    else
-    {
-        application.ContentSearchPaths.Add ("images/ld");
-        CCSprite.DefaultTexelToContentSizeRatio = 1.0f;
-    }
+    protected override void AddedToScene ()
+    {
+        base.AddedToScene ();
 
-    // New code:
-    CCScene.SetDefaultDesignResolution (380, 240, CCSceneResolutionPolicy.ShowAll);
-
-    CCScene scene = new CCScene (mainWindow);
-    GameLayer gameLayer = new GameLayer ();
-
-    scene.AddChild (gameLayer);
-
-    mainWindow.RunWithScene (scene);
+        tileMap = new CCTileMap ("tilemaps/dungeon.tmx");
+        this.AddChild (tileMap);
+    }
 } 
 ```
 
-Дополнительные сведения о `CCSceneResolutionPolicy`, см. в нашем руководстве [обработки разрешения в CocosSharp](~/graphics-games/cocossharp/resolutions.md).
+Запускаем игры, которую мы увидим карты плитки отображаются в нижнем левом углу экрана:
 
-Теперь запускаем игры мы рассмотрим игры величиной устройство во весь экран:
+![](tiled-images/image6.png "Если игра запускается, карты плитки отображаются в нижнем левом углу экрана")
 
-![](tiled-images/image7.png "Игры взять полный экран устройства")
 
-Наконец мы потребуется отключить сглаживания на нашем плитки карты. `Antialiased` Свойство применяет размывание эффект при обработке объектов, которые с увеличением. Сглаживание можно использовать для уменьшения некачественно вида графических объектов, но также может внести свой собственный артефакты для подготовки к просмотру. В частности сглаживания размывает содержимое каждого элемента мозаики. Однако границы каждого элемента мозаики не размываются, заставляя квадратики выделялись вместо наложения с рядом плитки. Также следует отметить, что пиксель изображения игры часто сохранять их внешний вид некачественно для поддержания *ретро* чувствовать себя.
+## <a name="considerations-for-rendering-pixel-art"></a>Рекомендации для подготовки к просмотру art пикселей
 
-Задать `Antialiased` для `false` после построения `tileMap`:
+Искусство пикселей, в контексте Разработка компьютерных игр, относится к 2D visual картинок, который обычно создается путем рука об руку и часто низким разрешением. Рисунок пиксель может быть так узко времени для создания, поэтому наборы плитки art пикселей часто включают в себя с низким разрешением плитки, например 16 или 32 пикселей ширины и высоты. Если не масштабируется во время выполнения, пикселей изображения часто слишком мал для большинства современных телефонах и планшетах.
+
+Можно настроить отображенные аналитики в файле GameAppDelegate.cs нашей игре, где мы добавим вызов `CCScene.SetDefaultDesignResolution`:
 
 
 ```csharp
-protected override void AddedToScene ()
+ public override void ApplicationDidFinishLaunching (CCApplication application, CCWindow mainWindow)
 {
-    base.AddedToScene ();
+    application.PreferMultiSampling = false;
+    application.ContentRootDirectory = "Content";
+    application.ContentSearchPaths.Add ("animations");
+    application.ContentSearchPaths.Add ("fonts");
+    application.ContentSearchPaths.Add ("sounds");
 
-    tileMap = new CCTileMap ("tilemaps/dungeon.tmx");
+    CCSize windowSize = mainWindow.WindowSizeInPixels;
 
-    // new code:
-    tileMap.Antialiased = false;
+    float desiredWidth = 1024.0f;
+    float desiredHeight = 768.0f;
+    
+    // This will set the world bounds to be (0,0, w, h)
+    // CCSceneResolutionPolicy.ShowAll will ensure that the aspect ratio is preserved
+    CCScene.SetDefaultDesignResolution (desiredWidth, desiredHeight, CCSceneResolutionPolicy.ShowAll);
+    
+    // Determine whether to use the high or low def versions of our images
+    // Make sure the default texel to content size ratio is set correctly
+    // Of course you're free to have a finer set of image resolutions e.g (ld, hd, super-hd)
+    if (desiredWidth < windowSize.Width)
+    {
+        application.ContentSearchPaths.Add ("images/hd");
+        CCSprite.DefaultTexelToContentSizeRatio = 2.0f;
+    }
+    else
+    {
+        application.ContentSearchPaths.Add ("images/ld");
+        CCSprite.DefaultTexelToContentSizeRatio = 1.0f;
+    }
 
-    this.AddChild (tileMap);
+    // New code:
+    CCScene.SetDefaultDesignResolution (380, 240, CCSceneResolutionPolicy.ShowAll);
+
+    CCScene scene = new CCScene (mainWindow);
+    GameLayer gameLayer = new GameLayer ();
+
+    scene.AddChild (gameLayer);
+
+    mainWindow.RunWithScene (scene);
 } 
 ```
 
-Теперь наши плитки карты не будет отображаться нечетким:
+Дополнительные сведения о `CCSceneResolutionPolicy`, приведены в нашем руководстве на [обработки разрешений в CocosSharp](~/graphics-games/cocossharp/resolutions.md).
 
-![](tiled-images/image8.png "Теперь плитки карты не будет отображаться нечетким")
+Если мы теперь запустить игру, мы увидим игр take на полный экран наше устройство:
+
+![](tiled-images/image7.png "Игры величиной во весь экран устройства")
+
+Наконец, нам понадобятся для отключения сглаживания на карте наши плитки. `Antialiased` Свойство применяется эффект размывание при отрисовке объектов, которые с увеличением. Сглаживание можно использовать для уменьшения размытыми внешнего вида графических объектов, но также может вызвать свой собственный отрисовки артефактов. В частности сглаживания размывает содержимое каждой плитки. Тем не менее края каждого элемента мозаики не размываются, что делает отдельные плитки выделиться вместо наложения с использованием соседних плитки. Также следует отметить, что пиксель art игры часто сохранить их внешний вид размытыми для поддержания *ретро* кажется.
+
+Задайте `Antialiased` для `false` после построения `tileMap`:
 
 
-## <a name="using-tile-properties-at-runtime"></a>С помощью свойства мозаичного во время выполнения
+```csharp
+protected override void AddedToScene ()
+{
+    base.AddedToScene ();
 
-Пока у нас есть `CCTileMap` Загрузка файла .tmx и отображение его, но мы не имеют возможности взаимодействия с ней. В частности некоторые плитки (например, нашей грудной должным образом) должны иметь настраиваемую логику. Мы будем пошагово проходить по обнаружению свойства настраиваемые плитки и различные способы реагирования на эти свойства, определенные один раз во время выполнения.
+    tileMap = new CCTileMap ("tilemaps/dungeon.tmx");
 
-Прежде чем мы писать код, нам нужно будет добавлять свойства к нашей плитки карты через копиями. Чтобы сделать это, откройте файл dungeon.tmx в программе копиями. Необходимо открыть файл, который используется в проекте игры.
+    // new code:
+    tileMap.Antialiased = false;
 
-Когда открыт, выберите грудной должным образом на плитке, чтобы просмотреть его свойства:
+    this.AddChild (tileMap);
+} 
+```
 
-![](tiled-images/image9.png "После открытия выберите грудной должным образом на плитке, чтобы просмотреть его свойства")
+Теперь наш элемент карты не будут отображаться нечетким:
 
-Если свойства грудной должным образом не отображаются, щелкните правой кнопкой мыши на грудной должным образом и выберите **свойства мозаичного**:
+![](tiled-images/image8.png "Теперь элемент карты не будет отображаться нечетким")
 
-![](tiled-images/image10.png "Если свойства грудной должным образом не отображаются, щелкните правой кнопкой мыши на грудной должным образом и выберите свойства мозаичного")
 
-Мозаичная свойства реализуются с именем и значением. Чтобы добавить свойство, нажмите кнопку **+** кнопку, введите имя **IsTreasure**, нажмите кнопку **ОК**, затем введите значение **true**: 
+## <a name="using-tile-properties-at-runtime"></a>С помощью свойства мозаики во время выполнения
+
+У нас `CCTileMap` Загрузка файла .tmx и отображение, но мы не можем для взаимодействия с ним. В частности отдельные плитки (например, наши грудной сокровищ) должны иметь настраиваемую логику. Пройдем через по обнаружению свойства настраиваемые плитки и различные способы реагирования на эти свойства, определяемого один раз во время выполнения.
+
+Прежде чем мы написания кода, необходимо добавить свойства для нашей карты плитки через копиями. Чтобы сделать это, откройте файл dungeon.tmx в программе копиями. Не забудьте открыть файл, который используется в проекте игр.
+
+После открытия выберите грудной сокровищ на плитке, набор данных для просмотра его свойств:
+
+![](tiled-images/image9.png "После открытия выберите грудной сокровищ на плитке, набор данных для просмотра его свойств")
+
+Если свойства грудной сокровищ не отображаются, щелкните правой кнопкой мыши на грудной сокровищ и выберите **свойства мозаики**:
+
+![](tiled-images/image10.png "Если свойства грудной сокровищ не отображаются, щелкните правой кнопкой мыши на грудной сокровищ и выберите свойства мозаики")
+
+Мозаичный свойства реализуются с помощью имени и значения. Чтобы добавить свойство, нажмите кнопку **+** , введите имя **IsTreasure**, нажмите кнопку **ОК**, введите значение **true**: 
 
 ![](tiled-images/image11.png "Чтобы добавить свойство, нажмите кнопку, введите имя IsTreasure, нажмите кнопку ОК, а затем введите значение true")
 
 Не забудьте сохранить файл .tmx после изменения свойств.
 
-Наконец мы добавим код для поиска для наших добавляются свойства. Мы перебирает каждый `CCTileMapLayer` (нашей карта содержит 2 слоев), затем по каждой строки и столбца для поиска любой плитки, которые имеют `IsTreasure` свойство:
+Наконец мы добавим код для поиска наших новых свойств. Мы перебирает каждый `CCTileMapLayer` (нашу карту имеет 2 слои), затем через каждой строки и столбца для поиска любой плитки, которые имеют `IsTreasure` свойство:
 
 
 ```csharp
-public class GameLayer : CCLayer
+public class GameLayer : CCLayer
 {
-    CCTileMap tileMap;
+    CCTileMap tileMap;
 
-    public GameLayer ()
-    {
-    }
+    public GameLayer ()
+    {
+    }
 
-    protected override void AddedToScene ()
-    {
-        base.AddedToScene ();
+    protected override void AddedToScene ()
+    {
+        base.AddedToScene ();
 
-        tileMap = new CCTileMap ("tilemaps/dungeon.tmx");
+        tileMap = new CCTileMap ("tilemaps/dungeon.tmx");
 
-        // new code:
-        tileMap.Antialiased = false;
+        // new code:
+        tileMap.Antialiased = false;
 
-        this.AddChild (tileMap);
+        this.AddChild (tileMap);
 
-        HandleCustomTileProperties (tileMap);
-    }
+        HandleCustomTileProperties (tileMap);
+    }
 
-    void HandleCustomTileProperties(CCTileMap tileMap)
-    {
-        // Width and Height are equal so we can use either
-        int tileDimension = (int)tileMap.TileTexelSize.Width;
+    void HandleCustomTileProperties(CCTileMap tileMap)
+    {
+        // Width and Height are equal so we can use either
+        int tileDimension = (int)tileMap.TileTexelSize.Width;
 
-        // Find out how many rows and columns are in our tile map
-        int numberOfColumns = (int)tileMap.MapDimensions.Size.Width;
-        int numberOfRows = (int)tileMap.MapDimensions.Size.Height;
+        // Find out how many rows and columns are in our tile map
+        int numberOfColumns = (int)tileMap.MapDimensions.Size.Width;
+        int numberOfRows = (int)tileMap.MapDimensions.Size.Height;
 
-        // Tile maps can have multiple layers, so let's loop through all of them:
-        foreach (CCTileMapLayer layer in tileMap.TileLayersContainer.Children)
-        {
-            // Loop through the columns and rows to find all tiles
-            for (int column = 0; column < numberOfColumns; column++)
-            {
-                // We're going to add tileDimension / 2 to get the position
-                // of the center of the tile - this will help us in 
-                // positioning entities, and will eliminate the possibility
-                // of floating point error when calculating the nearest tile:
-                int worldX = tileDimension * column + tileDimension / 2;
-                for (int row = 0; row < numberOfRows; row++)
-                {
-                    // See above on why we add tileDimension / 2
-                    int worldY = tileDimension * row + tileDimension / 2;
+        // Tile maps can have multiple layers, so let's loop through all of them:
+        foreach (CCTileMapLayer layer in tileMap.TileLayersContainer.Children)
+        {
+            // Loop through the columns and rows to find all tiles
+            for (int column = 0; column < numberOfColumns; column++)
+            {
+                // We're going to add tileDimension / 2 to get the position
+                // of the center of the tile - this will help us in 
+                // positioning entities, and will eliminate the possibility
+                // of floating point error when calculating the nearest tile:
+                int worldX = tileDimension * column + tileDimension / 2;
+                for (int row = 0; row < numberOfRows; row++)
+                {
+                    // See above on why we add tileDimension / 2
+                    int worldY = tileDimension * row + tileDimension / 2;
 
-                    HandleCustomTilePropertyAt (worldX, worldY, layer);
-                }
-            }
-        }
-    }
+                    HandleCustomTilePropertyAt (worldX, worldY, layer);
+                }
+            }
+        }
+    }
 
-    void HandleCustomTilePropertyAt(int worldX, int worldY, CCTileMapLayer layer)
-    {
-        CCTileMapCoordinates tileAtXy = layer.ClosestTileCoordAtNodePosition (new CCPoint (worldX, worldY));
+    void HandleCustomTilePropertyAt(int worldX, int worldY, CCTileMapLayer layer)
+    {
+        CCTileMapCoordinates tileAtXy = layer.ClosestTileCoordAtNodePosition (new CCPoint (worldX, worldY));
 
-        CCTileGidAndFlags info = layer.TileGIDAndFlags (tileAtXy.Column, tileAtXy.Row);
+        CCTileGidAndFlags info = layer.TileGIDAndFlags (tileAtXy.Column, tileAtXy.Row);
 
-        if (info != null)
-        {
-            Dictionary<string, string> properties = null;
+        if (info != null)
+        {
+            Dictionary<string, string> properties = null;
 
-            try
-            {
-                properties = tileMap.TilePropertiesForGID (info.Gid);
-            }
-            catch
-            {
-                // CocosSharp 
-            }
+            try
+            {
+                properties = tileMap.TilePropertiesForGID (info.Gid);
+            }
+            catch
+            {
+                // CocosSharp 
+            }
 
-            if (properties != null && properties.ContainsKey ("IsTreasure") && properties["IsTreasure"] == "true" )
-            {
-                layer.RemoveTile (tileAtXy);
+            if (properties != null && properties.ContainsKey ("IsTreasure") && properties["IsTreasure"] == "true" )
+            {
+                layer.RemoveTile (tileAtXy);
 
-                // todo: Create a treasure chest entity
-            }
-        }
-    }
+                // todo: Create a treasure chest entity
+            }
+        }
+    }
 } 
 ```
 
-Большая часть кода описательные имена, но следует рассмотрена обработка плиток должным образом. В этом случае мы удаляем любой плитки, которые определены как ним должным образом. Это потому, что пользовательский код во время выполнения влияет конфликтов, а также вознаграждения проигрыватель содержимого должным образом, при открытии скорее всего, потребуется ним должным образом. Кроме того, может потребоваться должным образом реагировать на время открыт (изменения внешнего вида) и, возможно, логику для только отображаться при всех враги была отменена.
+Большая часть кода не нуждается в объяснении. Однако мы обсудить обработки сокровищ плиток. В этом случае мы удаляем любые элементы, которые определены как сокровищ набивать себе цену. Это обусловлено набивать себе цену сокровищ скорее всего, понадобится пользовательский код во время выполнения, в силу конфликтов и вознаграждения проигрыватель содержимого сокровищ при открытии. Кроме того, может потребоваться сокровищ реагировать на действия, открыт (Изменение внешнего вида) и, возможно, логику для только отображаться при всех противников было отменено.
 
-Другими словами, грудной должным образом будет обеспечен выполняется сущности, а не простой плитки в `CCTileMap`. Дополнительные сведения о сущностях игры см. в разделе [руководства сущностей в CocosSharp](~/graphics-games/cocossharp/entities.md).
+Другими словами, грудной сокровищ выиграет от выполняется сущности, а не простая Плитка в `CCTileMap`. Дополнительные сведения о сущностей game, см. в разделе [руководство по сущности в CocosSharp](~/graphics-games/cocossharp/entities.md).
 
 
 ## <a name="summary"></a>Сводка
 
-В этом пошаговом руководстве описывается, как загрузить .tmx файлы, созданные в ходе копиями в CocosSharp приложение. Показано, как изменить разрешения приложения с учетом art пикселей с низким разрешением и как искать плитки, их свойства, чтобы реализовать пользовательскую логику, таких как создание экземпляров сущности.
+В этом пошаговом руководстве описывается, как загрузить .tmx файлов, созданных копиями в CocosSharp приложение. Он показывает, как изменить разрешения приложения с низким разрешением пикселей изображения и как найти плитки по их свойства, чтобы реализовать пользовательскую логику, таких как создание экземпляров сущности.
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Мозаичная веб-сайта](http://www.mapeditor.org/)
-- [Содержимого zip](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Tiled.zip?raw=true)
+- [Мозаичный веб-сайта](http://www.mapeditor.org/)
+- [Содержимым zip](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Tiled.zip?raw=true)

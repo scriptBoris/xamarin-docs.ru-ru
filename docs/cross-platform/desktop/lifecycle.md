@@ -5,12 +5,12 @@ description: В этом документе сравнивается сходс�
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: a59f257d1e6285fa2d899271a1aae9778b04d985
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: cf25cf956fbf9fd566520d9067f0d98a9a7624aa
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40250990"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107131"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF vs. Жизненный цикл приложения Xamarin.Forms
 

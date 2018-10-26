@@ -4,15 +4,15 @@ description: Пример приложения, демонстрирующий �
 ms.prod: xamarin
 ms.assetid: A50520D2-1214-40E1-9B27-B0891FE11584
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: d48796b3c62fc342bd86f2d58e74c5f1710174bb
-ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
+ms.openlocfilehash: 67bf38c11fd6e82e05b2a10704973ca10de03083
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39360842"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108656"
 ---
 # <a name="a-basic-recyclerview-example"></a>Простой пример RecyclerView
 

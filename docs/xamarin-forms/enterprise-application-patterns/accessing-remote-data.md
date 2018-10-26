@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 009a4025bc9df6f657964b7e97e559635ef0a929
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 3a46b939fa87cd6535c9f86c46981c098542e7c9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996169"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105484"
 ---
 # <a name="accessing-remote-data"></a>Доступ к удаленным данным
 
@@ -60,26 +60,26 @@ Representational State Transfer (REST) представляет собой ар�
 Когда `CatalogView` осуществляется переход, `OnInitialize` метод в `CatalogViewModel` класс называется. Этот метод возвращает данные каталога из микрослужбы каталога, как показано в следующем примере кода:
 
 ```csharp
-public override async Task InitializeAsync(object navigationData)  
+public override async Task InitializeAsync(object navigationData)  
 {  
-    ...  
-    Products = await _productsService.GetCatalogAsync();  
-    ...  
+    ...  
+    Products = await _productsService.GetCatalogAsync();  
+    ...  
 }
 ```
 
 Этот метод вызывает метод `GetCatalogAsync` метод `CatalogService` экземпляра, внедренном в `CatalogViewModel` по Autofac. В следующем коде показано в примере `GetCatalogAsync` метод:
 
 ```csharp
-public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()  
+public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()  
 {  
-    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.CatalogEndpoint);  
-    builder.Path = "api/v1/catalog/items";  
-    string uri = builder.ToString();  
+    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.CatalogEndpoint);  
+    builder.Path = "api/v1/catalog/items";  
+    string uri = builder.ToString();  
 
-    CatalogRoot catalog = await _requestProvider.GetAsync<CatalogRoot>(uri);  
-    ...  
-    return catalog?.Data.ToObservableCollection();            
+    CatalogRoot catalog = await _requestProvider.GetAsync<CatalogRoot>(uri);  
+    ...  
+    return catalog?.Data.ToObservableCollection();            
 }
 ```
 
@@ -88,18 +88,18 @@ public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()
 В следующем коде показано в примере `GetAsync` метод в `RequestProvider` класса:
 
 ```csharp
-public async Task<TResult> GetAsync<TResult>(string uri, string token = "")  
+public async Task<TResult> GetAsync<TResult>(string uri, string token = "")  
 {  
-    HttpClient httpClient = CreateHttpClient(token);  
-    HttpResponseMessage response = await httpClient.GetAsync(uri);  
+    HttpClient httpClient = CreateHttpClient(token);  
+    HttpResponseMessage response = await httpClient.GetAsync(uri);  
 
-    await HandleResponse(response);  
-    string serialized = await response.Content.ReadAsStringAsync();  
+    await HandleResponse(response);  
+    string serialized = await response.Content.ReadAsStringAsync();  
 
-    TResult result = await Task.Run(() =>   
-        JsonConvert.DeserializeObject<TResult>(serialized, _serializerSettings));  
+    TResult result = await Task.Run(() =>   
+        JsonConvert.DeserializeObject<TResult>(serialized, _serializerSettings));  
 
-    return result;  
+    return result;  
 }
 ```
 
@@ -108,18 +108,18 @@ public async Task<TResult> GetAsync<TResult>(string uri, string token = "")
 `CreateHttpClient` Метод показан в следующем примере кода:
 
 ```csharp
-private HttpClient CreateHttpClient(string token = "")  
+private HttpClient CreateHttpClient(string token = "")  
 {  
-    var httpClient = new HttpClient();  
-    httpClient.DefaultRequestHeaders.Accept.Add(  
-        new MediaTypeWithQualityHeaderValue("application/json"));  
+    var httpClient = new HttpClient();  
+    httpClient.DefaultRequestHeaders.Accept.Add(  
+        new MediaTypeWithQualityHeaderValue("application/json"));  
 
-    if (!string.IsNullOrEmpty(token))  
-    {  
-        httpClient.DefaultRequestHeaders.Authorization =   
-            new AuthenticationHeaderValue("Bearer", token);  
-    }  
-    return httpClient;  
+    if (!string.IsNullOrEmpty(token))  
+    {  
+        httpClient.DefaultRequestHeaders.Authorization =   
+            new AuthenticationHeaderValue("Bearer", token);  
+    }  
+    return httpClient;  
 }
 ```
 
@@ -130,23 +130,23 @@ private HttpClient CreateHttpClient(string token = "")
 ```csharp
 [HttpGet]  
 [Route("[action]")]  
-public async Task<IActionResult> Items(  
-    [FromQuery]int pageSize = 10, [FromQuery]int pageIndex = 0)  
+public async Task<IActionResult> Items(  
+    [FromQuery]int pageSize = 10, [FromQuery]int pageIndex = 0)  
 {  
-    var totalItems = await _catalogContext.CatalogItems  
-        .LongCountAsync();  
+    var totalItems = await _catalogContext.CatalogItems  
+        .LongCountAsync();  
 
-    var itemsOnPage = await _catalogContext.CatalogItems  
-        .OrderBy(c=>c.Name)  
-        .Skip(pageSize * pageIndex)  
-        .Take(pageSize)  
-        .ToListAsync();  
+    var itemsOnPage = await _catalogContext.CatalogItems  
+        .OrderBy(c=>c.Name)  
+        .Skip(pageSize * pageIndex)  
+        .Take(pageSize)  
+        .ToListAsync();  
 
-    itemsOnPage = ComposePicUri(itemsOnPage);  
-    var model = new PaginatedItemsViewModel<CatalogItem>(  
-        pageIndex, pageSize, totalItems, itemsOnPage);             
+    itemsOnPage = ComposePicUri(itemsOnPage);  
+    var model = new PaginatedItemsViewModel<CatalogItem>(  
+        pageIndex, pageSize, totalItems, itemsOnPage);             
 
-    return Ok(model);  
+    return Ok(model);  
 }
 ```
 
@@ -165,26 +165,26 @@ public async Task<IActionResult> Items(
 При добавлении элемента в корзину `ReCalculateTotalAsync` метод в `BasketViewModel` класс называется. Этот метод обновляет общее число элементов в корзине и отправляет данные корзины в микрослужбе корзины, как показано в следующем примере кода:
 
 ```csharp
-private async Task ReCalculateTotalAsync()  
+private async Task ReCalculateTotalAsync()  
 {  
-    ...  
-    await _basketService.UpdateBasketAsync(new CustomerBasket  
-    {  
-        BuyerId = userInfo.UserId,   
-        Items = BasketItems.ToList()  
-    }, authToken);  
+    ...  
+    await _basketService.UpdateBasketAsync(new CustomerBasket  
+    {  
+        BuyerId = userInfo.UserId,   
+        Items = BasketItems.ToList()  
+    }, authToken);  
 }
 ```
 
 Этот метод вызывает метод `UpdateBasketAsync` метод `BasketService` экземпляра, внедренном в `BasketViewModel` по Autofac. В следующем показан метод `UpdateBasketAsync` метод:
 
 ```csharp
-public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket customerBasket, string token)  
+public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket customerBasket, string token)  
 {  
-    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.BasketEndpoint);  
-    string uri = builder.ToString();  
-    var result = await _requestProvider.PostAsync(uri, customerBasket, token);  
-    return result;  
+    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.BasketEndpoint);  
+    string uri = builder.ToString();  
+    var result = await _requestProvider.PostAsync(uri, customerBasket, token);  
+    return result;  
 }
 ```
 
@@ -193,22 +193,22 @@ public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket customerBaske
 В следующем примере кода показан один из `PostAsync` методы в `RequestProvider` класса:
 
 ```csharp
-public async Task<TResult> PostAsync<TResult>(  
-    string uri, TResult data, string token = "", string header = "")  
+public async Task<TResult> PostAsync<TResult>(  
+    string uri, TResult data, string token = "", string header = "")  
 {  
-    HttpClient httpClient = CreateHttpClient(token);  
-    ...  
-    var content = new StringContent(JsonConvert.SerializeObject(data));  
-    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");  
-    HttpResponseMessage response = await httpClient.PostAsync(uri, content);  
+    HttpClient httpClient = CreateHttpClient(token);  
+    ...  
+    var content = new StringContent(JsonConvert.SerializeObject(data));  
+    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");  
+    HttpResponseMessage response = await httpClient.PostAsync(uri, content);  
 
-    await HandleResponse(response);  
-    string serialized = await response.Content.ReadAsStringAsync();  
+    await HandleResponse(response);  
+    string serialized = await response.Content.ReadAsStringAsync();  
 
-    TResult result = await Task.Run(() =>  
-        JsonConvert.DeserializeObject<TResult>(serialized, _serializerSettings));  
+    TResult result = await Task.Run(() =>  
+        JsonConvert.DeserializeObject<TResult>(serialized, _serializerSettings));  
 
-    return result;  
+    return result;  
 }
 ```
 
@@ -218,10 +218,10 @@ public async Task<TResult> PostAsync<TResult>(
 
 ```csharp
 [HttpPost]  
-public async Task<IActionResult> Post([FromBody]CustomerBasket value)  
+public async Task<IActionResult> Post([FromBody]CustomerBasket value)  
 {  
-    var basket = await _repository.UpdateBasketAsync(value);  
-    return Ok(basket);  
+    var basket = await _repository.UpdateBasketAsync(value);  
+    return Ok(basket);  
 }
 ```
 
@@ -238,23 +238,23 @@ public async Task<IActionResult> Post([FromBody]CustomerBasket value)
 При вызове процесс подсчета стоимости покупок `CheckoutAsync` метод в `CheckoutViewModel` класс называется. Этот метод создает новый заказ, перед удалением корзины покупок, как показано в следующем примере кода:
 
 ```csharp
-private async Task CheckoutAsync()  
+private async Task CheckoutAsync()  
 {  
-    ...  
-    await _basketService.ClearBasketAsync(_shippingAddress.Id.ToString(), authToken);  
-    ...  
+    ...  
+    await _basketService.ClearBasketAsync(_shippingAddress.Id.ToString(), authToken);  
+    ...  
 }
 ```
 
 Этот метод вызывает метод `ClearBasketAsync` метод `BasketService` экземпляра, внедренном в `CheckoutViewModel` по Autofac. В следующем показан метод `ClearBasketAsync` метод:
 
 ```csharp
-public async Task ClearBasketAsync(string guidUser, string token)  
+public async Task ClearBasketAsync(string guidUser, string token)  
 {  
-    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.BasketEndpoint);  
-    builder.Path = guidUser;  
-    string uri = builder.ToString();  
-    await _requestProvider.DeleteAsync(uri, token);  
+    UriBuilder builder = new UriBuilder(GlobalSetting.Instance.BasketEndpoint);  
+    builder.Path = guidUser;  
+    string uri = builder.ToString();  
+    await _requestProvider.DeleteAsync(uri, token);  
 }
 ```
 
@@ -263,10 +263,10 @@ public async Task ClearBasketAsync(string guidUser, string token)
 В следующем коде показано в примере `DeleteAsync` метод в `RequestProvider` класса:
 
 ```csharp
-public async Task DeleteAsync(string uri, string token = "")  
+public async Task DeleteAsync(string uri, string token = "")  
 {  
-    HttpClient httpClient = CreateHttpClient(token);  
-    await httpClient.DeleteAsync(uri);  
+    HttpClient httpClient = CreateHttpClient(token);  
+    await httpClient.DeleteAsync(uri);  
 }
 ```
 
@@ -276,9 +276,9 @@ public async Task DeleteAsync(string uri, string token = "")
 
 ```csharp
 [HttpDelete("{id}")]  
-public void Delete(string id)  
+public void Delete(string id)  
 {  
-    _repository.DeleteBasketAsync(id);  
+    _repository.DeleteBasketAsync(id);  
 }
 ```
 
@@ -320,7 +320,7 @@ public void Delete(string id)
 
 Мобильное приложение eShopOnContainers использует изображения удаленных продуктов, которые получают преимущества от кэширования. Эти изображения отображаются по [ `Image` ](xref:Xamarin.Forms.Image) элемента управления и `CachedImage` управление, предоставляемое [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/) библиотеки.
 
-Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) элемент управления поддерживает кэширование загруженных изображений. Кэширование включено по умолчанию и сохраняется локально на 24 часа. Кроме того, можно настроить срок действия [ `CacheValidity` ](xref:Xamarin.Forms.UriImageSource.CacheValidity) свойство. Дополнительные сведения см. в разделе [Скачанный образ кэширование](~/xamarin-forms/user-interface/images.md#Image_Caching).
+Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) элемент управления поддерживает кэширование загруженных изображений. Кэширование включено по умолчанию и сохраняется локально на 24 часа. Кроме того, можно настроить срок действия [ `CacheValidity` ](xref:Xamarin.Forms.UriImageSource.CacheValidity) свойство. Дополнительные сведения см. в разделе [Скачанный образ кэширование](~/xamarin-forms/user-interface/images.md#downloaded-image-caching).
 
 В FFImageLoading `CachedImage` управления — это замена для Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) элемента управления, предоставляя дополнительные свойства, включения дополнительных функций. Для этой функции элемент управления обеспечивает можно настроить кэширование, при поддержке ошибки и загрузки изображения-заполнители. В следующем примере кода показано, как мобильное приложение eShopOnContainers использует `CachedImage` контролировать, `ProductTemplate`, который является шаблон данных, используемые [ `ListView` ](xref:Xamarin.Forms.ListView) контролировать `CatalogView`:
 

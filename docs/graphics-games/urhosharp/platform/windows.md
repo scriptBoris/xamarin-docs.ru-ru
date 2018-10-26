@@ -1,35 +1,35 @@
 ---
-title: Поддержка UrhoSharp Windows
-description: В этом документе рассматривается поддержка UrhoSharp в Windows. Он описывает, как создать проект, настроить и запустить Urho, интеграция с WPF и интегрировать UWP.
+title: Поддержка Windows UrhoSharp
+description: В этом документе рассматривается поддержка UrhoSharp в Windows. Он описывает, как создать проект, настроить и запустить Urho, интегрировать с WPF и интеграции с универсальной платформы Windows.
 ms.prod: xamarin
 ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 094eaf0ebe84ce8c1771bd6481ee897463349856
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8aca028ec1015616a9884cd09b7ffa5e04f2e43d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783237"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119609"
 ---
-# <a name="urhosharp-windows-support"></a>Поддержка UrhoSharp Windows
+# <a name="urhosharp-windows-support"></a>Поддержка Windows UrhoSharp
 
-Пока Urho переносимой библиотеке классов, и обеспечивает такой же API, используемые в нескольких различных платформ для логику игры по-прежнему необходимо инициализировать Urho в драйвере определенной платформы, а в некоторых случаях, необходимо воспользоваться преимуществами конкретных компонентов платформы .
+Хотя Urho является переносимой библиотеке классов и разрешает один и тот же API для использования на различных платформах для логики игр по-прежнему необходимо инициализировать Urho в конкретного драйвера, платформы, а в некоторых случаях, вам потребуется воспользоваться преимуществами определенных функций платформы .
 
-В следующих страницах, предполагается, что `MyGame` является подклассом `Application` класса.
+В указанные ниже страницы предполагается, что `MyGame` является подклассом `Application` класса.
 
 **Поддерживаемые архитектуры:** только 64-разрядная версия Windows.
 
-Вы увидите полные примеры, показывающие, как использовать это в нашем [образцы](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples)
+Вы увидите полный пример, показывающий, как использовать это в нашем [примеры](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples)
 
 ## <a name="standalone-project"></a>Отдельный проект
 
 ### <a name="creating-a-project"></a>Создание проекта
 
-Создайте проект консольного, ссылаются на Urho NuGet и убедитесь, что может найти активы (каталогов, содержащих каталог данных).
+Создайте проект консольного, ссылаются на Urho NuGet и убедитесь, что можно найти ресурсы (каталоги, содержащие каталог данных).
 
-### <a name="configuring-and-launching-urho"></a>Настройка и запуск Urho
+### <a name="configuring-and-launching-urho"></a>Настраивая и запуская Urho
 
 Чтобы запустить приложение, для этого:
 
@@ -46,11 +46,11 @@ new MyGame().Run();
 
 ### <a name="creating-a-project"></a>Создание проекта
 
-Создание проекта WPF, ссылаются на Urho NuGet и убедитесь, что может найти активы (каталогов, содержащих каталог данных).
+Создание проекта WPF, ссылаются на Urho NuGet и убедитесь, что можно найти ресурсы (каталоги, содержащие каталог данных).
 
-### <a name="configuring-and-launching-urho-from-wpf"></a>Настройка и запуск Urho из WPF
+### <a name="configuring-and-launching-urho-from-wpf"></a>Настраивая и запуская Urho из WPF
 
-Создать подкласс `Window` и настраивать ваши активы, следующим образом:
+Создать подкласс `Window` и настройки ресурсов следующим образом:
 
 ```csharp
     public partial class MainWindow : Window
@@ -86,15 +86,15 @@ new MyGame().Run();
 
 [Полный пример](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/WPF)
 
-## <a name="integrated-with-uwp"></a>Интегрируется с UWP
+## <a name="integrated-with-uwp"></a>Интегрируется с универсальной платформы Windows
 
 ### <a name="creating-a-project"></a>Создание проекта
 
-Создайте проект UWP, ссылаются на Urho NuGet и убедитесь, что может найти активы (каталогов, содержащих каталог данных).
+Создайте проект UWP, ссылаются на Urho NuGet и убедитесь, что можно найти ресурсы (каталоги, содержащие каталог данных).
 
-### <a name="configuring-and-launching-urho-from-uwp"></a>Настройка и запуск Urho из UWP
+### <a name="configuring-and-launching-urho-from-uwp"></a>Настраивая и запуская Urho из универсальной платформы Windows
 
-Создать подкласс `Window` и настраивать ваши активы, следующим образом:
+Создать подкласс `Window` и настройки ресурсов следующим образом:
 
 ```csharp
 {
@@ -123,8 +123,8 @@ new MyGame().Run();
 
 ### <a name="creating-a-project"></a>Создание проекта
 
-Создайте проект Windows.Forms, ссылаются на Urho NuGet и убедитесь, что может найти активы (каталогов, содержащих каталог данных).
+Создание проекта Windows.Forms, ссылаются на Urho NuGet и убедитесь, что можно найти ресурсы (каталоги, содержащие каталог данных).
 
-### <a name="configuring-and-launching-urho-from-windowsforms"></a>Настройка и запуск Urho из Windows.Forms
+### <a name="configuring-and-launching-urho-from-windowsforms"></a>Настраивая и запуская Urho из Windows.Forms
 
-Запустите Urho из формы см. в разделе [полный пример](https://github.com/xamarin/urho-samples/blob/master/FeatureSamples/WinForms/SamplesForm.cs)
+Запустите Urho из формы, см. в разделе [полный пример](https://github.com/xamarin/urho-samples/blob/master/FeatureSamples/WinForms/SamplesForm.cs)

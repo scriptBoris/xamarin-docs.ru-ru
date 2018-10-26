@@ -1,65 +1,65 @@
 ---
-title: ViewPager с помощью фрагментов
-description: ViewPager представляет собой диспетчер макет, который позволяет реализовать жестовую навигации. Жестовую навигации позволяет пользователю проведите влево и вправо для пошагового просмотра страниц данных. В этом руководстве объясняется, как реализовать swipeable пользовательского интерфейса с ViewPager, с помощью фрагментов в виде страниц данных.
+title: ViewPager с фрагментами
+description: ViewPager является менеджером макета, которая позволяет реализовывать жестовую навигации. Жестовую навигации позволяет пользователю проведения пальцем влево и вправо для пошагового просмотра страниц данных. В этом руководстве объясняется, как реализовать swipeable пользовательского интерфейса с помощью ViewPager, с помощью фрагментов, как страницы данных.
 ms.prod: xamarin
 ms.assetid: 62B6286F-3680-48F3-B91B-453692E457E5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 83b9123b24b39e2d7bda392d05c6595f5fc3af0d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: def46f69b139ef52bb6e65a1c415b9c899e63897
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30772420"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109423"
 ---
-# <a name="viewpager-with-fragments"></a>ViewPager с помощью фрагментов
+# <a name="viewpager-with-fragments"></a>ViewPager с фрагментами
 
-_ViewPager представляет собой диспетчер макет, который позволяет реализовать жестовую навигации. Жестовую навигации позволяет пользователю проведите влево и вправо для пошагового просмотра страниц данных. В этом руководстве объясняется, как реализовать swipeable пользовательского интерфейса с ViewPager, с помощью фрагментов в виде страниц данных._
+_ViewPager является менеджером макета, которая позволяет реализовывать жестовую навигации. Жестовую навигации позволяет пользователю проведения пальцем влево и вправо для пошагового просмотра страниц данных. В этом руководстве объясняется, как реализовать swipeable пользовательского интерфейса с помощью ViewPager, с помощью фрагментов, как страницы данных._
 
  
 ## <a name="overview"></a>Обзор
 
-`ViewPager` часто используется в сочетании с фрагментами, чтобы оно было проще управлять жизненным циклом каждой страницы в `ViewPager`. В этом пошаговом руководстве `ViewPager` используется для создания приложения вызывается **FlashCardPager** , представляет собой серию арифметические задачи на флэш-карты. Каждая карта flash реализуется в виде фрагмента. Пользователь предъявляет влево и вправо до флэш-карты и нажимает на проблему математические, чтобы отобразить ответ на него. Это приложение создает `Fragment` экземпляра для каждого адаптера на основе флэш-карт и реализует `FragmentPagerAdapter`. В [Viewpager и представления](~/android/user-interface/controls/view-pager/viewpager-and-views.md), большая часть работы, выполненной в `MainActivity` методов жизненного цикла. В **FlashCardPager**, большая часть работы будет осуществляться `Fragment` в одном из этих методов жизненного цикла. 
+`ViewPager` часто используется в сочетании с фрагментами, чтобы проще управлять жизненным циклом каждой страницы в `ViewPager`. В этом пошаговом руководстве `ViewPager` используется для создания приложения вызывается **FlashCardPager** , представляет собой серию математических задач на флэш-картах. Каждая карта flash реализуется как фрагмент. Пользователь предъявляет left и right через флэш-картах и касается проблемой math, чтобы отобразить ответ на него. Это приложение создает `Fragment` экземпляр для каждого адаптера на основе флэш-карт и реализует `FragmentPagerAdapter`. В [Viewpager и представления](~/android/user-interface/controls/view-pager/viewpager-and-views.md), большая часть работы, выполненной в `MainActivity` методы жизненного цикла. В **FlashCardPager**, большая часть работы будет осуществляться `Fragment` в одном из его методов жизненного цикла. 
 
-В данном руководстве не рассматривается основы фрагментов &ndash; см. Если вы еще не знакомы с использованием фрагментов на Xamarin.Android, [фрагментов](~/android/platform/fragments/index.md) помогут вам приступить к работе с фрагментами. 
+В этом руководстве рассматриваются основы фрагментов &ndash; Если вы еще не знакомы с использованием фрагментов на Xamarin.Android, см. в разделе [фрагментов](~/android/platform/fragments/index.md) помогут вам приступить к работе с фрагментами. 
 
 
 
 ## <a name="start-an-app-project"></a>Запуск проекта приложения
 
-Создайте новый проект Android с именем **FlashCardPager**. После этого запустите диспетчер пакетов NuGet (Дополнительные сведения об установке пакетов NuGet см. в разделе [Пошаговое руководство: включая NuGet в проекте](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Найти и установить **Xamarin.Android.Support.v4** пакета, как описано в статье [Viewpager и представления](~/android/user-interface/controls/view-pager/viewpager-and-views.md). 
+Создайте новый проект Android с именем **FlashCardPager**. После этого запустите диспетчер пакетов NuGet (Дополнительные сведения об установке пакетов NuGet см. в разделе [Пошаговое руководство: включая NuGet в проекте](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Найти и установить **Xamarin.Android.Support.v4** пакета, как описано в [Viewpager и представления](~/android/user-interface/controls/view-pager/viewpager-and-views.md). 
 
 
 
-## <a name="add-an-example-data-source"></a>Добавить источник данных примера
+## <a name="add-an-example-data-source"></a>Добавление источника данных пример
 
-В **FlashCardPager**, источником данных является карт флэш-памяти, представленного `FlashCardDeck` класса; эти данные источника питания `ViewPager` с содержимым элемента. `FlashCardDeck` содержит коллекцию готовых арифметические задачи и ответов. `FlashCardDeck` Конструктор не требует аргументов: 
+В **FlashCardPager**, источником данных является колода карт flash, представленный `FlashCardDeck` класса; эти данные источника блоки `ViewPager` с содержимым элемента. `FlashCardDeck` содержит коллекцию готовых математических задач и ответов. `FlashCardDeck` Конструктор не требует аргументов: 
 
 ```csharp
 FlashCardDeck flashCards = new FlashCardDeck();
 ```
 
-Коллекция карт флэш-памяти в `FlashCardDeck` организована таким образом, что каждая карта флэш-памяти может осуществляться индексатора. Например следующий код извлекает четвертый проблема флэш-карт в колоде в: 
+Коллекция флэш-карты в `FlashCardDeck` организована таким образом, каждая карта флэш-памяти может осуществляться в индексаторе. К примеру следующий код извлекает четвертый проблема флэш-карт в колоде: 
 
 ```csharp
 string problem = flashCardDeck[3].Problem;
 ```
 
-Эта строка кода получает соответствующий ответ на предыдущей ошибка:
+Эта строка кода получает соответствующий ответ на проблемы, описанной ранее:
 
 ```csharp
 string answer = flashCardDeck[3].Answer;
 ```
 
-Так как сведения о реализации `FlashCardDeck` не являются значимыми для понимания `ViewPager`, `FlashCardDeck` кода нет в списке.
-Исходный код для `FlashCardDeck` доступен на [FlashCardDeck.cs](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/FlashCardPager/FlashCardPager/FlashCardDeck.cs).
-Загрузить этот исходный файл (или скопируйте и вставьте код в новый **FlashCardDeck.cs** файла) и добавьте его в проект.
+Так как сведения о реализации `FlashCardDeck` не относящиеся к анализу `ViewPager`, `FlashCardDeck` кода нет в списке.
+В исходном коде `FlashCardDeck` доступен по [FlashCardDeck.cs](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/FlashCardPager/FlashCardPager/FlashCardDeck.cs).
+Скачайте этот исходный файл (или скопируйте и вставьте код в новый **FlashCardDeck.cs** файл) и добавьте его в проект.
 
 
 
-## <a name="create-a-viewpager-layout"></a>Создание макета ViewPager
+## <a name="create-a-viewpager-layout"></a>Создать макет ViewPager
 
 Откройте **Resources/layout/Main.axml** и замените его содержимое следующим кодом XML:
 
@@ -74,25 +74,25 @@ string answer = flashCardDeck[3].Answer;
     </android.support.v4.view.ViewPager>
 ```
 
-Этот XML-код определяет `ViewPager` , занимает весь экран. Обратите внимание, что необходимо использовать полное имя **android.support.v4.view.ViewPager** из-за `ViewPager` упаковывается в библиотеке технической поддержки. `ViewPager` доступен только из [библиотеку поддержки Android версии 4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/); он недоступен в Android SDK.
+Этот XML-документ определяет `ViewPager` , который занимает весь экран. Обратите внимание, что необходимо использовать полное доменное имя **android.support.v4.view.ViewPager** поскольку `ViewPager` упакован в библиотеку поддержки. `ViewPager` доступен только из [библиотеки поддержки Android v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/); он не доступен в пакете SDK для Android.
 
 
 ## <a name="set-up-viewpager"></a>Настройка ViewPager
 
-Изменить **MainActivity.cs** и добавьте следующее `using` инструкции:
+Изменить **MainActivity.cs** и добавьте следующие `using` инструкции:
 
 ```csharp
 using Android.Support.V4.View;
 using Android.Support.V4.App;
 ```
 
-Изменение `MainActivity` объявления класса, чтобы он является производным от `AppCompatActivity`:
+Изменение `MainActivity` объявление класса, чтобы он является производным от `AppCompatActivity`:
 
 ```csharp
 public class MainActivity : FragmentActivity
 ```
 
-`MainActivity` является производным от`FragmentActivity` (а не `Activity`) из-за `FragmentActivity` знает, как управлять поддержки фрагментов. Замените метод `OnCreate` следующим кодом: 
+`MainActivity` является производным от`FragmentActivity` (а не `Activity`) так как `FragmentActivity` знает, как управлять поддержки фрагментов. Замените метод `OnCreate` следующим кодом: 
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -104,34 +104,34 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-Этот код выполняет следующие задачи.
+Этот код выполняет следующие функции:
 
-1.  Задает представление из **Main.axml** ресурсов макета.
+1.  Задает представление из **Main.axml** ресурс макета.
 
-2.  Извлекает ссылку на `ViewPager` от макета.
+2.  Извлекает ссылку `ViewPager` из макета.
 
-3.  Создает новый `FlashCardDeck` как источник данных.
+3.  Создает новый экземпляр `FlashCardDeck` как источник данных.
 
-При создании и запуске этого кода, вы увидите, что отображаемое похожа на следующем снимке экрана: 
+При построении и запустить этот код, вы увидите экран, похожий на следующем снимке экрана: 
 
-[![Снимок экрана FlashCardPager приложения с пустым ViewPager](viewpager-and-fragments-images/01-initial-screen-sml.png)](viewpager-and-fragments-images/01-initial-screen.png#lightbox)
+[![Снимок экрана из FlashCardPager приложения с пустым ViewPager](viewpager-and-fragments-images/01-initial-screen-sml.png)](viewpager-and-fragments-images/01-initial-screen.png#lightbox)
 
-На этом этапе `ViewPager` является пустым, так как он хватает фрагментов, которые используются заполнения `ViewPager`, и отсутствует адаптер для создания этих фрагментов данных из **FlashCardDeck**. 
+На этом этапе `ViewPager` является пустым, так как он недостаточно фрагментов, которые используются заполнения `ViewPager`, и для создания этих фрагментов из данных в некий адаптер **FlashCardDeck**. 
 
-В следующих разделах `FlashCardFragment` создают для реализации функциональности каждой карты флэш-памяти и `FragmentPagerAdapter` создается для подключения `ViewPager` на фрагменты, созданные на основе данных в `FlashCardDeck`. 
+В следующих разделах `FlashCardFragment` создать для реализации функциональности каждого флэш-карт и `FragmentPagerAdapter` для соединения создается `ViewPager` фрагментам, созданных на основе данных в `FlashCardDeck`. 
 
 
 
 ## <a name="create-the-fragment"></a>Создания фрагмента
 
-Каждая карта флэш-памяти будут управляться с помощью пользовательского интерфейса фрагмент вызывается `FlashCardFragment`. `FlashCardFragment`в представлении отображаются данные на одну плату флэш-памяти. Каждый экземпляр `FlashCardFragment` будут размещаться на `ViewPager`. 
-`FlashCardFragment`в представлении будет состоять из `TextView` , отображается текст проблема флэш-карт. В этом представлении реализует обработчик событий, который использует `Toast` для отображения ответа, когда пользователь нажимает на вопрос флэш-карт. 
+Каждая карта flash будут управляться с помощью пользовательского интерфейса фрагмент, который называется `FlashCardFragment`. `FlashCardFragment`в представлении отображаются данные с одного флэш-карт. Каждый экземпляр `FlashCardFragment` будет размещено `ViewPager`. 
+`FlashCardFragment`в представлении будет состоять из `TextView` , отображающий текст проблема флэш-карт. В этом представлении будут Реализуйте обработчик события, который использует `Toast` для отображения ответа в том случае, когда пользователь касается вопрос флэш-карт. 
 
 
 
-### <a name="create-the-flashcardfragment-layout"></a>Создание макета FlashCardFragment
+### <a name="create-the-flashcardfragment-layout"></a>Создать макет FlashCardFragment
 
-Прежде чем `FlashCardFragment` может быть реализован, его макет должен быть определен. Это имеет разметку фрагмент контейнер для одного фрагмента. Добавить новую структуру для Android **ресурсы и макет** вызывается **flashcard_layout.axml**. Откройте **Resources/layout/flashcard_layout.axml** и замените его содержимое следующим кодом: 
+Прежде чем `FlashCardFragment` может быть реализован, его макет должен быть определен. Этот макет — это фрагмент контейнер для одного фрагмента. Добавить новый макет Android для **ресурсы/макета** вызывается **flashcard_layout.axml**. Откройте **Resources/layout/flashcard_layout.axml** и замените его содержимое следующим кодом: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -152,11 +152,11 @@ protected override void OnCreate(Bundle bundle)
     </RelativeLayout>
 ```
 
-Этот макет определяет одну плату flash фрагментом; Каждый фрагмент состоит из `TextView` , отображающий ошибку с использованием шрифта больших (100sp). Этот текст выравнивается по центру по вертикали и горизонтали на карте флэш-памяти. 
+Этот макет определяет фрагмент единый флэш-карт; Каждый фрагмент состоит из `TextView` , отображающий ошибку шрифтом больших (100sp). Этот текст выравнивается по центру по вертикали и горизонтали на флэш-карт. 
 
 
 
-### <a name="create-the-initial-flashcardfragment-class"></a>Создайте исходный класс FlashCardFragment
+### <a name="create-the-initial-flashcardfragment-class"></a>Создать начальный класс FlashCardFragment
 
 Добавьте новый файл с именем **FlashCardFragment.cs** и замените его содержимое следующим кодом:
 
@@ -189,24 +189,24 @@ namespace FlashCardPager
 }
 ```
 
-Этот код заглушает основные `Fragment` определение, которое будет использоваться для отображения карты флэш-памяти. Обратите внимание, что `FlashCardFragment` является производным от версии библиотеки поддержки `Fragment` определенные в `Android.Support.V4.App.Fragment`. Конструктор является пустым, чтобы `newInstance` фабричный метод используется для создания нового `FlashCardFragment` вместо конструктора. 
+Этот код заглушает основные `Fragment` определение, которое будет использоваться для отображения флэш-карт. Обратите внимание, что `FlashCardFragment` является производным от версии библиотеки поддержки `Fragment` определенные в `Android.Support.V4.App.Fragment`. Конструктор является пустым, чтобы `newInstance` фабричный метод используется для создания нового `FlashCardFragment` вместо конструктора. 
 
-`OnCreateView` Жизненного цикла метод создает и настраивает `TextView`. Он увеличивает макета для фрагмента `TextView` и возвращает увеличенную `TextView` вызывающему объекту. `LayoutInflater` и `ViewGroup` передаются `OnCreateView` , чтобы он может значительно увеличить макета. `savedInstanceState` Пакет содержит данные, `OnCreateView` использует для воссоздания `TextView` из сохраненного состояния. 
+`OnCreateView` Метод жизненного цикла, создает и настраивает `TextView`. Он увеличивает макета для фрагмента `TextView` и возвращает увеличенную `TextView` вызывающему объекту. `LayoutInflater` и `ViewGroup` передаются `OnCreateView` таким образом, он может значительно увеличить макета. `savedInstanceState` Пакета содержит данные, `OnCreateView` использует для повторного создания `TextView` из сохраненного состояния. 
 
-Представление фрагмента явно увеличивается при помощи вызова `inflater.Inflate`. `container` Аргумент является родительского представления и `false` флаг указывает, что преобразования отказ от Добавление увеличенную представления для родительского представления (она будет добавлена при `ViewPager` вызова этого адаптера `GetItem` метод позже в этом Пошаговое руководство). 
+Представление фрагмента явным образом за счет вызова `inflater.Inflate`. `container` Аргумент является просмотр родительского элемента и `false` флаг указывает, что процессом удержаться и не Добавление увеличенную представления для родительского представления (она будет добавлена при `ViewPager` вызов в адаптера `GetItem` метод далее в этой Пошаговое руководство по). 
 
 
 
 ### <a name="add-state-code-to-flashcardfragment"></a>Добавьте код состояния FlashCardFragment
 
-Как и действия, фрагмент не содержит `Bundle` используется для сохранения и получить его состояние. В **FlashCardPager**, то `Bundle` используется для сохранения вопроса и ответа на текст для связанного карты флэш-памяти. В **FlashCardFragment.cs**, добавьте следующий `Bundle` ключи в верхнюю часть `FlashCardFragment` определения класса: 
+Как и действие, фрагмент не содержит `Bundle` которого используется для сохранения и извлечения состояния. В **FlashCardPager**, этот `Bundle` используется для сохранения вопрос и ответить на текст для связанного флэш-карт. В **FlashCardFragment.cs**, добавьте следующий `Bundle` ключи в верхнюю часть `FlashCardFragment` определение класса: 
 
 ```csharp
 private static string FLASH_CARD_QUESTION = "card_question";
 private static string FLASH_CARD_ANSWER = "card_answer";
 ```
 
-Изменить `newInstance` фабричный метод, чтобы он создает `Bundle` объекта и выше ключи используются для хранения переданный вопроса и ответа на текст в фрагменте после ее создания: 
+Изменить `newInstance` фабричный метод, поэтому он создает `Bundle` и использует выше ключей для хранения переданного вопрос и ответить на текст в фрагменте после его создания: 
 
 ```csharp
 public static FlashCardFragment newInstance(String question, String answer)
@@ -222,7 +222,7 @@ public static FlashCardFragment newInstance(String question, String answer)
 }
 ```
 
-Измените метод жизненного цикла фрагмент `OnCreateView` для получения этих сведений из пакета переданное и загрузить текст вопроса в `TextBox`: 
+Измените метод жизненного цикла фрагмент `OnCreateView` для получения этих сведений из пакета в переданном и загрузить текст вопроса в `TextBox`: 
 
 ```csharp
 public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -238,19 +238,19 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 }
 ```
 
-`answer` Переменная здесь не используется, но он будет использоваться позже при добавлении в этот файл код обработчика событий. 
+`answer` Переменная не используется здесь, но он будет использоваться позже при добавлении в этот файл код обработчика событий. 
 
 
 ## <a name="create-the-adapter"></a>Создание адаптера
 
-`ViewPager` использует объект контроллера адаптера, который располагается между `ViewPager` и источником данных (показано на рисунке в ViewPager [адаптер](~/android/user-interface/controls/view-pager/index.md#adapter) статьи). Доступ к этим данным `ViewPager` необходимо указать пользовательский адаптер, производный от `PagerAdapter`. Так как в этом примере используется фрагментов, он использует `FragmentPagerAdapter` &ndash; `FragmentPagerAdapter` является производным от `PagerAdapter`. 
-`FragmentPagerAdapter` Представляет каждую страницу в `Fragment` , хранится постоянно в диспетчере фрагментов для при условии, что пользователь может вернуться на страницу. Как вставляет пользователя по страницам `ViewPager`, `FragmentPagerAdapter` извлекает данные из источника данных и использует ее для создания `Fragment`s для `ViewPager` для отображения. 
+`ViewPager` использует объект контроллера адаптера, которая размещается между `ViewPager` и источником данных (см. рисунок в ViewPager [адаптера](~/android/user-interface/controls/view-pager/index.md#adapter) статье). Доступ к этим данным `ViewPager` необходимо указать настраиваемый адаптер, производный от `PagerAdapter`. Поскольку в этом примере используется фрагментов, она использует `FragmentPagerAdapter` &ndash; `FragmentPagerAdapter` является производным от `PagerAdapter`. 
+`FragmentPagerAdapter` Представляет каждую страницу в `Fragment` , постоянно находиться в диспетчере фрагментов для, до тех пор, пока пользователь может вернуться на страницу. Как вставляет пользователя по страницам `ViewPager`, `FragmentPagerAdapter` извлекает данные из источника данных и использует его для создания `Fragment`s для `ViewPager` для отображения. 
 
 При реализации `FragmentPagerAdapter`, необходимо переопределить следующие:
 
 -   **Число** &ndash; только для чтения свойство, которое возвращает количество доступных представлений (страниц).
 
--   **GetItem** &ndash; возвращает фрагмент для отображения указанной страницы.
+-   **GetItem** &ndash; возвращает фрагмент для отображения для указанной страницы.
 
 Добавьте новый файл с именем **FlashCardDeckAdapter.cs** и замените его содержимое следующим кодом:
 
@@ -282,31 +282,31 @@ namespace FlashCardPager
 }
 ```
 
-Этот код заглушает основные `FragmentPagerAdapter` реализации. В следующих разделах каждый из этих методов заменяется рабочего кода. Конструктор предназначен для передачи в диспетчере фрагментов `FlashCardDeckAdapter`в конструктор базового класса. 
+Этот код заглушает основные `FragmentPagerAdapter` реализации. В следующих разделах каждый из этих методов заменяется рабочий код. Конструктор предназначена для передачи диспетчеру фрагмент `FlashCardDeckAdapter`в конструктор базового класса. 
 
 
 
 ### <a name="implement-the-adapter-constructor"></a>Реализуйте конструктор адаптера
 
-Когда приложение создает экземпляр `FlashCardDeckAdapter`, он передает ссылку на диспетчер фрагментов и экземпляры `FlashCardDeck`. Добавьте следующую переменную члена в верхнюю часть `FlashCardDeckAdapter` класса в **FlashCardDeckAdapter.cs**: 
+Когда приложение создает экземпляр `FlashCardDeckAdapter`, он передает ссылку на диспетчер фрагментов и которого создан экземпляр `FlashCardDeck`. Добавьте следующую переменную члена в верхнюю часть `FlashCardDeckAdapter` в класс **FlashCardDeckAdapter.cs**: 
 
 ```csharp
 public FlashCardDeck flashCardDeck;
 ```
 
-Добавьте следующую строку кода, `FlashCardDeckAdapter` конструктор: 
+Добавьте следующую строку кода, чтобы `FlashCardDeckAdapter` конструктор: 
 
 ```csharp
 this.flashCardDeck = flashCards;
 ```
 
-Эта строка кода хранилищ `FlashCardDeck` экземпляр `FlashCardDeckAdapter` будет использовать. 
+Эта строка кода хранилищ `FlashCardDeck` экземпляр, на котором `FlashCardDeckAdapter` будет использовать. 
 
 
 
 ### <a name="implement-count"></a>Реализуйте Count
 
-`Count` Реализацию относительно проста: она возвращает номер flash карт в колоде флэш-карт. Замените `Count` следующим кодом: 
+`Count` Реализация довольно проста: она возвращает число флэш-карты в колоде флэш-карт. Замените `Count` следующим кодом: 
 
 ```csharp
 public override int Count
@@ -322,7 +322,7 @@ public override int Count
 
 ### <a name="implement-getitem"></a>Реализуйте GetItem
 
-`GetItem` Метод возвращает фрагмент, связанный с заданной позиции. Когда `GetItem` вызывается для положения в колоде флэш-карт, она возвращает `FlashCardFragment` отображать проблемы флэш-карт в этой позиции. Замените метод `GetItem` следующим кодом: 
+`GetItem` Метод возвращает фрагмент, связанные с заданной позиции. Когда `GetItem` вызывается для положения в колоде флэш-карт, она возвращает `FlashCardFragment` настроено отображение проблема флэш-карт в этой позиции. Замените метод `GetItem` следующим кодом: 
 
 ```csharp
 public override Android.Support.V4.App.Fragment GetItem(int position)
@@ -333,23 +333,23 @@ public override Android.Support.V4.App.Fragment GetItem(int position)
 }
 ```
 
-Этот код выполняет следующие задачи.
+Этот код выполняет следующие функции:
 
-1.  Находит строку проблемы математические в `FlashCardDeck` колоде для заданной позиции. 
+1.  Ищет строку проблемы math в `FlashCardDeck` колоды для заданной позиции. 
 
-2.  Находит строку ответов в `FlashCardDeck` колоде для заданной позиции. 
+2.  Ищет строку ответов в `FlashCardDeck` колоды для заданной позиции. 
 
-3.  Вызовы `FlashCardFragment` фабричный метод `newInstance`, передавая строки проблемы и ответов флэш-карт. 
+3.  Вызовы `FlashCardFragment` фабричный метод `newInstance`, передав в строках проблему и ответ флэш-карт. 
 
-4.  Создает и возвращает новую карту flash `Fragment` , содержащее текст вопроса и ответа в этой позиции. 
+4.  Создает и возвращает новый флэш-карт `Fragment` , содержащее текст вопроса и ответа для этой позиции. 
 
-При `ViewPager` отображает `Fragment` в `position`, он отображает `TextBox` содержится строка математической проблему, находящихся в `position` в колоде флэш-карт. 
+При `ViewPager` отображает `Fragment` в `position`, он отображает `TextBox` содержащий строку проблема math, расположенный по адресу `position` в колоде флэш-карт. 
 
 
 
-## <a name="add-the-adapter-to-the-viewpager"></a>Добавление адаптера ViewPager
+## <a name="add-the-adapter-to-the-viewpager"></a>Добавьте адаптер в ViewPager
 
-Теперь, когда `FlashCardDeckAdapter` будет реализован, пришло время, чтобы добавить его в `ViewPager`. В **MainActivity.cs**, добавьте следующую строку кода в конец `OnCreate` метод:
+Теперь, когда `FlashCardDeckAdapter` будет реализован, пришло время добавить его в `ViewPager`. В **MainActivity.cs**, добавьте следующую строку кода в конец `OnCreate` метод:
 
 ```csharp
 FlashCardDeckAdapter adapter =
@@ -357,18 +357,18 @@ FlashCardDeckAdapter adapter =
 viewPager.Adapter = adapter;
 ```
 
-Этот код создает экземпляр `FlashCardDeckAdapter`, передавая `SupportFragmentManager` в качестве первого аргумента. ( `SupportFragmentManager` Свойство FragmentActivity используется для получения ссылки на `FragmentManager` &ndash; Дополнительные сведения о `FragmentManager`, в разделе [управление фрагментов](~/android/platform/fragments/managing-fragments.md).) 
+Этот код создает экземпляр `FlashCardDeckAdapter`, передавая `SupportFragmentManager` в первом аргументе. ( `SupportFragmentManager` Позволяет получить ссылку на свойство FragmentActivity `FragmentManager` &ndash; Дополнительные сведения о `FragmentManager`, см. в разделе [управление фрагментов](~/android/platform/fragments/managing-fragments.md).) 
 
-Реализация основных компонентов завершена &ndash; построение и запуск приложения.
-Вы увидите первое изображение колоде флэш-карт отображаются на экране, как показано на следующем снимке экрана слева. Проведите слева, чтобы увидеть больше карт флэш-памяти, затем проведите пальцем вправо для перемещения назад по колоде флэш-карт:
+Реализация ядра уже выполнено &ndash; сборка и запуск приложения.
+Вы должны увидеть первое изображение колоды карт flash отображаются на экране, как показано на следующем рисунке слева. Проведите по экрану слева, чтобы увидеть дополнительные флэш-карты, затем пальцем вправо для перемещения назад по колоду карт flash:
 
-[![Снимки экрана примера приложения FlashCardPager без индикаторы страничного навигатора](viewpager-and-fragments-images/02-example-views-sml.png)](viewpager-and-fragments-images/02-example-views.png#lightbox)
+[![Снимки экрана FlashCardPager приложение без индикаторов на пейджер](viewpager-and-fragments-images/02-example-views-sml.png)](viewpager-and-fragments-images/02-example-views.png#lightbox)
 
 
 
-## <a name="add-a-pager-indicator"></a>Добавить индикатор страничного навигатора
+## <a name="add-a-pager-indicator"></a>Добавить индикатор на пейджер
 
-Этот минимальный `ViewPager` реализацию отображает каждый флэш-карт в колоде, но он обеспечивает где пользователь входит в колоде без причины. Следующим шагом является добавление `PagerTabStrip`. `PagerTabStrip` Сообщает пользователю о том, какие проблемы число отображается и предоставляет контекст навигации, отображая подсказку предыдущей и последующей карт флэш-памяти. 
+Этом минимальный `ViewPager` реализации отображает каждый флэш-карт в колоде, но он обеспечивает нет сведения о том, где пользователь является в колоде. Следующим шагом является добавление `PagerTabStrip`. `PagerTabStrip` Информирует пользователя о том, какие проблемы отображается номер и предоставляет контекст навигации, отображая подсказку флэш-картах предыдущей и последующей. 
 
 Откройте **Resources/layout/Main.axml** и добавьте `PagerTabStrip` макета:
 
@@ -390,15 +390,15 @@ viewPager.Adapter = adapter;
 </android.support.v4.view.ViewPager>
 ```
 
-При построении и запуске приложения вы увидите пустые `PagerTabStrip` в верхней части каждой карточки флэш-памяти: 
+При построении и запуске приложения, вы должны увидеть пустую `PagerTabStrip` отображается в верхней части каждой карточки flash: 
 
 [![Крупный план PagerTabStrip без текста](viewpager-and-fragments-images/03-empty-pagetabstrip-sml.png)](viewpager-and-fragments-images/03-empty-pagetabstrip.png#lightbox)
 
 
 
-### <a name="display-a-title"></a>Отображать заголовок
+### <a name="display-a-title"></a>Отображение заголовка
 
-Чтобы добавить заголовок для каждой вкладки, реализовать `GetPageTitleFormatted` метода в адаптере. `ViewPager` вызовы `GetPageTitleFormatted` (Если реализована) для получения строки заголовка, описывающий страницы в указанной позиции. Добавьте следующий метод `FlashCardDeckAdapter` класса в **FlashCardDeckAdapter.cs**: 
+Чтобы добавить заголовок для каждой страницы вкладки, реализовать `GetPageTitleFormatted` метода в адаптере. `ViewPager` вызовы `GetPageTitleFormatted` (если реализовано) для получения строки заголовка, описывающий страницы в указанной позиции. Добавьте следующий метод в `FlashCardDeckAdapter` в класс **FlashCardDeckAdapter.cs**: 
 
 ```csharp
 public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
@@ -407,19 +407,19 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 }
 ```
 
-Этот код преобразует позицию в колоде флэш-карт в число проблем. Результирующая строка преобразуется в Java `String` , возвращаемую `ViewPager`. При запуске приложения с помощью этого нового метода каждой страницы отображается номер проблемы в `PagerTabStrip`: 
+Этот код преобразует позицию в колоду карт flash в проблему. Результирующая строка преобразуется в Java `String` , возвращаемую `ViewPager`. При запуске приложения с помощью этого нового метода, каждая страница отображает номер проблемы в `PagerTabStrip`: 
 
-[![Снимки экрана FlashCardPager с номером проблема наверху каждой страницы](viewpager-and-fragments-images/04-pagetabstrip-sml.png)](viewpager-and-fragments-images/04-pagetabstrip.png#lightbox)
+[![Снимки экрана FlashCardPager с номером проблему, отображаемый над каждой страницы](viewpager-and-fragments-images/04-pagetabstrip-sml.png)](viewpager-and-fragments-images/04-pagetabstrip.png#lightbox)
 
-Для просмотра номера проблему в колоде флэш-карт, который отображается в верхней части каждой карточки flash проведите выполняется и обратно. 
+Узнать, сколько проблему в колоду карт флэш-памяти, который отображается в верхней части каждой карточки flash считайте выполняется и обратно. 
 
 
 
-## <a name="handle-user-input"></a>Обработки вводимых пользователем данных
+## <a name="handle-user-input"></a>Обработки введенных пользователем данных
 
-**FlashCardPager** представляет ряд фрагмент Молния видеоадаптеры в `ViewPager`, но она еще не способ выявить ответов для каждой задачи. В этом разделе добавляется обработчик событий `FlashCardFragment` для отображения ответа, когда пользователь нажимает на текст проблема флэш-карт. 
+**FlashCardPager** представляет собой серию основе фрагмент флэш-карты в `ViewPager`, но еще не предоставляет способ отображения ответов для каждой задачи. В этом разделе добавляется обработчик событий `FlashCardFragment` для отображения ответа в том случае, когда пользователь касается по тексту, проблема флэш-карт. 
 
-Откройте **FlashCardFragment.cs** и добавьте следующий код в конец `OnCreateView` метод непосредственно перед представления возвращается вызывающему объекту: 
+Откройте **FlashCardFragment.cs** и добавьте следующий код в конец `OnCreateView` метод непосредственно перед представления возвращается вызывающей стороне: 
 
 ```csharp
 questionBox.Click += delegate
@@ -429,17 +429,17 @@ questionBox.Click += delegate
 };
 ```
 
-Это `Click` обработчик событий отображает ответ в всплывающее уведомление, которое появляется при нажатии кнопки `TextBox`. `answer` Переменная была инициализирована ранее, когда сведения о состоянии было считано из пакета, который был передан в `OnCreateView`. Построение и запуск приложения, а затем проблемы текст на каждой карточке флэш-памяти для просмотра ответов: 
+Это `Click` обработчик событий отображает ответ в всплывающее уведомление, которое отображается, когда пользователь касается `TextBox`. `answer` Переменная была инициализирована ранее, когда сведения о состоянии, считанный из пакета, который был передан `OnCreateView`. Построить и запустить приложение, а затем выберите текст проблему в каждой карточке flash, чтобы увидеть ответ: 
 
-[![Снимки экрана FlashCardPager приложение всплывающие уведомления при касании ошибку](viewpager-and-fragments-images/05-answer-sml.png)](viewpager-and-fragments-images/05-answer.png#lightbox)
+[![Снимки экрана из FlashCardPager приложение всплывающие уведомления шифрованию ошибку](viewpager-and-fragments-images/05-answer-sml.png)](viewpager-and-fragments-images/05-answer.png#lightbox)
 
-**FlashCardPager** в данном пошаговом руководстве использует `MainActivity` производными `FragmentActivity`, но можно также создавать производные `MainActivity` из `AppCompatActivity` (который также обеспечивает поддержку управления фрагментов). Чтобы просмотреть `AppCompatActivity` пример, в разделе [FlashCardPager](https://developer.xamarin.com/samples/monodroid/UserInterface%5CFlashCardPager/) в коллекции примеров. 
+**FlashCardPager** представленные в этом пошаговом руководстве использует `MainActivity` производным от `FragmentActivity`, но можно также создавать производные `MainActivity` из `AppCompatActivity` (которая также обеспечивает управление фрагментами). Чтобы просмотреть `AppCompatActivity` пример, см. в разделе [FlashCardPager](https://developer.xamarin.com/samples/monodroid/UserInterface%5CFlashCardPager/) в коллекции примеров. 
 
 
 
 ## <a name="summary"></a>Сводка
 
-В этом пошаговом руководстве предоставленный пример с пошаговыми инструкциями по построению базового `ViewPager`-на базе приложения с использованием `Fragment`s. Оно представлено в источник данных примера, содержащий флэш-карт вопросы и ответы, `ViewPager` макет для отображения карты флэш-памяти и `FragmentPagerAdapter` подкласс, в котором подключается `ViewPager` к источнику данных. Чтобы помочь пользователю перемещаться по флэш-карты, входившие в инструкции, объясняется, как добавить `PagerTabStrip` для отображения числа проблемы в верхней части каждой страницы. Наконец код обработки событий был добавлен для отображения ответа, когда пользователь нажимает на проблему флэш-карт. 
+В этом пошаговом руководстве указан пошаговый пример создания базового `ViewPager`-на основе приложений с помощью `Fragment`s. Оно представлено в источник данных пример, содержащий флэш-карт вопросов и ответов, `ViewPager` макет для отображения флэш-карты и `FragmentPagerAdapter` подкласс, в котором подключается `ViewPager` к источнику данных. Чтобы помочь пользователю перемещаться по флэш-карты, инструкции были включены, объясняется, как добавить `PagerTabStrip` для отображения числа проблемы в верхней части каждой страницы. Наконец код обработки событий был добавлен для отображения ответа в том случае, когда пользователь касается над проблемой флэш-карт. 
 
 
 

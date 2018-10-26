@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/12/2016
-ms.openlocfilehash: 52d8d5f6eb38e5cb501d6284d08f7317981e0dcf
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 18/10/2018
+ms.openlocfilehash: a51a3bb7726baa9142579a518767dc722870ee06
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998977"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107531"
 ---
 # <a name="xamarinforms-views"></a>Представления Xamarin.Forms
 
@@ -93,7 +93,7 @@ _Представления Xamarin.Forms являются стандартны�
 
 |     |     |
 | --- | --- |
-| [`Stepper`](xref:Xamarin.Forms.Stepper) позволяет пользователю выбрать `double` значение из диапазона добавочные значения, указанные с [ `Minimum` ](xref:Xamarin.Forms.Stepper.Minimum), [ `Maximum` ](xref:Xamarin.Forms.Stepper.Maximum), и [ `Increment` ](xref:Xamarin.Forms.Stepper.Increment) свойства.<br /><br />[Документация по API](xref:Xamarin.Forms.Stepper) | [![Пример несопоставимого](views-images/Stepper.png "пример несопоставимого")](views-images/Stepper-Large.png#lightbox "несопоставимого пример")<br />[Код C# для этой страницы](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [страницы XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
+| [`Stepper`](xref:Xamarin.Forms.Stepper) позволяет пользователю выбрать `double` значение из диапазона добавочные значения, указанные с [ `Minimum` ](xref:Xamarin.Forms.Stepper.Minimum), [ `Maximum` ](xref:Xamarin.Forms.Stepper.Maximum), и [ `Increment` ](xref:Xamarin.Forms.Stepper.Increment) свойства.<br /><br />[Документация по API](xref:Xamarin.Forms.Stepper)  / [руководство](~/xamarin-forms/user-interface/stepper.md) / [образца](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos) | [![Пример несопоставимого](views-images/Stepper.png "пример несопоставимого")](views-images/Stepper-Large.png#lightbox "несопоставимого пример")<br />[Код C# для этой страницы](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [страницы XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
 |     |     |
 
 ### <a name="switch"></a>Параметр
@@ -114,7 +114,7 @@ _Представления Xamarin.Forms являются стандартны�
 
 |     |     |
 | --- | --- |
-| [`TimePicker`](xref:Xamarin.Forms.TimePicker) позволяет пользователю выбрать время с средство выбора времени платформы. [ `Time` ](xref:Xamarin.Forms.TimePicker.Time) Свойство имеет установленный период времени. Приложения можно выполнять мониторинг изменений `Time` свойства, установив обработчик для [ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged) событий.<br /><br />[Документация по API](xref:Xamarin.Forms.TimePicker) | [![Пример TimePicker](views-images/TimePicker.png "пример TimePicker")](views-images/TimePicker-Large.png#lightbox "TimePicker пример")<br />[Код C# для этой страницы](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [страницы XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
+| [`TimePicker`](xref:Xamarin.Forms.TimePicker) позволяет пользователю выбрать время с средство выбора времени платформы. [ `Time` ](xref:Xamarin.Forms.TimePicker.Time) Свойство имеет установленный период времени. Приложения можно выполнять мониторинг изменений `Time` свойства, установив обработчик для [ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged) событий.<br /><br />[Документация по API](xref:Xamarin.Forms.TimePicker) / [руководство](~/xamarin-forms/user-interface/timepicker.md) / [образца](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker) | [![Пример TimePicker](views-images/TimePicker.png "пример TimePicker")](views-images/TimePicker-Large.png#lightbox "TimePicker пример")<br />[Код C# для этой страницы](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TimePickerDemoPage.cs) / [страницы XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TimePickerDemoPage.xaml) |
 |     |     |
 
 ## <a name="views-for-editing-text"></a>Для редактирования текста

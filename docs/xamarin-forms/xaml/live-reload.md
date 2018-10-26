@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: ce48c4d271167b657505c52518e79c955e53b02e
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: f05b79e58a9fa87e13aeb45af2dbb46139051005
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38860671"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109995"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin динамической перезагрузки
 
@@ -22,11 +22,10 @@ Xamarin Live Reload позволяет **вносить изменения в XA
 
 Поскольку приложение компилируется при использовании Live перезагрузить, он работает с все библиотеки и сторонние элементы управления. Динамическая перезагрузка работает на всех платформах Xamarin.Forms поддерживает, включая Android, iOS и универсальной платформы Windows и работает на всех стадиях допустимым развертывания, включая симуляторов, эмуляторах и физические устройства.
 
-> [!Video https://www.youtube.com/embed/-5WJZpeXlC8]
-
-Динамической перезагрузки в данный момент доступна только в Visual Studio 2017.
-
-[![Беседа в https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+> [!NOTE]
+> [Предварительный просмотр перезагрузить завершен](https://github.com/xamarin/Xamarin.Forms/issues/4155#issuecomment-431596130)
+>
+> Здесь ведется дискуссия об этом на [ ![беседа в https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## <a name="requirements"></a>Требования
 

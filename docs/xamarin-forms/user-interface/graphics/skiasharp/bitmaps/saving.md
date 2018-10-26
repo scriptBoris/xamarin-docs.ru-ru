@@ -4,15 +4,15 @@ description: Изучите различные форматы файлов, по
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: e957134ecceee84962e5a4fc153285ea0a2a5906
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 7f34bd5bbab4accaa30c22266dacd30692bf9ccc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615565"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107577"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>Сохранение растровых изображений SkiaSharp в файлы
 
@@ -40,13 +40,13 @@ ms.locfileid: "39615565"
 - _декодирование_ &mdash; читать формат файла точечного рисунка и распаковывает их
 - _кодирование_ &mdash; сжать точечный рисунок и записи в формате файла точечного рисунка
 
-[ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/) Класс содержит несколько методов с именем `Decode` , которые создают `SKBitmap` из сжатого источника. Требуется лишь указать имя файла, потока или массива байтов. Декодер можно определить формат файла и передать ее для правильного декодирования Внутренняя функция.
+[ `SKBitmap` ](xref:SkiaSharp.SKBitmap) Класс содержит несколько методов с именем `Decode` , которые создают `SKBitmap` из сжатого источника. Требуется лишь указать имя файла, потока или массива байтов. Декодер можно определить формат файла и передать ее для правильного декодирования Внутренняя функция.
 
-Кроме того [ `SKCodec` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCodec/) класс имеет два метода с именем `Create` , можно создать `SKCodec` от сжатые исходные и позволяют приложению получить более важную роль в процессе декодирования. ( `SKCodec` Класс показан в этой статье [ **анимации точечных рисунков SkiaSharp** ](animating.md#gif-animation) в связи с декодирование анимированный GIF-файл.)
+Кроме того [ `SKCodec` ](xref:SkiaSharp.SKCodec) класс имеет два метода с именем `Create` , можно создать `SKCodec` от сжатые исходные и позволяют приложению получить более важную роль в процессе декодирования. ( `SKCodec` Класс показан в этой статье [ **анимации точечных рисунков SkiaSharp** ](animating.md#gif-animation) в связи с декодирование анимированный GIF-файл.)
 
 Необходим при кодировании Битовая карта, Дополнительные сведения: кодировщику необходимо знать формат определенного файла, приложению необходимо использовать (JPEG или PNG или иное). При необходимости с потерями формат кодирования, также необходимо знать требуемый уровень качества. 
 
-`SKBitmap` Класс определяет одно [ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Encode/p/SkiaSharp.SKWStream/SkiaSharp.SKEncodedImageFormat/System.Int32/) метод со следующим синтаксисом:
+`SKBitmap` Класс определяет одно [ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32)) метод со следующим синтаксисом:
 
 ```csharp
 public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality)
@@ -54,13 +54,13 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 Этот метод описан более подробно чуть ниже. Записываемый поток для записи закодированного растрового изображения. («W» в `SKWStream` расшифровывается как «для записи».) Второй и третий аргументы задают формат файла и (для применяемую в форматах) желаемое качество, от 0 до 100.
 
-Кроме того [ `SKImage` ](https://developer.xamarin.com/api/type/SkiaSharp.SKImage/) и [ `SKPixmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPixmap/) классы также определяют `Encode` методы, являются более гибкими и может потребоваться. Вы можете легко создавать `SKImage` объекта из `SKBitmap` объекта с помощью статического [ `SKImage.FromBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKImage.FromBitmap/p/SkiaSharp.SKBitmap/) метод. Вы можете получить `SKPixmap` объекта из `SKBitmp` с помощью [ `PeekPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.PeekPixels()/) метод.
+Кроме того [ `SKImage` ](xref:SkiaSharp.SKImage) и [ `SKPixmap` ](xref:SkiaSharp.SKPixmap) классы также определяют `Encode` методы, являются более гибкими и может потребоваться. Вы можете легко создавать `SKImage` объекта из `SKBitmap` объекта с помощью статического [ `SKImage.FromBitmap` ](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap)) метод. Вы можете получить `SKPixmap` объекта из `SKBitmp` с помощью [ `PeekPixels` ](xref:SkiaSharp.SKBitmap.PeekPixels) метод.
 
-Один из [ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKImage.Encode()/) методы, определенные `SKImage` не имеет параметров и автоматически сохраняет в формате PNG. Этот метод без параметров очень прост в использовании.
+Один из [ `Encode` ](xref:SkiaSharp.SKImage.Encode) методы, определенные `SKImage` не имеет параметров и автоматически сохраняет в формате PNG. Этот метод без параметров очень прост в использовании.
 
 ## <a name="platform-specific-code-for-saving-bitmap-files"></a>Специфические для платформы код для сохранения файлов растрового изображения
 
-При кодировании `SKBitmap` объекта в файл определенного формата, обычно можно оставить объект потока какого-либо рода, или массив данных. Некоторые из `Encode` методы (включая без параметров, определяемых `SKImage`) возвращают [ `SKData` ](https://developer.xamarin.com/api/type/SkiaSharp.SKData/) объект, который может быть преобразован в массив байтов с помощью [ `ToArray` ](https://developer.xamarin.com/api/member/SkiaSharp.SKData.ToArray()/) метод. Затем эти данные необходимо сохранить в файл. 
+При кодировании `SKBitmap` объекта в файл определенного формата, обычно можно оставить объект потока какого-либо рода, или массив данных. Некоторые из `Encode` методы (включая без параметров, определяемых `SKImage`) возвращают [ `SKData` ](xref:SkiaSharp.SKData) объект, который может быть преобразован в массив байтов с помощью [ `ToArray` ](xref:SkiaSharp.SKData.ToArray) метод. Затем эти данные необходимо сохранить в файл. 
 
 Сохранение в файл в локальном хранилище приложения достаточно прост, так как можно использовать стандартную `System.IO` классы и методы для выполнения этой задачи. Этот подход продемонстрирован в этой статье [ **анимации точечных рисунков SkiaSharp** ](animating.md#bitmap-animation) в связи с анимации ряд точечных рисунков из множества Мандельброта.
 
@@ -237,13 +237,13 @@ public class PhotoLibrary : IPhotoLibrary
 
 ## <a name="exploring-the-image-formats"></a>Изучение форматов изображения
 
-Вот [ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Encode/p/SkiaSharp.SKWStream/SkiaSharp.SKEncodedImageFormat/System.Int32/) метод `SKImage` еще раз:
+Вот [ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32)) метод `SKImage` еще раз:
 
 ```csharp
 public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality)
 ```
 
-[`SKEncodedImageFormat`](https://developer.xamarin.com/api/type/SkiaSharp.SKEncodedImageFormat/) Это перечисление с члены, ссылающиеся на одиннадцати растровых форматов, некоторые из них довольно запутанным:
+[`SKEncodedImageFormat`](xref:SkiaSharp.SKEncodedImageFormat) Это перечисление с члены, ссылающиеся на одиннадцати растровых форматов, некоторые из них довольно запутанным:
 
 - `Astc` &mdash; Сжатие текстур адаптивной масштабируемой
 - `Bmp` &mdash; Точечный рисунок Windows
@@ -688,7 +688,7 @@ public partial class FingerPaintSavePage : ContentPage
 }
 ```
 
-**Сохранить** обработчик кнопки использует упрощенный интерфейс [ `Encode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKImage.Encode()/) метода из `SKImage`. Этот метод кодирует в формате PNG. `SKImage` Объект создается на основе `saveBitmap`и `SKData` объект содержит закодированный PNG-файл. 
+**Сохранить** обработчик кнопки использует упрощенный интерфейс [ `Encode` ](xref:SkiaSharp.SKImage.Encode) метода из `SKImage`. Этот метод кодирует в формате PNG. `SKImage` Объект создается на основе `saveBitmap`и `SKData` объект содержит закодированный PNG-файл. 
 
 `ToArray` Метод `SKData` получает массив байтов. Это связано с содержимым, передаваемым `SavePhotoAsync` метода, а также имя предопределенной папки и уникальное имя файла, построенный на основе текущей даты и времени.
 
@@ -704,6 +704,6 @@ public partial class FingerPaintSavePage : ContentPage
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [API-интерфейсы SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [API-интерфейсы SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (пример)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Программа SpinPaint (пример)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/)

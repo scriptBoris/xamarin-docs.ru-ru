@@ -1,24 +1,24 @@
 ---
-title: Используя поставщик содержимого
+title: Использование ContentProvider
 ms.prod: xamarin
 ms.assetid: 251F7557-328D-0132-F39D-595920A28B87
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: b9b6340d4aaf386c7b4be8ebf366589582771be2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d1ec628de3481820f320a5a8e6ef88fcbaab75a6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763297"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122118"
 ---
-# <a name="using-a-contentprovider"></a>Используя поставщик содержимого
+# <a name="using-a-contentprovider"></a>Использование ContentProvider
 
-CursorAdapters может также использоваться для отображения данных из поставщик содержимого.
-ContentProviders позволяют получить доступ к данным, доступных в других приложениях (включая данные системы Android как контакты, мультимедиа и календаря).
+CursorAdapters также может использоваться для отображения данных из ContentProvider.
+Поставщиков содержимого позволяют получить доступ к данным, доступных в других приложениях (включая Android системные данные, такие как контакты, мультимедиа и информации календаря).
 
-Это предпочтительный способ доступа к поставщик содержимого — с помощью LoaderManager CursorLoader. LoaderManager впервые появился в Android 3.0 (уровень API 11, Honeycomb) для перемещения блокирующих задачах вне основного потока, а использование CursorLoader позволяет загружаться в потоке до, привязанной к ListView для отображения данных.
+С помощью LoaderManager CursorLoader является предпочтительным способом доступа к ContentProvider. LoaderManager появился в Android 3.0 (уровень API 11, Honeycomb) для перемещения блокирующих задачах вне основного потока, и с помощью CursorLoader позволяет данные загружаются в потоке перед привязанным к ListView для отображения.
 
-Ссылаться на [введение в ContentProviders](~/android/platform/content-providers/index.md) для получения дополнительной информации.
+Ссылаться на [введение поставщиков содержимого](~/android/platform/content-providers/index.md) Дополнительные сведения.
 

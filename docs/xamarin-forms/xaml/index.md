@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/18/2018
-ms.openlocfilehash: f593e5d084d8cd7071d17195663478d430d994b7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4045f3a1d31b1c0c8b69e840d3943b6ce258b894
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995486"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113590"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>Расширяемый язык разметки приложений (XAML)
 
@@ -37,7 +37,7 @@ XAML позволяет разработчикам определить поль
 
 ## <a name="xaml-previewerxaml-previewermd"></a>[Средство предварительного просмотра XAML](xaml-previewer.md)
 
-[Средства предварительного просмотра XAML](~/xamarin-forms/xaml/xaml-previewer.md) было объявлено на 2016 развиваться Xamarin доступен для тестирования в альфа-канал.
+[Средства предварительного просмотра XAML](~/xamarin-forms/xaml/xaml-previewer.md) отрисовывает динамический просмотр страницы side-by-side с разметкой XAML, позволяя см. в разделе пользовательского интерфейса к просмотру при вводе.
 
 ## <a name="xaml-namespacesnamespacesmd"></a>[Пространства имен языка XAML](namespaces.md)
 

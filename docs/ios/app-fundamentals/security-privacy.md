@@ -4,15 +4,15 @@ description: В этом документе описываются средст�
 ms.prod: xamarin
 ms.assetid: 718C8721-C359-4650-878A-D68E159A3F53
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1a28bf394d29c09bfd264f03e0eea6c8b582f271
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 1c88a5c16dbe5559f0b551a97a27ebb893991187
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854757"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120506"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS средства безопасности и конфиденциальности
 
@@ -72,7 +72,7 @@ Apple сделала ряд дополнительных возможносте�
 
 ![Пример предупреждения NSHomeKitUsageDescription](security-privacy-images/info01.png "NSHomeKitUsageDescription пример предупреждения")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Xamarin.iOS для Visual Studio в настоящее время не поддерживает редактирование **Info.plist** редакторе манифестов закрытые ключи из значений в iOS по умолчанию. Вместо этого необходимо использовать универсальный редактор PList, поэтому выполните следующие действия:
 
@@ -90,7 +90,7 @@ Xamarin.iOS для Visual Studio в настоящее время не подд�
     ![Введите описание](security-privacy-images/InfoPListSetValue.png "введите описание")
 7. Сохраните изменения в файле.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 Чтобы задать закрытые ключи, сделайте следующее:
 

@@ -1,44 +1,44 @@
 ---
-title: Уведомления в Xamarin.Android
+title: Уведомлений в Xamarin.Android
 ms.prod: xamarin
 ms.assetid: 2E54F1D0-45F4-43A7-B3A3-4F483B7150CB
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: d321c3eb3fe1c882ef9cea6ed1aace3aa1dd953e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a0778de5dcc7e21ba011fe144be703b3b83b8247
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762367"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114045"
 ---
-# <a name="notifications-in-xamarinandroid"></a>Уведомления в Xamarin.Android
+# <a name="notifications-in-xamarinandroid"></a>Уведомлений в Xamarin.Android
 
 
 ## <a name="overview"></a>Обзор
 
-В этом разделе объясняется, как для реализации уведомлений в Xamarin.Android. Здесь описаны элементы пользовательского интерфейса Android уведомление о и описываются API связанные с созданием и отображает соответствующее уведомление.
+В этом разделе объясняется, как реализовать уведомления в Xamarin.Android. Он описывает различные элементы пользовательского интерфейса уведомление Android и описываются API связанных с созданием и отображение уведомления.
 
 
 ## <a name="sections"></a>Разделы
 
-### <a name="local-notifications-in-androidlocal-notificationsmd"></a>[Локальный уведомления в Android](local-notifications.md)
+### <a name="local-notifications-in-androidlocal-notificationsmd"></a>[Локальные уведомления в Android](local-notifications.md)
 
-В этом разделе объясняется, как реализовать локальный уведомления в Xamarin.Android. Здесь описаны элементы пользовательского интерфейса Android уведомление о и рассматриваются API-Интерфейс связанные с созданием и отображает соответствующее уведомление. 
+В этом разделе объясняется, как реализовать локальных уведомлений в Xamarin.Android. Он описывает различные элементы пользовательского интерфейса уведомление Android и рассматриваются API-Интерфейс связанных с созданием и отображение уведомления. 
 
-### <a name="walkthrough---using-local-notifications-in-xamarinandroidlocal-notifications-walkthroughmd"></a>[Пошаговое руководство. Использование локальной уведомлений в Xamarin.Android](local-notifications-walkthrough.md)  
+### <a name="walkthrough---using-local-notifications-in-xamarinandroidlocal-notifications-walkthroughmd"></a>[Пошаговое руководство. Использование локальных уведомлений в Xamarin.Android](local-notifications-walkthrough.md)  
  
-В этом пошаговом руководстве описывается использование локального уведомления в приложении Xamarin.Android. Он демонстрирует основные принципы создания и публикации уведомления. При щелчке уведомление в ящике уведомления о запуске второго действия. 
+В этом пошаговом руководстве описывается использование локальных уведомлений в приложение Xamarin.Android. Он демонстрирует основные принципы создания и публикации уведомления. При щелчке уведомления на панели уведомлений о запуске второго действия. 
 
 
 ## <a name="for-further-reading"></a>Дополнительные сведения
 
-[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) &ndash; Firebase облака обмена сообщениями (FCM) — это служба, облегчает обмен сообщениями между мобильных приложений и серверных приложений. Firebase Cloud Messaging используется для реализации удаленного уведомлений (также называемые push-уведомлений) в приложениях Xamarin.Android.
+[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) &ndash; Firebase Cloud Messaging (FCM) — это служба, которая облегчает обмен сообщениями между мобильные приложения и серверные приложения. Firebase Cloud Messaging можно использовать для реализации удаленных уведомлений (также называемые Push-уведомления) в приложениях Xamarin.Android.
 
-[Уведомления о](http://developer.android.com/guide/topics/ui/notifiers/notifications.html) &ndash; раздел эта разработчиков под Android является полным руководством для уведомлений Android. Он включает конструктора особенности раздел, который помогает разрабатывать уведомления так, чтобы они соответствовали требованиям Android пользовательского интерфейса. Он предоставляет дополнительные сведения о навигации preserviing при запуске действия, а также описание способа отображения хода выполнения в уведомлений и управления воспроизведение мультимедиа на экране блокировки. 
+[Уведомления](http://developer.android.com/guide/topics/ui/notifiers/notifications.html) &ndash; разделе This разработчика Android — полное руководство для уведомлений Android. Она включает рекомендации раздел, который поможет вам разработать уведомлений, таким образом, чтобы они соответствуют рекомендациям Android пользовательского интерфейса для макета. Предоставляет дополнительные сведения о навигации preserviing, при запуске действия, и здесь объясняется, как отображение хода выполнения в уведомлений и управления воспроизведением мультимедиа на экране блокировки. 
 
-[NotificationListenerService](https://developer.xamarin.com/api/type/Android.Service.Notification.NotificationListenerService/) &ndash; Android эта служба позволяет приложению прослушивать (и взаимодействовать с) учтены все уведомления на устройстве Android, а не только уведомления, которые ваше приложение будет зарегистрировано для получения. Обратите внимание, что пользователю необходимо явно предоставить разрешения для приложения для того, чтобы иметь возможность прослушивать уведомления на устройстве.
+[NotificationListenerService](https://developer.xamarin.com/api/type/Android.Service.Notification.NotificationListenerService/) &ndash; Android эта служба делает возможным для вашего приложения на прослушивание (и взаимодействовать с) учтены все уведомления на устройстве Android, а не только уведомления, которые ваше приложение будет зарегистрировано для получения. Обратите внимание на то, что пользователю необходимо явно предоставить разрешения приложению для того, чтобы иметь возможность прослушивать уведомления на устройстве.
 
 
 
@@ -46,5 +46,5 @@ ms.locfileid: "30762367"
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Локальный уведомления (пример)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
-- [Удаленный уведомления (пример)](https://developer.xamarin.com/samples/monodroid/RemoteNotifications/)
+- [Локальные уведомления (пример)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
+- [Удаленные уведомления (пример)](https://developer.xamarin.com/samples/monodroid/RemoteNotifications/)

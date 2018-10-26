@@ -4,19 +4,19 @@ description: Узнайте, как создать SkiaSharp точечные р
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: c8ddf8c0829cea319dd93dd9c3686b94ed8eb89e
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: acdee7d34f913b125887f021dab39220c9560191
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615594"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109241"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>Создание и рисования в SkiaSharp точечных рисунков
 
-Вы видели, как приложение может загрузить растровые изображения из Интернета, ресурсы приложения и библиотеке фотографий пользователя. Можно также создать новые растровые изображения в вашем приложении. Самый простой подход включает в себя один из конструкторов [ `SKBitmap` ](https://developer.xamarin.com/api/constructor/SkiaSharp.SKBitmap.SKBitmap/p/System.Int32/System.Int32/System.Boolean/):
+Вы видели, как приложение может загрузить растровые изображения из Интернета, ресурсы приложения и библиотеке фотографий пользователя. Можно также создать новые растровые изображения в вашем приложении. Самый простой подход включает в себя один из конструкторов [ `SKBitmap` ](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)):
 
 ```csharp
 SKBitmap bitmap = new SKBitmap(width, height);
@@ -37,7 +37,7 @@ SKBitmap bitmap = new SKBitmap(width, height);
 
 ## <a name="drawing-on-the-bitmap"></a>Рисование изображения на точечный рисунок
 
-Рисование на поверхности растрового изображения является таким же, как рисование на дисплей. Чтобы нарисовать на дисплей, необходимо получить `SKCanvas` объекта из `PaintSurface` аргументы события. Можно рисовать точечный рисунок, создав `SKCanvas` с помощью [ `SKCanvas` ](https://developer.xamarin.com/api/constructor/SkiaSharp.SKCanvas.SKCanvas/p/SkiaSharp.SKBitmap/) конструктор:
+Рисование на поверхности растрового изображения является таким же, как рисование на дисплей. Чтобы нарисовать на дисплей, необходимо получить `SKCanvas` объекта из `PaintSurface` аргументы события. Можно рисовать точечный рисунок, создав `SKCanvas` с помощью [ `SKCanvas` ](xref:SkiaSharp.SKCanvas.%23ctor(SkiaSharp.SKBitmap)) конструктор:
 
 ```csharp
 SKCanvas canvas = new SKCanvas(bitmap);
@@ -123,9 +123,9 @@ public partial class HelloBitmapPage : ContentPage
 
 `Clear` существует в двух разных версиях: 
 
-- [ `Clear` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Clear/p/SkiaSharp.SKColor/) Метод с `SKColor` параметра заменяет пикселы поверхность отображения пикселей этого цвета.
+- [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor)) Метод с `SKColor` параметра заменяет пикселы поверхность отображения пикселей этого цвета.
 
-- [ `Clear` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Clear()/) Метод без параметров заменяет пиксели с [ `SKColors.Empty` ](https://developer.xamarin.com/api/property/SkiaSharp.SKColors.Empty/) цвет, являющийся цветом, в которой все компоненты (красный, зеленый, синий и альфа) присваивается нулевое значение. Этот цвет иногда называют «прозрачный черный».
+- [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear) Метод без параметров заменяет пиксели с [ `SKColors.Empty` ](xref:SkiaSharp.SKColors.Empty) цвет, являющийся цветом, в которой все компоненты (красный, зеленый, синий и альфа) присваивается нулевое значение. Этот цвет иногда называют «прозрачный черный».
 
 Вызов `Clear` без аргументов на точечного инициализирует все растровое изображение полностью прозрачным. Обычно ничего впоследствии нарисован на растровое изображение будет непрозрачных или частично прозрачных.
 
@@ -151,7 +151,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 ## <a name="bitmap-color-types"></a>Цвет типов для точечных рисунков
 
-Самый простой `SKBitmap` конструктор позволяет задать ширину целое число пикселей и высоту для растрового изображения. Другие `SKBitmap` конструкторы являются более сложными. Эти конструкторы требуют аргументов два типа перечисления: [ `SKColorType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKColorType/) и [ `SKAlphaType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKAlphaType/). Другие конструкторы используют [ `SKImageInfo` ](https://developer.xamarin.com/api/type/SkiaSharp.SKImageInfo/) структуру, которая объединяет эту информацию.
+Самый простой `SKBitmap` конструктор позволяет задать ширину целое число пикселей и высоту для растрового изображения. Другие `SKBitmap` конструкторы являются более сложными. Эти конструкторы требуют аргументов два типа перечисления: [ `SKColorType` ](xref:SkiaSharp.SKColorType) и [ `SKAlphaType` ](xref:SkiaSharp.SKAlphaType). Другие конструкторы используют [ `SKImageInfo` ](xref:SkiaSharp.SKImageInfo) структуру, которая объединяет эту информацию.
 
 `SKColorType` Перечисление имеет 9 членов. Каждый из этих элементов описаны определенным способом хранения пиксели растрового изображения.
 
@@ -161,7 +161,7 @@ Color = new SKColor(0, 0, 0, 0)
 - `Argb4444` &mdash; Каждый пиксел занимает 16 бит, 4 каждой альфа, красного, зеленого и синего
 - `Rgba8888` &mdash; Каждый пиксель — 32 бита, 8 каждого для красный, зеленый, синий и альфа-канала
 - `Bgra8888` &mdash; Каждый пиксель — 32 бита, 8 каждый синий, зеленый, красный и альфа-канал
-- `Index8` &mdash; Каждый пиксел имеет 8 бит и представляет индекс в [`SKColorTable`](https://developer.xamarin.com/api/type/SkiaSharp.SKColorTable/)
+- `Index8` &mdash; Каждый пиксел имеет 8 бит и представляет индекс в [`SKColorTable`](xref:SkiaSharp.SKColorTable)
 - `Gray8` &mdash; Каждый пиксел имеет 8 бит, представляющий оттенком серого от черного к белому
 - `RgbaF16` &mdash; Каждый пиксел имеет 64 бита, с помощью красного, зеленого, синего и альфа-канала в формате с плавающей запятой 16-разрядное
 
@@ -596,5 +596,5 @@ public partial class BitmapFlipperPage : ContentPage
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [API-интерфейсы SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [API-интерфейсы SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (пример)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

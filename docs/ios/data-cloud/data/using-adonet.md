@@ -4,15 +4,15 @@ description: В этом документе описывается, как ис�
 ms.prod: xamarin
 ms.assetid: 79078A4D-2D24-44F3-9543-B50418A7A000
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 83f6059c405b2156270f4359cbba33177861af02
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 9314e1b69df4a5965dfd045d0b4ca3e44f1b9de6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241242"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122300"
 ---
 # <a name="using-adonet-with-xamarinios"></a>С помощью ADO.NET с помощью Xamarin.iOS
 
@@ -22,11 +22,11 @@ Xamarin имеет встроенную поддержку базу данных
 
 Использование SQLite с помощью ADO.NET, необходимо добавить доступа `System.Data` и `Mono.Data.Sqlite` ссылки на проект iOS, как показано ниже (для примеров в Visual Studio для Mac и Visual Studio):
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
  ![](using-adonet-images/image4.png "Ссылки на сборки в Visual Studio для Mac")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
   ![](using-adonet-images/image6.png "Ссылки на сборки в Visual Studio")
 

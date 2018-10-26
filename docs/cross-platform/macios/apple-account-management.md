@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 4557d3b055e5c49842b9fdcff1dac9ee996e8bab
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.openlocfilehash: 1e353aceaf0e2c0525b82c0ccb7e7bcb73df3075
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986022"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106069"
 ---
 # <a name="apple-account-management"></a>Управление учетными записями Apple
 
@@ -44,7 +44,7 @@ ms.locfileid: "38986022"
 
 ## <a name="adding-an-apple-developer-account"></a>Добавление учетной записи разработчика Apple
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 1. Чтобы открыть диалоговое окно управления учетной записи перейдите к **Visual Studio > Параметры > учетная запись разработчика Apple**:
 
@@ -68,7 +68,7 @@ ms.locfileid: "38986022"
 
     ![Просмотр сведений о экран, отображающий на удостоверений подписывания и профили на вашем компьютере подготовки](apple-account-management-images/image6.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Прежде чем добавлять свой идентификатор Apple ID для Visual Studio 2017, убедитесь, что среда разработки является [пару к узлу сборки Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
@@ -109,11 +109,11 @@ ms.locfileid: "38986022"
 
 Если один из вариантов в раскрывающемся списке серым и не выбран, это означает, что у вас нет разрешения соответствующей команде разработчиков для создания такого типа.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ![создать параметры сертификата](apple-account-management-images/image8.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![создать параметры сертификата](apple-account-management-images/prov3.png)
 
@@ -123,11 +123,11 @@ ms.locfileid: "38986022"
 
 Сведения о диалоговом окне группы также отображает список всех профилей подготовки, подключенных к вашей учетной записи разработчика. Все профили подготовки можно загрузить на локальный компьютер, нажав клавишу **загрузить все профили** кнопки
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ![Скачайте подготовки профили](apple-account-management-images/image9.png)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Скачайте подготовки профили](apple-account-management-images/prov4.png)
 

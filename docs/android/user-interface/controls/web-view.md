@@ -3,19 +3,20 @@ title: Веб-представление
 ms.prod: xamarin
 ms.assetid: 807F214A-166D-B342-0BBA-525517577F6B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 8d7b0e1abc8eb11bf812a111764b9cccfb41e041
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: ae0b67de5856e6baef9a4989a93e65ead2854a62
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241179"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110086"
 ---
 # <a name="web-view"></a>Веб-представление
 
-[`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) можно создать собственные окно просмотра веб-страниц (или даже разрабатывать полный браузера). В этом руководстве вы создадите простой [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/) , можно просматривать и веб-страницы.
+[`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) можно создать собственные окно просмотра веб-страниц (или даже разрабатывать полный браузера). В этом руководстве вы создадите простой [`Activity`](https://developer.xamarin.com/api/type/Android.App.Activity/)
+можно просматривать и веб-страницы.
 
 Создайте новый проект с именем **HelloWebView**.
 
@@ -74,7 +75,8 @@ public class HelloWebViewClient : WebViewClient
 }
 ```
 
-Затем используйте следующий код для [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle)) метод:
+Затем используйте следующий код для [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
+метод:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -118,7 +120,8 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 }
 ```
 
-Это [ `OnKeyDown(int, KeyEvent)` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnKeyDown/(Android.Views.Keycode%2cAndroid.Views.KeyEvent)) метод обратного вызова будет вызываться при каждом нажатии кнопки во время выполнения действия. Условие в использует [ `KeyEvent` ](https://developer.xamarin.com/api/type/Android.Views.KeyEvent/) проверяемый ли нажата клавиша является **ОБРАТНО** кнопку и был ли [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) способен фактически Переход назад (если он имеет журнал). Если выполняются оба условия, а затем [ `GoBack()` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.GoBack/) вызывается метод, которому будет перемещаться назад на одну этапом [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) журнал. Возвращение `true` указывает, что событие было обработано. Если это условие не соблюдено, это событие отправляется обратно в систему.
+Этот [`OnKeyDown(int, KeyEvent)`](https://developer.xamarin.com/api/member/Android.App.Activity.OnKeyDown/(Android.Views.Keycode%2cAndroid.Views.KeyEvent))
+метод обратного вызова будет вызываться при каждом нажатии кнопки во время выполнения действия. Условие в использует [ `KeyEvent` ](https://developer.xamarin.com/api/type/Android.Views.KeyEvent/) проверяемый ли нажата клавиша является **ОБРАТНО** кнопку и был ли [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) способен фактически Переход назад (если он имеет журнал). Если выполняются оба условия, а затем [ `GoBack()` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.GoBack/) вызывается метод, которому будет перемещаться назад на одну этапом [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) журнал. Возвращение `true` указывает, что событие было обработано. Если это условие не соблюдено, это событие отправляется обратно в систему.
 
 Снова запустите приложение. Теперь можно переходить по ссылкам, а также переходить журнала страниц:
 

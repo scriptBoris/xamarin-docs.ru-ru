@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6C3082FB-C3F1-4661-BE45-64570E56DE7C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: 366308774a7302e54b0d47753256638e89d97b82
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: bf135755f64e4d17db2c187d58572c525dfee559
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350986"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117412"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>Можно добавить файлы или удалить файлы из файла IPA-ФАЙЛ после его сборки в Visual Studio?
 

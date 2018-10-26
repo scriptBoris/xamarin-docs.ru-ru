@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 86de2ad6009365b3debbe1a2310651002b023219
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 13730dce5d4698085abe10cb93da5ba50b87ab01
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995571"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106433"
 ---
 # <a name="binding-from-a-xamarinforms-controltemplate"></a>Привязка из шаблона Xamarin.Forms ControlTemplate
 
@@ -156,13 +156,24 @@ public class HomePageCS : ContentPage
 }
 ```
 
+Можно также привязать к свойствам модели представления непосредственно, таким образом, чтобы не нужно объявлять `BindableProperty`s для `HeaderText` и `FooterText` на `ContentPage`, путем привязки шаблона элемента управления к Parent.BindingContext. _PropertyName_ например:
+
+```xaml
+<ControlTemplate x:Key="TealTemplate">
+  <Grid>
+    ...
+    <Label Text="{TemplateBinding Parent.BindingContext.HeaderText}" ... />
+    ...
+    <Label Text="{TemplateBinding Parent.BindingContext.FooterText}" ... />
+  </Grid>
+</ControlTemplate>
+```
+
 Дополнительные сведения о привязке данных к ViewModels см. в разделе [из привязки данных до MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
 ## <a name="summary"></a>Сводка
 
 В этой статье демонстрируется использование привязки шаблонов для выполнения привязки данных на основе шаблона элемента управления. Привязки шаблонов позволяют привязать элементы управления в шаблоне элемента управления к данным общим свойствам, включение значения свойств для элементов управления в шаблоне элемента управления, чтобы легко изменить.
-
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

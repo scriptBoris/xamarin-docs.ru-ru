@@ -1,47 +1,47 @@
 ---
-title: watchOS элементы управления изображением в Xamarin
-description: В этом документе описывается использование элементов управления image в приложении watchOS, созданных с помощью Xamarin. В нем описывается элемент управления WKInterfaceImage, SetImage-метод, добавление изображений в расширении watch, анимации и многое другое.
+title: watchOS элементов управления Image в Xamarin
+description: В этом документе описывается использование элементов управления image в приложении watchOS, созданных с помощью Xamarin. В нем описывается элемент WKInterfaceImage setimage-метод, добавление изображений к расширение просмотра, анимации и многое другое.
 ms.prod: xamarin
 ms.assetid: B741C207-3427-46F3-9C90-A52BF8933FA4
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: eb58c587f737a5991a21f0efe9964353a8ab0399
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a9e23f1bfa6099c64a0a60d78ecc3c6283a86a96
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791255"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108097"
 ---
-# <a name="watchos-image-controls-in-xamarin"></a>watchOS элементы управления изображением в Xamarin
+# <a name="watchos-image-controls-in-xamarin"></a>watchOS элементов управления Image в Xamarin
 
-предоставляет watchOS [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) управления для отображения изображений и простых анимаций. Некоторые элементы управления могут также иметь фоновое изображение (например, кнопки, группы и контроллеры интерфейс).
+предоставляет watchOS [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) управления для отображения изображений и простой анимации. Некоторые элементы управления могут также иметь фонового изображения (например, кнопки, группы и контроллеры интерфейса).
 
-![](image-images/image-walkway.png "Рисунок отображение Apple Watch") ![](image-images/image-animation.png "Apple Watch с простая анимация")
+![](image-images/image-walkway.png "Apple Watch отображение рисунка") ![ ] (image-images/image-animation.png "Apple Watch с простой анимации")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
-Добавление изображений в комплект средств для наблюдения за приложениями с помощью средства каталога изображений.
-Только **@2x** версии являются обязательными, так как все смотреть отображает Сетчатка устройства.
+Используйте образы каталог активов для добавления изображения Watch комплект приложений.
+Только **@2x** версии являются обязательными, так как все смотреть устройства имеют отображает Retina.
 
-![](image-images/asset-universal-sml.png "Требуется, только 2 версии x, поскольку все смотреть отображает Сетчатка устройства")
+![](image-images/asset-universal-sml.png "Только 2 x версии являются обязательными, так как все смотреть устройства имеют отображает Retina")
 
-Рекомендуется убедиться, что сами являются оптимальный размер отображения контрольных значений. *Избегайте* использование неправильного размера изображений (особенно большими) и масштабирования для их отображения на часах.
+Рекомендуется убедиться, что сами являются оптимальным размером область отображения контрольных значений. *Избегайте* с помощью неправильно размера изображения (особенно большими) и масштабирования, чтобы отобразить их в watch.
 
-Размеры комплект средств для наблюдения за (38 до 42 мм) в изображении каталога активов можно использовать для указания различных изображений для каждого размера экрана.
+Размеры Watch Kit (38 мм и 42 мм) в изображении каталога активов позволяет указать различные образы для каждого размера экрана.
 
-![](image-images/asset-watch-sml.png "Комплект средств для наблюдения за размеры 38 до 42 мм каталога образ ОС используется для указания различных изображений для каждого размера экрана")
+![](image-images/asset-watch-sml.png "Можно использовать размеры Watch Kit, 38 мм и 42 мм изображения каталог активов для указания различных изображений для каждого размера экрана")
 
 
 ## <a name="images-on-the-watch"></a>Образы в Watch
 
-Наиболее эффективный способ отображения изображений — *включить их в проект приложения Контрольное значение* и отобразить их с помощью `SetImage(string imageName)` метод.
+Наиболее эффективный способ отображения изображений — *включать их в проекте приложения watch* и отобразить их с помощью `SetImage(string imageName)` метод.
 
-Например [WatchKitCatalog](https://developer.xamarin.com/samples/WatchKitCatalog/) образец имеет ряд образы, добавленные в каталоге активов в проекте приложения контрольных значений:
+Например [WatchKitCatalog](https://developer.xamarin.com/samples/WatchKitCatalog/) пример имеет ряд образы, добавленные в каталог ресурсов в проекте приложения watch:
 
-![](image-images/asset-whale-sml.png "В образце WatchKitCatalog имеет ряд образы, добавленные в каталоге активов в проекте приложения Контрольное значение")
+![](image-images/asset-whale-sml.png "В примере WatchKitCatalog имеет ряд образы, добавленные в каталог ресурсов в проекте приложения watch")
 
-Они могут эффективно загружено и отображено на контрольные значения с помощью `SetImage` с параметром name строки:
+Их можно эффективно загружать и отображаются на контрольные значения с помощью `SetImage` с параметром имя строки:
 
 ```csharp
 myImageControl.SetImage("Whale");
@@ -50,23 +50,23 @@ myOtherImageControl.SetImage("Worry");
 
 ### <a name="background-images"></a>Фоновые изображения
 
-Тот же принцип применяется для `SetBackgroundImage (string imageName)` на `Button`, `Group`, и `InterfaceController` классы. Наилучшей производительности достигается путем сохранения изображений в само приложение контрольных значений.
+Эта же логика применяется для `SetBackgroundImage (string imageName)` на `Button`, `Group`, и `InterfaceController` классы. Наилучшей производительности достигается путем сохранения изображений в приложении для Apple watch сам.
 
 
-## <a name="images-in-the-watch-extension"></a>Образы в расширении Watch
+## <a name="images-in-the-watch-extension"></a>Образы в расширении контрольных значений
 
-Помимо загрузки изображения, хранимые в состав самого приложения Контрольные значения, можно отправить изображения из пакета расширения приложения контрольных значений для отображения (или может загружать изображения из удаленного расположения и отображать).
+В дополнение к загрузке изображений, которые хранятся в самом приложении Контрольные значения, вы можете отправлять образы из пакета расширения в приложении для Apple watch для отображения (или можно загрузить образы из удаленного расположения и отображать).
 
-Чтобы загрузить изображения из расширения Контрольные значения, создайте `UIImage` экземпляров, а затем вызвать `SetImage` с `UIImage` объекта.
+Чтобы загрузить изображения из расширения Контрольные значения, создайте `UIImage` экземпляров и затем вызвать `SetImage` с `UIImage` объекта.
 
-Например [WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/) образец содержит изображение с именем **Bumblebee** в проекте расширения контрольных значений:
+Например [WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/) пример содержит образ с именем **Bumblebee** в проекте расширения контрольных значений:
 
-![](image-images/asset-bumblebee-sml.png "Образец WatchKitCatalog содержит изображение с именем Bumblebee в проекте расширения Контрольное значение")
+![](image-images/asset-bumblebee-sml.png "В примере WatchKitCatalog имеется образ с именем Bumblebee в проекте расширения контрольных значений")
 
-В результате появляется следующий код:
+Следующий код приведет к:
 
-- изображения, загружаемая в память, и
-- отображается на часах.
+- изображение, загружаемая в память, и
+- отображается в watch.
 
 ```csharp
 using (var image = UIImage.FromBundle ("Bumblebee")) {
@@ -77,20 +77,20 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 
 ## <a name="animations"></a>Анимации
 
-Чтобы анимировать набор изображений, они должны начинаются с тем же префиксом и иметь числовой суффикс.
+Для анимации набор изображений, они должны начинаются с одинаковым префиксом и иметь числовой суффикс.
 
-[WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/) образец имеет несколько нумерованных изображений в проект приложения Контрольные значения с помощью **шины** префикс:
+[WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/) пример имеет ряд нумерованных образов в проекте приложения watch с **шины** префикс:
 
-![](image-images/asset-bus-animation-sml.png "В образце WatchKitCatalog имеет ряд нумерованной изображения в проекте приложения Контрольные значения с префиксом шины")
+![](image-images/asset-bus-animation-sml.png "В примере WatchKitCatalog имеется ряд нумерованных образов в проекте приложения watch с префиксом шины")
 
-Чтобы отобразить эти изображения в виде анимации, сначала загрузить образ с помощью `SetImage` с именем префикса, а затем вызовите метод `StartAnimating`:
+Для отображения этих изображений в качестве анимации, сначала загрузить образ с помощью `SetImage` с именем префикса и затем вызовите метод `StartAnimating`:
 
 ```csharp
 animatedImage.SetImage ("Bus");
 animatedImage.StartAnimating ();
 ```
 
-Вызовите `StopAnimating` для элемента управления изображения, чтобы остановить цикл анимации:
+Вызовите `StopAnimating` на изображение, чтобы остановить цикл анимации:
 
 ```csharp
 animatedImage.StopAnimating ();
@@ -102,11 +102,11 @@ animatedImage.StopAnimating ();
 ## <a name="appendix-caching-images-watchos-1"></a>Приложение: Кэширования изображений (watchOS 1)
 
 > [!IMPORTANT]
-> watchOS 3 приложения выполняются только на устройство. Следующие сведения являются watchOS 1 только для приложений.
+> приложения для watchOS 3 Запустите полностью на устройстве. Следующие сведения являются watchOS 1 только для приложений.
 
-Если приложение многократно использует изображение, которое хранится в расширении (или загрузки), можно кэшировать изображение в хранилище Контрольные значения, чтобы повысить производительность для последующих отображается.
+Если приложение многократно использует изображение, которое хранится в модуле (или загрузки), существует возможность кэшировать изображение в хранилище Контрольные значения, для повышения производительности для последующих отображается.
 
-Используйте `WKInterfaceDevice`s `AddCachedImage` способ передачи образа в часы, а затем используйте `SetImage` с параметром name изображение как строку для отображения:
+Используйте `WKInterfaceDevice`s `AddCachedImage` метод, чтобы передать образ в часы, а затем использовать `SetImage` с параметром имени образа как строку, чтобы отобразить ее:
 
 ```csharp
 var device = WKInterfaceDevice.CurrentDevice;
@@ -120,16 +120,16 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-Вы можете запрашивать содержимое кэша образов в коде с помощью `WKInterfaceDevice.CurrentDevice.WeakCachedImages`.
+Вы можете запросить содержимое в кэш образов в коде с помощью `WKInterfaceDevice.CurrentDevice.WeakCachedImages`.
 
 
 ### <a name="managing-the-cache"></a>Управление кэшем
 
-Кэш примерно 20 МБ. Он сохраняется после перезагрузки приложения и при ее заполнении вашей обязанностью является необходимость очистки файлов с помощью `RemoveCachedImage` или `RemoveAllCachedImages` методы `WKInterfaceDevice.CurrentDevice` объекта.
+Кэш размером около 20 МБ. Находится между перезагрузками приложения, и при ее заполнении отвечает для очистки файлов с помощью `RemoveCachedImage` или `RemoveAllCachedImages` методы `WKInterfaceDevice.CurrentDevice` объекта.
 
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [WatchKitCatalog (пример)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [Изображение doc Apple](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Images.html)
+- [Apple doc образа](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Images.html)

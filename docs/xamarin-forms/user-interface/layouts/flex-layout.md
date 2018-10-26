@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: a6c1b0a4e0df1c25f595ca4eb53079c74b84972e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 49a0d1dd67959c5949ebe500036b849180795660
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998587"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108747"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -66,7 +66,7 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) возможнос
 
 Три свойства `FlexLayout` отображаются в **SimpleStackPage.xaml** файла:
 
-- [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) Свойству присваивается значение [ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection) перечисления. Значение по умолчанию — `Row`. Свойству присвоено значение `Column` дочерние элементы из `FlexLayout` располагаются в одном столбце элементов.
+- [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) Свойству присваивается значение [ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection) перечисления. Значение по умолчанию — `Row`. Свойству присвоено значение `Column` дочерние элементы из `FlexLayout` располагаются в одном столбце элементов.
 
     Когда элементы на `FlexLayout` упорядочены в столбце, `FlexLayout` считается имеет вертикальный _основной оси_ и горизонтального _ось_.
 
@@ -486,7 +486,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 [![На странице эксперимента: Выравнивание содержимого](flex-layout-images/ExperimentAlignContent.png "на странице эксперимента: выравнивание содержимого")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
-В iOS screnshot обе строки, в верхней части; на снимке экрана Android они находятся в центре; и на снимке экрана универсальной платформы Windows они внизу. Строки также могут быть заданы различными способами:
+На снимке экрана iOS обе строки, в верхней части; на снимке экрана Android они находятся в центре; и на снимке экрана универсальной платформы Windows они внизу. Строки также могут быть заданы различными способами:
 
 [![На странице эксперимента: Выравнивание содержимого 2](flex-layout-images/ExperimentAlignContent2.png "на странице эксперимента: выравнивание содержимого 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
@@ -606,7 +606,7 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 [![Сжатия поэкспериментировать страницы](flex-layout-images/ShrinkExperiment.png "сжатия поэкспериментировать страницы")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
 
-На снимке экрана Android `Shrink` значение для второго `Label` имеет значение 0, а, `Label` отображается в его ширина. Кроме того, четвертый `Label` присваивается `Shrink` значение больше единицы, а ее сжатия. Показано, как на снимке экрана UWP `Label` элементов, получает `Shrink` значение 0, чтобы они могли отображаться в их полного размера, если это возможно.
+На снимке экрана Android `Shrink` значение для второго `Label` имеет значение 0 и что `Label` отображается в его ширина. Кроме того, четвертый `Label` присваивается `Shrink` значение больше единицы, а ее сжатия. Показано, как на снимке экрана UWP `Label` элементов, получает `Shrink` значение 0, чтобы они могли отображаться в их полного размера, если это возможно.
 
 Можно установить оба `Grow` и `Shrink` значения на случай, где размеры агрегатные дочерних иногда может быть меньше или иногда больше, чем размер `FlexLayout`.
 

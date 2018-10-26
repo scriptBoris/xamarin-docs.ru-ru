@@ -1,31 +1,31 @@
 ---
-title: Данные и облачным службам с помощью Xamarin.Android
-description: Руководства, в этом разделе изучить способы доступа к данным и использовать облачных служб.
+title: Данные и облачные службы с помощью Xamarin.Android
+description: Указания в этом разделе рассмотрен способ доступа к данным и сделать использование облачных служб.
 ms.prod: xamarin
 ms.assetid: 54D9D34B-D4FA-473B-BD11-75D3762920B0
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 216ee45df1d7d9e0d06c04b9677bc263929515c0
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 90db887ca63abe0cd33f9c1616df1d0a496465e9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436447"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121858"
 ---
 # <a name="data-and-cloud-services"></a>Данные и облачные службы
 
 ## <a name="data-and-cloud-services"></a>Данные и облачные службы
 
-Xamarin.Android приложений часто требуется доступ к данным (из любой локальной базы данных или из облака) и многие из этих приложений использовать веб-службы, реализовано с помощью разных технологий. Руководства, в этом разделе изучить способы доступа к данным и использовать облачных служб.
+Приложения Xamarin.Android часто требуется доступ к данным (либо в локальной базе данных или из облака) и многие из этих приложений использование веб-служб, реализуемых с помощью широкий спектр технологий. Указания в этом разделе рассмотрен способ доступа к данным и сделать использование облачных служб.
 
 ## <a name="data-accessandroiddata-clouddata-accessindexmd"></a>[Доступ к данным](~/android/data-cloud/data-access/index.md)
 
-В этом разделе рассматриваются доступ к данным в Xamarin.Android, с помощью SQLite как компонент database engine.
+В этом разделе рассматриваются доступ к данным в Xamarin.Android, используя в качестве ядра базы данных SQLite.
  
 ## <a name="google-messagingandroiddata-cloudgoogle-messagingindexmd"></a>[Обмен сообщениями Google](~/android/data-cloud/google-messaging/index.md)
 
-Компания Google предоставляет Firebase Cloud Messaging и предыдущих версий служб Google Cloud Messaging для обеспечения работы обмен сообщениями между мобильных приложений и серверных приложений. В этом разделе приводится обзор для каждой службы, предоставляемые пошаговое объяснение способа использования этих служб для реализации удаленного уведомлений (также называемые push-уведомлений) в приложениях Xamarin.Android.
+Компания Google предоставляет Firebase Cloud Messaging и предыдущих версий служб Google Cloud Messaging для обеспечения обмена сообщениями между мобильными приложениями и серверных приложений. Этот раздел содержит общие сведения для каждой службы, предоставляемые пошаговое объяснение способа использования этих служб для реализации удаленных уведомлений (также называемые Push-уведомления) в приложениях Xamarin.Android.
 
 

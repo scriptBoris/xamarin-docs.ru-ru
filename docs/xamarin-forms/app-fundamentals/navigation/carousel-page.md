@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: bce3a60f3647a537906cfa11fc1dcfcc6f5cf365
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 48c009b836ac109e0d54cd2fdb036c46e17c4387
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998615"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121507"
 ---
 # <a name="xamarinforms-carousel-page"></a>Карусель страницы Xamarin.Forms
 
@@ -22,7 +22,7 @@ _Xamarin.Forms CarouselPage — это страница, на которой п�
 
 Ниже показаны снимки экрана [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) на каждой платформе:
 
-![](carousel-page-images/thirdpage.png "Элемент Thid CarouselPage")
+![](carousel-page-images/thirdpage.png "CarouselPage третий элемент")
 
 Макет [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) идентичны для каждой платформы. Страницы можно переходить через прокручивая справа налево Переход вперед по коллекции и прокручивая слева направо переход назад по коллекции. На следующих снимках экрана показано на первую страницу в [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) экземпляр:
 
@@ -186,7 +186,7 @@ public MainPage ()
 }
 ```
 
-В следующем примере кода показан эквивалент [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) созданном на C#:
+В следующем примере кода показан эквивалент [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) в C#:
 
 ```csharp
 public class MainPageCS : CarouselPage

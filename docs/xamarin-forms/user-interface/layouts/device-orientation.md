@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 7f0e1c27f7d6a62dc43ac447c4f796d685a6cd91
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: a008b270d4ff670a03f18318186ca038c5c0348d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241215"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118881"
 ---
 # <a name="device-orientation"></a>Ориентации устройства
 
@@ -28,7 +28,7 @@ ms.locfileid: "39241215"
 
 В iOS, ориентации устройства настроена для приложений, использующих **Info.plist** файла. Этот файл будет содержать параметры ориентации для iPhone и iPod, а также параметры для iPad, если приложение включает его в качестве целевого объекта. Ниже приведены инструкции, относящиеся к интегрированной среды разработки. Используйте параметры интегрированной среды разработки в верхней части этого документа, чтобы выбрать, какие инструкции, вы бы хотели см. в разделе:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 В Visual Studio откройте проект iOS и откройте **Info.plist**. Файл откроется в панель конфигурации, начиная с вкладкой сведения о развертывании iPhone:
 
@@ -38,7 +38,7 @@ ms.locfileid: "39241215"
 
 ![Поддерживаемые ориентации устройства в Visual Studio](device-orientation-images/orientation-vs-ipad.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 В Visual Studio для Mac, откройте проект iOS и откройте **Info.plist**. В разделе **приложения** вкладке разделы будут доступны для Задание ориентации:
 

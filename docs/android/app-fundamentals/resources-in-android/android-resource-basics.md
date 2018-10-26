@@ -3,25 +3,25 @@ title: Основы ресурсов Android
 ms.prod: xamarin
 ms.assetid: ED32E7B5-D552-284B-6385-C3EDDCC30A4B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: 207644f5a5d3d346214ba090dcd450e55fde2657
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2673021fae2f0a0b45761bf4ed619c92fb826b13
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241322"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110138"
 ---
 # <a name="android-resource-basics"></a>Основы ресурсов Android
 
 Почти все приложения Android будут какую-либо ресурсы в них; как минимум они часто имеют макеты интерфейса пользователя в виде XML-файлов. При создании приложения Xamarin.Android, по умолчанию ресурсы настроены с помощью шаблона проекта Xamarin.Android:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Файлы ресурсов](android-resource-basics-images/01-resource-files-vs.png)
  
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ![Файлы ресурсов](android-resource-basics-images/01-resource-files-xs.png)
  
@@ -44,11 +44,11 @@ ms.locfileid: "39241322"
 
 Создание ресурсов является простым добавлением файлов в каталог для выбранного типа ресурса. Снимке экрана ниже показано, что строковые ресурсы для немецких языковых стандартов были добавлены в проект. Когда **Strings.xml** был добавлен в файл **действие при построении** было автоматически установлено на **AndroidResource** средствами Xamarin.Android:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Действие для Strings.xml присвоено AndroidResource сборки](android-resource-basics-images/02-build-action-vs.png)
  
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ![Действие для Strings.xml присвоено AndroidResource сборки](android-resource-basics-images/02-build-action-xs.png)
  

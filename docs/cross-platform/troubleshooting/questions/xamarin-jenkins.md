@@ -1,5 +1,5 @@
 ---
-title: Почему не поддерживает Jenkins с Xamarin
+title: Почему Jenkins не поддерживается корпорацией Майкрософт?
 description: Этот документ описывает на высоком уровне, Xamarin взаимодействия с системой непрерывной Интеграции Jenkins. Здесь также рассматриваются несколько распространенных проблем, которые возникают при работе с Jenkins.
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -7,14 +7,14 @@ ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 author: asb3993
 ms.author: amburns
 ms.date: 06/05/2018
-ms.openlocfilehash: 54947d04d6241120df4b3a0f60947ed5cc2b7ffd
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: c2e409b796d5ef2525079e02aafdd0c6e8db5d81
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351163"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113447"
 ---
-# <a name="why-isnt-jenkins-supported-by-xamarin"></a>Почему не поддерживает Jenkins с Xamarin
+# <a name="why-isnt-jenkins-supported-by-microsoft"></a>Почему Jenkins не поддерживается корпорацией Майкрософт?
 
 ## <a name="jenkins-support-explanation"></a>Описание поддержки Jenkins
 
