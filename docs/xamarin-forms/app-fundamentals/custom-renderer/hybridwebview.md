@@ -6,13 +6,13 @@ ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 4715685fdf417ba2d08f9ae3d36d6e691fa701fa
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.date: 10/19/2018
+ms.openlocfilehash: aa060bd16bc0220f6a6026106ff6c8d786daebc1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242463"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105042"
 ---
 # <a name="implementing-a-hybridwebview"></a>Реализация HybridWebView
 
@@ -328,7 +328,7 @@ namespace CustomRenderer.Droid
 {
     public class HybridWebViewRenderer : ViewRenderer<HybridWebView, Android.Webkit.WebView>
     {
-        const string JavaScriptFunction = "function invokeCSharpAction(data){jsBridge.invokeAction(data);}";
+        const string JavascriptFunction = "function invokeCSharpAction(data){jsBridge.invokeAction(data);}";
         Context _context;
 
         public HybridWebViewRenderer(Context context) : base(context)
@@ -344,6 +344,7 @@ namespace CustomRenderer.Droid
             {
                 var webView = new Android.Webkit.WebView(_context);
                 webView.Settings.JavaScriptEnabled = true;
+                webView.SetWebViewClient(new JavascriptWebViewClient($"javascript: {JavascriptFunction}"));
                 SetNativeControl(webView);
             }
             if (e.OldElement != null)
@@ -355,31 +356,42 @@ namespace CustomRenderer.Droid
             if (e.NewElement != null)
             {
                 Control.AddJavascriptInterface(new JSBridge(this), "jsBridge");
-                Control.LoadUrl(string.Format("file:///android_asset/Content/{0}", Element.Uri));
-                InjectJS(JavaScriptFunction);
-            }
-        }
-
-        void InjectJS(string script)
-        {
-            if (Control != null)
-            {
-                Control.LoadUrl(string.Format("javascript: {0}", script));
+                Control.LoadUrl($"file:///android_asset/Content/{Element.Uri}");
             }
         }
     }
 }
 ```
 
-`HybridWebViewRenderer` Класс загружает веб-страницы, указанной в `HybridWebView.Uri` свойство в машинном коде [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) элемента управления и `invokeCSharpAction` функцию JavaScript внедряется в веб-страницы, после загрузки веб-страницы с помощью `InjectJS` метод. Когда пользователь вводит свое имя и нажимает кнопку HTML `button` элемент, `invokeCSharpAction` выполняется функция JavaScript. Это достигается следующим образом:
+`HybridWebViewRenderer` Класс загружает веб-страницы, указанной в `HybridWebView.Uri` свойство в машинном коде [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) элемента управления и `invokeCSharpAction` функцию JavaScript внедряется в веб-страницы, после веб-страницы завершена загрузка, `OnPageFinished` в Переопределите `JavascriptWebViewClient` класса:
+
+```csharp
+public class JavascriptWebViewClient : WebViewClient
+{
+    string _javascript;
+
+    public JavascriptWebViewClient(string javascript)
+    {
+        _javascript = javascript;
+    }
+
+    public override void OnPageFinished(WebView view, string url)
+    {
+        base.OnPageFinished(view, url);
+        view.EvaluateJavascript(_javascript, null);
+    }
+}
+```
+
+Когда пользователь вводит свое имя и нажимает кнопку HTML `button` элемент, `invokeCSharpAction` выполняется функция JavaScript. Это достигается следующим образом:
 
 - При условии, что `Control` свойство `null`, выполняются следующие операции:
-  - Собственный [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) создается экземпляр, и включить JavaScript в элементе управления.
+  - Собственный [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) создается экземпляр, включить JavaScript в элементе управления и `JavascriptWebViewClient` экземпляра задается как реализация `WebViewClient`.
   - `SetNativeControl` Вызывается метод, чтобы назначить ссылку на собственный [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) управления `Control` свойство.
 - При условии, что пользовательское средство отрисовки присоединен к новому элементу Xamarin.Forms:
   - [ `WebView.AddJavascriptInterface` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.AddJavascriptInterface/p/Java.Lang.Object/System.String/) Метод вставляет новый `JSBridge` экземпляра в главном фрейме контекста JavaScript WebView, назовите его `jsBridge`. Это позволит методам в `JSBridge` класс должен быть предоставлен доступ из JavaScript.
   - [ `WebView.LoadUrl` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.LoadUrl/p/System.String/) Метод загружает HTML-файл, который задается параметром `HybridWebView.Uri` свойство. Код указывает, что файл сохранен в `Content` папку проекта.
-  - `InjectJS` Метод вызывается для вставки `invokeCSharpAction` функции JavaScript в веб-страницу.
+  - В `JavascriptWebViewClient` класс, `invokeCSharpAction` функцию JavaScript внедряется в веб-страницы, после завершения загрузки страницы.
 - При присоединении элемента для изменения:
   - Ресурсы освобождаются.
 
@@ -401,7 +413,8 @@ public class JSBridge : Java.Lang.Object
   {
     HybridWebViewRenderer hybridRenderer;
 
-    if (hybridWebViewRenderer != null && hybridWebViewRenderer.TryGetTarget (out hybridRenderer)) {
+    if (hybridWebViewRenderer != null && hybridWebViewRenderer.TryGetTarget (out hybridRenderer))
+    {
       hybridRenderer.Element.InvokeAction (data);
     }
   }
@@ -414,9 +427,6 @@ public class JSBridge : Java.Lang.Object
 > Проекты, использующие `[Export]` атрибут должен содержать ссылку на `Mono.Android.Export`, или приведет к ошибке компилятора.
 
 Обратите внимание, что `JSBridge` класс поддерживает `WeakReference` для `HybridWebViewRenderer` класса. Это позволяет избежать создания циклическую ссылку между двумя классами. Дополнительные сведения см. в разделе [слабые ссылки](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx) на сайте MSDN.
-
-> [!IMPORTANT]
-> В Android Oreo убедитесь, что манифест Android задает **целевая версия Android** для **автоматического**. В противном случае выполнение этого кода приведет к ошибка «invokeCSharpAction не определено сообщение».
 
 ### <a name="creating-the-custom-renderer-on-uwp"></a>Создание пользовательского средства визуализации на UWP
 

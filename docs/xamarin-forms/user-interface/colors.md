@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 1017f108d6808155cac84e98a811a30d09afa134
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.openlocfilehash: a7acb300dbbd6daa02eace955066d3227834cf67
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986087"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103079"
 ---
 # <a name="colors-in-xamarinforms"></a>Цвета в Xamarin.Forms
 
@@ -53,7 +53,7 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 Используйте `Default` для установки (или повторной установки) значение цвета по умолчанию платформы (понимание, что это относится к другой базовый цвет на каждой платформе, для каждого свойства).
 
-Разработчики могут использовать это значение, чтобы задать `Color` свойство, но должен **не** запрос данного экземпляра для его компонент значения RGB (они все готово к -1).
+Разработчики могут использовать это значение, чтобы задать `Color` свойство, но должен **не** запрос данного экземпляра для его значения RGB компонента (они все готово к -1).
 
 ## <a name="colortransparent"></a>Color.Transparent
 

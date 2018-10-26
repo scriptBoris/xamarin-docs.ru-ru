@@ -1,31 +1,31 @@
 ---
-title: Приступая к работе с Android износ
-description: Руководства в этом разделе вводит Android носят, описывается установка и настройка компьютера для разработки Износ и шаги, необходимые для создания и запуска первого приложения Android с.
+title: Начало работы с Android Wear
+description: Указания в этом разделе вводят Android Wear, описывается установка и настройка компьютера для разработки износа и шаги, необходимые для создания и запустили свое первое приложение Android Wear.
 ms.prod: xamarin
 ms.assetid: 8B9DC98A-773F-4E06-84A7-BA8208C4E864
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 12/18/2017
-ms.openlocfilehash: a0b022225dd670ca6da09abbca6b3db75a55f38b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88259afe72715a0c369472b1a5c0609b56db8143
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763843"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102234"
 ---
-# <a name="getting-started-with-android-wear"></a>Приступая к работе с Android износ
+# <a name="get-started-with-android-wear"></a>Начало работы с Android Wear
 
-_Руководства в этом разделе вводит Android носят, описывается установка и настройка компьютера для разработки Износ и шаги, необходимые для создания и запуска первого приложения Android с._
+_Указания в этом разделе вводят Android Wear, описывается установка и настройка компьютера для разработки износа и шаги, необходимые для создания и запустили свое первое приложение Android Wear._
 
-## <a name="introduction-to-wearandroidwearget-startedintro-to-wearmd"></a>[Общие сведения о износ](~/android/wear/get-started/intro-to-wear.md)
+## <a name="introduction-to-wearandroidwearget-startedintro-to-wearmd"></a>[Общие сведения о Wear](~/android/wear/get-started/intro-to-wear.md)
 
-Предоставляет общий обзор Android носят, описывает ее основные компоненты, перечислены некоторые популярные устройства с Android и ссылки на важные Google Android носят документацию для дальнейшего изучения.
+Предоставляет общий обзор Android Wear, описывает ее основные компоненты, перечислены некоторые из наиболее популярных устройств Android Wear и ссылки на важную документацию по Google Android Wear для дальнейшего изучения.
 
 ## <a name="setup--installationandroidwearget-startedinstallationmd"></a>[Установка и настройка](~/android/wear/get-started/installation.md)
 
-Рассматриваются действия по установке и сведения о конфигурации, необходимые для подготовки компьютера и устройств для разработки с Android.
+Описаны действия по установке и сведения о конфигурации, необходимые для подготовки ваши компьютеры и устройства для разработки приложений Android Wear.
 
 ## <a name="hello-wearandroidwearget-startedhello-wearmd"></a>[Основные сведения о Wear](~/android/wear/get-started/hello-wear.md)
 
-Это пошаговое руководство содержит пошаговые инструкции по созданию небольшой проект Android носят, обрабатывает нажатие кнопки и отображает счетчика щелкните на устройстве одежды.
+В этом пошаговом руководстве содержатся пошаговые инструкции по созданию небольшой проект Android Wear, которая выполняет нажатия кнопок и отображает счетчик нажмите кнопку на устройстве Android Wear.

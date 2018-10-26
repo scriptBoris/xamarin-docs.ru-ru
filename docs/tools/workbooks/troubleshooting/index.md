@@ -3,15 +3,15 @@ title: Устранение неполадок Xamarin Workbooks
 description: Этот документ содержит ссылки на различные руководства, которые предоставляют сведения об устранении неполадок для работы с Xamarin Workbooks. Связанное содержимое рассматриваются общие известные проблемы, проблемы с Android workbooks и предоставляет ресурсы, связанные с поддержкой.
 ms.prod: xamarin
 ms.assetid: 1706EA2C-7A94-4E30-BD4D-A2F31070554F
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: d3815c8481db3bac6017a48bfd533409a308ad85
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: fcf6f443c86fd1ef0390669621d5c7b7fa748500
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350632"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102858"
 ---
 # <a name="troubleshooting-xamarin-workbooks"></a>Устранение неполадок Xamarin Workbooks
 

@@ -4,15 +4,15 @@ description: В этом документе описывается исполь�
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 08/31/2017
-ms.openlocfilehash: 4746de2f351e866fd72946b204f97e997c3e88c4
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 291cbdb93cfb6ac123d740e98065ba877bb44da5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350668"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104834"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Framework концепции в Xamarin.iOS
 

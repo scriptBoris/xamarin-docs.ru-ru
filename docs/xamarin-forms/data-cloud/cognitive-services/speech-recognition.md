@@ -1,39 +1,39 @@
 ---
-title: С помощью Microsoft Speech API распознавания речи
-description: API речи Microsoft является облачной API, который предоставляет алгоритмы обработки языка. В этой статье описывается использование REST API распознавания речи Microsoft для преобразования текста в приложении Xamarin.Forms аудио.
+title: Распознавание речи, используя API распознавания речи Microsoft
+description: Microsoft Speech API — это API на основе облака, который алгоритмы обработки устной. В этой статье объясняется, как с помощью REST API распознавания речи Microsoft преобразуйте звуковые данные в текст в приложении Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: c8eb991f67d54f9bacbb776b350cc5649a04ab2b
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 282ebe330a370e0dda3af54287107b380c85cd80
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846858"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50102819"
 ---
-# <a name="speech-recognition-using-the-microsoft-speech-api"></a>С помощью Microsoft Speech API распознавания речи
+# <a name="speech-recognition-using-the-microsoft-speech-api"></a>Распознавание речи, используя API распознавания речи Microsoft
 
-_API речи Microsoft является облачной API, который предоставляет алгоритмы обработки языка. В этой статье описывается использование REST API распознавания речи Microsoft для преобразования текста в приложении Xamarin.Forms аудио._
+_Microsoft Speech API — это API на основе облака, который алгоритмы обработки устной. В этой статье объясняется, как с помощью REST API распознавания речи Microsoft преобразуйте звуковые данные в текст в приложении Xamarin.Forms._
 
 ## <a name="overview"></a>Обзор
 
-API речи Microsoft состоит из двух компонентов:
+Microsoft Speech API состоит из двух компонентов:
 
-- Распознавание речи API для преобразования в текст произносимых слов. Распознавание речи может выполняться через API-Интерфейс REST, клиентская библиотека или библиотека службы.
+- API распознавания речи для преобразования речь в текст. Распознавания речи можно выполнять с помощью REST API, клиентской библиотеки или библиотека службы.
 - Преобразование текста в речь API для преобразования текста в речь. Преобразование текста в речь выполняется через REST API.
 
-Эта статья посвящена выполняет распознавание речи через REST API. Хотя библиотеки клиента и службы поддерживают возвращение частичные результаты, API-интерфейса REST может возвращать только один распознавания результат, не все частичные результаты.
+Эта статья посвящена выполняет распознавание речи с помощью REST API. Хотя библиотеки клиента и службы поддерживают, возвращая частичные результаты, REST API может возвращать только результат распознавания единый, не все частичные результаты.
 
-Необходимо получить ключ API для использования API Microsoft речи. Это можно сделать в [повторите служб Когнитивных](https://azure.microsoft.com/try/cognitive-services/).
+Необходимо получить ключ API для использования в API распознавания речи Microsoft. Это может быть получен из Azure [портала](https://portal.azure.com/). Дополнительные сведения см. в разделе [создать учетную запись Cognitive Services на портале Azure](/azure/cognitive-services/cognitive-services-apis-create-account).
 
-Дополнительные сведения о Microsoft Speech API см. в разделе [документации по API речи Microsoft](/azure/cognitive-services/speech/home/).
+Дополнительные сведения о Microsoft Speech API, см. в разделе [документации по API распознавания речи Microsoft](/azure/cognitive-services/speech/home/).
 
 ## <a name="authentication"></a>Проверка подлинности
 
-Каждый запрос к API-интерфейса REST Microsoft речи требуется маркер доступа JSON Web Token (JWT), который можно получить от службы маркеров когнитивных служб в `https://api.cognitive.microsoft.com/sts/v1.0/issueToken`. Маркер можно получить, выполнив запрос POST в службу маркера указание `Ocp-Apim-Subscription-Key` заголовок, содержащий ключ API, как его значение.
+Каждый запрос к REST API распознавания речи Microsoft требуется маркер доступа JSON Web Token (JWT), который можно получить от службы маркеров cognitive services в `https://api.cognitive.microsoft.com/sts/v1.0/issueToken`. Маркер можно получить, выполнив запрос POST к службе маркеров, указав `Ocp-Apim-Subscription-Key` заголовок, содержащий ключ API, как его значение.
 
 В следующем примере кода показано, как запросить доступ маркера от службы маркеров:
 
@@ -54,23 +54,23 @@ async Task<string> FetchTokenAsync(string fetchUri)
 }
 ```
 
-Маркер доступа, возвращаемый, являющийся текст в кодировке Base64, имеет время отключения 10 минут. Таким образом образец приложения обновляет токен доступа минутам 9.
+Токен возвращаемый доступа, представляющий собой текст в кодировке Base64, имеет время окончания срока действия 10 минут. Таким образом пример приложения обновляет токен доступа каждые 9 минут.
 
-Маркер доступа должен быть указан в каждой REST API Microsoft речи вызывать как `Authorization` префиксом со строкой заголовка `Bearer`, как показано в следующем примере кода:
+Маркер доступа должен быть указан в каждой Microsoft Speech REST API вызывать как `Authorization` префиксом со строкой заголовка `Bearer`, как показано в следующем примере кода:
 
 ```csharp
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
 ```
 
-Действительный маркер доступа передается API-интерфейса REST Microsoft речи приведет к ошибке ответов 403.
+Не удалось передать допустимый маркер доступа к REST API распознавания речи Microsoft приведет к ошибке с ответом 403.
 
 ## <a name="performing-speech-recognition"></a>Выполняет распознавание речи
 
-Распознавание речи достигается путем создания запроса POST для `recognition` API по `https://speech.platform.bing.com/speech/recognition/`. Один запрос не может содержать более 10 секунд аудио и длительность общего запроса не может превышать 14 секунд.
+Распознавание речи достигается путем отправки запроса POST к `recognition` API в `https://speech.platform.bing.com/speech/recognition/`. Один запрос не может содержать более 10 секунд аудио и длительность общее число запросов не может превышать 14 секунд.
 
-Звуковое содержимое должны находиться в тексте запроса в формате wav POST.
+Звукового содержимого должен быть помещен в тело запроса POST запроса в формате wav.
 
-В примере приложения `RecognizeSpeechAsync` метод вызывает процесс распознавания речи:
+В приложении-примере `RecognizeSpeechAsync` метод вызывает процесс распознавания речи:
 
 ```csharp
 public async Task<SpeechResult> RecognizeSpeechAsync(string filename)
@@ -92,11 +92,11 @@ public async Task<SpeechResult> RecognizeSpeechAsync(string filename)
 }
 ```
 
-В каждом проекте платформой как данные wav PCM, записи звука и `RecognizeSpeechAsync` использует метод `PCLStorage` пакет NuGet, чтобы открыть звуковой файл в виде потока. Созданный URI запроса распознавания речи и маркер доступа, извлекается из службы маркеров. Отправляется запрос распознавания речи `recognition` API, который возвращает ответ JSON, содержащий результат. Результат возвращается в вызывающий метод для отображения десериализуется ответ JSON.
+В каждом проекте платформы, как данные wav PCM, записи звука и `RecognizeSpeechAsync` использует метод `PCLStorage` пакет NuGet, чтобы открыть звуковой файл в виде потока. Созданный URI запроса распознавания речи и маркер доступа, извлекается из службы маркеров. Отправляется запрос распознавания речи `recognition` API, который возвращает ответ JSON, содержащий результат. В результате возвращается в вызывающий метод для отображения десериализуется ответ в формате JSON.
 
 ### <a name="configuring-speech-recognition"></a>Настройка распознавания речи
 
-Процесс распознавания речи может настраиваться путем указания параметров запроса HTTP:
+Процесс распознавания речи можно настроить путем указания параметров запроса HTTP:
 
 ```csharp
 string GenerateRequestUri(string speechEndpoint)
@@ -112,11 +112,11 @@ string GenerateRequestUri(string speechEndpoint)
 }
 ```
 
-Основной конфигурации, выполненные `GenerateRequestUri` метод заключается в установке языка звукового содержимого. Список поддерживаемых языков см. в разделе [поддерживаемые языки ](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/).
+Основные конфигурации, выполненной по `GenerateRequestUri` метод заключается в установке языкового стандарта звукового содержимого. Список поддерживаемых языков, см. в разделе [поддерживаемые языки ](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/).
 
-### <a name="sending-the-request"></a>Идет отправка запроса
+### <a name="sending-the-request"></a>Отправка запроса
 
-`SendRequestAsync` Метод выполняет запрос POST к REST API Microsoft речи и возвращает ответ:
+`SendRequestAsync` Метод выполняет запрос POST по REST API распознавания речи Microsoft и возвращает ответ:
 
 ```csharp
 async Task<string> SendRequestAsync(Stream fileStream, string url, string bearerToken, string contentType)
@@ -134,19 +134,19 @@ async Task<string> SendRequestAsync(Stream fileStream, string url, string bearer
 }
 ```
 
-Этот метод создает запрос POST по:
+Этот метод формирует запрос POST по:
 
-- Перенос аудиопотока в `StreamContent` экземпляр, который предоставляет содержимое HTTP на основе потока.
+- Упаковки звукового потока в `StreamContent` экземпляр, который предоставляет содержимое HTTP на основе потока.
 - Установка `Content-Type` заголовок запроса на `audio/wav; codec="audio/pcm"; samplerate=16000`.
-- Добавление маркера доступа для `Authorization` префиксом со строкой заголовка `Bearer`.
+- Добавление маркера доступа для `Authorization` заголовка с префиксом строкой `Bearer`.
 
 Затем отправляется запрос POST `recognition` API. Ответ считывается и возвращается вызывающему методу.
 
-`recognition` API отправит код состояния HTTP 200 (ОК) в ответе, что запрос допустим, указывающая, что запрос выполнен успешно, и что запрашиваемые данные находятся в ответе. Список возможных ошибках см. в разделе [Устранение неполадок](/azure/cognitive-services/speech/troubleshooting).
+`recognition` API отправит код состояния HTTP 200 (ОК) в ответе, при условии, что запрос является допустимым, который указывает, что запрос успешно выполнен, и что запрашиваемые данные находятся в ответе. Список возможные сообщения об ошибках, см. в разделе [Устранение неполадок](/azure/cognitive-services/speech/troubleshooting).
 
 ### <a name="processing-the-response"></a>Обработка ответа
 
-API ответ возвращается в формате JSON, содержащего распознанный текст содержащийся в `name` тег. Приведенные ниже данные JSON показано сообщение обычно успешный ответ:
+В ответе API возвращаются в формате JSON с распознанный текст, включены в `name` тега. Следующие данные JSON показывает типичный успешный ответ сообщение:
 
 ```json
 {  
@@ -157,16 +157,16 @@ API ответ возвращается в формате JSON, содержащ
 }
 ```
 
-В примере приложения, ответ JSON десериализуется в `SpeechResult` экземпляра, результат возвращается в вызывающий метод для отображения, как показано на следующем снимке экрана:
+В примере приложения, ответ JSON десериализуются в `SpeechResult` экземпляра, в результате возвращается в вызывающий метод для отображения, как показано на следующем снимке экрана:
 
 ![](speech-recognition-images/speech-recognition.png "Распознавание речи")
 
 ## <a name="summary"></a>Сводка
 
-В этой статье описано, как использовать API-интерфейса REST Microsoft речи для преобразования текста в приложении Xamarin.Forms аудио. Помимо выполнения распознавания речи, Microsoft Speech API также можно преобразовывать текста в речь.
+В этой статье описано, как с помощью REST API распознавания речи Microsoft преобразуйте звуковые данные в текст в приложении Xamarin.Forms. Помимо выполнения распознавания речи, API распознавания речи Microsoft также можно преобразовать текст в речь.
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Документация Microsoft Speech API](/azure/cognitive-services/speech/home/).
-- [Использование веб-службы RESTful](~/xamarin-forms/data-cloud/consuming/rest.md)
-- [TODO Когнитивных службы (пример)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [Документация по API распознавания речи Microsoft](/azure/cognitive-services/speech/home/).
+- [Использование веб-службу RESTful](~/xamarin-forms/data-cloud/consuming/rest.md)
+- [Cognitive Services TODO (пример)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)

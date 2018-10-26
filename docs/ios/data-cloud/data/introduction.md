@@ -4,15 +4,15 @@ description: В этом документе описываются различ�
 ms.prod: xamarin
 ms.assetid: B1994468-FD06-4FD9-96B3-FCEBB13A972A
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: c5324d7e7daa8fbefde1776743dbdc595463fe33
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 06fd77293302a3d6d5d44def9d0a83e3f1a57ede
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241153"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104626"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Введение в хранилище данных в приложениях Xamarin.iOS
 

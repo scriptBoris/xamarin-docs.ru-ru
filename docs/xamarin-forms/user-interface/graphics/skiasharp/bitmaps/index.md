@@ -4,15 +4,15 @@ description: Узнайте, как загрузить, сохранить, от
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 70C19370-157A-4B1B-9532-F77E32AC21BC
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 1e3a364e90cf2c0e60058793a6ef51c8442423f3
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 22e03038c28f1f202fbb713d472e2da9955404d5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615493"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103781"
 ---
 # <a name="skiasharp-bitmaps"></a>Точечные рисунки SkiaSharp
 
