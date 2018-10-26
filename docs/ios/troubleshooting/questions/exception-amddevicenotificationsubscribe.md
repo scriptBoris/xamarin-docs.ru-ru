@@ -1,28 +1,28 @@
 ---
-title: Возвращаемый System.Exception AMDeviceNotificationSubscribe...
+title: System.Exception AMDeviceNotificationSubscribe вернул...
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7E4ACC7E-F4FB-46C1-8837-C7FBAAFB2DC7
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 257e0c14de3c23825b6abe6601c25438db81c58e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4fb0712366422e8810a2db60d40c3b85d9f4cd82
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30776486"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119258"
 ---
-# <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>Возвращаемый System.Exception AMDeviceNotificationSubscribe...
+# <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>System.Exception AMDeviceNotificationSubscribe вернул...
 
 > [!IMPORTANT]
-> Эта проблема устранена в последних версиях Xamarin. Тем не менее, если эта проблема возникает на последнюю версию программного обеспечения, проверьте файл [новую ошибку](~/cross-platform/troubleshooting/questions/howto-file-bug.md) с помощью полное управление версиями сведения и полный создать выходные данные журнала.
+> Эта проблема устранена в последних версиях Xamarin. Тем не менее, если эта проблема возникает на последнюю версию программного обеспечения, отправьте [новую ошибку](~/cross-platform/troubleshooting/questions/howto-file-bug.md) благодаря полное управление версиями сведения и полный создавать выходные данные журнала.
 
 
 ## <a name="fix"></a>Исправление
 
-1.  KILL `usbmuxd` обработки, чтобы при перезагрузке системы:
+1.  KILL `usbmuxd` обработки, чтобы его перезагрузке системы:
 
     ```csharp
     sudo killall -QUIT usbmuxd
@@ -42,13 +42,13 @@ AMDeviceNotificationSubscribe returned: 3892314211
   at Mtb.Application.MainClass.Main (System.String[] args) [0x00000] in <filename unknown="">:0
 ```
 
-Это сообщение может появиться в окно сообщения об ошибке при первом запуске Visual Studio для Mac или в `mtbserver.log` файл в приложении узла построения Xamarin.iOS (**узла построения Xamarin.iOS > журнала узла построить представление**).
+Это сообщение может появиться в окно сообщения об ошибке при первом запуске Visual Studio для Mac или в `mtbserver.log` файл в приложение Xamarin.iOS Build Host (**Xamarin.iOS Build Host > View Build Log узла**).
 
-Обратите внимание, что возникла проблема редко. Если Visual Studio удается подключиться к узлу построения Mac, есть другие ошибки, которые, скорее всего, появятся в `mtbserver.log` файла.
+Обратите внимание, что это ошибка редко. Если Visual Studio не удается подключиться к узлу сборки Mac, существуют другие ошибки, которые чаще всего, появятся в `mtbserver.log` файл.
 
-### <a name="errors-in-systemlog"></a>Ошибки в вышеперечисленные
+### <a name="errors-in-systemlog"></a>Ошибки в system.log
 
-В следующих двух случаях ошибка сообщений может также появиться несколько раз в `/var/log/system.log`:
+В некоторых случаях следующие две ошибки сообщения может также появиться несколько раз в `/var/log/system.log`:
 
 ```csharp
 17:17:11.369 usbmuxd[55040]: dnssd_clientstub ConnectToServer: socket failed 24 Too many open files
@@ -57,10 +57,10 @@ AMDeviceNotificationSubscribe returned: 3892314211
 
 ## <a name="additional-information"></a>Дополнительные сведения
 
-Предположение первопричину ошибки, один том, что в OS X, системных служб, ответственный за reporting сведения об устройстве и симулятора iOS можно в редких случаях вводить непредвиденном состоянии. Xamarin не может правильно взаимодействовать с системные службы в этом состоянии. Перезагрузка компьютера перезапускает службы системы и позволяет решить проблему.
+Предположение первопричину ошибки, один том, что в OS X, системные службы ответственность для передачи сведений о устройств и симуляторов iOS можно в редких случаях вводить непредвиденном состоянии. Xamarin не может правильно взаимодействовать с системных служб в этом состоянии. Перезагрузка компьютера перезапускает системных служб и устранены.
 
-В зависимости от ошибки из `system.log` впечатление, что эта проблема может быть связана с Bonjour (`mDNSResponder`). Смена различные сети Wi-Fi кажется повысить вероятность попадания в проблему.
+В зависимости от ошибки, возникшие при `system.log` оказывается, что эта проблема может быть связана с Bonjour (`mDNSResponder`). Смена различные сети Wi-Fi кажется повышают вероятность попадания в проблему.
 
 ## <a name="references"></a>Ссылки
 
-*   [Ошибка 11789 - MonoTouch.MobileDevice.MobileDeviceException: Возвращается AMDeviceNotificationSubscribe: 0xe8000063 [NORESPONSE разрешить]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)
+*   [Ошибка 11789 - MonoTouch.MobileDevice.MobileDeviceException: AMDeviceNotificationSubscribe вернул: 0xe8000063 [разрешить NORESPONSE]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)

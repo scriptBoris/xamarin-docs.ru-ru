@@ -4,15 +4,15 @@ description: В этом разделе показано, как реализо�
 ms.prod: xamarin
 ms.assetid: 5BB76915-5DB0-48C7-A267-FA9F7C50793E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: ef5ce97736e60ff3a03bc0d496eadcae8c6f7e61
-ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
+ms.openlocfilehash: f31490a683adfb46c609f14adf08b68de0abc375
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39038538"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106654"
 ---
 # <a name="notifications-in-xamarinios"></a>Уведомлений в Xamarin.iOS
 

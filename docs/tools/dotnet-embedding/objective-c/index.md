@@ -1,19 +1,19 @@
 ---
-title: Поддержка Objective c.
-description: Этот документ содержит описание поддержки для Objective-C в внедрения .NET. Он описывает автоматический подсчет ссылок, NSString, протоколов, NSObject протокола, исключения и многое другое.
+title: Поддержка Objective-C
+description: Этот документ содержит описание поддержки для Objective-C в внедрение .NET. В нем описывается автоматический подсчет ссылок, NSString, протоколы, NSObject протокола, исключения и многое другое.
 ms.prod: xamarin
 ms.assetid: 3367A4A4-EC88-4B75-96D0-51B1FCBCE614
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 11/14/2017
-ms.openlocfilehash: 95604133293f0fb2fe9b651fd7cb6b18f3994c84
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 48caa70cf2bd408f8afc673b400f7d5a4369e108
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793866"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110730"
 ---
-# <a name="objective-c-support"></a>Поддержка Objective c.
+# <a name="objective-c-support"></a>Поддержка Objective-C
 
 ## <a name="specific-features"></a>Отдельные функции
 
@@ -21,31 +21,31 @@ ms.locfileid: "34793866"
 
 ### <a name="automatic-reference-counting"></a>Подсчет автоматических ссылок
 
-Использование из автоматического подсчета ссылок (Окружности) — это **необходимые** для вызова созданных привязок. С помощью библиотеки .NET внедрения зависимости проекта должны быть скомпилированы с `-fobjc-arc`.
+Использование из автоматического подсчета ссылок (ДУГА) является **требуется** для вызова созданных привязки. Проект, используя библиотеку основе внедрение .NET должен быть скомпилирован с `-fobjc-arc`.
 
 ### <a name="nsstring-support"></a>Поддержка NSString
 
-Интерфейсы API, которые предоставляют `System.String` типы преобразуются в `NSString`. Это упрощает управление памятью при работе с `char*`.
+API-интерфейсы, которые предоставляют `System.String` типы преобразуются в `NSString`. Это делает управление памятью проще, чем при работе с `char*`.
 
 ### <a name="protocols-support"></a>Поддержка протоколов
 
-Управляемые интерфейсы, преобразуются в протоколы Objective-C, где все члены являются `@required`.
+Управляемые интерфейсы преобразуются в протоколы Objective-C, где все члены являются `@required`.
 
 ### <a name="nsobject-protocol-support"></a>Поддержка протокола NSObject
 
-По умолчанию по умолчанию хэширования и равенства .NET и среды выполнения C цель считаются взаимозаменяемыми, как они имеют похожую семантику.
+По умолчанию по умолчанию хеширования и равенства .NET и среде выполнения Objective-c. предполагается, что быть взаимозаменяемыми, так как они имеют похожую семантику.
 
-Когда управляемый тип переопределяет `Equals(Object)` или `GetHashCode`, обычно это значит, что поведение по умолчанию (.NET) недостаточно; это означает, что поведение по умолчанию Objective-C, вероятнее всего недостаточно либо.
+Когда управляемый тип переопределяет `Equals(Object)` или `GetHashCode`, обычно это значит, что поведение по умолчанию (.NET) не было достаточно; это означает, что по умолчанию Objective-C, вероятно, не достаточно либо.
 
-В таких случаях переопределяет генератор [ `isEqual:` ](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418795-isequal?language=objc) метод и [ `hash` ](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418859-hash?language=objc) свойство, определенное в [ `NSObject` протокола](https://developer.apple.com/reference/objectivec/1418956-nsobject?language=objc). Это позволяет пользовательская реализация управляемого для использования из кода Objective-C прозрачно.
+В таком случае переопределяет генератор [ `isEqual:` ](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418795-isequal?language=objc) метод и [ `hash` ](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418859-hash?language=objc) свойство, определенное в [ `NSObject` протокола](https://developer.apple.com/reference/objectivec/1418956-nsobject?language=objc). Это позволяет пользовательские управляемые реализации для использования из кода Objective-C прозрачно.
 
 ### <a name="exceptions-support"></a>Поддержка исключений
 
-Передача `--nativeexception` как аргумент `objcgen` преобразует управляемые исключения в Objective-C исключения, которые может быть перехвачено и обработано. 
+Передача `--nativeexception` как аргумент `objcgen` преобразует управляемые исключения в исключения Objective-C, которые могут быть перехвачено и обработано. 
 
 ### <a name="comparison"></a>Оператор
 
-Управляемые типы, реализующие `IComparable` (или его универсальная версия `IComparable<T>`) создает Objective-C понятное методы, которые возвращают `NSComparisonResult` и принять `nil` аргумент. Это делает более удобен для разработчиков Objective-C сгенерированном API. Пример:
+Управляемые типы, реализующие `IComparable` (или его универсальная версия `IComparable<T>`) создаст Objective-C понятное методы, возвращающие `NSComparisonResult` и примите `nil` аргумент. Это делает более понятное для разработчиков Objective-C сгенерированном API. Пример:
 
 ```objc
 - (NSComparisonResult)compare:(XAMComparableType * _Nullable)other;
@@ -53,7 +53,7 @@ ms.locfileid: "34793866"
 
 ### <a name="categories"></a>Категории
 
-Управляемые расширения методов преобразуются в категории. Например, следующие методы расширения в `Collection`:
+Управляемые расширения методов преобразуются на категории. Например, следующие методы расширения в `Collection`:
 
 ```csharp
 public static class SomeExtensions {
@@ -62,7 +62,7 @@ public static class SomeExtensions {
 }
 ```
 
-создать категорию Objective-C такого рода.
+создать категорию Objective-C такого рода:
 
 ```objc
 @interface Collection (SomeExtensions)
@@ -73,11 +73,11 @@ public static class SomeExtensions {
 @end
 ```
 
-Если один управляемый тип расширяет некоторые типы, создаются несколько категорий Objective-C.
+Если один управляемый тип расширяет несколько типов, создается несколько категорий Objective-C.
 
 ### <a name="subscripting"></a>Индексация ;
 
-Управляемые индексированного свойства преобразуются в объект индексация. Пример:
+Управляемые индексированного свойства преобразуются в перегрузке объекта. Пример:
 
 ```csharp
 public bool this[int index] {
@@ -86,35 +86,35 @@ public bool this[int index] {
 }
 ```
 
-создать Objective-C аналогично:
+создать Objective-C аналогичную:
 
 ```objc
 - (id)objectAtIndexedSubscript:(int)idx;
 - (void)setObject:(id)obj atIndexedSubscript:(int)idx;
 ```
 
-который можно использовать синтаксис подписи пропущена Objective-C:
+который можно использовать с помощью синтаксиса подписи пропущена Objective-C:
 
 ```objc
 if ([intCollection [0] isEqual:@42])
     intCollection[0] = @13;
 ```
 
-В зависимости от типа индексатора индексация индексированного или с ключом будут создаваться при необходимости.
+В зависимости от типа индексатор индексация индексированных или с ключом будет создаваться, где это необходимо.
 
-Это [статьи](http://nshipster.com/object-subscripting/) представляет собой отличный введение индексация.
+Это [статье](http://nshipster.com/object-subscripting/) является отличным введением индексация.
 
-## <a name="main-differences-with-net"></a>Основные различия в .NET Framework
+## <a name="main-differences-with-net"></a>Основные различия с помощью .NET
 
 ### <a name="constructors-vs-initializers"></a>Инициализаторы конструкторов vs
 
-В Objective-C, можно вызывать любые инициализатора прототипы какой-либо из родительских классов в цепочке наследования, если он помечен как недоступный (`NS_UNAVAILABLE`).
+В Objective-C, можно вызывать любые инициализатора прототипы любого из родительских классов в цепочке наследования, если оно не помечено как недоступный (`NS_UNAVAILABLE`).
 
-В C# необходимо явно объявить конструктор члена внутри класса, это означает, что конструкторы не наследуются.
+В C# необходимо явно объявить конструктор члена внутри класса, которое означает, что конструкторы не наследуются.
 
-В правом представления API для Objective-C `NS_UNAVAILABLE` добавляется любой инициализатор, не присутствующему в дочернем классе, от родительского класса.
+В правом представления C# API для Objective-C, `NS_UNAVAILABLE` добавляется к любой инициализатор, отсутствующий в дочернем классе, от родительского класса.
 
-API C#:
+C#API:
 
 ```csharp
 public class Unique {
@@ -145,11 +145,11 @@ Objective-C отображена API:
 @end
 ```
 
-Здесь `initWithId:` был помечен как недоступный.
+Здесь `initWithId:` была помечена как недоступная.
 
 ### <a name="operator"></a>Оператор
 
-Objective-C не поддерживает оператор перегрузка как C#, поэтому операторы преобразуются в значения выбора классов:
+Objective-C не поддерживает как перегрузка операторов C# так, чтобы операторы преобразуются в селекторы класса:
 
 ```csharp
 public static AllOperators operator + (AllOperators c1, AllOperators c2)
@@ -164,9 +164,9 @@ public static AllOperators operator + (AllOperators c1, AllOperators c2)
 + (instancetype)add:(Overloads_AllOperators *)anObjectC1 c2:(Overloads_AllOperators *)anObjectC2;
 ```
 
-Однако некоторые языки .NET не поддерживают перегрузку операторов, поэтому обычно включают [«понятное»](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) с именем метода, кроме перегрузка оператора.
+Тем не менее, некоторые языки .NET не поддерживают перегрузку операторов, поэтому обычно включают [«понятное»](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) с именем метода, в дополнение к перегруженного оператора.
 
-Если оператор версии и версии «понятное» найдены, будет создаваться только понятную версию, как они получат одно и то же имя Objective-C.
+Если оператор версии и версии «понятное» обнаружены, будет создаваться только понятную версию, так как они получат одно и то же имя Objective-C.
 
 ```csharp
 public static AllOperatorsWithFriendly operator + (AllOperatorsWithFriendly c1, AllOperatorsWithFriendly c2)
@@ -180,7 +180,7 @@ public static AllOperatorsWithFriendly Add (AllOperatorsWithFriendly c1, AllOper
 }
 ```
 
-выглядит следующим образом:
+принимает следующий вид:
 
 ```objc
 + (instancetype)add:(Overloads_AllOperatorsWithFriendly *)anObjectC1 c2:(Overloads_AllOperatorsWithFriendly *)anObjectC2;
@@ -188,27 +188,27 @@ public static AllOperatorsWithFriendly Add (AllOperatorsWithFriendly c1, AllOper
 
 ### <a name="equality-operator"></a>Оператор равенства
 
-В операторе Общие `==` в C# обрабатывается как общая оператора, как указано выше.
+В операторе Общие `==` в C# обрабатывается как общие оператор как было сказано выше.
 
-Тем не менее если оператор равенства «понятное» будет найдена, и оператором `==` и оператор `!=` будет пропущен в поколении.
+Тем не менее если оператор равенства «понятное» найден, и оператором `==` и оператор `!=` будут пропущены в поколении.
 
 ### <a name="datetime-vs-nsdate"></a>DateTime vs NSDate
 
 Из [ `NSDate` ](https://developer.apple.com/reference/foundation/nsdate?language=objc) документации:
 
-> `NSDate` объекты инкапсулируют точки времени, независимым от конкретного calendrical системы или часового пояса. Дата объекты являются неизменяемыми, представляющее интервал времени инвариантный относительно дату абсолютная ссылка (00: 00:00 UTC 1 января 2001 года).
+> `NSDate` объекты инкапсулировать единой точки во времени, независимым от конкретного calendrical системы или часового пояса. Объекты даты являются неизменяемыми, представляющий интервал времени инвариантного относительно дату абсолютная ссылка (00: 00:00 UTC 1 января 2001 года).
 
-Из-за `NSDate` ссылаться даты всех преобразований между его и `DateTime` должно быть выполнено в формате UTC.
+Из-за `NSDate` ссылаются на дату, все преобразования между ней и `DateTime` должны выполняться в формате UTC.
 
-#### <a name="datetime-to-nsdate"></a>DateTime для NSDate
+#### <a name="datetime-to-nsdate"></a>Дата и время NSDate
 
-При преобразовании из `DateTime` для `NSDate`, `Kind` свойство `DateTime` принимать во внимание:
+При преобразовании из `DateTime` для `NSDate`, `Kind` свойство `DateTime` учитывается:
 
 |Тип|Результаты|
 |---|---|
-|`Utc`|Преобразование выполняется с помощью указанных `DateTime` как.|
-|`Local`|Результат вызова `ToUniversalTime()` в предоставленном `DateTime` объект используется для преобразования.|
-|`Unspecified`|Предоставленный `DateTime` предполагается, что объект является UTC, поэтому такое же поведение при `Kind` — `Utc`.|
+|`Utc`|Преобразование выполняется с использованием предоставленного `DateTime` как.|
+|`Local`|Результат вызова метода `ToUniversalTime()` в предоставленном `DateTime` объект используется для преобразования.|
+|`Unspecified`|Предоставленный `DateTime` предполагается, что объект является UTC, поэтому такое же поведение при `Kind` является `Utc`.|
 
 Преобразование использует следующую формулу:
 
@@ -216,15 +216,15 @@ public static AllOperatorsWithFriendly Add (AllOperatorsWithFriendly c1, AllOper
 TimeInterval = DateTimeObjectTicks - NSDateReferenceDateTicks / TicksPerSecond
 ```
 
-В следующей формуле: 
+В этой формуле: 
 
-- `NSDateReferenceDateTicks` вычисляется на основе `NSDate` ссылаться Дата 00:00:00 UTC 1 января 2001 года: 
+- `NSDateReferenceDateTicks` вычисляется на основе `NSDate` ссылаются на дату в формате UTC 00:00:00 1 января 2001 года: 
     ```csharp
     new DateTime (year:2001, month:1, day:1, hour:0, minute:0, second:0, kind:DateTimeKind.Utc).Ticks;
     ```
-- [`TicksPerSecond`](https://docs.microsoft.com/dotnet/api/system.timespan.tickspersecond) определенные в [`TimeSpan`](https://docs.microsoft.com/dotnet/api/system.timespan)
+- [`TicksPerSecond`](https://docs.microsoft.com/dotnet/api/system.timespan.tickspersecond) определен в [`TimeSpan`](https://docs.microsoft.com/dotnet/api/system.timespan)
 
-Для создания `NSDate` объекта, `TimeInterval` используется с `NSDate` [dateWithTimeIntervalSinceReferenceDate:](https://developer.apple.com/reference/foundation/nsdate/1591577-datewithtimeintervalsincereferen?language=objc) селектора.
+Чтобы создать `NSDate` объекта, `TimeInterval` используется с `NSDate` [dateWithTimeIntervalSinceReferenceDate:](https://developer.apple.com/reference/foundation/nsdate/1591577-datewithtimeintervalsincereferen?language=objc) селектор.
 
 #### <a name="nsdate-to-datetime"></a>NSDate к типу DateTime
 
@@ -234,17 +234,17 @@ TimeInterval = DateTimeObjectTicks - NSDateReferenceDateTicks / TicksPerSecond
 DateTimeTicks = NSDateTimeIntervalSinceReferenceDate * TicksPerSecond + NSDateReferenceDateTicks
 ```
 
-В следующей формуле: 
+В этой формуле: 
 
-- `NSDateReferenceDateTicks` вычисляется на основе `NSDate` ссылаться Дата 00:00:00 UTC 1 января 2001 года: 
+- `NSDateReferenceDateTicks` вычисляется на основе `NSDate` ссылаются на дату в формате UTC 00:00:00 1 января 2001 года: 
     ```csharp
     new DateTime (year:2001, month:1, day:1, hour:0, minute:0, second:0, kind:DateTimeKind.Utc).Ticks;
     ```
-- [`TicksPerSecond`](https://docs.microsoft.com/dotnet/api/system.timespan.tickspersecond) определенные в [`TimeSpan`](https://docs.microsoft.com/dotnet/api/system.timespan)
+- [`TicksPerSecond`](https://docs.microsoft.com/dotnet/api/system.timespan.tickspersecond) определен в [`TimeSpan`](https://docs.microsoft.com/dotnet/api/system.timespan)
 
-После расчета `DateTimeTicks`, `DateTime` [конструктор](https://docs.microsoft.com/dotnet/api/system.datetime.-ctor?#System_DateTime__ctor_System_Int64_System_DateTimeKind_) вызывается, установка его `kind` для `DateTimeKind.Utc`.
+После вычисления `DateTimeTicks`, `DateTime` [конструктор](https://docs.microsoft.com/dotnet/api/system.datetime.-ctor?#System_DateTime__ctor_System_Int64_System_DateTimeKind_) вызывается, установка его `kind` для `DateTimeKind.Utc`.
 
 > [!NOTE]
-> `NSDate` может быть `nil`, но `DateTime` является структурой в .NET, которая по определению не может быть `null`. Если вы предоставите `nil` `NSDate`, он будет преобразован в значение по умолчанию `DateTime` значение, которое сопоставляется `DateTime.MinValue`.
+> `NSDate` может быть `nil`, но `DateTime` – это структура, в .NET, которая по определению не может быть `null`. Если вы предоставите `nil` `NSDate`, он преобразуется в значение по умолчанию `DateTime` значение, которое сопоставляется `DateTime.MinValue`.
 
-`NSDate` поддерживает до более поздней версии и меньше минимального значения `DateTime`. При преобразовании из `NSDate` для `DateTime`, эти значения выше и ниже заменяются `DateTime` [MaxValue](https://docs.microsoft.com/dotnet/api/system.datetime.maxvalue) или [MinValue](https://docs.microsoft.com/dotnet/api/system.datetime.minvalue)соответственно.
+`NSDate` поддерживает до более поздней версии и меньше минимального значения `DateTime`. При преобразовании из `NSDate` для `DateTime`, эти значения выше и ниже заменяются `DateTime` [MaxValue](https://docs.microsoft.com/dotnet/api/system.datetime.maxvalue) или [MinValue](https://docs.microsoft.com/dotnet/api/system.datetime.minvalue), соответственно.

@@ -1,24 +1,24 @@
 ---
-title: Настройка параметров памяти Java для конструктора Android
+title: Настройка параметров памяти Java для Android designer
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 62FAF21C-8090-4AF3-9D88-05A4CFCAFFDC
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 691be280b80e379863cc09d0f1bba0ff5882cf21
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: cf0df42ba398944a99cc4179b94f0d3cb8ba503e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732925"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118062"
 ---
-# <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Настройка параметров памяти Java для конструктора Android
+# <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Настройка параметров памяти Java для Android designer
 
-Параметры памяти по умолчанию, которые будут использоваться при запуске `java` обработать конструктора Android могут быть несовместимы с некоторых конфигураций системы.
+Параметры памяти по умолчанию, которые используются при запуске `java` процесс Android designer могут оказаться несовместимыми с некоторых конфигураций системы.
 
-Начиная с Xamarin Studio 5.7.2.7 (и более поздней версии, Visual Studio для Mac) и Visual Studio Tools для Xamarin 3.9.344, эти параметры можно настроить отдельно для каждого проекта.
+Начиная с Xamarin Studio 5.7.2.7 (и более поздних версий, Visual Studio для Mac) и Visual Studio Tools для Xamarin 3.9.344, эти параметры можно настраивать на каждого проекта.
 
 ## <a name="new-android-designer-properties-and-corresponding-java-options"></a>Новые свойства Android конструктора и соответствующие параметры Java
 
@@ -31,19 +31,19 @@ ms.locfileid: "34732925"
 - **AndroidDesignerJavaRendererPermSize** -XX:MaxPermSize
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  Откройте решение в Visual Studio.
 
-2.  В обозревателе решений выберите проект Android каждого по одному, а затем нажмите кнопку [Показать все файлы](https://msdn.microsoft.com/en-us/library/4afxey9h.aspx) дважды для каждого проекта. Можно пропустить, проекты, которые не содержат `.axml` файлы макета. Этот шаг будет гарантировать, что каждый каталог проекта содержит `.csproj.user` файла.
+2.  Выберите каждый проект Android по одному в обозревателе решений и нажмите кнопку [Показать все файлы](https://msdn.microsoft.com/en-us/library/4afxey9h.aspx) дважды для каждого проекта. Вы можете пропустить проектов, которые не содержат `.axml` файлы макета. Этот шаг гарантирует, что каждый каталог проекта содержит `.csproj.user` файла.
 
 3.  Выйдите из Visual Studio.
 
-4.  Найдите `.csproj.user` файл для каждого проекта из шага 2.
+4.  Найдите `.csproj.user` файл для каждого из проектов из шага 2.
 
-5.  Изменить каждый `.csproj.user` файл в текстовом редакторе.
+5.  Измените каждый `.csproj.user` файл в текстовом редакторе.
 
-6.  Добавьте одно или все свойства Android конструктора памяти в пределах `<PropertyGroup>` элемента. Можно использовать существующий `<PropertyGroup>` или создайте новую. Ниже приведен полный пример `.csproj.user` файл, который содержит все атрибуты 3 установить значения по умолчанию:
+6.  Добавьте одно или все новые свойства Android конструктора памяти в пределах `<PropertyGroup>` элемент. Можно использовать существующий `<PropertyGroup>` или создайте новую. Ниже приведен полный пример `.csproj.user` файл, который содержит все атрибуты 3, задайте их значения по умолчанию:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -59,29 +59,29 @@ ms.locfileid: "34732925"
     </Project>
     ```
 
-7.  Сохраните и закройте все обновленного `.csproj.user` файлов.
+7.  Сохраните и закройте все обновленные `.csproj.user` файлов.
 
-8.  Перезапустите Visual Studio и повторно откройте решение.
+8.  Перезапустите Visual Studio и открыв решение повторно.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
-1.  Откройте решение в Visual Studio для Mac, чтобы убедиться в нужном каталоге решений содержит `.userprefs` файла.
+1.  Откройте решение в Visual Studio для Mac, чтобы в каталоге решения содержит `.userprefs` файла.
 
-2.  Закройте Visual Studio для Mac.
+2.  Выйдите из Visual Studio для Mac.
 
 3.  Найдите `.userprefs` файл в каталоге решения.
 
 4.  Изменить `.userprefs` файл в текстовом редакторе.
 
-5.  Найдите элемент XML в следующем формате. Последняя часть имени этого элемента будут соответствовать имени проекта: «AndroidApplication1» в этом примере:
+5.  Найдите элемент XML в следующем формате. Последняя часть имени этого элемента будет совпадать с именем проекта: «AndroidApplication1» в этом примере:
 
     ```xml
     <MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >
     ```
 
-6.  Если `<MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >` элемент не существует, создайте его в любом месте во включающем `<Properties>` элемента. Обязательно замените «AndroidApplication1» с именем проекта.
+6.  Если `<MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >` элемент не существует, создайте его в любом месте внутри содержащего его `<Properties>` элемент. Обязательно замените «AndroidApplication1» с именем проекта.
 
-7.  Добавьте одно или все новые свойства Android конструктора памяти как атрибуты элемента. Ниже приведен полный пример `.userprefs` файл, который содержит все атрибуты 3 установить значения по умолчанию:
+7.  Добавьте одно или все новые свойства Android конструктора памяти как атрибуты элемента. Ниже приведен полный пример `.userprefs` файл, который содержит все атрибуты 3, задайте их значения по умолчанию:
 
     ```xml
     <Properties StartupItem="AndroidApplication1\AndroidApplication1.csproj">
@@ -95,9 +95,9 @@ ms.locfileid: "34732925"
     </Properties>
     ```
 
-8.  Повторите шаги 5 – 7 для каждого проекта Android в решении, которое содержит любые `.axml` файлы макета. (То есть, добавьте один `<MonoDevelop.Ide.ItemProperties.ProjectName>` элемент для каждого проекта.)
+8.  Повторите шаги 5 – 7 для каждого проекта Android в решение, которое содержит любые `.axml` файлы макета. (То есть, добавьте один `<MonoDevelop.Ide.ItemProperties.ProjectName>` элемент для каждого проекта.)
 
-9.  Сохраните и закройте `.userprefs` файла.
+9.  Сохраните и закройте `.userprefs` файл.
 
 10. Перезапустите Visual Studio для Mac и повторно откройте решение.
 

@@ -4,15 +4,15 @@ description: Отображения растрового рисунка SkiaShar
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: e5bfa076a8746abd6275e9d7a8393c7c8ab53294
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 71997acde4545fec801dfdc8147ab1a9ace7ab24
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615240"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119232"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>Сегментированное отображение точечных рисунков SkiaSharp
 
@@ -26,7 +26,7 @@ SkiaSharp `SKCanvas` объект определяет метод с имене�
 
 ## <a name="the-nine-patch-display"></a>Отображение девять patch 
 
-По существу [ `DrawBitmapNinePatch` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapNinePatch/p/SkiaSharp.SKBitmap/SkiaSharp.SKRectI/SkiaSharp.SKRect/SkiaSharp.SKPaint/) делит растрового изображения на девять прямоугольники:
+По существу [ `DrawBitmapNinePatch` ](xref:SkiaSharp.SKCanvas.DrawBitmapNinePatch(SkiaSharp.SKBitmap,SkiaSharp.SKRectI,SkiaSharp.SKRect,SkiaSharp.SKPaint)) делит растрового изображения на девять прямоугольники:
 
 ![Девять Patch](segmented-images/NinePatch.png "девять Patch")
 
@@ -119,14 +119,14 @@ SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 
 Два `DrawBitmapLattice` методы похожи на `DrawBitmapNinePatch`, обобщенная для любого числа делений горизонтальной или вертикальной. Эти разделы определяются массивы целых чисел, соответствующий пикселей. 
 
-[ `DrawBitmapLattice` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapLattice/p/SkiaSharp.SKBitmap/System.Int32[]/System.Int32[]/SkiaSharp.SKRect/SkiaSharp.SKPaint/) Метода с параметрами для этих массивов целых чисел не работает. [ `DrawBitmapLattice` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmapLattice/p/SkiaSharp.SKBitmap/SkiaSharp.SKLattice/SkiaSharp.SKRect/SkiaSharp.SKPaint/) Метод с параметром типа `SKLattice` работает, и который будет использоваться в приведенные ниже примеры.
+[ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,System.Int32[],System.Int32[],SkiaSharp.SKRect,SkiaSharp.SKPaint)) Метода с параметрами для этих массивов целых чисел не работает. [ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,SkiaSharp.SKLattice,SkiaSharp.SKRect,SkiaSharp.SKPaint)) Метод с параметром типа `SKLattice` работает, и который будет использоваться в приведенные ниже примеры.
 
-[ `SKLattice` ](https://developer.xamarin.com/api/type/SkiaSharp.SKLattice/) Структура определяет четыре свойства:
+[ `SKLattice` ](xref:SkiaSharp.SKLattice) Структура определяет четыре свойства:
 
-- [`XDivs`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.XDivs/), массив целых чисел
-- [`YDivs`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.YDivs/), массив целых чисел
-- [`Flags`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.Flags/), массив `SKLatticeFlags`, типом перечисления
-- [`Bounds`](https://developer.xamarin.com/api/property/SkiaSharp.SKLattice.Bounds/) типа `Nullable<SKRectI>` для указания дополнительный источник прямоугольник внутри точечного рисунка
+- [`XDivs`](xref:SkiaSharp.SKLattice.XDivs), массив целых чисел
+- [`YDivs`](xref:SkiaSharp.SKLattice.YDivs), массив целых чисел
+- [`Flags`](xref:SkiaSharp.SKLattice.Flags), массив `SKLatticeFlags`, типом перечисления
+- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds) типа `Nullable<SKRectI>` для указания дополнительный источник прямоугольник внутри точечного рисунка
 
 `XDivs` Массива делит ширину растрового изображения на вертикальной полосы. Первой полосковой расширяется от точки 0 в левом `XDivs[0]`. Эта лента будет отображен в его ширина в пикселях. Вторая полоса, начиная с позиции `XDivs[0]` для `XDivs[1]`и растягивается. Третья полоса, начиная с позиции `XDivs[1]` для `XDivs[2]` и готовится к просмотру в его ширина в пикселях. Панель последнего начиная с последнего элемента массива по правому краю растрового изображения. Если массив содержит четное число элементов, оно отображается в его ширина в пикселях. В противном случае она растягивается. Общее число вертикальной полосы является одним больше числа элементов в массиве.
 
@@ -134,7 +134,7 @@ SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 
 Вместе `XDivs` и `YDivs` массива разделения растрового изображения в прямоугольники. Количеством прямоугольников равно произведению числа горизонтальной полосы и по вертикали полосковых линий.
 
-В соответствии с документацией Skia `Flags` массив содержит один элемент для каждого прямоугольника, сначала верхняя строка прямоугольников, а затем во второй строке и т. д. `Flags` Массив имеет тип [ `SKLatticeFlags` ](https://developer.xamarin.com/api/type/SkiaSharp.SKLatticeFlags/), перечисление со следующими членами:
+В соответствии с документацией Skia `Flags` массив содержит один элемент для каждого прямоугольника, сначала верхняя строка прямоугольников, а затем во второй строке и т. д. `Flags` Массив имеет тип [ `SKLatticeFlags` ](xref:SkiaSharp.SKLatticeFlags), перечисление со следующими членами:
 
 - `Default` со значением 0
 - `Transparent` со значением 1
@@ -225,5 +225,5 @@ public class LatticeDisplayPage : ContentPage
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [API-интерфейсы SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [API-интерфейсы SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (пример)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

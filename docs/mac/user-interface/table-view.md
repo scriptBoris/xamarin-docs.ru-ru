@@ -4,15 +4,15 @@ description: В этой статье рассматривается работ�
 ms.prod: xamarin
 ms.assetid: 3B55B858-4769-4331-966A-7F53B3B7C720
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 68b52fb4b7a3a65b45fcbecdc865bc64d9865fd9
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 1361f81c20b070c73b1f1f308ea4a5a351c4840d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251125"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104678"
 ---
 # <a name="table-views-in-xamarinmac"></a>Представления таблиц в Xamarin.Mac
 

@@ -6,13 +6,13 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/03/2018
-ms.openlocfilehash: c422b9ac5af9417523f349537fda1bb0c01aa7bc
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.date: 10/01/2018
+ms.openlocfilehash: 50c7b05261cf3f07ea37373cdcdcc8f250243647
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39175181"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108981"
 ---
 # <a name="android-platform-specifics"></a>Android особенностей платформы
 
@@ -310,6 +310,7 @@ webView.On<Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
 В Android следующие функциональные возможности платформы предоставляется для страницы Xamarin.Forms:
 
 - Значение высоты элемента на панели навигации на [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage). Дополнительные сведения см. в разделе [значение высоты панели навигации на NavigationPage](#navigationpage-barheight).
+- Отключение анимации перехода, при переходе по страницам в [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Дополнительные сведения см. в разделе [отключение анимация перехода страницы в TabbedPage](#tabbedpage-transition-animations).
 - Включение считывания между страницами в [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Дополнительные сведения см. в разделе [Включение считывания между страницами в TabbedPage](#enable_swipe_paging).
 - Установка инструментов расположение и цвет для [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Дополнительные сведения см. в разделе [параметр TabbedPage инструментов размещения и цвет](#tabbedpage-toolbar).
 
@@ -348,6 +349,36 @@ public class AndroidNavigationPageCS : Xamarin.Forms.NavigationPage
 Результатом является, высота элемента на панели навигации [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) можно задать:
 
 ![](android-images/navigationpage-barheight.png "Высота отрезка NavigationPage навигации")
+
+<a name="tabbedpage-transition-animations" />
+
+### <a name="disabling-page-transition-animations-in-a-tabbedpage"></a>Отключение анимации перехода на страницу в TabbedPage
+
+Этой платформы используется для отключения анимации перехода, при переходе по страницам, либо программно или при использовании панели вкладки в [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Он используется в XAML, задав `TabbedPage.IsSmoothScrollEnabled` свойство, используемое для `false`:
+
+```xaml
+<TabbedPage ...
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.IsSmoothScrollEnabled="false">
+    ...
+</TabbedPage>
+```
+
+Кроме того его можно будет использовать с помощью C# с помощью текучего API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+On<Android>().SetIsSmoothScrollEnabled(false);
+```
+
+`TabbedPage.On<Android>` Метод указывает, что этой платформы будет выполняться только в Android. `TabbedPage.SetIsSmoothScrollEnabled` Метод в [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) пространства имен, используется для управления ли анимация перехода будет отображаться при переходе между страниц в [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Кроме того `TabbedPage` в класс `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` пространство имен также содержит следующие методы:
+
+- `IsSmoothScrollEnabled`, который используется для получения ли анимация перехода будет отображаться при переходе между страниц в `TabbedPage`.
+- `EnableSmoothScroll`, который используется для включения анимации перехода, при переходе между страницами в `TabbedPage`.
+- `DisableSmoothScroll`, который используется для отключения анимации перехода, при переходе между страницами в `TabbedPage`.
 
 <a name="enable_swipe_paging" />
 

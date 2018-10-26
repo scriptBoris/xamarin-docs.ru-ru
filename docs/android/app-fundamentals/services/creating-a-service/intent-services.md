@@ -1,36 +1,36 @@
 ---
-title: Блокировка с намерением служб в Xamarin.Android
+title: Службы Intent в Xamarin.Android
 ms.prod: xamarin
 ms.assetid: A5B86FE4-C8E2-4B0A-84CA-EF8F5119E31B
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 80849213649707615f8bd8e941e1a51c6b54e76e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1301f34ad1f7a0069c542ba81bf237a673fd239d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763346"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112862"
 ---
-# <a name="intent-services-in-xamarinandroid"></a>Блокировка с намерением служб в Xamarin.Android
+# <a name="intent-services-in-xamarinandroid"></a>Службы Intent в Xamarin.Android
 
-## <a name="intent-services-overview"></a>Общие сведения о службах намерений
+## <a name="intent-services-overview"></a>Обзор службы Intent
 
-Оба работы и привязку службы выполняются в основном потоке, это означает, что для обеспечения производительности smooth требуются службе для асинхронного выполнения работы. Одним из самых простых способов решения этой проблемы является _рабочей очереди процессора шаблон_, где работу выполнять помещается в очередь, обслуживаемых одним потоком. 
+Обе работы и привязку службы запускаются в основном потоке, это означает, что для сохранения производительности smooth, служба должна выполнять работу асинхронно. Одним из самых простых способов решения этой проблемы является с _рабочей очереди процессора шаблон_, где заданий для выполнения помещается в очередь, которая обрабатывается одним потоком. 
 
-[ `IntentService` ](https://developer.xamarin.com/api/type/Android.App.IntentService/) Является подклассом `Service` класс, предоставляющий Android определенного реализацией этого шаблона. Он будет управлять работой постановка в очередь, запуска рабочего потока для службы очереди, и извлечение запросов отключен очереди для запуска в рабочем потоке. `IntentService` Без вмешательства пользователя остановить себя и удалить рабочего потока при наличии объема работы, в очереди.
+[ `IntentService` ](https://developer.xamarin.com/api/type/Android.App.IntentService/) Является подклассом `Service` класс, предоставляющий Android конкретной реализации этого шаблона. Он будет управлять работой постановка в очередь, запуска рабочего потока для службы очереди, и запросы на извлечение отключать очереди для запуска в рабочем потоке. `IntentService` Незаметно остановиться и удалить рабочий поток, при отсутствии больше работы в очереди.
  
-Рабочих отправляется в очередь, создав `Intent` и затем передачу, `Intent` для `StartService` метод.
+Отправке работы в очереди, создав `Intent` и неудачами, `Intent` для `StartService` метод.
 
-Невозможно остановить или прервать `OnHandleIntent` метод `IntentService` во время его работы. Благодаря этой структуре `IntentService` должны храниться без сохранения состояния &ndash; не следует полагаться на активное подключение или подключения от остальной части приложения. `IntentService` Предназначен для statelessly обработки рабочих запросов.
+Невозможно остановить или прервать `OnHandleIntent` метод `IntentService` во время его работы. Благодаря этой структуре `IntentService` должны храниться без отслеживания состояния &ndash; его не следует полагаться на активное подключение или подключения от остальной части приложения. `IntentService` Предназначен для statelessly обработки рабочих запросов.
 
-Существует два требования для создания подкласса `IntentService`:
+Существует два требования для создания подклассов `IntentService`:
 
-1. Новый тип (создан путем создания подкласса `IntentService`) переопределяет только `OnHandleIntent` метод.
-2. Конструктор нового типа требует строку, которая используется для именования рабочий поток, который будет обрабатывать запросы. Имя этот рабочий поток в основном используется при отладке приложения.
+1. Новый тип (создан путем создания подклассов `IntentService`) только переопределяет `OnHandleIntent` метод.
+2. Конструктор для нового типа требует строку, которая используется для именования рабочий поток, который будет обрабатывать запросы. Имя этот рабочий поток в основном используется при отладке приложения.
 
-В следующем коде показано `IntentService` реализацию переопределенный `OnHandleIntent` метод:
+В следующем коде показан `IntentService` реализацию переопределенный `OnHandleIntent` метод:
 
 ```csharp
 [Service]
@@ -49,7 +49,7 @@ public class DemoIntentService: IntentService
 }
 ```
 
-Работа отсылается `IntentService` путем создания экземпляра `Intent` и последующего вызова [ `StartService` ](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/) метод с этого намерения в качестве параметра. Назначение для службы будут передаваться как параметр в `OnHandleIntent` метод. Этот фрагмент кода приведен пример отправки рабочего запроса целью. 
+Работа отсылается `IntentService` путем создания экземпляра `Intent` и последующего вызова [ `StartService` ](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/) метод с этой целью как параметр. Цель передаются в службу в качестве параметра `OnHandleIntent` метод. В этом фрагменте кода приведен пример отправки рабочего запроса к объекту Intent. 
 
 ```csharp
 // This code might be called from within an Activity, for example in an event
@@ -63,7 +63,7 @@ downloadIntent.Put
 StartService(downloadIntent);
 ```
 
-`IntentService` Можно извлечь значения из значения, как показано в этом фрагменте кода:  
+`IntentService` Можно извлечь значения из намерения, как показано в этом фрагменте кода:  
 
 ```csharp
 protected override void OnHandleIntent (Android.Content.Intent intent)

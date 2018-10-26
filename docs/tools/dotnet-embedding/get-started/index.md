@@ -1,19 +1,19 @@
 ---
-title: Начало работы с .NET внедрения
-description: В этом документе ссылки на различные руководств, в которых описаны способы использования .NET внедрение в C, Java, Android, Objective-C, iOS и macOS проектов.
+title: Приступая к работе с внедрение .NET
+description: Этот документ содержит ссылки на различные руководства, описывающие способы использования внедрение .NET в C, Java, Android, проекты Objective-C, iOS и macOS.
 ms.prod: xamarin
 ms.assetid: AF8A4798-EBDD-4E73-997B-C3D4FC5E9685
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 11/14/2017
-ms.openlocfilehash: 9829881dcb374b141bdf7fc578266ec66d90315b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 96a80d76afb769dae456e7ff9bdad32b137c6fed
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793062"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106218"
 ---
-# <a name="getting-started-with-net-embedding"></a>Начало работы с .NET внедрения
+# <a name="getting-started-with-net-embedding"></a>Приступая к работе с внедрение .NET
 
 ## <a name="ccmd"></a>[C](c.md)
 
@@ -21,7 +21,7 @@ ms.locfileid: "34793062"
 
 ## <a name="javajavaindexmd"></a>[Java](java/index.md)
 
-Как внедрять в приложения Java на различных платформах.
+Как встраивать в приложения Java на различных платформах.
 
 ### <a name="androidjavaandroidmd"></a>[Android](java/android.md)
 
@@ -29,12 +29,12 @@ ms.locfileid: "34793062"
 
 ## <a name="objective-cobjective-cindexmd"></a>[Objective-C](objective-c/index.md)
 
-Как для внедрения в цель-C.
+Как внедрить в Objective-C.
 
 ### <a name="iosobjective-ciosmd"></a>[iOS](objective-c/ios.md)
 
-Советы по конкретных операций ввода-вывода для внедрения кода .NET.
+iOS — советы по для внедрения кода .NET.
 
 ### <a name="macosobjective-cmacosmd"></a>[macOS](objective-c/macos.md)
 
-зависящие от macOS советы по внедрению кода .NET.
+macOS — советы по для внедрения кода .NET.

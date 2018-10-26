@@ -4,15 +4,15 @@ description: В этом документе описывается исполь�
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: b52bdbd41eaafbc5e6c78e1f8514b701fd78bd6b
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 7c52ce9fcdd290958a53af7fa91ef93a2caff7b5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241917"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108968"
 ---
 # <a name="labels-in-xamarinios"></a>Метки в Xamarin.iOS
 

@@ -1,34 +1,34 @@
 ---
 title: Monogame Framework
-description: 'В этом документе ссылки на различные руководства, описывающие разработки игр с MonoGame: Общие сведения, обсуждение трехмерной графики и игровые планшеты и посмотрите на вопросы от платформы.'
+description: 'Этот документ содержит ссылки на различные руководства, описывающие Разработка игр с помощью MonoGame: Обзор, обсуждение 3D-графики и игровые планшеты и рассматриваются вопросы конкретной платформы.'
 ms.prod: xamarin
 ms.assetid: 35EC29CE-538B-4844-BACC-E51823EFF3B5
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 1c398b7d20a8c28001c2f3371dd792ed4b017a5f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9b51bba3491af593b4378cbd5aaf42043927ab68
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783127"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122885"
 ---
 # <a name="monogame-framework"></a>Monogame Framework
 
-MonoGame — это эффективный, гибкое и кросс платформенных API для разработки игр 2D и 3D. Предоставляет основу для многих кросс платформенной игры ядер, но могут использоваться непосредственно в играх без помещения в игры ядра.
+MonoGame — это эффективный, гибкие и кросс платформенных API для разработки двухмерных и трехмерных игр. Он предоставляет основу для множества игровых движков кросс платформенных, но может использоваться непосредственно в игры, не будучи помещены в игровое ядро.
 
-## <a name="introduction-to-game-development-with-monogamegraphics-gamesmonogameintroductionindexmd"></a>[Общие сведения о разработке игр с MonoGame](~/graphics-games/monogame/introduction/index.md)
+## <a name="introduction-to-game-development-with-monogamegraphics-gamesmonogameintroductionindexmd"></a>[Введение в разработку игр с помощью MonoGame](~/graphics-games/monogame/introduction/index.md)
 
-MonoGame является кросс платформенных, с аппаратным ускорением API, предоставляя графики, управление состоянием аудио, игры, ввод и конвейера содержимого для импорта ресурсов.
+MonoGame является кросс платформенной, аппаратным ускорением API, который обеспечивает графики, управление состоянием аудио, игр, входных данных и конвейера содержимого для импорта ресурсов.
 
-## <a name="3d-graphics-with-monogamegraphics-gamesmonogame3dindexmd"></a>[Трехмерная графика с MonoGame](~/graphics-games/monogame/3d/index.md)
+## <a name="3d-graphics-with-monogamegraphics-gamesmonogame3dindexmd"></a>[3D-графики с MonoGame](~/graphics-games/monogame/3d/index.md)
 
-MonoGame предлагает гибкий и эффективный API для отображения в режиме реального времени трехмерной графики. Он включает более высокого уровня конструкции для подготовки к просмотру и также доступ к ресурсам графики более низкого уровня.
+MonoGame предлагает API гибким и эффективным для отображения в режиме реального времени трехмерной графики. Он включает конструкции более высокого уровня для подготовки к просмотру и также доступ к ресурсам графики более низкого уровня.
 
-## <a name="monogame-gamepad-referencegraphics-gamesmonogameinputmd"></a>[Справочник по игровой MonoGame](~/graphics-games/monogame/input.md)
+## <a name="monogame-gamepad-referencegraphics-gamesmonogameinputmd"></a>[Сведения о Gamepad MonoGame](~/graphics-games/monogame/input.md)
 
-Игровой — это стандартные, кросс платформенных класс для доступа к устройствам ввода в MonoGame.
+Игровой представляет собой стандартный кросс платформенных класс для доступа к устройств ввода в MonoGame.
 
-## <a name="monogame-platform-specific-considerationsgraphics-gamesmonogameplatformsindexmd"></a>[Рекомендации по обеспечению MonoGame платформы](~/graphics-games/monogame/platforms/index.md)
+## <a name="monogame-platform-specific-considerationsgraphics-gamesmonogameplatformsindexmd"></a>[Специальные рекомендации платформы MonoGame](~/graphics-games/monogame/platforms/index.md)
 
-MonoGame поддерживается на разных платформах. Данный раздел охватывает конкретной платформы.
+MonoGame поддерживается на различных платформах. В этом разделе рассматриваются темы, относящиеся к каждой платформы.

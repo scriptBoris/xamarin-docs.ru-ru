@@ -1,32 +1,32 @@
 ---
-title: CocosSharp 2D игры ядра
-description: Этот документ, ссылки на различные статьи, посвященные разработке игр с CocosSharp. Связанное содержимое описание примеров приложений, рисования, анимации и многое другое.
+title: 2D игровое ядро CocosSharp
+description: Этот документ содержит ссылки на различные ресурсы, посвященные разработке игр с помощью CocosSharp. Связанное содержимое описывает примеры приложений, рисование, анимация и многое другое.
 ms.prod: xamarin
 ms.assetid: 5E72869D-3541-408B-AB64-D34C777AFB79
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: 34d22b6e9d8c671e38fbadab0edafa2f57c566e7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: add73360ea98d8c516e413f0cc0264f68c58d79d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783250"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107018"
 ---
-# <a name="cocossharp-2d-game-engine"></a>CocosSharp 2D игры ядра
+# <a name="cocossharp-2d-game-engine"></a>2D игровое ядро CocosSharp
 
-_CocosSharp — это библиотека для создания игр 2D, с помощью C# и F #. Это порт .NET популярных Cocos2D ядра._
+_CocosSharp — это библиотека для создания 2D-игр с помощью C# и F#. Это ядро популярных Cocos2D перенос на .NET._
 
-## <a name="introduction-to-cocossharp"></a>Общие сведения о CocosSharp
+## <a name="introduction-to-cocossharp"></a>Введение в CocosSharp
 
-Ядро CocosSharp 2D игры предоставляет технологии для создания кросс платформенных игр. Полный список поддерживаемых платформ см. [CocosSharp wiki на GitHub](https://github.com/mono/CocosSharp/wiki).
-Эти руководства используйте C# образцы кода, несмотря на то, что CocosSharp, также будет полностью функционален F #.
+2D игровое ядро CocosSharp предоставляет технологию для создания кросс платформенных игр. Полный список поддерживаемых платформ см. в разделе [CocosSharp вики-сайта на сайте GitHub](https://github.com/mono/CocosSharp/wiki).
+Используйте эти руководства C# примеры кода, несмотря на то, что CocosSharp полностью функционален F# также.
 
-Предоставляемые ядро CocosSharp [MonoGame framework](http://www.monogame.net/), который сам является кросс платформенных, с аппаратным ускорением API, предоставляя графики, управление состоянием аудио, игры, ввод и конвейера содержимого для импорта ресурсов.
-CocosSharp представляет собой уровень абстракции эффективное, хорошо подходят для игр 2D.
-Кроме того больше игр выполнить собственные оптимизацию за пределами их основных библиотек игры при увеличении сложности. Иными словами CocosSharp предоставляет сочетание простоте использования и производительность, позволяя разработчикам быстро приступить к работе без ограничения игры размером или сложностью.
+Предоставляемые ядром CocosSharp [MonoGame framework](http://www.monogame.net/), который сам является кросс платформенной, аппаратным ускорением API, который обеспечивает графики, управление состоянием аудио, игр, входных данных и конвейера содержимого для импорта ресурсов.
+CocosSharp представляет собой уровень эффективную абстракцию, хорошо подходят для 2D-игр.
+Кроме того больше игры выполнить собственные оптимизацию за пределами их основных библиотек игры при увеличении сложности. Другими словами CocosSharp предоставляет сочетание простота использования и производительности, позволяя разработчикам быстро начать работу без ограничения игр размера и сложности.
 
-Практические рассматривается создание простого CocosSharp кросс платформенных игр:
+Это практических видео демонстрируется создание простой CocosSharp кросс платформенных игр:
 
 > [!Video https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Developing-Cross-platform-2D-Games-in-C-and-CocosSharp/player]
 
@@ -34,76 +34,76 @@ CocosSharp представляет собой уровень абстракци
 
 ![BouncingGame](images/bouncing-game.png "BouncingGame")
 
-Это руководство описывает BouncingGame, включая способы работы с содержимым игры, различные визуальные элементы, используемые для создания игр, добавление логику игры и многое другое.
+В этом руководстве описывается BouncingGame, включая способы работы с игр, различных визуальных элементов, которые используются для создания игр, добавление логику игры и многое другое.
 
-## <a name="fruity-falls-gamegraphics-gamescocossharpfruity-fallsmd"></a>[Возвращается Fruity игры](~/graphics-games/cocossharp/fruity-falls.md)
+## <a name="fruity-falls-gamegraphics-gamescocossharpfruity-fallsmd"></a>[Игре Fruity Falls](~/graphics-games/cocossharp/fruity-falls.md)
 
-![Снимок экрана игры приходится Fruity](images/fruity-falls.png "Fruity приходится игры экрана")
+![Снимок экрана игре Fruity Falls](images/fruity-falls.png "экрана игре Fruity Falls")
 
-В данном руководстве описываются приходится Fruity игры, охватывающие CocosSharp общие и основные понятия разработки игр как физический, управления содержимым, состояния игры и разработки игр.  
+В этом руководстве описывается игре Fruity падает, охватывающие распространенных CocosSharp и понятия разработки игр, например физики, управления содержимым, состояния игры и проектирование игр.  
 
-## <a name="coin-time-gamegraphics-gamescocossharpcointimemd"></a>[Игра времени разработки](~/graphics-games/cocossharp/cointime.md)
+## <a name="coin-time-gamegraphics-gamescocossharpcointimemd"></a>[Игра время монеты](~/graphics-games/cocossharp/cointime.md)
 
-![Время снимок экрана игры, таблетка](images/cointime.png "снимок экрана игры времени разработки")
+![Coin снимок экрана игры время](images/cointime.png "снимок экрана монеты время для игр")
 
-Время разработки — полный platformer, игры для iOS и Android. Игра предназначена для того, чтобы собрать все монеты уровня и затем достичь дверца выхода избегая враги и другими препятствиями.
+Время монеты — полный платформер, игры для iOS и Android. Цель игры — собрать все монеты уровня и, обратитесь к двери выхода избегая монстров и препятствия.
 
-## <a name="drawing-geometry-with-ccdrawnodegraphics-gamescocossharpccdrawnodemd"></a>[Рисование геометрических с CCDrawNode](~/graphics-games/cocossharp/ccdrawnode.md)
+## <a name="drawing-geometry-with-ccdrawnodegraphics-gamescocossharpccdrawnodemd"></a>[Рисование геометрия с CCDrawNode](~/graphics-games/cocossharp/ccdrawnode.md)
 
-![Фигуры, нарисованных при помощи CCDrawNode](images/ccdrawnode.png "фигур, нарисованных при помощи CCDrawNode")
+![Фигуры с CCDrawNode](images/ccdrawnode.png "фигуры с CCDrawNode")
 
-CCDrawNode предоставляет методы для рисования простые объекты, такие как линий, кругов и треугольников.
+CCDrawNode предоставляет методы для рисования объектов-примитивов, таких как линий, кругов и треугольников.
 
 ## <a name="animating-with-ccactiongraphics-gamescocossharpccactionmd"></a>[Анимация с CCAction](~/graphics-games/cocossharp/ccaction.md)
 
-![Анимация CCAction](images/ccaction.png "CCAction анимации")
+![Анимированный значок CCAction](images/ccaction.png "анимация с CCAction")
 
-`CCAction` является базовым классом, который может использоваться для анимации объектов CocosSharp. В настоящем руководстве описывается встроенные `CCAction` реализации для общих задач, например положение, масштабирования и поворота. На ней также рассматривается создание пользовательских реализаций путем наследования от `CCAction`.
+`CCAction` является базовым классом, который может использоваться для анимации объектов CocosSharp. В этом руководстве описывается встроенная `CCAction` реализации для общих задач, таких как расположение, масштаба и вращение. Он также рассматривает способы создания пользовательских реализаций путем наследования от `CCAction`.
 
 ## <a name="using-tiled-with-cocossharpgraphics-gamescocossharptiledmd"></a>[Использование Tiled с CocosSharp](~/graphics-games/cocossharp/tiled.md)
 
-![Уровень в игру](images/tiled.png "уровень игры")
+![Уровень в игре](images/tiled.png "уровень в игре")
 
-Мозаичное заполнение мощный, гибкий и сопоставляет отлаженное приложение для создания плитки ортогональных и изометрическая игр для устройств. CocosSharp предоставляет встроенной интеграции для копиями в собственном формате.
+Мозаичная мощный, гибкий и сопоставляет отлаженное приложение для создания плитки самостоятельной и изометрической для игр. CocosSharp предоставляет встроенную интеграцию для копиями в собственном формате.
 
 ## <a name="entities-in-cocossharpgraphics-gamescocossharpentitiesmd"></a>[Сущности в CocosSharp](~/graphics-games/cocossharp/entities.md)
 
-![Космическим кораблем из игры](images/entities.png "космическим кораблем из игры")
+![Космического корабля, управляемого из игры](images/entities.png "космического корабля, управляемого из игры")
 
-Шаблон сущности является мощным средством для организации кода игры. Он повышает удобочитаемость, делает код проще было обслуживать и использует функции, встроенные родители потомки.
+Шаблон сущности — это эффективное средство для организации кода игры. Это улучшает читаемость, благодаря этому код проще обслуживать и использует функции, встроенные родители потомки.
 
 ## <a name="handling-multiple-resolutions-in-cocossharpgraphics-gamescocossharpresolutionsmd"></a>[Обработка нескольких разрешений в CocosSharp](~/graphics-games/cocossharp/resolutions.md)
 
 ![Сетка, представляющий разрешение экрана](images/resolutions.png "сетки, представляющий разрешение экрана")
 
-В этом руководстве показано, как работать с CocosSharp для разработки игр, правильно отображаться на устройствах для различных разрешений экрана.
+В этом руководстве показано, как работать с CocosSharp для разработки игр, которые правильного отображения на устройствах в различные способы их устранения.
 
 ## <a name="cocossharp-content-pipelinegraphics-gamescocossharpcontent-pipelineindexmd"></a>[Конвейер содержимого CocosSharp](~/graphics-games/cocossharp/content-pipeline/index.md)
 
 ![XNB](images/content-pipeline.png "XNB")
 
-Конвейеры содержимого часто используются в разработки игр для оптимизации содержимого и отформатировать его таким образом, чтобы ее можно было загрузить в определенным оборудованием или с помощью определенных платформ разработки игр.
+Конвейерами содержимого часто используются в разработке игр для оптимизации содержимого и отформатировать его таким образом, что его можно загрузить на определенных оборудования или с помощью определенных платформ разработки игр.
 
-## <a name="improving-frame-rate-with-ccspritesheetgraphics-gamescocossharpccspritesheetmd"></a>[Повышение частоты кадров с CCSpriteSheet](~/graphics-games/cocossharp/ccspritesheet.md)
+## <a name="improving-frame-rate-with-ccspritesheetgraphics-gamescocossharpccspritesheetmd"></a>[Повышение частоты кадров с помощью CCSpriteSheet](~/graphics-games/cocossharp/ccspritesheet.md)
 
-![Дерево из CCSpriteSheet](images/ccspritesheet.png "дерева из CCSpriteSheet")
+![Дерево с помощью CCSpriteSheet](images/ccspritesheet.png "дерева с помощью CCSpriteSheet")
 
-`CCSpriteSheet` предоставляет функциональные возможности для объединения и с помощью много файлов изображений в одну текстуру. Сокращение числа текстуры можно улучшить, время загрузки игры и частоты кадров.
+`CCSpriteSheet` предоставляет функциональные возможности для объединения и с помощью многих файлов изображений в одну текстуру. Уменьшая число текстуры повышает время загрузки игр и частоте кадров.
 
 ## <a name="texture-caching-using-cctexturecachegraphics-gamescocossharptexture-cachemd"></a>[Кэширование текстуры с помощью CCTextureCache](~/graphics-games/cocossharp/texture-cache.md)
 
-![Представление как CocosSharp кэширует изображения](images/texture-cache.png "представление как CocosSharp кэширует изображений")
+![Это представление как CocosSharp кэширует образы](images/texture-cache.png "представлением как CocosSharp кэширует образов")
 
-В CocosSharp `CCTextureCache` класс предоставляет стандартный способ организации, кэширование и выгрузки содержимого. 
+В CocosSharp `CCTextureCache` класс предоставляет стандартный способ упорядочить, кэширования и выгрузки содержимого. 
 
-## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[2D математические операции с CocosSharp](~/graphics-games/cocossharp/math.md)
+## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[Двухмерные математические операции с CocosSharp](~/graphics-games/cocossharp/math.md)
 
 ![Поворот изображения](images/math.png "Поворот изображения")
 
-В настоящем руководстве описывается 2D математических операций для разработки игр. Он использует CocosSharp показано, как выполнять типичные задачи разработки игр и объясняет математически этих задач.
+В этом руководстве описывается 2D математики для разработки игр. Он использует CocosSharp демонстрирует, как выполнять типовые задачи разработки игр и объясняет математически этих задач.
 
 ## <a name="performance-and-visual-effects-with-ccrendertexturegraphics-gamescocossharpccrendertexturemd"></a>[Производительность и визуальные эффекты с CCRenderTexture](~/graphics-games/cocossharp/ccrendertexture.md)
 
-![Sprite из игры](images/ccrendertexture.png "sprite из игры")
+![Спрайт из игры](images/ccrendertexture.png "спрайт из игры")
 
-`CCRenderTexture` Класс предоставляет функциональные возможности для подготовки к просмотру несколько объектов, CocosSharp одну текстуру. После создания `CCRenderTexture` экземпляров может использоваться для эффективной визуализации графики и реализации визуальные эффекты.
+`CCRenderTexture` Класс предоставляет функциональные возможности для подготовки к просмотру нескольких объектов CocosSharp в одну текстуру. После создания `CCRenderTexture` экземпляров может использоваться для эффективной визуализации графики и реализации визуальные эффекты.

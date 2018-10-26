@@ -1,46 +1,44 @@
 ---
 title: Xamarin Workbooks
-description: Xamarin в книгах blend документации и код, который идеально подходит для экспериментов, обучение и Создание руководств и обучение вспомогательные средства.
+description: Xamarin Workbooks предоставляют blend документации и код, который идеально подходит для экспериментов, обучения и Создание руководств и преподаванием вспомогательные элементы.
 ms.prod: xamarin
 ms.assetid: 04275482-0488-4F1C-8808-D03A8E21BE62
-author: topgenorth
-ms.author: toopge
-ms.date: 03/30/2017
-ms.openlocfilehash: 57ef9cb3a45dbf1c6271a1475c27fdd38d2fd96b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+author: lobrien
+ms.author: laobri
+ms.date: 10/23/2018
+ms.openlocfilehash: d0aed1b501b86a23d4008ba9618b0e459178ca24
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33922643"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121897"
 ---
 # <a name="xamarin-workbooks"></a>Xamarin Workbooks
 
-Xamarin в книгах blend документации и код, который идеально подходит для экспериментов, обучение и Создание руководств и обучение вспомогательные средства.
+Xamarin Workbooks предоставляют blend документации и код, который идеально подходит для экспериментов, обучения и Создание руководств и преподаванием вспомогательные элементы.
 
-Создавать многофункциональная книга C# для Android, iOS, Mac, WPF или консоли и быстрой динамической результаты по мере изучения эти API-интерфейсы.
+Создание расширенных C# книгу для Android, iOS, Mac, WPF, или консоли и get мгновенных динамические результаты как узнать эти API-интерфейсы.
 
-Xamarin книги — программное обеспечение с открытым исходным кодом. Разработка приложений происходит в процессе открытия на GitHub. Приглашаем к участию в проекте интерес пользователям и разработчикам.
+Xamarin Workbooks — программное обеспечение с открытым исходным кодом. Разработка происходит с открытой лицензией на сайте GitHub. Мы предлагаем, заинтересованные пользователи и разработчики Станьте участником с проектом.
 
-<a class="github-button" href="https://github.com/Microsoft/workbooks" data-size="large" aria-label="View Microsoft/workbooks on GitHub">Присоединяйтесь к нам на GitHub!</a>
+[Присоединяйтесь к нам на сайте GitHub.](https://github.com/Microsoft/workbooks)
 
 Попробуйте и сообщите нам свое мнение, или, если вы [возникли ошибки](~/tools/workbooks/install.md#reporting-bugs). У нас есть [форум](https://forums.xamarin.com/categories/inspector) слишком!
 
-[![](images/interactive-1.0.0-urho-planet-earth-small.png "Образец UrhoSharp на основе книги")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
+[![](images/interactive-1.0.0-urho-planet-earth-small.png "Образец книги на основе UrhoSharp")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
 
 ## <a name="installation-and-requirementsinstallmd"></a>[Установка и требования](install.md)
 
-Сведения о получении книг, установленной на компьютере Mac и Windows.
+Сведения о том, как книги, установленной на компьютере Mac или Windows.
 
 ## <a name="interactive-workbooksworkbookmd"></a>[Интерактивные Workbooks](workbook.md)
 
-Общие сведения о том, как использовать Xamarin книги.
+Общие сведения о том, как использовать Xamarin Workbooks.
 
-## <a name="samplessamplesindexmd"></a>[Примеры](samples/index.md)
+## <a name="samples"></a>Примеры
 
-Существует широкий спектр [образец книги](https://developer.xamarin.com/workbooks/) доступны, включая те, выделяются [здесь](samples/index.md).
+Существует широкий спектр [книг на сайте GitHub примеров](https://github.com/xamarin/workbooks).
 
 ## <a name="integration-sdksdkindexmd"></a>[Интеграция пакета SDK](sdk/index.md)
 
-Существует возможность расширения Xamarin книги с помощью представления пользовательских данных и модули подготовки отчетов. Интеграции написаны на C# и TypeScript и JavaScript.
-
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+Существует возможность расширить Xamarin Workbooks с помощью представления пользовательских данных и модули подготовки отчетов. При написании интеграции C# и TypeScript и JavaScript.

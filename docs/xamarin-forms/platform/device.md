@@ -6,13 +6,13 @@ ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2017
-ms.openlocfilehash: c706d50962fb707208203a97374d4ae26f141ebf
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 08/01/2018
+ms.openlocfilehash: 084c0c292cb7e527d74c77937bc69f76fc8c0658
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998271"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114324"
 ---
 # <a name="xamarinforms-device-class"></a>Класс устройств Xamarin.Forms
 
@@ -28,7 +28,7 @@ ms.locfileid: "38998271"
 
 Тем не менее поскольку Xamarin.Forms 2.3.4 эти API устарели и заменены. [ `Device` ](xref:Xamarin.Forms.Device) Класс теперь содержит общедоступный строковые константы, определяющие платформ — [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS), [ `Device.Android` ](xref:Xamarin.Forms.Device.Android), `Device.WinPhone`() Устаревшая версия), `Device.WinRT` (устаревшая версия), [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP), и [ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS). Аналогичным образом [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) перегрузки были заменены [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) и [ `On` ](xref:Xamarin.Forms.On) API-интерфейсы.
 
-В C# с платформой значения можно задать путем создания `switch` оператором в [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform) свойства, а затем предоставить `case` инструкций для необходимых платформ:
+В C#, специфические для платформы значения можно задать путем создания `switch` оператором в [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform) свойства, а затем предоставить `case` инструкций для необходимых платформ:
 
 ```csharp
 double top;
@@ -60,16 +60,18 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) Класс — это универсальный класс и поэтому должен быть создан при помощи `x:TypeArguments` атрибут, который соответствует целевому типу. В [ `On` ](xref:Xamarin.Forms.On) класс, [ `Platform` ](xref:Xamarin.Forms.On.Platform) атрибут может принимать один `string` значение или несколько разделенных запятыми `string` значения.
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) Класс — это универсальный класс, который должен быть создан при помощи `x:TypeArguments` атрибут, который соответствует целевому типу. В [ `On` ](xref:Xamarin.Forms.On) класс, [ `Platform` ](xref:Xamarin.Forms.On.Platform) атрибут может принимать один `string` значение или несколько разделенных запятыми `string` значения.
 
 > [!IMPORTANT]
 > Предоставляя некорректное `Platform` значение в атрибута `On` не приведут к ошибке. Вместо этого код будет выполняться без значения платформы, которые применяются.
+
+Кроме того `OnPlatform` расширение разметки, которая может использоваться в XAML для настройки внешнего вида пользовательского интерфейса на каждой платформы. Дополнительные сведения см. в разделе [расширение разметки OnPlatform](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
 
 <a name="Device_Idiom" />
 
 ## <a name="deviceidiom"></a>Device.Idiom
 
-`Device.Idiom` Можно использовать для изменения макеты или функциональные возможности в зависимости от приложения на устройства. [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom) Перечисление содержит следующие значения:
+`Device.Idiom` Свойство может использоваться для изменения макеты или функциональные возможности в зависимости от устройства приложение выполняется на. [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom) Перечисление содержит следующие значения:
 
 -  **Телефон** — iPhone, iPod touch и уже, чем 600 частные интерфейсы Android ^
 -  **Tablet** — iPad, Windows и Android устройств шире, чем 600 спады ^
@@ -80,7 +82,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 
 *^ частные интерфейсы не обязательно является количество физических пикселей*
 
-`Idiom` особенно полезна для создания макетов, которые используют преимущества экраны больше, следующим образом:
+`Idiom` Свойство особенно полезно для создания макетов, которые используют преимущества экраны больше, следующим образом:
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone) {
@@ -89,6 +91,25 @@ if (Device.Idiom == TargetIdiom.Phone) {
     // layout views horizontally for a larger display (tablet or desktop)
 }
 ```
+
+[ `OnIdiom` ](xref:Xamarin.Forms.OnIdiom`1) Класс предоставляет те же функциональные возможности, в XAML:
+
+```xaml
+<StackLayout>
+    <StackLayout.Margin>
+        <OnIdiom x:TypeArguments="Thickness">
+            <OnIdiom.Phone>0,20,0,0</OnIdiom.Phone>
+            <OnIdiom.Tablet>0,40,0,0</OnIdiom.Tablet>
+            <OnIdiom.Desktop>0,60,0,0</OnIdiom.Desktop>
+        </OnIdiom>
+    </StackLayout.Margin>
+    ...
+</StackLayout>
+```
+
+[ `OnIdiom` ](xref:Xamarin.Forms.OnPlatform`1) Класс — это универсальный класс, который должен быть создан при помощи `x:TypeArguments` атрибут, который соответствует целевому типу.
+
+Кроме того `OnIdiom` расширение разметки, которая может использоваться в XAML для настройки внешнего вида пользовательского интерфейса на идиому устройства, приложения на основе. Дополнительные сведения см. в разделе [расширение разметки OnIdiom](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom).
 
 ## <a name="deviceflowdirection"></a>Device.FlowDirection
 
@@ -104,7 +125,7 @@ if (Device.Idiom == TargetIdiom.Phone) {
 <ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
 ```
 
-Ниже приведен аналогичный код на языке C#:
+Эквивалентный код на C# является:
 
 ```csharp
 this.FlowDirection = Device.FlowDirection;
@@ -129,7 +150,7 @@ this.FlowDirection = Device.FlowDirection;
 
 ## <a name="devicegetnamedsize"></a>Device.GetNamedSize
 
-`GetNamedSize` можно использовать при задании [ `FontSize` ](~/xamarin-forms/user-interface/text/fonts.md) в коде C#:
+`GetNamedSize` можно использовать при задании [ `FontSize` ](~/xamarin-forms/user-interface/text/fonts.md) в C# кода:
 
 ```csharp
 myLabel.FontSize = Device.GetNamedSize (NamedSize.Small, myLabel);

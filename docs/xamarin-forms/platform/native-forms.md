@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: 65bb3fa070c082fa6c6c489e326a870a80fb9502
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 04d435b29f6f2f577df5025995fcc074ba5d9d9d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997527"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122755"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms в проектах Xamarin Native
 
@@ -33,7 +33,7 @@ Xamarin.Forms должны инициализироваться, вызвав `F
 > [!NOTE]
 > **NativeForms** примера приложения решения не содержит все проекты Xamarin.Forms. Вместо этого он состоит из проекта Xamarin.iOS, проект Xamarin.Android и проекта универсальной платформы Windows. Каждый проект имеет собственный проект, использующий собственные формы для использования [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-производным страниц. Тем не менее, нет причин, почему не могли использовать собственные проекты `ContentPage`-страниц на основе проекта библиотеки .NET Standard или общий проект.
 
-Если вы используете собственные формы, Xamarin.Forms такие функции, как [ `DependencyService` ](xref:Xamarin.Forms.DependencyService), [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)и механизм привязки данных, все по-прежнему работали.
+Если вы используете собственные формы, Xamarin.Forms такие функции, как [ `DependencyService` ](xref:Xamarin.Forms.DependencyService), [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)и механизм привязки данных, все по-прежнему работали. Тем не менее Навигация по страницам выполняется с помощью собственного API-навигации.
 
 ## <a name="ios"></a>iOS
 

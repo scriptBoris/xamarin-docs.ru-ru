@@ -1,28 +1,28 @@
 ---
-title: Заметки и перекрытия в Xamarin.iOS
-description: Эта статья содержит пошаговое руководство, показывающий, как пользоваться возможностями пометку и наложение комплект средств для карты. В этом примере показано добавление карты для приложения, который отображает пометку и наложение в расположении конференции 2013 развивать Xamarin.
+title: Заметки и наложения в Xamarin.iOS
+description: Эта статья содержит пошаговое руководство, в котором показано, как работать с функциями заметки и наложения Map Kit. В этом примере показано добавление карты в приложение, которое отображает заметки и наложения в расположении конференции 2013 развиваться Xamarin.
 ms.prod: xamarin
 ms.assetid: 1BC4F7FC-AE3C-46D7-A4D3-18E142F55B8E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 7d224f034afc9b841bbf82b2b15b92db2d7820c7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 445661513b0cf79df99d54ed0bb4b0261dd75c2a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789584"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105443"
 ---
-# <a name="annotations-and-overlays-in-xamarinios"></a>Заметки и перекрытия в Xamarin.iOS
+# <a name="annotations-and-overlays-in-xamarinios"></a>Заметки и наложения в Xamarin.iOS
 
-Приложение, которое мы собираемся в данном пошаговом руководстве показан ниже:
+Приложение, которое мы создадим в этом пошаговом руководстве показан ниже:
 
  [![](ios-maps-walkthrough-images/00-map-overlay.png "Пример приложения MapKit")](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
  
-Можно найти полный код в **MapsWalkthroughComplete** папку внутри [карты демонстрационный пример](https://developer.xamarin.com/samples/monotouch/MapDemo/).
+Вы найдете полный код в [пример пошагового руководства Maps](https://developer.xamarin.com/samples/monotouch/MapsWalkthrough/).
 
-Давайте начнем с создания нового **iOS пустой проект**и присвоить ей соответствующие имя. Мы начнем путем добавления кода в нашей контроллера представления для отображения MapView, а затем создать новые классы для наших MapDelegate и пользовательские заметки. Для этого выполните следующие действия:
+Начнем с создания нового **пустой проект iOS**и присвоить ей соответствующие имя. Мы начнем с добавления кода в контроллер представления для отображения в объекте MapView и создаст новые классы для наших MapDelegate и пользовательских заметок. Для этого выполните следующие действия:
 
 ## <a name="viewcontroller"></a>ViewController
 
@@ -36,7 +36,7 @@ ms.locfileid: "34789584"
     using CoreGraphics
     ```
 
-1. Добавить `MKMapView` переменную в класс экземпляра вместе с `MapDelegate` экземпляра. Мы создадим `MapDelegate` вскоре:
+1. Добавить `MKMapView` переменную в класс экземпляра вместе с `MapDelegate` экземпляра. Мы создадим `MapDelegate` чуть ниже:
 
     ```csharp
     public partial class ViewController : UIViewController
@@ -46,7 +46,7 @@ ms.locfileid: "34789584"
         ...
     ```
 
-1. На контроллере `LoadView` метод, добавьте `MKMapView` и присвойте ему значение `View` свойства контроллера:
+1. В свойстве контроллера `LoadView` метод, добавьте `MKMapView` и присвойте ему значение `View` свойства контроллера:
 
     ```csharp
     public override void LoadView ()
@@ -56,9 +56,9 @@ ms.locfileid: "34789584"
     }
     ```
 
-    Далее мы добавим код для инициализации карты в "ViewDidLoad'' метод.
+    Далее мы добавим код для инициализации сопоставления в "ViewDidLoad'' метод.
 
-1. В `ViewDidLoad` добавьте код, чтобы задать тип карты конкретное расположение пользователя и разрешить изменение масштаба и сдвиг:
+1. В `ViewDidLoad` добавьте код, чтобы задать тип карты отображения положения пользователя и разрешить масштабирование и панорамирование:
 
     ```csharp
     // change map type, show user location and allow zooming and panning
@@ -69,7 +69,7 @@ ms.locfileid: "34789584"
     
     ```
 
-1. Добавьте код для центрирования карты и задать его область.
+1. Затем добавьте код, чтобы центрировать карту и задать его регион:
 
     ```csharp
     double lat = 30.2652233534254;
@@ -81,20 +81,20 @@ ms.locfileid: "34789584"
     
     ```
 
-1. Создать новый экземпляр `MapDelegate` и назначьте его `Delegate` из `MKMapView`. Опять же, мы будем implcodeent `MapDelegate` вскоре:
+1. Создайте новый экземпляр класса `MapDelegate` и назначьте его `Delegate` из `MKMapView`. Опять же, мы будем implcodeent `MapDelegate` чуть ниже:
 
     ```csharp
     mapDelegate = new MapDelegate ();
     map.Delegate = mapDelegate;     
     ```
 
-1. Начиная с версии iOS 8 следует запросе авторизации пользователя, чтобы использовать их расположения, так что давайте добавьте это в нашем примере. Во-первых, определите `CLLocationManager` переменной уровня класса:
+1. Начиная с версии iOS 8 следует запрашивает авторизацию от пользователя для использования их расположения, так что давайте добавим это в нашем примере. Во-первых, определите `CLLocationManager` переменную уровня класса:
 
     ```csharp
     CLLocationManager locationManager = new CLLocationManager();
     ```
 
-1. В `ViewDidLoad` метод, мы хотим проверить, если устройство, работающим с приложением iOS 8, а также их в случае мы будет запрашивать авторизацию, при использовании приложения:
+1. В `ViewDidLoad` метод, мы хотим проверить, если на устройстве, выполнение приложения используется iOS 8, и если это мы будет запрашивать авторизацию, когда приложение используется:
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion(8,0)){
@@ -102,26 +102,26 @@ ms.locfileid: "34789584"
                 }
     ```
 
-1. Наконец, нужно изменить **Info.plist** файл, чтобы уведомить пользователей причину запроса их расположение. В **источника** меню **Info.plist**, добавьте следующий раздел:
+1. Наконец, нам нужно изменить **Info.plist** файл, чтобы уведомить пользователей о причину запроса их расположение. В **источника** меню **Info.plist**, добавьте следующий раздел:
     
     `NSLocationWhenInUseUsageDescription` 
     
     и строка: 
 
-    `Maps Demo`.
+    `Maps Walkthrough Docs Sample`.
 
 
-## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs-класс для пользовательских примечаний
+## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs-класс для пользовательских заметок
 
 
-1. Мы будем использовать настраиваемый класс для заметки вызывается `ConferenceAnnotation`. Добавьте следующий класс в проект:
+1. Мы будем использовать пользовательский класс для заметки вызывается `ConferenceAnnotation`. Добавьте следующий класс в проект:
 
     ```csharp
     using System;
     using CoreLocation;
     using MapKit;
     
-    namespace MapDemo
+    namespace MapsWalkthrough
     {
         public class ConferenceAnnotation : MKAnnotation
         {
@@ -150,15 +150,15 @@ ms.locfileid: "34789584"
     }   
     ```
 
-## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController - Добавление пометку и наложение
+## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController - Добавление заметки и наложения
 
-1. С `ConferenceAnnotation` на месте можно добавить его к схеме. В `ViewDidLoad` метод `ViewController`, добавить заметку координату центра карты:
+1. С помощью `ConferenceAnnotation` на месте мы можем добавить его к схеме. Вернитесь в `ViewDidLoad` метод `ViewController`, добавить заметки по оси y центра карты:
 
     ```csharp
     map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter)); 
     ```
 
-1. Нам также нужно иметь наложение гостиницы. Добавьте следующий код для создания `MKPolygon` с использованием координат для предоставленных гостиницы и добавьте его к схеме, вызов `AddOverlay`:
+1. Мы также хотим иметь наложение отеля. Добавьте следующий код для создания `MKPolygon` с помощью координат для отеля предоставляются и добавьте его к схеме, вызов `AddOverlay`:
 
     ```csharp
     // add an overlay of the hotel
@@ -178,12 +178,12 @@ ms.locfileid: "34789584"
     
     map.AddOverlay (hotelOverlay);  
     ```
-Это завершает код в `ViewDidLoad`. Теперь нам нужно реализовать наш `MapDelegate` класса для обработки Создание заметки и наложения представления соответственно.
+Это завершает код в `ViewDidLoad`. Теперь нам нужно реализовать наши `MapDelegate` класс для создания заметки и наложения представления соответственно.
 
 
 ## <a name="mapdelegate"></a>MapDelegate
 
-1. Создайте класс с именем `MapDelegate` , наследуемый от `MKMapViewDelegate` и включать `annotationId` переменной для использования в качестве идентификатора повторного использования для заметки:
+1. Создайте класс с именем `MapDelegate` , наследуемый от `MKMapViewDelegate` и включают `annotationId` переменной для использования в качестве идентификатора повторное использование для заметки:
 
     ```csharp
     class MapDelegate : MKMapViewDelegate
@@ -192,9 +192,9 @@ ms.locfileid: "34789584"
         ...
     }
     ```
-    Мы иметь только одну аннотацию здесь повторное использование кода, не является строго обязательным, но рекомендуется включить его.
+    Здесь у нас только есть одно примечание для повторного использования кода не является обязательным, но рекомендуется включить его.
 
-1. Реализуйте `GetViewForAnnotation` метод, чтобы получить о `ConferenceAnnotation` с помощью **conference.png** изображений, включенных в этом пошаговом руководстве:
+1. Реализуйте `GetViewForAnnotation` метод, чтобы вернуть представление для `ConferenceAnnotation` с помощью **conference.png** изображения, включенные в этом пошаговом руководстве:
 
     ```csharp
     public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObject annotation)
@@ -220,14 +220,14 @@ ms.locfileid: "34789584"
     }
     ```
 
-1. Когда пользователь нажимает на заметку, мы хотим отображать изображение Город Остине. Добавьте следующие переменные для `MapDelegate` для образа и его для просмотра:
+1. Когда пользователь касается заметку, мы хотим отображать изображение Город Остин. Добавьте следующие переменные `MapDelegate` для изображения и представление для отображения:
 
     ```csharp
     UIImageView venueView;
     UIImage venueImage;
     ```
 
-1. Далее, чтобы изображение при касании заметки, реализовать `DidSelectAnnotation` метод следующим образом:
+1. Далее, чтобы отобразить изображение шифрованию заметки, реализовать `DidSelectAnnotation` метод следующим образом:
 
     ```csharp
     public override void DidSelectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -247,7 +247,7 @@ ms.locfileid: "34789584"
     }
     ```
 
-1. Чтобы скрыть изображение, когда пользователь отменяет выделение заметки, коснувшись в любом другом месте на карте, реализовать `DidSelectAnnotationView` метод следующим образом:
+1. Чтобы скрыть изображение, когда пользователь отменяет выделение заметки, коснувшись везде на карте, реализовать `DidSelectAnnotationView` метод следующим образом:
 
     ```csharp
     public override void DidDeselectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -261,9 +261,9 @@ ms.locfileid: "34789584"
         }
     }
     ```
-    Теперь у нас есть код для заметки на месте. Осталось является добавление кода для `MapDelegate` можно создать представление для наложения гостиницы.
+    Теперь у нас есть код для заметки на месте. Все, что остается — добавить код для `MapDelegate` Создание представления для элемента управления overlay отеля.
 
-1. Добавьте следующие реализацию `GetViewForOverlay` для `MapDelegate`:
+1. Добавьте следующую реализацию `GetViewForOverlay` для `MapDelegate`:
 
     ```csharp
     public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject overlay)
@@ -277,16 +277,17 @@ ms.locfileid: "34789584"
     }
     ```
 
-Запустите приложение. Теперь у нас есть интерактивной карты с пользовательской заметкой и наложение! Коснитесь заметку, а изображение Остине отображается, как показано ниже:
+Запустите приложение. Теперь у нас есть интерактивную карту с пользовательские примечания и наложение! Щелкните на ней и отображается изображение Остин, как показано ниже:
 
- [![](ios-maps-walkthrough-images/01-map-image.png "Коснитесь заметку, а изображение Остине")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
+ [![](ios-maps-walkthrough-images/01-map-image.png "Коснуться заметки и появится изображение Остине")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
 ## <a name="summary"></a>Сводка
 
-В этой статье мы рассмотрели способ добавления заметки к схеме, а также способы добавления наложение для заданного многоугольника. Мы также было показано, как добавить заметку для анимации изображения по карте поддержка сенсорного ввода.
+В этой статье мы рассмотрели способы добавления заметки к схеме, а также как добавлять наложение для указанного многоугольника. Мы также продемонстрировали, как добавить поддержку сенсорного ввода для заметки для анимации изображения на карте.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Демонстрация карты (пример)](https://developer.xamarin.com/samples/monotouch/MapDemo/)
+- [Пример пошагового руководства Maps](https://developer.xamarin.com/samples/monotouch/MapsWalkthrough/)
+- [Демонстрационный пример карты](https://developer.xamarin.com/samples/monotouch/MapDemo/)
 - [iOS Maps](~/ios/user-interface/controls/ios-maps/index.md)

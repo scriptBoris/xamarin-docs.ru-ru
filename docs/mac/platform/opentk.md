@@ -4,15 +4,15 @@ description: Статья содержит общие сведения о раб
 ms.prod: xamarin
 ms.assetid: BDE05645-7273-49D3-809B-8642347678D2
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 02cd32ac3016a3556cac8611ff839336f3089235
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 835b8cd0f2e689c4d7d4cace1d846543863b7393
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251156"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107720"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Введение в OpenTK в Xamarin.Mac
 

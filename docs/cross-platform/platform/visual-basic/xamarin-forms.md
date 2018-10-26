@@ -6,12 +6,12 @@ ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 256d5c81475be095c8fa0ab0408cbcf673c6b301
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f397cf595a9ae151c5f105341733b2c57023fe99
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997088"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109722"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin.Forms с помощью Visual Basic.NET
 
@@ -27,7 +27,7 @@ Xamarin непосредственно не поддерживает Visual Basi
 Выполните следующие действия для создания простого проекта Xamarin.Forms с помощью Visual Basic.
 
 1. Создайте новый *Xamarin.Forms C#* решение, использующее переносимых библиотек классов (PCL).
-Перейдите к **файл > Новый проект** и в **новый проект** окне перейдите к **установленные > Шаблоны > Visual C# > кросс-платформенные** выберите  **Кросс-приложение (Xamarin.Forms или машинный код) > Xamarin.Forms**.
+Перейдите к **файл > Новый проект** и в **новый проект** окне перейдите к **установленные > Шаблоны > Visual C# > кросс-платформенные** выберите **Cross платформы App (Xamarin.Forms или машинный код) > Xamarin.Forms**.
 
 2. Щелкните правой кнопкой мыши решение и **Добавить > Новый проект**.
 
@@ -79,7 +79,7 @@ Xamarin непосредственно не поддерживает Visual Basi
     ```
 
 9. Теперь нужно, чтобы они указывали на новый проект Visual Basic проекты iOS и Android.
-Щелкните правой кнопкой мыши **ссылки** узел в проекты iOS и Android для открытия **диспетчер ссылок**. Отменить делений переносимой библиотеки C# и их переносимой библиотеки VB (не забудьте, сделать это для проектов Android и iOS).
+Щелкните правой кнопкой мыши **ссылки** узел в проекты iOS и Android для открытия **диспетчер ссылок**. Отменить делений C# переносимой библиотеки и делений переносимой библиотеки VB (не забудьте, сделать это для проектов Android и iOS).
 
    [![](xamarin-forms-images/add-vb-8-sml.png "Удалить старые ссылки на проект, добавьте Справочник по языку Visual Basic")](xamarin-forms-images/add-vb-8.png#lightbox)
 

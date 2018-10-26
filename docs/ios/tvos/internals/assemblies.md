@@ -4,15 +4,15 @@ description: Чтобы уточнить функций, доступных дл
 ms.prod: xamarin
 ms.assetid: 0B1ACF06-65FF-49E2-B6BC-7AEC55638ED8
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 89f2d4b1a4b58f49ab859d3603433427d05c7393
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 1749de49607596fa2b8e555fec471af1d18b8ce9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996565"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50116684"
 ---
 # <a name="assemblies-supported-by-xamarin-for-tvos"></a>Поддерживаемые сборки с Xamarin для tvOS
 

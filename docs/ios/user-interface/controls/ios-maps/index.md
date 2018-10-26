@@ -4,15 +4,15 @@ description: В этом документе описывается платфо�
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 5343f53b77319b08424263103834ffcf10e261a0
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: d83470db23b1376d18fa36c52c1daabaf68cfe0b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242070"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117763"
 ---
 # <a name="maps-in-xamarinios"></a>Карты в Xamarin.iOS
 

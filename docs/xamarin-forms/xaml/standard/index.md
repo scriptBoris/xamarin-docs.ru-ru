@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: 61e0fa2587ce9a8794dbd32ff9de1f13da857342
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 4e65f31d76d9540bed6110198d7cafaab9fe78f5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38838014"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50114903"
 ---
 # <a name="xaml-standard-preview"></a>XAML Standard (Предварительная версия)
 
@@ -20,7 +20,7 @@ ms.locfileid: "38838014"
 
 Выполните следующие действия, чтобы поэкспериментировать с помощью стандартного XAML в Xamarin.Forms.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Скачайте [предварительной версии пакета NuGet здесь](https://aka.ms/xf-xamlstandard-nuget).
 2. Добавить **Xamarin.Forms.Alias** пакет NuGet в проекты Xamarin.Forms .NET Standard и платформы.
@@ -28,7 +28,7 @@ ms.locfileid: "38838014"
 4. Добавление `xmlns:a` ссылки `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
 5. Использовать типы в XAML - см. в разделе [Справочник по элементам управления](controls.md) Дополнительные сведения.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 1. Скачайте [предварительной версии пакета NuGet здесь](https://aka.ms/xf-xamlstandard-nuget).
 2. Добавить **Xamarin.Forms.Alias** пакет NuGet в проекты Xamarin.Forms .NET Standard и платформы.

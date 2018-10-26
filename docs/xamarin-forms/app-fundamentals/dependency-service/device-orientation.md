@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 620404a217b2e8a31192ae6613dcec023ac366cd
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 52b82033cbd6fe0e1a44f5729c815074852230bf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995645"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115423"
 ---
 # <a name="checking-device-orientation"></a>Проверка ориентации устройства
 
@@ -29,7 +29,7 @@ ms.locfileid: "38995645"
 ![](device-orientation-images/orientation-diagram.png "Структура приложений DependencyService")
 
 > [!NOTE]
-> Можно определить, является ли устройство в книжной и альбомной ориентации в общем коде, как показано в [устройства Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation). Метод, описанный в этой статье использует собственные функции для получения дополнительных сведений об ориентации, включая является ли устройство сверху вниз.
+> Можно определить, является ли устройство в книжной и альбомной ориентации в общем коде, как показано в [ориентации устройства](~/xamarin-forms/user-interface/layouts/device-orientation.md#Reacting_to_Changes_in_Orientation). Метод, описанный в этой статье использует собственные функции для получения дополнительных сведений об ориентации, включая является ли устройство сверху вниз.
 
 <a name="Creating_the_Interface" />
 
@@ -215,7 +215,7 @@ public MainPage ()
 }
 ```
 
-Выполнение этого приложения в iOS, Android или на платформах Windows, а затем нажмите кнопку приведет к текст кнопки, обновление с помощью ориентации устройства.
+Текст кнопки, обновление с помощью ориентации устройства приведет к запуске этого приложения на iOS, Android или на платформах Windows, а затем нажмите кнопку.
 
 ![](device-orientation-images/orientation.png "Пример ориентации устройства")
 

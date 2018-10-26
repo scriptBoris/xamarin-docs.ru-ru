@@ -3,22 +3,24 @@ title: RadioButton
 ms.prod: xamarin
 ms.assetid: 3C32EA3F-D917-C988-72C5-A17354DA791E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 1267491f2d9b7519f76651df059722420fa8e1eb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: be473580b24dba6b4f08384771e2097d368f8dc8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763118"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123600"
 ---
 # <a name="radiobutton"></a>RadioButton
 
-В этом разделе вы создадите два взаимоисключающими переключателей (Включение один отключает другой), с помощью [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) и [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/) мини-приложения. При нажатии любой переключатель отображается всплывающее сообщение.
+В этом разделе вы создадите два взаимоисключающими переключателей (Включение один запрет на другой), с помощью [`RadioGroup`](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)
+и [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
+мини-приложения. При нажатии одной из кнопок переключателей, отобразится всплывающее сообщение.
 
 
-Откройте **Resources/layout/Main.axml** и добавьте два файла [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s, вложенные в [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) (внутри [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
+Откройте **Resources/layout/Main.axml** файл и добавьте два [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s, вложенные в [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) (внутри [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
 
 ```xml
 <RadioGroup
@@ -36,9 +38,10 @@ ms.locfileid: "30763118"
 </RadioGroup>
 ```
 
-Очень важно, [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s группируются с [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) элемент, чтобы одновременно не более одного можно выбрать. Эта логика автоматически обрабатываются системой Android. Если в одном [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/) в выбранной группе, все остальные не автоматически выбраны.
+Очень важно, [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s группируются по [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) элемент таким образом, можно выбрать не более одного за раз. Эта логика автоматически обрабатываются системой Android. Если в одном [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
+в выбранной группе, все другие автоматически невыделенные.
 
-К каким-либо при каждой [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/) — флажок установлен, необходимо написать обработчик событий:
+Сделать что-то при каждой [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/) — флажок установлен, необходимо написать обработчик событий:
 
 ```csharp
 private void RadioButtonClick (object sender, EventArgs e)
@@ -48,10 +51,12 @@ private void RadioButtonClick (object sender, EventArgs e)
 }
 ```
 
-Во-первых отправитель переданный приведен в RadioButton.
-Затем [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/) сообщение отображается текст выбранного переключателя.
+Во-первых отправитель, который передается в будет преобразована в RadioButton.
+Затем [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
+сообщение отображается текст выбранного переключателя.
 
-Теперь в нижней части [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle) метод, добавьте следующий код:
+Теперь, в нижней части [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)
+метод, добавьте следующий код:
 
 ```csharp
 RadioButton radio_red = FindViewById<RadioButton>(Resource.Id.radio_red);
@@ -65,7 +70,9 @@ radio_blue.Click += RadioButtonClick;
 
 Запустите приложение.
 
-**Совет:** Если необходимо изменить состояние самостоятельно (например, при загрузке сохраненного [ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/)), используйте [ `Checked` ](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/) метод задания свойства или [ `Toggle()` ](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/) метод.
+**Совет:** Если необходимо изменить состояние самостоятельно (например, при загрузке сохраненного [ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/)), используйте [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
+метод задания свойства или [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
+метод.
 
-*Некоторые части этой страницы, изменения на основе работы создан и совместно используются Android открыть исходный проект и используются в соответствии с условиями, описанной в*
-[*Creative Commons 2.5 однозначного соответствия лицензий* ](http://creativecommons.org/licenses/by/2.5/). 
+*Некоторые части этой страницы, изменения с учетом работы создана и совместно используется Android откройте исходный проект и используются в соответствии с условиями, описанными в*
+[*лицензии Creative Commons 2.5 Attribution* ](http://creativecommons.org/licenses/by/2.5/). 

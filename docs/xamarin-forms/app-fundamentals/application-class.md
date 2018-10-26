@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 6de4380f2ce2d19df4ff912b7c86b75ca9e7821b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: cebdd6fafafae7d1cd6258e6200808731e3c4f29
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38999083"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118816"
 ---
 # <a name="xamarinforms-app-class"></a>Класс приложения Xamarin.Forms
 
@@ -79,7 +79,7 @@ public class App : Xamarin.Forms.Application
 
 `Properties` Использует словарь `string` ключ и сохраняет `object` значение.
 
-Например, можно задать постоянное `"id"` свойства в любом месте в коде (при выборе элемента на странице `OnDisappearing` метод, или в `OnSleep` метод) следующим образом:
+Например, можно задать это постоянный `"id"` свойства в любом месте в коде (при выборе элемента на странице `OnDisappearing` метод, или в `OnSleep` метод) следующим образом:
 
 ```csharp
 Application.Current.Properties ["id"] = someClass.ID;

@@ -3,21 +3,22 @@ title: CheckBox
 ms.prod: xamarin
 ms.assetid: A884AF10-D5EA-72CA-2301-B80CEC7FFBE7
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 85c505d03e7a763b24fb176b6a94c0fe43009b79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e03595e8d88a2f12341b9e339d0581c631224848
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765757"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120805"
 ---
 # <a name="checkbox"></a>CheckBox
 
-В этом разделе вы создадите флажок для выбора элементов, с помощью [ `CheckBox` ](https://developer.xamarin.com/api/type/Android.Widget.CheckBox) мини-приложения. При нажатии флажок всплывающее сообщение текущее состояние флажка.
+В этом разделе вы создадите флажок для выбора элементов, с помощью [`CheckBox`](https://developer.xamarin.com/api/type/Android.Widget.CheckBox)
+мини-приложение. При нажатии флажок, появится всплывающее сообщение о текущее состояние флажка.
 
-Откройте **Resources/layout/Main.axml** и добавьте [ `CheckBox` ](https://developer.xamarin.com/api/type/Android.Widget.CheckBox/) элемент (внутри [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout)):
+Откройте **Resources/layout/Main.axml** файл и добавьте [ `CheckBox` ](https://developer.xamarin.com/api/type/Android.Widget.CheckBox/) элемент (внутри [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout)):
 
 ```xml
 <CheckBox android:id="@+id/checkbox"
@@ -26,7 +27,8 @@ ms.locfileid: "30765757"
         android:text="check it out" />
 ```
 
-Чтобы сделать что-либо, при изменении состояния, добавьте следующий код в конец [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle) метод:
+Чтобы сделать что-то, при изменении состояния, добавьте следующий код в конец [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)
+метод:
 
 ```csharp
 CheckBox checkbox = FindViewById<CheckBox>(Resource.Id.checkbox);
@@ -39,11 +41,17 @@ checkbox.Click += (o, e) => {
 };
 ```
 
-Здесь фиксируется [ `CheckBox` ](https://developer.xamarin.com/api/type/Android.Widget.CheckBox/) элемент из макета, затем обрабатывает событие Click, который определяет действие, которое будет предпринята, когда выбирается флажок. При щелчке [ `Checked` ](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/) свойство вызывается, чтобы проверить новое состояние флажка. Если он установлен, то [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/) отображается сообщение «Выбранные», в противном случае отображается «Не установлен». [ `CheckBox` ](https://developer.xamarin.com/api/type/Android.Widget.CheckBox/) Обрабатывает собственные изменения состояния, поэтому необходимо запрашивать текущее состояние.
+Здесь фиксируется [`CheckBox`](https://developer.xamarin.com/api/type/Android.Widget.CheckBox/)
+элемент из макета, затем обрабатывает событие щелчка, который определяет действие, которое необходимо выполнить при нажатии флажок. При нажатии [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
+свойство вызывается новое состояние флажка. Если проверки, а затем [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
+Отображает сообщение «Выбранные», в противном случае отображается «Не выбран». В [`CheckBox`](https://developer.xamarin.com/api/type/Android.Widget.CheckBox/)
+обрабатывает свои собственные изменения состояния, поэтому необходимо запрашивать текущее состояние.
 
 Запустите его.
 
-**Совет:** Если необходимо изменить состояние самостоятельно (например, при загрузке сохраненного [ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference), используйте [ `Checked` ](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked) метод задания свойства или [ `Toggle()` ](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle) метод.
+**Совет:** Если необходимо изменить состояние самостоятельно (например, при загрузке сохраненного [ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference), используйте [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked)
+метод задания свойства или [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle)
+метод.
 
-*Некоторые части этой страницы, изменения на основе работы создан и совместно используются Android открыть исходный проект и используются в соответствии с условиями, описанной в*
-[*Creative Commons 2.5 однозначного соответствия лицензий* ](http://creativecommons.org/licenses/by/2.5/).
+*Некоторые части этой страницы, изменения с учетом работы создана и совместно используется Android откройте исходный проект и используются в соответствии с условиями, описанными в*
+[*лицензии Creative Commons 2.5 Attribution* ](http://creativecommons.org/licenses/by/2.5/).

@@ -7,12 +7,12 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 07/19/2018
-ms.openlocfilehash: 49f2d96fb7f95ab880d5cfafa420afbbe933c1ad
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 17e62d68f8ad2c7deff500216c0bb095ca8f4275
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156721"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50117451"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Сводка Глава 4. Раскрутка стека
 
@@ -115,7 +115,7 @@ ms.locfileid: "39156721"
 
 - [Глава 4 полнотекстового поиска (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch04-Apr2016.pdf)
 - [Примеры в главе 4](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
-- [Глава 4 F #-Примеры](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
+- [Глава 4 F# примеры](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
 - [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
 - [BoxView](~/xamarin-forms/user-interface/boxview.md)

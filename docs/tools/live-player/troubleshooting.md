@@ -3,15 +3,15 @@ title: Устранение неполадок Xamarin Live Player
 description: В этом документе описаны известные проблемы с Xamarin Live Player и возможные решения. В нем описывается, что проблемы с подключением, проблемы с конфигурацией и многое другое.
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: ceb8964ac378957dcf5883bbbfff9e984b079294
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: eb9d758d72febe0fc0b705d66246c99ade1fc80f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251246"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50109696"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>Устранение неполадок Xamarin Live Player
 

@@ -1,93 +1,93 @@
 ---
 title: Изменения платформы дополнительных watchOS 3
-description: В этом документе описываются различные изменения framework, представленных в watchOS 3, как работать с ними в Xamarin. Обсуждаются основных данных, основной движения, Foundation, HealthKit, HomeKit, PassKit и UIKit.
+description: В этом документе описываются различные framework изменения, внесенные в watchOS 3 и способы работы с ними в Xamarin. Рассматриваются основные данные, Core движения, Foundation, HealthKit, HomeKit, PassKit и UIKit.
 ms.prod: xamarin
 ms.assetid: FE93796E-F699-4B14-B37D-D39F9D48E81E
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: af44096928c5e543ac99df3faec9f2e9215f666d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 745c39dab1f73870ce036791434ed9a0b05d681b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791519"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122625"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>Изменения платформы дополнительных watchOS 3
 
-_В этой статье рассматриваются дополнительные, незначительные изменения или усовершенствования существующих инфраструктур для watchOS 3._
+_В этой статье рассматриваются дополнительные, незначительные изменения и улучшения для существующих платформ для watchOS 3._
 
-Помимо основных изменений для операций ввода-вывода Apple внес изменения и усовершенствования несколько существующих инфраструктур в watchOS 3.
+Помимо основных изменений для iOS Apple сделала изменения и усовершенствования для нескольких существующих платформ в watchOS 3.
 
 
 ## <a name="core-data"></a>Основные данные
 
-Следующие улучшения были внесены в платформе основных данных для наблюдения за ОС 3:
+В framework Core Data для watch OS 3 быть внесены следующие улучшения:
 
-- Корневой [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) объектов поддерживает параллельных сбой и выборка без сериализации.
+- Корневой [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) объектов поддерживает параллельные завершение со сбоем и выборка без сериализации.
 - [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator) класс поддерживается пул хранилищ данных SQLite.
-- [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) объектов с хранилищами данных SQLite в режиме с упреждающей Записью журнала поддержки создания нового запроса компонентов, где управляемого объекта контексты Майкрософт можно прикрепить к версии конкретной базы данных для следующей выборки и Ошибка транзакции.
-- С помощью высокоуровневые `NSPersistenceContainer` ссылка `NSPersistentStoreCoordinator`, [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) и других ресурсов настройки основных данных.
-- Были добавлены несколько новых удобных методов `NSManagedObject` упрощая процесс для выполнения выборки и создавать подклассы.
+- [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) объектов с хранилищами данных SQLite в режиме журнал WAL поддержки нового поколения запроса компонентов, где управляемый объект контекстов (MOC) можно прикрепить к версии конкретной базы данных для будущих выборки и Ошибка транзакции.
+- С помощью высокоуровневым `NSPersistenceContainer` ссылка `NSPersistentStoreCoordinator`, [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) и другим ресурсам конфигурации Core Data.
+- Были добавлены несколько новых удобных методов `NSManagedObject` облегчая процесс для выполнения операций выборки и создание подклассов.
 
-Дополнительные сведения см. в разделе Apple [Framework справочные сведения об основных данных](https://developer.apple.com/reference/coredata).
+Дополнительные сведения см. в разделе Apple [справочные материалы по основной данных Framework](https://developer.apple.com/reference/coredata).
 
 
-## <a name="core-motion"></a>Основные движения
+## <a name="core-motion"></a>Core движения
 
-Следующие улучшения были внесены в framework Core движения для наблюдения за ОС 3:
+В framework Core движения для watch OS 3 быть внесены следующие улучшения:
 
-- Новое событие движения устройство использует акселерометр и гироскопа для предоставления обновлений движения и ориентацию. для этого обновления (по ставкам до 100 Гц) можно зарегистрировать приложение приложений.
-- Новое событие Pedometer обеспечивает быстрый и уведомления в режиме реального времени, когда пользователь задерживает и возобновляет выполнение. Используйте [CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer) для регистрации событий pedometer основной или фоновой.
+- Новое событие движения устройство использует акселерометр и гироскоп для предоставления обновлений движения и ориентацию. приложение можно зарегистрировать для данного обновления (по ставкам до 100 Гц).
+- Новое событие Pedometer обеспечивает уведомления в реальном времени, когда пользователь приостанавливает и возобновляет выполнение. Используйте [CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer) для регистрации событий pedometer обычном или фоновом режиме.
 
 
 ## <a name="foundation"></a>Foundation
 
-Следующие улучшения были внесены в платформе Foundation для Контрольные значения 3 ОС:
+Следующие улучшения были внесены в Framework Foundation для watch OS 3:
 
-- Используйте новую [NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval) класса, чтобы дата и время вычисления интервал, например длительность, для сравнения интервалов и тестирование для пересечения интервал.
-- Были добавлены несколько новых свойств [NSLocal](https://developer.apple.com/reference/foundation/nslocale) класса для получения информации и отображение доступных форматов.
-- Используйте новую [NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement) класса для преобразования между различных единиц из мер (единица Измерения) или выполняют вычисления над значениями в разных UOMs.
-- Используйте новую [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter) класс форматирование локализованных измерения для отображения для конечного пользователя.
-- Используйте новую [NSUnit](https://developer.apple.com/reference/foundation/nsunit) и [NSDimension](https://developer.apple.com/reference/foundation/nsdimension) классы для представления определенных UOMs.
+- Используйте новый [NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval) класса, чтобы дата и время вычисления интервала, например длительности для сравнения интервалы и тестирование для пересечения интервал.
+- Были добавлены несколько новых свойств [NSLocal](https://developer.apple.com/reference/foundation/nslocale) класс получения местной информации и отображение доступных форматов.
+- Используйте новый [NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement) класс для преобразования между разные единицы из мер (единица Измерения) или выполняют вычисления над значениями в разных UOMs.
+- Используйте новый [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter) класс для форматирования локализованного измерения для отображения для конечного пользователя.
+- Используйте новый [NSUnit](https://developer.apple.com/reference/foundation/nsunit) и [NSDimension](https://developer.apple.com/reference/foundation/nsdimension) классы для представления определенных UOMs.
 
 
 ## <a name="healthkit"></a>HealthKit
 
-Следующие улучшения были внесены в платформе HealthKit для Контрольные значения 3 ОС:
+Следующие улучшения были внесены в HealthKit Framework для watch OS 3:
 
-- Используйте новую [HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration) класс, чтобы указать `ActivityType` и `LocationType` для тренировки.
-- Новый [HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject) и `WheelchairUse` метод [HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore) класс были добавлены для работы с инвалидных связанных данных о работоспособности.
-- Были добавлены новые разделы метаданных для типов погоды (такие как `HKWeatherConditionClear` и `HKWeatherConditionCloudy`) и тренировки типы (такие как `HKWorkoutActivityTypeFlexibility` и `HKWorkoutActivityTypeWheelchairRunPace`) были добавлены.
+- Используйте новый [HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration) класс для указания `ActivityType` и `LocationType` для тренировок.
+- Новый [HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject) и `WheelchairUse` метод [HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore) класса были добавлены для работы с колясок связанные данные о работоспособности.
+- Были добавлены новые ключи метаданных для типов погоды (такие как `HKWeatherConditionClear` и `HKWeatherConditionCloudy`) и для организации тренировок типов (таких как `HKWorkoutActivityTypeFlexibility` и `HKWorkoutActivityTypeWheelchairRunPace`) были добавлены.
 
 
 ## <a name="homekit"></a>HomeKit
 
-Следующие улучшения были внесены в платформе HomeKit для Контрольные значения 3 ОС:
+В фреймворк HomeKit для watch OS 3 быть внесены следующие улучшения:
 
-- Добавлена возможность просматривать и взаимодействовать с HomeKit подключен IP камеры.
-- Добавлено несколько новых служб и их характеристики.
-- Добавлены дополнительные контекста и конфигурации аксессуаров основные службы и связи служб.
+- Добавлена возможность просматривать и взаимодействовать с HomeKit подключения IP-адрес камеры.
+- Добавлены несколько новых служб и характеристики.
+- Добавлены дополнительные контекста и конфигурации аксессуаров первичная, обслуживает и свяжите службы.
 
 
 ## <a name="passkit"></a>PassKit
 
-Следующие улучшения были внесены в платформе PassKit для Контрольные значения 3 ОС:
+Следующие улучшения были внесены в PassKit Framework для watch OS 3:
 
-- При развертывании среды для поддержки безопасного выплат в приложении на Apple Watch физические товары и служб.
+- При развертывании этой среды для поддержки безопасных платежей в приложении на Apple Watch из физических товаров и услуг.
 - Теперь доступны следующие классы: [PKPayment](https://developer.apple.com/reference/passkit/pkpayment), [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod), [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest) и [PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
 
 
 ## <a name="uikit"></a>UIKit
 
-Следующие улучшения были внесены в платформе UIKit для Контрольные значения 3 ОС:
+В платформе UIKit для watch OS 3 имеют внесены следующие улучшения.
 
-- Для поддержки динамического типа подписей для текстовых полей и текстовых полей используйте новый `PreferredFontForTextStyle` метод `UIFont` класса.
-- `ColorWithDisplayP3` Был добавлен метод поддерживает широкую цветовую.
+- Для поддержки динамического типа в метки, текстовые поля и текстовые поля используйте новый `PreferredFontForTextStyle` метод `UIFont` класса.
+- `ColorWithDisplayP3` Метод была добавлена для поддержки широкая цветовая палитра.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Приступая к работе (пример)](https://developer.xamarin.com/samples/monotouch/WatchKit/)
-- [Новые возможности watchOS 3](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)
+- [Новые возможности в watchOS 3](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)

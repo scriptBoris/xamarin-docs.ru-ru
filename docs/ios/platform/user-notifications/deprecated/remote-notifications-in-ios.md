@@ -4,15 +4,15 @@ description: В этом документе описывается, как дл�
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f11f5d1cbde0f5eae27215af8eb6544be46c0206
-ms.sourcegitcommit: ee66db647ae9d94b54b1c5d9093075a620d0c6b4
+ms.openlocfilehash: 8ad742607e506df436a5526d31621ac7636ac29b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "39654819"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110021"
 ---
 # <a name="push-notifications-in-ios"></a>Push-уведомлений в iOS
 

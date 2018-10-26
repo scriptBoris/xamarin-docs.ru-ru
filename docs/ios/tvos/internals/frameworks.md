@@ -1,18 +1,18 @@
 ---
 title: Поддерживаемые и неподдерживаемые платформы в tvOS
-description: 'Чтобы уточнить функций, доступных для tvOS приложений, этот документ содержит два списка Apple платформ: поддерживаемым tvOS, а также не поддерживается tvOS.'
+description: 'Чтобы проиллюстрировать функции, доступные для приложения tvOS, этот документ содержит два списка платформ Apple: поддерживаемые tvOS и, не поддерживаемые tvOS.'
 ms.prod: xamarin
 ms.assetid: 28EF1337-3D0E-47AB-8A13-1B333A964FB6
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 8ba33d028263385eca50f8174124bbe629e3f951
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 85067d1dc95ee63cf905e81fba7afc973f7ec37e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789126"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123203"
 ---
 # <a name="supported-and-unsupported-frameworks-in-tvos"></a>Поддерживаемые и неподдерживаемые платформы в tvOS
 
@@ -20,7 +20,7 @@ ms.locfileid: "34789126"
 
 ## <a name="supported-frameworks"></a>Поддерживаемые платформы
 
-Это список платформ, для использования в приложениях Xamarin.tvOS компании Apple:
+Это список платформ, предоставляемых компанией Apple для использования в Xamarin.tvOS приложениях:
 
 * Ускорение
 * AudioToolbox
@@ -30,7 +30,7 @@ ms.locfileid: "34789126"
 * CFNetwork
 * CloudKit
 * CoreBluetooth
-* Coredata в методе
+* CoreData
 * CoreFoundation
 * CoreGraphics
 * CoreImage
@@ -43,7 +43,7 @@ ms.locfileid: "34789126"
 * Foundation
 * Игровое
 * GameKit
-* Игрового процесса
+* Игровой процесс
 * GLKit
 * ImageIO
 * MachO
@@ -70,7 +70,7 @@ ms.locfileid: "34789126"
 
 ## <a name="unsupported-frameworks"></a>Неподдерживаемые платформы
 
-Ниже приведен список платформ, которые поддерживаются iOS 9, но будут удалены из службы поддержки tvOS 9 компанией Apple и таким образом, не может использоваться в приложениях Xamarin.tvOS:
+Ниже приведен список платформ, которые поддерживаются iOS 9, но были удалены из поддержки tvOS 9 компании Apple и таким образом, не может использоваться в приложениях Xamarin.tvOS.
 
 * Учетные записи
 * Адресной книги
@@ -115,5 +115,5 @@ ms.locfileid: "34789126"
 ## <a name="related-links"></a>Связанные ссылки
 
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS человека направляющие интерфейса](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [Человека направляющие интерфейса tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Приложение руководство по программированию для tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
