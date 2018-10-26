@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: d74ad52a2926fb30a528aeba29156259390c3edf
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: f787adcba78a13f6d4cad3fb446350a65e960aca
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947248"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123613"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms карты
 
@@ -180,7 +180,7 @@ map.MapType == MapType.Street;
 
 ### <a name="map-region-and-mapspan"></a>Области карты и MapSpan
 
-Как показано в приведенном выше фрагменте кода, указав `MapSpan` экземпляр конструктора карты задает первоначального представления (центральную точку и масштаб) сопоставления при его загрузке. `MoveToRegion` Метод класса map затем можно изменить уровень позиции или измените масштаб карты. Существует два способа для создания нового `MapSpan` экземпляр:
+Как показано в приведенном выше фрагменте кода, указав `MapSpan` экземпляр конструктора карты задает первоначального представления (центральную точку и масштаб) сопоставления при его загрузке. `MoveToRegion` Затем метод класса map можно использовать для изменения положения или масштабирования уровня карты. Существует два способа для создания нового `MapSpan` экземпляр:
 
 -  **MapSpan.FromCenterAndRadius()** -статический метод, чтобы создать диапазон из `Position` и указав `Distance` .
 -  **New () MapSpan** -конструктор, использующий `Position` и преобразование градусов, широты и долготы для отображения.

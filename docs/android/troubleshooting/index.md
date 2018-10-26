@@ -1,23 +1,23 @@
 ---
-title: Устранение неполадок с Xamarin.Android
-description: Документы в этом разделе рассматриваются функций, специфичных для устранения неполадок с Android.
+title: Устранение неполадок с помощью Xamarin.Android
+description: Документы в этом разделе рассматриваются возможности, предназначенные для устранения неполадок с Android.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 54583AB3-FE6D-4357-B4FC-CBC48B7EDEE4
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 539d67f679b45a94a7c6db5552ba9a34d2bd442f
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 3df45cc0e3092c5c94c492864182d04cac392ff7
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436522"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112849"
 ---
 # <a name="troubleshooting"></a>Устранение неполадок
 
-_Документы в этом разделе рассматриваются функций, специфичных для устранения неполадок с Android._
+_Документы в этом разделе рассматриваются возможности, предназначенные для устранения неполадок с Android._
 
 ## <a name="troubleshooting-tipsandroidtroubleshootingtroubleshootingmd"></a>[Советы по устранению неполадок](~/android/troubleshooting/troubleshooting.md)
 
@@ -26,19 +26,19 @@ _Документы в этом разделе рассматриваются ф
 
 ## <a name="frequently-asked-questionsquestionsindexmd"></a>[Часто задаваемые вопросы](questions/index.md)
 
-Часто задаваемые Xamarin.Android вопросам устранения неполадок.
+Xamarin.Android, устранение неполадок вопросы и ответы.
 
 
 ## <a name="resolving-library-installation-errorsandroidtroubleshootingresolving-library-installation-errorsmd"></a>[Устранение ошибок установки библиотеки](~/android/troubleshooting/resolving-library-installation-errors.md)
 
-Здесь приведены решения некоторых наиболее распространенных проблем, которые могут возникнуть при ссылки и автоматическую загрузку библиотек Android поддержки или Google Play служб.
+Это руководство содержит обходные пути для некоторых распространенных ошибок, которые могут произойти при ссылок и автоматическую загрузку библиотек Android поддержки или Google Play services.
 
 
 ## <a name="changes-to-the-android-sdk-toolingandroidtroubleshootingsdk-cli-tooling-changesmd"></a>[Изменения в инструментарии пакета SDK для Android](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 
-Начиная с версии 26.0.1 средств пакета SDK Android, компания Google отменила существующих диспетчеров AVD и SDK in favour of новые средства командной строки.
+Начиная с версии 26.0.1 из Android SDK Tools, Google исключила существующих диспетчеров AVD и SDK in favour of новые средства командной строки.
 
 
 ## <a name="xamarinandroid-errors-referenceandroidtroubleshootingerrorsmd"></a>[Руководство по ошибкам Xamarin.Android](~/android/troubleshooting/errors.md)
 
-Справочник ошибок отображаются наиболее распространенные ошибки, которые могут возникнуть при использовании Xamarin.Android в Xamarin Studio
+Справочное руководство ошибки, показывающая наиболее распространенные ошибки, которые могут возникнуть при использовании Xamarin.Android в Xamarin Studio

@@ -4,15 +4,15 @@ description: В этой статье рассматривается работ�
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 728e0264f7da8f3adfef360dd473772dd7e28a11
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: f9e05b6d16210021257fe3958966739e526aed18
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251161"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123215"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Скопируйте и вставьте в Xamarin.Mac
 
@@ -1283,4 +1283,4 @@ if (ok) {
 - [MacCopyPaste (пример)](https://developer.xamarin.com/samples/mac/MacCopyPaste/)
 - [Привет, Mac](~/mac/get-started/hello-mac.md)
 - [Руководство по программированию на монтажном столе](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
-- [macOS рекомендациям по интерфейсам](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [Рекомендации по созданию пользовательских интерфейсов в macOS](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

@@ -4,15 +4,15 @@ description: В этой статье рассматривается работ�
 ms.prod: xamarin
 ms.assetid: d2593883-d255-431f-9781-75f04d8cecea
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 1760e764c4918f597c95a4c811be9166e33bb1f3
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 9f5bdc9a79c514f0310d29b3d054fb7e9659d669
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251042"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123795"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Стандартные элементы управления в Xamarin.Mac
 

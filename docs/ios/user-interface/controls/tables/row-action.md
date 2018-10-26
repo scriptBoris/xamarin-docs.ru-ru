@@ -1,48 +1,48 @@
 ---
-title: Работа с действиями строки в Xamarin.iOS
-description: В этом руководстве демонстрируется создание пользовательского проведите действия для строки таблицы с UISwipeActionsConfiguration или UITableViewRowAction
+title: Работа с действиями строк в Xamarin.iOS
+description: В этом руководстве показано, как создавать пользовательские считывание действия для строк таблицы с UISwipeActionsConfiguration или UITableViewRowAction
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 09/25/2017
-ms.openlocfilehash: 4be8b6dc66c9c047e6662067e7e3ecf81ab22893
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 6d41f37d4a63db710bb04e35e6e1a4be0dd4f7a4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789945"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50105913"
 ---
-# <a name="working-with-row-actions-in-xamarinios"></a>Работа с действиями строки в Xamarin.iOS
+# <a name="working-with-row-actions-in-xamarinios"></a>Работа с действиями строк в Xamarin.iOS
 
-_В этом руководстве демонстрируется создание пользовательского проведите действия для строки таблицы с UISwipeActionsConfiguration или UITableViewRowAction_
+_В этом руководстве показано, как создавать пользовательские считывание действия для строк таблицы с UISwipeActionsConfiguration или UITableViewRowAction_
 
-![Демонстрация действия проведите по строкам](row-action-images/action02.png)
+![Демонстрация действия проведите по экрану в строках](row-action-images/action02.png)
 
-iOS предоставляет два способа для выполнения действий над таблицей: `UISwipeActionsConfiguration` и `UITableViewRowAction`.
+iOS предоставляет два способа для выполнения действий на таблицу: `UISwipeActionsConfiguration` и `UITableViewRowAction`.
 
-`UISwipeActionsConfiguration` появился в iOS 11 и используется для определения набора действий, которые необходимо выполнить в случае, если пользователь вставляет _в любом направлении_ над строкой в табличном представлении. Это поведение аналогично собственного Mail.app 
+`UISwipeActionsConfiguration` появился в iOS 11 и используется для определения набора действий, которые необходимо выполнить тогда, когда пользователь вставляет _в любом направлении_ над строкой в табличном представлении. Это поведение похоже, собственного Mail.app 
 
-`UITableViewRowAction` Класс используется для определения действие, которое будет иметь место, когда пользователь вставляет по горизонтали для строки в таблицу.
-Например, когда изменение таблицы, считывания влево в строке отображает **удалить** кнопку по умолчанию. При присоединении несколько экземпляров `UITableViewRowAction` класса `UITableView`, может быть определено несколько пользовательских действий, каждый из которых свой собственный текст, форматирование и поведение.
+`UITableViewRowAction` Класс используется для определения действие, которое будет иметь место, когда пользователь вставляет по горизонтали влево над строкой в табличном представлении.
+Например, когда изменение таблицы, проводя пальцем влево в строке отображает **удалить** кнопку по умолчанию. Путем присоединения нескольких экземпляров `UITableViewRowAction` класс `UITableView`, может быть определено несколько пользовательских действий, каждый из которых свой собственный текст, форматирование и поведение.
 
 
 ## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
-Существует три действия, необходимые для реализации действия проведите с `UISwipeActionsConfiguration`:
+Существует три действия, необходимые для реализации действия проведите по экрану с `UISwipeActionsConfiguration`:
 
 1. Переопределить `GetLeadingSwipeActionsConfiguration` и/или `GetTrailingSwipeActionsConfiguration` методы. Эти методы возвращают `UISwipeActionsConfiguration`. 
 2. Создать экземпляр `UISwipeActionsConfiguration` должны быть возвращены. Этот класс принимает массив `UIContextualAction`.
 3. Создайте таблицу `UIContextualAction`.
 
-Это описано в следующих разделах более подробно.
+Это описано более подробно в следующих разделах.
 
 ### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. Реализация методов SwipeActionsConfigurations
 
-`UITableViewController` (а также `UITableViewSource` и `UITableViewDelegate`) содержат два метода: `GetLeadingSwipeActionsConfiguration` и `GetTrailingSwipeActionsConfiguration`, которые используются для реализации набор действий, проведите на строку представления таблицы. Начальные действия проведите относится считывание из левой части экрана на языке, слева направо и из правой части экрана языке справа налево. 
+`UITableViewController` (а также `UITableViewSource` и `UITableViewDelegate`) содержит два метода: `GetLeadingSwipeActionsConfiguration` и `GetTrailingSwipeActionsConfiguration`, которые используются для реализации набор действий, проведите по экрану на строку представления таблицы. Начальные действие прокрутки ссылается на жеста перетаскивания из левой части экрана на языке слева направо и из правой части экрана в языка справа налево. 
 
-Следующий пример (из [TableSwipeActions](https://developer.xamarin.com/samples/monotouch/TableSwipeActions) образец) демонстрируется реализация начальные конфигурации считывание. Создаются два действия, из контекстных команд, которые рассматриваются [ниже](#create-uicontextualaction). Эти действия передаются в только что инициализированный [ `UISwipeActionsConfiguration` ](#create-uiswipeactionsconfigurations), который используется как возвращаемое значение.
+Следующий пример (из [TableSwipeActions](https://developer.xamarin.com/samples/monotouch/TableSwipeActions) образец) демонстрируется реализация начальные конфигурации проведите по экрану. Два действия создаются на основе контекстные действия, которым мы вернемся [ниже](#create-uicontextualaction). Эти действия передаются в только что инициализированный [ `UISwipeActionsConfiguration` ](#create-uiswipeactionsconfigurations), который используется в качестве возвращаемого значения.
 
 
 ```csharp
@@ -73,23 +73,23 @@ var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualActio
 leadingSwipe.PerformsFirstActionWithFullSwipe = false;
 ```
 
-Это важно отметить, что порядок отображения действий зависит от способа передачи в массив. Например код вставляет начальные выше отображаются действия так, как:
+Важно отметить, что порядок отображения действий зависит от способа передачи их в массив. Например приведенный выше для ведущих вставляет отображаются действия как таким образом:
 
-![Начальные действия проведите отображаются на строку таблицы](row-action-images/action03.png)
+![Начальные действия жеста перетаскивания отображается на строку таблицы](row-action-images/action03.png)
 
-В конце вставляет, действия будут отображаться как показано на следующем рисунке:
+Для конечных вставляет, действия будет отображаться, как показано на следующем рисунке:
 
-![в конце действия проведите отображаются на строку таблицы](row-action-images/action04.png)
+![конечные считывание действия отображаются на строку таблицы](row-action-images/action04.png)
 
-Этот фрагмент кода также используется новый `PerformsFirstActionWithFullSwipe` свойство. По умолчанию это свойство имеет значение true, то есть, первое действие в массиве будет происходить, когда пользователь предъявляет полностью в строке. Если у вас есть действие, которое не является необратимым (например «Delete», это может быть идеальным и поэтому следует задать значение `false`.
+Этот фрагмент кода также используется новый `PerformsFirstActionWithFullSwipe` свойство. По умолчанию это свойство имеет значение true, это означает, что первое действие в массиве произойдет, если пользователь предъявляет полностью в строке. Если у вас есть действие, которое не является необратимым (например «удалить», это может быть не идеальным, и поэтому следует задать значение `false`.
 
 <a name="create-uicontextualaction" />
 
 ### <a name="create-a-uicontextualaction"></a>Создание `UIContextualAction`
 
-Контекстно-зависимое действие — где фактически создать действие, которое будет отображаться, когда пользователь предъявляет строки таблицы.
+Контекстно-зависимое действие —, где фактически создать действие, которое отображается, если пользователь предъявляет строку таблицы.
 
-Для инициализации действие, которое необходимо предоставить `UIContextualActionStyle`, заголовок, а также `UIContextualActionHandler`. `UIContextualActionHandler` Принимает три параметра: действие, представление, отображаемое в действие и обработчик завершения:
+Для инициализации необходимо указать действие `UIContextualActionStyle`, title, а также `UIContextualActionHandler`. `UIContextualActionHandler` Принимает три параметра: действие, представление, отображаемое в действие и завершающий обработчик:
 
 ```csharp
 public UIContextualAction ContextualFlagAction(int row)
@@ -113,13 +113,13 @@ public UIContextualAction ContextualFlagAction(int row)
 }
 ```
 
-Можно изменить различные свойства visual, такие как цвет фона или фоновое изображение действия. В приведенном выше фрагменте кода демонстрируется добавление изображения к действию и установка его цвета фона на синий.
+Можно изменять различные свойства визуальных элементов, такие как фоновый цвет или рисунок действия. В приведенном выше фрагменте кода демонстрируется добавление изображения к действию и установка его цвета фона на синий.
 
-После создания контекстно-зависимое действий их можно использовать для инициализации `UISwipeActionsConfiguration` в `GetLeadingSwipeActionsConfiguration` метод.
+Когда контекстных действий будут созданы, их можно использовать для инициализации `UISwipeActionsConfiguration` в `GetLeadingSwipeActionsConfiguration` метод.
 
 ## <a name="uitableviewrowaction"></a>UITableViewRowAction
 
-Чтобы определить один или несколько пользовательских строк действия для `UITableView`, необходимо создать экземпляр `UITableViewDelegate` класса и переопределить `EditActionsForRow` метод. Пример:
+Для определения одного или нескольких действий пользовательских строк для `UITableView`, необходимо будет создать экземпляр `UITableViewDelegate` класса и переопределить `EditActionsForRow` метод. Пример:
 
 ```csharp
 using System;
@@ -163,7 +163,7 @@ namespace BasicTable
 }
 ```
 
-Статический `UITableViewRowAction.Create` метод используется для создания нового `UITableViewRowAction` , будет отображаться **Hi** когда пользователь вставляет оставшееся по горизонтали на строки в таблице. Позже новый экземпляр `TableDelegate` создается и прикрепляется к `UITableView`. Пример:
+Статический `UITableViewRowAction.Create` метод используется для создания нового `UITableViewRowAction` , будет отображаться **Hi** кнопки, когда пользователь вставляет по горизонтали влево над строкой в таблице. Позже новый экземпляр класса `TableDelegate` создается и прикрепляется к `UITableView`. Пример:
 
 ```csharp
 TableDelegate tableDelegate;
@@ -175,11 +175,11 @@ table.Delegate = tableDelegate;
 
 ```
 
-При запуске приведенного выше кода и вставляет пользователя, оставшегося на строку таблицы **Hi** кнопка будет отображаться вместо **удалить** кнопки, которая отображается по умолчанию:
+При выполнении приведенный выше код и вставляет пользователя, оставшегося на строку таблицы **Hi** кнопка будет отображаться вместо **удалить** кнопка, которая отображается по умолчанию:
 
-[![](row-action-images/action01.png "Кнопка Hi, будет отображаться вместо «удалить»")](row-action-images/action01.png#lightbox)
+[![](row-action-images/action01.png "Кнопка Hi, что вместо кнопки Delete отображается")](row-action-images/action01.png#lightbox)
 
-Если пользователь нажимает кнопку **Hi** кнопки `Hello World!` записываются в консоль в Visual Studio для Mac или Visual Studio при запуске приложения в режиме отладки.
+Если пользователь касается **Hi** кнопки `Hello World!` записываются в консоль в Visual Studio для Mac или Visual Studio при запуске приложения в режиме отладки.
 
 
 

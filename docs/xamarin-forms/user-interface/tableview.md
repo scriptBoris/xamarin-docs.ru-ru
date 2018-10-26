@@ -6,13 +6,13 @@ ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 47cd79611cfeaf48c0422772d8f3e75eb57ba771
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 10/04/2018
+ms.openlocfilehash: b8e851e735fa39d015e22ce511c39ad825bc97c9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996057"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120002"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
@@ -216,7 +216,67 @@ C# выше делает гораздо. Давайте разобьем ее:
 
 Обратите внимание на то, что никогда не определен класс для пользовательской ячейки. Вместо этого `ViewCell`его представление имеет значение для конкретного экземпляра `ViewCell`.
 
+## <a name="row-height"></a>Высота строки
 
+[ `TableView` ](xref:Xamarin.Forms.TableView) Класс имеет два свойства, которые могут использоваться для изменения высоты строки ячеек:
+
+- [`RowHeight`](xref:Xamarin.Forms.TableView.RowHeight) — Задает высоту каждой строки `int`.
+- [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows) — строки имеют различные значения высоты, если значение `true`. Обратите внимание, что при задании этого свойства `true`, высоты строк автоматически вычисляются и применены с Xamarin.Forms.
+
+При высоту содержимого ячейки в [ `TableView` ](xref:Xamarin.Forms.TableView) изменяется строка высота неявно обновится на Android и универсальной платформы Windows (UWP). Тем не менее, в iOS он должен иметь возможность для обновления, задав [ `HasUnevenRows` ](xref:Xamarin.Forms.TableView.HasUnevenRows) свойства `true` и вызвав [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) метод.
+
+В следующем примере показан XAML [ `TableView` ](xref:Xamarin.Forms.TableView) , содержащий [ `ViewCell` ](xref:Xamarin.Forms.ViewCell):
+
+```xaml
+<ContentPage ...>
+    <TableView ...
+               HasUnevenRows="true">
+        <TableRoot>
+            ...
+            <TableSection ...>
+                ...
+                <ViewCell x:Name="_viewCell"
+                          Tapped="OnViewCellTapped">
+                    <Grid Margin="15,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Tap this cell." />
+                        <Label x:Name="_target"
+                               Grid.Row="1"
+                               Text="The cell has changed size."
+                               IsVisible="false" />
+                    </Grid>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
+```
+
+Когда [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) шифрованию, `OnViewCellTapped` выполняется обработчик событий:
+
+```csharp
+void OnViewCellTapped(object sender, EventArgs e)
+{
+    _target.IsVisible = !_target.IsVisible;
+    _viewCell.ForceUpdateSize();
+}
+```
+
+`OnViewCellTapped` Обработчик событий показывает или скрывает второй [ `Label` ](xref:Xamarin.Forms.Label) в [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)и явным образом обновляет размер ячейки, вызвав [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) метод.
+
+На следующих снимках экрана показано ячейки до касание после:
+
+![](tableview-images/cell-beforeresize.png "ViewCell до изменения его размера")
+
+Далее на снимках экрана Показать ячейки после касание после:
+
+![](tableview-images/cell-afterresize.png "ViewCell после изменения размера")
+
+> [!IMPORTANT]
+> Если эта функция является чрезмерным, есть вероятность, strong снижения производительности.
 
 ## <a name="related-links"></a>Связанные ссылки
 

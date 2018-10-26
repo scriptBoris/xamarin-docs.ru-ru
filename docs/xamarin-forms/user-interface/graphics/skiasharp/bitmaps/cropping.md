@@ -4,21 +4,21 @@ description: Сведения об использовании SkiaSharp для �
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 3dd9011d19e77f52d1fe89a37e4d992c23c72ab1
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 653904da37354db52ef6bbd303355e98ddc1582f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615552"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122638"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>Обрезка точечные рисунки SkiaSharp
 
 [ **Создание и точечные рисунки SkiaSharp Рисование** ](drawing.md) статье описано, как `SKBitmap` объект может быть передан `SKCanvas` конструктор. Любой рисования методу, вызванному для причины, чтобы холст рисунок для отображения изображения на точечный рисунок. К ним методов рисования относятся `DrawBitmap`, что означает, что этот метод можно использовать передача всех или части одного точечного рисунка для другого точечного рисунка, возможно с помощью преобразований.
 
-Этот метод можно использовать для обрезки точечный рисунок вызовом [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/) метод с исходного и конечного прямоугольника:
+Этот метод можно использовать для обрезки точечный рисунок вызовом [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) метод с исходного и конечного прямоугольника:
 
 ```csharp
 canvas.DrawBitmap(bitmap, sourceRect, destRect);
@@ -744,7 +744,7 @@ public partial class PhotoPuzzlePage3 : ContentPage
 ImageSource[] imgSources = new ImageSource[15];
 ```
 
-`ImageSource` является базовым типом Xamarin.Forms, который инкапсулирует точечный рисунок. К счастью SkiaSharp позволяет преобразование из точечных рисунков SkiaSharp в Xamarin.Forms точечных рисунков. **SkiaSharp.Views.Forms** определяет сборку [ `SKBitmapImageSource` ](https://developer.xamarin.com/api/type/SkiaSharp.Views.Forms.SKBitmapImageSource/) класс, производный от `ImageSource` , но могут создаваться в зависимости от SkiaSharp `SKBitmap` объекта. `SKBitmapImageSource` даже определены преобразования между `SKBitmapImageSource` и `SKBitmap`и что все как `SKBitmap` объекты хранятся в виде массива, как растровые изображения Xamarin.Forms:
+`ImageSource` является базовым типом Xamarin.Forms, который инкапсулирует точечный рисунок. К счастью SkiaSharp позволяет преобразование из точечных рисунков SkiaSharp в Xamarin.Forms точечных рисунков. **SkiaSharp.Views.Forms** определяет сборку [ `SKBitmapImageSource` ](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) класс, производный от `ImageSource` , но могут создаваться в зависимости от SkiaSharp `SKBitmap` объекта. `SKBitmapImageSource` даже определены преобразования между `SKBitmapImageSource` и `SKBitmap`и что все как `SKBitmap` объекты хранятся в виде массива, как растровые изображения Xamarin.Forms:
 
 ```csharp
 imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
@@ -762,5 +762,5 @@ imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [API-интерфейсы SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [API-интерфейсы SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (пример)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

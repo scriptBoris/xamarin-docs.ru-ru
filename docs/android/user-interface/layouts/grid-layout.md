@@ -1,25 +1,25 @@
 ---
-title: GridLayout
+title: Объект GridLayout
 ms.prod: xamarin
 ms.assetid: B69A4BF5-9CFB-443A-9F7B-062D1E498F61
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 53f2ba8ff14a4338310e02244acdbfd7fa9bc13c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bbc764adc204a1f5b9ef4674a183473995be55c1
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30768510"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115163"
 ---
-# <a name="gridlayout"></a>GridLayout
+# <a name="gridlayout"></a>Объект GridLayout
 
-`GridLayout` — Это новая `ViewGroup` подкласс, в котором поддерживает определение представления в 2D сетке аналогично HTML-таблицы, как показано ниже:
+`GridLayout` — Это новая `ViewGroup` подкласс, который поддерживает размещение представлений в двухмерной сетке аналогично HTML-таблицы, как показано ниже:
 
- [![Обрезку GridLayout отображение четыре ячейки](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
+ [![Обрезанные GridLayout отображение четыре ячейки](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
 
- `GridLayout` работает с иерархией плоский вид, где дочерние представления установите их расположение в сетке, указав строки и столбцы, они должны находиться в. В этом случае *GridLayout* может разместить представлений в сетке без необходимости, любые промежуточные представления предоставляют структуру таблицы, такие, как показано в таблице строк, используемых в TableLayout. Поддерживая Плоская иерархия *GridLayout* может более быстро макета его дочерние представления. Давайте рассмотрим пример для иллюстрации этой концепции фактически это значит, в коде.
+ `GridLayout` работает с иерархией плоского представления, где дочерние представления установите их расположение в сетке, указав строки и столбцы, они должны находиться в. Таким образом, *GridLayout* является возможность размещать представлений в сетке без необходимости, что все промежуточные представления предоставить структуру таблицы, таким образом, как показано в таблице строк, используемых в TableLayout. За счет Плоская иерархия, *GridLayout* сможет более быстро макета его дочерних представлений. Давайте рассмотрим пример иллюстрирует, что эта концепция фактически означает, что в коде.
 
 
 ## <a name="creating-a-grid-layout"></a>Создание сетки макета
@@ -48,19 +48,19 @@ ms.locfileid: "30768510"
 </GridLayout>
 ```
 
-Макет скорректирует размеры строк и столбцов, чтобы ячейки соответствии с содержимым, как показано на следующей схеме.
+Макет будет настраивать размер строк и столбцов так, чтобы ячейки можно загрузить их содержимого, как показано на следующей схеме:
 
- [![Схема макета, показывающая две ячейки слева меньше, чем в правой части](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
+ [![Схема макета, которые показывают две ячейки слева меньше, чем справа](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
 
-Это приведет к следующей пользовательский интерфейс, если выполняются в приложении:
+Это приводит к следующий интерфейс пользователя при запуске приложения:
 
- [![Снимок экрана GridLayoutDemo приложения отображение четыре ячейки](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
+ [![Снимок экрана из GridLayoutDemo приложений, отображение четыре ячейки](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
 
 
 
 ## <a name="specifying-orientation"></a>Указание ориентации
 
-Обратите внимание в XML-документе выше, каждый `TextView` не соответствует строке или столбце. Если они не указаны, `GridLayout` назначает каждого дочернего представления в порядке, в зависимости от ориентации. Например давайте ориентация GridLayout с по умолчанию, равное горизонтально, с вертикальной следующим образом:
+Обратите внимание в XML выше, каждый `TextView` не содержит строки или столбца. Если они не заданы, `GridLayout` назначает каждой дочернее представление, в порядке, в зависимости от ориентации. Например изменим объект GridLayout ориентацию по умолчанию, горизонтальная "," для вертикальной следующим образом:
 
 ```xml
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -74,17 +74,17 @@ ms.locfileid: "30768510"
 
 Теперь `GridLayout` расположит ячейки сверху вниз в каждом столбце, а не слева направо, как показано ниже:
 
- [![Диаграмма, иллюстрирующая расположение ячейки с вертикальной ориентацией.](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
+ [![Схема, иллюстрирующая расположение ячеек в вертикальной ориентацией](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
 
-Это приведет к следующей пользовательский интерфейс во время выполнения:
+Это приводит к следующий интерфейс пользователя во время выполнения:
 
  [![Снимок экрана GridLayoutDemo с ячейками, размещается в вертикальной ориентацией](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
 
 
 
-### <a name="specifying-explicit-position"></a>Указать явные позиции
+### <a name="specifying-explicit-position"></a>Указание явных позиции
 
-Если мы хотим явным образом задавать положение дочерних представлений в `GridLayout`, можно установить их `layout_row` и `layout_column` атрибуты. Например следующий код XML приведет к компоновку, показанную на первом экрана (показано выше), вне зависимости от ориентации.
+Если нам нужно явным образом задавать положение дочерних представлений в `GridLayout`, можно установить их `layout_row` и `layout_column` атрибуты. Например следующий код XML приведет к компоновку, показанную на первый снимок экрана (как показано выше), вне зависимости от ориентации.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -120,7 +120,7 @@ ms.locfileid: "30768510"
 
 ### <a name="specifying-spacing"></a>Указание интервала
 
-У нас есть две возможности, которые предоставят интервал между дочерние представления `GridLayout`. Мы используем `layout_margin` атрибут, чтобы задать поля для каждого дочернего представления напрямую, как показано ниже
+У нас есть несколько вариантов, которые предоставят расстояние между дочерние представления `GridLayout`. Мы можем использовать `layout_margin` атрибут, чтобы задать поля для каждого дочернего представления напрямую, как показано ниже
 
 ```xml
 <TextView
@@ -131,8 +131,8 @@ ms.locfileid: "30768510"
             android:layout_margin="10dp" />
 ```
 
-Кроме того, вызывается новое представление общего назначения интервалы в Android 4 `Space` теперь доступен. Чтобы использовать его, просто добавьте его в качестве дочернего представления.
-Например, ниже XML добавляется дополнительная строка для `GridLayout` , установив его `rowcount` 3 и добавляет `Space` представление, которое предоставляет интервал между `TextViews`.
+Кроме того, вызывается новое представление общего назначения интервалы в Android 4 `Space` теперь доступна. Чтобы использовать его, просто добавьте его как дочернее представление.
+Например, следующий XML добавляется дополнительная строка для `GridLayout` , задав его `rowcount` до 3 и добавляет `Space` представление, которое содержит интервал между `TextViews`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -172,15 +172,15 @@ ms.locfileid: "30768510"
 
 Этот XML-код создает интервал в `GridLayout` как показано ниже:
 
- [![Снимок экрана из GridLayoutDemo наглядного более крупные ячейки с интервалом](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
+ [![Снимок экрана из GridLayoutDemo иллюстрирующая большего размера ячейки с интервалом](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
 
-Преимущество использования нового `Space` представление, он позволяет интервала и не требует нам задать атрибуты для каждого дочернего представления.
+Преимущества использования нового `Space` представление является позволяет для интервала и не нужно установить атрибуты для каждого дочернего представления.
 
 
 
-### <a name="spanning-columns-and-rows"></a>Охват столбцов и строк
+### <a name="spanning-columns-and-rows"></a>Объединение строк и столбцов
 
-`GridLayout` Также поддерживает ячеек, которые охватывают несколько столбцов и строк. Допустим, мы добавьте еще одну строку, содержащую кнопку, чтобы `GridLayout` как показано ниже:
+`GridLayout` Также поддерживает ячейки, охватывающие несколько столбцов и строк. Предположим, мы добавим другая строка, содержащая кнопку, чтобы `GridLayout` как показано ниже:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -223,11 +223,11 @@ ms.locfileid: "30768510"
 </GridLayout>
 ```
 
-Это приведет к первый столбец `GridLayout` растягивается до размеров кнопки, как показано ниже:
+Это приведет к в первом столбце `GridLayout` растягивается в соответствии с размер кнопки, как показано здесь:
 
-[![Снимок экрана GridLayoutDemo с кнопкой охват только первый столбец](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
+[![Снимок экрана GridLayoutDemo с кнопкой, охватывающие только первый столбец](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
 
-Чтобы предотвратить растяжение в первом столбце, мы устанавливаем кнопка занимал два столбца, установив его columnspan следующим образом:
+Чтобы предотвратить растяжение в первом столбце, можно установить кнопку, чтобы охватывать два столбца, задав его columnspan следующим образом:
 
 ```xml
 <Button
@@ -238,13 +238,13 @@ ms.locfileid: "30768510"
     android:layout_columnSpan="2" />
 ```
 
-Это приводит к макет для `TextViews` аналогичен макета, в более ранних версиях необходимо было с кнопкой, добавляемый в конец `GridLayout` как показано ниже:
+Это приводит к макет для `TextViews` аналогичен макета, у нас было ранее, с кнопкой, добавленными в нижнюю часть `GridLayout` как показано ниже:
 
- [![Снимок экрана GridLayoutDemo с кнопкой, объединение обоих столбцов](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
+ [![Снимок экрана GridLayoutDemo с кнопкой, охватывающая оба столбца](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [GridLayoutDemo (пример)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ICS_Samples/GridLayoutDemo/)
-- [Знакомство с приложением Сандвичевы мороженого](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 платформы](http://developer.android.com/sdk/android-4.0.html)
+- [Знакомство с Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
+- [Платформа Android 4.0](http://developer.android.com/sdk/android-4.0.html)

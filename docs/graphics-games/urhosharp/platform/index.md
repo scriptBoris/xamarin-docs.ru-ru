@@ -1,25 +1,25 @@
 ---
-title: Поддержка платформы UrhoSharp
-description: Документ содержит ссылки на различные руководства, описывающие, как добавить Urho в существующий проект собственного для конкретных платформ. Он описывает Android, iOS, tvOS, macOS, Windows и Xamarin.Forms.
+title: Поддержка платформ UrhoSharp
+description: Этот документ содержит ссылки на различные руководства, описывающие способы добавления Urho существующего собственного проекта для определенной платформы. В нем описывается, Android, iOS, tvOS, macOS, Windows и Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 6205E430-1036-4CC3-8E97-AA5554E3D468
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 9179b0913566ee5c70fbbfabe4c17ee3b98fbeca
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 46330fb16be4f3b7be60e1bf72eb6a36fafefe77
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783389"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123444"
 ---
-# <a name="urhosharp-platform-support"></a>Поддержка платформы UrhoSharp
+# <a name="urhosharp-platform-support"></a>Поддержка платформ UrhoSharp
 
-В этом разделе мы обсудим, как добавить Urho в существующий проект собственного для вашей платформы и использование преимуществ интеграции определенной платформы.
+В этом разделе мы обсудим способы добавления Urho существующего собственного проекта для своей платформы и как воспользоваться преимуществами интеграции определенной платформы.
 
 ## <a name="androidgraphics-gamesurhosharpplatformandroidmd"></a>[Android](~/graphics-games/urhosharp/platform/android.md)
 
-Настройка для Android инструкции и функции.
+Установка Android инструкции и функции.
 
 ## <a name="ios-and-tvosgraphics-gamesurhosharpplatformiosmd"></a>[iOS и tvOS](~/graphics-games/urhosharp/platform/ios.md)
 
@@ -27,13 +27,13 @@ iOS и tvOS установки инструкции и функции.
 
 ## <a name="macosgraphics-gamesurhosharpplatformmacmd"></a>[macOS](~/graphics-games/urhosharp/platform/mac.md)
 
-инструкции и функции, macOS программы установки.
+Программа установки macOS, инструкции и функции.
 
 ## <a name="windowsgraphics-gamesurhosharpplatformwindowsmd"></a>[Windows](~/graphics-games/urhosharp/platform/windows.md)
 
-Инструкции по установке Windows и компоненты.
+Инструкции по настройке Windows и компонентов.
 
 ## <a name="xamarinformsgraphics-gamesurhosharpplatformxamarin-formsmd"></a>[Xamarin.Forms](~/graphics-games/urhosharp/platform/xamarin-forms.md)
 
-Пример и инструкции по установке Xamarin.Forms.
+Инструкции по настройке Xamarin.Forms и пример.
 

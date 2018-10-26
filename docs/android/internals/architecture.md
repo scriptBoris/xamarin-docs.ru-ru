@@ -3,15 +3,15 @@ title: Архитектура
 ms.prod: xamarin
 ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: e6a30247c13deab871bf230aba53b9963981fd02
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 219c6bb4cd5718c969ba83a55596ad7b0bab8baf
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997404"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121130"
 ---
 # <a name="architecture"></a>Архитектура
 
@@ -71,7 +71,7 @@ CARE должны быть реализованы при освобождени�
 Подклассы управляемых вызываемой оболочки являются проживания «интересный» логика конкретного приложения может. К ним относятся пользовательские [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) подклассы (такие как [Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) типа в шаблоне проекта по умолчанию). (В частности, это любой *Java.Lang.Object* подклассов, которые выполняют *не* содержат [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/) настраиваемый атрибут или [ RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/) — *false*, который используется по умолчанию.)
 
 Как управлять вызываемых оболочек, управляемых подклассов вызываемая оболочка также содержать глобальные ссылки, доступные через [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/) свойство. Так же, как с помощью управляемых вызываемых оболочек, глобальные ссылки можно явно освободить путем вызова [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/).
-В отличие от управляемого вызываемых оболочек *внимательно следить за возникновением* должна применяться перед удалением из таких экземпляров, как *Dispose()* ing экземпляра приведет к разрыву сопоставление между экземплярами Java (экземпляр Android вызываемую оболочку) и управляемый экземпляр.
+В отличие от управляемого вызываемых оболочек *внимательно следить за возникновением* должна применяться перед удалением из таких экземпляров, как *Dispose()*- ing экземпляра приведет к разрыву сопоставление между экземплярами Java (экземпляр Android вызываемую оболочку) и управляемый экземпляр.
 
 
 ### <a name="java-activation"></a>Активация Java
@@ -88,7 +88,7 @@ CARE должны быть реализованы при освобождени�
 
 
 Обратите внимание, что (2) — это абстракция, обнаружена ошибка определения. В Java, как в C# вызовы виртуальных методов из конструктора всегда вызывать наиболее производный метод реализации. Например [TextView (контекст, AttributeSet, int) конструктор](https://developer.xamarin.com/api/constructor/Android.Widget.TextView.TextView/p/Android.Content.Context/Android.Util.IAttributeSet/System.Int32/) вызывает виртуальный метод [TextView.getDefaultMovementMethod()](http://developer.android.com/reference/android/widget/TextView.html#getDefaultMovementMethod()), который привязан как [ Свойство TextView.DefaultMovementMethod](https://developer.xamarin.com/api/property/Android.Widget.TextView.DefaultMovementMethod/).
-Таким образом Если задан тип [LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) были (1) [подкласс TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26), (2) [переопределить TextView.DefaultMovementMethod](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45)и (3) [активировать экземпляр этого объекта класс в формате XML,](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29) переопределенный *DefaultMovementMethod* свойство будет вызываться до того, как конструктор ACW имели возможность выполнять его произойдет раньше, конструктор C# для выполнения.
+Таким образом Если задан тип [LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) были (1) [подкласс TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26), (2) [переопределить TextView.DefaultMovementMethod](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45)и (3) [активировать экземпляр этого объекта класс в формате XML,](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29) переопределенный *DefaultMovementMethod* свойство будет вызываться до того, как конструктор ACW имели возможность выполнения будет предшествовать C# конструктор имели возможность выполнение.
 
 Это поддерживается путем создания его экземпляра LogTextBox через [LogTextView (IntPtr, JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28) конструктор, когда экземпляр ACW LogTextBox сначала переходит в управляемый код и последующим вызовом [ LogTextBox (контекст, IAttributeSet, int)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41) конструктор *в одном экземпляре* при выполнении ACW конструктор.
 

@@ -6,13 +6,13 @@ ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: ed7bec4e25628d938218a40d157442debad8f835
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 10/02/2018
+ms.openlocfilehash: 8d68afaf0edf178bba6f18d3071de029e111edee
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998378"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118673"
 ---
 # <a name="xamarinforms-webview"></a>Веб-представления Xamarin.Forms
 
@@ -43,7 +43,7 @@ var browser = new WebView {
 ```
 
 > [!NOTE]
-> URL-адреса должен быть полностью сформирован с протоколом, заданным (т. е. он должен иметь «http://» или «https://», прикрепленный к нему).
+> URL-адреса должен быть полностью сформирован с протоколом, заданным (т. е. он должен иметь « http://» или « https://», прикрепленный к нему).
 
 #### <a name="ios-and-ats"></a>iOS и ATS
 
@@ -164,11 +164,11 @@ source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 
 В iOS, веб-содержимого должен быть расположен в корневом каталоге проекта или **ресурсы** каталог с действием сборки *BundleResource*, как показано ниже:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](webview-images/ios-vs.png "Локальные файлы в iOS")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ![](webview-images/ios-xs.png "Локальные файлы в iOS")
 
@@ -191,11 +191,11 @@ namespace WorkingWithWebview.iOS{
 
 В Android, поместите HTML, CSS и изображений в папку средств с действием сборки *AndroidAsset* как показано ниже:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](webview-images/android-vs.png "Локальные файлы на устройстве Android")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ![](webview-images/android-xs.png "Локальные файлы на устройстве Android")
 
@@ -368,9 +368,14 @@ void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
 
 ## <a name="performance"></a>Производительность
 
-Просмотрите энергоэкономичны все популярные веб-браузеры внедрять технологии, как и подготовки к просмотру и компиляция JavaScript с аппаратным ускорением. К сожалению, из-за ограничений безопасности, большинство этих улучшений не были доступны в equaivalent iOS из `WebView`, `UIWebView`. Xamarin.Forms `WebView` использует `UIWebView`. Если это проблема, нужно будет написать пользовательское средство отрисовки, использующий `WKWebView`, которая поддерживает быстрый просмотр. Обратите внимание, что `WKWebView` поддерживается только в iOS 8 и более поздних.
+Популярные веб-браузеров теперь внедрять технологии, как и подготовки к просмотру и компиляция JavaScript с аппаратным ускорением. В iOS, по умолчанию Xamarin.Forms `WebView` реализуется `UIWebView` класс и многие из этих технологий, недоступны в этой реализации. Тем не менее, приложение может согласиться на использование iOS `WkWebView` класс для реализации Xamarin.Forms `WebView`, которая поддерживает быстрый просмотр. Это можно сделать, добавив следующий код, чтобы **AssemblyInfo.cs** файл в iOS проект платформы для приложения:
 
-Веб-представления в Android по умолчанию почти так же быстро, как встроенного браузера.
+```csharp
+// Opt-in to using WkWebView instead of UIWebView.
+[assembly: ExportRenderer(typeof(WebView), typeof(Xamarin.Forms.Platform.iOS.WkWebViewRenderer))]
+```
+
+`WebView` в Android по умолчанию почти так же быстро, как встроенного браузера.
 
 [UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) использует механизм отрисовки Microsoft Edge. Настольных и планшетных устройств должны увидеть ту же производительность как с помощью сам браузер Edge.
 

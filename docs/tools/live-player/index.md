@@ -3,15 +3,15 @@ title: Xamarin Live Player для Xamarin.Forms
 description: В этом документе рассматриваются Xamarin Live Player для Xamarin.Forms, описывающий установки, приложение Xamarin Live Player, образцов для использования с Xamarin Live Player, ограничений и устранения неполадок.
 ms.prod: xamarin
 ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 08/08/2017
-ms.openlocfilehash: c719e273d03b898984393c6be555f603a122ad4b
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 75216eb5c5b471b8837da3635b1680cdf80a0bfe
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251171"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118010"
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin Live Player для Xamarin.Forms
 

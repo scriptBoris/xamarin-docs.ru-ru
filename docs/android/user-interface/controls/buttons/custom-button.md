@@ -1,27 +1,27 @@
 ---
-title: Пользовательские кнопки
+title: Пользовательская кнопка
 ms.prod: xamarin
 ms.assetid: C523D41E-5855-248D-079D-6B12B74B7617
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: e6fc3fe4c3cb89d74188557615f58cc8e34f5991
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b5ccefa1eb7e659584c1c82481bbd4473a3a8abc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30766573"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122859"
 ---
-# <a name="custom-button"></a>Пользовательские кнопки
+# <a name="custom-button"></a>Пользовательская кнопка
 
-В этом разделе вы создадите кнопки с помощью пользовательского изображения вместо текста, с помощью [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) мини-приложения и XML-файл, определяющий три различные изображения для различные состояния кнопок. При нажатии этой кнопки отображается SMS-сообщений.
+В этом разделе вы создадите кнопка с пользовательским образом вместо текста, с помощью [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) мини-приложение и XML-файл, определяющий три различных изображений, используемых для различные состояния кнопок. При нажатии кнопки, короткое сообщение будет отображаться.
 
-Щелкните правой кнопкой мыши и загрузить три ниже изображения, а затем скопируйте их в **ресурсы и drawable** каталога проекта. Они будут использоваться для различные состояния кнопок.
+Щелкните правой кнопкой мыши и скачайте приведенные ниже три изображения, а затем скопируйте их в **ресурсы/drawable** каталоге вашего проекта. Они будут использоваться для различные состояния кнопок.
 
- [![Android зеленый значок нормальное состояние](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [ ![Android оранжевый значок конкретное состояние](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox) [ ![Android желтый значок нажатом состоянии](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)
+ [![Android зеленый значок для обычного состояния](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [ ![Android оранжевый значок конкретное состояние](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox) [ ![Android желтый значок нажатом состоянии](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)
 
-Создайте новый файл в **ресурсы или drawable** каталог с именем **android_button.xml**. Вставьте следующий XML-код:
+Создайте новый файл в **ресурсы/drawable** каталог с именем **android_button.xml**. Вставьте следующий код XML:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -34,14 +34,14 @@ ms.locfileid: "30766573"
 </selector>
 ```
 
-Это определяет одного drawable ресурса, который приведет к изменению его изображение на основании текущего состояния кнопки. Первый `<item>` определяет **android_pressed.png** как изображение, при нажатии кнопки (она была активирована); второй `<item>` определяет **android_focused.png** в изображении при Кнопка с фокусом ввода (при выделении кнопки с помощью трекболом или навигационную клавишу); а в третьем `<item>` определяет **android_normal.png** как изображение для обычном состоянии (при нажатии ни с фокусом ввода). Этот XML-файл теперь представляет drawable одного ресурса и при ссылается [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) для своего фона, изображение, отображаемое будет изменяться в зависимости на трех состояний.
+Определяет один ресурс drawable, которая изменит своего изображения на основании текущего состояния кнопки. Первый `<item>` определяет **android_pressed.png** как изображение при нажатии кнопки (активации); второй `<item>` определяет **android_focused.png** изображения при Кнопка с фокусом ввода (когда кнопки выделяется с помощью трекбол или Крестовина); а третий `<item>` определяет **android_normal.png** как изображение для его обычном состоянии (при нажатии, ни с фокусом ввода). Этот XML-файл теперь представляет один ресурс drawable и когда ссылка на [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) для своего фона изображения, отображаемого будет меняться в зависимости от этих трех состояний.
 
 
 > [!NOTE]
-> Порядок `<item>` важные элементы. При этом drawable есть ссылка, `<item>`являются обхода в порядке, чтобы определить, какой из них лучше всего подходит для текущего состояния кнопки.
-> Так как «normal» образа последней, является ли он применяется, если условия `android:state_pressed` и `android:state_focused` равны false.
+> Порядок `<item>` важные элементы. При этом drawable есть ссылка, `<item>`являются обхода для определения, какой из них подходит для текущего состояния кнопки.
+> Так как «обычная работа» образа последней, они не применяется, если условия `android:state_pressed` и `android:state_focused` равны false.
 
-Откройте **Resources/layout/Main.axml** и добавьте [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) элемента:
+Откройте **Resources/layout/Main.axml** файл и добавьте [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) элемент:
 
 ```xml
 <Button
@@ -52,9 +52,10 @@ ms.locfileid: "30766573"
         android:background="@drawable/android_button" />
 ```
 
-`android:background` Атрибут задает drawable ресурса для использования в качестве фона кнопки (который, при сохранении в **Resources/drawable/android.xml**, упоминается как `@drawable/android`). Эта процедура заменяет обычный фонового изображения, используемые для отображения кнопок во всей системе. Чтобы drawable изменить его изображение на основании состояния кнопки образ должен применяться в фоновом режиме.
+`android:background` Атрибут задает drawable ресурса для фона кнопки (который, при сохранении в **Resources/drawable/android.xml**, указанная как `@drawable/android`). Этот параметр заменяет обычный фоновое изображение, используемое для кнопок во всей системе. Чтобы drawable изменить ее образ на основе состояния кнопки образ должен применяться в фоновом режиме.
 
-Чтобы сделать что-нибудь при нажатии кнопки, добавьте следующий код в конце [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle/) метод:
+Чтобы сделать что-то при нажатии кнопки, добавьте следующий код в конце [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle/)
+метод:
 
 ```csharp
 Button button = FindViewById<Button>(Resource.Id.button);
@@ -64,10 +65,10 @@ button.Click += (o, e) => {
 };
 ```
 
-Здесь фиксируется [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) из макета, добавляет [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/) сообщение, отображаемое при [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) нажата.
+Здесь фиксируется [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) из макета, затем добавляет [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/) сообщение, отображаемое при [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) нажатии.
 
 Теперь запустите приложение.
 
 
-*Некоторые части этой страницы, изменения на основе работы создан и совместно используются Android открыть исходный проект и используются в соответствии с условиями, описанной в*
-[*Creative Commons 2.5 однозначного соответствия лицензий* ](http://creativecommons.org/licenses/by/2.5/).
+*Некоторые части этой страницы, изменения с учетом работы создана и совместно используется Android откройте исходный проект и используются в соответствии с условиями, описанными в*
+[*лицензии Creative Commons 2.5 Attribution* ](http://creativecommons.org/licenses/by/2.5/).

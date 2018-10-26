@@ -3,49 +3,62 @@ title: Коллекции
 ms.prod: xamarin
 ms.assetid: 3112E68A-7853-B147-90A6-6295CA2C4CB5
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: cb05dfb79c00e9c6f9fa1a8d80627abdb911c36e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 54c9e4fad71d74fe40fc119592a45f6c94b47056
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765653"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122261"
 ---
 # <a name="gallery"></a>Коллекции
 
-[`Gallery`](https://developer.xamarin.com/api/type/Android.Widget.Gallery/) является макет мини-приложение используется для отображения элементов в списке горизонтальной прокруткой и помещает текущее выделение в центре представления.
+[`Gallery`](https://developer.xamarin.com/api/type/Android.Widget.Gallery/) — Это виджет макет, используемый для отображения элементов в виде горизонтальной прокруткой списка и устанавливает текущее выделение в центре представления.
 
 > [!IMPORTANT]
 > Это мини-приложение был объявлен устаревшим в Android 4.1 (уровень API 16). 
 
-В этом учебнике предстоит создать фотогалереи и отобразите всплывающее сообщение при каждом выборе элемента галереи.
+В этом руководстве можно создать коллекцию фотографий и затем отображения всплывающее сообщение каждый раз при выборе элемента галереи.
 
-После `Main.axml` макета имеет значение для представления содержимого, `Gallery` захвачен из макета с [ `FindViewById` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/p/System.Int32/).
-[ `Adapter` ](https://developer.xamarin.com/api/property/Android.Widget.AdapterView.RawAdapter/) Свойство затем используется для задания настраиваемого адаптера ( `ImageAdapter`) в качестве источника для всех элементов, отображаемых в dallery. `ImageAdapter` Создается в следующем шаге.
+После `Main.axml` макета имеет значение для представления содержимого, `Gallery` фиксируется в макете с [ `FindViewById` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/p/System.Int32/).
+В [`Adapter`](https://developer.xamarin.com/api/property/Android.Widget.AdapterView.RawAdapter/)
+свойство затем используется для задания пользовательского адаптера ( `ImageAdapter`) как источник для всех элементов, отображаемых в dallery. `ImageAdapter` Создается в следующем шаге.
 
-Чтобы сделать что-нибудь при нажатии элемента в коллекции, подписана анонимного делегата [ `ItemClick` ](https://developer.xamarin.com/api/event/Android.Widget.AdapterView.ItemClick/) событий. Он показывает [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/) , отображающий индекс (отсчитываемый от нуля) элемента theselected (в реальной ситуации, позиция может использоваться для получения полного размера образа другая задача).
+Чтобы сделать что-то, при щелчке элемента в коллекции, анонимный делегат является подписанным на [`ItemClick`](https://developer.xamarin.com/api/event/Android.Widget.AdapterView.ItemClick/)
+. Он показывает [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
+отображающий индекс (отсчитываемый от нуля) элемента theselected (в реальной ситуации, позиция может использоваться для получения полного размера образа для некоторой другой задачи).
 
-Во-первых, есть несколько переменных-членов, включая массив идентификаторов, которые ссылаются на изображения, сохраненные в каталоге ресурсов drawable (**ресурсы или drawable**).
+Во-первых, есть несколько переменных-членов, включая массив идентификаторов, которые ссылаются на изображения, сохраненные в каталоге прорисовываемые ресурсы (**ресурсы/drawable**).
 
-Далее следует конструктора класса, где [ `Context` ](https://developer.xamarin.com/api/type/Android.Content.Context/) для `ImageAdapter` определяется и сохраняется в локальном поля экземпляра.
-Затем это реализует некоторые необходимые методы, унаследованные от [ `BaseAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/).
-Конструктор и [ `Count` ](https://developer.xamarin.com/api/property/Android.Widget.BaseAdapter.Count/) свойство говорят сами за себя. Как правило [ `GetItem(int)` ](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItem/p/System.Int32/) должен возвращать фактического объекта в указанной позиции в адаптере, но он учитывается в данном примере. Аналогичным образом [ `GetItemId(int)` ](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItemId/p/System.Int32/) должен возвращать идентификатор строки элемента, но здесь не требуется.
+Далее идет конструктора класса, где [`Context`](https://developer.xamarin.com/api/type/Android.Content.Context/)
+для `ImageAdapter` определяется и сохранен в локальном поле экземпляра.
+Затем этот код реализует некоторые необходимые методы, унаследованные от [ `BaseAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/).
+Конструктор и [`Count`](https://developer.xamarin.com/api/property/Android.Widget.BaseAdapter.Count/)
+Свойство говорят сами за себя. Как правило, [`GetItem(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItem/p/System.Int32/)
+Вы получите реальный объект в указанной позиции в адаптере, но он учитывается в этом примере. Аналогичным образом, [`GetItemId(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItemId/p/System.Int32/)
+должна возвращать идентификатор строки элемента, но он здесь не требуется.
 
-Метод выполняет работу, чтобы применить к изображению [ `ImageView` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView/) , будут внедрены в [ `Gallery` ](https://developer.xamarin.com/api/type/Android.Widget.Gallery/) в этом методе члена [ `Context` ](https://developer.xamarin.com/api/type/Android.Content.Context/) — используется для создания нового [ `ImageView` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView/).
-[ `ImageView` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView/) Подготовил применение образа из локальный массив drawable ресурсы, задание [ `Gallery.LayoutParams` ](https://developer.xamarin.com/api/type/Android.Widget.Gallery+LayoutParams/) высоту и ширину изображения и настроив масштабировать по [ `ImageView` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView/) измерений и наконец Задание фона использовать атрибут styleable, полученному в конструктор.
+Метод работает для применения к изображению [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
+который будет внедрен в [`Gallery`](https://developer.xamarin.com/api/type/Android.Widget.Gallery/)
+В этом методе, элемент [`Context`](https://developer.xamarin.com/api/type/Android.Content.Context/)
+используется для создания нового [ `ImageView` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView/).
+В [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
+подготавливается, применяя изображения из локального массива прорисовываемые ресурсы, параметр [`Gallery.LayoutParams`](https://developer.xamarin.com/api/type/Android.Widget.Gallery+LayoutParams/)
+высоту и ширину изображения и настроив масштаб по размеру [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
+измерения, а затем установить наконец знаниями по использованию чистых атрибут, полученный в конструкторе.
 
-В разделе [ `ImageView.ScaleType` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView+ScaleType/) для другого изображения, параметры масштабирования.
+См. в разделе [ `ImageView.ScaleType` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView+ScaleType/) для другого изображения, параметры масштабирования.
 
 ## <a name="walkthrough"></a>Пошаговое руководство
 
-Создание нового проекта с именем *HelloGallery*.
+Создайте новый проект с именем *HelloGallery*.
 
 [![Снимок экрана нового проекта Android, в диалоговом окне нового решения](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
 
-Найти некоторые фотографии, вы хотите использовать, или [загрузки этих образцов изображений](http://developer.android.com/shareables/sample_images.zip).
-Добавление файлов изображений в проект **ресурсы и Drawable** каталога. В **свойства** задайте действие при построении каждого из **AndroidResource**.
+Найти некоторые фотографии, вы бы хотели использовать, или [скачайте эти примеры изображений](http://developer.android.com/shareables/sample_images.zip).
+Добавление файлов изображений в проект **ресурсы/Drawable** каталога. В **свойства** окна, задайте действие при построении каждого из них на **AndroidResource**.
 
 Откройте **Resources/Layout/Main.axml** и вставьте следующий текст:
 
@@ -58,7 +71,8 @@ ms.locfileid: "30765653"
 />
 ```
 
-Откройте `MainActivity.cs` и вставьте следующий код для [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) метод:
+Откройте `MainActivity.cs` и вставьте следующий код для [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
+метод:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -78,7 +92,7 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Создайте новый класс с именем `ImageAdapter` который наследуется от класса [ `BaseAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/):
+Создайте новый класс с именем `ImageAdapter` подклассами [ `BaseAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/):
 
 ```csharp
 public class ImageAdapter : BaseAdapter
@@ -128,9 +142,9 @@ public class ImageAdapter : BaseAdapter
 
 ```
 
-Запустите приложение. Оно должно иметь вид на снимке экрана ниже:
+Запустите приложение. Он должен выглядеть как на снимке экрана ниже:
 
-![Снимок экрана из HelloGallery отображение образцов изображений](gallery-images/hellogallery3.png)
+![Снимок экрана из HelloGallery отображение примеры изображений](gallery-images/hellogallery3.png)
 
 
 
@@ -140,7 +154,7 @@ public class ImageAdapter : BaseAdapter
 -   [`Gallery`](https://developer.xamarin.com/api/type/Android.Widget.Gallery/)
 -   [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
 
-*Некоторые части этой страницы, изменения на основе работы создан и совместно используются Android открыть исходный проект и используются в соответствии с условиями, описанной в*
-[*Creative Commons 2.5 однозначного соответствия лицензий* ](http://creativecommons.org/licenses/by/2.5/).
+*Некоторые части этой страницы, изменения с учетом работы создана и совместно используется Android откройте исходный проект и используются в соответствии с условиями, описанными в*
+[*лицензии Creative Commons 2.5 Attribution* ](http://creativecommons.org/licenses/by/2.5/).
 
 

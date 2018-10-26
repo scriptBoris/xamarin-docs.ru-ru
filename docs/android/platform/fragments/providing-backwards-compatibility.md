@@ -1,41 +1,41 @@
 ---
-title: Предоставление обратной совместимости с пакетом поддержки Android
+title: Обеспечение обратной совместимости с пакетом поддержки Android
 ms.prod: xamarin
 ms.assetid: 7511D2F8-2B4F-4200-C74E-E967153B2E8D
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/12/2017
-ms.openlocfilehash: 07aec6f5fb66d4efcc114f92f0fb85d5b5b99c6f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 18dac665eec1c5d3ac64065c37e73022670c1ba5
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763869"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108851"
 ---
-# <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Предоставление обратной совместимости с пакетом поддержки Android
+# <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Обеспечение обратной совместимости с пакетом поддержки Android
 
-Полезность фрагменты будут ограничены без обратной совместимости с предварительно Android 3.0 устройств (API уровня 11). Для обеспечения этой возможности, появившиеся Google [библиотека поддержки](http://developer.android.com/sdk/compatibility-library.html) (исходное название *библиотеки Android совместимости* при выпуске) какие backports некоторых API из более новых версий Android в более старых версиях Android. Это Android, позволяющий устройства под управлением Android версии 1.6 (API уровня 4) для Android 2.3.3 пакет поддержки. (API уровня 10).
+Полезность фрагментов будет ограничено без обеспечения обратной совместимости с версией Android 3.0 устройствами (уровень API 11). Чтобы предоставить эту возможность, Google ввела [библиотека поддержки](http://developer.android.com/sdk/compatibility-library.html) (изначально назывался *библиотеки Android совместимости* когда был выпущен) какие бэкпортированным некоторые интерфейсы API из более новых версиях Android для более старых версиях Android. Это Android пакет поддержки, который позволяет устройствам под управлением Android версии 1.6 (API уровня 4) для Android 2.3.3. (Уровень API 10).
 
 > [!NOTE]
-> Только `ListFragment` и `DialogFragment` можно загрузить с помощью пакета Android поддержки. Ни один из другой фрагмент подклассов, такие как `PreferenceFragment,` поддерживаются в Android пакет поддержки. Они не будут работать в предварительно Android 3,0 приложений. 
+> Только `ListFragment` и `DialogFragment` можно загрузить с помощью Android пакет поддержки. Ни с одним другим Fragment подклассов, такие как `PreferenceFragment,` поддерживаются в Android пакет поддержки. Они не будут работать в приложениях с версией Android 3.0. 
 
 
 ## <a name="adding-the-support-package"></a>Добавление пакета поддержки
 
-Пакет поддержки Android не добавляется автоматически в Xamarin.Android приложение. Xamarin предоставляет [пакет NuGet библиотеку поддержки Android версии 4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) для упрощения процедуры добавления библиотеки поддержки Xamarin.Android приложению. Для включения поддержки пакетов в вашей Xamarin.Android приложения включают [библиотеку поддержки Android версии 4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) компонента в проект Xamarin.Android, как показано на следующем снимке экрана: 
+Пакет поддержки Android не добавляется автоматически в приложение Xamarin.Android. Xamarin предоставляет [пакет NuGet библиотеки Android поддерживают v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) для упрощения процедуры добавления библиотеки поддержки в приложение Xamarin.Android. Включить пакеты поддержки в вашей Xamarin.Android приложение включать [v4 библиотеки Android поддерживают](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) компонент в проект Xamarin.Android, как показано на следующем снимке экрана: 
 
-[![Снимок экрана для поддержки библиотеки Android версии 4 пакет добавляется в проект](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
+[![Снимок экрана для поддержки библиотеки Android v4 пакет, добавляемый в проект](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
-После выполнения этих шагов становится можно использовать фрагменты в более ранних версиях Android. API-интерфейсы фрагмент будет работать сейчас же в более ранних версиях, за исключением следующих случаев: 
+После выполнения этих действий, становится возможным использовать фрагменты в более ранних версиях Android. API-интерфейсы фрагмент будет работать же теперь в более ранних версиях, за исключением следующих случаев: 
 
--   **Изменить Минимальная версия Android** &ndash; приложение больше не нужна для Android 3.0 или более поздней версии, как показано ниже: 
+-   **Изменить минимальную версию Android** &ndash; приложению больше не нужно применять Android 3.0 или более поздней версии, в том случае, как показано ниже: 
 
-    [![Целевой объект экрана Android по минимум, задаваемое в разделе манифеста Android](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
+    [![Снимок экрана Android по минимум целевой, задаваемое в разделе манифеста Android](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
--   **Расширить FragmentActivity** &ndash; действия, размещающими фрагментов теперь должен наследовать от `Android.Support.V4.App.FragmentActivity` , а не из `Android.App.Activity` . 
+-   **Расширить FragmentActivity** &ndash; действий, которые размещаются фрагментов теперь должен наследовать от `Android.Support.V4.App.FragmentActivity` , а не из `Android.App.Activity` . 
 
--   **Обновление пространства имен** &ndash; классы, наследующие от `Android.App.Fragment` теперь должен наследовать от `Android.Support.V4.App.Fragment` . Удаление с помощью инструкции « `using Android.App;` » в верхней части исходного кода и замените его с « `using Android.Support.V4.App` ». 
+-   **Обновление пространства имен** &ndash; классы, наследующие от `Android.App.Fragment` теперь должен наследовать от `Android.Support.V4.App.Fragment` . Удалить с помощью оператора " `using Android.App;` " в верхней части исходного кода файл и замените ее строкой " `using Android.Support.V4.App` «. 
 
 -   **Используйте SupportFragmentManager** &ndash; `Android.Support.V4.App.FragmentActivity` предоставляет `SupportingFragmentManager` свойство, которое необходимо использовать для получения ссылки на `FragmentManager` . Пример: 
 
@@ -46,9 +46,9 @@ fragmentTx.Add(Resource.Id.fragment_container, detailsFrag);
 fragmentTx.Commit();
 ```
 
-Эти изменения на месте она будет невозможно запустить приложение на основе фрагмент на Android 1.6 или 2.x, а также на Honeycomb и Южные Сандвичевы мороженого. 
+С изменениями его можно будет запустить приложение на основе фрагмента на Android 1.6 или 2.x, а также на Honeycomb и Ice Cream Sandwich. 
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Поддержка Android библиотеки v4 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)
+- [NuGet v4 библиотеки поддержки Android](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)

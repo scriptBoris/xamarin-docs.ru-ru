@@ -3,15 +3,15 @@ title: Разрешения в Xamarin.Android
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
-author: topgenorth
-ms.author: toopge
+author: conceptdev
+ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 3e12aa47404d8ee4e52ddada3d99f91250e6c54d
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: a5295ef05eae213206fada135801bb4fadbcf6dd
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242268"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106342"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Разрешения в Xamarin.Android
 
@@ -78,7 +78,7 @@ Android приложения выполняются в свои собствен
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Можно объявить разрешения с помощью средства поддержки, встроенных в Visual Studio:
 
@@ -94,7 +94,7 @@ Android приложения выполняются в свои собствен
 
     [![Пример КАМЕРЫ разрешения, выбранные](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 Можно объявить разрешения с помощью средства поддержки, встроенных в Visual Studio для Mac:
 

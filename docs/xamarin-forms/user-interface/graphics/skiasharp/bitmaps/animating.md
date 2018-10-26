@@ -4,15 +4,15 @@ description: Узнайте, как выполнить анимацию раст
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: 45a009757d84aa98acc41f6cd2bf672c8472c5bb
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 78fcbae8db70a83d7d0a643e0b27f575152e9515
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39615581"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112563"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>Анимации точечных рисунков SkiaSharp
 
@@ -498,15 +498,15 @@ public partial class MainPage : ContentPage
 
 Использование SkisSharp для извлечения кадры анимированный GIF-файл не документироваться в любой точке мира, поэтому описания приведенный ниже код — более подробные, чем обычно:
 
-Декодирование анимированный GIF-файл в конструктор страницы происходит, но она требуется `Stream` использовать для создания объекта, ссылающегося на точечный рисунок `SKManagedStream` объекта и затем [ `SKCodec` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCodec/) объекта. [ `FrameCount` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodec.FrameCount/) Свойство указывает количество кадров, составляющих анимации. 
+Декодирование анимированный GIF-файл в конструктор страницы происходит, но она требуется `Stream` использовать для создания объекта, ссылающегося на точечный рисунок `SKManagedStream` объекта и затем [ `SKCodec` ](xref:SkiaSharp.SKCodec) объекта. [ `FrameCount` ](xref:SkiaSharp.SKCodec.FrameCount) Свойство указывает количество кадров, составляющих анимации. 
 
 Эти кадры в конечном итоге сохраняются как отдельные точечные рисунки, поэтому конструктор использует `FrameCount` выделить массив объектов типа `SKBitmap` а также два `int` массивы накопленных в течение каждого кадра и (для упрощения логики анимации) длительность.
 
-[ `FrameInfo` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodec.FrameInfo/) Свойство `SKCodec` класс представляет собой массив [ `SKCodecFrameInfo` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCodecFrameInfo/) значения, по одному для каждого кадра, но единственное, что эта программа использует из этой структуры является [ `Duration` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodecFrameInfo.Duration/) кадра в миллисекундах.
+[ `FrameInfo` ](xref:SkiaSharp.SKCodec.FrameInfo) Свойство `SKCodec` класс представляет собой массив [ `SKCodecFrameInfo` ](xref:SkiaSharp.SKCodecFrameInfo) значения, по одному для каждого кадра, но единственное, что эта программа использует из этой структуры является [ `Duration` ](xref:SkiaSharp.SKCodecFrameInfo.Duration) кадра в миллисекундах.
 
-`SKCodec` Определяет свойство, именуемое [ `Info` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCodec.Info/) типа [ `SKImageInfo` ](https://developer.xamarin.com/api/type/SkiaSharp.SKImageInfo/), но в этом `SKImageInfo` значение указывает (по крайней мере для этого образа), является тип цвета `SKColorType.Index8`, означающее, что Каждый пиксел является индексом в тип цвета. Чтобы избежать обращения к специалистам с цветовыми таблицами, программа использует [ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Width/) и [ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Height/) сведения из этой структуры для построения, он является владельцем полноцветного `ImageInfo` значение. Каждый `SKBitmap` создается на основе.
+`SKCodec` Определяет свойство, именуемое [ `Info` ](xref:SkiaSharp.SKCodec.Info) типа [ `SKImageInfo` ](xref:SkiaSharp.SKImageInfo), но в этом `SKImageInfo` значение указывает (по крайней мере для этого образа), является тип цвета `SKColorType.Index8`, означающее, что Каждый пиксел является индексом в тип цвета. Чтобы избежать обращения к специалистам с цветовыми таблицами, программа использует [ `Width` ](xref:SkiaSharp.SKImageInfo.Width) и [ `Height` ](xref:SkiaSharp.SKImageInfo.Height) сведения из этой структуры для построения, он является владельцем полноцветного `ImageInfo` значение. Каждый `SKBitmap` создается на основе.
 
-`GetPixels` Метод `SKBitmap` возвращает `IntPtr` ссылки на биты пикселов из точечного рисунка. Эти биты пикселов еще не задано. Что `IntPtr` передать в один из [ `GetPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCodec.GetPixels/p/SkiaSharp.SKImageInfo/System.IntPtr/SkiaSharp.SKCodecOptions/) методы `SKCodec`. Этот метод копирует кадр GIF-файл в памяти ссылается `IntPtr`. [ `SKCodecOptions` ](https://developer.xamarin.com/api/constructor/SkiaSharp.SKCodecOptions.SKCodecOptions/p/System.Int32/System.Boolean/) Конструктор указывает номер кадра:
+`GetPixels` Метод `SKBitmap` возвращает `IntPtr` ссылки на биты пикселов из точечного рисунка. Эти биты пикселов еще не задано. Что `IntPtr` передать в один из [ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions)) методы `SKCodec`. Этот метод копирует кадр GIF-файл в памяти ссылается `IntPtr`. [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions.%23ctor(System.Int32,System.Boolean)) Конструктор указывает номер кадра:
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage
@@ -657,6 +657,6 @@ public partial class AnimatedGifPage : ContentPage
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [API-интерфейсы SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [API-интерфейсы SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (пример)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Анимация "Мандельброт" (пример)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/)

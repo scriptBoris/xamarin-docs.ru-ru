@@ -1,29 +1,29 @@
 ---
-title: Сканирование отпечатков пальцев
+title: Сканирование отпечатков
 ms.prod: xamarin
 ms.assetid: 1CDDC096-77E0-47B3-BE0B-8953E2DDACD3
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/23/2016
-ms.openlocfilehash: 2b20402fd2cd6782247fb2c62513d7aff43a95a6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ed7f31b011c32b25f431801e47c570900589e131
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774165"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50106329"
 ---
-# <a name="scanning-for-fingerprints"></a>Сканирование отпечатков пальцев
+# <a name="scanning-for-fingerprints"></a>Сканирование отпечатков
 
-Теперь, когда мы рассмотрели подготовить приложение для использования проверки подлинности отпечатков пальцев Xamarin.Android, давайте вернемся к `FingerprintManager.Authenticate` метода и обсудить его место в проверке подлинности Android 6.0 отпечатков пальцев. Краткий обзор рабочего процесса для проверки подлинности отпечатков пальцев, перечисленными в этом списке:
+Теперь, когда мы увидели, как подготовить приложение Xamarin.Android, чтобы использовать проверку подлинности по отпечатку пальца, давайте вернемся к `FingerprintManager.Authenticate` метод и обсудим его место в проверке подлинности по отпечатку пальца Android 6.0. Краткий обзор рабочего процесса для проверки подлинности по отпечатку пальца описан в этом списке:
 
-1. Вызвать `FingerprintManager.Authenticate`, передав `CryptoObject` и `FingerprintManager.AuthenticationCallback` экземпляра. `CryptoObject` Позволяет убедиться, что результат проверки подлинности отпечатков пальцев не было подделано. 
-2. Подкласс [FingerprintManager.AuthenticationCallback](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html) класса. Экземпляр этого класса будут передаваться в `FingerprintManager` при отпечаток пальца начинается с проверки подлинности. По окончании сканеров отпечатков пальцев вызывается один из методов обратного вызова для данного класса.
-3. Напишите код для обновления пользовательского интерфейса, позволяющего пользователю, что устройство запущен сканер отпечатков пальцев и находится в состоянии ожидания для взаимодействия с пользователем. 
-4. По завершении сканеров отпечатков пальцев Android возвращают результаты в приложение путем вызова метода на `FingerprintManager.AuthenticationCallback` экземпляра, представленного в предыдущем шаге.
-5. Приложение будет информировать пользователей о результатах проверки подлинности отпечатков пальцев и реагировать на результатах соответствующим образом. 
+1. Вызвать `FingerprintManager.Authenticate`, передав `CryptoObject` и `FingerprintManager.AuthenticationCallback` экземпляра. `CryptoObject` Позволяют гарантировать, что результат проверки подлинности по отпечатку пальца не было подделано. 
+2. Подкласс [FingerprintManager.AuthenticationCallback](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html) класса. Экземпляр этого класса будет предоставляться `FingerprintManager` при отпечатков пальцев запуска проверки подлинности. По завершении сканер отпечатков пальцев вызывается один из методов обратного вызова для данного класса.
+3. Напишите код для обновления пользовательского интерфейса, позволяющего пользователю, что устройство запущен сканер отпечатков пальцев и ожидает взаимодействия с пользователем. 
+4. По завершении сканер отпечатков пальцев Android вернет результаты в приложение путем вызова метода на `FingerprintManager.AuthenticationCallback` экземпляр, который был указан на предыдущем шаге.
+5. Приложение будет информировать пользователей об результаты проверки подлинности по отпечатку пальца и реагировать на них результаты соответствующим образом. 
 
-В следующем фрагменте кода приведен пример метода в действии, которое начинает проверять отпечатков пальцев:
+В следующем фрагменте кода приведен пример метода в действии, которое начнет сканирование отпечатков:
 
 ```csharp
 protected void FingerPrintAuthenticationExample()
@@ -48,17 +48,17 @@ protected void FingerPrintAuthenticationExample()
 
 Давайте рассмотрим каждую из этих параметров в `Authenticate` метод немного более подробно:
 
-* Первый параметр — _шифрования_ , сканеров отпечатков пальцев будет использовать для проверки подлинности результаты сканирования отпечатков пальцев. Этот объект может быть `null`, в этом случае приложение должно вслепую доверяют ни изменял результаты отпечатков пальцев. Рекомендуется `CryptoObject` создано и передаваемых `FingerprintManager` вместо null. [Создание CryptObject](~/android/platform/fingerprint-authentication/creating-a-cryptoobject.md) будут подробно описаны в для создания экземпляра `CryptoObject` на основе `Cipher`.
-* Второй параметр всегда равно нулю. Документации по Android определяет это как набор флагов и скорее всего зарезервировано для будущего использования. 
-* Третий параметр `cancellationSignal` — это объект, который используется для отключения сканеров отпечатков пальцев и отменить текущий запрос. Это [Android CancellationSignal](http://developer.android.com/reference/android/os/CancellationSignal.html)и не является типом .NET framework.
-* Четвертый параметр является обязательным и — это класс, который наследуется от класса `AuthenticationCallback` абстрактного класса. Методы класса будет вызываться для сообщения клиентам при `FingerprintManager` завершена, и результаты будут. Как много в понимании реализации `AuthenticationCallback`, который будет рассматриваться в [это собственный раздел](~/android/platform/fingerprint-authentication/fingerprint-authentication-callbacks.md).
-* Пятый аргумент является необязательным `Handler` экземпляра. Если `Handler` объект предоставляется `FingerprintManager` будет использовать `Looper` из этого объекта, при обработке сообщений от оборудования отпечатков пальцев. Как правило, один не требуется предоставить `Handler`, будет использоваться FingerprintManager `Looper` из приложения.
+* Первый параметр — _crypto_ который сканер отпечатков пальцев будет использовать для проверки подлинности результаты сканирования отпечатков пальцев. Этот объект может быть `null`, в этом случае приложение должно слепо доверяют ни изменял результаты отпечатков пальцев. Рекомендуется `CryptoObject` создано и предоставлены `FingerprintManager` вместо null. [Создание CryptObject](~/android/platform/fingerprint-authentication/creating-a-cryptoobject.md) будет также подробно объясняется, как создать экземпляр `CryptoObject` на основе `Cipher`.
+* Второй параметр всегда равно нулю. Документации по Android определяет это как набор флагов и скорее зарезервирован для использования в будущем. 
+* Третий параметр `cancellationSignal` используется, чтобы завершить работу сканер отпечатков пальцев и отменить текущий запрос. Это [Android CancellationSignal](http://developer.android.com/reference/android/os/CancellationSignal.html), а не типа из .NET framework.
+* Четвертый параметр является обязательным и представляет собой класс, который наследуется от класса `AuthenticationCallback` абстрактного класса. Методы этого класса будет вызываться для сообщения клиентам при `FingerprintManager` завершения и каковы результаты. Как много знать о реализации `AuthenticationCallback`, он будет рассматриваться в [это собственный раздел](~/android/platform/fingerprint-authentication/fingerprint-authentication-callbacks.md).
+* Пятый параметр не является обязательной `Handler` экземпляра. Если `Handler` объект предоставляется, `FingerprintManager` будет использовать `Looper` из этого объекта, при обработке сообщения от оборудования для отпечатков пальцев. Как правило, один не требуется ли предоставлять `Handler`, будет использоваться FingerprintManager `Looper` из приложения.
 
 ## <a name="cancelling-a-fingerprint-scan"></a>Отмена сканирования отпечатков пальцев
 
-Он может быть необходим для пользователя (или приложением), отменить сканирования отпечатков пальцев после его инициализации. В этом случае вызывать [ `IsCancelled` ](http://developer.android.com/reference/android/os/CancellationSignal.html#isCanceled()) метод [ `CancellationSignal` ](http://developer.android.com/reference/android/os/CancellationSignal.html) , предоставленная `FingerprintManager.Authenticate` при ее вызове для проверки отпечатка.
+Возможно, необходимые для пользователя (или приложения), отмены сканирования отпечатков пальцев, после его инициализации. В этом случае вызвать [ `IsCancelled` ](http://developer.android.com/reference/android/os/CancellationSignal.html#isCanceled()) метод [ `CancellationSignal` ](http://developer.android.com/reference/android/os/CancellationSignal.html) , переданный для `FingerprintManager.Authenticate` при ее вызове для проверки отпечатков пальцев.
 
-Теперь, когда мы видели `Authenticate` метод, давайте рассмотрим некоторые более важные параметры более подробно. Во-первых, мы рассмотрим [отвечать на запросы проверки подлинности обратные вызовы](~/android/platform/fingerprint-authentication/fingerprint-authentication-callbacks.md), который будут рассматриваться как подкласс [FingerprintManager.AuthenticationCallback](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html), включение приложения для реагирования на результаты, предоставляемые сканеров отпечатков пальцев.
+Теперь, когда мы рассмотрели `Authenticate` метод, давайте рассмотрим некоторые более важные параметры более подробно. Во-первых, мы рассмотрим [ответов на обратные вызовы проверки подлинности](~/android/platform/fingerprint-authentication/fingerprint-authentication-callbacks.md), которой будут рассматриваться как подкласс [FingerprintManager.AuthenticationCallback](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html), что позволяет приложению реагировать на Android результаты, предоставляемые сканер отпечатков пальцев.
 
 
 

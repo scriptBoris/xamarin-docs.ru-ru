@@ -1,26 +1,26 @@
 ---
-title: Внедрение в Android .NET
+title: .NET, внедрение в Android
 ms.prod: xamarin
 ms.assetid: EB2F967A-6D95-4448-994B-6D5C7BFAC2C7
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 06/15/2018
-ms.openlocfilehash: e90d1e6258d4cfd9c918c566c9e18c358ee7668a
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 5c8d493bf54ee1a8a1e7d4b3266451c78a4aa51e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37067399"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123691"
 ---
-# <a name="net-embedding-on-android"></a>Внедрение в Android .NET
+# <a name="net-embedding-on-android"></a>.NET, внедрение в Android
 
-В некоторых случаях может потребоваться добавить в существующий проект Android native библиотека Xamarin .NET. Чтобы сделать это, можно использовать [Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/) , которая позволяет преобразовать библиотеку .NET в собственной библиотеки, которая может быть включена в машинном коде на языке Java Android приложение.
+В некоторых случаях может потребоваться добавить в существующий проект Android native библиотеку Xamarin .NET. Чтобы сделать это, можно использовать [Embeddinator до 4000](https://www.nuget.org/packages/Embeddinator-4000/) средство, чтобы превратить библиотеку .NET в собственной библиотеки, могут быть включены в собственное приложение Android на основе Java.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="xamarinandroid-requirements"></a>Требования к Xamarin.Android
 
-Для Xamarin.Android для работы с .NET внедрения необходимо следующее:
+Для Xamarin.Android для работы с внедрение .NET вам потребуется следующее:
 
 -   **Xamarin.Android** &ndash; [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/) должен быть установлен.
 
@@ -29,21 +29,21 @@ ms.locfileid: "37067399"
 -   **Java Developer Kit** &ndash; [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) должен быть установлен.
 
 
-## <a name="using-embeddinator-4000"></a>С помощью Embeddinator 4000
+## <a name="using-embeddinator-4000"></a>С помощью Embeddinator до 4000
 
-Для использования библиотеки .NET в собственный проект Android, выполните следующие действия:
+Чтобы использовать библиотеку .NET в собственный проект Android, сделайте следующее:
 
-1.  Создание проекта библиотеки Android в C#.
+1.  Создание C# проект библиотеки Android.
 
-2.  Установка [Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/).
+2.  Установка [Embeddinator до 4000](https://www.nuget.org/packages/Embeddinator-4000/).
 
-3.  Найдите **Embeddinator 4000.exe** и добавить его в ваш **путь**. Пример:
+3.  Найдите **Embeddinator 4000.exe** и добавьте его в ваш **путь**. Пример:
 
     ```cmd
     set PATH=%PATH%;C:\Users\USERNAME\.nuget\packages\embeddinator-4000\0.4.0\tools
     ```
 
-4.  Запустите Embeddinator 4000 на сборку библиотеки. Пример:
+4.  Запустите Embeddinator до 4000 на сборку библиотеки. Пример:
 
     ```cmd
     Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
@@ -52,11 +52,11 @@ ms.locfileid: "37067399"
 5.  Используйте созданный файл AAR в проекте Java в Android Studio.
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ## <a name="xamarinandroid-requirements"></a>Требования к Xamarin.Android
 
-Для Xamarin.Android для работы с .NET внедрения необходимо следующее:
+Для Xamarin.Android для работы с внедрение .NET вам потребуется следующее:
 
 -   **Xamarin.Android** &ndash; [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/) должен быть установлен.
 
@@ -64,25 +64,25 @@ ms.locfileid: "37067399"
 
 -   **Java Developer Kit** &ndash; [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) должен быть установлен.
 
--   **Моно** &ndash; [моно 5.0](http://www.mono-project.com/download/) должен быть установлен (моно устанавливается вместе с Visual Studio для Mac).
+-   **Mono** &ndash; [Mono 5.0](http://www.mono-project.com/download/) должен быть установлен (mono устанавливается вместе с Visual Studio для Mac).
 
 
-## <a name="using-embeddinator-4000"></a>С помощью Embeddinator 4000
+## <a name="using-embeddinator-4000"></a>С помощью Embeddinator до 4000
 
-Для использования библиотеки .NET в собственный проект Android, выполните следующие действия:
+Чтобы использовать библиотеку .NET в собственный проект Android, сделайте следующее:
 
-1.  Создание проекта библиотеки Android в C#.
+1.  Создание C# проект библиотеки Android.
 
-2.  Установка [Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/).
+2.  Установка [Embeddinator до 4000](https://www.nuget.org/packages/Embeddinator-4000/).
 
-3.  Найдите **Embeddinator 4000.exe** и добавьте **моно** в нужный путь. Пример:
+3.  Найдите **Embeddinator 4000.exe** и добавьте **mono** в путь. Пример:
 
     ```bash
     export TOOLS=~/.nuget/packages/embeddinator-4000/0.4.0/tools
     export PATH=$PATH:/Library/Frameworks/Mono.framework/Commands
     ```
 
-4.  Запустите Embeddinator 4000 на сборку библиотеки. Пример:
+4.  Запустите Embeddinator до 4000 на сборку библиотеки. Пример:
 
     ```bash
     mono $TOOLS/Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
@@ -92,7 +92,7 @@ ms.locfileid: "37067399"
 
 -----
 
-Варианты использования и программы командной строки описаны в [Embeddinator 4000](https://github.com/mono/Embeddinator-4000/blob/master/Usage.md#java--c) документации.
+Варианты использования и командной строки описаны в [Embeddinator до 4000](https://github.com/mono/Embeddinator-4000/blob/master/Usage.md#java--c) документации.
 
 
 ## <a name="callbacks"></a>Обратные вызовы
@@ -101,4 +101,4 @@ ms.locfileid: "37067399"
 
 ## <a name="samples"></a>Примеры
 
-* [Образец прогноз погоды](https://github.com/jamesmontemagno/embeddinator-weather)
+* [Образец приложения прогнозов погоды](https://github.com/jamesmontemagno/embeddinator-weather)

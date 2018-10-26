@@ -4,15 +4,15 @@ description: В этом документе описываются шаги, к�
 ms.prod: xamarin
 ms.assetid: 794EA2C4-884B-42AC-B8C4-8C8E5474B660
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 00316b253392e6f2d5dde1a2cad4f0f9baf76375
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 697ae79ea7dd9aaeedb1400a405a4ca5c4dc3d1e
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350853"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123639"
 ---
 # <a name="getting-started-with-ios-11"></a>Начало работы с iOS 11
 

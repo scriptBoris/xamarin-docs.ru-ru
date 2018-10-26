@@ -4,15 +4,15 @@ description: В этой статье рассматривается, испол
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 0adb8cda71ca8803c535679da2aecf00f3fa46a5
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 4a391160f2102fd1f069a45eb7c16aec91dfd7e0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251263"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110385"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Привязка данных и ключ значение написание кода в Xamarin.Mac
 
@@ -334,7 +334,7 @@ public NSArray People {
 Необходимо отметить два момента:
 
 1. Мы использовали `NSMutableArray` вместо стандартных C# массива или коллекции, так как это обязательное требование для привязки данных к элементам управления AppKit, такие как **представления таблиц**, **представления структуры** и **коллекций** .
-2. Мы предоставляются массив сотрудников, приводя его к `NSArray` для данных, привязки и изменить его C# в формате имени, `People`, на такой, который ожидает привязки данных, `personModelArray` в форме **{class_name} массива** (Обратите внимание, что первый символ стала нижнего регистра).
+2. Мы предоставляются массив сотрудников, приводя его к `NSArray` для данных привязки θ κΰζδϋι его C# имя в формате `People`, на такой, который ожидает привязки данных, `personModelArray` в форме **{class_name} массива**(Обратите внимание, что первый символ стала нижнего регистра).
 
 Далее нам нужно добавить некоторые специально имя открытые методы для поддержки **массива контроллеров устройств** и **контроллеров дерева**:
 
@@ -904,4 +904,4 @@ For more information on working with Collection Views, please see our [Collectio
 - [Введение в разделы о программировании привязки Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
 - [Введение в Cocoa ссылки привязки](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
 - [NSCollectionView](https://developer.apple.com/documentation/appkit/nscollectionview)
-- [macOS рекомендациям по интерфейсам](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [Рекомендации по созданию пользовательских интерфейсов в macOS](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

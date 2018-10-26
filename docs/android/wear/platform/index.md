@@ -1,23 +1,23 @@
 ---
-title: Возможности платформы ОС одежды с Xamarin.Android
-description: Основные компоненты износ платформу операционной системы
+title: Функции платформы износа ОС с помощью Xamarin.Android
+description: Ключевые компоненты платформы ОС Wear
 ms.prod: xamarin
 ms.assetid: E86688B5-B2FE-476A-A2AA-F8CC26EA8D2B
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 3e703ebb3d4705980785ec8fea6003ffc1442b54
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: 9664da9ab00dce2a3fcc0410c9c4fff189b13bf9
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436122"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50118309"
 ---
 # <a name="platform-features"></a>Функции платформы
 
-Документы в этом разделе рассматриваются функции, связанные с Android с. Здесь вы найдете раздел описывает, как создать WatchFace.
+Документы в этом разделе рассматриваются возможности, предназначенные для Android Wear. Здесь вы найдете в этом разделе описывается создание WatchFace.
  
 ##  <a name="creating-a-watch-faceandroidwearplatformcreating-a-watchfacemd"></a>[Создание оформлений экрана](~/android/wear/platform/creating-a-watchface.md)
 
-Пошаговое руководство для реализации службы лицевой стороны для Android с пользовательских контрольных значений. Инструкции для построения очищенный работу службы начертания цифровой Контрольные значения, а затем добавляется дополнительный код для создания стиля аналогом Циферблат часов с дополнительными возможностями.
+Пошаговое руководство для реализации службы пользовательского watch лиц для Android Wear. Инструкции для создания является урезанным работу службы цифровых watch лиц, и добавляется дополнительный код для создания циферблате стиле аналог для языка с помощью дополнительных функций.

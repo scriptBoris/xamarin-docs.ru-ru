@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
 ms.custom: video
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: af560848240fec9558cc63969bcc269eedbd5424
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: e4f0138c0177c046c1e967a3d3625604f73327d6
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947290"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103196"
 ---
 # <a name="oreo-features"></a>Компоненты Oreo
 
@@ -58,7 +58,7 @@ _Как приступить к работе с помощью Xamarin.Android �
 
 Чтобы добавить поддержку Android Oreo для Visual Studio, сделайте следующее:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 -   Если вы используете Visual Studio 2017: 
 
@@ -68,7 +68,7 @@ _Как приступить к работе с помощью Xamarin.Android �
 
 -   Если вы используете Visual Studio 2015, мы рекомендуется до 25 значения SDK Tools и использовать старый графический пользовательский Интерфейс диспетчера эмуляторов Google. Средства пакета SDK 25 по-прежнему может использоваться вместе с API 26, 27 и более поздних версиях и не влияют на разработку для новых платформ. Это позволит получить интерфейс для управления Android SDK для более старых версий Visual STUDIO.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 -   Обновление до последней стабильной версии Visual Studio 2017 для Mac, как описано в [обновление Visual Studio для Mac](https://docs.microsoft.com/visualstudio/mac/update).
 
@@ -82,7 +82,7 @@ _Как приступить к работе с помощью Xamarin.Android �
 
 Создание проекта с помощью Xamarin.Android 8.0, необходимо сначала использовать диспетчер пакетов SDK Xamarin Android для установки платформы SDK для **Android 8.0 - Oreo** или более поздней версии. Кроме того, необходимо установить Android SDK Tools 26.0 или более поздней версии.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Запустите диспетчер пакетов SDK (в Visual Studio щелкните **Сервис > Android > Диспетчер пакетов SDK Android**).
 
@@ -94,7 +94,7 @@ _Как приступить к работе с помощью Xamarin.Android �
 
     [![Выбор Android SDK Tools 26 в диспетчере пакетов SDK для Android](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 1. Запустите диспетчер пакетов SDK (в Visual Studio для Mac щелкните **Сервис > Диспетчер пакетов SDK**).
 
@@ -121,11 +121,11 @@ _Как приступить к работе с помощью Xamarin.Android �
 
 Если при попытке запуска по умолчанию Google Графическим пользовательским интерфейсом диспетчера AVD после установки Android SDK Tools 26.0 или более поздней версии, может появиться следующее диалоговое окно ошибки, который указывает, как использовать средство командной строки диспетчера AVD **avdmanager** вместо :
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Диалоговое окно с предупреждением диспетчер эмуляторов Android](oreo-images/win/03-avd-warning.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ![Диалоговое окно с предупреждением диспетчер эмуляторов Android](oreo-images/mac/03-avd-warning.png)
 
@@ -141,7 +141,7 @@ _Как приступить к работе с помощью Xamarin.Android �
 
 Чтобы использовать **avdmanager** для создания нового виртуального устройства, выполните следующие действия:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  Откройте окно командной строки и установите `JAVA_HOME` в расположение пакета SDK для Java на компьютере. Для обычной установки Xamarin можно использовать следующую команду:
 
@@ -168,7 +168,7 @@ _Как приступить к работе с помощью Xamarin.Android �
 
 [![Новый устройство AVD, добавленное в раскрывающееся меню устройства](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 1.  Откройте **терминалов** окно и измените расположение каталога средства пакета SDK для Android на компьютере Mac. Для обычной установки Xamarin можно использовать следующую команду:
 

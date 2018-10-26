@@ -4,15 +4,15 @@ description: В этом пошаговом руководстве демонс�
 ms.prod: xamarin
 ms.assetid: D8C6C9E2-3282-49D1-A2F6-78A4F3306E29
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: a2ca3755e3201263584447ba47ec36d2096386da
-ms.sourcegitcommit: f9fb316344fc4dce2fdce0dde3c5f4c2e4a42d08
+ms.openlocfilehash: 7cf1dde6c65d2971cecd0a59a2e11d6c2d50ee2a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "30766586"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50119193"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>Пошаговое руководство. Использование локальных уведомлений в Xamarin.Android
 

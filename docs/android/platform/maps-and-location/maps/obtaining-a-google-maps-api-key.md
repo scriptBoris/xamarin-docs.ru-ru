@@ -1,48 +1,48 @@
 ---
-title: Получение Google сопоставляет ключ API
-description: Как получить ключ API сопоставляет Google для добавления сопоставляет функциональные возможности приложения.
+title: Получение Google Maps ключ API
+description: Как получить ключ API карт Google для добавления сопоставляет функциональные возможности приложения.
 ms.prod: xamarin
 ms.assetid: D5969C57-3444-465E-D6FF-249AEE62E127
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 365bc56c70ef903622c3a4583a30460f907b4ec9
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: bfeb9d8fa2a0b5a9b18ab8266500586e2e3b6c68
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935058"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120025"
 ---
-# <a name="obtaining-a-google-maps-api-key"></a>Получение Google сопоставляет ключ API
+# <a name="obtaining-a-google-maps-api-key"></a>Получение Google Maps ключ API
 
-Чтобы использовать функции карты Google в Android, необходимо зарегистрировать для ключа Maps API с Google. До этого вы увидите только что пустая сетка вместо карты в ваших приложениях. Необходимо получить ключ API, карты Google Android v2 - ключи из старых v1 ключа API Android Google карты не будет работать.
+Чтобы использовать функцию Google карты в Android, необходимо зарегистрироваться для получения ключа API для карт с помощью Google. До этого вы увидите только пустую сетку вместо карту в ваших приложениях. Необходимо получить ключ v2 Google Maps Android API - ключи из более старых Google Maps Android API ключа версии 1 не будет работать.
 
-Получение ключа v2 Maps API состоит из следующих шагов:
+Получение ключа API для карт v2 состоит из следующих шагов:
 
-1.  Получение отпечатка SHA-1 из хранилища ключей, используемого для подписания приложения.
-2.  Создание проекта в консоли Google API.
-3.  Получить ключ API.
+1.  Получите отпечаток SHA-1 из хранилища ключей, который используется для подписи приложения.
+2.  Создайте проект в консоли Google API.
+3.  Получение ключа API.
 
 
-## <a name="obtaining-your-signing-key-fingerprint"></a>Получение пальца подписывания ключа
+## <a name="obtaining-your-signing-key-fingerprint"></a>Получение ключей подписи отпечаток пальца
 
-Чтобы запросить ключ Maps API Google, необходимо знать отпечатка SHA-1 из хранилища ключей, используемого для подписания приложения.
-Как правило это означает, будет необходимо определить отпечаток SHA-1 для отладки хранилище ключей, а затем отпечаток пальца SHA-1 для хранилища ключей, используемый для подписи приложения для выпуска.
+Чтобы запросить ключ API для карт от Google, вы должны знать отпечаток SHA-1 из хранилища ключей, который используется для подписи приложения.
+Как правило это означает, что необходимо будет определить отпечаток SHA-1 для хранилища ключей отладки, а затем отпечатков SHA-1 для хранилища ключей, который используется для подписи приложения для выпуска.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-По умолчанию хранилище ключей, используемого для подписания отладочные версии Xamarin.Android, его можно найти по следующему адресу:
+По умолчанию хранилище ключей, которое используется для подписывания отладочных версий Xamarin.Android, можно найти по следующему адресу:
 
 **C:\\пользователей\\[USERNAME]\\AppData\\локального\\Xamarin\\Mono для Android\\debug.keystore**
 
 Информация о хранилище ключей отображается при вызове команды `keytool` из JDK. Это средство обычно находится в каталоге bin Java:
 
-**C:\\Program Files (x86)\\Java\\jdk [версия]\\bin\\keytool.exe**
+**C:\\Program Files (x86)\\Java\\jdk [VERSION]\\bin\\keytool.exe**
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
-По умолчанию хранилище ключей, используемого для подписания отладочные версии Xamarin.Android, его можно найти по следующему адресу:
+По умолчанию хранилище ключей, которое используется для подписывания отладочных версий Xamarin.Android, можно найти по следующему адресу:
 
 **/Users/[username]/.Local/Share/Xamarin/Mono для Android/debug.keystore**
 
@@ -53,7 +53,7 @@ ms.locfileid: "36935058"
 -----
 
 
-Выполните keytool, используя следующую команду (с использованием пути к файлам, показанный выше).
+Выполните keytool, используя следующую команду (с использованием пути к файлам, показанный выше):
 
 ```shell
 keytool -list -v -keystore [STORE FILENAME] -alias [KEY NAME] -storepass [STORE PASSWORD] -keypass [KEY PASSWORD]
@@ -61,15 +61,15 @@ keytool -list -v -keystore [STORE FILENAME] -alias [KEY NAME] -storepass [STORE 
 
 ### <a name="debugkeystore-example"></a>Пример Debug.KeyStore
 
-Для ключа отладки по умолчанию (который автоматически создается для отладки) используйте следующую команду:
+Для ключа отладки по умолчанию (который будет автоматически создана для отладки) используйте следующую команду:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ```cmd
 keytool.exe -list -v -keystore "C:\Users\[USERNAME]\AppData\Local\Xamarin\Mono for Android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
 ```
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ```bash
 keytool -list -v -keystore /Users/[USERNAME]/.local/share/Xamarin/Mono\ for\ Android/debug.keystore -alias androiddebugkey -storepass android -keypass android
@@ -78,14 +78,14 @@ keytool -list -v -keystore /Users/[USERNAME]/.local/share/Xamarin/Mono\ for\ And
 -----
 
 
-### <a name="production-keys"></a>Ключи производства
+### <a name="production-keys"></a>Рабочие ключи
 
-При развертывании приложения в Google Play, он должен быть [подписывается закрытым ключом](~/android/deploy-test/signing/index.md).
-`keytool` Будет необходимо запустить с закрытого ключа сведения и полученный отпечатка SHA-1, используется для создания ключа API Google сопоставления рабочей. Не забудьте обновить **AndroidManifest.xml** файла с правильным ключом Google Maps API перед развертыванием.
+При развертывании приложения в Google Play, он должен быть [подписан закрытым ключом](~/android/deploy-test/signing/index.md).
+`keytool` Нужно будет выполняться с закрытого ключа сведения и итоговый отпечаток SHA-1 используется для создания ключа Google Maps API рабочей среде. Не забудьте обновить **AndroidManifest.xml** файла с правильным ключом Google Maps API перед развертыванием.
 
 ### <a name="keytool-output"></a>Выходные данные Keytool
 
-Вы увидите примерно следующие выходные данные в окне консоли:
+Вы должны увидеть примерно следующие выходные данные в окне консоли:
 
 ```shell
 Alias name: androiddebugkey
@@ -108,77 +108,77 @@ Certificate fingerprints:
 
 ## <a name="creating-an-api-project"></a>Создание проекта API
 
-После получения отпечатка SHA-1 из ключей подписывания, она необходима для создания нового проекта в консоли Google API (или добавьте службу v2 API Android Google карты к существующему проекту).
+После получения отпечатка SHA-1 подписи хранилища ключей, бывает необходимо создать новый проект в консоли Google API (или добавить службу Google Maps Android API версии 2 в существующий проект).
 
-1. В браузере перейдите к [консоли API Google разработчики & панели мониторинга службы](https://console.developers.google.com/apis/dashboard/) и нажмите кнопку **выберите проект**. Щелкните имя проекта или создайте новую, нажав кнопку **новый ПРОЕКТ**:
+1. В браузере перейдите к [API консоли разработчиков Google и панель мониторинга служб](https://console.developers.google.com/apis/dashboard/) и нажмите кнопку **выберите проект**. Щелкните имя проекта или создайте новую, нажав кнопку **новый ПРОЕКТ**:
 
    [![Создание проекта Google Developer консоли кнопки](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
-2. При создании нового проекта, введите имя проекта в **новый проект** отображаемом диалоговом окне. Это диалоговое окно будет производить идентификатор уникальный проекта, который основан на имя проекта. Далее щелкните **создать** кнопки, как показано в следующем примере:
+2. Если вы создали новый проект, введите имя проекта в **новый проект** отображаемом диалоговом окне. Это диалоговое окно будет производить код уникальный проекта, основанный на имя проекта. Затем щелкните **создать** кнопку, как показано в следующем примере:
 
-   [![Новый проект с именем XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
+   [![Новый проект называется XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
-3. Прошествии минуты, создается проект и вы перейдете на **мониторинга** страницы проекта. После этого щелкните **ВКЛЮЧИТЬ службы и API-Интерфейсы**:
+3. Через минуту создается проект и вы перейдете к **панели мониторинга** страницы проекта. После этого нажмите кнопку **ВКЛЮЧИТЬ API-Интерфейсы и службы**:
 
-   [![Щелкнув Google Maps API Android в разделе «библиотека»](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
+   [![Щелкнув Google Maps Android API в разделе библиотеки](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
-4. Из **библиотеки API** щелкните **Maps пакет SDK для Android**. На следующей странице щелкните **ВКЛЮЧИТЬ** для включения службы для данного проекта:
+4. Из **библиотеки API** щелкните **Maps SDK для Android**. На следующей странице щелкните **ВКЛЮЧИТЬ** для включения службы для этого проекта:
 
-   [![Нажав кнопку "ВКЛЮЧИТЬ" в разделе панели мониторинга](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
+   [![Нажав кнопку "Разрешить" в разделе панели мониторинга](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
-На этом этапе создания проекта API и v2 API, карты Google Android был добавлен к нему. Тем не менее этот API нельзя использовать в проекте пока создать учетные данные для него. В следующем разделе показано, как создать ключ API и приложение Xamarin.Android белый список, чтобы он право на использование этого ключа.
+На этом этапе создания проекта API и Google Maps Android API версии 2 была добавлена к нему. Тем не менее нельзя использовать этот API в вашем проекте, пока вы не создадите учетные данные для него. В следующем разделе показано, как создать ключ API и приложения Xamarin.Android белый список, чтобы она авторизована для использования этого ключа.
 
-## <a name="obtaining-the-api-key"></a>Получить ключ API
+## <a name="obtaining-the-api-key"></a>Получение ключа API
 
-После **Google Developer Console** API проект был создан, его необходимо создать ключ Android API. Xamarin.Android приложения должны иметь ключ API, перед предоставлением им доступа к API Android карты v2.
+После **Google Developer Console** API проект был создан, бывает необходимо создать ключ Android API. Приложения Xamarin.Android должны иметь ключ API, перед предоставлением им доступа к API Android карты v2.
 
-1. В **Maps пакет SDK для Android** страница, отображаемая (после нажатия кнопки **ВКЛЮЧИТЬ** на предыдущем шаге), перейдите в меню **учетные данные** и нажмите кнопку **создать учетные данные** кнопки:
+1. В **Maps SDK для Android** страницы, отображаемой (после нажатия кнопки **ВКЛЮЧИТЬ** на предыдущем шаге), перейдите в меню **учетные данные** вкладку и нажмите кнопку **создать учетные данные** кнопки:
 
-   [![Сопоставляет пакета SDK для Android учетные данные сообщения](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
+   [![Пакет SDK карт для Android учетные данные сообщения](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
 2. Нажмите кнопку **ключ API**:
 
-   [![Добавьте учетные данные в диалоговое окно проекта](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
+   [![Добавление учетных данных в диалоговое окно проекта](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
 
-3. После нажатия этой кнопки создается ключ API. Далее нужно ограничивать этот ключ, чтобы только приложение может вызывать API-интерфейсы с этим ключом. Нажмите кнопку **ограничение ключа**:
+3. После нажатия этой кнопки создается ключ API. Далее необходимо ограничить этот ключ, таким образом, чтобы только ваше приложение может вызвать API-интерфейсов с помощью этого ключа. Нажмите кнопку **ключ RESTRICT**:
 
    [![Щелкнув ограничения ключа на странице учетных данных](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png#lightbox)
 
-4. Изменение **имя** из **1 ключ API** имени, которое поможет вспомнить, для чего используется ключ (**XamarinMapsDemoKey** используется в этом примере). Далее щелкните **приложений Android** переключателя:
+4. Изменение **имя** из **API клавиша 1** имени, которое поможет вспомнить, для чего используется ключ (**XamarinMapsDemoKey** используется в этом примере). Затем щелкните **приложений Android** "переключатель":
 
-   [![При выборе приложений Android на странице учетных данных](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png#lightbox)
+   [![Выбор приложений Android на странице учетных данных](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png#lightbox)
 
-5. Чтобы добавить отпечатка SHA-1, щелкните **+ добавить имя пакета и отпечатков пальцев**:
+5. Чтобы добавить отпечаток SHA-1, щелкните **+ добавить имя пакета и отпечатков пальцев**:
 
    [![Добавить имя пакета и отпечатков пальцев](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
 
-6. Введите имя пакета приложения и введите отпечаток сертификата SHA-1 (полученных с помощью `keytool` как описано ранее в этом руководстве). В следующем примере имя пакета для `XamarinMapsDemo` равно введены, отпечаток сертификата SHA-1, полученный от **debug.keystore**:
+6. Введите имя пакета приложения и введите отпечаток сертификата SHA-1 (полученных с помощью `keytool` как описано ранее в этом руководстве). В следующем примере имя пакета для `XamarinMapsDemo` является ввода, а затем отпечаток SHA-1 сертификата, полученный из **debug.keystore**:
 
-   [![Введенное имя пакета — com.xamarin.docs.android.map](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
+   [![Введенное имя пакета является com.xamarin.docs.android.map](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 
-7. Обратите внимание, чтобы ваш APK для доступа к карты Google, необходимо включить отпечатки пальцев SHA-1 и имена для каждого хранилища ключей (отладочной и окончательной), использовать для входа на apk-ФАЙЛ пакета. Например если использовать один компьютер для отладки и другой компьютер для создания выпуска apk-ФАЙЛ, следует включать отпечаток сертификата SHA-1 из хранилища ключей отладки первого компьютера и отпечаток сертификата SHA-1 из хранилища ключей выпуска из второй компьютер. Нажмите кнопку **+ добавить имя пакета и отпечатков пальцев** для добавления другой отпечатков пальцев и имени пакета, как показано в следующем примере:
+7. Обратите внимание, что, чтобы пакет APK для доступа к Google карты, необходимо включить отпечатки пальцев SHA-1 и упаковать имена для каждого хранилища ключей (отладочную и окончательную), которые используются для входа пакет APK. Например если вы используете один компьютер для отладки и другой компьютер для создания выпуска APK, должно содержать отпечаток SHA-1 сертификата из хранилища ключей отладки первого компьютера и отпечаток SHA-1 сертификата из хранилища ключей выпуска из второй компьютер. Нажмите кнопку **+ добавить имя пакета и отпечатков пальцев** добавить другое имя отпечатков пальцев и пакета, как показано в следующем примере:
 
-   [![Добавление другого отпечатков пальцев создает еще один сертификат SHA-1](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
+   [![Добавление другой отпечаток пальца создает еще один сертификат SHA-1](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 
-8. Чтобы сохранить внесенные изменения, нажмите кнопку **Save** (Сохранить). Далее вы вернетесь на список ключей API. Если у вас есть другие ключи API, созданные в более ранней версии, они также отображаются здесь. В этом примере отображается только один ключ API (созданного на предыдущих этапах):
+8. Чтобы сохранить внесенные изменения, нажмите кнопку **Save** (Сохранить). После этого вы вернетесь к списку ключей API. Если у вас есть другие ключи API, которые вы создали ранее, они также отображаются здесь. В этом примере отображается только один ключ API (созданный на предыдущих шагах):
 
    [![XamarinMapsDemoKey отображается в списке ключей API](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
-## <a name="connect-the-project-to-a-billable-account"></a>Подключения к учетной записи оплачиваемых проекта
+## <a name="connect-the-project-to-a-billable-account"></a>Подключение проекта к учетной записи оплаты
 
-Начиная с июня, 11 2018, ключ API невозможно, если проект не подключен к учетной записи оплачиваемых (даже если служба по-прежнему может для мобильных приложений).
+Начиная с июня, 11 2018, ключ API не будет работать, если проект не подключен к учетной записи оплачиваемых (даже если она все еще доступно бесплатно для мобильных приложений).
 
-1. Нажмите кнопку меню гамбургер и выберите **выставления счетов** страницы:
+1. Нажмите кнопку меню "гамбургер" и выберите **выставления счетов** страницы:
 
-   [![При выборе раздела выставления счетов меню гамбургер](obtaining-a-google-maps-api-key-images/13-goto-billing-vs-sml.png)](obtaining-a-google-maps-api-key-images/13-goto-billing-vs.png#lightbox)
+   [![Выбрав в разделе выставления счетов меню "гамбургер"](obtaining-a-google-maps-api-key-images/13-goto-billing-vs-sml.png)](obtaining-a-google-maps-api-key-images/13-goto-billing-vs.png#lightbox)
 
-2. Связать проект с записью выставления счетов, щелкнув **связать учетную запись выставления счетов** следуют **создать учетную запись выставления СЧЕТОВ** во всплывающем окне отображается (если у вас нет учетной записи, будут выданы для создания нового):
+2. Связать проект с создания платежного счета, щелкнув **связать учетную запись выставления счетов** следуют **создать учетную запись выставления СЧЕТОВ** отображаемого контекстного меню (если у вас нет учетной записи, вам будет рекомендовано создайте новую):
 
-   [![Ссылка проекта с записью выставления счетов](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs-sml.png)](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs.png#lightbox)
+   [![Ссылки проекта для платежного счета](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs-sml.png)](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs.png#lightbox)
 
-## <a name="adding-the-key-to-your-project"></a>Добавление раздела в проект
+## <a name="adding-the-key-to-your-project"></a>Добавление ключа в проекте
 
-Наконец, добавьте этот ключ API для **AndroidManifest.XML** файл Xamarin.Android приложения. В следующем примере `YOUR_API_KEY` заменяемого с API-ключ, созданный на предыдущих шагах:
+Наконец, добавьте этот ключ API для **AndroidManifest.XML** файл приложения Xamarin.Android. В следующем примере `YOUR_API_KEY` нужно заменить с помощью ключа API, созданные на предыдущих шагах:
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -196,5 +196,5 @@ Certificate fingerprints:
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Консоли Google API](https://code.google.com/apis/console/)
-- [Ключ API Google карты](https://developers.google.com/maps/documentation/android/start#the_google_maps_api_key)
+- [Ключ API Google Maps](https://developers.google.com/maps/documentation/android/start#the_google_maps_api_key)
 - [keytool](http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html.)

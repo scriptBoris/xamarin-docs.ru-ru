@@ -3,15 +3,15 @@ title: Внедрение .NET
 description: 'Внедрение .NET позволяет существующего кода .NET (C#, F # и другие) для использования в код, написанный на других языках программирования.'
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 11/14/2017
-ms.openlocfilehash: 16f59498a49d10a43e04989136d8835bf78bd89d
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 23233ea8b06e0db580ba99edf2705e3dae5b931f
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830404"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50107148"
 ---
 # <a name="net-embedding"></a>Внедрение .NET
 
