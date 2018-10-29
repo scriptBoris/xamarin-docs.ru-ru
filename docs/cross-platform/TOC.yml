@@ -1,0 +1,198 @@
+items:
+- name: Кроссплатформенный
+  href: index.yml
+  items:
+  - name: Приступая к работе
+    href: get-started/index.md
+    items:
+    - name: Требования
+      displayName: System requirements
+      href: get-started/requirements.md
+    - name: Установка
+      href: get-started/installation/index.md
+      items:
+      - name: Установка Xamarin в Windows
+        href: get-started/installation/windows.md
+        items:
+        - name: Установка предварительных версий Xamarin в Windows
+          href: get-started/installation/windows-preview.md
+      - name: Установка Visual Studio для Mac
+        href: /visualstudio/mac/installation/
+        items:
+        - name: Установка предварительных версий Xamarin в Mac
+          href: /visualstudio/mac/update/
+      - name: Инструкции по настройке брандмауэра Xamarin
+        href: get-started/installation/firewall.md
+      - name: Удаление Xamarin
+        href: get-started/installation/uninstalling-xamarin.md
+    - name: Введение в разработку мобильных приложений
+      href: get-started/introduction-to-mobile-development.md
+    - name: Введение в жизненный цикл разработки программного обеспечения (SDLC) для мобильных устройств
+      href: get-started/introduction-to-mobile-sdlc.md
+    - name: Создание кроссплатформенных приложений
+      href: app-fundamentals/building-cross-platform-applications/index.md
+      items:
+      - name: Обзор
+        href: app-fundamentals/building-cross-platform-applications/overview.md
+      - name: Часть 1. Основные сведения о мобильной платформе Xamarin
+        href: app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md
+      - name: Часть 2. Архитектура
+        href: app-fundamentals/building-cross-platform-applications/architecture.md
+      - name: Часть 3. Настройка кроссплатформенного решения Xamarin
+        href: app-fundamentals/building-cross-platform-applications/setting-up-a-xamarin-cross-platform-solution.md
+      - name: Часть 4. Работа с несколькими платформами
+        href: app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation.md
+      - name: Часть 5. Практические стратегии совместного использования кода
+        href: app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md
+      - name: Часть 6. Тестирование и утверждение магазина приложений
+        href: app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md
+      - name: 'Практический пример: Tasky'
+        href: app-fundamentals/building-cross-platform-applications/case-study-tasky.md
+    expanded: true
+  - name: Общий доступ к коду
+    href: app-fundamentals/index.md
+    items:
+    - name: Обзор
+      href: app-fundamentals/code-sharing.md
+    - name: .NET Standard
+      href: app-fundamentals/net-standard.md
+    - name: Общие проекты
+      href: app-fundamentals/shared-projects.md
+    - name: Переносимые библиотеки классов (PCL)
+      href: app-fundamentals/pcl.md
+    - name: Проекты NuGet на основе многоплатформенных библиотек
+      displayName: Nugetizer 3000
+      href: app-fundamentals/nuget-multiplatform-libraries/index.md
+      items:
+      - name: Имеющиеся проекты библиотеки
+        href: app-fundamentals/nuget-multiplatform-libraries/existing-library.md
+      - name: Новая многоплатформенная библиотека
+        href: app-fundamentals/nuget-multiplatform-libraries/single-codebase.md
+      - name: Новые библиотеки для конкретных платформ
+        href: app-fundamentals/nuget-multiplatform-libraries/platform-specific.md
+      - name: Руководство по метаданным
+        href: app-fundamentals/nuget-multiplatform-libraries/metadata.md
+    - name: Пакеты NuGet (руководство)
+      href: app-fundamentals/nuget-manual.md
+  - name: Языковая поддержка
+    href: platform/index.md
+    items:
+    - name: C#
+      items:
+      - name: Обзор поддержки асинхронного выполнения
+        href: platform/async.md
+      - name: 6 возможностей языка C#
+        href: platform/csharp-six.md
+    - name: F#
+      href: platform/fsharp/index.md
+      items:
+      - name: Начало работы
+        href: platform/fsharp/overview.md
+      - name: Примеры F#
+        href: platform/fsharp/samples.md
+    - name: Visual Basic.NET
+      href: platform/visual-basic/index.md
+      items:
+      - name: Xamarin iOS и Android
+        href: platform/visual-basic/native-apps.md
+      - name: Xamarin.Forms
+        href: platform/visual-basic/xamarin-forms.md
+    - name: Шаблоны HTML Razor
+      href: platform/razor-html-templates/index.md
+  - name: Производительность и безопасность
+    href: deploy-test/performance.md
+    items:
+    - name: Производительность
+      href: deploy-test/memory-perf-best-practices.md
+      items:
+      - name: Производительность для Android
+        href: ~/android/deploy-test/performance.md?context=xamarin/cross-platform
+      - name: Производительность для iOS
+        href: ~/ios/deploy-test/performance.md?context=xamarin/cross-platform
+      - name: Производительность для Mac
+        href: ~/mac/deploy-test/performance.md?context=xamarin/cross-platform
+    - name: Протокол TLS
+      href: app-fundamentals/transport-layer-security.md
+      items:
+      - name: Android
+        href: ~/android/app-fundamentals/http-stack.md?context=xamarin/cross-platform
+      - name: iOS и Mac
+        href: ~/cross-platform/macios/http-stack.md?context=xamarin/cross-platform
+  - name: Развертывание и отладка
+    href: deploy-test/index.md
+    items:
+    - name: Пользовательская конфигурация компоновщика
+      href: deploy-test/linker.md
+    - name: Установка NUnit 2.6.4 с помощью NuGet
+      href: deploy-test/installing-nunit-using-nuget.md
+    - name: Отладка нескольких процессов
+      href: deploy-test/multi-process-debugging.md
+  - name: Разработчики классических приложений
+    displayName: Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP Developers
+    href: desktop/index.md
+    items:
+    - name: Сравнение жизненного цикла приложений
+      href: desktop/lifecycle.md
+    - name: Сравнение элементов управления пользовательского интерфейса
+      href: desktop/controls/index.md
+      items:
+      - name: Сравнение WPF и Xamarin.Forms
+        href: desktop/controls/wpf.md
+    - name: Руководство по переносу
+      href: desktop/porting.md
+    - name: Примеры
+      href: desktop/samples.md
+  - name: Устранение неполадок
+    href: troubleshooting/index.md
+    items:
+    - name: Вопросы и ответы
+      displayName: FAQ
+      href: troubleshooting/questions/index.md
+      items:
+      - name: Как можно просмотреть, какие библиотеки поддерживаются в PCL
+        href: troubleshooting/questions/pcl-support-libraries.md
+      - name: API отражения PCL
+        href: troubleshooting/questions/pcl-reflection.md
+      - name: Практический пример PCL. Как устранять проблемы, связанные с System.Diagnostics.Tracing для пакета NuGet потока данных библиотеки параллельных задач Майкрософт
+        href: troubleshooting/questions/pcl-case-study.md
+      - name: Как обновить NuGet
+        href: troubleshooting/questions/nuget-update.md
+      - name: Как перейти на использование более ранней версии пакета NuGet
+        href: troubleshooting/questions/nuget-package-downgrade.md
+      - name: Ошибка отсутствующих пакетов после обновления пакетов NuGet
+        href: troubleshooting/questions/nuget-packages-missing.md
+      - name: Объединение компонентов Сервисов Google Play и NuGet
+        href: troubleshooting/questions/gps-components-nuget.md
+      - name: Где на компьютере хранятся компоненты
+        href: troubleshooting/questions/component-storage.md
+      - name: Где я могу найти информацию о версии и журналы
+        href: troubleshooting/questions/version-logs.md
+      - name: Когда и как следует указывать отчет об ошибке
+        href: troubleshooting/questions/howto-file-bug.md
+      - name: Почему Xamarin не поддерживает Jenkins
+        href: troubleshooting/questions/xamarin-jenkins.md
+      - name: Какие параметры проекта нужны отладчику
+        href: troubleshooting/questions/debugger-settings.md
+    - name: Вопросы по Visual Studio
+      items:
+      - name: Отключены флажки развертывания в Configuration Manager
+        href: troubleshooting/questions/deploy-checkboxes.md
+      - name: Отсутствуют расширения Visual Studio после установки
+        href: troubleshooting/questions/missing-vs-extensions.md
+      - name: Как полностью удалить Xamarin для Visual Studio?
+        href: troubleshooting/questions/uninstall-xamarin-vs.md
+      - name: Как собрать текущие стеки вызовов процесса Visual Studio?
+        href: troubleshooting/questions/vs-callstack.md
+      - name: Почему Visual Studio не включает проект библиотеки в сборку, которая на него ссылается?
+        href: troubleshooting/questions/vs-config-manager.md
+    - name: Обновление ссылок на компоненты в NuGet
+      href: troubleshooting/component-nuget.md
+  - name: Примеры
+    href: samples/index.yml
+  expanded: true
+ms.openlocfilehash: 6de69aacc37d17086e49ae1a7571879686168a42
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50130260"

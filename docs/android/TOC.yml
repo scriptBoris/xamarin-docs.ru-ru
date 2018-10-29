@@ -1,0 +1,665 @@
+items:
+- name: Xamarin.Android
+  href: index.yml
+  items:
+  - name: Приступая к работе
+    href: get-started/index.md
+    items:
+    - name: Настройка и установка
+      href: get-started/installation/index.md
+      items:
+      - name: Установка в Windows
+        href: get-started/installation/windows.md
+      - name: Установка пакета SDK для Android
+        href: get-started/installation/android-sdk.md
+      - name: Настройка эмулятора Android
+        href: get-started/installation/android-emulator/index.md
+        items:
+        - name: Аппаратное ускорение (Hyper-V и HAXM)
+          href: get-started/installation/android-emulator/hardware-acceleration.md
+        - name: Диспетчер устройств
+          href: get-started/installation/android-emulator/device-manager.md
+        - name: Свойства устройства
+          href: get-started/installation/android-emulator/device-properties.md
+        - name: Устранение неполадок
+          href: get-started/installation/android-emulator/troubleshooting.md
+      - name: Настройка устройства Android
+        href: get-started/installation/set-up-device-for-development.md
+      - name: Предварительная версия Microsoft Mobile OpenJDK
+        href: get-started/installation/openjdk.md
+    - name: Привет, Android
+      href: get-started/hello-android/index.md
+      items:
+      - name: Часть 1. Краткое руководство
+        href: get-started/hello-android/hello-android-quickstart.md
+      - name: Часть 2. Подробные сведения
+        href: get-started/hello-android/hello-android-deepdive.md
+    - name: Привет, Android (несколько экранов)
+      href: get-started/hello-android-multiscreen/index.md
+      items:
+      - name: Часть 1. Краткое руководство
+        href: get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
+      - name: Часть 2. Подробные сведения
+        href: get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md
+    - name: Xamarin для разработчиков Java
+      href: get-started/java-developers.md
+    expanded: true
+  - name: Принципы работы приложения
+    href: app-fundamentals/index.md
+    items:
+    - name: Специальные возможности
+      href: app-fundamentals/accessibility.md
+    - name: Уровни API Android
+      href: app-fundamentals/android-api-levels.md
+    - name: Ресурсы Android
+      href: app-fundamentals/resources-in-android/index.md
+      items:
+      - name: Основы ресурсов Android
+        href: app-fundamentals/resources-in-android/android-resource-basics.md
+      - name: Ресурсы по умолчанию
+        href: app-fundamentals/resources-in-android/default-resources.md
+      - name: Альтернативные ресурсы
+        href: app-fundamentals/resources-in-android/alternate-resources.md
+      - name: Создание ресурсов для разных экранов
+        href: app-fundamentals/resources-in-android/resources-for-varying-screens.md
+      - name: Локализация приложения и строковые ресурсы
+        href: app-fundamentals/resources-in-android/application-localization.md
+      - name: Использование ресурсов Android
+        href: app-fundamentals/resources-in-android/android-assets.md
+      - name: Шрифты
+        href: app-fundamentals/resources-in-android/fonts.md
+    - name: Жизненный цикл действия
+      href: app-fundamentals/activity-lifecycle/index.md
+      items:
+      - name: Пошаговое руководство. Сохранение состояния действия
+        href: app-fundamentals/activity-lifecycle/saving-state.md
+    - name: Службы Android
+      href: app-fundamentals/services/index.md
+      items:
+      - name: Создание службы
+        href: app-fundamentals/services/creating-a-service/index.md
+        items:
+        - name: Службы привязки
+          href: app-fundamentals/services/creating-a-service/bound-services.md
+        - name: Службы намерения
+          href: app-fundamentals/services/creating-a-service/intent-services.md
+        - name: Запущенные службы
+          href: app-fundamentals/services/creating-a-service/started-services.md
+      - name: Службы переднего плана
+        href: app-fundamentals/services/foreground-services.md
+      - name: Внепроцессные службы
+        href: app-fundamentals/services/out-of-process-services.md
+      - name: Уведомления службы
+        href: app-fundamentals/services/service-notifications.md
+    - name: Широковещательные приемники
+      href: app-fundamentals/broadcast-receivers.md
+    - name: Локализация
+      href: app-fundamentals/localization.md
+    - name: Разрешения
+      href: app-fundamentals/permissions.md
+    - name: Графика и анимация
+      href: app-fundamentals/graphics-and-animation.md
+    - name: Архитектура процессора
+      href: app-fundamentals/cpu-architectures.md
+    - name: Обработка поворота
+      href: app-fundamentals/handling-rotation.md
+    - name: Звук
+      href: app-fundamentals/android-audio.md
+    - name: Уведомления
+      href: app-fundamentals/notifications/index.md
+      items:
+      - name: Локальные уведомления
+        href: app-fundamentals/notifications/local-notifications.md
+      - name: Пошаговое руководство о локальных уведомлениях
+        href: app-fundamentals/notifications/local-notifications-walkthrough.md
+    - name: Сенсорные технологии
+      href: app-fundamentals/touch/index.md
+      items:
+      - name: Сенсорные технологии в Android
+        href: app-fundamentals/touch/touch-in-android.md
+      - name: Пошаговое руководство. Использование сенсорных технологий в Android
+        href: app-fundamentals/touch/android-touch-walkthrough.md
+      - name: Мультисенсорное отслеживание
+        href: app-fundamentals/touch/touch-tracking.md
+    - name: Стек HttpClient и SSL/TLS
+      href: app-fundamentals/http-stack.md
+    - name: Написание быстро реагирующих приложений
+      href: app-fundamentals/writing-responsive-apps.md
+  - name: Пользовательский интерфейс
+    href: user-interface/index.md
+    items:
+    - name: Конструктор Android
+      href: user-interface/android-designer/index.md
+      items:
+      - name: Использование Android Designer
+        href: user-interface/android-designer/designer-walkthrough.md
+      - name: Основные сведения о конструкторе
+        href: user-interface/android-designer/designer-basics.md
+      - name: Квалификаторы ресурсов и параметры визуализации
+        href: user-interface/android-designer/resource-qualifiers.md
+      - name: Представления альтернативного макета
+        href: user-interface/android-designer/alternative-layout-views.md
+      - name: Компоненты материального исполнения
+        href: user-interface/android-designer/material-design-features.md
+    - name: Тема материала
+      href: user-interface/material-theme.md
+    - name: Профиль пользователя
+      href: user-interface/user-profile.md
+    - name: Заставка
+      href: user-interface/splash-screen.md
+    - name: Макеты
+      href: user-interface/layouts/index.md
+      items:
+      - name: LinearLayout
+        href: user-interface/layouts/linear-layout.md
+      - name: RelativeLayout
+        href: user-interface/layouts/relative-layout.md
+      - name: TableLayout
+        href: user-interface/layouts/table-layout.md
+      - name: RecyclerView
+        href: user-interface/layouts/recycler-view/index.md
+        items:
+        - name: Компоненты и функции
+          href: user-interface/layouts/recycler-view/parts-and-functionality.md
+        - name: Пример RecyclerView
+          href: user-interface/layouts/recycler-view/recyclerview-example.md
+        - name: Расширение примера
+          href: user-interface/layouts/recycler-view/extending-the-example.md
+      - name: ListView
+        href: user-interface/layouts/list-view/index.md
+        items:
+        - name: Компоненты и функции ListView
+          href: user-interface/layouts/list-view/parts-and-functionality.md
+        - name: Заполнение ListView данными
+          href: user-interface/layouts/list-view/populating.md
+        - name: Настройка вида ListView
+          href: user-interface/layouts/list-view/customizing-appearance.md
+        - name: Использование CursorAdapters
+          href: user-interface/layouts/list-view/cursor-adapters.md
+        - name: Использование ContentProvider
+          href: user-interface/layouts/list-view/content-provider.md
+        - name: ListView и жизненный цикл действия
+          href: user-interface/layouts/list-view/activity-lifecycle.md
+      - name: GridView
+        href: user-interface/layouts/grid-view.md
+      - name: GridLayout
+        href: user-interface/layouts/grid-layout.md
+      - name: Макеты с вкладками
+        href: user-interface/layouts/tab-layout/index.md
+        items:
+        - name: Вкладки навигации с ActionBar
+          href: user-interface/layouts/tab-layout/with-action-bar.md
+    - name: Элементы управления
+      href: user-interface/controls/index.md
+      items:
+      - name: ActionBar
+        href: user-interface/controls/action-bar.md
+      - name: Автозаполнение
+        href: user-interface/controls/auto-complete.md
+      - name: Кнопки
+        href: user-interface/controls/buttons/index.md
+        items:
+        - name: Radio Button
+          href: user-interface/controls/buttons/radio-button.md
+        - name: Выключатель
+          href: user-interface/controls/buttons/toggle-button.md
+        - name: CheckBox
+          href: user-interface/controls/buttons/check-box.md
+        - name: Настраиваемая кнопка
+          href: user-interface/controls/buttons/custom-button.md
+      - name: Календарь
+        href: user-interface/controls/calendar.md
+      - name: CardView
+        href: user-interface/controls/card-view.md
+      - name: EditText
+        href: user-interface/controls/edit-text.md
+      - name: Коллекция
+        href: user-interface/controls/gallery.md
+      - name: Панель переходов
+        href: user-interface/controls/navigation-bar.md
+      - name: Средства выбора
+        href: user-interface/controls/pickers/index.md
+        items:
+        - name: Управляющий элемент выбора даты
+          href: user-interface/controls/pickers/date-picker.md
+        - name: Выбор времени
+          href: user-interface/controls/pickers/time-picker.md
+      - name: Всплывающее меню
+        href: user-interface/controls/popup-menu.md
+      - name: RatingBar
+        href: user-interface/controls/ratingbar.md
+      - name: Spinner
+        href: user-interface/controls/spinner.md
+      - name: Параметр
+        href: user-interface/controls/switch.md
+      - name: TextureView
+        href: user-interface/controls/texture-view.md
+      - name: Toolbar
+        href: user-interface/controls/tool-bar/index.md
+        items:
+        - name: Замена панели действий
+          href: user-interface/controls/tool-bar/replacing-the-action-bar.md
+        - name: Добавление второй панели инструментов
+          href: user-interface/controls/tool-bar/adding-a-second-toolbar.md
+        - name: Совместимость панели инструментов
+          href: user-interface/controls/tool-bar/toolbar-compatibility.md
+      - name: ViewPager
+        href: user-interface/controls/view-pager/index.md
+        items:
+        - name: ViewPager с представлениями
+          href: user-interface/controls/view-pager/viewpager-and-views.md
+        - name: ViewPager с фрагментами
+          href: user-interface/controls/view-pager/viewpager-and-fragments.md
+      - name: WebView
+        href: user-interface/controls/web-view.md
+  - name: Функции платформы
+    href: platform/index.md
+    items:
+    - name: Android Beam
+      href: platform/android-beam.md
+    - name: Манифест Android
+      href: platform/android-manifest.md
+    - name: Доступ к файлам с помощью Xamarin.Android
+      href: platform/files/index.md
+      items:
+      - name: Внешнее хранилище
+        href: platform/files/external-storage.md
+    - name: Проверка подлинности по отпечаткам
+      href: platform/fingerprint-authentication/index.md
+      items:
+      - name: Начало работы
+        href: platform/fingerprint-authentication/get-started.md
+      - name: Сканирование отпечатков
+        href: platform/fingerprint-authentication/scanning.md
+      - name: Создание CryptoObject
+        href: platform/fingerprint-authentication/creating-a-cryptoobject.md
+      - name: Ответ на обратные вызовы проверки подлинности
+        href: platform/fingerprint-authentication/fingerprint-authentication-callbacks.md
+      - name: Руководство и сводка
+        href: platform/fingerprint-authentication/summary.md
+      - name: Регистрация отпечатка пальца
+        href: platform/fingerprint-authentication/enrolling-fingerprint.md
+    - name: Планировщик заданий Android
+      href: platform/android-job-scheduler.md
+    - name: Диспетчер заданий Firebase
+      href: platform/firebase-job-dispatcher.md
+    - name: Фрагменты
+      href: platform/fragments/index.md
+      items:
+      - name: Реализация фрагментов
+        href: platform/fragments/implementing-with-fragments/index.md
+        items:
+        - name: Фрагменты Пошаговое руководство. Часть 1
+          href: platform/fragments/implementing-with-fragments/walkthrough.md
+        - name: Фрагменты Пошаговое руководство. Часть 2
+          href: platform/fragments/implementing-with-fragments/walkthrough-landscape.md
+      - name: Создание фрагмента
+        href: platform/fragments/creating-a-fragment.md
+      - name: Управление фрагментами
+        href: platform/fragments/managing-fragments.md
+      - name: Специализированные классы фрагментов
+        href: platform/fragments/specialized-fragment-classes.md
+      - name: Обеспечение обратной совместимости
+        href: platform/fragments/providing-backwards-compatibility.md
+    - name: Компоновка приложения
+      href: platform/app-linking.md
+    - name: Android 9 Pie
+      href: platform/pie.md
+    - name: Android 8 Oreo
+      href: platform/oreo.md
+    - name: Android 7 Nougat
+      href: platform/nougat.md
+    - name: Android 6 Marshmallow
+      href: platform/marshmallow.md
+    - name: Android 5 Lollipop
+      href: platform/lollipop.md
+    - name: Android 4.4 KitKat
+      href: platform/kitkat.md
+    - name: Android 4.1 Jelly Bean
+      href: platform/jelly-bean.md
+    - name: Android 4.0 Ice Cream Sandwich
+      href: platform/ice-cream-sandwich.md
+    - name: Поставщики содержимого
+      href: platform/content-providers/index.md
+      items:
+      - name: Принцип работы
+        href: platform/content-providers/how-it-works.md
+      - name: Использование контактов ContentProvider
+        href: platform/content-providers/contacts-contentprovider.md
+      - name: Создание настраиваемого поставщика ContentProvider
+        href: platform/content-providers/custom-contentprovider.md
+    - name: Карты и расположение
+      href: platform/maps-and-location/index.md
+      items:
+      - name: Расположение
+        href: platform/maps-and-location/location.md
+      - name: Карты
+        href: platform/maps-and-location/maps/index.md
+        items:
+        - name: Приложение карт
+          href: platform/maps-and-location/maps/maps-application.md
+        - name: API карт
+          href: platform/maps-and-location/maps/maps-api.md
+        - name: Получение ключа API Google Maps
+          href: platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md
+    - name: Использование Android.Speech
+      href: platform/speech.md
+    - name: Интеграция Java
+      href: platform/java-integration/index.md
+      items:
+      - name: Вызываемые программы-оболочки Android
+        href: platform/java-integration/android-callable-wrappers.md
+      - name: Работа с JNI
+        href: platform/java-integration/working-with-jni.md
+      - name: Перенос Java в C#
+        href: platform/java-integration/porting-java-to-csharp.md
+    - name: Привязка библиотеки Java
+      href: platform/binding-java-library/index.md
+      items:
+      - name: Привязка JAR-файла
+        href: platform/binding-java-library/binding-a-jar.md
+      - name: Привязка AAR-файла
+        href: platform/binding-java-library/binding-an-aar.md
+      - name: Привязка проекта библиотеки Eclipse
+        href: platform/binding-java-library/binding-a-library-project.md
+      - name: Настройка привязок
+        href: platform/binding-java-library/customizing-bindings/index.md
+        items:
+        - name: Метаданные привязок Java
+          href: platform/binding-java-library/customizing-bindings/java-bindings-metadata.md
+        - name: Именование параметров с Javadoc
+          href: platform/binding-java-library/customizing-bindings/naming-parameters-with-javadoc.md
+      - name: Устранение неполадок с привязками
+        href: platform/binding-java-library/troubleshooting-bindings.md
+    - name: Использование собственных библиотек
+      href: platform/native-libraries.md
+    - name: Renderscript
+      href: platform/renderscript.md
+  - name: Xamarin.Essentials
+    href: ~/essentials/index.md?context=xamarin/android
+    items:
+    - name: Начало работы
+      href: ~/essentials/get-started.md?context=xamarin/android
+    - name: Акселерометр
+      href: ~/essentials/accelerometer.md?context=xamarin/android
+    - name: Сведения о приложении
+      href: ~/essentials/app-information.md?context=xamarin/android
+    - name: Барометр
+      href: ~/essentials/barometer.md?context=xamarin/android
+    - name: Батарея
+      href: ~/essentials/battery.md?context=xamarin/android
+    - name: буфер обмена
+      href: ~/essentials/clipboard.md?context=xamarin/android
+    - name: Компас
+      href: ~/essentials/compass.md?context=xamarin/android
+    - name: Подключение
+      href: ~/essentials/connectivity.md?context=xamarin/android
+    - name: Передача данных
+      href: ~/essentials/data-transfer.md?context=xamarin/android
+    - name: Сведения о дисплее устройства
+      href: ~/essentials/device-display.md?context=xamarin/android
+    - name: Сведения об устройстве
+      href: ~/essentials/device-information.md?context=xamarin/android
+    - name: Адрес эл. почты
+      href: ~/essentials/email.md?context=xamarin/android
+    - name: Вспомогательные методы для файловой системы
+      href: ~/essentials/file-system-helpers.md?context=xamarin/android
+    - name: Фонарик
+      href: ~/essentials/flashlight.md?context=xamarin/android
+    - name: Геокодирование
+      href: ~/essentials/geocoding.md?context=xamarin/android
+    - name: Геопозиционирование
+      href: ~/essentials/geolocation.md?context=xamarin/android
+    - name: Гироскоп
+      href: ~/essentials/gyroscope.md?context=xamarin/android
+    - name: Средство запуска
+      href: ~/essentials/launcher.md?context=xamarin/android
+    - name: Магнитометр
+      href: ~/essentials/magnetometer.md?context=xamarin/android
+    - name: Главный поток
+      href: ~/essentials/main-thread.md?context=xamarin/android
+    - name: Карты
+      href: ~/essentials/maps.md?context=xamarin/android
+    - name: Открыть браузер
+      href: ~/essentials/open-browser.md?context=xamarin/android
+    - name: Датчик ориентации
+      href: ~/essentials/orientation-sensor.md?context=xamarin/android
+    - name: Телефон
+      href: ~/essentials/phone-dialer.md?context=xamarin/android
+    - name: Питание
+      href: ~/essentials/power.md?context=xamarin/android
+    - name: Параметры
+      href: ~/essentials/preferences.md?context=xamarin/android
+    - name: Блокировка экрана
+      href: ~/essentials/screen-lock.md?context=xamarin/android
+    - name: Защищенное хранилище
+      href: ~/essentials/secure-storage.md?context=xamarin/android
+    - name: SMS
+      href: ~/essentials/sms.md?context=xamarin/android
+    - name: Преобразование текста в речь
+      href: ~/essentials/text-to-speech.md?context=xamarin/android
+    - name: Отслеживание версий
+      href: ~/essentials/version-tracking.md?context=xamarin/android
+    - name: Вибрация
+      href: ~/essentials/vibrate.md?context=xamarin/android
+    - name: Устранение неполадок
+      href: ~/essentials/troubleshooting.md?context=xamarin/android
+  - name: Данные и облачные службы
+    href: data-cloud/index.md
+    items:
+    - name: Azure Active Directory
+      href: ~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/android
+      items:
+      - name: Начало работы
+        href: ~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/android
+        items:
+        - name: Шаг 1. Регистровое
+          href: ~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/android
+        - name: Шаг 2. Настроить
+          href: ~/cross-platform/data-cloud/active-directory/get-started/configure.md?context=xamarin/android
+      - name: Доступ к API Graph
+        href: ~/cross-platform/data-cloud/active-directory/graph.md?context=xamarin/android
+    - name: Мобильные приложения Azure
+      href: ~/cross-platform/data-cloud/mobile-apps.md?context=xamarin/android
+    - name: Доступ к данным
+      href: data-cloud/data-access/index.md
+      items:
+      - name: Вступление
+        href: data-cloud/data-access/introduction.md
+      - name: Конфигурация
+        href: data-cloud/data-access/configuration.md
+      - name: Использование ORM для SQLite.NET
+        href: data-cloud/data-access/using-sqlite-orm.md
+      - name: Использование ADO.NET
+        href: data-cloud/data-access/using-adonet.md
+      - name: Использование данных в приложении
+        href: data-cloud/data-access/using-data-in-an-app.md
+    - name: Обмен сообщениями Google
+      href: data-cloud/google-messaging/index.md
+      items:
+      - name: Обмен сообщениями Firebase Cloud
+        href: data-cloud/google-messaging/firebase-cloud-messaging.md
+      - name: Пошаговое руководство по уведомлениям FCM
+        href: data-cloud/google-messaging/remote-notifications-with-fcm.md
+      - name: Google Cloud Messaging
+        href: data-cloud/google-messaging/google-cloud-messaging.md
+      - name: Пошаговое руководство по уведомлениям GCM
+        href: data-cloud/google-messaging/remote-notifications-with-gcm.md
+    - name: Веб-службы
+      href: ~/cross-platform/data-cloud/web-services/index.md?context=xamarin/android
+      items:
+      - name: Пошаговое руководство. Работа с WCF
+        href: ~/cross-platform/data-cloud/web-services/walkthrough-working-with-wcf.md?context=xamarin/android
+  - name: Развертывание и тестирование
+    href: deploy-test/index.md
+    items:
+    - name: Размер пакета приложения
+      href: deploy-test/app-package-size.md
+    - name: Создание приложений
+      href: deploy-test/building-apps/index.md
+      items:
+      - name: Процесс сборки
+        href: deploy-test/building-apps/build-process.md
+      - name: Создание пакетов APK для конкретного ABI
+        href: deploy-test/building-apps/abi-specific-apks.md
+    - name: Эмулятор командной строки
+      href: deploy-test/command-line-emulator.md
+    - name: Отладка
+      href: deploy-test/debugging/index.md
+      items:
+      - name: Отладка в эмуляторе
+        href: deploy-test/debugging/debug-on-emulator.md
+      - name: Отладка на устройстве
+        href: deploy-test/debugging/debug-on-device.md
+      - name: Журнал отладки Android
+        href: deploy-test/debugging/android-debug-log.md
+    - name: Атрибут Debuggable
+      href: deploy-test/debuggable-attribute.md
+    - name: Среда
+      href: deploy-test/environment.md
+    - name: GDB
+      href: deploy-test/gdb.md
+    - name: Параметры настраиваемого компоновщика
+      href: deploy-test/linker.md
+    - name: Устройства с многоядерными процессорами
+      href: deploy-test/multicore-devices.md
+    - name: Производительность
+      href: deploy-test/performance.md
+    - name: Профилирование
+      href: deploy-test/profiling.md
+    - name: Подготовка к выпуску
+      href: deploy-test/release-prep/index.md
+      items:
+      - name: ProGuard
+        href: deploy-test/release-prep/proguard.md
+    - name: Подписывание пакета APK
+      href: deploy-test/signing/index.md
+      items:
+      - name: Подписывание пакета APK вручную
+        href: deploy-test/signing/manually-signing-the-apk.md
+      - name: Отображение вашей цифровой подписи хранилища ключей
+        href: deploy-test/signing/keystore-signature.md
+    - name: Публикация приложения
+      href: deploy-test/publishing/index.md
+      items:
+      - name: Публикация в Google Play
+        href: deploy-test/publishing/publishing-to-google-play/index.md
+        items:
+        - name: Службы лицензирования Google
+          href: deploy-test/publishing/publishing-to-google-play/google-licensing-services.md
+        - name: Файлы расширения APK
+          href: deploy-test/publishing/publishing-to-google-play/apk-expansion-files.md
+        - name: Отправка пакета APK вручную
+          href: deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md
+      - name: Публикация в Amazon
+        href: deploy-test/publishing/publishing-to-amazon.md
+      - name: Независимая публикация
+        href: deploy-test/publishing/publishing-independently.md
+    - name: Установка в качестве системного приложения
+      href: deploy-test/install-system-app.md
+  - name: Дополнительные понятия и внутренние компоненты
+    href: internals/index.md
+    items:
+    - name: Архитектура
+      href: internals/architecture.md
+    - name: Доступные сборки
+      href: ~/cross-platform/internals/available-assemblies.md?context=xamarin/android
+    - name: Структура API
+      href: internals/api-design.md
+    - name: Сборка мусора
+      href: internals/garbage-collection.md
+    - name: Ограничения
+      href: internals/limitations.md
+  - name: Устранение неполадок
+    href: troubleshooting/index.md
+    items:
+    - name: Советы по устранению неполадок
+      href: troubleshooting/troubleshooting.md
+    - name: Вопросы и ответы
+      href: troubleshooting/questions/index.md
+      items:
+      - name: Какие пакеты SDK для Android следует установить?
+        href: troubleshooting/questions/install-android-sdk-packages.md
+      - name: Где можно задать свои расположения пакета SDK для Android?
+        href: troubleshooting/questions/android-sdk-location.md
+      - name: Как обновить версию Java Development Kit (JDK)?
+        href: troubleshooting/questions/update-jdk.md
+      - name: Можно ли использовать Java Development Kit (JDK) версии 9?
+        href: troubleshooting/questions/jdk9-errors.md
+      - name: Как вручную установить вспомогательные библиотеки Android, необходимые для пакетов Xamarin.Android.Support?
+        href: troubleshooting/questions/install-android-support-library.md
+      - name: Какие драйверы USB нужны для отладки Android в Windows?
+        href: troubleshooting/questions/android-drivers-debug-windows.md
+      - name: Можно ли подключиться с виртуальной машины Windows к эмуляторам Android под управлением Mac?
+        href: troubleshooting/questions/connect-android-emulator-mac-windows.md
+      - name: Как автоматизировать тестовый проект Android NUnit?
+        href: troubleshooting/questions/automate-android-nunit-test.md
+      - name: Как включить Intellisense в AXML-файлах Android?
+        href: troubleshooting/questions/enable-axml-intellisense.md
+      - name: Почему моя сборка выпуска Android не подключается к Интернету?
+        href: troubleshooting/questions/android-internet.md
+      - name: Оптимизированные пакеты NuGet поддержки Android v4 и v13 в Xamarin
+        href: troubleshooting/questions/android-support-v4v13-libraries.md
+      - name: Как разрешить исключение PathTooLongException?
+        href: troubleshooting/questions/path-too-long-exception.md
+      - name: В какой версии Xamarin.Android добавлена поддержка Lollipop?
+        href: troubleshooting/questions/xa-lollipop.md
+      - name: "Android.Support.v7.AppCompat — не удалось найти ресурс, который соответствует указанному имени: attr 'android:actionModeShareDrawable'"
+        href: troubleshooting/questions/missing-action-mode-share-drawable.md
+      - name: Настройка параметров памяти Java для конструктора Android
+        href: troubleshooting/questions/android-designer-java-memory.md
+      - name: Не обновляется файл Resource.designer.cs Android
+        href: troubleshooting/questions/resource-designer-wont-update.md
+    - name: Устранение ошибок установки библиотеки
+      href: troubleshooting/resolving-library-installation-errors.md
+    - name: Изменения в Android SDK Tools
+      href: troubleshooting/sdk-cli-tooling-changes.md
+    - name: Руководство по ошибкам Xamarin.Android
+      href: troubleshooting/errors.md
+  - name: Wear
+    href: wear/index.md
+    items:
+    - name: Приступая к работе
+      href: wear/get-started/index.md
+      items:
+      - name: Введение в Android Wear
+        href: wear/get-started/intro-to-wear.md
+      - name: Установка и настройка
+        href: wear/get-started/installation.md
+      - name: Основные сведения о Wear
+        href: wear/get-started/hello-wear.md
+    - name: Пользовательский интерфейс
+      href: wear/user-interface/index.md
+      items:
+      - name: Элементы управления
+        href: wear/user-interface/controls/index.md
+        items:
+        - name: GridViewPager
+          href: wear/user-interface/controls/gridviewpager.md
+    - name: Функции платформы
+      href: wear/platform/index.md
+      items:
+      - name: Создание оформлений экрана
+        href: wear/platform/creating-a-watchface.md
+    - name: Размеры экрана
+      href: wear/screen-sizes.md
+    - name: Тестирование и развертывание
+      href: wear/deploy-test/index.md
+      items:
+      - name: Отладка в эмуляторе
+        href: wear/deploy-test/debug-on-emulator.md
+      - name: Отладка в устройстве Android Wear
+        href: wear/deploy-test/debug-on-device.md
+      - name: Упаковка
+        href: wear/deploy-test/packaging.md
+  - name: Заметки о выпуске
+    href: https://developer.xamarin.com/releases/android/
+  - name: Примеры
+    href: samples/index.yml
+  expanded: true
+ms.openlocfilehash: 2ca84f556d0822272c8d2b680835322056b0d7bd
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50130255"

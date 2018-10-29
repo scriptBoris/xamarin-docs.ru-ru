@@ -1,0 +1,124 @@
+items:
+- name: Инструменты
+  href: index.yml
+  items:
+  - name: Live Player
+    href: live-player/index.md
+    items:
+    - name: Установка
+      href: live-player/install.md
+    - name: Приложение Xamarin Live Player
+      href: live-player/player.md
+    - name: Примеры
+      href: live-player/samples.md
+    - name: Ограничения
+      href: live-player/limitations.md
+    - name: Устранение неполадок
+      href: live-player/troubleshooting.md
+  - name: Симулятор iOS
+    href: ios-simulator/index.md
+    items:
+    - name: Развертывание в симулятор iOS
+      href: ios-simulator/deploy.md
+  - name: Inspector
+    href: inspector/index.md
+    items:
+    - name: Установка и требования
+      href: inspector/install.md
+    - name: Проверка интерактивных приложений
+      href: inspector/inspect.md
+  - name: профилировщик
+    href: profiler/index.md
+    items:
+    - name: Устранение неполадок
+      href: profiler/troubleshooting.md
+  - name: Книги
+    href: workbooks/index.md
+    items:
+    - name: Установка и требования
+      href: workbooks/install.md
+    - name: Интерактивные Workbooks
+      href: workbooks/workbook.md
+    - name: Редактор сочетаний клавиш
+      href: workbooks/keybindings.md
+    - name: Пример Workbooks
+      href: workbooks/samples/index.md
+      items:
+      - name: TinyRenderer
+        href: workbooks/samples/tinyrenderer.md
+    - name: Устранение неполадок
+      href: workbooks/troubleshooting/index.md
+      items:
+      - name: Общие известные проблемы и их решения
+        href: workbooks/troubleshooting/general.md
+      - name: Проблемы, связанные с Android Workbooks
+        href: workbooks/troubleshooting/android.md
+    - name: Интеграция пакета SDK
+      href: workbooks/sdk/index.md
+      items:
+      - name: Общие сведения об архитектуре
+        href: workbooks/sdk/architecture.md
+      - name: Разделы о расширенной интеграции
+        href: workbooks/sdk/integrations.md
+      - name: Представления в Xamarin Workbooks
+        href: workbooks/sdk/representations.md
+      - name: Отладка интеграции
+        href: workbooks/sdk/debugging.md
+      - name: Примеры интеграции
+        href: workbooks/sdk/samples.md
+  - name: Внедрение .NET
+    href: dotnet-embedding/index.md
+    items:
+    - name: Начало работы
+      href: dotnet-embedding/get-started/index.md
+      items:
+      - name: Установка
+        href: dotnet-embedding/get-started/install/install.md
+      - name: В
+        href: dotnet-embedding/get-started/c.md
+      - name: Java
+        href: dotnet-embedding/get-started/java/index.md
+        items:
+        - name: Android
+          href: dotnet-embedding/get-started/java/android.md
+      - name: Objective-C
+        href: dotnet-embedding/get-started/objective-c/index.md
+        items:
+        - name: iOS
+          href: dotnet-embedding/get-started/objective-c/ios.md
+        - name: macOS
+          href: dotnet-embedding/get-started/objective-c/macos.md
+    - name: Android
+      href: dotnet-embedding/android/index.md
+      items:
+      - name: Обратные вызовы Android
+        href: dotnet-embedding/android/callbacks.md
+    - name: Objective-C
+      href: dotnet-embedding/objective-c/index.md
+      items:
+      - name: Рекомендации
+        href: dotnet-embedding/objective-c/best-practices.md
+      - name: Платформы
+        href: dotnet-embedding/objective-c/platforms.md
+    - name: Ограничения
+      href: dotnet-embedding/limitations.md
+  - name: Непрерывная интеграция
+    href: ci/index.md
+    items:
+    - name: Введение в непрерывную интеграцию
+      href: ci/intro-to-ci.md
+    - name: DevOps с Xamarin
+      href: ci/devops.md
+    - name: Использование Центра приложений для разработки с Xamarin
+      href: /appcenter/build/xamarin/
+    - name: Использование TeamCity с Xamarin
+      href: ci/teamcity.md
+    - name: Использование Jenkins с Xamarin
+      href: ci/jenkins-walkthrough.md
+  expanded: true
+ms.openlocfilehash: 207b6d84cfcde2a3d771bb5095cdc5f9dfcb991a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50130248"

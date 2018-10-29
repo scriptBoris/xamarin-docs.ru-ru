@@ -6,12 +6,12 @@ description: Xamarin позволяет создавать собственны�
 ms.date: 08/08/2018
 featureFlags:
 - clicktale
-ms.openlocfilehash: d8a93775e448a9cbb12f7aafc1ca51f37107305f
-ms.sourcegitcommit: 00a3505a73ce2213ba35bc85c06738edd1155060
+ms.openlocfilehash: 79bf14362d142c5db4c590cc547bfafdd3100682
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "43780482"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121227"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -91,11 +91,11 @@ ms.locfileid: "43780482"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Начало работы</h3>
+                                                    <h3>Приступая к работе</h3>
                                                     <p>Руководства, которые помогут вам начать работу с Xamarin.Forms. Убедитесь в том, что все установлено правильно, и создайте свое первое приложение.</p>
                                                 </div>
                                             </div>
@@ -115,7 +115,7 @@ ms.locfileid: "43780482"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Принципы работы приложения</h3>
-                                                    <p>Все, что вам нужно знать для создания приложений, например работа с файлами, изображениями, базами данных и т. д.</p>
+                                                    <p>Все, что вам нужно знать для создания приложений, например работа с файлами, изображениями, базами данных и т. д.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -256,25 +256,6 @@ ms.locfileid: "43780482"
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/samples/index.yml">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Примеры приложений</h3>
-                                                    <p>Полные приложения и демонстрации кода для Xamarin.Forms, работающие на базе Android, iOS и Windows.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
                                 <a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -312,6 +293,44 @@ ms.locfileid: "43780482"
                                     </div>
                                 </a>
                             </li>
+                            <li>
+                                <a href="~/xamarin-forms/user-interface/graphics/skiasharp/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="SkiaSharp Graphics in Xamarin.Forms" src="~/media/index/xamarin-graphics-skia.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Электронная книга "Графика SkiaSharp"</h3>
+                                                    <p>Кросс-платформенная векторная графика и анимация с помощью SkiaSharp.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/samples/index.yml">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Примеры приложений</h3>
+                                                    <p>Полные приложения и демонстрации кода для Xamarin.Forms, работающие на базе Android, iOS и Windows.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -324,7 +343,7 @@ ms.locfileid: "43780482"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-android-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-android-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -348,7 +367,7 @@ ms.locfileid: "43780482"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Принципы работы приложения</h3>
-                                                    <p>Все, что вам нужно знать для создания приложений, например работа с файлами, изображениями, базами данных и т. д.</p>
+                                                    <p>Все, что вам нужно знать для создания приложений, например работа с файлами, изображениями, базами данных и т. д.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -519,11 +538,11 @@ ms.locfileid: "43780482"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-ios-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-ios-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Начало работы с iOS</h3>
+                                                    <h3>Начало работы с iOS</h3>
                                                     <p>Руководства, которые помогут вам начать работу с Xamarin.iOS. Убедитесь в том, что все установлено правильно, и создайте свое первое приложение.</p>
                                                 </div>
                                             </div>
@@ -543,7 +562,7 @@ ms.locfileid: "43780482"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Принципы работы приложения</h3>
-                                                    <p>Все, что вам нужно знать для создания приложений, например работа с файлами, изображениями, базами данных и т. д.</p>
+                                                    <p>Все, что вам нужно знать для создания приложений, например работа с файлами, изображениями, базами данных и т. д.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -733,11 +752,11 @@ ms.locfileid: "43780482"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-mac-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-mac-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Начало работы с Mac</h3>
+                                                    <h3>Начало работы с Mac</h3>
                                                     <p>Руководства, которые помогут вам начать работу с Xamarin.Mac. Убедитесь в том, что все установлено правильно, и создайте свое первое приложение.</p>
                                                 </div>
                                             </div>
@@ -757,7 +776,7 @@ ms.locfileid: "43780482"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Принципы работы приложения</h3>
-                                                    <p>Все, что вам нужно знать для создания приложений, например работа с файлами, изображениями, базами данных и т. д.</p>
+                                                    <p>Все, что вам нужно знать для создания приложений, например работа с файлами, изображениями, базами данных и т. д.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -871,11 +890,11 @@ ms.locfileid: "43780482"
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Getting Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
+                                                        <img alt="Get Started" src="~/media/index/xamarin-cross-platform-get-started.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Начало работы</h3>
+                                                    <h3>Приступая к работе</h3>
                                                     <p>Начните создавать кроссплатформенные приложения для настольных и мобильных платформ с помощью Xamarin для Android, iOS, MacOS, UWP и многого другого.</p>
                                                 </div>
                                             </div>
@@ -1008,7 +1027,7 @@ ms.locfileid: "43780482"
                         <a href="#architecture1"></a>
                         <ul id="architecture1" class="cardsC">
                             <li>
-                                <a href="~/graphics-games/skiasharp/index.md">
+                                <a href="~/xamarin-forms/user-interface/graphics/skiasharp/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -1094,7 +1113,7 @@ ms.locfileid: "43780482"
                         <a href="#architecture1"></a>
                         <ul id="architecture1" class="cardsC">
                             <li>
-                                <a href="~/tools/ios-simulator.md">
+                                <a href="~/tools/ios-simulator/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">

@@ -1,0 +1,134 @@
+items:
+- name: Графика SkiaSharp в Xamarin.Forms
+  href: index.md
+  items:
+  - name: Основы рисования
+    href: basics/index.md
+    items:
+    - name: Рисование простого кружка
+      href: basics/circle.md
+    - name: Интеграция с Xamarin.Forms
+      href: basics/integration.md
+    - name: Пиксели и аппаратно-независимые единицы
+      href: basics/pixels.md
+    - name: Простая анимация
+      href: basics/animation.md
+    - name: Интеграция текста и графики
+      href: basics/text.md
+    - name: Основы растрового изображения
+      href: basics/bitmaps.md
+    - name: Прозрачность
+      href: basics/transparency.md
+    expanded: true
+  - name: Строки и пути
+    href: paths/index.md
+    items:
+    - name: Линии и концы штрихов
+      href: paths/lines.md
+    - name: Основные сведения о пути
+      href: paths/paths.md
+    - name: Типы заполнения пути
+      href: paths/fill-types.md
+    - name: Ломаные линии и параметрические уравнения
+      href: paths/polylines.md
+    - name: Точки и тире
+      href: paths/dots.md
+    - name: Рисование пальцами
+      href: paths/finger-paint.md
+  - name: Transform
+    href: transforms/index.md
+    items:
+    - name: Преобразование переноса
+      href: transforms/translate.md
+    - name: Преобразование масштаба
+      href: transforms/scale.md
+    - name: Преобразование циклического сдвига
+      href: transforms/rotate.md
+    - name: Преобразование наклона
+      href: transforms/skew.md
+    - name: Преобразования матрицы
+      href: transforms/matrix.md
+    - name: Манипуляции сенсорного ввода
+      href: transforms/touch.md
+    - name: Неаффинные преобразования
+      href: transforms/non-affine.md
+    - name: Трехмерный поворот
+      displayName: Three-D Rotation
+      href: transforms/3d-rotation.md
+  - name: Пути и кривые
+    href: curves/index.md
+    items:
+    - name: Три способа нарисовать дугу
+      href: curves/arcs.md
+    - name: Три типа кривых Безье
+      href: curves/beziers.md
+    - name: Данные пути SVG
+      href: curves/path-data.md
+    - name: Обрезка изображения по границам области с помощью путей
+      href: curves/clipping.md
+    - name: Эффекты пути
+      href: curves/effects.md
+    - name: Пути и текст
+      href: curves/text-paths.md
+    - name: Сведения о пути и перечисление
+      href: curves/information.md
+  - name: Растровые изображения
+    href: bitmaps/index.md
+    items:
+    - name: Вывод растровых изображений
+      href: bitmaps/displaying.md
+    - name: Создание и рисование поверх растровых изображений
+      href: bitmaps/drawing.md
+    - name: Обрезка растровых изображений
+      href: bitmaps/cropping.md
+    - name: Сегментированный вывод растровых изображений
+      href: bitmaps/segmented.md
+    - name: Сохранение растровых изображений в файлы
+      href: bitmaps/saving.md
+    - name: Доступ к битам пикселей в растровых изображениях
+      href: bitmaps/pixel-bits.md
+    - name: Анимация растровых изображений
+      href: bitmaps/animating.md
+  - name: Произведенный эффект
+    href: effects/index.md
+    items:
+    - name: Шейдеры
+      href: effects/shaders/index.md
+      items:
+      - name: Линейный градиент
+        href: effects/shaders/linear-gradient.md
+      - name: Круговые градиенты
+        href: effects/shaders/circular-gradients.md
+      - name: Мозаичное заполнение растрового изображения
+        href: effects/shaders/bitmap-tiling.md
+      - name: Помехи
+        href: effects/shaders/noise.md
+    - name: Режимы смешения
+      href: effects/blend-modes/index.md
+      items:
+      - name: Режимы смешения Porter-Duff
+        href: effects/blend-modes/porter-duff.md
+      - name: Отделяемые режимы смешения
+        href: effects/blend-modes/separable.md
+      - name: Неотделяемые режимы смешения
+        href: effects/blend-modes/non-separable.md
+    - name: Фильтры масок
+      href: effects/mask-filters.md
+    - name: Фильтры изображений
+      href: effects/image-filters.md
+    - name: Фильтры цветов
+      href: effects/color-filters.md
+  - name: Примеры, независимые от платформы
+    href: ~/graphics-games/skiasharp/introduction.md
+    items:
+    - name: Заметки о конкретных платформах
+      href: ~/graphics-games/skiasharp/platform.md
+  - name: справочник по интерфейсам API
+    href: /dotnet/api/skiasharp/
+  expanded: true
+ms.openlocfilehash: 59cc8bbb28a912ae32ef189c83c5d2e4f3209f31
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50130252"

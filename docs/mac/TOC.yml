@@ -1,0 +1,234 @@
+items:
+- name: Xamarin.Mac
+  href: index.yml
+  items:
+  - name: Приступая к работе
+    href: get-started/index.md
+    items:
+    - name: Установка
+      href: /visualstudio/mac/installation/
+    - name: Привет, Mac
+      href: get-started/hello-mac.md
+    - name: Сопутствующая документация
+      href: get-started/related.md
+    expanded: true
+  - name: Принципы работы приложения
+    href: app-fundamentals/index.md
+    items:
+    - name: Специальные возможности
+      href: app-fundamentals/accessibility.md
+    - name: Общие шаблоны и идиомы
+      href: app-fundamentals/patterns.md
+    - name: Консольные приложения
+      href: app-fundamentals/console.md
+    - name: API в macOS
+      href: app-fundamentals/mac-apis.md
+    - name: XIB-файлы
+      href: app-fundamentals/xib.md
+    - name: Проектирование пользовательского интерфейса .storyboard/.xib-less
+      href: app-fundamentals/xibless-ui.md
+    - name: Изображения
+      href: app-fundamentals/image.md
+    - name: Привязка данных и кодирование типа "ключ — значение"
+      href: app-fundamentals/databinding.md
+    - name: Databases
+      href: app-fundamentals/databases.md
+    - name: Копирование и вставка
+      href: app-fundamentals/copy-paste.md
+    - name: Песочница приложения Xamarin.Mac
+      href: app-fundamentals/sandboxing.md
+    - name: Воспроизведение звука с помощью AVAudioPlayer
+      href: app-fundamentals/sounds.md
+  - name: Пользовательский интерфейс
+    href: user-interface/index.md
+    items:
+    - name: Windows
+      href: user-interface/window.md
+    - name: Диалоговые окна
+      href: user-interface/dialog.md
+    - name: Предупреждения
+      href: user-interface/alert.md
+    - name: Меню
+      href: user-interface/menu.md
+    - name: Стандартные элементы управления
+      href: user-interface/standard-controls.md
+    - name: Панели инструментов
+      href: user-interface/toolbar.md
+    - name: Представления таблиц
+      href: user-interface/table-view.md
+    - name: Представления структур
+      href: user-interface/outline-view.md
+    - name: Списки источников
+      href: user-interface/source-list.md
+    - name: Представления коллекций
+      href: user-interface/collection-view.md
+    - name: Создание пользовательских элементов управления
+      href: user-interface/custom-controls.md
+  - name: Функции платформы
+    href: platform/index.md
+    items:
+    - name: Введение в macOS Mojave
+      href: platform/introduction-to-macos-mojave/index.md
+      items:
+      - name: Начало работы
+        href: platform/introduction-to-macos-mojave/get-started.md
+    - name: Введение в macOS High Sierra
+      href: platform/introduction-to-macos-high-sierra/index.md
+    - name: Введение в macOS Sierra
+      href: platform/introduction-to-macos-sierra/index.md
+      items:
+      - name: Создание современных приложений macOS
+        href: platform/introduction-to-macos-sierra/modern-cocoa-apps.md
+      - name: Дополнительные изменения платформы macOS Sierra
+        href: platform/introduction-to-macos-sierra/additional-framework-changes.md
+      - name: Устранение неполадок
+        href: platform/introduction-to-macos-sierra/troubleshooting.md
+    - name: Привязка библиотек Mac
+      href: platform/binding.md
+    - name: Введение в OpenTK
+      href: platform/opentk.md
+    - name: Введение в раскадровку
+      href: platform/storyboards/index.md
+      items:
+      - name: Краткое руководство по раскадровке
+        href: platform/storyboards/quickstart.md
+      - name: Работа с элементами раскадровки
+        href: platform/storyboards/indepth.md
+    - name: Поддержка расширения Xamarin.Mac
+      href: platform/extensions.md
+    - name: Требуемая версия .NET Framework
+      href: platform/target-framework.md
+  - name: Развертывание и тестирование
+    href: deploy-test/index.md
+    items:
+    - name: Значок приложения
+      href: deploy-test/app-icon.md
+    - name: Отладка сбоя в машинном коде
+      href: deploy-test/debugging-native-crash.md
+    - name: Компоновщик
+      href: deploy-test/linker.md
+    - name: Производительность
+      href: deploy-test/performance.md
+    - name: Публикация в Магазине приложений
+      href: deploy-test/publishing-to-the-app-store/index.md
+      items:
+      - name: Сертификаты и идентификаторы
+        href: deploy-test/publishing-to-the-app-store/certificates-identifiers.md
+      - name: Профили подготовки
+        href: deploy-test/publishing-to-the-app-store/profiles.md
+      - name: Настройка приложения Mac
+        href: deploy-test/publishing-to-the-app-store/app-configuration.md
+      - name: Подписывание с использованием идентификатора разработчика
+        href: deploy-test/publishing-to-the-app-store/signing.md
+      - name: Создание пакета для Mac App Store
+        href: deploy-test/publishing-to-the-app-store/bundling.md
+      - name: Отправка в Mac App Store
+        href: deploy-test/publishing-to-the-app-store/uploading.md
+  - name: Платформа Apple
+    href: ~/cross-platform/macios/index.md?context=xamarin/mac
+    items:
+    - name: Управление учетными записями Apple
+      href: ~/cross-platform/macios/apple-account-management.md?context=xamarin/mac
+    - name: Unified API
+      href: ~/cross-platform/macios/unified/index.md?context=xamarin/mac
+      items:
+      - name: Обзор
+        href: ~/cross-platform/macios/unified/overview.md?context=xamarin/mac
+      - name: Обновление имеющихся приложений
+        href: ~/cross-platform/macios/unified/updating-apps.md?context=xamarin/mac
+      - name: Обновление имеющихся приложений iOS
+        href: ~/cross-platform/macios/unified/updating-ios-apps.md?context=xamarin/mac
+      - name: Обновление имеющихся приложений Mac
+        href: ~/cross-platform/macios/unified/updating-mac-apps.md?context=xamarin/mac
+      - name: Обновление имеющихся приложений Xamarin.Forms
+        href: ~/cross-platform/macios/unified/updating-xamarin-forms-apps.md?context=xamarin/mac
+      - name: Миграция привязки в Unified API
+        href: ~/cross-platform/macios/unified/update-binding.md?context=xamarin/mac
+      - name: Советы по обновлению кода в Unified API
+        href: ~/cross-platform/macios/unified/updating-tips.md?context=xamarin/mac
+    - name: Привязка Objective-C
+      href: ~/cross-platform/macios/binding/index.md?context=xamarin/mac
+      items:
+      - name: Обзор
+        href: ~/cross-platform/macios/binding/overview.md?context=xamarin/mac
+      - name: Привязка библиотек Objective-C
+        href: ~/cross-platform/macios/binding/objective-c-libraries.md?context=xamarin/mac
+      - name: Справочник по типам привязки
+        href: ~/cross-platform/macios/binding/binding-types-reference.md?context=xamarin/mac
+      - name: Objective Sharpie
+        href: ~/cross-platform/macios/binding/objective-sharpie/index.md?context=xamarin/mac
+        items:
+        - name: Начало работы
+          href: ~/cross-platform/macios/binding/objective-sharpie/get-started.md?context=xamarin/mac
+        - name: Средства и команды
+          href: ~/cross-platform/macios/binding/objective-sharpie/tools.md?context=xamarin/mac
+        - name: Функции
+          href: ~/cross-platform/macios/binding/objective-sharpie/platform/index.md?context=xamarin/mac
+          items:
+          - name: ApiDefinitions и StructsAndEnums
+            href: ~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md?context=xamarin/mac
+          - name: Привязка собственных платформ
+            href: ~/cross-platform/macios/binding/objective-sharpie/platform/native-frameworks.md?context=xamarin/mac
+          - name: Проверка атрибутов
+            href: ~/cross-platform/macios/binding/objective-sharpie/platform/verify.md?context=xamarin/mac
+        - name: Примеры
+          href: ~/cross-platform/macios/binding/objective-sharpie/examples/index.md?context=xamarin/mac
+          items:
+          - name: Xcode
+            href: ~/cross-platform/macios/binding/objective-sharpie/examples/xcode.md?context=xamarin/mac
+          - name: CocoaPod
+            href: ~/cross-platform/macios/binding/objective-sharpie/examples/cocoapod.md?context=xamarin/mac
+          - name: Расширенный (руководство)
+            href: ~/cross-platform/macios/binding/objective-sharpie/examples/advanced.md?context=xamarin/mac
+        - name: История выпусков
+          href: ~/cross-platform/macios/binding/objective-sharpie/releases.md?context=xamarin/mac
+      - name: Устранение неполадок
+        href: ~/cross-platform/macios/binding/troubleshooting.md?context=xamarin/mac
+    - name: Собственные ссылки
+      href: ~/cross-platform/macios/native-references.md?context=xamarin/mac
+    - name: Собственные типы
+      href: ~/cross-platform/macios/nativetypes.md?context=xamarin/mac
+    - name: Особенности 32- и 64-разрядных платформ
+      href: ~/cross-platform/macios/32-and-64/index.md?context=xamarin/mac
+      items:
+      - name: Обновление единых приложений Xamarin.Mac для 64-разрядных платформ
+        href: ~/cross-platform/macios/32-and-64/mac-64-bit.md?context=xamarin/mac
+    - name: Работа с собственными типами в кроссплатформенных приложениях
+      href: ~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/mac
+    - name: HttpClient и селектор реализации SSL и TLS
+      href: ~/cross-platform/macios/http-stack.md?context=xamarin/mac
+    - name: Оптимизация сборки
+      href: ~/cross-platform/macios/optimizations.md?context=xamarin/mac
+  - name: Дополнительные понятия и внутренние компоненты
+    href: internals/index.md
+    items:
+    - name: AOT
+      href: internals/aot.md
+    - name: Доступные сборки
+      href: ~/cross-platform/internals/available-assemblies.md?context=xamarin/mac
+    - name: Архитектура Mac
+      href: internals/architecture.md
+    - name: Как работает Xamarin.Mac
+      href: internals/how-it-works.md
+    - name: Инфраструктуры
+      href: internals/frameworks.md
+    - name: регистратор
+      href: internals/registrar.md
+  - name: Устранение неполадок
+    href: troubleshooting/index.md
+    items:
+    - name: Советы по устранению неполадок
+      href: troubleshooting/troubleshooting.md
+    - name: Сообщения об ошибках (mmp)
+      href: troubleshooting/mmp-errors.md
+  - name: Заметки о выпуске
+    href: https://developer.xamarin.com/releases/mac/
+  - name: Примеры
+    href: samples/index.yml
+  expanded: true
+ms.openlocfilehash: ea86a8d1b392acc1a27902c6c95a4b6ed763ecd8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110444"
