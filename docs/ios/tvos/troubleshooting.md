@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 45c57aa6d6308697d9bc581bf8d1691f3b29a9e5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 60b54ffdce5f6bda2324c08bd3159eefeb5bc7f8
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120584"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234861"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Устранение неполадок приложения tvOS, созданные с помощью Xamarin
 
@@ -32,7 +32,7 @@ _В этой статье рассматриваются известные пр
     - **Возможных решений** — понизить версию платформы Mono с нашей стабильный канал.
 - **Xamarin для Visual Studio & Xamarin.iOS** — при развертывании приложения WatchKit в Visual studio, ошибка `The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist` может появиться.
 
-Вы найдете отчета, любые ошибки, вы для [Bugzilla](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
+Вы найдете отчета, любые ошибки, вы на [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

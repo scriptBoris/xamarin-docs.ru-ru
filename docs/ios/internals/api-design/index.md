@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: cd25e5c78885f53902c577a900958b842a70219c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 56f9cbdae565f0d89463742377ec2311d8e375ac
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116957"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235055"
 ---
 # <a name="xamarinios-api-design"></a>Проектирование API Xamarin.iOS
 
@@ -107,7 +107,7 @@ Xamarin.iOS отражает в C# иерархию классов, от Objecti
 
 ##### <a name="nsobject"></a>NSObject
 
-[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) тип является основой для всех привязок Objective-C. Типы Xamarin.iOS отражают два класса типов из cocoatouch, облегченную API для iOS: типы C (как правило, на которое как типы CoreFoundation) и типы Objective-C (они являются производными от класса NSObject).
+[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) тип является основой для всех привязок Objective-C. Типы Xamarin.iOS отражают два класса типов из cocoatouch, облегченную API для iOS: типы C (обычно называют типами CoreFoundation) и типы Objective-C (они являются производными от класса NSObject).
 
 Для каждого типа, отражающую неуправляемого типа, можно получить через собственный объект [обрабатывать](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/) свойство.
 

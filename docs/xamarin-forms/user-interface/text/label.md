@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/04/2018
-ms.openlocfilehash: c98dcc30ac89e3df0338df02e14a32575c0dc847
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: a6c0cd057082a6fa4793ca3de18cefd00243e9e3
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39203040"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235068"
 ---
 # <a name="xamarinforms-label"></a>Метка Xamarin.Forms
 
@@ -22,13 +22,13 @@ _Отображаемый текст в Xamarin.Forms_
 
 ## <a name="text-decorations"></a>Оформление текста
 
-Оформление текста подчеркивания и зачеркивания могут применяться к [ `Label` ](xref:Xamarin.Forms.Label) экземпляров, задав `Label.TextDecoration` свойство к одному или нескольким `TextDecoration` членов перечисления:
+Оформление текста подчеркивания и зачеркивания могут применяться к [ `Label` ](xref:Xamarin.Forms.Label) экземпляров, задав `Label.TextDecorations` свойство к одному или нескольким `TextDecorations` членов перечисления:
 
 - `None`
 - `Underline`
 - `Strikethrough`
 
-В следующем примере XAML показано параметр `Label.TextDecoration` свойство:
+В следующем примере XAML показано параметр `Label.TextDecorations` свойство:
 
 ```xaml
 <Label Text="This is underlined text." TextDecorations="Underline"  />
@@ -44,7 +44,7 @@ var strikethroughLabel = new Label { Text = "This is text with strikethrough.", 
 var bothLabel = new Label { Text = "This is underlined text with strikethrough.", TextDecorations = TextDecorations.Underline | TextDecorations.Strikethrough };
 ```
 
-Ниже показаны снимки экрана `TextDecoration` членов перечисления, применяется к [ `Label` ](xref:Xamarin.Forms.Label) экземпляров:
+Ниже показаны снимки экрана `TextDecorations` членов перечисления, применяется к [ `Label` ](xref:Xamarin.Forms.Label) экземпляров:
 
 ![](label-images/label-textdecorations.png "Метки с оформление текста")
 
@@ -158,7 +158,7 @@ var label =
 - [`Style`](xref:Xamarin.Forms.Span.Style) — стиль, применяемый к нему.
 - [`Text`](xref:Xamarin.Forms.Span.Text) — текст диапазона.
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) — цвет для текста в элементе управления span.
-- `TextDecoration` -оформление для применения к тексту в элементе управления span. Дополнительные сведения см. в разделе [оформление текста](#text-decorations).
+- `TextDecorations` -оформление для применения к тексту в элементе управления span. Дополнительные сведения см. в разделе [оформление текста](#text-decorations).
 
 Кроме того [ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers) свойство может использоваться для определения коллекции распознавателей жестов, которые будет отвечать на жесты на [ `Span` ](xref:Xamarin.Forms.Span).
 

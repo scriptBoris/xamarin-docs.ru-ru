@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: daece8029bd6a97923d6469f9b42d69efbd3f905
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a2fbb44587eed7f7158c813e45b810cf7f15d0d4
+ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119893"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234899"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>Установка и использование watchOS в Xamarin
 
@@ -161,7 +161,7 @@ watchOS 4 требуется macOS Sierra (10.12) с Xcode 9.
 Следующая ошибка появится в **выходные данные приложения** при попытке запустить симулятор, не поддерживает парных контрольных значений:
 
 ```csharp
-error MT0000: Unexpected error - Please file a bug report at http://bugzilla.xamarin.com
+error MT0000: Unexpected error - Please file a bug report at https://github.com/xamarin/xamarin-macios/issues/new
 error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'.
 ```
 
