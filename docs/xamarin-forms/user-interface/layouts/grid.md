@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 01dd59d5e94b473316b03f9035d38305fad42880
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 392a0e6c76357ce106477ec4d5037673e5702b43
+ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994506"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50301244"
 ---
 # <a name="xamarinforms-grid"></a>Сетка Xamarin.Forms
 
@@ -22,12 +22,12 @@ ms.locfileid: "38994506"
 
 В этой статье рассматривается:
 
-- **[Назначение](#Purpose)**  &ndash; распространенные варианты применения `Grid`.
-- **[Использование](#Usage)**  &ndash; способы использования `Grid` для достижения нужного проекта.
-  - **[Строки и столбцы](#Rows_and_Columns)**  &ndash; определять строки и столбцы для `Grid`.
-  - **[Размещение представления](#Placing_Views)**  &ndash; добавить представления сетки на определенных строках и столбцах.
-  - **[Интервал между](#Spacing)**  &ndash; Настройка пробелы между строками и столбцами.
-  - **[Диапазоны](#Spans)**  &ndash; настраивать элементы, охватывающая несколько строк или столбцов.
+- **[Назначение](#purpose)**  &ndash; распространенные варианты применения `Grid`.
+- **[Использование](#usage)**  &ndash; способы использования `Grid` для достижения нужного проекта.
+  - **[Строки и столбцы](#rows-and-columns)**  &ndash; определять строки и столбцы для `Grid`.
+  - **[Размещение представления](#placing-views-in-a-grid)**  &ndash; добавить представления сетки на определенных строках и столбцах.
+  - **[Интервал между](#spacing)**  &ndash; Настройка пробелы между строками и столбцами.
+  - **[Диапазоны](#spans)**  &ndash; настраивать элементы, охватывающая несколько строк или столбцов.
 
 ![](grid-images/grid.png "Сетка просмотра")
 
@@ -42,8 +42,6 @@ ms.locfileid: "38994506"
 ## <a name="usage"></a>Использование
 
 В отличие от традиционных таблиц `Grid` не выводит число и размеры строк и столбцов на основе содержимого. Вместо этого `Grid` имеет `RowDefinitions` и `ColumnDefinitions` коллекций. Они содержат определения количества строк и столбцов будут размещены. Представления добавляются к `Grid` с указанной строки и столбца индексов, которая определяет строки и столбцы, представления, которые должны находиться в.
-
-<a name="Rows_and_Columns" />
 
 ### <a name="rows-and-columns"></a>Строки и столбцы
 
@@ -83,8 +81,6 @@ grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUni
 grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength(200)});
 grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) });
 ```
-
-<a name="Placing_Views" />
 
 ### <a name="placing-views-in-a-grid"></a>Размещение представления в виде сетки
 
