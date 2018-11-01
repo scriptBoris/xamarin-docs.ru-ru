@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: подключение'
-description: Класс подключения в Xamarin.Essentials позволяет отслеживать наличие изменений в условия сети устройства, проверьте текущий доступ к сети, и как оно сейчас подключено.
+description: Класс Connectivity в Xamarin.Essentials позволяет отслеживать изменения в условиях подключения устройства к сети, проверять текущее состояние и используемый метод доступа.
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 96b4ee0487034c651bec1dfb168fed7567b63c96
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: b0d5f28aca5d836608bc5a3423f3dc234a551ca0
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353702"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112004"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: подключение
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**Подключения** класс позволяет отслеживать наличие изменений в устройства условий работы сети, проверьте текущий доступ к сети, и как оно сейчас подключено.
+Класс **Connectivity** позволяет отслеживать изменения в условиях подключения устройства к сети, проверять текущее состояние и используемый метод доступа.
 
 ## <a name="getting-started"></a>Начало работы
 
-Чтобы получить доступ к **подключения** функциональность приведены следующие настройки платформы является обязательным.
+Чтобы проверить функциональность класса **Connectivity**, нужно создать описанную ниже конфигурацию для конкретной платформы.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`AccessNetworkState` Разрешение является обязательным и должен быть настроен в проекте Android. Это можно сделать одним из следующих способов:
+Требуется разрешение `AccessNetworkState`, которое следует настроить в проекте Android. Для этого можно применить любой из следующих методов:
 
-Откройте **AssemblyInfo.cs** файл **свойства** папку и добавьте:
+Откройте файл **AssemblyInfo.cs** в папке **Properties** и добавьте в него:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
@@ -34,13 +34,13 @@ ms.locfileid: "39353702"
 
 ИЛИ обновите манифест Android:
 
-Откройте **AndroidManifest.xml** файл **свойства** папку и добавьте следующий код внутри класса **манифеста** узла.
+Откройте файл **AndroidManifest.xml** в папке **Properties** и добавьте приведенный ниже код в узел **manifest**.
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-Или щелкнуть правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **состояние доступа к сети** разрешение. Будет автоматически обновлена **AndroidManifest.xml** файла.
+ИЛИ щелкните правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **Манифест Android** найдите область **Требуемые разрешения:** и установите флажок для разрешения **Access Network State** (Доступ к состоянию сети). Это действие автоматически обновляет файл **AndroidManifest.xml**.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -52,9 +52,9 @@ ms.locfileid: "39353702"
 
 -----
 
-## <a name="using-connectivity"></a>С помощью подключения
+## <a name="using-connectivity"></a>Использование подключения
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
@@ -71,13 +71,13 @@ if (current == NetworkAccess.Internet)
 }
 ```
 
-[Сетевой доступ](xref:Xamarin.Essentials.NetworkAccess) делятся на следующие категории:
+[Сетевой доступ](xref:Xamarin.Essentials.NetworkAccess) разделяется на следующие категории:
 
-* **Интернет** — Local и доступом в Интернет.
-* **ConstrainedInternet** — ограниченный доступ к Интернету. Указывает captive подключения к порталу, где предоставляется локальный доступ к веб-портал, но требуется доступ к Интернету, что определенные учетные данные предоставляются через портал.
-* **Локальный** — локальный только доступ к сети.
-* **Нет** — доступно без подключения.
-* **Неизвестный** — не удается определить подключение к Интернету.
+* **Internet** — локальная сеть и доступ к Интернет;у
+* **ConstrainedInternet** — ограниченный доступ к Интернету. Обозначает режим условного доступа через портал, при котором предоставляется локальный доступ к веб-порталу, а доступ к Интернету осуществляется через этот портал со специальными учетными данными;
+* **Local** — только доступ к локальной сети;
+* **None** — подключение недоступно;
+* **Unknown** — не удается определить режим подключения.
 
 Вы можете проверить, какой тип [профиля подключения](xref:Xamarin.Essentials.ConnectionProfile) устройство активно использует:
 
@@ -89,7 +89,7 @@ if (profiles.Contains(ConnectionProfile.WiFi))
 }
 ```
 
-Каждый раз, когда профиль подключения или сетевого доступа к изменениям, можно получать событие при активации:
+Вы можете получать события с информацией о любых изменениях профиля подключения и (или) режима сетевого доступа:
 
 ```csharp
 public class ConnectivityTest
@@ -100,7 +100,7 @@ public class ConnectivityTest
         Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
     }
 
-    void Connectivity_ConnectivityChanged(ConnectivityChangedEventArgs  e)
+    void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs  e)
     {
         var access = e.NetworkAccess;
         var profiles = e.Profiles;
@@ -110,9 +110,9 @@ public class ConnectivityTest
 
 ## <a name="limitations"></a>Ограничения
 
-Обратите внимание, что очень важно, `Internet` сообщается с помощью `NetworkAccess` , но не доступен полный доступ к веб. Из-за, как работает подключение на каждой платформе он гарантирует только подключение доступно. Для экземпляра устройство может быть подключено к сети Wi-Fi, но маршрутизатор отключен от Интернета. В этом экземпляре Интернет, могут указываться, но активное соединение не доступен.
+Обратите внимание, что при состоянии `Internet`, полученном от `NetworkAccess`, доступ к Интернету может быть не полным. Так как на разных платформах используются различные методы подключения, можно гарантировать только факт наличия подключения. Например, устройство может быть подключено к сети Wi-Fi, маршрутизатор которой не имеет подключения к Интернету. В этом случае будет зарегистрировано подключение к Интернету, но не будет возможности его активно использовать.
 
 ## <a name="api"></a>API
 
-* [Исходный код для подключения](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
-* [Документация по API-интерфейса](xref:Xamarin.Essentials.Connectivity)
+* [Исходный код Connectivity](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
+* [Документация по API-интерфейсу Connectivity](xref:Xamarin.Essentials.Connectivity)

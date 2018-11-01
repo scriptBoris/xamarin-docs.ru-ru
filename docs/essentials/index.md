@@ -1,68 +1,69 @@
 ---
 title: Xamarin.Essentials
-description: Этот документ содержит ссылки на различные руководства, описывающие Xamarin.Essentials, позволяя разработчикам кроссплатформенные API-интерфейсы для мобильных приложений.
+description: Этот документ содержит ссылки на разные руководства по платформе Xamarin.Essentials, которая предоставляет разработчикам кроссплатформенные API-интерфейсы для мобильных приложений.
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 07/30/2018
-ms.openlocfilehash: 5c625e32a70e196b5562225bdf985cd4b3a6f5db
-ms.sourcegitcommit: 0e1b64b0aa8fc0e78f0feff3c8b39a4cb8c1da61
-ms.translationtype: MT
+ms.openlocfilehash: b81102c6c0e0d65aaa46b2d32e34db536ab58e03
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
+ms.lasthandoff: 10/25/2018
 ms.locfileid: "39361006"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
 Xamarin.Essentials предоставляет разработчикам кроссплатформенные API-интерфейсы для мобильных приложений.
 
-Android, iOS и универсальной платформы Windows предоставляют уникальные операционной системы и платформы API-интерфейсы, что разработчики имеют доступ ко всем в C#, используя Xamarin. Xamarin.Essentials предоставляет один кросс платформенных API, который работает с Xamarin.Forms, Android, iOS и универсальной платформы Windows приложение, которое может осуществляться из общего кода независимо от того, как создается пользовательский интерфейс.
+Android, iOS и универсальная платформа Windows предоставляют разные API-интерфейсы операционной системы и платформы, к которым разработчики могут обращаться из кода C# с помощью Xamarin. Xamarin.Essentials обеспечивает единый кроссплатформенных API-интерфейс, который предоставляет доступ из общего кода для любого приложения Xamarin.Forms, Android, iOS и универсальной платформы Windows независимо от используемого метода создания пользовательского интерфейса.
 
 ## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Начало работы с Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
 
-Выполните [руководство по началу работы](get-started.md) установка **Xamarin.Essentials** пакет NuGet в существующем или новом Xamarin.Forms, Android, iOS или проектов универсальной платформы Windows.
+Выполните [инструкции по началу работы](get-started.md), чтобы установить пакет NuGet для **Xamarin.Essentials** в существующий или новый проект Xamarin.Forms, Android, iOS или универсальной платформы Windows.
 
-## <a name="feature-guides"></a>Руководствах для специализированных
+## <a name="feature-guides"></a>Руководства по компонентам
 
-Выполните направляющие для интеграции этих функций Xamarin.Essentials в приложения.
+Выполните инструкции, приведенные в этих руководствах, чтобы интегрировать в приложение следующие компоненты Xamarin.Essentials:
 
-* [Акселерометр](accelerometer.md?context=xamarin/xamarin-forms) — получения данных ускорения устройства в трех многомерном пространстве.
-* [Сведения о приложении](app-information.md?context=xamarin/xamarin-forms) — сведения о приложении.
-* [Батарея](battery.md?context=xamarin/xamarin-forms) — легко определить уровень заряда батареи, источника и состояние
-* [Буфер обмена](clipboard.md?context=xamarin/xamarin-forms) — быстро и легко устанавливать или считывать текст в буфер обмена.
-* [Компас](compass.md?context=xamarin/xamarin-forms) — компас монитора изменений.
-* [Подключение](connectivity.md?context=xamarin/xamarin-forms) – Проверьте состояние подключения и обнаружения изменений.
-* [Передача данных](data-transfer.md?context=xamarin/xamarin-forms) — отправлять текстовые и веб-сайт URI для других приложений.
-* [Сведения об устройстве отображения](device-display.md?context=xamarin/xamarin-forms) — получить метрики экрана и ориентацию устройства.
-* [Сведения об устройстве](device-information.md?context=xamarin/xamarin-forms) — ознакомьтесь со списком устройства без труда.
-* [Адрес электронной почты](email.md?context=xamarin/xamarin-forms) – простое отправки сообщений электронной почты.
-* [Файл системы вспомогательные функции](file-system-helpers.md?context=xamarin/xamarin-forms) — легко сохранять данные приложения.
-* [Фонариком](flashlight.md?context=xamarin/xamarin-forms) — простой способ включить фонариком/выключить.
-* [Геокодирование](geocoding.md?context=xamarin/xamarin-forms) — Geocode обратного геокода и адресов координаты.
-* [Географическое расположение](geolocation.md?context=xamarin/xamarin-forms) — получить устройства GPS-приемник.
-* [Гироскоп](gyroscope.md?context=xamarin/xamarin-forms) – отслеживать поворота вокруг устройства три основные оси.
-* [Средство запуска](launcher.md?context=xamarin/xamarin-forms) — позволяет приложению откройте URI в системе.
-* [Магнитометр](magnetometer.md?context=xamarin/xamarin-forms) — определить ориентацию устройства относительно Земли в направлении магнитного поля.
-* [MainThread](main-thread.md?content=xamarin/xamarin-forms) — выполнять код для основного потока приложения.
-* [Сопоставляет](maps.md?content=xamarin/xamarin-forms) — открыть приложение карты в определенное расположение.
-* [Откройте браузер](open-browser.md?context=xamarin/xamarin-forms) — быстро и просто откройте браузер на определенной веб-сайт.
-* [Датчик ориентации](orientation-sensor.md?context=xamarin/xamarin-forms) — получить ориентации устройства в трех многомерном пространстве.
-* [Телефон](phone-dialer.md?context=xamarin/xamarin-forms) — открыть телефон.
-* [Power](power.md?context=xamarin/xamarin-forms) — получения сведений о состоянии устройства экономия энергии.
-* [Предпочтения](preferences.md?context=xamarin/xamarin-forms) — быстро и легко добавлять постоянные предпочтения.
-* [Блокировка экрана](screen-lock.md?context=xamarin/xamarin-forms) — сохранять содержимое экрана устройства переходит в спящий режим.
-* [Безопасное хранилище](secure-storage.md?context=xamarin/xamarin-forms) — безопасно хранить данные.
-* [SMS](sms.md?context=xamarin/xamarin-forms) — Создание SMS-сообщения для отправки.
-* [Преобразование текста в речь](text-to-speech.md?context=xamarin/xamarin-forms) — Vocalize текст на устройстве.
-* [Отслеживания версий](version-tracking.md?context=xamarin/xamarin-forms) — отслеживания версии приложения и номера сборки.
-* [«Вибрация»](vibrate.md?context=xamarin/xamarin-forms) — сделать устройство «вибрация».
+* [Акселерометр](accelerometer.md?context=xamarin/xamarin-forms) — получение данных об ускорении работы устройства в трехмерном пространстве.
+* [Сведения о приложении](app-information.md?context=xamarin/xamarin-forms) — получение сведений о приложении.
+* [Барометр](barometer.md?context=xamarin/xamarin-forms) — отслеживание изменений атмосферного давления.
+* [Батарея](battery.md?context=xamarin/xamarin-forms) — простой метод контроля уровня заряда батареи, источника питания и состояния.
+* [Буфер обмена](clipboard.md?context=xamarin/xamarin-forms) — быстрый и удобный метод устанавливать или считывать текст в буфере обмена.
+* [Компас](compass.md?context=xamarin/xamarin-forms) — отслеживание изменений в направлении на магнитный полюс.
+* [Подключение](connectivity.md?context=xamarin/xamarin-forms) — проверка состояния подключения и отслеживание изменений этого состояния.
+* [Передача данных](data-transfer.md?context=xamarin/xamarin-forms) — отправка текстов и URI веб-сайтов другим приложениям.
+* [Сведения об устройстве отображения](device-display.md?context=xamarin/xamarin-forms) — получение характеристик экрана и сведений об ориентации устройства.
+* [Сведения об устройстве](device-information.md?context=xamarin/xamarin-forms) — простое изучение характеристик устройства.
+* [Электронная почта](email.md?context=xamarin/xamarin-forms) — удобная отправка сообщений электронной почты.
+* [Вспомогательные функции для файловой системы](file-system-helpers.md?context=xamarin/xamarin-forms) — простое сохранение файлов с данными приложения.
+* [Фонарик](flashlight.md?context=xamarin/xamarin-forms) — удобный способ включить и (или) выключить фонарик.
+* [Геокодирование](geocoding.md?context=xamarin/xamarin-forms) — прямое и обратное преобразование адресов и координат.
+* [Географическое расположение](geolocation.md?context=xamarin/xamarin-forms) — получение информации о местоположении от GPS-приемника устройства.
+* [Гироскоп](gyroscope.md?context=xamarin/xamarin-forms) — отслеживание вращения устройства по трем основным осям.
+* [Средство запуска](launcher.md?context=xamarin/xamarin-forms) — возможность открыть любой URI средствами системы.
+* [Магнитометр](magnetometer.md?context=xamarin/xamarin-forms) — определение ориентации устройства относительно магнитного поля Земли.
+* [MainThread](main-thread.md?content=xamarin/xamarin-forms) — выполнение кода в основном потоке приложения.
+* [Карты](maps.md?content=xamarin/xamarin-forms) — запуск приложения карт для определенного расположения.
+* [Открыть браузер](open-browser.md?context=xamarin/xamarin-forms) — быстрый и простой метод открыть в браузере определенный веб-сайт.
+* [Датчик ориентации](orientation-sensor.md?context=xamarin/xamarin-forms) — получение сведений об ориентации устройства в трехмерном пространстве.
+* [Набиратель номера](phone-dialer.md?context=xamarin/xamarin-forms) — открытие набирателя номера.
+* [Питание](power.md?context=xamarin/xamarin-forms) — получения сведений о состоянии энергосбережения на устройстве.
+* [Параметры](preferences.md?context=xamarin/xamarin-forms) — быстрый и удобный метод добавления сохраняемых параметров.
+* [Блокировка экрана](screen-lock.md?context=xamarin/xamarin-forms) — запрет перехода экрана в спящий режим.
+* [Безопасное хранилище](secure-storage.md?context=xamarin/xamarin-forms) — безопасное хранение данных.
+* [SMS](sms.md?context=xamarin/xamarin-forms) — создание SMS-сообщения для отправки.
+* [Преобразование текста в речь](text-to-speech.md?context=xamarin/xamarin-forms) — звуковое воспроизведение текста на устройстве.
+* [Отслеживания версий](version-tracking.md?context=xamarin/xamarin-forms) — отслеживание версий и номеров сборки для приложений.
+* [Вибрация](vibrate.md?context=xamarin/xamarin-forms) — включение вибродвигателя на устройстве.
 
 ## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[Устранение неполадок](troubleshooting.md?context=xamarin/xamarin-forms)
 
-Поиск справки, если при возникновении проблем.
+Получение помощи при возникновении проблем.
 
 ## <a name="api-documentationxrefxamarinessentials"></a>[Документация по API](xref:Xamarin.Essentials)
 
-Обзор документации по API для каждого компонента Xamarin.Essentials.
+Просмотрите документацию по API для любого компонента Xamarin.Essentials.

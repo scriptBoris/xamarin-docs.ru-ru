@@ -1,32 +1,32 @@
 ---
-title: Средство запуска Xamarin.Essentials
-description: Класс запуска в Xamarin.Essentials позволяет приложения, чтобы открыть URI в системе.
+title: 'Xamarin.Essentials: средство запуска'
+description: Класс Launcher в Xamarin.Essentials позволяет приложению открыть URI средствами системы.
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 07/25/2018
-ms.openlocfilehash: 252bb873c1494265aafb2285057490ca29ce7419
-ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
-ms.translationtype: MT
+ms.openlocfilehash: 8f5ef8ef97999e9e85944d9fa9d4e57660779a48
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39573637"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50115787"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: средство запуска
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**Запуска** класс позволяет приложения, чтобы открыть URI в системе. Это часто используется при глубокой связи в другое приложение пользовательские схемы URI. Если вам нужно открыть в браузере веб-сайта, а затем обратитесь к **[браузера](open-browser.md)** API.
+Класс **Launcher** позволяет приложению открыть URI средствами системы. Это часто используется при глубокой привязке к пользовательским схемам URI другого приложения. Если нужно открыть в браузере веб-сайт, следует обратиться к API **[Browser](open-browser.md)**.
 
-## <a name="using-launcher"></a>С помощью средства запуска
+## <a name="using-launcher"></a>Использование класса Launcher
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Выполнить вызов функции запуска `OpenAsync` метод и передать `string` или `Uri` для открытия. При необходимости `CanOpenAsync` метод может использоваться для проверки, если схема URI могут обрабатываться приложением на устройстве.
+Чтобы использовать функции класса Launcher, вызовите метод `OpenAsync` и передайте параметр `string` или `Uri` для открытия. При необходимости с помощью метода `CanOpenAsync` можно проверить, может ли приложение на устройстве обработать схему URI.
 
 ```csharp
 public class LauncherTest
@@ -40,7 +40,27 @@ public class LauncherTest
 }
 ```
 
+## <a name="platform-differences"></a>Различия платформ
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Задача, возвращенная методом `CanOpenAsync`, выполняется немедленно.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+Если конечное приложение на этом устройстве никогда ранее не открывалось с помощью метода `OpenAsync` из вашего приложения, iOS однократно предложит пользователю разрешить открывать его с помощью вашего приложения.
+
+Задача, возвращенная методом `CanOpenAsync`, выполняется немедленно.
+
+Дополнительные сведения о реализации iOS доступны [здесь](https://developer.xamarin.com/api/member/UIKit.UIApplication.CanOpenUrl/p/Foundation.NSUrl/).
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+Различия платформ отсутствуют.
+
+-----
+
 ## <a name="api"></a>API
 
-- [Средство запуска исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
-- [Документация по API средства запуска](xref:Xamarin.Essentials.Launcher)
+- [Исходный код класса Launcher](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
+- [Документация по API Launcher](xref:Xamarin.Essentials.Launcher)

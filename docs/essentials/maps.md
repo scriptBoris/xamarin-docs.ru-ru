@@ -1,32 +1,32 @@
 ---
-title: Xamarin.Essentials карты
-description: Класс карты в Xamarin.Essentials позволяет приложению откройте приложение в конкретное расположение или placemark установленных карт.
+title: 'Xamarin.Essentials: карты'
+description: Класс Maps в Xamarin.Essentials позволяет приложению открыть установленное приложение карт на определенном местоположении или метке.
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 07/25/2018
-ms.openlocfilehash: 445e2da84e9a9aaf1ce4d836af11cfba963b8cbb
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: ed5d909ae43ddb9e531851f5571f71517274db21
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353958"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123626"
 ---
 # <a name="xamarinessentials-maps"></a>Xamarin.Essentials: карты
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**Сопоставляет** класс позволяет приложения, чтобы открыть приложение установленных карт в конкретное расположение или placemark.
+Класс **Maps** позволяет приложению открыть установленное приложение карт для определенного расположения или метки.
 
-## <a name="using-maps"></a>Использование карт
+## <a name="using-maps"></a>Использование класса Maps
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Функциональность сопоставления работает путем вызова `OpenAsync` метод с `Location` или `Placemark` Открытие с необязательными `MapsLaunchOptions`.
+Чтобы использовать функции класса Maps, вызовите метод `OpenAsync` с параметром `Location` или `Placemark` для открытия с дополнительными параметрами `MapsLaunchOptions`.
 
 ```csharp
 public class MapsTest
@@ -41,12 +41,12 @@ public class MapsTest
 }
 ```
 
-При открытии с `Placemark` необходим следующие сведения:
+При открытии с параметром `Placemark` требуется следующая информация:
 
-* `CountryName`
-* `AdminArea`
-* `Thoroughfare`
-* `Locality`
+- `CountryName`
+- `AdminArea`
+- `Thoroughfare`
+- `Locality`
 
 ```csharp
 public class MapsTest
@@ -69,7 +69,7 @@ public class MapsTest
 
 ## <a name="extension-methods"></a>Методы расширения
 
-Если у вас уже есть ссылка `Location` или `Placemark` можно использовать метод расширения встроенных `OpenMapsAsync` с необязательными `MapsLaunchOptions`:
+Если у вас уже есть ссылка на `Location` или `Placemark`, вы можете использовать встроенный метод расширения `OpenMapsAsync` с дополнительными параметрами `MapsLaunchOptions`:
 
 ```csharp
 public class MapsTest
@@ -81,39 +81,56 @@ public class MapsTest
 }
 ```
 
+## <a name="directions-mode"></a>Режим направлений
+
+Если вызвать `OpenMapsAsync` без параметров `MapsLaunchOptions`, карта запустится для указанного расположения. При желании можно рассчитать навигационный маршрут с текущего положения устройства. Для этого нужно установить `MapDirectionsMode` в `MapsLaunchOptions`:
+
+```csharp
+public class MapsTest
+{
+    public async Task NavigateToBuilding25()
+    {
+        var location = new Location(47.645160, -122.1306032);
+        var options =  new MapsLaunchOptions { MapDirectionsMode = MapDirectionsMode.Driving };
+
+        await Maps.OpenAsync(location, options);
+    }
+}
+```
+
 ## <a name="platform-differences"></a>Различия платформ
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-* `MapDirectionsMode` не поддерживается и не оказывает влияния.
+- `MapDirectionsMode` поддерживает езду на велосипеде, вождение и ходьбу.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* `MapDirectionsMode` поддерживается задать режим направление по умолчанию при открытии приложения карт.
+- `MapDirectionsMode` поддерживает вождение, перемещение в общественном транспорте и ходьбу.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* `MapDirectionsMode` не поддерживается и не оказывает влияния.
+- `MapDirectionsMode` поддерживает вождение, перемещение в общественном транспорте и ходьбу.
 
 --------------
 
-## <a name="platform-implementation-specifics"></a>Особенности реализации платформы
+## <a name="platform-implementation-specifics"></a>Особенности реализации для платформ
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Android использует `geo:` схему Uri, чтобы запустить приложение карты на устройстве. Это может предложить пользователю выбрать уже существующего приложения, которая поддерживает эту схему Uri.  Xamarin.Essentials протестирована с Google карты, которая поддерживает эту схему.
+Android использует схему `geo:` Uri для запуска приложения карт на устройстве. Для пользователя может отобразиться запрос на выбор из существующих приложений того, которое поддерживает эту схему Uri.  Xamarin.Essentials тестируется с помощью службы Google Maps, которая поддерживает эту схему.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Не сведения о конкретной реализации платформы.
+Нет особенностей реализации для платформы.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Не сведения о конкретной реализации платформы.
+Нет особенностей реализации для платформы.
 
 --------------
 
 ## <a name="api"></a>API
 
-- [Maps исходный код](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Maps)
-- [Документация по службе карт API](xref:Xamarin.Essentials.Maps)
+- [Исходный код класса Maps](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Maps)
+- [Документация по API Maps](xref:Xamarin.Essentials.Maps)
