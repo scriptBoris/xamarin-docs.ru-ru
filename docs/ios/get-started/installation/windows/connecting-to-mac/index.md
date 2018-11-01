@@ -4,15 +4,15 @@ description: В этом руководстве описывается испо�
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 05/29/2018
-ms.openlocfilehash: c4e28c1f3e058977d6f9072b70f17717a2b27585
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: d55760f1fdd6912b973cc1e7a65415a0f2c6eb47
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786081"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50104093"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Связывание с Mac для разработки Xamarin.iOS
 
@@ -246,6 +246,6 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 - [Устранение неполадок при подключении](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
 - [Xamarin Mac Build Agent - Xamarin University Lightning Lecture](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
 - [Введение в Xamarin.iOS для Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
-- [Удаленный симулятор iOS для Windows](~/tools/ios-simulator.md)
+- [Удаленный симулятор iOS для Windows](~/tools/ios-simulator/index.md)
 - [Wireless Deployment](~/ios/deploy-test/wireless-deployment.md) (Развертывание по беспроводному доступу)
 

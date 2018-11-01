@@ -1,18 +1,19 @@
 ---
 title: Автоматизация тестирования Xamarin.Forms с помощью Центра приложений
 description: Компонент UITest Xamarin можно использовать с Xamarin.Forms для написания тестов пользовательского интерфейса, запускаемых в облаке на сотнях устройств.
+zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: b674db3d-c526-4e31-a9f4-b6d6528ce7a9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/31/2016
-ms.openlocfilehash: dc43d8b5623b83be16d437e30290bc8b059be4bb
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cd46aac653d6477f3fc8240e4f193ec1c4a7bb4c
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35242951"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50122443"
 ---
 # <a name="automate-xamarinforms-testing-with-app-center"></a>Автоматизация тестирования Xamarin.Forms с помощью Центра приложений
 
@@ -76,19 +77,20 @@ Xamarin.Calabash.Start();
 В сборке Calabash используются не являющиеся общими API-интерфейсы Apple, поэтому Магазин приложений будет отклонять приложения. Однако компоновщик Xamarin.iOS удалит сборку Calabash из окончательного API, если на него отсутствует явная ссылка из кода.
 
 > [!NOTE]
->  В сборках выпуска отсутствует переменная компилятора `ENABLE_TEST_CLOUD`, что приводит к удалению сборки Calabash из пакета приложения. Однако в сборках отладки есть определенная директива компилятора, не позволяющая компоновщику удалять сборку.
+> В сборках выпуска отсутствует переменная компилятора `ENABLE_TEST_CLOUD`, что приводит к удалению сборки Calabash из пакета приложения. Однако в сборках отладки есть определенная директива компилятора, не позволяющая компоновщику удалять сборку.
 
 На следующем снимке экрана показана переменная компилятора `ENABLE_TEST_CLOUD`, заданная для сборок отладки:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 ![](uitest-and-test-cloud-images/12-compiler-directive-vs.png "Параметры сборки")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 ![](uitest-and-test-cloud-images/11-compiler-directive-xs.png "Параметры компилятора")
 
------
+::: zone-end
 
 ### <a name="android-application-project"></a>Проект приложения Android
 
@@ -101,20 +103,6 @@ Xamarin.Calabash.Start();
 ### <a name="use-automationid-in-the-xamarinforms-ui"></a>Использование AutomationId в пользовательском интерфейсе Xamarin.Forms
 
 Перед написанием тестов пользовательского интерфейса необходимо убедиться, что пользовательский интерфейс Xamarin.Forms поддерживает сценарии. Все элементы управления в пользовательском интерфейсе должны иметь свойство `AutomationId`, чтобы на них можно было ссылаться в коде теста.
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
-
-### <a name="adding-a-uitest-project-to-a-new-solution"></a>Добавление проекта UITest в новое решение
-
-При создании проекта Xamarin.Forms с помощью Visual Studio для Mac в решение можно добавить новый проект UITest. Для этого следует выбрать **Xamarin Test Cloud: Add an automated UI test project** (Xamarin Test Cloud: добавить проект автоматических тестов пользовательского интерфейса):
-
-![ ](uitest-and-test-cloud-images/01-new-solution-xs.png "Настройка нового проекта")
-
-Новое решение будет автоматически настроено для запуска Xamarin.UITests в приложении Xamarin.Forms.
-
------
 
 #### <a name="referring-to-the-automationid-in-uitests"></a>Ссылка на AutomationId в тестах пользовательского интерфейса
 
@@ -133,18 +121,18 @@ app.Query(c=>c.Marked("MyButton"))
 
 ### <a name="adding-a-uitest-project-to-an-existing-solution"></a>Добавление проекта UITest в существующее решение
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+::: zone pivot="windows"
 
 В Visual Studio есть шаблон, позволяющий добавить проект Xamarin.UITest в существующее решение Xamarin.Forms:
 
 1. Щелкните решение правой кнопкой мыши и выберите **Файл > Новый проект**.
 1. В разделе шаблонов **Visual C#** выберите категорию **Тест**. Выберите шаблон **Приложение тестирования пользовательского интерфейса > Кроссплатформенный**:
 
-    ![](uitest-and-test-cloud-images/08-new-uitest-project-vs.png "Добавление нового проекта")
+    ![Добавление нового проекта](uitest-and-test-cloud-images/08-new-uitest-project-vs.png "Добавление нового проекта")
 
     В решение будет добавлен новый проект с пакетами NuGet **NUnit**, **Xamarin.UITest** и **NUnitTestAdapter**.
 
-    ![](uitest-and-test-cloud-images/09-new-uitest-project-xs.png "Диспетчер пакетов NuGet")
+    ![Диспетчер пакетов NuGet](uitest-and-test-cloud-images/09-new-uitest-project-xs.png "Диспетчер пакетов NuGet")
 
     **NUnitTestAdapter** является сторонним средством выполнения тестов, который позволяет Visual Studio запускать тесты NUnit из Visual Studio.
 
@@ -152,31 +140,32 @@ app.Query(c=>c.Marked("MyButton"))
 
 1. Добавьте ссылку на проект из проекта UITest в проект Xamarin.Android:
 
-    ![](uitest-and-test-cloud-images/10-test-apps-vs.png "Диспетчер ссылок проекта")
+    ![Диспетчер ссылок проекта](uitest-and-test-cloud-images/10-test-apps-vs.png "Диспетчер ссылок проекта")
 
     Это позволит **NUnitTestAdapter** запускать тесты пользовательского интерфейса для приложения Android из Visual Studio.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
 
 Добавить новый проект Xamarin.UITest в существующее решение можно вручную:
 
 1. Начните с добавления нового проекта, выделив решение и выбрав **Файл > Добавить новый проект**. В диалоговом окне **Новый проект** выберите **Кроссплатформенные > Тесты > Xamarin Test Cloud > Приложение тестирования пользовательского интерфейса**:
 
-    ![](uitest-and-test-cloud-images/02-new-uitest-project-xs.png "Выбор шаблона")
+    ![Выбор шаблона](uitest-and-test-cloud-images/02-new-uitest-project-xs.png "Выбор шаблона")
 
     В решение будет добавлен новый проект, уже имеющий пакеты **NUnit** и **Xamarin.UITest**:
 
-    ![](uitest-and-test-cloud-images/03-new-uitest-project-xs.png "Пакеты NuGet Xamarin UITest")
+    ![Пакеты NuGet Xamarin UITest](uitest-and-test-cloud-images/03-new-uitest-project-xs.png "Пакеты NuGet Xamarin UITest")
 
     Новый проект также содержит два класса. **AppInitializer** содержит код для инициализации и настройки тестов. Другой класс **Tests** содержит стандартный код для запуска тестов пользовательского интерфейса.
 
 1. Выберите **Вид > Панели > Модульные тесты** для отображения панели модульных тестов. Разверните узел **UsingUITest > UsingUITest.UITests > Тестовые приложения**:
 
-    ![](uitest-and-test-cloud-images/04-unit-test-pad-xs.png "Панель модульных тестов")
+    ![Панель модульных тестов](uitest-and-test-cloud-images/04-unit-test-pad-xs.png "Панель модульных тестов")
 
 1. Щелкните правой кнопкой мыши **Тестовые приложения**, выберите пункт **Добавить проект приложения** и в открывшемся диалоговом окне выберите проекты iOS и Android:
 
-    ![](uitest-and-test-cloud-images/05-add-test-apps-xs.png "Диалоговое окно тестовых приложений")
+    ![Диалоговое окно тестовых приложений](uitest-and-test-cloud-images/05-add-test-apps-xs.png "Диалоговое окно тестовых приложений")
 
     Теперь на панели **Модульный тест** должна находиться ссылка на проекты iOS и Android. Это позволит средству запуска тестов Visual Studio для Mac локально выполнять тесты пользовательского интерфейса в двух проектах Xamarin.Forms.
 
@@ -186,26 +175,26 @@ app.Query(c=>c.Marked("MyButton"))
 
 1. Добавьте пакет NuGet **агента Xamarin Test Cloud**. Щелкните правой кнопкой мыши **Пакеты**, выберите пункт **Добавить пакеты**, найдите пакет NuGet для **агента Xamarin Test Cloud** и добавьте его в проект Xamarin.iOS:
 
-    ![](uitest-and-test-cloud-images/07-add-test-cloud-agent-xs.png "Добавление пакетов NuGet")
+    ![Добавление пакетов NuGet](uitest-and-test-cloud-images/07-add-test-cloud-agent-xs.png "Добавление пакетов NuGet")
 
 1. Измените метод `FinishedLaunching` класса **AppDelegate** для инициализации агента Xamarin Test Cloud при запуске приложения iOS, а также для задания свойства `AutomationId` представлений. Метод `FinishedLaunching` должен иметь вид, аналогичный приведенному ниже коду:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
-        #if ENABLE_TEST_CLOUD
-        Xamarin.Calabash.Start();
-        #endif
+    #if ENABLE_TEST_CLOUD
+    Xamarin.Calabash.Start();
+    #endif
 
-        global::Xamarin.Forms.Forms.Init();
+    global::Xamarin.Forms.Forms.Init();
 
-        LoadApplication(new App());
+    LoadApplication(new App());
 
-        return base.FinishedLaunching(app, options);
+    return base.FinishedLaunching(app, options);
 }
 ```
 
------
+::: zone-end
 
 После добавления Xamarin.UITest в решение Xamarin.Forms можно создавать тесты пользовательского интерфейса, запускать их локально и отправлять их в Xamarin Test Cloud.
 
@@ -214,7 +203,6 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 Приложения можно легко протестировать с помощью **Xamarin.UITest**, используя простой механизм для предоставления `AutomationId` в качестве уникального идентификатора представления для автоматизации тестирования. После добавления проекта UITest в решение Xamarin.Forms выполняются действия по написанию и запуску тестов для приложения Xamarin.Forms, аналогичные действиям для приложений Xamarin.Android и Xamarin.iOS.
 
 Сведения об отправке тестов в службу тестов Центра приложений см. в статье об [отправке тестов пользовательского интерфейса](/appcenter/test-cloud/preparing-for-upload/uitest/). Дополнительные сведения о компоненте UITest см. в [документации по службе тестов Центра приложений](/appcenter/test-cloud/).
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

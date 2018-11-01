@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2018
-ms.openlocfilehash: 75e6d25f95a0a3f18c83fe73f67ad4a7797f0924
-ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
+ms.openlocfilehash: 504f20f6575e559d7c4965643b74b407d5e84de8
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34470334"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50112368"
 ---
 # <a name="xamarinforms-requirements"></a>Требования к Xamarin.Forms
 
@@ -25,7 +25,7 @@ _Требования к платформе и системные требова
 Приложения Xamarin.Forms могут быть написаны для следующих операционных систем:
 
 - iOS 8 или более поздние версии;
-- Android 4.0.3 (API 15) или более поздние версии ([подробнее](#android));
+- Android 4.4 (API 19) или более поздние версии ([подробнее](#android));
 - универсальная платформа Windows для Windows 10 ([подробнее](#windows10));
 
 Предполагается, что разработчики знакомы с [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) и [общими проектами](~/cross-platform/app-fundamentals/shared-projects.md).
@@ -50,15 +50,15 @@ _Требования к платформе и системные требова
 
 Необходимо установить последнюю версию Android SDK Tools и платформы API Android. Для обновления до последних версий можно воспользоваться [диспетчером пакетов SDK Android](~/android/get-started/installation/android-sdk.md).
 
-Кроме того, в целевой версии или версии компиляции для проектов Android **должен** быть выбран параметр *Использовать самую новую установленную платформу*. Однако минимальной версией может быть API 15, что позволяет поддерживать устройства, использующие Android 4.0.3 и более поздние версии. Эти значения задаются в разделе **Параметры проекта**.
+Кроме того, в целевой версии или версии компиляции для проектов Android **должен** быть выбран параметр *Использовать самую новую установленную платформу*. Однако минимальной версией может быть API 19, что позволяет поддерживать устройства, использующие Android 4.4 и более поздние версии. Эти значения задаются в разделе **Параметры проекта**.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 **Параметры проекта > Приложение > Свойства приложения**
 
 ![](installation-images/options-android-vs-sml.png "Параметры сборки Android в Visual Studio")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 **Сборка > Общие**
 
@@ -93,7 +93,7 @@ Visual Studio для Mac можно использовать для разраб
 
 - Windows 10 (рекомендуется Fall Creators Update)
 
-- Visual Studio 2017
+- Visual Studio 2017
 
 - [Пакет средств разработки Windows 10](https://dev.windows.com/downloads/windows-10-sdk)
 

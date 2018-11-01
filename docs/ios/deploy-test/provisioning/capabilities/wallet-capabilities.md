@@ -4,15 +4,15 @@ description: Добавление возможностей в приложени
 ms.prod: xamarin
 ms.assetid: BD9475E6-F586-488C-93D4-8A2A1629B99B
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 811c5bc707a5768e72ccb2d20541d16af67ab835
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3dc68d0879d3ce4d5dd9b658a3bce7a00c348c09
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785090"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50121247"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Возможности Wallet в Xamarin.iOS
 
@@ -65,6 +65,6 @@ Wallet — приложение, которое хранит и отобража
 
 * Используйте в приложении пространство имен платформы.
 * Добавьте необходимые назначения к вашему приложению. Подробные сведения о необходимых назначениях и об их добавлении см. в руководстве [Работа с назначениями](~/ios/deploy-test/provisioning/entitlements.md).
-* Убедитесь, что в **Подписывании пакета iOS** приложения параметр **Настраиваемые назначения** установлен в **Entitlements.plist**. Эта настройка _не устанавливается_ по умолчанию для сборок отладки и симулятора iOS.
+* Убедитесь, что в  **Подписывании пакета iOS** приложения параметр  **Настраиваемые назначения** установлен в **Entitlements.plist**. Эта настройка  _не устанавливается_  по умолчанию для сборок отладки и симулятора iOS.
 
 Если вы столкнулись с проблемами при работе со службами приложений, обратитесь к разделу [Устранение неполадок](~/ios/deploy-test/provisioning/capabilities/index.md) основного руководства.

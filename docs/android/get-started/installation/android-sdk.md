@@ -4,15 +4,15 @@ description: Visual Studio включает диспетчер пакетов S
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 55b6c10a9014b89534c37faeac2faf84f02339cd
-ms.sourcegitcommit: b6f3e55d4f3dcdc505abc8dc9241cff0bb5bd154
+ms.openlocfilehash: 6023bb4ebcc9d4adcd3408ca09bf9118d14351d4
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43780503"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120818"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Настройка пакета SDK для Android для Xamarin.Android
 
@@ -28,7 +28,7 @@ _Visual Studio включает диспетчер пакетов SDK для A
 
 Диспетчер пакетов SDK для Android, предназначенный для Xamarin (устанавливается в составе рабочей нагрузки **Разработка мобильных приложений на .NET**), поможет вам скачать новейшие компоненты Android, необходимые для разработки приложения Xamarin.Android. Он заменяет автономный диспетчер пакетов SDK от Google, который был признан нерекомендуемым.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="requirements"></a>Требования
 
@@ -46,7 +46,7 @@ _Visual Studio включает диспетчер пакетов SDK для A
 
 -   При разработке специально для уровня API 23 или ниже можно продолжать использовать пакет [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html).
 
--   Если вы используете Visual Studio 15.8 Preview 5 или более позднюю версию, вы можете вместо JDK 8 попробовать [дистрибутив OpenJDK от Майкрософт](openjdk.md) (сейчас на этапе предварительной версии).
+-   Если вы используете Visual Studio 15.8, предварительная версия 5, или более позднюю версию, вы можете использовать [дистрибутив OpenJDK для мобильных устройств от Майкрософт](openjdk.md) (сейчас на этапе предварительной версии) вместо JDK 8.
 
 > [!IMPORTANT]
 > Xamarin.Android не поддерживает пакет JDK 9.
@@ -129,7 +129,7 @@ _Visual Studio включает диспетчер пакетов SDK для A
 Чтобы вернуться на поддерживаемый репозиторий платформ и инструментов, щелкните **Майкрософт (рекомендуется)**. Это восстановит список пакетов и инструментов по умолчанию.
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 ## <a name="requirements"></a>Требования
 
@@ -143,7 +143,7 @@ _Visual Studio включает диспетчер пакетов SDK для A
 
 -   При разработке специально для уровня API 23 или ниже можно продолжать использовать пакет [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html).
 
--   Если у вас установлена среда Visual Studio для Mac 7.7 или более поздняя версия, попробуйте вместо JDK 8 использовать [дистрибутив OpenJDK от Майкрософт](openjdk.md) (сейчас на этапе предварительной версии).
+-   Если вы используете Visual Studio для Mac 7.7 или более позднюю версию, вы можете использовать [дистрибутив OpenJDK для мобильных устройств от Майкрософт](openjdk.md) (сейчас на этапе предварительной версии) вместо JDK 8.
 
 > [!IMPORTANT]
 > Xamarin.Android не поддерживает пакет JDK 9.

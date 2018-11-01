@@ -1,18 +1,19 @@
 ---
 title: Краткое руководство по работе с приложением Xamarin.Forms с несколькими экранами
 description: Эта статья описывает расширение приложения Phoneword путем добавления второго экрана для отслеживания журнала вызовов приложения.
+zone_pivot_groups: platform
 ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: a4e27f1810a16b5d13838d2e2c1067950586fab3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 957c3e0d3b0637c8b536d920a05397bc711dfb7d
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996185"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50123483"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Краткое руководство по работе с приложением Xamarin.Forms с несколькими экранами
 
@@ -20,9 +21,9 @@ ms.locfileid: "38996185"
 
 [![](quickstart-images/intro-app-examples-sml.png "Приложение Phoneword")](quickstart-images/intro-app-examples.png#lightbox "Приложение Phoneword")
 
-Вы можете расширить приложение Phoneword указанным ниже образом:
+::: zone pivot="windows"
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+## <a name="update-the-app-with-visual-studio"></a>Обновление приложения с помощью Visual Studio
 
 1. Запустите Visual Studio. На начальной странице щелкните **Открыть проект**, а затем в диалоговом окне **Открытие проекта** выберите файл решения проекта Phoneword:
 
@@ -160,11 +161,15 @@ ms.locfileid: "38996185"
 
 13. В **обозревателе решений** щелкните правой кнопкой мыши проект **Phoneword.Droid** и выберите **Назначить запускаемым проектом**.
 14. На панели инструментов Visual Studio нажмите клавишу **Запустить** (треугольная кнопка, похожая на кнопку воспроизведения), чтобы запустить приложение в эмуляторе Android.
-15. Если у вас есть устройство iOS, которое удовлетворяет системным требованиям к Mac для разработки Xamarin.Forms, используйте аналогичную методику для развертывания приложения на устройстве iOS. Также вы можете развернуть приложение в [удаленном симуляторе iOS](~/tools/ios-simulator.md).
+15. Если у вас есть устройство iOS, которое удовлетворяет системным требованиям к Mac для разработки Xamarin.Forms, используйте аналогичную методику для развертывания приложения на устройстве iOS. Также вы можете развернуть приложение в [удаленном симуляторе iOS](~/tools/ios-simulator/index.md).
 
-    Примечание. Телефонные звонки поддерживаются не во всех симуляторах.
+    > [!NOTE]
+    > Телефонные звонки в эмуляторах устройств не поддерживаются.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+::: zone-end
+::: zone pivot="macos"
+
+## <a name="update-the-app-with-visual-studio-for-mac"></a>Обновление приложения с помощью Visual Studio для Mac
 
 1. Запуск Visual Studio для Mac На начальной странице щелкните **Открыть**, а затем в диалоговом окне выберите файл решения проекта Phoneword:
 
@@ -314,12 +319,12 @@ ms.locfileid: "38996185"
 
     ![](quickstart-images/xs/phone-result-android.png "Эмулятор Android")
 
-    Примечание. Телефонные звонки в эмуляторах Android не поддерживаются.
+    > [!NOTE]
+    > Телефонные звонки в эмуляторах устройств не поддерживаются.
 
------
+::: zone-end
 
 Поздравляем! Вы создали приложение Xamarin.Forms с несколькими экранами. В [следующем разделе](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/deepdive.md) этого руководства описываются шаги, предпринятые в данном пошаговом руководстве, чтобы вы могли изучить принципы навигации и привязки данных с помощью Xamarin.Forms.
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

@@ -4,15 +4,15 @@ description: В этом документе описываются методы,
 ms.prod: xamarin
 ms.assetid: 02b1f628-52d9-49de-8479-f2696546ca3f
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 40a2acf28819279b2a0d5c1d50c651a79b455465
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: caf35ab601d20e1cb235ab9ebb131e6dffc614fc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514467"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108886"
 ---
 # <a name="xamarinios-performance"></a>Производительность Xamarin.iOS
 
@@ -101,7 +101,9 @@ container.AddSubview (new MyView (container));
 
 Здесь содержащийся объект не проверяет активности родительского элемента. Однако родительский элемент проверяет активность дочернего путем вызова к `container.AddSubView`.
 
-Это происходит и в интерфейсах API iOS на основе шаблона делегата или источника данных, где равноправный класс содержит реализацию, например при задании свойства [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) или [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) в классе [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/).
+Это происходит и в интерфейсах API iOS на основе шаблона делегата или источника данных, где равноправный класс содержит реализацию, например при задании свойства [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/)
+или [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/)
+в классе [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/).
 
 В случае с классами, которые создаются исключительно для реализации протокола, например [`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/), вместо создания подкласса вы можете просто реализовать интерфейс в классе, переопределить метод и присвоить свойство `DataSource` указателю `this`.
 

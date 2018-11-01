@@ -3,15 +3,15 @@ title: Процесс сборки
 ms.prod: xamarin
 ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2018
-ms.openlocfilehash: bf8dfb43115806f28935c6dec0ebd2d6d7bd2cdc
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 63e86ef89c8d736640e7677fee6147feacc87bdc
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998264"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50108929"
 ---
 # <a name="build-process"></a>Процесс сборки
 
@@ -116,7 +116,7 @@ ms.locfileid: "38998264"
 
 -   **AndroidApkSigningAlgorithm** — строковое значение, которое указывает алгоритм подписи для использования с `jarsigner -sigalg`.
 
-    Значение по умолчанию — `md5withRSA`.
+    Значение по умолчанию — `md5withRSA`.
 
     Свойство добавлено в Xamarin.Android версии 8.2.
 
@@ -169,7 +169,7 @@ ms.locfileid: "38998264"
 
     - `Dexes`: развертывание файлов `.dex` и ресурсов Android. **: это значение можно использовать *только* на устройствах под управлением Android 4.4 или более поздней версии (API-19).** 
 
-    Значение по умолчанию — `Assemblies`.
+    Значение по умолчанию — `Assemblies`.
 
     **Экспериментальное**. Свойство добавлено в Xamarin.Android версии 6.1.
 
@@ -181,7 +181,7 @@ ms.locfileid: "38998264"
 
 -   **AndroidHttpClientHandlerType** &ndash; управляет стандартной реализацией `System.Net.Http.HttpMessageHandler`, которую будет использовать конструктор по умолчанию `System.Net.Http.HttpClient`. Значение — имя типа с указанием сборки подкласса `HttpMessageHandler`, подходящее для использования с [`System.Type.GetType(string)`](/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_).
 
-    Значение по умолчанию — `System.Net.Http.HttpClientHandler, System.Net.Http`.
+    Значение по умолчанию — `System.Net.Http.HttpClientHandler, System.Net.Http`.
 
     Значение может быть переопределено. Тогда оно будет содержать реализацию `Xamarin.Android.Net.AndroidClientHandler`, которую используют API Android Java для выполнения сетевых запросов. Это обеспечивает доступ к URL-адресам TLS 1.2, если базовая версия Android поддерживает TLS 1.2.  
     Только Android 5.0 и более поздних версий обеспечивает надежную поддержку TLS 1.2 через Java.
@@ -327,7 +327,8 @@ ms.locfileid: "38998264"
     Например, если `abi` имеет значение `armeabi`, а `versionCode` в манифесте — `123`, тогда `{abi}{versionCode}` выдает код версии `1123`, если `$(AndroidCreatePackagePerAbi)` имеет значение True, в противном случае будет создано значение 123.
     Если `abi` — `x86_64`, а `versionCode` в манифесте — `44`, будет получено значение `544`, если `$(AndroidCreatePackagePerAbi)` — True, в противном случае значением будет `44`.
 
-    Если включить формат строки левого дополнения `{abi}{versionCode:0000}`, значением будет `50044`, так как слева к `versionCode` будет добавлен `0`. Можно также использовать десятичное дополнение, например `{abi}{versionCode:D4}`, которое делает то же, что и в предыдущем примере.
+    Если включить формат строки левого дополнения `{abi}{versionCode:0000}`, значением будет `50044`, так как слева к `versionCode` будет добавлен `0`. Кроме того, можно использовать десятичное заполнение, например `{abi}{versionCode:D4}`,
+    которое выполняет ту же функцию, что и в предыдущем примере.
 
     Поддерживаются только строки формата дополнения "0" и "Dx", потому что значение ДОЛЖНО быть целым числом.
     
@@ -389,7 +390,7 @@ ms.locfileid: "38998264"
 
     **Экспериментальное**. Добавлено в Xamarin.Android версии 6.0.
 
-    Значение по умолчанию — `jar2xml`.
+    Значение по умолчанию — `jar2xml`.
 
     Значение по умолчанию будет изменено в будущих выпусках.
 
@@ -407,7 +408,7 @@ ms.locfileid: "38998264"
 
       - Кэширование `jmethodID` конструкторов JCW для управляемых подклассов.
 
-    Значение по умолчанию — `XamarinAndroid`.
+    Значение по умолчанию — `XamarinAndroid`.
 
     Значение по умолчанию будет изменено в будущих выпусках.
 
@@ -422,7 +423,7 @@ ms.locfileid: "38998264"
 
 -   **MonoAndroidResourcePrefix** — указывает *префикс пути*, который удаляется в начале имен файлов с помощью действия сборки `AndroidResource`. Это позволяет изменять расположение ресурсов.
 
-    Значение по умолчанию — `Resources`. Установите значение `res` для структуры проекта Java.
+    Значение по умолчанию — `Resources`. Установите значение `res` для структуры проекта Java.
 
 -   **AndroidExplicitCrunch** — при создании приложения с очень большим числом локальных прорисовываемых ресурсов первоначальное создание (или перестроение) может занять несколько минут. Чтобы ускорить процесс сборки, попробуйте включить это свойство и установите для него значение `True`. Если это свойство задано, процесс сборки предварительно анализирует PNG-файлы.
 

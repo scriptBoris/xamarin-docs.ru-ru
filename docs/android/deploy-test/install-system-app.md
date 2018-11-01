@@ -4,15 +4,15 @@ description: В этом руководстве обсуждаются разл�
 ms.prod: xamarin
 ms.assetid: 0113143B-7D8D-4C4C-B2F5-B966A2E7CE1F
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 94f2108a55cea520782aa5eac959195be09929b5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5a6f950ec7c9af0422beeb2d1af2be602fcaf947
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30767210"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50113811"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>Установка Xamarin.Android в качестве системного приложения
 

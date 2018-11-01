@@ -4,15 +4,15 @@ description: В этой статье описывается установка 
 ms.prod: xamarin
 ms.assetid: 9116A3AA-EA00-56AF-AE70-BAEEC045EF11
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 838e0df80334d6865466b189a65a3f7c590bb590
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 88b09070f41ec586ab0eed82173763bb1706dc62
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935364"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50103378"
 ---
 # <a name="set-up-device-for-development"></a>Настройка устройства для разработки
 

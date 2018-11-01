@@ -4,15 +4,15 @@ description: Этот документ описывает компоновщик
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 03/24/2017
-ms.openlocfilehash: 4bcfc821359e74b34dc2ee11419e8ee86f8cccee
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.openlocfilehash: 7f45ea53429b30e634c99403b4159606fc616a4a
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321461"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50120116"
 ---
 # <a name="linking-xamarinios-apps"></a>Компоновка приложений Xamarin.iOS
 
@@ -26,13 +26,13 @@ ms.locfileid: "36321461"
 
 ## <a name="linker-behavior"></a>Поведение компоновщика
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio для Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
 Вы можете изменить поведение компоновщика в специальном раскрывающемся списке в разделе **Параметры проекта**. Чтобы открыть эту страницу, дважды щелкните проект iOS и последовательно выберите пункты **Сборка iOS > Параметры компоновщика**, как показано ниже:
 
 [![](linker-images/image1.png "Параметры компоновщика")](linker-images/image1.png#lightbox)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Вы можете изменить поведение компоновщика в специальном раскрывающемся списке в разделе **Свойства проекта** в Visual Studio.
 
