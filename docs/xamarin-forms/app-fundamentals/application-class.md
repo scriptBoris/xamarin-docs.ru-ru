@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: cebdd6fafafae7d1cd6258e6200808731e3c4f29
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9acd1b8f25696267578f5cc269eb1b0c738be571
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118816"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675098"
 ---
 # <a name="xamarinforms-app-class"></a>Класс приложения Xamarin.Forms
 
@@ -208,7 +208,7 @@ public class MainActivity : FormsAppCompatActivity
 </forms:WindowsPage>
 ```
 
-Построение codebehind C# необходимо вызвать `LoadApplication` для создания экземпляра вашего Xamarin.Forms `App`. Обратите внимание, что следует явно использовать пространство имен приложения для уточнения `App` поскольку приложений универсальной платформы Windows, также имеют свои собственные `App` класс, не имеющих отношения к Xamarin.Forms.
+C# Кода программной части конструкции необходимо вызвать `LoadApplication` для создания экземпляра вашего Xamarin.Forms `App`. Обратите внимание, что следует явно использовать пространство имен приложения для уточнения `App` поскольку приложений универсальной платформы Windows, также имеют свои собственные `App` класс, не имеющих отношения к Xamarin.Forms.
 
 ```csharp
 public sealed partial class MainPage

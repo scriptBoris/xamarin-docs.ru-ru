@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b52f249b184d49731fd5decdb5877c70e29a3b84
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: e31cba5c61624b0bca03443262b95d7497564750
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38998076"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675202"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Привязки Xamarin.Forms Basic
 
@@ -94,7 +94,7 @@ label.SetBinding(RotationProperty, "Value");
 
 Во время работы `Slider`, `Label` поворачивает соответствующим образом:
 
-[![Привязка кода Basice](basic-bindings-images/basiccodebinding-small.png "базовый код привязки")](basic-bindings-images/basiccodebinding-large.png#lightbox "базовый код привязки")
+[![Базовый код привязки](basic-bindings-images/basiccodebinding-small.png "базовый код привязки")](basic-bindings-images/basiccodebinding-large.png#lightbox "базовый код привязки")
 
 **Простая привязка Xaml** страница идентична **основной код привязки** за исключением того, что все данные привязки в XAML:
 

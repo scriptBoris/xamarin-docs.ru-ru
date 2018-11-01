@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: a3d0edbd933339ee8b8a0a277a4f2493cc8dc70e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 25f6cf341fcf47d5dc5320f73855bb2a4e29a9e8
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997469"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675527"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms страницы
 
@@ -79,7 +79,7 @@ _Xamarin.Forms MasterDetailPage — это страница, которая уп
 </MasterDetailPage>
 ```
 
-В следующем примере кода показан эквивалент [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) созданном на C#:
+В следующем примере кода показан эквивалент [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) в C#:
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -269,7 +269,7 @@ public partial class MainPage : MasterDetailPage
 </MasterDetailPage>
 ```
 
-В следующем примере кода показан эквивалент [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) созданном на C#:
+В следующем примере кода показан эквивалент [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) в C#:
 
 ```csharp
 public class MainPageCS : MasterDetailPage

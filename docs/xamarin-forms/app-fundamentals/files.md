@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: ddffb45b8cd8d47371e4ab57f30a467cea45b27d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e31bb46569ed96d514ec87eacaf9f3912dcf3237
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117776"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675163"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Обработка файлов в Xamarin.Forms
 
@@ -107,7 +107,7 @@ listView.ItemsSource = monkeys;
 
 <a name="Embedding_in_Shared_Projects" />
 
-### <a name="embedding-in-shared-projects"></a>Внедрение в общих проектов
+## <a name="embedding-in-shared-projects"></a>Внедрение в общих проектов
 
 Общие проекты также могут содержать файлы как внедренные ресурсы, но так как содержимое общего проекта компилируются в ссылающейся проекты, префикс, используемый для внедренных файл ресурса, который можно изменить идентификаторы. Это означает, что идентификатор ресурса для каждого внедренного файла может быть разным для каждой платформы.
 

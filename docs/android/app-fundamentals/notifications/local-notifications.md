@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: a4ffae0bde39450778b340b4a4c4da8fe90d0bec
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 63f0d4d7ce5f056d8e1db6bc297258c6bc070086
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117685"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675553"
 ---
 <a name="compatibility"></a>
 
@@ -747,7 +747,7 @@ builder.SetStyle (textStyle);
 Для поддержки более старых версиях Android, где `SetCategory` будет недоступен, ваш код может проверять уровень API во время выполнения для условного вызова `SetCategory` при уровне API равным или больше, чем Android 5.0 (уровень API 21):
 
 ```csharp
-if ((int) Android.OS.Build.Version.SdkInt >= BuildVersionCodes.Lollipop) {
+if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
     builder.SetCategory (Notification.CategoryEmail);
 }
 ```
@@ -760,7 +760,7 @@ if ((int) Android.OS.Build.Version.SdkInt >= BuildVersionCodes.Lollipop) {
 Так как Android не поддерживает уведомления на экране блокировки до Android 5.0 (уровень API 21), `NotificationCompat.Builder` не поддерживает `SetVisibility` метод. Как описано выше для `SetCategory`, ваш код может проверять уровень API во время выполнения и вызов `SetVisiblity` только он станет доступен:
 
 ```csharp
-if ((int) Android.OS.Build.Version.SdkInt >= 21) {
+if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
     builder.SetVisibility (Notification.Public);
 }
 ```

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b18d042e34146a72b488da9017648a430c9cd353
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 68c7869254ae861cef8307431d925368082be921
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996377"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675267"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Интерфейс командной Xamarin.Forms
 
@@ -22,7 +22,7 @@ ms.locfileid: "38996377"
 
 Чтобы разрешить привязку данных между `Button` и ViewModel, `Button` определяет два свойства:
 
-- [`Command`](xref:Xamarin.Forms.Button.Command) типа <xref:System.Windows.Input.ICommand>
+- [`Command`](xref:Xamarin.Forms.Button.Command) типа [`System.Windows.Input.ICommand`](xref:System.Windows.Input.ICommand)
 - [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) типа `Object`
 
 Чтобы использовать интерфейс команды, определить привязку данных, предназначенный `Command` свойство `Button` где источник — свойства в ViewModel типа `ICommand`. ViewModel содержит код, связанный с этим `ICommand` свойство, которое выполняется при нажатии кнопки. Можно задать `CommandParameter` к произвольные данные, чтобы различать несколько кнопок, если все они привязаны к тому же `ICommand` свойства в ViewModel.
@@ -39,7 +39,7 @@ ms.locfileid: "38996377"
 
 ## <a name="the-icommand-interface"></a>Интерфейс ICommand
 
-<xref:System.Windows.Input.ICommand> Интерфейс не является частью Xamarin.Forms. Вместо этого он определен в [System.Windows.Input](xref:System.Windows.Input) пространства имен и состоит из двух методов и одно событие:
+[ `System.Windows.Input.ICommand` ](xref:System.Windows.Input.ICommand) Интерфейс не является частью Xamarin.Forms. Вместо этого он определен в [System.Windows.Input](xref:System.Windows.Input) пространства имен и состоит из двух методов и одно событие:
 
 ```csharp
 public interface ICommand
@@ -285,7 +285,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 Вся логика для **New**, **отправить**, и **отменить** кнопки обрабатывается в `PersonCollectionViewModel` посредством определения `NewCommand`, `SubmitCommand`, и `CancelCommand` свойства. Конструктор `PersonCollectionViewModel` задает эти три свойства к объектам типа `Command`.  
 
-Объект [конструктор](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean})) из `Command` класс позволяет передать аргументы типа `Action` и `Func<bool>` соответствующий `Execute` и `CanExecute` методы. Проще всего определить эти действия и функции как лямбда-выражения прямо в `Command` конструктор. Вот определение `Command` для объекта `NewCommand` свойство:
+Объект [конструктор](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean})) из `Command` класс позволяет передать аргументы типа `Action` и `Func<bool>` соответствующий `Execute` и `CanExecute` методы. Проще всего определить эти действия и функции как лямбда-выражение прямо в `Command` конструктор. Вот определение `Command` для объекта `NewCommand` свойство:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -378,7 +378,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 `execute` Работать для **отправить** удаляет обработчиком property-changed из `PersonViewModel`, добавляет объект в `Persons` коллекции и возвращает все, что начальное условие.
 
-`execute` Работать для **отменить** кнопку поддерживает все возможности **отправить** execept делает кнопка Добавить объект в коллекцию:
+`execute` Работать для **отменить** кнопку поддерживает все возможности **отправить** кнопки, но может добавить объект в коллекцию:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -693,7 +693,6 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 Команды удобно для реализации меню навигации, подобный показанному на [ **демонстрации привязки данных** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) программах. Вот часть **MainPage.xaml**:
 
-
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -763,8 +762,6 @@ public partial class MainPage : ContentPage
 Установка `NavigateCommand` и `BindingContext` (в любом порядке) до вызова `InitializeComponent` будет работать, так как оба компонента привязки задаются в том случае, когда средство синтаксического анализа XAML обнаруживает определении привязки.
 
 Привязки данных, иногда бывает непросто, но как вы убедились в этой серии статей, они являются мощным и гибким и сильно помочь, чтобы упорядочить код путем отделение основной логики из пользовательского интерфейса.
-
-
 
 ## <a name="related-links"></a>Связанные ссылки
 
