@@ -5,18 +5,22 @@ ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 98793d82e553ffe45bf3cd37314a6fe70d856f2f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 70f41e6242b62577b6aa42cc207802ead020499e
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102676"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674779"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: Accelerometer
 
 ![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
 Класс **Accelerometer** позволяет считывать данные с датчика акселерометра устройства, который показывает ускорение устройства в трехмерном пространстве.
+
+## <a name="get-started"></a>Начало работы
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-accelerometer"></a>Использование класса Accelerometer
 

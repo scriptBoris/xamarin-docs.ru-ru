@@ -5,12 +5,12 @@ ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 06/26/2018
-ms.openlocfilehash: 608cd00a2134e6e3fee89c7ae25bf4627d8b23be
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: db2e79ed5c471c11e2d3dc1afe360843e5dfea6a
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112318"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675449"
 ---
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials: MainThread
 
@@ -23,6 +23,10 @@ ms.locfileid: "50112318"
 Большинство операционных систем, включая iOS, Android и универсальную платформу Windows, используют однопоточную модель для кода, имеющего отношение к пользовательскому интерфейсу. Такая модель необходима для правильной сериализации событий пользовательского интерфейса, например нажатий клавиш и сенсорного ввода. Этот поток может упоминаться как _основной потоком_, _поток, обрабатывающий события от пользовательского интерфейса,_ или _поток пользовательского интерфейса_. Недостатком этой модели является то, что весь код с доступом к элементам пользовательского интерфейса должен выполняться в основном потоке приложения. 
 
 Иногда приложениям приходится использовать события, которые вызывают обработчик событий во второстепенном потоке выполнения. (Классы Xamarin.Essentials [`Accelerometer`](accelerometer.md), [`Compass`](compass.md), [`Gyroscope`](gyroscope.md), [`Magnetometer`](magnetometer.md), и [`OrientationSensor`](orientation-sensor.md) могут возвращать сведения во второстепенном потоке, если работают с высокой скоростью.) Если обработчику событий нужен доступ к элементам пользовательского интерфейса, он должен выполнять соответствующий код в основном потоке. Класс **MainThread** позволяет приложениям выполнять код в основном потоке.
+
+## <a name="get-started"></a>Начало работы
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="running-code-on-the-main-thread"></a>Выполнение кода в основном потоке
 

@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a5b5385af991ff988902bb3ed9670cd71d421bc6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d9367b7bbaa906ce39d1fafb3d09e56bfd0dc238
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116034"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675240"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: безопасное хранилище
 
@@ -18,7 +18,9 @@ ms.locfileid: "50116034"
 
 Класс **SecureStorage** помогает обеспечить безопасное хранение пар "ключ-значение".
 
-## <a name="getting-started"></a>Начало работы
+## <a name="get-started"></a>Начало работы
+
+[!include[](~/essentials/includes/get-started.md)]
 
 Чтобы проверить функциональность класса **SecureStorage**, нужно создать описанную ниже конфигурацию для конкретной платформы.
 

@@ -5,12 +5,12 @@ ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: b0d5f28aca5d836608bc5a3423f3dc234a551ca0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bc0cd206881356a92128c758f0225f98f88c2814
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112004"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675410"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: подключение
 
@@ -18,7 +18,9 @@ ms.locfileid: "50112004"
 
 Класс **Connectivity** позволяет отслеживать изменения в условиях подключения устройства к сети, проверять текущее состояние и используемый метод доступа.
 
-## <a name="getting-started"></a>Начало работы
+## <a name="get-started"></a>Начало работы
+
+[!include[](~/essentials/includes/get-started.md)]
 
 Чтобы проверить функциональность класса **Connectivity**, нужно создать описанную ниже конфигурацию для конкретной платформы.
 

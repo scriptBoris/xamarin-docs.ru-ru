@@ -5,12 +5,12 @@ ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/21/2018
-ms.openlocfilehash: 4ea6ebbb85510b5d7262cde73248af9df975b867
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5d31ae10120c8b8f2c5e824d336c231e69fc97c7
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112069"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674736"
 ---
 # <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
 
@@ -20,6 +20,10 @@ ms.locfileid: "50112069"
 
 > [!NOTE]
 > Этот класс предназначен для определения расположения устройства в трехмерном пространстве. Если вам нужно определить, в какой ориентации отображается видео на устройстве (книжной или альбомной), используйте свойство `Orientation` объекта `ScreenMetrics`, который доступен из класса [`DeviceDisplay`](device-display.md).
+
+## <a name="get-started"></a>Начало работы
+
+[!include[](~/essentials/includes/get-started.md)]
 
 ## <a name="using-orientationsensor"></a>Использование OrientationSensor
 
