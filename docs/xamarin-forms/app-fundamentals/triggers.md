@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 954a0967e034e0321964e12ca0725ae2a85e3bc6
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: e9ec9288e2b8ea991ef8d41f9b601d0897631b9d
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995541"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675218"
 ---
 # <a name="xamarinforms-triggers"></a>Триггеры Xamarin.Forms
 
@@ -85,7 +85,8 @@ ms.locfileid: "38995541"
 
 Триггеры данных использовать привязку данных для отслеживания другого элемента управления, чтобы вызвать `Setter`s к вызову. Вместо `Property` атрибут в триггер свойства, установите `Binding` атрибут для отслеживания для указанного значения.
 
-В следующем примере используется синтаксис привязки данных `{Binding Source={x:Reference entry}, Path=Text.Length}` это, как мы будем называть свойства другого элемента управления. Если длина `entry` равно нулю, активации триггера. В этом примере триггер отключает кнопку, если ввод был пустым.
+В следующем примере используется синтаксис привязки данных `{Binding Source={x:Reference entry}, Path=Text.Length}`
+то есть, как мы будем называть свойства другого элемента управления. Если длина `entry` равно нулю, активации триггера. В этом примере триггер отключает кнопку, если ввод был пустым.
 
 ```xaml
 <!-- the x:Name is referenced below in DataTrigger-->
@@ -164,7 +165,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 
 Будьте внимательны при совместном использовании триггеров в `ResourceDictionary`, один экземпляр будут совместно использовать элементы управления, поэтому любое состояние, которое настраивается один раз будет применяться к их все.
 
-Обратите внимание, что триггеры событий не поддерживают `EnterActions` и `ExitActions` [описанных ниже](#enterexit).    
+Обратите внимание, что триггеры событий не поддерживают `EnterActions` и `ExitActions` [описанных ниже](#enterexit).
 
 <a name="multi" />
 
@@ -202,7 +203,6 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 
 Это можно сделать с помощью `IValueConverter`. Приведенный ниже преобразований код преобразователя `Text.Length` привязки в `bool` , указывающее, является ли поле пустым, или нет:
 
-
 ```csharp
 public class MultiTriggerConverter : IValueConverter
 {
@@ -234,7 +234,7 @@ public class MultiTriggerConverter : IValueConverter
 Ниже приведен XAML. Обратите внимание на следующие отличия из первого примера триггера с несколькими:
 
 * Кнопка имеет `IsEnabled="false"` значение по умолчанию.
-* Условия запуска с несколькими использовать преобразователь для включения `Text.Length` значение в логическое значение.
+* Условия запуска с несколькими использовать преобразователь для включения `Text.Length` значение в `boolean`.
 * Если выполняются все условия `true`, метод задания делает кнопки `IsEnabled` свойство `true`.
 
 ```xaml
@@ -266,7 +266,6 @@ public class MultiTriggerConverter : IValueConverter
 
 Эти снимки экрана показаны различия между в двух различных триггера примерах выше. В верхней части окна ввода текста, только в одной `Entry` достаточно, чтобы включить **Сохранить** кнопки.
 В нижней части окна **входа** кнопка остается неактивной, пока оба поля содержат данные.
-
 
 ![](triggers-images/multi-requireall.png "Примеры multiTrigger")
 
