@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 08/08/2018
-ms.openlocfilehash: dd48d917b669e5f83eaafa2f1ba5af5d9a19a342
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 78b7235d8c9e45c2179b1cca2827f45fe6edd8b2
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107226"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675111"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Начало работы с Xamarin.Essentials
 
@@ -66,7 +66,7 @@ Xamarin.Essentials предоставляется в виде пакета NuGet
     # <a name="androidtabandroid"></a>[Android](#tab/android)
 
     Xamarin.Essentials поддерживает Android начиная с минимальной версии 4.4, что соответствует уровню API 19. Но целевая версия Android для компиляции должна быть не ниже 8.1, что соответствует уровню API 27. (В Visual Studio эти две версии задаются в диалоговом окне свойств проекта для проекта Android, на вкладке "Манифест Android". В Visual Studio для Mac эти значения задаются в диалоговом окне свойств проекта для проекта Android, на вкладке "Приложение Android".) 
-    
+
     Xamarin.Essentials устанавливает версию 27.0.2.1 всех требуемых библиотек Xamarin.Android.Support. Все другие библиотеки Xamarin.Android.Support, которые использует приложение, также следует обновить до версии 27.0.2.1 с помощью диспетчера пакетов NuGet. Все библиотеки Xamarin.Android.Support, используемые в приложении, должны иметь одну и ту же версию (не ниже версии 27.0.2.1). Если вы столкнетесь с проблемами при добавлении пакета NuGet для Xamarin.Essentials или при обновлении пакетов NuGet в решении, воспользуйтесь [страницей устранения неполадок](troubleshooting.md).
 
     В `MainLauncher` проекта Android или в любом запущенном действии `Activity` следует инициализировать Xamarin.Essentials в методе `OnCreate` следующим образом:
@@ -108,7 +108,7 @@ Xamarin.Essentials предоставляется в виде пакета NuGet
 
 ## <a name="other-resources"></a>Другие ресурсы
 
-Мы рекомендуем разработчикам, которые еще не работали с Xamarin, начать со статьи [Начало работы с Xamarin.Forms](~/cross-platform/getting-started/index.md).
+Мы рекомендуем разработчикам, которые еще не работали с Xamarin, начать с [этой статьи](~/cross-platform/getting-started/index.md).
 
 Посетите [репозиторий GitHub для Xamarin.Essentials](http://github.com/xamarin/Essentials), чтобы изучить актуальный исходный код, узнать ближайшие планы развития, выполнить примеры кода и клонировать репозиторий. Мы рады любому вкладу в сообщество!
 
