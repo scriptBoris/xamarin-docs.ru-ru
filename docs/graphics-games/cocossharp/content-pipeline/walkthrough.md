@@ -6,12 +6,12 @@ ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: fdc57e7028d3a16f9a9d2504caf1f2414d0ac94f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 84f825c19aa1ac08fbcf3e732077304218768bcc
+ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102988"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50983605"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>С помощью средства MonoGame конвейера
 
@@ -84,7 +84,7 @@ _Средство MonoGame конвейер используется для со
 
 ### <a name="output-folder"></a>Выходная папка
 
-Это папка (относительно самого содержимого проекта), где выходные данные **.xnb** файлы будут сохранены. Для простоты мы будем использовать ту же папку для хранения наших входные и выходные файлы. Другими словами мы изменим **выходную папку** быть **.\**  :
+Это папка (относительно самого содержимого проекта), где выходные данные **.xnb** файлы будут сохранены. Для простоты мы будем использовать ту же папку для хранения наших входные и выходные файлы. Другими словами мы изменим **выходную папку** быть **.\\**  :
 
 ![](walkthrough-images/image10.png "")
 

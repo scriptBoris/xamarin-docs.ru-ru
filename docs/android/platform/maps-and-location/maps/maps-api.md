@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: a89211e4576b8d22b45bb4f675241d47c49270e6
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: fb7d18e6434e32941531d2c37cd8b938ec21ba90
+ms.sourcegitcommit: 28dbb5fa2fbcc7e66cd09c1d0077496fcdefac56
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235042"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51027331"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>В приложении используется Google Maps API
 
@@ -40,7 +40,7 @@ API карт подходит для случаев, где вы хотите п
 
 ### <a name="a-nameobtain-maps-key-obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />Получение ключа API Google Maps
 
-Последним шагом является получение ключа Google Maps API (Обратите внимание, что вы не сможете использовать ключ API из предыдущих версий API Google Maps v1). Сведения о том, как получить и использовать ключ API с помощью Xamarin.Android см. в разделе [получить ключ API карт Google](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
+Первым шагом является получение ключа Google Maps API (Обратите внимание, что вы не сможете использовать ключ API из предыдущих версий API Google Maps v1). Сведения о том, как получить и использовать ключ API с помощью Xamarin.Android см. в разделе [получить ключ API карт Google](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
  
 
 ### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Установка пакета SDK служб Google Play
@@ -183,7 +183,7 @@ Android Maps API предоставляется как часть службы G
               class="com.google.android.gms.maps.MapFragment" />
     ```
 
--   **Programmaatically** - `MapFragment` можно программно создавать экземпляры с помощью [ `MapFragment.NewInstance` ](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance()) метода и затем добавляются в действие. В этом фрагменте показан самый простой способ создания `MapFragment` и добавьте в действие:
+-   **Программно** - `MapFragment` можно программно создавать экземпляры с помощью [ `MapFragment.NewInstance` ](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance()) метода и затем добавляются в действие. В этом фрагменте показан самый простой способ создания `MapFragment` и добавьте в действие:
     
     ```csharp
         var mapFrag = MapFragment.NewInstance();
