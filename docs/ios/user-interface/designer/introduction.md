@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/31/2018
-ms.openlocfilehash: e9c2a42b9108c04f18252a410d40dbc03013f6dd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8622c40e41071d6c05b05abbe2d5d8a8a844ebde
+ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123756"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51285590"
 ---
 # <a name="ios-designer-basics"></a>Основные сведения о конструкторе iOS
 
@@ -459,6 +459,14 @@ namespace Designer
 После внесения изменений в построителе интерфейса Xcode, сохраните файл и вернитесь в Visual Studio для Mac. Изменения будут синхронизироваться в проект Xamarin.iOS.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+## <a name="revert-to-xcode"></a>Вернуться к Xcode
+
+Можно использовать конструктор iOS и конструктор Interface Builder в Xcode на равных основаниях, однако конструктора Interface Builder Xcode доступна только на компьютере Mac. Чтобы открыть файл раскадровки или .xib в построителе интерфейса Xcode на компьютере Mac, откройте решение, содержащее проект Xamarin.iOS в [Visual Studio для Mac](/visualstudio/mac/), правой кнопкой мыши файл и выберите **открыть с помощью > интерфейса Xcode Построитель**, как показано на снимке экрана ниже:
+
+[![Открытие раскадровки в построителе интерфейса Xcode](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "Открытие раскадровки в построителе интерфейса Xcode")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
+
+После внесения изменений в построителе интерфейса Xcode, сохраните файл и вернитесь в Visual Studio для Mac. Изменения будут синхронизироваться в проект Xamarin.iOS.
 
 -----
 
