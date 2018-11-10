@@ -1,44 +1,48 @@
 ---
-title: 'Xamarin.Essentials: Вспомогательные функции системы файл'
-description: Класс файловой системы в Xamarin.Essentials содержит ряд вспомогательных функций для поиска кэша приложения и каталоги данных и открытия файлов в пакет приложения.
+title: 'Xamarin.Essentials: вспомогательные функции класса FileSystem'
+description: Класс FileSystem в Xamarin.Essentials содержит ряд вспомогательных функций для поиска кэша приложения, каталогов данных и открытых файлов в пакете приложения.
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 13293ec05261cbdc1e70fd278002d1af18654851
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
-ms.translationtype: MT
+ms.openlocfilehash: 74c2066f673d27cf23af139380b45cd4223b1f30
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815622"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675488"
 ---
-# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Вспомогательные функции системы файл
+# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: вспомогательные функции класса FileSystem
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**Файловой системы** класс содержит ряд вспомогательных функций для поиска приложения кэша и каталоги данных и открытия файлов в пакет приложения.
+Класс **FileSystem** содержит ряд вспомогательных функций для поиска кэша приложения, каталогов данных и открытых файлов в пакете приложения.
 
-## <a name="using-file-system-helpers"></a>Использование вспомогательных методов системы файла
+## <a name="get-started"></a>Начало работы
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-file-system-helpers"></a>Использование вспомогательных функций FileSystem
+
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Чтобы получить каталог приложения для хранения **кэшировать данные**. Данные кэша можно использовать для любых данных, который требуется сохранить больше, чем временные данные, но не должно быть данные, необходимые для правильной работы.
+Чтобы получить каталог приложения для хранения **кэшированных данных**. Данные кэша можно использовать для любых данных, которые должны сохраняться дольше, чем временные, но не требуются для правильной работы.
 
 ```csharp
 var cacheDir = FileSystem.CacheDirectory;
 ```
 
-Для получения каталогов верхнего уровня приложения для всех файлов, не являющихся файлами данных пользователя. Эти файлы архивируются в операционную систему синхронизации framework. См. в разделе ниже особенности реализации платформы.
+Чтобы получить каталог верхнего уровня приложения для любых файлов, которые не являются файлами пользовательских данных. Эти файлы архивируются на платформе синхронизации операционной системы. Особенности реализации для платформ см. ниже.
 
 ```csharp
 var mainDir = FileSystem.AppDataDirectory;
 ```
 
-Чтобы открыть файл, который входит в пакет приложения:
+Чтобы открыть файл, который входит в пакет приложения, используйте следующий код:
 
 ```csharp
  using (var stream = await FileSystem.OpenAppPackageFileAsync(templateFileName))
@@ -50,32 +54,32 @@ var mainDir = FileSystem.AppDataDirectory;
  }
 ```
 
-## <a name="platform-implementation-specifics"></a>Особенности реализации платформы
+## <a name="platform-implementation-specifics"></a>Особенности реализации для платформ
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
 - **CacheDirectory** — возвращает [CacheDir](https://developer.android.com/reference/android/content/Context.html#getCacheDir) текущего контекста.
-- **AppDataDirectory** — возвращает [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) текущего контекста и резервное копирование с использованием [Автоматическая архивация](https://developer.android.com/guide/topics/data/autobackup.html) начиная на API 23 и более поздних версий.
+- **AppDataDirectory** — возвращает [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) текущего контекста и выполняет резервное копирование с использованием [автоматической архивации](https://developer.android.com/guide/topics/data/autobackup.html), начиная с API версии 23 и более поздней.
 
-Добавить любой файл в **активы** папку в Android проект и пометить как действие при построении **AndroidAsset** на работу с `OpenAppPackageFileAsync`.
+Добавьте любой файл в папку **Assets** проекта Android и пометьте действие сборки как **AndroidAsset**, чтобы использовать его с `OpenAppPackageFileAsync`.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-- **CacheDirectory** — возвращает [библиотеки/кэши](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) каталога.
-- **AppDataDirectory** — возвращает [библиотеки](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) каталога, подвергаемого резервному копированию, iTunes и iCloud.
+- **CacheDirectory** — возвращает каталог [Library/Caches](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html).
+- **AppDataDirectory** — возвращает каталог [Library](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html), чья резервная копия создана в iTunes и iCloud.
 
-Добавить любой файл в **ресурсы** папку в iOS проект и пометить как действие при построении **BundledResource** на работу с `OpenAppPackageFileAsync`.
+Добавьте любой файл в папку **Resources** проекта iOS и пометьте действие сборки как **BundledResource**, чтобы использовать его с `OpenAppPackageFileAsync`.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-- **CacheDirectory** — возвращает [LocalCacheFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) каталог...
-- **AppDataDirectory** — возвращает [LocalFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) каталога, подвергаемого резервному копированию в облако.
+- **CacheDirectory** — возвращает каталог [LocalCacheFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder).
+- **AppDataDirectory** — возвращает каталог [LocalFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder), чья резервная копия создана в облаке.
 
-Добавить любой файл в корневой каталог в проекте UWP и пометить как действие при построении **содержимого** на работу с `OpenAppPackageFileAsync`.
+Добавьте любой файл в корневой каталог в проекте UWP и пометьте действие сборки как **Content** для использования с `OpenAppPackageFileAsync`.
 
 --------------
 
 ## <a name="api"></a>API
 
-- [Исходный код файла вспомогательных функций системы](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
-- [Документация по API системы файла](xref:Xamarin.Essentials.FileSystem)
+- [Исходный код вспомогательных функций класса FileSystem](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
+- [Документация по API файловой системы](xref:Xamarin.Essentials.FileSystem)

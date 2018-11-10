@@ -1,26 +1,30 @@
 ---
-title: 'Xamarin.Essentials: Сведения о приложении'
-description: Этот документ описывает класс AppInfo в Xamarin.Essentials, который предоставляет сведения о приложении. Например он предоставляет, имя приложения и версии.
+title: Xamarin.Essentials. Сведения о приложении
+description: В этом документе описывается класс AppInfo в Xamarin.Essentials, с помощью которого можно получить сведения о вашем приложении. Например, он предоставляет имя и версию приложения.
 ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 7e79b3003f41b8de22950624e44e8c9e0e7e7e31
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
-ms.translationtype: MT
+ms.openlocfilehash: 62ecf890ba6b3276db89e93c2699e0406dbe4d45
+ms.sourcegitcommit: a635312ffec816ba357a92b66c8c5221c8d9044c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831511"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50965621"
 ---
-# <a name="xamarinessentials-app-information"></a>Xamarin.Essentials: Сведения о приложении
+# <a name="xamarinessentials-app-information"></a>Xamarin.Essentials. Сведения о приложении
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**AppInfo** класс предоставляет сведения о приложении.
+Класс **AppInfo** предоставляет сведения о приложении.
 
-## <a name="using-appinfo"></a>С помощью AppInfo
+## <a name="get-started"></a>Начало работы
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-appinfo"></a>Использование AppInfo
+
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
@@ -46,16 +50,16 @@ var build = AppInfo.BuildString;
 
 ## <a name="displaying-application-settings"></a>Отображение параметров приложения
 
-**AppInfo** класс также можно отобразить страницу параметров, которые поддерживаются операционной системой для приложения:
+Класс **AppInfo** также позволяет отобразить страницу параметров, поддерживаемых операционной системой для приложения:
 
 ```csharp
 // Display settings page
-AppInfo.OpenSettings();
+AppInfo.ShowSettingsUI();
 ```
 
-Эта страница параметров позволяет пользователю изменить разрешения приложения и выполнять другие задачи с платформой.
+На этой странице параметров пользователь может изменять разрешения приложения и выполнять другие задачи для платформы.
 
 ## <a name="api"></a>API
 
 - [Исходный код AppInfo](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
-- [Документация по AppInfo API](xref:Xamarin.Essentials.AppInfo)
+- [Документация по API AppInfo](xref:Xamarin.Essentials.AppInfo)

@@ -3,15 +3,15 @@ title: Принципы проектирования API Xamarin.Android
 ms.prod: xamarin
 ms.assetid: 3E52D815-D95D-5510-0D8F-77DAC7E62EDE
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8abb78f335b159223e9394b7845eccbba8d124da
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 53348e15d1ecc74f50cacdd422da5c80af802d1b
+ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996351"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50110723"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Принципы проектирования API Xamarin.Android
 
@@ -167,7 +167,8 @@ C# события или свойства, только автоматическ
 
 Мы намерены добавить перегрузки другие методы и конструкторы для предоставления подключения на основе делегата. Кроме того прослушиватели несколько обратных вызовов требуются некоторые дополнительные проверки, чтобы определить, если реализация отдельных обратных вызовов целесообразно, так как они определяются эти выполняется преобразование. Если нет соответствующего события, прослушиватели должны использоваться в C#, но переведите, вы думаете, может иметь использования делегата для нашего внимания. Мы проделали некоторые преобразования интерфейсов без суффикса «Прослушиватель» также когда стало ясно, что они могут с выгодой альтернатива делегата.
 
-Все интерфейсы прослушиватели реализуют [ `Android.Runtime.IJavaObject` ](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) интерфейс, из-за детали реализации привязки, чтобы прослушиватель классы должны реализовывать этот интерфейс. Это можно сделать путем реализации интерфейса прослушивателя на подкласс [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) или любой другой в оболочку объекта Java, например действие Android.
+Реализовать все интерфейсы, прослушиватели [`Android.Runtime.IJavaObject`](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)
+интерфейс, из-за детали реализации привязки, чтобы прослушиватель классы должны реализовывать этот интерфейс. Это можно сделать путем реализации интерфейса прослушивателя на подкласс [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) или любой другой в оболочку объекта Java, например действие Android.
 
 
 ### <a name="runnables"></a>Runnables
@@ -262,7 +263,7 @@ Java-интерфейсов, преобразуются в двух типов:
 В результате выражения Java *MediaStore.Video.VideoColumns.TITLE* необходимо привязать к выражение C# *MediaStore.Video.MediaColumnsConsts.Title* это трудно обнаруживать без чтения множество документации по Java. В версии 1.9, будет эквивалентное выражение C# [ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/).
 
 Кроме того, рассмотрите [android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) тип, который реализует Java *Parcelable* интерфейс. Так как он реализует интерфейс, все константы в этом интерфейсе доступны «через» тип пакета, например *Bundle.CONTENTS_FILE_DESCRIPTOR* является вполне допустимым выражением Java.
-Ранее, перенос этого выражения в C# потребовалось бы рассмотреть все интерфейсы, реализуемые от какого типа *CONTENTS_FILE_DESCRIPTOR* поступили. Начиная с Xamarin.Android 1.9, классы, реализующие интерфейсы Java, которые содержат константы будет иметь вложенную *InterfaceConsts* тип, который будет содержать все константы наследуемого интерфейса. Таким образом, перевод *Bundle.CONTENTS_FILE_DESCRIPTOR* для [ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/).
+Ранее это выражение, чтобы перенести C# потребовалось бы рассмотреть все интерфейсы, реализуемые от какого типа *CONTENTS_FILE_DESCRIPTOR* поступили. Начиная с Xamarin.Android 1.9, классы, реализующие интерфейсы Java, которые содержат константы будет иметь вложенную *InterfaceConsts* тип, который будет содержать все константы наследуемого интерфейса. Таким образом, перевод *Bundle.CONTENTS_FILE_DESCRIPTOR* для [ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/).
 
 Наконец, типы с *расходы* например *Android.OS.ParcelableConsts* теперь устарело, отличные от новых InterfaceConsts вложенные типы. Они будут удалены в Xamarin.Android 3.0.
 
@@ -318,7 +319,7 @@ public class Resource {
 
 Например, рассмотрим [Activity.requestWindowFeature (int featureID)](http://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int)).
 
-В таких случаях мы ןעאס для группирования связанных констант в перечислении .NET и переназначить метод выполнить перечисление.
+В таких случаях мы для группирования связанных констант в перечислении .NET и переназначить метод выполнить перечисление.
 Таким образом, мы могут предложить выделение IntelliSense из возможных значений.
 
 Приведенный выше пример становится: [Activity.RequestWindowFeature (WindowFeatures featureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/)).

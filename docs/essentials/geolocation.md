@@ -1,32 +1,34 @@
 ---
-title: 'Xamarin.Essentials: Географическое расположение'
-description: Этот документ описывает класс Geolocation в Xamarin.Essentials, который предоставляет API для получения текущих координат географическое расположение устройства.
+title: 'Xamarin.Essentials: Geolocation'
+description: В этом документе описан класс Geolocation в Xamarin.Essentials, который предоставляет API для получения текущих геолокационных координат устройства.
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 0aeb2ed96e6c21def69eb2e6f305b26e2e478825
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 533620fbfca9f2a7a235fe65e038b6dd89aa95a9
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353858"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674906"
 ---
-# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Географическое расположение
+# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Geolocation
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**Geolocation** класс предоставляет API для получения текущих координат географическое расположение устройства.
+Класс **Geolocation** предоставляет API для получения текущих геолокационных координат устройства.
 
-## <a name="getting-started"></a>Начало работы
+## <a name="get-started"></a>Начало работы
 
-Чтобы получить доступ к **Geolocation** функциональные возможности, необходима следующая настройка платформы:
+[!include[](~/essentials/includes/get-started.md)]
+
+Чтобы проверить функциональность класса **Geolocation**, нужно создать описанную ниже конфигурацию для конкретной платформы:
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Грубое и нормально расположение разрешения являются обязательными и должны быть настроены в проект Android. Кроме того Если приложение нацелено на Android 5.0 (уровень API 21) или более поздней версии, необходимо объявить, приложение использует аппаратные компоненты в файле манифеста. Это можно сделать одним из следующих способов:
+Требуются разрешения Coarse и Fine Location, которые следует настроить в проекте Android. Кроме того, если приложение предназначено для платформы Android 5.0 (уровень API 21) или более поздней версии, в файле манифеста необходимо объявить, что приложение использует аппаратные возможности. Для этого можно применить любой из следующих методов:
 
-Откройте **AssemblyInfo.cs** файл **свойства** папку и добавьте:
+Откройте файл **AssemblyInfo.cs** в папке **Properties** и добавьте в него:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
@@ -36,9 +38,9 @@ ms.locfileid: "39353858"
 [assembly: UsesFeature("android.hardware.location.network", Required = false)]
 ```
 
-Или обновить манифест Android:
+Или обновите манифест Android:
 
-Откройте **AndroidManifest.xml** файл **свойства** папку и добавьте следующий код внутри класса **манифеста** узла:
+Откройте файл **AndroidManifest.xml** в папке **Properties** и добавьте приведенный ниже код в узел **manifest**:
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -48,15 +50,15 @@ ms.locfileid: "39353858"
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-Или щелкните правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **ACCESS_COARSE_LOCATION** и **ACCESS_FINE_LOCATION**разрешения. Будет автоматически обновлена **AndroidManifest.xml** файла.
+Или щелкните правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **Манифест Android** найдите область **Требуемые разрешения:** и установите флажок для разрешений **ACCESS_COARSE_LOCATION** и **ACCESS_FINE_LOCATION**. Это действие автоматически обновляет файл **AndroidManifest.xml**.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Приложения **Info.plist** должен содержать `NSLocationWhenInUseUsageDescription` ключом, чтобы получить доступ к расположению устройства.
+Приложение **Info.plist** должно содержать раздел `NSLocationWhenInUseUsageDescription`, чтобы получить доступ к расположению устройства.
 
-Откройте редактор plist-файл и добавьте **конфиденциальность — когда в используйте Описание использования местоположения** свойство и введите значение для отображения пользователю.
+Откройте редактор plist, добавьте свойство **Privacy — Location When In Use Usage Description** и введите значение, чтобы отобразить пользователя.
 
-Или вручную изменить файл и добавьте следующие строки:
+Кроме того, вы можете изменить текстовый файл вручную и добавить в него следующий текст:
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
@@ -65,21 +67,21 @@ ms.locfileid: "39353858"
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Необходимо задать `Location` разрешение для приложения. Это можно сделать, открыв **Package.appxmanifest** и выбрав **возможности** вкладка и проверка **расположение**.
+Необходимо задать разрешение `Location` для приложения. Для этого откройте файл **Package.appxmanifest**, выберите вкладку **Возможности** и установите флажок **Расположение**.
 
 -----
 
-## <a name="using-geolocation"></a>С помощью географического положения
+## <a name="using-geolocation"></a>Использование геолокации
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Geoloation API также пользователю будет предложено ввести разрешений при необходимости.
+В API геолокации пользователю также будет предложено предоставить разрешения при необходимости.
 
-Вы можете получить последним известным [расположение](xref:Xamarin.Essentials.Location) устройства путем вызова `GetLastKnownLocationAsync` метод. Это часто выполняется быстрее, выполнив полный запрос, но может быть менее точным.
+Вы можете получить последнее известное [расположение](xref:Xamarin.Essentials.Location) устройства, вызвав метод `GetLastKnownLocationAsync`. Зачастую эта операция быстрее, чем выполнение всего запроса, но не так точна.
 
 ```csharp
 try
@@ -105,9 +107,9 @@ catch (Exception ex)
 }
 ```
 
-Высота над уровнем моря не всегда доступна. Если она недоступна, `Altitude` свойство может быть `null` или значение может быть равно нулю. При наличии Высота над уровнем моря в метрах выше над уровнем моря является значение. 
+Значения высоты не всегда доступно. Если она недоступна, свойство `Altitude` может быть со значением `null` или равным нулю. Если высота доступна, значение указывается в метрах над уровнем моря. 
 
-Чтобы запросить текущего устройства [расположение](xref:Xamarin.Essentials.Location) координаты, `GetLocationAsync` может использоваться. Лучше всего передать полный `GeolocationRequest` и `CancellationToken` так, как она может занять некоторое время, чтобы получить расположение устройства.
+Чтобы запросить текущие координаты [расположения](xref:Xamarin.Essentials.Location) устройства, можно использовать `GetLocationAsync`. Лучше всего передать полный `GeolocationRequest` и `CancellationToken`, так как получение расположения устройства может занять некоторое время.
 
 ```csharp
 try
@@ -134,9 +136,9 @@ catch (Exception ex)
 }
 ```
 
-## <a name="geolocation-accuracy"></a>Точность географическое расположение
+## <a name="geolocation-accuracy"></a>Точность геолокации
 
-В следующей таблице приведены точность каждой платформы:
+В следующей таблице приведены сведения о точности для каждой платформы:
 
 ### <a name="lowest"></a>Наименьшая
 
@@ -144,7 +146,7 @@ catch (Exception ex)
 | --- | --- |
 | Android | 500 |
 | iOS | 3000 |
-| UWP | 1000 - 5000 |
+| UWP | 1000–5000 |
 
 ### <a name="low"></a>Low
 
@@ -152,37 +154,37 @@ catch (Exception ex)
 | --- | --- |
 | Android | 500 |
 | iOS | 1000. |
-| UWP | 300 – 3000 |
+| UWP | 300–3000 |
 
-### <a name="medium-default"></a>Средний (по умолчанию)
+### <a name="medium-default"></a>Среднее (по умолчанию)
 
 | Platform | Расстояние (в метрах) |
 | --- | --- |
-| Android | 100 – 500 |
+| Android | 100–500 |
 | iOS | 100 |
-| UWP | 30-500 |
+| UWP | 30–500 |
 
 ### <a name="high"></a>High
 
 | Platform | Расстояние (в метрах) |
 | --- | --- |
-| Android | 0 - 100 |
+| Android | 0–100 |
 | iOS | 10 |
-| UWP | < = 10 |
+| UWP | <= 10 |
 
-### <a name="best"></a>Рекомендации
+### <a name="best"></a>Лучшее
 
 | Platform | Расстояние (в метрах) |
 | --- | --- |
-| Android | 0 - 100 |
+| Android | 0–100 |
 | iOS | ~0 |
-| UWP | < = 10 |
+| UWP | <= 10 |
 
 <a name="calculate-distance" />
 
 ## <a name="distance-between-two-locations"></a>Расстояние между двумя расположениями
 
-[ `Location` ](xref:Xamarin.Essentials.Location) И [ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions) классы определяют `CalculateDistance` методы, которые дают возможность вычисления расстояния между двумя географических расположений. Это вычисляется расстояние учитывает дороги или другие каналы, а просто кратчайшее расстояние между двумя точками на поверхности Земли, также называется _ортодромическое расстояние_ или разговорной речи, расстояние, «что полет crow.»
+Классы [`Location`](xref:Xamarin.Essentials.Location) и [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) определяют методы `CalculateDistance`, которые дают возможность вычисления расстояния между двумя географическими расположениями. При расчете не учитываются дороги или другие пути. Это самое короткое расстояние между двумя точками на поверхности Земли, также известное как _расстояние по дуге большого круга_ или, говоря простым языком, расстояние напрямик.
 
 Ниже приведен пример:
 
@@ -192,9 +194,9 @@ Location sanFrancisco = new Location(37.783333, -122.416667);
 double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Miles);
 ```
 
-`Location` Конструктор имеет аргументов с широты и долготы в указанном порядке. Положительные значения широты северу от экватора, а положительное долготы — к востоку от меридиана. Использовать последний аргумент `CalculateDistance` для указания мили или километры. `Location` Класс также определяет `KilometersToMiles` и `MilesToKilometers` методы для преобразования между двумя значениями.
+В конструкторе `Location` аргументы широты и долготы указаны в следующем порядке. Положительные значения широты находятся к северу от экватора, а положительные значения долготы — к востоку от нулевого меридиана. Используйте последний аргумент `CalculateDistance`, чтобы указать единицы измерения: мили или километры. Класс `Location` также определяет методы `KilometersToMiles` и `MilesToKilometers` для преобразования между двумя единицами измерения.
 
 ## <a name="api"></a>API
 
-- [Географическое расположение исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
-- [Документация по API Геолокации](xref:Xamarin.Essentials.Geolocation)
+- [Geolocation source code](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation) (Исходный код для геолокации)
+- [Документация по API геолокации](xref:Xamarin.Essentials.Geolocation)

@@ -1,26 +1,30 @@
 ---
-title: 'Xamarin.Essentials: Отображение информации устройства'
-description: Этот документ описывает класс DeviceDisplay в Xamarin.Essentials, предоставляют такие метрики экрана устройства, на котором выполняется приложение.
+title: Xamarin.Essentials. Сведения о дисплее устройства
+description: В этом документе описан класс DeviceDisplay в Xamarin.Essentials, который предоставляет метрики экрана для устройства, на котором работает приложение.
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: cb42da4c8c2d0e381a5b00f7e60da6f427d19c66
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: ebe97cf7fbb78bff17196110e835bd35ff76b826
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353832"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674890"
 ---
-# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: Отображение информации устройства
+# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials. Сведения о дисплее устройства
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**DeviceDisplay** класс предоставляет сведения о метриках экрана устройства, приложения.
+Класс **DeviceDisplay** предоставляет сведения о метриках экрана устройства, получаемых при работе приложения.
 
-## <a name="using-devicedisplay"></a>С помощью DeviceDisplay
+## <a name="get-started"></a>Начало работы
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-devicedisplay"></a>Использование DeviceDisplay
+
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
@@ -28,7 +32,7 @@ using Xamarin.Essentials;
 
 ## <a name="screen-metrics"></a>Метрики экрана
 
-В дополнение к основные сведения об устройстве **DeviceDisplay** класс содержит сведения о пальцем экрана и ориентацию.
+В дополнение к базовой информации об устройстве класс **DeviceDisplay** содержит информацию об экране устройства и его ориентации.
 
 ```csharp
 // Get Metrics
@@ -50,7 +54,7 @@ var height = metrics.Height;
 var density = metrics.Density;
 ```
 
-**DeviceDisplay** класс также предоставляет событие, которое можно подписаться, запускаемое каждый раз, когда любой экрана изменениях метрик:
+Класс **DeviceDisplay** также предоставляет событие, которое запускается при изменении любой метрики экрана (на это событие можно подписаться):
 
 ```csharp
 public class ScreenMetricsTest
@@ -69,7 +73,24 @@ public class ScreenMetricsTest
 }
 ```
 
+## <a name="platform-differences"></a>Различия платформ
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Никаких различий.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* Доступ к `ScreenMetrics` должен выполняться в потоке пользовательского интерфейса, иначе возникнет исключение. Вы можете использовать метод [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) для запуска этого кода в потоке пользовательского интерфейса.
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+Никаких различий.
+
+--------------
+
+
 ## <a name="api"></a>API
 
-- [DeviceDisplay исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceDisplay)
-- [Документация по DeviceDisplay API](xref:Xamarin.Essentials.DeviceDisplay)
+- [Исходный код DeviceDisplay](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceDisplay)
+- [Документация по API DeviceDisplay](xref:Xamarin.Essentials.DeviceDisplay)

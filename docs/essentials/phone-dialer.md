@@ -1,32 +1,36 @@
 ---
-title: 'Xamarin.Essentials: Телефон'
-description: Класс PhoneDialer в Xamarin.Essentials позволяет приложения, чтобы открыть в программе номер телефона
+title: 'Xamarin.Essentials: PhoneDialer'
+description: Класс PhoneDialer в Xamarin.Essentials позволяет приложению открывать номер телефона в набирателе номера
 ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 34a6c80836d8cb42b1f8fd95718fe248d4701c0f
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
-ms.translationtype: MT
+ms.openlocfilehash: bccc76e1602c475a5e4cc9a95d498d11f9a379b1
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130797"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675423"
 ---
-# <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: Телефон
+# <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: PhoneDialer
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**PhoneDialer** класс позволяет приложения, чтобы открыть номер телефона в программе.
+Класс **PhoneDialer** позволяет приложению открывать номер телефона в набирателе номера.
 
-## <a name="using-phone-dialer"></a>С помощью телефона
+## <a name="get-started"></a>Начало работы
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-phone-dialer"></a>Использование PhoneDialer
+
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Функциональность телефон работает путем вызова `Open` метод с номером телефона, чтобы открыть номеронабирателя с. Когда `Open` запрашивается API автоматически будет пытаться форматировать количество в зависимости от кода страны, если указано.
+Функция PhoneDialer выполняется путем вызова метода `Open` с использованием номера телефона, который нужно открыть в набирателе номера. При запросе команды `Open` API будет автоматически пытаться отформатировать номер на основе кода страны, если он указан.
 
 ```csharp
 public class PhoneDialerTest
@@ -55,5 +59,5 @@ public class PhoneDialerTest
 
 ## <a name="api"></a>API
 
-- [Телефон исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/PhoneDialer)
-- [Документация по API набирателя номера телефона](xref:Xamarin.Essentials.PhoneDialer)
+- [Исходный код PhoneDialer](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/PhoneDialer)
+- [Документация по API PhoneDialer](xref:Xamarin.Essentials.PhoneDialer)

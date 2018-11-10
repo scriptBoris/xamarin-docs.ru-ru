@@ -1,26 +1,30 @@
 ---
-title: 'Xamarin.Essentials: Сведения об устройстве'
-description: Этот документ описывает класс DeviceInfo в Xamarin.Essentials, который предоставляет сведения об устройстве, что приложение выполняется на.
+title: Xamarin.Essentials. Сведения об устройстве
+description: В этом документе описывается класс DeviceInfo в Xamarin.Essentials, с помощью которого можно получить сведения об устройстве, в котором выполняется приложение.
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 18fe081372cc190e5ead2045f36d63652f8702c3
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 530b04446703d78452357b2c9f9089e59ebf6e6c
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353806"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674817"
 ---
-# <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: Сведения об устройстве
+# <a name="xamarinessentials-device-information"></a>Xamarin.Essentials. Сведения об устройстве
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**DeviceInfo** класс предоставляет сведения об устройстве, приложение выполняется.
+Класс **DeviceInfo** предоставляет сведения об устройстве, в котором выполняется приложение.
 
-## <a name="using-deviceinfo"></a>С помощью DeviceInfo
+## <a name="get-started"></a>Начало работы
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-deviceinfo"></a>Использование класса DeviceInfo
+
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
@@ -53,36 +57,36 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="platformsxrefxamarinessentialsdeviceinfoplatforms"></a>[Платформы](xref:Xamarin.Essentials.DeviceInfo.Platforms)
 
-`DeviceInfo.Platform` Устанавливает корреляцию между строковую константу, который сопоставляется операционной системы. Значения можно проверить с помощью `Platforms` класса:
+`DeviceInfo.Platform` устанавливает корреляцию с постоянной строкой, которая сопоставляется с операционной системой. Значения можно проверить с помощью класса `Platforms`:
 
 - **DeviceInfo.Platforms.iOS** — iOS
 - **DeviceInfo.Platforms.Android** — Android
-- **DeviceInfo.Platforms.UWP** — универсальной платформы Windows
+- **DeviceInfo.Platforms.UWP** — UWP
 - **DeviceInfo.Platforms.Unsupported** — не поддерживается
 
-## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[Стили](xref:Xamarin.Essentials.DeviceInfo.Idioms)
+## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[Idioms](xref:Xamarin.Essentials.DeviceInfo.Idioms)
 
-`DeviceInfo.Idiom` Сопоставляет строковую константу, который сопоставляется с типом устройства, приложение выполняется на. Значения можно проверить с помощью `Idioms` класса:
+`DeviceInfo.Idiom` коррелирует постоянную строку, которая сопоставляется с типом устройства, на котором выполняется приложение. Значения можно проверить с помощью класса `Idioms`:
 
 - **DeviceInfo.Idioms.Phone** — телефон
-- **DeviceInfo.Idioms.Tablet** — планшета
-- **DeviceInfo.Idioms.Desktop** — рабочего стола
+- **DeviceInfo.Idioms.Tablet** — планшет
+- **DeviceInfo.Idioms.Desktop** — настольный компьютер
 - **DeviceInfo.Idioms.TV** — ТВ
 - **DeviceInfo.Idioms.Unsupported** — не поддерживается
 
 ## <a name="device-type"></a>Тип устройства
 
-`DeviceInfo.DeviceType` Устанавливает корреляцию между перечисление для определения того, выполняется ли приложение на устройстве физический или виртуальный. Виртуальное устройство – симуляторе или эмуляторе.
+Тип `DeviceInfo.DeviceType` коррелирует перечисление, чтобы определить тип устройства, на котором выполняется приложение (физическое или виртуальное). Виртуальное устройство является симулятором или эмулятором.
 
-## <a name="platform-implementation-specifics"></a>Особенности реализации платформы
+## <a name="platform-implementation-specifics"></a>Особенности реализации для платформ
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-iOS не предоставляет API для разработчиков получить имя для устройств iOS. Вместо этого такие как возвращается идентификатор оборудования _iPhone10 6_ ссылающийся на iPhone X. Сопоставление этих идентификаторов, не предоставляемых компанией Apple, но также можно найти на [iPhone вики-сайте](https://www.theiphonewiki.com/wiki/Models) (не Официальный источник источника).
+В iOS не предоставляется API для разработчиков, чтобы получить имя конкретного устройства iOS. Вместо этого возвращается идентификатор аппаратного обеспечения, например _iPhone10,6_, который относится к iPhone X. Сопоставление этих идентификаторов не обеспечивается в Apple, но их можно найти в [Википедии iPhone (The iPhone Wiki)](https://www.theiphonewiki.com/wiki/Models) (неофициальный источник).
 
 --------------
 
 ## <a name="api"></a>API
 
-- [Исходный код для отправки сведений об устройстве](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
-- [Документация по API для отправки сведений об устройстве](xref:Xamarin.Essentials.DeviceInfo)
+- [Исходный код DeviceInfo](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
+- [Документация по API DeviceInfo](xref:Xamarin.Essentials.DeviceInfo).

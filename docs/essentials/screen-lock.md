@@ -1,32 +1,36 @@
 ---
-title: 'Xamarin.Essentials: Блокировка экрана'
-description: Этот документ описывает класс ScreenLock в Xamarin.Essentials, который можно запросить для предотвращения падает спящем режиме, когда приложение выполняется на экране.
+title: 'Xamarin.Essentials: ScreenLock'
+description: В этом документе описывается класс ScreenLock в Xamarin.Essentials, который может запрашивать сохранение активного режима работы экрана при работе приложения.
 ms.assetid: 6B67C114-315E-4199-AA72-3F90E85A4909
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 3c8110b7abc86fe1d12485579f134997718540e6
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
-ms.translationtype: MT
+ms.openlocfilehash: 3bf8c949650cf9f039a5a516366a90e717dc944b
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38848574"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675319"
 ---
-# <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials: Блокировка экрана
+# <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials: ScreenLock
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**ScreenLock** класса можно запросить для предотвращения падает спящем режиме, когда приложение выполняется на экране.
+Класс **ScreenLock** может запрашивать сохранение активного режима работы экрана при работе приложения.
 
-## <a name="using-screenlock"></a>С помощью ScreenLock
+## <a name="get-started"></a>Начало работы
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-screenlock"></a>Использование ScreenLock
+
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Функциональность блокировки экрана работает путем вызова `RequestActive` и `RequestRelease` методы для запроса на экране отключить.
+Функция ScreenLock выполняется путем вызова методов `RequestActive` и `RequestRelease` для запроса на отмену выключения экрана.
 
 ```csharp
 public class ScreenLockTest
@@ -43,5 +47,5 @@ public class ScreenLockTest
 
 ## <a name="api"></a>API
 
-- [Экран блокировки исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/ScreenLock)
-- [Документация по API блокировки экрана](xref:Xamarin.Essentials.ScreenLock)
+- [Исходный код ScreenLock](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/ScreenLock)
+- [Документация по API ScreenLock](xref:Xamarin.Essentials.ScreenLock)

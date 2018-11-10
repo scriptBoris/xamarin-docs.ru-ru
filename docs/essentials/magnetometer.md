@@ -1,32 +1,36 @@
 ---
-title: 'Xamarin.Essentials: магнитометр'
-description: Класс магнитометр в Xamarin.Essentials позволяет отслеживать устройства магнитометр датчик, который указывает ориентации устройства относительно Земли в направлении магнитного поля.
+title: 'Xamarin.Essentials: Magnetometer'
+description: Класс Magnetometer в Xamarin.Essentials позволяет отслеживать датчик магнитометра устройства, который указывает на ориентацию устройства относительно магнитного поля Земли.
 ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 3827b9a57ec2667a8716f5b56bfb4631b979d43a
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 2fe610195f881f3d20ecc327c02dd2dfbced35ce
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353793"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675059"
 ---
-# <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials: магнитометр
+# <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials: Magnetometer
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**Магнитометр** класс позволяет отслеживать устройства магнитометр датчик, который указывает ориентации устройства относительно Земли в направлении магнитного поля.
+Класс **Magnetometer** позволяет отслеживать датчик магнитометра устройства, который указывает на ориентацию устройства относительно магнитного поля Земли.
 
-## <a name="using-magnetometer"></a>С помощью магнитометр
+## <a name="get-started"></a>Начало работы
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-magnetometer"></a>Использование Magnetometer
+
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Функциональность магнитометр работает путем вызова `Start` и `Stop` методы для прослушивания изменений магнитометр. Любые изменения, отправляются обратно через `ReadingChanged` событий. Ниже приведен пример использования:
+Функция Magnetometer выполняется путем вызова методов `Start` и `Stop` для ожидания передачи данных об изменениях магнитометра. Все изменения возвращаются через событие `ReadingChanged`. Пример использования:
 
 ```csharp
 
@@ -69,11 +73,11 @@ public class MagnetometerTest
 }
 ```
 
-Все данные возвращаются в microteslas.
+Все данные возвращаются в микротеслах.
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>API
 
-- [Магнитометр исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Magnetometer)
-- [Документация по магнитометр API](xref:Xamarin.Essentials.Magnetometer)
+- [Исходный код Magnetometer](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Magnetometer)
+- [Документация по API Magnetometer](xref:Xamarin.Essentials.Magnetometer)

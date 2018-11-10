@@ -1,26 +1,28 @@
 ---
-title: 'Xamarin.Essentials: геокодирования'
-description: Класс геокодирования в Xamarin.Essentials предоставляет API-интерфейсы для обоих geocode placemark позиционные координаты и обратную координаты geocode на placemark.
+title: 'Xamarin.Essentials: Geocoding'
+description: Класс Geocoding в Xamarin.Essentials предоставляет API-интерфейсы для геокодирования метки в позиционные координаты и обратного геокодирования координат в метку.
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a4d6e4d9b32e665893d82693a3c858630b63d372
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: af6453cdc9a2c48a4de96d8fea95954df7107711
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353679"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674877"
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: геокодирования
+# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Geocoding
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**Геокодирования** класс предоставляет API-интерфейсы выполним геокодирование placemark позиционные координаты и обратную координаты geocode на placemark.
+Класс **Geocoding** предоставляет API-интерфейсы для геокодирования метки в позиционные координаты и обратного геокодирования координат в метку.
 
-## <a name="getting-started"></a>Начало работы
+## <a name="get-started"></a>Начало работы
 
-Чтобы получить доступ к **геокодирования** функциональность приведены следующие настройки платформы является обязательным.
+[!include[](~/essentials/includes/get-started.md)]
+
+Чтобы получить доступ к функции класса **Geocoding**, нужно создать описанную ниже конфигурацию для конкретной платформы.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
@@ -32,9 +34,9 @@ ms.locfileid: "39353679"
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Для использования геокодирования требуется ключ API карт Bing. Зарегистрируйтесь для получения бесплатной [Bing Maps](https://www.bingmapsportal.com/) учетной записи. В разделе **моей учетной записи > Мои ключи** создайте новый раздел и заполните сведения, в зависимости от типа приложения (которое должно быть **общедоступному приложению Windows (UWP, 8.x и более ранних версий)** для приложений универсальной платформы Windows).
+Для применения геокодирования нужно использовать ключ API Карт Bing. Зарегистрируйтесь для получения бесплатной учетной записи [Карт Bing](https://www.bingmapsportal.com/) В разделе **Моя учетная запись > My keys** (Мои ключи) создайте ключ и заполните сведения на основе типа приложения (которое должно быть **общедоступным приложением Windows (UWP, 8.x и более ранних версий)** для приложений UWP).
 
-На раннем этапе жизненного цикла вашего приложения до вызова любого **геокодирования** методы задание ключа API:
+На раннем этапе жизненного цикла вашего приложения до вызова любого метода **Geocoding** задайте ключ API:
 
 ```csharp
 Geocoding.MapKey = "YOUR-KEY-HERE";
@@ -42,15 +44,15 @@ Geocoding.MapKey = "YOUR-KEY-HERE";
 
 -----
 
-## <a name="using-geocoding"></a>С помощью геокодирования
+## <a name="using-geocoding"></a>Использование Geocoding
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Начало [расположение](xref:Xamarin.Essentials.Location) координаты для адреса:
+Получение координат [расположения](xref:Xamarin.Essentials.Location) для адреса:
 
 ```csharp
 try
@@ -74,9 +76,9 @@ catch (Exception ex)
 }
 ```
 
-Высота над уровнем моря не всегда доступна. Если она недоступна, `Altitude` свойство может быть `null` или значение может быть равно нулю. При наличии Высота над уровнем моря в метрах выше над уровнем моря является значение.
+Значения высоты не всегда доступно. Если она недоступна, свойство `Altitude` может быть со значением `null` или равным нулю. Если высота доступна, значение указывается в метрах над уровнем моря.
 
-Начало [placemarks](xref:Xamarin.Essentials.Placemark) для существующего набора координат:
+Получение [меток](xref:Xamarin.Essentials.Placemark) для имеющегося набора координат:
 
 ```csharp
 try
@@ -116,9 +118,9 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>Расстояние между двумя расположениями
 
-[ `Location` ](xref:Xamarin.Essentials.Location) И [ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions) классы определяют методы для вычисления расстояния между двумя расположениями. См. в статье [ **Xamarin.Essentials: Geolocation** ](geolocation.md#calculate-distance) пример.
+Классы [`Location`](xref:Xamarin.Essentials.Location) и [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) определяют методы вычисления расстояния между двумя расположениями. Пример см. в статье [**Xamarin.Essentials: Geolocation**](geolocation.md#calculate-distance)
 
 ## <a name="api"></a>API
 
-- [Геокодирование исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
-- [Документация по API геокодирования](xref:Xamarin.Essentials.Geocoding)
+- [Исходный код Geocoding](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
+- [Документация по API Geocoding](xref:Xamarin.Essentials.Geocoding)

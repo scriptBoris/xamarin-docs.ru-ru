@@ -1,32 +1,36 @@
 ---
-title: 'Xamarin.Essentials: компас'
-description: Этот документ описывает класс компас в Xamarin.Essentials, в которой позволяет наблюдать за заголовком Северной магнитного устройства.
+title: 'Xamarin.Essentials: Compass'
+description: В этом документе описывается класс Compass в Xamarin.Essentials, который позволяет отслеживать направление устройства на северный магнитный полюс.
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: c3fe98c384a87bdc08ce94e7537d1a6343767561
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 51812f9b4f88d77bf553a26ef3a6802239e338e0
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353887"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675501"
 ---
-# <a name="xamarinessentials-compass"></a>Xamarin.Essentials: компас
+# <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Compass
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**Компас** класс позволяет наблюдать за заголовком Северной магнитного устройства.
+Класс **Compass** позволяет отслеживать направление устройства на северный магнитный полюс.
 
-## <a name="using-compass"></a>С помощью компас
+## <a name="get-started"></a>Начало работы
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-compass"></a>Использование класса Compass
+
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Функциональность компас работает путем вызова `Start` и `Stop` методы для прослушивания изменений компасу. Любые изменения, отправляются обратно через `ReadingChanged` событий. Пример:
+Функции Compass выполняются при вызове методов `Start` и `Stop` для ожидания передачи данных об изменениях данных компаса. Все изменения возвращаются через событие `ReadingChanged`. Пример:
 
 ```csharp
 public class CompassTest
@@ -70,29 +74,29 @@ public class CompassTest
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 
-## <a name="platform-implementation-specifics"></a>Особенности реализации платформы
+## <a name="platform-implementation-specifics"></a>Особенности реализации для платформ
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Android не предоставляют API для извлечения по компасу. Мы используем, акселерометр и магнитометр для вычисления заголовком Северной магнитного рекомендуется Google.
+Android не предоставляет API для извлечения данных о направлении компаса. Для вычисления направления на северный магнитный полюс используются акселерометр и магнитометр. Именно такой поход рекомендует Google.
 
-В редких случаях вы может быть см. в разделе несогласованные результаты так, как нужно датчики можно уточнять, который включает в себя перемещение устройства перемещаемые рис. 8. Лучший способ сделать это для открытия карт Google, коснитесь точки с учетом своего местоположения и выберите **компас откалибровать**.
+В редких случаях вы можете увидеть непоследовательные результаты, так как датчики нужно калибровать, что предполагает перемещение устройства "по восьмерке". Лучше всего открыть Карты Google, коснуться точки своего расположения и выбрать **калибровку компаса**.
 
-Имейте в виду, выполняется несколько датчиков из приложения, в то же время может регулировать скорость датчика.
+Помните, что благодаря одновременному запуску нескольких датчиков из приложения можно регулировать скорость датчика.
 
-## <a name="low-pass-filter"></a>Фильтр Low
+## <a name="low-pass-filter"></a>Фильтр нижних частот
 
-Из-за как Android компас значения обновлены и расчет может существовать необходимость сгладить значения. Объект _фильтра передать низким_ можно применить, усредняющий значения синуса и косинуса углов и можно включить, задав `ApplyLowPassFilter` свойство `Compass` класса:
+Из-за способа обновления и вычисления значений компаса Android может потребоваться сглаживание значений. Вы можете применить _фильтр нижних частот_, который усредняет значения синуса и косинуса углов и который можно включить, установив свойство `ApplyLowPassFilter` в классе `Compass`:
 
 ```csharp
 Compass.ApplyLowPassFilter = true;
 ```
 
-Применяется только на платформе Android. Дополнительные сведения вы найдете [здесь](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860).
+Это применяется только на платформе Android. Дополнительные сведения можно найти [здесь](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860).
 
 --------------
 
 ## <a name="api"></a>API
 
-- [Компаса исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
-- [Компаса документации по API](xref:Xamarin.Essentials.Compass)
+- [Исходный код Compass](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
+- [Документация по API Compass](xref:Xamarin.Essentials.Compass)

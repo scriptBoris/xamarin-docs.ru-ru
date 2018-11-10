@@ -1,32 +1,34 @@
 ---
-title: 'Xamarin.Essentials: батареи'
-description: Этот документ описывает класс аккумулятора в Xamarin.Essentials, который позволяет проверить информацию о батарее устройства и отслеживайте изменения.
+title: 'Xamarin.Essentials: Battery'
+description: В этом документе описан класс Battery в Xamarin.Essentials, который позволяет проверить информацию об аккумуляторе устройства и отслеживать изменения.
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 6b87625b3305d0a9ec40593d8b3fe29eb551bbf4
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: 6a14c939064538a405a1fe64061e0bb2e903fedd
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514314"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675436"
 ---
-# <a name="xamarinessentials-battery"></a>Xamarin.Essentials: батареи
+# <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Battery
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**Battery** класс позволяет проверить информацию о батарее устройства и отслеживайте изменения.
+Класс **Battery** позволяет проверить информацию об аккумуляторе устройства и отслеживать изменения.
 
-## <a name="getting-started"></a>Начало работы
+## <a name="get-started"></a>Начало работы
 
-Чтобы получить доступ к **Batterry** функциональность приведены следующие настройки платформы является обязательным.
+[!include[](~/essentials/includes/get-started.md)]
+
+Для доступа к функции **Battery** нужно создать описанную ниже конфигурацию для конкретной платформы.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`Battery` Разрешение является обязательным и должен быть настроен в проекте Android. Это можно сделать одним из следующих способов:
+Требуется разрешение `Battery`, которое следует настроить в проекте Android. Для этого можно применить любой из следующих методов:
 
-Откройте **AssemblyInfo.cs** файл **свойства** папку и добавьте:
+Откройте файл **AssemblyInfo.cs** в папке **Properties** и добавьте в него:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
@@ -34,13 +36,13 @@ ms.locfileid: "39514314"
 
 ИЛИ обновите манифест Android:
 
-Откройте **AndroidManifest.xml** файл **свойства** папку и добавьте следующий код внутри класса **манифеста** узла.
+Откройте файл **AndroidManifest.xml** в папке **Properties** и добавьте приведенный ниже код в узел **manifest**.
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
-Или щелкнуть правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **батареи** разрешение. Будет автоматически обновлена **AndroidManifest.xml** файла.
+ИЛИ щелкните правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **Манифест Android** найдите область **Требуемые разрешения:** и установите флажок для разрешения **Battery**. Это действие автоматически обновляет файл **AndroidManifest.xml**.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -52,15 +54,15 @@ ms.locfileid: "39514314"
 
 -----
 
-## <a name="using-battery"></a>От батарей
+## <a name="using-battery"></a>Использование Battery
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Проверьте сведения о текущем аккумулятора:
+Проверьте текущую информацию об аккумуляторе:
 
 ```csharp
 var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or -1.0 if unable to determine.
@@ -108,7 +110,7 @@ switch (source)
 }
 ```
 
-При каждом изменении каких-либо свойств батареи активируется событие:
+При каждом изменении каких-либо свойств аккумулятора активируется событие:
 
 ```csharp
 public class BatteryTest
@@ -133,21 +135,21 @@ public class BatteryTest
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Различия не платформы.
+Различия платформ отсутствуют.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* Устройство должно использовать для тестирования интерфейсов API. 
-* Будет возвращать только `AC` или `Battery` для `PowerSource`.
-* Не удается отменить вибрации.
+* Устройство должно использоваться для тестирования интерфейсов API. 
+* Для `PowerSource` будут возвращаться только значения `AC` или `Battery`.
+* Невозможно отменить вибрацию.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* Будет возвращать только `AC` или `Battery` для `PowerSource`.
+* Для `PowerSource` будут возвращаться только значения `AC` или `Battery`.
 
 -----
 
 ## <a name="api"></a>API
 
-- [Исходный код батареи](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Battery)
-- [Документация по API батареи](xref:Xamarin.Essentials.Battery)
+- [Исходный код Battery](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Battery)
+- [Документация по API аккумулятора](xref:Xamarin.Essentials.Battery)

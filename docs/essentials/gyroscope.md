@@ -1,32 +1,36 @@
 ---
-title: 'Xamarin.Essentials: гироскоп'
-description: Класс гироскоп Xamarin.Essentials позволяет отслеживать устройства гироскоп датчик измеряет поворота вокруг устройства три основные оси.
+title: 'Xamarin.Essentials: Gyroscope'
+description: Класс Gyroscope в Xamarin.Essentials позволяет отслеживать датчик гироскопа устройства, который измеряет вращение вокруг трех основных осей устройства.
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f1e1199ae32158889ec569eb5f7e9742f37d45d4
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: 1d42658160855e260e0d159c58a1f95e7a8c7d4c
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353630"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50674754"
 ---
-# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: гироскоп
+# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: Gyroscope
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**Гироскоп** класс позволяет отслеживать устройства гироскоп датчика, являющегося поворота вокруг устройства три основные оси.
+Класс **Gyroscope** позволяет отслеживать датчик гироскопа устройства, который представляет собой поворот вокруг трех основных осей устройства.
 
-## <a name="using-gyroscope"></a>С помощью гироскоп
+## <a name="get-started"></a>Начало работы
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+[!include[](~/essentials/includes/get-started.md)]
+
+## <a name="using-gyroscope"></a>Использование Gyroscope
+
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Функциональность гироскоп работает путем вызова `Start` и `Stop` методы для прослушивания изменений гироскоп. Любые изменения, отправляются обратно через `ReadingChanged` событий. Ниже приведен пример использования:
+Функция Gyroscope выполняется путем вызова методов `Start` и `Stop` для ожидания передачи данных об изменениях в гироскопе. Все изменения возвращаются через событие `ReadingChanged`. Пример использования:
 
 ```csharp
 
@@ -73,5 +77,5 @@ public class GyroscopeTest
 
 ## <a name="api"></a>API
 
-- [Гироскоп исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Gyroscope)
-- [Документация по гироскоп API](xref:Xamarin.Essentials.Gyroscope)
+- [Исходный код Gyroscope](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Gyroscope)
+- [Документация по API Gyroscope](xref:Xamarin.Essentials.Gyroscope)

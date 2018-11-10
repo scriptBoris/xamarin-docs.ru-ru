@@ -1,32 +1,34 @@
 ---
-title: 'Xamarin.Essentials: фонариком'
-description: Этот документ описывает класс фонариком в Xamarin.Essentials, который имеет возможность включить или отключить камеру устройства флэш-памяти, чтобы превратить его в фонариком.
+title: 'Xamarin.Essentials: Flashlight'
+description: В этом документе описывается класс Flashlight в Xamarin.Essentials, который позволяет включить или выключить вспышку камеры устройства и превратить ее в фонарик.
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 8c471f64c14a2e41693c450e02f89e7ac845d060
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: MT
+ms.openlocfilehash: d1a2ad675d615b48b8e8f8433065c5bd0bbae1d0
+ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353364"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50675085"
 ---
-# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: фонариком
+# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: Flashlight
 
-![Предварительные версии NuGet](~/media/shared/pre-release.png)
+![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
-**Фонариком** класс имеет возможность включить или отключить камеру устройства флэш-памяти, чтобы превратить его в фонариком.
+Класс **Flashlight** позволяет включить или выключить вспышку камеры устройства и превратить ее в фонарик.
 
-## <a name="getting-started"></a>Начало работы
+## <a name="get-started"></a>Начало работы
 
-Чтобы получить доступ к **фонариком** функциональные возможности приведены следующие настройки платформы является обязательным.
+[!include[](~/essentials/includes/get-started.md)]
+
+Чтобы получить доступ к функциям класса **Flashlight**, нужно создать описанную ниже конфигурацию для конкретной платформы.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Разрешения на фонариком и камеры являются обязательными и должны быть настроены в проект Android. Это можно сделать одним из следующих способов:
+Требуются разрешения Flashlight и Camera, которые следует настроить в проекте Android. Для этого можно применить любой из следующих методов:
 
-Откройте **AssemblyInfo.cs** файл **свойства** папку и добавьте:
+Откройте файл **AssemblyInfo.cs** в папке **Свойства** и добавьте в него:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Flashlight)]
@@ -35,16 +37,16 @@ ms.locfileid: "39353364"
 
 ИЛИ обновите манифест Android:
 
-Откройте **AndroidManifest.xml** файл **свойства** папку и добавьте следующий код внутри класса **манифеста** узла.
+Откройте файл **AndroidManifest.xml** в папке **Properties** и добавьте приведенный ниже код в узел **manifest**.
 
 ```xml
 <uses-permission android:name="android.permission.FLASHLIGHT" />
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-Или щелкнуть правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **манифест Android** найти **необходимые разрешения:** области и проверьте **ФОНАРИКОМ** и **КАМЕРЫ** разрешения. Будет автоматически обновлена **AndroidManifest.xml** файла.
+ИЛИ щелкните правой кнопкой мыши проект Android и откройте свойства проекта. В разделе **Манифест Android** найдите область **Требуемые разрешения:** и установите флажок для разрешений **FLASHLIGHT** и **CAMERA**. Это действие автоматически обновляет файл **AndroidManifest.xml**.
 
-Добавив эти разрешения [Google Play будет автоматически отфильтровать устройства](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features) без конкретного оборудования. Можно обойти это, добавив следующее в файл AssemblyInfo.cs в проекте Android:
+После добавления этих разрешений [Google Play будет автоматически отфильтровать устройства](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features) без конкретного оборудования. Можно обойти это, добавив в файл AssemblyInfo.cs в проекте Android следующий код:
 
 ```csharp
 [assembly: UsesFeature("android.hardware.camera", Required = false)]
@@ -61,15 +63,15 @@ ms.locfileid: "39353364"
 
 -----
 
-## <a name="using-flashlight"></a>С помощью фонариком
+## <a name="using-flashlight"></a>Использование класса Flashlight
 
-Добавьте ссылку на Xamarin.Essentials в классе:
+Добавьте в свой класс ссылку на Xamarin.Essentials:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Фонариком можно включать и отключать через `TurnOnAsync` и `TurnOffAsync` методов:
+Фонарик можно включить и выключить с помощью методов `TurnOnAsync` и `TurnOffAsync`:
 
 ```csharp
 try
@@ -94,31 +96,31 @@ catch (Exception ex)
 }
 ```
 
-## <a name="platform-implementation-specifics"></a>Особенности реализации платформы
+## <a name="platform-implementation-specifics"></a>Особенности реализации для платформ
 
 ### <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Класс фонариком был оптимизирован в зависимости от операционной системы устройства.
+Класс Flashlight был оптимизирован на основе операционной системы устройства.
 
-#### <a name="api-level-23-and-higher"></a>Уровень API 23 и более поздних версий
+#### <a name="api-level-23-and-higher"></a>API уровня 23 и более поздних версий
 
-На более новые уровни API [Torch режим](https://developer.android.com/reference/android/hardware/camera2/CameraManager.html#setTorchMode) будет использоваться, чтобы включить или отключить вспышки устройства.
+В более поздних уровнях API режим [Torch Mode](https://developer.android.com/reference/android/hardware/camera2/CameraManager.html#setTorchMode) будет использоваться для включения и выключения вспышки устройства.
 
-#### <a name="api-level-22-and-lower"></a>Уровень API 22 и ниже
+#### <a name="api-level-22-and-lower"></a>API уровня 22 и более старых версий
 
-Чтобы включить или отключить создается текстура поверхности камеры `FlashMode` единицы камеры. 
+Текстура поверхности камеры предусмотрена для включения или выключения режима `FlashMode` камеры. 
 
 ### <a name="iostabios"></a>[iOS](#tab/ios)
 
-[AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) используется для включения и отключения Torch и флэш-режим устройства.
+[AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) используется для включения и отключения таких режимов устройства, как Torch и Flash.
 
 ### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[LAMP](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) используется для обнаружения первого lamp на задней панели устройства, чтобы включить или отключить.
+[Lamp](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) используется для обнаружения первого фонарика на обратной стороне устройства, который можно включить и выключить.
 
 -----
 
 ## <a name="api"></a>API
 
-- [Фонариком исходного кода](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
-- [Документация по фонариком API](xref:Xamarin.Essentials.Flashlight)
+- [Исходный код Flashlight](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
+- [Документация по API Flashlight](xref:Xamarin.Essentials.Flashlight)
