@@ -4,15 +4,15 @@ description: 'Создание мобильных приложений с пом
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 354338aedf67a02918858cbab71d866e5cd8ec9d
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
-ms.translationtype: HT
+ms.openlocfilehash: 82ffecd41115bc91df9732793f5e22e721dbdee4
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527148"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563905"
 ---
 # <a name="summary-of-chapter-22-animation"></a>Сводка информации в главе 22. Анимация
 
