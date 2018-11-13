@@ -7,12 +7,12 @@ ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
 ms.date: 07/18/2018
-ms.openlocfilehash: 01985cf253c0f33c52128386b36c11af50381ee1
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
-ms.translationtype: MT
+ms.openlocfilehash: 84d21738298360eb8829a569b152a131e6543709
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156695"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526784"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Сводка главе 19. Представления коллекций
 
@@ -60,7 +60,7 @@ Xamarin.Forms определяет три представления, котор
 
 ### <a name="the-row-separator"></a>Разделитель строк
 
-В iOS и Android отображает тонкой отделяет строки. Вы можете управлять этим с [ `SeparatorVisibiliy` ](xref:Xamarin.Forms.ListView.SeparatorVisibility) и [ `SeparatorColor` ](xref:Xamarin.Forms.ListView.SeparatorColor) свойства. `SeparatorVisibility` свойство имеет тип [ `SeparatorVisbility` ](xref:Xamarin.Forms.SeparatorVisibility), перечисление с двумя членами:
+В iOS и Android отображает тонкой отделяет строки. Вы можете управлять этим с [ `SeparatorVisibility` ](xref:Xamarin.Forms.ListView.SeparatorVisibility) и [ `SeparatorColor` ](xref:Xamarin.Forms.ListView.SeparatorColor) свойства. `SeparatorVisibility` свойство имеет тип [ `SeparatorVisibility` ](xref:Xamarin.Forms.SeparatorVisibility), перечисление с двумя членами:
 
 - [`Default`](xref:Xamarin.Forms.SeparatorVisibility.Default), значение по умолчанию
 - [`None`](xref:Xamarin.Forms.SeparatorVisibility.None)

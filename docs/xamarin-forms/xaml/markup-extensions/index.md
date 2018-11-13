@@ -4,15 +4,15 @@ description: Объясняются способы использования р
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: d507ff3c74de6bb4ea36c1a7b7dc2cd5dd60823b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 3a28963852b2b36be0a9751722b7f184c340d3e9
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996744"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563398"
 ---
 # <a name="xaml-markup-extensions"></a>Расширения разметки XAML
 

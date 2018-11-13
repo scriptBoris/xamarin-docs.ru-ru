@@ -4,15 +4,15 @@ description: 'Создание мобильных приложений с пом
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: d04012d5d2ea6a7617d5c7559aa3e1532dad15d1
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 1dc4fe12d3ca23a9ca87c3be7819c970683db469
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156916"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563502"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Сводка Глава 7. XAML и кода
 
@@ -82,5 +82,5 @@ Xamarin.Forms есть компилятор XAML, но его использов
 
 - [Глава 7 полнотекстового поиска (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
 - [Глава 7 примеры](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
-- [Пример Глава 7 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [Глава 7 F# образца](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
 - [Основы XAML](~/xamarin-forms/xaml/xaml-basics/index.md)

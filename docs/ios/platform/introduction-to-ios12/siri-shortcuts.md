@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 9954a27b0cc857efa158e8cbc0281737c822f0c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9034799355d01a3ade20a78540d6ecac43d9cc8
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131929"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526901"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Сочетания клавиш Siri в Xamarin.iOS
 
@@ -292,7 +292,7 @@ void HandleUserActivity()
 В частности, обратите внимание, что этот проект содержит:
 
 - **ApiDefinitions.cs** — файл, созданный выше Sharpie цели и добавления к данному проекту. Этот файл **действие при построении** присваивается **ObjcBindingApiDefinition**.
-- **StructsAndEnums.cs** — другой файл genrated выше, цель Sharpie и добавления к данному проекту. Этот файл **действие при построении** присваивается **ObjcBindingCoreSource**.
+- **StructsAndEnums.cs** — еще один файл формируемой выше Sharpie цели и добавления к данному проекту. Этот файл **действие при построении** присваивается **ObjcBindingCoreSource**.
 - Объект **собственную ссылку** для **libOrderSoupIntentStaticLib.a**, статическая библиотека, построен ранее.
 
 > [!NOTE]
@@ -336,7 +336,7 @@ void DonateInteraction(Order order)
 `INInteraction` Прав [`Identifier`](https://developer.xamarin.com/api/property/Intents.INInteraction.Identifier/)
 Уникальный идентификатор заказа (это будет полезно позже при удалении намерений пожертвований, которые больше не являются допустимыми), которое соответствует. Затем взаимодействие списания для Siri.
 
-Вызов `order.Intent` выборки считывания `OrderSoupIntent` , представляющий порядок, задав его `Quantity`, `Soup`, `Options`и изображение, и и вызова фразу для использования в качестве подсказки, когда пользователь регистрирует фразы для Siri Свяжите с целью:
+Вызов `order.Intent` выборки считывания `OrderSoupIntent` , представляющий порядок, задав его `Quantity`, `Soup`, `Options`и образ и вызов фразу для использования в качестве подсказки, когда пользователь регистрирует фразы для Siri связать с целью:
 
 ```csharp
 public OrderSoupIntent Intent

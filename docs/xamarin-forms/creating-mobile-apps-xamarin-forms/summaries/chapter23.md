@@ -4,15 +4,15 @@ description: 'Создание мобильных приложений с пом
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 83a445555f9f184f735c105370de20665ad704a3
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 4bfa2bed7061e031c55ccbdb7f576aa02c17581a
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156760"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563996"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>Сводка Глава 23. Триггеры и поведения
 
@@ -152,7 +152,7 @@ ms.locfileid: "39156760"
 
 [ **FormattedTextToggle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/FormattedTextToggle) образец расширяет эту концепцию, переключение между двумя `FormattedString` объектов.
 
-[ `ToggleBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs) В класс **Xamarin.FormsBook.Toolkit** библиотеки является производным от `ContentView`, определяет `IsToggled` свойство и включает в себя `ToggleBehavior` переключателя логика. Это упрощает определение кнопки-переключателя в XAML, как показано [ **TranditionalCheckBox** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox) образца.
+[ `ToggleBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs) В класс **Xamarin.FormsBook.Toolkit** библиотеки является производным от `ContentView`, определяет `IsToggled` свойство и включает в себя `ToggleBehavior` переключателя логика. Это упрощает определение кнопки-переключателя в XAML, как показано [ **TraditionalCheckBox** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox) образца.
 
 [ **SwitchCloneDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo) включает в себя [ `SwitchClone` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs) класс, производный от `ToggleBase` и использует [ `TranslateAction` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs)для формирования выключатель, который похож на Xamarin.Forms `Switch`.
 

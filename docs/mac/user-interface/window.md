@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 2d129c72366224cedca26df6fa1499f65d04e92d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106979"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526979"
 ---
 # <a name="windows-in-xamarinmac"></a>Windows в Xamarin.Mac
 
 _В этой статье рассматривается работа с окнами и панелями в приложении Xamarin.Mac. Он описывает создание окон и панелей в Xcode и конструкторе Interface Builder, загружая их из раскадровки и xib-файлов и программным способом работы с ними._
 
-При работе с C# и .NET в приложении Xamarin.Mac, имеют доступ к тем же Windows и панелями, работающему *Objective-C* и *Xcode* does. Поскольку Xamarin.Mac напрямую интегрируется с Xcode, можно использовать конструктор _Interface Builder_ для создания и поддержки Windows и панелей (или при необходимости создать их непосредственно в коде C#).
+При работе с C# и .NET в приложении Xamarin.Mac, имеют доступ к тем же Windows и панелями, работающий в *Objective-C* и *Xcode* does. Поскольку Xamarin.Mac напрямую интегрируется с Xcode, можно использовать конструктор _Interface Builder_ для создания и поддержки Windows и панелей (или при необходимости создать их непосредственно в коде C#).
 
 Исходя из его назначение, приложения Xamarin.Mac можно представить один или несколько Windows на экране для управления и обмениваются данными, он отображает и работает с. Ниже перечислены функции, основного окна.
 
@@ -284,7 +284,7 @@ public override void ViewWillAppear ()
 MyWindow.PerformClose(this);
 ```
 
-Будет пытаться закрыть `MyWindow` `NSWindow` экземпляра. Если она выполнена успешно, окно будет закрыто, иначе предупреждения звук, будет использовано и будет остается открытым.
+Будет пытаться закрыть `MyWindow` `NSWindow` экземпляра. Если она выполнена успешно, окно будет закрыто, иначе будут передаваться оповещения звук и будет оставаться открытым.
 
 <a name="Close" />
 
@@ -377,7 +377,7 @@ namespace SourceWriter
                 alert.AddButton ("Cancel");
                 var result = alert.RunSheetModal (Window);
 
-                // Take action based on resu;t
+                // Take action based on result
                 switch (result) {
                 case 1000:
                     // Grab controller
@@ -758,7 +758,7 @@ void OpenDialog (NSObject sender)
 3. Введите в поле **Имя** значение `DocumentPanel` и нажмите кнопку **Новый**.
 4. Дважды щелкните `DocumentPanel.xib` файл, чтобы открыть его для редактирования в конструкторе Interface Builder: 
 
-    [![](window-images/new02.png "Изменение порта")](window-images/new02.png#lightbox)
+    [![](window-images/new02.png "На панели редактирования")](window-images/new02.png#lightbox)
 5. Удалите существующее окно и перетащите панель из **инспектор библиотеки** в **редактор интерфейса**: 
 
     [![](window-images/panels01.png "Удаление существующего окна")](window-images/panels01.png#lightbox)

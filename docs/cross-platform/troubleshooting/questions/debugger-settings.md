@@ -1,19 +1,19 @@
 ---
-title: Какие параметры проекта нужны отладчику?
+title: Какие параметры проекта нужны отладчику
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 3A024E4E-ACA3-4C7A-ADEF-541665D15779
 author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
-ms.openlocfilehash: 646ef7f708be2de6a851ace25d69a7c2f0b18a83
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 9a18c97ba227615ae42529424b5c22b5e144f5e5
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350811"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526709"
 ---
-# <a name="what-project-settings-are-required-for-the-debugger"></a>Какие параметры проекта нужны отладчику?
+# <a name="what-project-settings-are-required-for-the-debugger"></a>Какие параметры проекта нужны отладчику
 
 Чтобы отладчик будет работать неправильно (попаданий точки останова, журналы отладки отображения т. д.) отображаемая информация разработчика инструментирования и отладки должны быть включены.
 
@@ -24,7 +24,7 @@ ms.locfileid: "39350811"
 2. Перейдите к **сборки > Дополнительно...** Настроить отладочную информацию **полный**
 3. Параметры для каждой платформы:
    - Перейдите к **параметры Android > Параметры отладки**. Такт **включить инструментирование для разработчика** поле.
-   - Перейдите к **сборка iOS > Параметры отладки**. Такт **включить отладку** поле.
+   - Перейдите к **отладка iOS > Отладка и инструментирование**. Такт **включить отладку** поле.
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio для Mac
 1. Откройте параметры проекта

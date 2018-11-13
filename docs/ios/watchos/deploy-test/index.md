@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a0738b03c4fa0ad975b872307bb17f387b1c5fd5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7d626b8a968835813d87c93e3cead57a00c14000
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120961"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528602"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Развертывание и тестирование приложений для watchOS с помощью Xamarin
 
@@ -50,7 +50,7 @@ ms.locfileid: "50120961"
 
 ### <a name="explicit-app-ids"></a>Идентификаторы явные приложений
 
-Создание **идентификатор приложения** ИД набора каждого каждого проекта (который будет выглядеть в центре разработки для iOS):
+Создание **идентификатор приложения** ИД набора каждого проекта (который будет выглядеть в центре разработки для iOS):
 
 ![Идентификаторы пакетов в центре разработки для iOS](images/appids-specific-sml.png)
 
@@ -88,7 +88,7 @@ ms.locfileid: "50120961"
 
 После создания группы ее можно ссылаться в вашей **идентификатор приложения** конфигурации. Не забудьте включить его как приложение iOS и расширение просмотра **идентификаторов приложений**.
 
-![Доступные consifurations](images/appgroups-sml.png)
+![Доступные конфигурации](images/appgroups-sml.png)
 
 Сделать **не** включить группы приложений в идентификатор приложения Apple Watch. Это не требуется включать в себя watch.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: af5554d08ac6c45fc0c392bd17cef5d91251bb1a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 01ff4426dfb4764b7d9ca22703aa2b1667a90454
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106511"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528550"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Макеты с вкладками с ActionBar
 
@@ -23,7 +23,7 @@ _В этом руководстве представлены и объясняе
 
 На панели действий — это шаблон Android пользовательского интерфейса, который используется для обеспечения согласованного пользовательского интерфейса для основных компонентов, таких как вкладки, удостоверение приложения, меню и поиска. В Android 3.0 (уровень API 11) Google представила ActionBar API-интерфейсы для платформы Android. API-интерфейсы ActionBar вводят темы пользовательского интерфейса для обеспечения согласованного внешнего вида и поведения и классы, которые позволяют с вкладками пользовательских интерфейсов. В этом руководстве описывается добавление вкладок панели действий приложения Xamarin.Android. Также описывается использование библиотеки поддержки Android версии 7 в знаки табуляции панели действий бэкпортировать для приложений Xamarin.Android, предназначенных для Android 2.1 для Android 2.3. 
 
-Обратите внимание, что `Toolbar` является компонентом панели более нового и более обобщенное действия, который следует использовать вместо из `ActionBar` (`Toolbar` предназначен для замены `ActionBar`). Дополнительные сведения см. в разделе [инструментов](~/android/user-interface/controls/tool-bar/index.md). 
+Обратите внимание, что `Toolbar` является компонентом панели более нового и более обобщенное действия, который следует использовать вместо `ActionBar` (`Toolbar` предназначен для замены `ActionBar`). Дополнительные сведения см. в разделе [инструментов](~/android/user-interface/controls/tool-bar/index.md). 
 
 
 

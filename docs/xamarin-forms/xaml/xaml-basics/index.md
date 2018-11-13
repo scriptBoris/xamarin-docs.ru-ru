@@ -4,15 +4,15 @@ description: В этом руководстве объясняется, как �
 ms.prod: xamarin
 ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 901174eb9510eaab670564655f9f6b4bff940bd7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 348cbc07586a5d8536efafe67103258936c1c705
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995444"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563216"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Основы XAML Xamarin.Forms
 

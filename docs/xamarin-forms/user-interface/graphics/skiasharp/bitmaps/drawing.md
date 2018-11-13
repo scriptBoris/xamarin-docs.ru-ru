@@ -7,12 +7,12 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: acdee7d34f913b125887f021dab39220c9560191
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a4fbf2bc38726ad50a07744ed4c2512efbb615bc
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109241"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527252"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>Создание и рисования в SkiaSharp точечных рисунков
 
@@ -494,7 +494,7 @@ public partial class BitmapRotatorPage : ContentPage
 
 Вызывается другая операция, типичные для выполнения на точечных рисунков _переворот_. По существу растровое изображение поворачивается в трех измерениях вокруг вертикальной или горизонтальной оси в центре растрового изображения. Вертикальное зеркальное отражение создает Зеркальное изображение.
 
-**Флиппере точечного рисунка** странице в **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** показано приложение этих процессов. Файл XAML содержит `SKCanvasView` и две кнопки для переворот по вертикали и горизонтали:
+**Флиппере точечного рисунка** странице в **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** приложение демонстрирует эти процессы. Файл XAML содержит `SKCanvasView` и две кнопки для переворот по вертикали и горизонтали:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

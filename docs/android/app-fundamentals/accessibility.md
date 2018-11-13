@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 4eb4a97a346f3906c925dc9e324ed9378af0b560
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3cce3270b9df2aad0037b1ab96f169cc4b564766
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116190"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528134"
 ---
 # <a name="accessibility-on-android"></a>Специальные возможности на Android
 
@@ -74,7 +74,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 **C#**
 
-В C#, задайте `LabelFor` описывает свойство идентификатор ресурса этом это содержимое элемента управления (обычно это свойство задано для метки и ссылается на входной другого элемента управления):
+В C#, задайте `LabelFor` присваивается идентификатор ресурса элемента управления, который описывает это содержимое (обычно это свойство задано для метки и ссылается на входной другого элемента управления):
 
 ```csharp
 EditText edit = FindViewById<EditText> (Resource.Id.editFirstName);

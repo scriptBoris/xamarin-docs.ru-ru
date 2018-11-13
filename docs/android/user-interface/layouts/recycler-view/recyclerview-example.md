@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: 67bf38c11fd6e82e05b2a10704973ca10de03083
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d71c4f0f3221d06c22876329a5933273d8d6f92d
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108656"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526771"
 ---
 # <a name="a-basic-recyclerview-example"></a>Простой пример RecyclerView
 
@@ -118,7 +118,7 @@ mRecyclerView.SetLayoutManager (mLayoutManager);
 
 Этот код находится в основное действие `OnCreate` метод. Конструктор, чтобы диспетчер структуры требует *контекст*, поэтому `MainActivity` передается с помощью `this` см. выше.
 
-Вместо использования predefind `LinearLayoutManager`, вы можете подключить диспетчер настраиваемый макет, который отображает два `CardView` элементы side-by-side, реализация эффект переворачивания страниц для прохода по коллекции фотографий. Далее в этом руководстве вы увидите пример того, как изменить макет путем переключения в диспетчере другой макет.
+Вместо использования стандартных `LinearLayoutManager`, вы можете подключить диспетчер настраиваемый макет, который отображает два `CardView` элементы side-by-side, реализация эффект переворачивания страниц для прохода по коллекции фотографий. Далее в этом руководстве вы увидите пример того, как изменить макет путем переключения в диспетчере другой макет.
 
 <a name="view-holder" />
 
@@ -391,7 +391,7 @@ mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, fa
 
 [![Снимок экрана с примером приложения с фотографиями горизонтальной прокрутки в сетке](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
-Можно изменить только одну строку кода, — можно изменить приложение просмотра фотографий, чтобы использовать другой макет с другим поведением.
+Можно изменить только одну строку кода, можно изменить приложение просмотра фотографий, чтобы использовать другой макет с другим поведением.
 Обратите внимание на то, что XML-ФАЙЛ макета, ни код адаптера необходимо было изменить, чтобы изменить стиль макета. 
 
 В следующем разделе [расширим пример RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md), этот базовый пример приложения расширяется для обработки события click элемента и обновить `RecyclerView` при изменении базовых данных источника.

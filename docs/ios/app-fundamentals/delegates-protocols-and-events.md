@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/17/2017
-ms.openlocfilehash: d3e5da19bacf5a6847bf6226c3fdd2b1e0e46ab2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 83f9651fa7fd20709c620258833ae4a152ffd0eb
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111068"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563671"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>События, протоколы и делегаты в Xamarin.iOS
 
@@ -52,7 +52,7 @@ aButton.TouchUpInside += delegate {
 };
 ```
 
-Приведенный выше код запустил `ViewDidLoad` метод UIViewContoller. `aButton` Переменная ссылается на кнопке, можно добавить в конструкторе iOS или с помощью кода. На следующем рисунке показана кнопка, которая была добавлена в конструкторе iOS:
+Приведенный выше код запустил `ViewDidLoad` метод UIViewController. `aButton` Переменная ссылается на кнопке, можно добавить в конструкторе iOS или с помощью кода. На следующем рисунке показана кнопка, которая была добавлена в конструкторе iOS:
 
 [![](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png "Кнопки, добавленной в конструкторе iOS")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 

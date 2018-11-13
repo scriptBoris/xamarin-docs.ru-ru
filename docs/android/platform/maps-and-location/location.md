@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: e3cfc9a345c8ab92b35ad428b550ec42de6312e5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bc7da76084075b03ca346949b7bb764ae1313c2a
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120298"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563515"
 ---
 # <a name="location-services"></a>Службы определения местоположения
 
@@ -190,7 +190,7 @@ await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, l
 
 Чтобы уведомить приложение Xamarin.Android расположение обновления, будет вызывать поставщик склеенную расположения `LocationCallBack.OnLocationResult(LocationResult result)`. `Android.Gms.Location.LocationResult` Параметр будет содержать сведения о расположении обновления.
 
-Когда поставщик склеенную расположения обнаруживает изменение в доступности данных расположения, он вызывает `LocationProvider.OnLocationAvaibility(LocationAvailability
+Когда поставщик склеенную расположения обнаруживает изменение в доступности данных расположения, он вызывает `LocationProvider.OnLocationAvailability(LocationAvailability
 locationAvailability)` метод. Если `LocationAvailability.IsLocationAvailable` возвращает `true`, то можно предположить, что полученные расположения устройства сообщаемое `OnLocationResult` являются точным и чтобы обновлять согласно требованиям `LocationRequest`. Если `IsLocationAvailable` имеет значение false, то результаты не расположение будет вернуть `OnLocationResult`.
 
 Этот фрагмент кода входит пример реализации `LocationCallback` объекта:
@@ -253,9 +253,9 @@ LocationManager locationManager = (LocationManager) GetSystemService(Context.Loc
 
 ### <a name="request-location-updates-from-the-locationmanager"></a>Расположение обновления запроса из LocationManager
 
-Как только приложение получает ссылку на `LocationManager`, она должна сообщить об `LocationManager` какого рода сведения о расположении, являются обязательными, и как часто эти сведения будут обновляться. Это делается путем вызова `RequestionLocationUpdates` на `LocationManager` объекта и передачи Далее указаны некоторые критерии для обновления и обратный вызов, который будет получать обновления расположения. Этот обратный вызов — это тип, который должен быть реализован `ILocationListener` интерфейс (более подробно далее в этом руководстве).
+Как только приложение получает ссылку на `LocationManager`, она должна сообщить об `LocationManager` какого рода сведения о расположении, являются обязательными, и как часто эти сведения будут обновляться. Это делается путем вызова `RequestLocationUpdates` на `LocationManager` объекта и передачи Далее указаны некоторые критерии для обновления и обратный вызов, который будет получать обновления расположения. Этот обратный вызов — это тип, который должен быть реализован `ILocationListener` интерфейс (более подробно далее в этом руководстве).
 
-`RequestionLocationUpdates` Метод указывает место в системе службы, что хотите начать получать обновления расположения приложения. Этот метод позволяет указать поставщика, а также пороговые значения времени и расстояние для управления частотой обновления. Например, указанный ниже метод ниже расположение запросы обновления от поставщика расположения GPS каждые 2000 миллисекунд, и только в том случае, когда расположение изменяется более чем 1 метр:
+`RequestLocationUpdates` Метод указывает место в системе службы, что хотите начать получать обновления расположения приложения. Этот метод позволяет указать поставщика, а также пороговые значения времени и расстояние для управления частотой обновления. Например, ниже метод запрашивает расположение обновления от поставщика расположения GPS каждые 2000 миллисекунд, и только в том случае, когда расположение изменяется более чем 1 метр:
 
 ```csharp
 // For this example, this method is part of a class that implements ILocationListener, described below

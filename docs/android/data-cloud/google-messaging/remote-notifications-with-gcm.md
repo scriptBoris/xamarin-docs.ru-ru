@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
-ms.openlocfilehash: e361444f2c717ff44e0771710836f156f90cfcb8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: be96683a2e63ed802169543dcee55a3431e42130
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118894"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528810"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Удаленные уведомления с помощью Google Cloud Messaging
 
@@ -91,7 +91,7 @@ using Android.Util;
 -   `com.google.android.c2dm.permission.RECEIVE` &ndash; Предоставляет разрешение на уровне приложения для регистрации и получения сообщений из Google Cloud Messaging. (Что делает `c2dm` означает? Это означает _облака для обмена сообщениями устройства_, которой была создана неподдерживаемые до GCM. 
     По-прежнему использует GCM `c2dm` во многих строк его разрешений.) 
 
--   `android.permission.WAKE_LOCK` &ndash; (Необязательно) Запрещает устройству ЦП из переход в спящий режим при прослушивании для сообщения. 
+-   `android.permission.WAKE_LOCK` &ndash; (Необязательно) Устройство ЦП не переходить в спящий режим при прослушивании для сообщения. 
 
 -   `android.permission.INTERNET` &ndash; Предоставляет доступ к Интернету, чтобы клиентское приложение могло взаимодействовать с GCM. 
 
@@ -649,7 +649,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 Кроме того можно заметить, что в области уведомлений отображается значок нового уведомления: 
 
-[![Появится значок Notiication на устройстве](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
+[![Значок уведомления отображается на устройстве](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
 При открытии в область уведомлений для просмотра уведомлений, вы увидите, что наши удаленного уведомления:
 
@@ -657,7 +657,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 Поздравляем, ваше приложение получило его первого удаленного уведомления.
 
-Обратите внимание на то, что GCM сообщения больше не будут приниматься, если приложение является force остановлено. Чтобы возобновить уведомления после принудительно остановите, приложение должно быть перезапущена вручную. Дополнительные сведения об этой политике Android см. в разделе [запуска элементы управления, на остановленные приложения](https://developer.android.com/about/versions/android-3.1.html#launchcontrols) и это [post переполнения стека](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267). 
+Обратите внимание на то, что GCM сообщения больше не будут приниматься, если приложение является force остановлено. Чтобы возобновить уведомления после принудительно остановите, приложение необходимо вручную перезапустить. Дополнительные сведения об этой политике Android см. в разделе [запуска элементы управления, на остановленные приложения](https://developer.android.com/about/versions/android-3.1.html#launchcontrols) и это [post переполнения стека](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267). 
 
  
 ## <a name="summary"></a>Сводка

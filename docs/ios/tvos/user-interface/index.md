@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: a519af9e4bddb949b6e0547387d804f1437deb21
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0d5bfa83bee74a799398912f77f21cba10c7be45
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104613"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526318"
 ---
 # <a name="building-tvos-user-interfaces-with-xamarin"></a>Создание пользовательских интерфейсов с помощью Xamarin tvOS
 
 _Покрытие общие взаимодействие с пользователем (UX), включая элементы управления интерфейса пользователя (UI), используйте конструктор Interface Builder в Xcode и принципы проектирования UX при работе с Xamarin.tvOS._
 
-При работе с C# и .NET в tvOS, на базе Xamarin, у вас есть доступ к те же элементы управления пользовательского интерфейса, что разработчику, работающему с Objective-C или Swift и Xcode. Interface Builder в Xcode может использоваться для создания и настройки интерфейсов пользователя (или при необходимости создать их непосредственно в C# кода).
+При работе с C# и .NET в tvOS, на базе Xamarin, у вас есть доступ к те же элементы управления пользовательского интерфейса, что разработчик, работающий в Objective-C или Swift и Xcode. Interface Builder в Xcode может использоваться для создания и настройки интерфейсов пользователя (или при необходимости создать их непосредственно в C# кода).
 
 Перечисленных ниже руководствах подробные сведения о работе с элементами пользовательского интерфейса tvOS в приложении Xamarin.tvOS. Настоятельно рекомендуется работать через [по Tvos краткое руководство по](~/ios/tvos/get-started/hello-tvos.md) во-первых, так как он охватывает основные понятия и методы, которые мы будем использовать в каждой статье.
 

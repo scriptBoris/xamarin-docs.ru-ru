@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: f787adcba78a13f6d4cad3fb446350a65e960aca
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cfa450c977ac9f1d6370f40d27f5d704cc774767
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123613"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526680"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms карты
 
@@ -36,7 +36,7 @@ Xamarin.Forms.Maps использует карту собственного API-
 
 ## <a name="maps-initialization"></a>Инициализация сопоставлений
 
-При добавлении карты в приложении Xamarin.Forms **Xamarin.Forms.Maps** — отдельный пакет NuGet, следует добавить в каждый проект в решении.
+При добавлении карты в приложении Xamarin.Forms **Xamarin.Forms.Maps** — отдельный пакет NuGet, который следует добавить в каждый проект в решении.
 В Android это также имеет зависимость от GooglePlayServices (другой NuGet), который загружается автоматически при добавлении Xamarin.Forms.Maps.
 
 После установки пакета NuGet, требуется код инициализации в каждый проект приложения *после* `Xamarin.Forms.Forms.Init` вызова метода. Для устройств iOS используйте следующий код:
@@ -141,7 +141,7 @@ XML-представление для этих ключей в **Info.plist** п
 
 <a name="Using_Maps" />
 
-## <a name="using-maps"></a>Использование карт
+## <a name="using-maps"></a>Использование класса Maps
 
 См. в разделе [MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) в образце MobileCRM пример использования элемента управления картой в коде. Простой `MapPage` класс может выглядеть как - уведомления, новый `MapSpan` создается для размещения представления карты:
 
@@ -183,7 +183,7 @@ map.MapType == MapType.Street;
 Как показано в приведенном выше фрагменте кода, указав `MapSpan` экземпляр конструктора карты задает первоначального представления (центральную точку и масштаб) сопоставления при его загрузке. `MoveToRegion` Затем метод класса map можно использовать для изменения положения или масштабирования уровня карты. Существует два способа для создания нового `MapSpan` экземпляр:
 
 -  **MapSpan.FromCenterAndRadius()** -статический метод, чтобы создать диапазон из `Position` и указав `Distance` .
--  **New () MapSpan** -конструктор, использующий `Position` и преобразование градусов, широты и долготы для отображения.
+-  **New () MapSpan** -конструктор, использующий `Position` и градусах широты и долготы для отображения.
 
 
 Чтобы изменить уровень масштаба карты, не изменяя расположение, создайте новый `MapSpan` с использованием текущего расположения из `VisibleRegion.Center` свойство элемента управления картой. Объект `Slider` может использоваться для управления масштабом карты следующим образом (Однако масштабирование непосредственно в элементе управления картой не может обновить сейчас значение ползунка):

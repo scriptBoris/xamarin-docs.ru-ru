@@ -4,15 +4,15 @@ description: XAML использует атрибут xmlns XML для объя�
 ms.prod: xamarin
 ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: a83e31cd117689e3af2f5357331408de55edaecf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 85b9297a62cfb90485be2cbd927abfdcfec2f13c
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102754"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563047"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>Пространства имен XAML в Xamarin.Forms
 

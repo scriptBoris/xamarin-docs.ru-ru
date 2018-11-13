@@ -7,12 +7,12 @@ ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/14/2018
-ms.openlocfilehash: 6f7236a3650c04098edbef92f3d6ed620be501c3
-ms.sourcegitcommit: a635312ffec816ba357a92b66c8c5221c8d9044c
+ms.openlocfilehash: 747c04d028b4c4ee142de04abd118572c5bea781
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "39615396"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527109"
 ---
 # <a name="touch-manipulations"></a>Манипуляции сенсорного ввода
 
@@ -229,7 +229,7 @@ public partial class BitmapScalingPage : ContentPage
                         if (!float.IsNaN(scaleX) && !float.IsInfinity(scaleX) &&
                             !float.IsNaN(scaleY) && !float.IsInfinity(scaleY))
                         {
-                            // If smething bad hasn't happened, calculate a scale and translation matrix
+                            // If something bad hasn't happened, calculate a scale and translation matrix
                             SKMatrix scaleMatrix = 
                                 SKMatrix.MakeScale(scaleX, scaleY, pivotPoint.X, pivotPoint.Y);
 
@@ -1060,7 +1060,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 Выполняется операция масштабирования обычно требует жест жестом сжатия, с помощью двух пальцев. Тем не менее это можно реализовать, масштабирование с одним пальцем благодаря наличию палец переместить углов растрового изображения.
 
-Это показано в **одном масштабируемом углу палец** страницы. Так как в этом примере используется несколько другой тип масштабирования, который реализован в `TouchManipulationManager` класса, она не использует этот класс или `TouchManipulationBitmap` класса. Вместо этого вся логика сенсорного ввода находится в файле кода. Это довольно простой логики, чем обычно, так как он отслеживает только одним пальцем одновременно и просто игнорирует любой дополнительный пальцами, которые могут прикосновения к экрану.
+Это показано в **одном масштабируемом углу палец** страницы. Так как в этом примере используется несколько другой тип масштабирования, чем, реализованы в `TouchManipulationManager` класса, она не использует этот класс или `TouchManipulationBitmap` класса. Вместо этого вся логика сенсорного ввода находится в файле кода. Это довольно простой логики, чем обычно, так как он отслеживает только одним пальцем одновременно и просто игнорирует любой дополнительный пальцами, которые могут прикосновения к экрану.
 
 [ **SingleFingerCornerScale.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml) создает страницу `SKCanvasView` класса и создает `TouchEffect` для отслеживания событий сенсорного экрана:
 

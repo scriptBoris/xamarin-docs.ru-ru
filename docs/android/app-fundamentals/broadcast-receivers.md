@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 51bd3dd4c27dce19344f7660c31a0d4e741e1ad4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a411d4d85877c9868ec49f92b53ca8d7a81f9959
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121143"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528537"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Широковещательные приемники в Xamarin.Android
 
@@ -97,7 +97,7 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
-Приложений, предназначенных для Android 8.0 (уровень API 26) или более поздней версии не может зарегистрировать статически неявное широковещательной передачи. Приложения могут по-прежнему статически регистрироваться для явной широковещательной передачи. Имеется небольшой список неявных-пакетов, которые будут исключены из этих ограничений. Эти исключения описаны в [неявное широковещательных исключения](https://developer.android.com/guide/components/broadcast-exceptions.html) руководство в документации по Android. Приложения, которые хотели бы неявное широковещательные рассылки необходимо выполнить динамически с помощью `RegisterReceiver` метод. Это описано далее.
+Приложений, предназначенных для Android 8.0 (уровень API 26) или более поздней версии не может зарегистрировать статически неявное широковещательной передачи. Приложения могут по-прежнему статически регистрироваться для явной широковещательной передачи. Имеется небольшой список неявных широковещательные рассылки, которые будут исключены из этих ограничений. Эти исключения описаны в [неявное широковещательных исключения](https://developer.android.com/guide/components/broadcast-exceptions.html) руководство в документации по Android. Приложения, которые хотели бы неявное широковещательные рассылки необходимо выполнить динамически с помощью `RegisterReceiver` метод. Это описано далее.
 
 ### <a name="context-registering-a-broadcast-receiver"></a>Регистрация контекста широковещательный приемник
 

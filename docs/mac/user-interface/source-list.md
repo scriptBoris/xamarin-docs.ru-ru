@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 7fa6b128572490ce1fe330b722181e33bbad1ffd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 82e4dfb9add7002fd7d3568d0ec946ea38dfd530
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122053"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526416"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Списки-источники в Xamarin.Mac
 
 _В этой статье рассматривается работа с списки-источники в приложении Xamarin.Mac. Он описывает создание и поддержание списки-источники в Xcode и конструкторе Interface Builder и работать с ними в коде C#._
 
-При работе с C# и .NET в приложении Xamarin.Mac, у вас есть доступ к тому же списков источников, работающему *Objective-C* и *Xcode* does. Поскольку Xamarin.Mac напрямую интегрируется с Xcode, можно использовать конструктор _Interface Builder_ для создания и обслуживания списков источников (или при необходимости создать их непосредственно в коде C#).
+При работе с C# и .NET в приложении Xamarin.Mac, у вас есть доступ к тому же источнику списков, работающий в *Objective-C* и *Xcode* does. Поскольку Xamarin.Mac напрямую интегрируется с Xcode, можно использовать конструктор _Interface Builder_ для создания и обслуживания списков источников (или при необходимости создать их непосредственно в коде C#).
 
 Список источника — это специальный тип представления структуры, используемый для отображения исходного действия, например на боковой панели в Finder или iTunes.
 

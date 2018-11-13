@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/24/2017
-ms.openlocfilehash: 904db0b97a8b21fd51722b70a63386a53e3f5347
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 82dd175222289676c3dacd80522c55e71ba12180
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104041"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526837"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Представления коллекций в Xamarin.Mac
 
 _В этой статье описывается работа с представлениями коллекций в приложении Xamarin.Mac. Он охватывает, создании и обслуживании представлений коллекций в Xcode и конструкторе Interface Builder и программным способом работы с ними._
 
-При работе с C# и .NET в приложении Xamarin.Mac, разработчик имеет доступ к тому же AppKit представления коллекции элементов управления, работающему *Objective-C* и *Xcode* does. Поскольку Xamarin.Mac напрямую интегрируется с Xcode, разработчик использует Xcode _Interface Builder_ для создания и поддержки представления коллекций.
+При работе с C# и .NET в приложении Xamarin.Mac разработчик может использовать одинаковое представление коллекции AppKit элементов управления, работающий в *Objective-C* и *Xcode* does. Поскольку Xamarin.Mac напрямую интегрируется с Xcode, разработчик использует Xcode _Interface Builder_ для создания и поддержки представления коллекций.
 
 Объект `NSCollectionView` отображает сетку, организуются с помощью вложенных представлений `NSCollectionViewLayout`. Представленный каждого вложенное представление в сетке `NSCollectionViewItem` который управляет загрузку содержимого представления из `.xib` файла.
 

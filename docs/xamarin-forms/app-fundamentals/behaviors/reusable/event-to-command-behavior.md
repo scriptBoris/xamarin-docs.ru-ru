@@ -6,13 +6,13 @@ ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: 2609ce4ea677c6b03021a919599c250abff663a3
-ms.sourcegitcommit: 06a52ac36031d0d303ac7fc8163a59c178799c80
+ms.date: 11/09/2018
+ms.openlocfilehash: 8bf8f86cf708806d1c17b3fe4eda0755f98fd646
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50911558"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563190"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>Повторно используемые EventToCommandBehavior
 
@@ -158,10 +158,14 @@ public class EventToCommandBehavior : BehaviorBase<View>
 
 ```xaml
 <ListView ItemsSource="{Binding People}">
-  <ListView.Behaviors>
-    <local:EventToCommandBehavior EventName="ItemSelected" Command="{Binding OutputAgeCommand}"
-                                  Converter="{StaticResource SelectedItemConverter}" />
-  </ListView.Behaviors>
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell Text="{Binding Name}" />
+        </DataTemplate>
+    </ListView.ItemTemplate>
+    <ListView.Behaviors>
+        <local:EventToCommandBehavior EventName="ItemSelected" Command="{Binding OutputAgeCommand}" Converter="{StaticResource SelectedItemConverter}" />
+    </ListView.Behaviors>
 </ListView>
 <Label Text="{Binding SelectedItemText}" />
 ```
@@ -169,16 +173,23 @@ public class EventToCommandBehavior : BehaviorBase<View>
 Эквивалентный код на языке C# показан в следующем примере:
 
 ```csharp
-var listView = new ListView ();
-listView.SetBinding (ItemsView<Cell>.ItemsSourceProperty, "People");
-listView.Behaviors.Add (new EventToCommandBehavior {
-  EventName = "ItemSelected",
-  Command = ((HomePageViewModel)BindingContext).OutputAgeCommand,
-  Converter = new SelectedItemEventArgsToSelectedItemConverter ()
+var listView = new ListView();
+listView.SetBinding(ItemsView<Cell>.ItemsSourceProperty, "People");
+listView.ItemTemplate = new DataTemplate(() =>
+{
+    var textCell = new TextCell();
+    textCell.SetBinding(TextCell.TextProperty, "Name");
+    return textCell;
+});
+listView.Behaviors.Add(new EventToCommandBehavior
+{
+    EventName = "ItemSelected",
+    Command = ((HomePageViewModel)BindingContext).OutputAgeCommand,
+    Converter = new SelectedItemEventArgsToSelectedItemConverter()
 });
 
-var selectedItemLabel = new Label ();
-selectedItemLabel.SetBinding (Label.TextProperty, "SelectedItemText");
+var selectedItemLabel = new Label();
+selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 ```
 
 `Command` Свойство поведения является привязанным к данным `OutputAgeCommand` свойства связанного ViewModel, хотя `Converter` свойству `SelectedItemConverter` экземпляр, который возвращает [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)из [ `ListView` ](xref:Xamarin.Forms.ListView) из [ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs).
@@ -192,7 +203,6 @@ selectedItemLabel.SetBinding (Label.TextProperty, "SelectedItemText");
 ## <a name="summary"></a>Сводка
 
 В этой статье показано, с помощью Xamarin.Forms поведения для вызова команды в том случае, когда создается событие. Поведения можно использовать для сопоставления команд с помощью элементов управления, которые не были предназначены для взаимодействия с помощью команд.
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

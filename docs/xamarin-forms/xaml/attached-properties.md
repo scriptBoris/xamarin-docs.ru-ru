@@ -4,15 +4,15 @@ description: В этой статье содержатся вводные при
 ms.prod: xamarin
 ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 981e59fe3ba8c63d0f6c6a067ceb9f338a02da8f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f9bd7e5be26b4721abe6756ecb6c5ff387c6f5e8
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997336"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563385"
 ---
 # <a name="attached-properties"></a>Вложенные свойства
 

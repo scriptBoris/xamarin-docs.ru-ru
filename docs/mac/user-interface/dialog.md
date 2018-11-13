@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 8c176944d1bec4850f084043fdab81b5c2d51ceb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.openlocfilehash: 0c95e4bcecb2ae787714b8ac6973646caada1b3e
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105211"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528862"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Диалоговые окна в Xamarin.Mac
 
-При работе с C# и .NET в приложении Xamarin.Mac, у вас есть доступ к одной и той же диалоговые окна и модальное Windows, работающему *Objective-C* и *Xcode* does. Поскольку Xamarin.Mac напрямую интегрируется с Xcode, можно использовать конструктор _Interface Builder_ для создания и поддержания вашей модальное Windows (или при необходимости создать их непосредственно в коде C#).
+При работе с C# и .NET в приложении Xamarin.Mac, у вас есть доступ к одной и той же диалоговые окна и модальное Windows, работающий в *Objective-C* и *Xcode* does. Поскольку Xamarin.Mac напрямую интегрируется с Xcode, можно использовать конструктор _Interface Builder_ для создания и поддержания вашей модальное Windows (или при необходимости создать их непосредственно в коде C#).
 
 Диалоговое окно отображается в ответ на действия пользователя и обычно предоставляет как пользователи могут завершить действие. Диалоговое окно требует реакции от пользователя перед закрытием.
 
@@ -1090,7 +1090,7 @@ void ShowSaveAs (NSObject sender)
 
 [![](dialog-images/save04.png "Расширенный объект сохранить лист")](dialog-images/save04.png#lightbox)
 
-Для получения дополнительных сведения о работе с диалоговым окном сохранения см. в разделе Apple [NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098) документации.
+Дополнительные сведения о работе с диалоговым окном сохранения см. в разделе Apple [NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098) документации.
 
 <a name="Summary" />
 

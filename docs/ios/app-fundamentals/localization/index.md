@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
-ms.openlocfilehash: 0c52db61689dd640332fb1e02e2260dda08e4686
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 906489aa3947df24662cbbd0473333caccc032c7
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115930"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527265"
 ---
 # <a name="localization-in-xamarinios"></a>Локализация в Xamarin.iOS
 
@@ -248,7 +248,7 @@ Medium,None: 7/8/2015
 
 iOS предоставляет ряд возможностей для помощи в создании приложений, использующих справа НАЛЕВО:
 
-- Используйте автоматический макет `leading` и `trailing` атрибуты для выравнивание элемента управления (который соответствует влево и вправо для английского языка, но обращено для языков RTL).
+- Используйте автоматический макет `leading` и `trailing` атрибуты для выравнивания элемента управления (который соответствует влево и вправо для английского языка, но обращено для языков RTL).
   [ `UIStackView` ](~/ios/user-interface/controls/uistackview.md) Управления особенно полезна для размещения элементов управления, которые следует учитывать справа НАЛЕВО.
 - Используйте `TextAlignment = UITextAlignment.Natural` для выравнивания текста (которая остается для большинства языков, но для справа НАЛЕВО).
 - `UINavigationController` автоматически зеркально отражает "Назад" и меняет направление прокрутки.

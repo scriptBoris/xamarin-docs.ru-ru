@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 4f50efb7b78db67b310ccddec3eb94bfe4d2e521
-ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
-ms.translationtype: MT
+ms.openlocfilehash: 833bdc0fd087fcf8dbb8cce3b8b23f427302f5e7
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50301257"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526875"
 ---
 # <a name="android-localization"></a>Android локализации
 
@@ -207,7 +207,7 @@ var translated = Resources.GetQuantityString (
 
 Можно также предоставляют другие типы другой вариант — языковые ресурсы, включая макеты, анимации и необработанные файлы. Это означает, что можно предоставить макет экрана для одного или нескольких из ваших целевых языков, например можно создать макет специально для немецкого языка, позволяет очень длинные текстовые метки.
 
-Android 4.2 появилась поддержка [справа налево (RTL)](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html) Если задать параметр приложений `android:supportsRtl="true"`. Квалификатор ресурсов `"ldrtl"` может быть включено в имя direcory должен содержать пользовательские макеты, предназначенные для отображения справа НАЛЕВО.
+Android 4.2 появилась поддержка [справа налево (RTL)](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html) Если задать параметр приложений `android:supportsRtl="true"`. Квалификатор ресурсов `"ldrtl"` может быть включено в имя каталога, содержащие пользовательские макеты, предназначенные для отображения справа НАЛЕВО.
 
 Дополнительные сведения о resource directory именования и резервных точек, см. документы Android для [обеспечении дополнительных ресурсов](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources).
 
@@ -225,7 +225,7 @@ Android 4.2 появилась поддержка [справа налево (RT
 
 Android 4.2 и более поздних версий обеспечивает полную поддержку для макетов с направлением письма справа НАЛЕВО, подробно описаны в [поддерживает собственный справа НАЛЕВО блог](http://android-developers.blogspot.dk/2013/03/native-rtl-support-in-android-42.html).
 
-При использовании Android 4.2 (уровень API 17) и более поздней, выравнивание, могут указываться значения `start` и `end` вместо `left` и `right` (например `android:paddingStart`). Также существуют новые интерфейсы API, такие как `LayoutDirection`, `TextDirection`, и `TextAlignment` для создания экранов, адаптировать для модулей чтения справа НАЛЕВО.
+При использовании Android 4.2 (уровень API 17) и более поздних версиях выравнивание, могут указываться значения `start` и `end` вместо `left` и `right` (например `android:paddingStart`). Также существуют новые интерфейсы API, такие как `LayoutDirection`, `TextDirection`, и `TextAlignment` для создания экранов, адаптировать для модулей чтения справа НАЛЕВО.
 
 На следующем снимке экрана показан [локализованные **Tasky** пример](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) на арабском языке:
 

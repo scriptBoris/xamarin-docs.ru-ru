@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: a008b270d4ff670a03f18318186ca038c5c0348d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 881b465643b576f5d3f4fc8121c5a873087a876c
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118881"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527343"
 ---
 # <a name="device-orientation"></a>Ориентации устройства
 
@@ -96,7 +96,7 @@ Xamarin.Forms не предлагает все собственные событ
 > [!NOTE]
 > Нет существующих, бесплатный пакет NuGet для получения уведомлений об изменениях ориентации в общем коде. См. в разделе [репозиторий GitHub](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Дополнительные сведения.
 
-Кроме того, можно переопределить [ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*) метод `Page`, вставка любой макет изменения логики существует. `OnSizeAllocated` Метод вызывается всякий раз, когда `Page` выделяется новый размер, что происходит whenver при повороте устройства. Обратите внимание, что базовая реализация `OnSizeAllocated` выполняет функции важные макета, поэтому очень важно вызвать базовую реализацию в переопределении:
+Кроме того, можно переопределить [ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*) метод `Page`, вставка любой макет изменения логики существует. `OnSizeAllocated` Метод вызывается всякий раз, когда `Page` выделяется новый размер, что происходит при повороте устройства. Обратите внимание, что базовая реализация `OnSizeAllocated` выполняет функции важные макета, поэтому очень важно вызвать базовую реализацию в переопределении:
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)

@@ -6,12 +6,12 @@ ms.assetid: AC9FD56F-6E4A-40DA-8168-45A761D869FD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: 42155eb541849f365e7fab0a3d5c3ad583e760b7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9fd6c9108695f58bd69a1c4aa307ca2e4be6dede
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109410"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528745"
 ---
 # <a name="bouncinggame-details"></a>Сведения об игре BouncingGame
 
@@ -100,7 +100,7 @@ namespace BouncingGame
 
 ![Добавление файла к диалоговому окну папку](bouncing-game-images/image2.png "добавить файл в папку диалоговое окно")
 
-Далее мы добавим файл в проект Android. Щелкните правой кнопкой мыши или щелчком элемента управления в папке Content (который находится в **активы** папку на проекты Android) и нажмите «выбрать» **добавить** > **добавить файлы...** . Перейдите на этот раз в iOS проект **содержимого** папки. При запросе о том, как добавить файл, выберите **связать** параметр:
+Далее мы добавим файл в проект Android. Щелкните правой кнопкой мыши или щелчком элемента управления в папке Content (который находится в **активы** папку на проекты Android) и выберите **добавить** > **добавить файлы...** . Перейдите на этот раз в iOS проект **содержимого** папки. При запросе о том, как добавить файл, выберите **связать** параметр:
 
 ![Добавление файла к диалоговому окну папку](bouncing-game-images/addalink.png "добавить файл в папку диалоговое окно")
 

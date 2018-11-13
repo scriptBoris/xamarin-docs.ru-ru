@@ -7,12 +7,12 @@ ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c4d92784654db8e566b41c8270dbe2095bd28b94
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
-ms.translationtype: MT
+ms.openlocfilehash: 354338aedf67a02918858cbab71d866e5cd8ec9d
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156604"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527148"
 ---
 # <a name="summary-of-chapter-22-animation"></a>Сводка информации в главе 22. Анимация
 
@@ -48,7 +48,7 @@ ms.locfileid: "39156604"
 
 ### <a name="composite-animations"></a>Составной анимации
 
-Вы можете объединять ожидаемой и не ожидать анимации для создания составного анимаций. Это анимации в `ViewExtensions` , предназначенных `TranslatonX`, `TranslationY`, и `Scale` преобразования свойств:
+Вы можете объединять ожидаемой и не ожидать анимации для создания составного анимаций. Это анимации в `ViewExtensions` , предназначенных `TranslationX`, `TranslationY`, и `Scale` преобразования свойств:
 
 - [`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))
 - [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))
@@ -134,7 +134,7 @@ ms.locfileid: "39156604"
 
 ## <a name="deeper-into-animations"></a>Более подробная анимации
 
-Xamarin.Forms системы анимации может быть немного сбить с толку. В дополнение к `Easing` класс, состоит из системы анимации `ViewExtensions`, `Animation`, и `AnimationExtension` classses.
+Xamarin.Forms системы анимации может быть немного сбить с толку. В дополнение к `Easing` класс, состоит из системы анимации `ViewExtensions`, `Animation`, и `AnimationExtension` классы.
 
 ### <a name="viewextensions-class"></a>Класс ViewExtensions
 
@@ -144,7 +144,7 @@ Xamarin.Forms системы анимации может быть немного
 
 [ `Animation` ](xref:Xamarin.Forms.AnimationExtensions) Класс имеет [конструктор](xref:Xamarin.Forms.Animation.%23ctor(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Action)) пять аргументов, чтобы определить обратный вызов по завершении методов и параметров анимации.
 
-Дочерние анимации могут быть добавлены инструкцией [ `Add` ](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation)), [ `Insert` ](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation)), [ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double)), и и перегрузки [ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Double,System.Double)).
+Дочерние анимации могут быть добавлены инструкцией [ `Add` ](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation)), [ `Insert` ](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation)), [ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double))и перегрузки [ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Double,System.Double)).
 
 Затем объекта анимации запускается с помощью вызова [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) метод.
 
@@ -162,7 +162,7 @@ Xamarin.Forms системы анимации может быть немного
 
 ### <a name="beyond-the-high-level-animation-methods"></a>За пределами методов высокоуровневые анимации
 
-[ **ConcurrentAnimations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations) образце также показано, как для выполнения анимации, которые выходят за рамки свойства, который является целью `ViewExtensions` методы. В примере один ряд периоды становиться длиннее; в другом примере `BackgroundColor` анимированного свойства.
+[ **ConcurrentAnimations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations) образце также показано, как для выполнения анимации, которые выходят за рамки свойства, `ViewExtensions` методы. В примере один ряд периоды становиться длиннее; в другом примере `BackgroundColor` анимированного свойства.
 
 ### <a name="more-of-your-own-awaitable-methods"></a>Несколько собственных awaitable методов
 

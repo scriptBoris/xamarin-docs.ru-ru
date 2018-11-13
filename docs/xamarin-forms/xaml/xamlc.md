@@ -4,15 +4,15 @@ description: В этой статье объясняется, как XAML мож
 ms.prod: xamarin
 ms.assetid: 9A2D10A6-5DFC-485F-A75A-2F7B98314025
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 08/22/2018
-ms.openlocfilehash: de1ac47a56bf8d75eefb2ed6c7237f2f63f56ecc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9567f3ad8d748a94a03cd1c86254072d4ba3bbdc
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105952"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563528"
 ---
 # <a name="xaml-compilation-in-xamarinforms"></a>Компиляция XAML в Xamarin.Forms
 

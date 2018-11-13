@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 69f754db0fd9661fb317f43c7cda546b0b510265
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: afecf5c173e919bd20015aadd8a874f492dc4e34
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119424"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527083"
 ---
 # <a name="ios-platform-specifics"></a>Особенности платформы iOS
 
@@ -332,7 +332,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 Результатом является то, что указанный `UpdateMode` применяется к [ `Picker` ](xref:Xamarin.Forms.Picker), какие элементы управления, когда происходит выбор элементов:
 
-[![](ios-images/picker-updatemode.png "Средство выбора UpdateMode специфические для платформы")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
+[![](ios-images/picker-updatemode.png "Средство выбора UpdateMode платформы")](ios-images/picker-updatemode-large.png#lightbox "выбора UpdateMode специфические для платформы")
 
 <a name="slider-updateontap" />
 
@@ -721,7 +721,7 @@ public class iOSModalFormSheetPageCS : ContentPage
 
 Кроме того `GetModalPresentationStyle` метод может использоваться для получения текущего значения `UIModalPresentationStyle` перечисления, который применяется к [ `Page` ](xref:Xamarin.Forms.Page).
 
-В результате стиль модальное презентации на [ `Page` ](xref:Xamarin.Forms.Page) можно задать:
+Результатом является, стиль модальное презентации на [ `Page` ](xref:Xamarin.Forms.Page) можно задать:
 
 [![](ios-images/modal-presentation-style-small.png "Модальное стили презентаций на iPad")](ios-images/modal-presentation-style-large.png#lightbox "модальное стили презентаций на iPad")
 
@@ -777,7 +777,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 В результате [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) можно отключить, задерживая получение содержимого штрихи, таким образом, в этом сценарии [ `Slider` ](xref:Xamarin.Forms.Slider) получает жест, а не [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) странице [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
 
-[![](ios-images/scrollview-delay-content-touches.png "Задержка ScrollView содержимое затрагивает специфические для платформы")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
+[![](ios-images/scrollview-delay-content-touches.png "Задержка ScrollView содержимое касается платформы")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView задержки содержимого затрагивает специфические для платформы")
 
 ## <a name="application"></a>Приложение
 

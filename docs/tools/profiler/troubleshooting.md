@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: lobrien
 ms.author: laobri
 ms.date: 10/27/2017
-ms.openlocfilehash: 34406ce8d4276ba36ab2ddd49e73681ff2fef773
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9b4da5b6dfe3f0254340d9175b08198bd52a45a
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103755"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563346"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler Устранение неполадок
 
@@ -79,7 +79,7 @@ ms.locfileid: "50103755"
 
 #### <a name="to-watch-a-specific-thread"></a>Для просмотра из определенного потока
 
-Если у вас есть поток, который вы хотите смотреть в частности, было бы идеально для именования в поток с самого начала его создания, таким образом, чтобы получить get `ThreadName` вместо `0x0`. Например задать имя потока в качестве пользовательского интерфейса можно использовать следующий код:
+Если у вас есть поток, который вы хотите смотреть в частности, было бы идеально для именования в поток с самого начала его создания, чтобы получить `ThreadName` вместо `0x0`. Например задать имя потока как `UI`, можно использовать следующий код:
 
 ```csharp
 RunOnUiThread (() => {

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e1e5ec5d064ad7610c5b7be8d18284d3610352c9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 554c96cdb46041b75a48523cc2952f05d2a7b1db
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106888"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51564009"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Введение в раскадровки в Xamarin.iOS
 
@@ -100,11 +100,11 @@ NSObject sender)
 {
     base.PrepareForSegue (segue, sender);
 
-    var callHistoryContoller = segue.DestinationViewController 
+    var callHistoryController = segue.DestinationViewController 
                                   as CallHistoryController;
 
-    if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+    if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 }
 ```
@@ -112,14 +112,14 @@ NSObject sender)
 В этом примере `PrepareForSegue` метод будет вызываться при активации пользователем переход. Сначала нам нужно создать экземпляр «принимающей» контроллер представления и настройте его как перехода целевой контроллер представления. Это делается с помощью строки кода ниже:
 
 ```csharp
-var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+var callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
 Метод теперь имеет возможность задать свойства `DestinationViewController`. В этом примере мы использовали это, передавая список, который называется `PhoneNumbers` для `CallHistoryController` и назначьте ей объект с тем же именем:
 
 ```csharp
-if (callHistoryContoller != null) {
-        callHistoryContoller.PhoneNumbers = PhoneNumbers;
+if (callHistoryController != null) {
+        callHistoryController.PhoneNumbers = PhoneNumbers;
     }
 ```
 
@@ -368,7 +368,7 @@ public partial class MainViewController : UIViewController
 
 ## <a name="using-storyboard-references"></a>С помощью ссылки раскадровки
 
-Ссылки раскадровки позволяет принимать большие и сложные макета раскадровки, разбив его на небольших раскадровок, которые получение ссылки из исходного, таким образом удаление удаление сложности и делая полученный в результате отдельных раскадровок проще для разработки и Ведение.
+Ссылки раскадровки позволяет принимать большие и сложные макета раскадровки, разбив его на небольших раскадровки, получение ссылки из исходного, таким образом удаление сложности и упрощение разработки и обслуживания итоговый отдельных раскадровок.
 
 Кроме того, можно предоставить ссылку на раскадровку _привязки_ другой сцену в одной раскадровке или конкретных сцены на другом.
 

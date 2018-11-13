@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
-ms.openlocfilehash: 420fabf7b1f4c5bf4cacdeaf10823ae3233f5bd0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c0adee0dae1135bdfd076082e85a471db1cd1ecf
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113239"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528563"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Службы привязки в Xamarin.Android
 
@@ -234,7 +234,7 @@ namespace BoundServiceDemo
 
 * **`Intent`**  &ndash; Намерение необходимо явно определить какая служба для подключения к.
 * **`IServiceConnection` Объект** &ndash; этот объект — это посредник, который предоставляет методы обратного вызова для уведомления клиента, когда запущено и остановлено привязанную службу.
-* **[`Android.Content.Bind`](https://developer.xamarin.com/api/type/Android.Content.Bind/) Перечисление** &ndash; этот параметр имеет набор флагов, используются системой для при привязки объекта. Наиболее часто используемые значение [ `Bind.AutoCreate` ](https://developer.xamarin.com/api/field/Android.Content.Bind.AutoCreate/), который будет автоматически запустить службу, если оно еще не запущено.
+* **[`Android.Content.Bind`](https://developer.xamarin.com/api/type/Android.Content.Bind/) Перечисление** &ndash; этот параметр имеет набор флагов используются системой для при привязки объекта. Наиболее часто используемые значение [ `Bind.AutoCreate` ](https://developer.xamarin.com/api/field/Android.Content.Bind.AutoCreate/), который будет автоматически запустить службу, если оно еще не запущено.
 
 В следующем фрагменте кода приведен пример того, как запустить привязанную службу в действии с помощью объекта intent явные:
 

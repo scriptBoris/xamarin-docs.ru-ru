@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a8c55c8b4ff3fbd515aad8bf45c52a0b549af9f
-ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
-ms.translationtype: MT
+ms.openlocfilehash: 0d89fff81d1d13baa578068bcaef11dd5af00e14
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285603"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527057"
 ---
 # <a name="table-views-in-xamarinmac"></a>Представления таблиц в Xamarin.Mac
 
 _В этой статье рассматривается работа с представлениями таблиц в приложении Xamarin.Mac. Он описывает создание представлений таблиц в Xcode и конструкторе Interface Builder и работать с ними в коде._
 
-При работе с C# и .NET в приложении Xamarin.Mac, у вас есть доступ к той же таблицы представления, работающему *Objective-C* и *Xcode* does. Поскольку Xamarin.Mac напрямую интегрируется с Xcode, можно использовать конструктор _Interface Builder_ для создания и поддержания представлениях таблицы (или при необходимости создать их непосредственно в коде C#).
+При работе с C# и .NET в приложении Xamarin.Mac, у вас есть доступ к той же таблицы представления, работающий в *Objective-C* и *Xcode* does. Поскольку Xamarin.Mac напрямую интегрируется с Xcode, можно использовать конструктор _Interface Builder_ для создания и поддержания представлениях таблицы (или при необходимости создать их непосредственно в коде C#).
 
 В табличное представление отображает данные в табличном формате, содержащий один или несколько столбцов данных в нескольких строках. Зависимости от типа создаваемого представления таблицы, пользователь может сортировать по столбцу, реорганизовать столбцы, добавить столбцы, удалить столбцы или изменить данные, содержащиеся в таблице.
 

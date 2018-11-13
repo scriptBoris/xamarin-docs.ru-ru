@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
 ms.technology: xamarin-forms
 ms.custom: xamu-video
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 49a0d1dd67959c5949ebe500036b849180795660
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 44d75322f151850b11e4da90486168c04496eca7
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108747"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51564022"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -385,7 +385,7 @@ public partial class PhotoWrappingPage : ContentPage
 ## <a name="the-bindable-properties-in-detail"></a>Привязываемые свойства подробно
 
 Теперь, когда вы узнали некоторые типичные способы применения `FlexLayout`, свойства `FlexLayout` можно изучать более подробно. 
-`FlexLayout` Определяет шесть привязываемые свойства, установленные для `FlexLayout` сама, либо в коде или XAML, для управления orientatin и выравнивание. (Одно из этих свойств [ `Position` ](xref:Xamarin.Forms.FlexLayout.Position), в этой статье не рассматривается.)
+`FlexLayout` Определяет шесть привязываемые свойства, установленные для `FlexLayout` сама, либо в коде или XAML, ориентацию элемента управления и выравнивание. (Одно из этих свойств [ `Position` ](xref:Xamarin.Forms.FlexLayout.Position), в этой статье не рассматривается.)
 
 Вы можете поэкспериментировать с пятью оставшихся привязываемые свойства с помощью **поэкспериментировать** странице **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** образца. Эта страница позволяет добавить или удалить дочерние объекты из `FlexLayout` и задать сочетания пять связываемые свойства. Все дочерние `FlexLayout` являются `Label` представления разных цветов и размеров, с помощью `Text` свойство присвоено значение, соответствующее положению в `Children` коллекции.
 

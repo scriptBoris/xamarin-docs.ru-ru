@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: feaa0c3547c01490a8ada82b17b4c7a824e03b0b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7bfb0cad8bbc025bc5dba39abe3699ae77ee83ba
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114656"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526485"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS Устранение неполадок
 
@@ -35,7 +35,7 @@ ms.locfileid: "50114656"
 
 <a name="deploy" />
 
-- Более ранних версиях Visual Studio для Mac неправильно отображается одно из **AppleCompanionSettings** значки как 88 x 88 точек; что приводит к **отсутствует значок ошибки** при попытке отправить в приложение Store.
+- Более ранних версиях Visual Studio для Mac неправильно отображается одно из **AppleCompanionSettings** значки как 88 x 88 точек; что приводит к **отсутствует значок ошибки** при попытке отправить в App Store.
     Этот значок должен составлять пикселей 87 x 87 (29 единицы измерения для **@3x** Retina экранов). Не удается устранить эту проблему в Visual Studio для Mac - либо изменение ресурса изображения в Xcode или вручную изменить **Contents.json** файла (в соответствии с [в этом примере](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
 
 - Если проект расширения Watch **Info.plist > идентификатор пакета WKApp** не [соответствующим образом изменить](~/ios/watchos/get-started/project-references.md) в соответствии с приложение Watch **идентификатор пакета**, отладчик не сможет подключиться и Visual Studio для Mac будет ожидать сообщение *«Ожидание подключения отладчика»*.

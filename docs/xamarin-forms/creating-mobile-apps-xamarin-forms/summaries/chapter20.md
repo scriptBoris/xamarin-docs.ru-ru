@@ -4,15 +4,15 @@ description: 'Создание мобильных приложений с пом
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: d606432174807498fd458470647109de4fa0b6b4
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 527ecfa03adb78d8b97e95d0b6b81ceb12f0a107
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156734"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563775"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Сводка Глава 20. Асинхронный и файловый ввод-вывод
 
@@ -28,7 +28,7 @@ ms.locfileid: "39156734"
 > [!NOTE]
 > Следует использовать программы Xamarin.Forms [ `HttpClient` ](xref:System.Net.Http.HttpClient) вместо [ `WebRequest` ](xref:System.Net.WebRequest) для доступа к файлам через Интернет. `HttpClient` поддерживает асинхронные операции.
 
-Более современный подход к асинхронной обработки на .NET и C#. Это включает в себя [ `Task` ](xref:System.Threading.Tasks.Task) и [ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1) классов и других типов в [ `System.Threading` ](xref:System.Threading) и [ `System.Threading.Tasks` ](xref:System.Threading.Tasks) пространства имен, а также в C# 5.0 `async` и `await` ключевые слова. Это, что рассматривается в этой главе.
+Более современный подход к асинхронной обработки на .NET и C#. Это включает в себя [ `Task` ](xref:System.Threading.Tasks.Task) и [ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1) классов и других типов в [ `System.Threading` ](xref:System.Threading) и [ `System.Threading.Tasks` ](xref:System.Threading.Tasks) пространства имен, а также C# 5.0 `async` и `await` ключевые слова. Это, что рассматривается в этой главе.
 
 ## <a name="from-callbacks-to-await"></a>Из обратных вызовов для ожидания
 

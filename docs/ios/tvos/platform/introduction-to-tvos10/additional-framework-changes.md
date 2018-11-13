@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 8f7094cebf284f301e08faae8d94c99a73964d55
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4ca9856251d35a741d496b6e8b45b07e851e0e89
+ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114292"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51528615"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>Изменения платформы дополнительных tvOS 10
 
@@ -85,7 +85,7 @@ tvOS 10 вносит следующие усовершенствования fra
 
  - Используйте новый [NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval) класса, чтобы дата и время вычисления интервала, например длительности для сравнения интервалы и тестирование для пересечения интервал.
  - Были добавлены несколько новых свойств [NSLocal](https://developer.apple.com/reference/foundation/nslocale) класс получения местной информации и отображение доступных форматов.
- - Используйте новый [NSMeasuerment](https://developer.apple.com/reference/foundation/nsmeasurement) класс для преобразования между разные единицы из мер (единица Измерения) или выполняют вычисления над значениями в разных UOMs.
+ - Используйте новый [NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement) класс для преобразования между разные единицы из мер (единица Измерения) или выполняют вычисления над значениями в разных UOMs.
  - Используйте новый [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter) класс для форматирования локализованного измерения для отображения для конечного пользователя.
  - Используйте новый [NSUnit](https://developer.apple.com/reference/foundation/nsunit) и [NSDimension](https://developer.apple.com/reference/foundation/nsdimension) классы для представления определенных UOMs.
 
@@ -182,7 +182,7 @@ tvOS 10 вносит следующие усовершенствования fra
  - Новый `UIGraphicsRender` класс предоставляет метод объектно ориентированного создания растровые изображения или PDF-файлы из UIKit отрисовки или Core Graphics и заменяет нерекомендуемый `UIGraphicsBeginImageContext` метод.
  - `UIUserInterfaceStyle` Был добавлен класс, чтобы определить, какие темы пользовательского интерфейса (Темная или Светлая) в данный момент активна.
  - Добавлена поддержка нового, полностью интерактивные, объектно ориентированного прерываемые анимации и Ван связываться с помощью жестов. Pleas см. в разделе Apple [по протоколу UIViewAnimating](https://developer.apple.com/reference/uikit/uiviewanimating), [ссылки на класс UIViewPropertyAnimator](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), [по протоколу UITimingCurveProvider](https://developer.apple.com/reference/uikit/uitimingcurveprovider), [Ссылки на класс UICubicTimingParameters](https://developer.apple.com/reference/uikit/uicubictimingparameters) и [ссылки на класс UISpringTimingParameter](https://developer.apple.com/reference/uikit/uispringtimingparameters) Дополнительные сведения.
- - Новый `UIPreviewInteraction` и `UIPreviewInteractionDelegate` разрешить приложению приложения предоставляют пользовательский интерфейс для операций считывания и pop.
+ - Новый `UIPreviewInteraction` и `UIPreviewInteractionDelegate` позволяют приложению предоставлять пользовательский интерфейс для операций считывания и pop.
  - Новый `UIAccessibilityCustomRotor` класс позволяет приложению предоставлять пользовательские, зависящего от контекста функциональные возможности для вспомогательных технологий, таких как Voice Over.
  - Используйте `UIAccessibilityIsAssistiveTouchRunning` и `UIAccessibilityAssistiveTouchStatusDidChangeNotification` символы, чтобы определить, включена ли AssistiveTouch.
  - Используйте `UIAccessibilityHearingDevicePairedEar` и `UIAccessibilityHearingDevicePairedEarDidChangeNotification` символы, чтобы получить состояние какой-либо пару вспомогательные средства MFi вашим отзывам.

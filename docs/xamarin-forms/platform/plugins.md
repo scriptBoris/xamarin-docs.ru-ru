@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/05/2018
-ms.openlocfilehash: 4d121c2dfcca380e1735da1a4ca47c42d1957b8a
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: ac8e5323a2a2e05ac03294bb6919e8dfadc93655
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854744"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526524"
 ---
 # <a name="consuming-and-creating-xamarinforms-plugins"></a>Использование и создание подключаемых модулей Xamarin.Forms
 
@@ -53,7 +53,7 @@ Xamarin community создала много кроссплатформенных
 
 Чтение Монтеманьо [блога](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/) описать этот процесс создания подключаемых модулей для Xamarin.
 
-Последнее время подключаемых модулей могут быть создаваться на одной платформе, предназначенный для нескольких платформ. Этот подход рассматривается в Монтеманьо [блога](https://montemagno.com/converting-xamarin-libraries-to-sdk-style-multi-targeted-projects/). Этот подход используется в Монтеманьо подключаемые модули, ссылки выше, а также формат используется в **Xamarin.Essentials**.
+Последнее время подключаемых модулей могут создаваться на одной платформе, предназначенный для нескольких платформ. Этот подход рассматривается в Монтеманьо [блога](https://montemagno.com/converting-xamarin-libraries-to-sdk-style-multi-targeted-projects/). Этот подход используется в Монтеманьо подключаемые модули, ссылки выше, а также формат используется в **Xamarin.Essentials**.
 
 Рекомендуется избегать ссылок на Xamarin.Forms непосредственно из подключаемого модуля.
 Это может создать проблемы конфликта версий, когда другие разработчики пытаются использовать подключаемый модуль. Вместо этого попробуйте разработать API, таким образом, чтобы он может использоваться любым приложением Xamarin или .NET.

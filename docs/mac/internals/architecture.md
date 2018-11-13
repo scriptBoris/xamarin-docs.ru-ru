@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 04/12/2017
-ms.openlocfilehash: b51dd4f2a6bf0e3e5ec206953e60c264c70107a5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
+ms.openlocfilehash: 7b9b3b648f6ac66859714052e916407026da10d4
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122287"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526940"
 ---
 # <a name="xamarinmac-architecture"></a>Архитектура Xamarin.Mac
 
@@ -105,7 +105,7 @@ class MyViewController : UIViewController{
 
 ## <a name="generator"></a>Generator
 
-Xamarin.Mac содержит определения для каждого API Mac. Можно выполнять поиск любого из этих на [репозиторий github MaciOS](https://github.com/xamarin/xamarin-macios/tree/master/src). Эти определения содержат интерфейсы с атрибутами, а также все необходимые методы и свойства. Например, следующий код является используется для определения NSBox в [пространства имен AppKit](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526). Обратите внимание на то, что он является интерфейсом ряд методов и свойств:
+Xamarin.Mac содержит определения для каждого API Mac. Можно выполнять поиск любого из этих на [репозиторий github MaciOS](https://github.com/xamarin/xamarin-macios/tree/master/src). Эти определения содержат интерфейсы с атрибутами, а также все необходимые методы и свойства. Например, следующий код используется для определения NSBox в [пространства имен AppKit](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526). Обратите внимание на то, что он является интерфейсом ряд методов и свойств:
 
 ```csharp
 [BaseType (typeof (NSView))]

@@ -4,15 +4,15 @@ description: CocosSharp может использоваться для доба�
 ms.prod: xamarin
 ms.assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E
 ms.technology: xamarin-forms
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: c823eb27552f0a42ad428ed6f36790e925079295
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 00c6b40e7611b0111d2ed2d0fabb3f60619d481a
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998811"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563554"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Использование CocosSharp в Xamarin.Forms
 
@@ -216,9 +216,9 @@ public class GameScene : CCScene
 
 
 ```csharp
-// Keep the GameScene at class scope
-// so the button click events can access it:
-GameScene gameScene;
+// Keep the GameScene at class scope
+// so the button click events can access it:
+GameScene gameScene;
 ```
 
 Теперь можно скомпилировать наш проект и запустить его, чтобы увидеть CocosSharp под управлением. Мы еще не добавили ничего для наших `GameScene,` это черный — цвет по умолчанию сцены CocosSharp в верхней части нашей странице:
@@ -288,8 +288,8 @@ CocosSharp визуальные элементы (такие как `CCDrawNode`
 
 
 ```csharp
-circle.PositionX = 20;
-circle.PositionY = 50;
+circle.PositionX = 20;
+circle.PositionY = 50;
 ```
 
 Это важно отметить, что CocosSharp объекты располагаются с явно указанными значениями позиции, в отличие от большинства представления Xamarin.Forms, которые автоматически располагаются в соответствии с поведение их родительские элементы управления макета.
@@ -298,14 +298,14 @@ circle.PositionY = 50;
 
 
 ```csharp
-public void MoveCircleLeft()
+public void MoveCircleLeft()
 {
-    circle.PositionX -= 10;
+    circle.PositionX -= 10;
 }
 
-public void MoveCircleRight()
+public void MoveCircleRight()
 {
-    circle.PositionX += 10;
+    circle.PositionX += 10;
 }
 ```
 
@@ -313,27 +313,27 @@ public void MoveCircleRight()
 
 
 ```csharp
-void CreateBottomHalf(Grid grid)
+void CreateBottomHalf(Grid grid)
 {
-    // We'll use a StackLayout to organize our buttons
-    var stackLayout = new StackLayout();
+    // We'll use a StackLayout to organize our buttons
+    var stackLayout = new StackLayout();
 
-    // The first button will move the circle to the left when it is clicked:
-    var moveLeftButton = new Button {
-        Text = "Move Circle Left"
-    };
-    moveLeftButton.Clicked += (sender, e) => gameScene.MoveCircleLeft ();
-    stackLayout.Children.Add (moveLeftButton);
+    // The first button will move the circle to the left when it is clicked:
+    var moveLeftButton = new Button {
+        Text = "Move Circle Left"
+    };
+    moveLeftButton.Clicked += (sender, e) => gameScene.MoveCircleLeft ();
+    stackLayout.Children.Add (moveLeftButton);
 
-    // The second button will move the circle to the right when clicked:
-    var moveCircleRight = new Button {
-        Text = "Move Circle Right"
-    };
-    moveCircleRight.Clicked += (sender, e) => gameScene.MoveCircleRight ();
-    stackLayout.Children.Add (moveCircleRight);
+    // The second button will move the circle to the right when clicked:
+    var moveCircleRight = new Button {
+        Text = "Move Circle Right"
+    };
+    moveCircleRight.Clicked += (sender, e) => gameScene.MoveCircleRight ();
+    stackLayout.Children.Add (moveCircleRight);
 
-    // The stack layout will be in the bottom half (row 1):
-    grid.Children.Add (stackLayout, 0, 1);
+    // The stack layout will be in the bottom half (row 1):
+    grid.Children.Add (stackLayout, 0, 1);
 }
 ```
 

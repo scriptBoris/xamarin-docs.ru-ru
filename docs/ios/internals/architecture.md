@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 106357e9442d51fdd31bb30b4f0342e2b59f67fd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d08f7e3a35cd82f4262ef1f145d4b4648f7baef8
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118491"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526667"
 ---
 # <a name="ios-app-architecture"></a>Архитектура приложения iOS
 
-Приложений Xamarin.iOS запуск в среде выполнения Mono и использование полной компиляции Ahead из времени (AOT) компиляции C# код на языке ассемблера ARM. Эта команда запускает side-by-side с [среде выполнения Objective-c.](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/). Обе эти среды выполнения выполняются на основе UNIX-подобных ядро, в частности [XNU](https://en.wikipedia.org/wiki/XNU)и предоставлять различные интерфейсы API для пользовательского кода, что позволяет разработчикам получать доступ к базовой системы машинного или управляемого.
+Приложений Xamarin.iOS запуск в среде выполнения Mono и использование полной компиляции Ahead из времени (AOT) компиляции C# код на языке ассемблера ARM. Эта команда запускает side-by-side с [среде выполнения Objective-c](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/). Обе эти среды выполнения выполняются на основе UNIX-подобных ядро, в частности [XNU](https://en.wikipedia.org/wiki/XNU)и предоставлять различные интерфейсы API для пользовательского кода, что позволяет разработчикам получать доступ к базовой системы машинного или управляемого.
 
 На следующей схеме показан общий обзор этой архитектуры:
 
@@ -118,7 +118,7 @@ ms.locfileid: "50118491"
 
 ## <a name="generator"></a>Generator
 
-Xamarin.iOS содержит определения для каждого единый API iOS. Можно выполнять поиск любого из этих на [репозиторий github MaciOS](https://github.com/xamarin/xamarin-macios/tree/master/src). Эти определения содержат интерфейсы с атрибутами, а также все необходимые методы и свойства. Например, следующий код является используется для определения UIToolbar в UIKit [пространства имен](https://github.com/xamarin/xamarin-macios/blob/master/src/uikit.cs#L11277-L11327). Обратите внимание на то, что он является интерфейсом ряд методов и свойств:
+Xamarin.iOS содержит определения для каждого единый API iOS. Можно выполнять поиск любого из этих на [репозиторий github MaciOS](https://github.com/xamarin/xamarin-macios/tree/master/src). Эти определения содержат интерфейсы с атрибутами, а также все необходимые методы и свойства. Например, следующий код используется для определения UIToolbar в UIKit [пространства имен](https://github.com/xamarin/xamarin-macios/blob/master/src/uikit.cs#L11277-L11327). Обратите внимание на то, что он является интерфейсом ряд методов и свойств:
 
 ```csharp
 [BaseType (typeof (UIView))]

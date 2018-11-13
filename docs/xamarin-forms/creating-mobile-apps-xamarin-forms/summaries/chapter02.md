@@ -4,15 +4,15 @@ description: 'Создание мобильных приложений с пом
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: fe6a8c3d17cf1fe6f489f6425bbdaa3cd30f390a
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: fcb832e851d7467679d979841dad60d117240b59
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156688"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563889"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Сводка Глава 2. Анатомия приложения
 
@@ -102,7 +102,7 @@ ms.locfileid: "39156688"
 
 Большинство разработчиков Xamarin.Forms предпочитают подход библиотеки. В этой книге большую часть решений использовать библиотеку. Те, которые используют SAP включают **Sap** суффикс имени проекта.
 
-При использовании SAP код в общем проекте можно выполнить разный код для различных платформ с помощью директивы препроцессора C# (`#if`, #`elif`, и `#endif`) с помощью этих предопределенных идентификаторов:
+При использовании SAP код в общем проекте можно выполнить разный код для различных платформ с помощью C# директивы препроцессора (`#if`, #`elif`, и `#endif`) с помощью этих предопределенных идентификаторов:
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
@@ -112,7 +112,7 @@ ms.locfileid: "39156688"
 
 ## <a name="labels-for-text"></a>Метки для текста
 
-[ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings) решении показано, как добавить новый файл C# для **Greetings** проекта. Этот файл определяет класс с именем `GreetingsPage` , наследуемый от класса `ContentPage`. В этой книге, большинство проектов содержат один `ContentPage` производных, имя которого является имя проекта с суффиксом `Page` добавляется.
+[ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings) решении показано, как добавление нового C# файл **Greetings** проекта. Этот файл определяет класс с именем `GreetingsPage` , наследуемый от класса `ContentPage`. В этой книге, большинство проектов содержат один `ContentPage` производных, имя которого является имя проекта с суффиксом `Page` добавляется.
 
 `GreetingsPage` Конструктор создает [ `Label` ](xref:Xamarin.Forms.Label) представление, которое является представление Xamarin.Forms, которое отображает текст. [ `Text` ](xref:Xamarin.Forms.Label.Text) Свойству присвоено тексту, отображаемому элементом `Label`. Эта программа задает `Label` для `Content` свойство `ContentPage`. Конструктор `App` создает экземпляр класса `GreetingsPage` и задает для его `MainPage` свойство.
 
@@ -131,7 +131,7 @@ ms.locfileid: "39156688"
 
 ### <a name="solution-2-include-padding-just-for-ios-sap-only"></a>Решение 2. Включить внутренние поля только для iOS (только для SAP)
 
-Задайте свойство «Заполнение» только в iOS с помощью SAP с помощью директивы препроцессора C#. Это показано в [ **GreetingsSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/GreetingsSap) решения.
+Задать свойство «Заполнение» только для iOS с помощью SAP с C# директивы препроцессора. Это показано в [ **GreetingsSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/GreetingsSap) решения.
 
 ### <a name="solution-3-include-padding-just-for-ios-pcl-or-sap"></a>Решение 3. Включить внутренние поля только для iOS (переносимой библиотеки Классов или SAP)
 
@@ -203,5 +203,5 @@ ms.locfileid: "39156688"
 
 - [Глава 2 полнотекстового поиска (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
 - [Примеры Глава 2](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
-- [Примеры Глава 2 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
+- [Глава 2 F# примеры](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [Начало работы с Xamarin.Forms](~/xamarin-forms/get-started/index.md)
