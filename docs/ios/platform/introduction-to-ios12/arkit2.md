@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 008fc22d654478df3151706101ef07bc0a23acb8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4d5319005b28c5afa0906c44cfa59f0cad40de76
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111570"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617622"
 ---
 # <a name="arkit-2-in-xamarinios"></a>ARKit 2 в Xamarin.iOS
 
@@ -373,7 +373,7 @@ var configuration = new ARWorldTrackingConfiguration
 
 В ARKit очень важно вручную управлять ресурсами. Не только это допускает высокой частоты кадров, фактически является _необходимые_ не путать «замораживание экран». Платформа ARKit — отложенная о предоставлении новый кадр камеры ([`ARSession.CurrentFrame`](https://developer.xamarin.com/api/property/ARKit.ARSession.CurrentFrame/)). До установки текущего [ `ARFrame` ](https://developer.xamarin.com/api/type/ARKit.ARFrame/) имел `Dispose()` вызывался, ARKit не предоставит новый кадр! В результате видео к «зависанию», несмотря на то, что остальная часть приложения отвечает. Следует всегда обращаться к `ARSession.CurrentFrame` с `using` блокировать или вручную вызовите `Dispose()` на нем.
 
-Все объекты, производные от `NSObject` являются `IDisposable` и `NSObject` реализует [удаляемости](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/dispose-pattern), поэтому обычно необходимо следовать [этот шаблон для реализации `Dispose` на производный Класс](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose).
+Все объекты, производные от `NSObject` являются `IDisposable` и `NSObject` реализует [удаляемости](https://docs.microsoft.com/dotnet/standard/design-guidelines/dispose-pattern), поэтому обычно необходимо следовать [этот шаблон для реализации `Dispose` на производный Класс](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose).
 
 ### <a name="manipulating-transform-matrices"></a>Управление матрицы преобразования
 

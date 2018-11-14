@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 47c9ddf3f1a61b0ec7e2a8ed993ad665267993fd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 680fe2f8980d66b6dc80ec9a98898f9925df25f4
+ms.sourcegitcommit: f3f28722198e172d81c16bdeab0cb0a581a08dd0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114279"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51598890"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient Stack и селектор реализации SSL/TLS для Android
 
@@ -143,7 +143,7 @@ var client = new HttpClient();
 
 Существует три способа, что приложения Xamarin.Android можно управлять параметрами TLS:
 
-1. Выберите библиотеку TLS HttpClient внедрения и по умолчанию в параметрах проекта.
+1. Выберите библиотеку TLS HttpClient реализации и по умолчанию в параметрах проекта.
 2. Программно с помощью `Xamarin.Android.Net.AndroidClientHandler`.
 3. Объявите переменные среды (необязательно).
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 04/12/2017
-ms.openlocfilehash: 7b9b3b648f6ac66859714052e916407026da10d4
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
-ms.translationtype: HT
+ms.openlocfilehash: 1ea38b527acaa89b9f25690de4e55664a7afd9e8
+ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526940"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51579834"
 ---
 # <a name="xamarinmac-architecture"></a>Архитектура Xamarin.Mac
 
@@ -145,7 +145,7 @@ public interface NSBox {
 - Создайте структуру пакета приложения.
 - Копирование управляемых сборок.
 - Если связывание включено, то запустите управляемых компоновщик для оптимизации сборок путем удаления неиспользуемых частей.
-- Создайте приложение средства запуска, связывание в коде запуска говорили о вместе с кодом системе, если в статическом режиме.
+- Создайте приложение средства запуска, связывание в коде запуска говорили о, а также на код регистратора, если в статическом режиме.
 
 Это, а затем Запуск от имени пользователя процесса, который компилируется в сборку пользовательского кода Xamarin.Mac.dll и выполняется такая ссылка `mmp` для упрощения пакета
 

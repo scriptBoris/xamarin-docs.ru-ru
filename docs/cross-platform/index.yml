@@ -1,4 +1,10 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: 091f94f66e07309ca5c6cc6ba69e0631e17eb0c0
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617284"
 documentType: LandingData
 title: Руководство по созданию кроссплатформенных приложений
 metadata:
@@ -7,12 +13,6 @@ metadata:
   ms.author: crdun
   ms.date: 04/25/2018
   ms.topic: landing-page
-  ms.openlocfilehash: 9a08ccb3b00990a8b8425a2eb95d1f2390dda30e
-  ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/03/2018
-  ms.locfileid: "32436389"
 abstract:
   description: Xamarin предоставляет решение для кроссплатформенной разработки мобильных и классических приложений, а также приложений для планшетов. В этом разделе содержатся сведения, которые применяются независимо платформы.
   menu:
@@ -60,7 +60,7 @@ sections:
     - href: ~/cross-platform/get-started/index.md
       html: Руководства, которые помогут вам начать работу с Xamarin. Убедитесь в том, что все установлено правильно, и создайте свое первое приложение.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
         href: ~/cross-platform/get-started/index.md
       title: Начало работы
     - href: ~/cross-platform/platform
@@ -78,7 +78,7 @@ sections:
     - href: ~/cross-platform/deploy-test/performance.md
       html: Рекомендации по обеспечению безопасности и повышению производительности приложения.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_code-performance.svg
+        src: https://docs.microsoft.com/media/common/i_code-performance.svg
         href: ~/cross-platform/deploy-test/performance.md
       title: Производительность и безопасность
     - href: ~/cross-platform/deploy-test/
@@ -90,7 +90,7 @@ sections:
     - href: ~/cross-platform/desktop/
       html: Рекомендации для разработчиков классических приложений .NET, заинтересованных в создании мобильных приложений.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_xplat-code.svg
+        src: https://docs.microsoft.com/media/common/i_xplat-code.svg
         href: ~/cross-platform/desktop/
       title: Разработчики классических приложений
 - title: Платформы

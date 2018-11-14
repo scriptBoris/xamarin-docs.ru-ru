@@ -1,5 +1,5 @@
 ---
-title: Средство выбора времени
+title: Выбор времени
 description: Выбрав другой с помощью TimePickerDialog и DialogFragment
 ms.prod: xamarin
 ms.assetid: EB4E8206-E8AD-9F04-AC1C-82AC9364A9DD
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 911101d44e3ae401910b35b93d85ba3f79ddd35a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 08fa9000a1fd9c97f7881a4a13c15fabfa6dda47
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103989"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617674"
 ---
-# <a name="time-picker"></a>Средство выбора времени
+# <a name="time-picker"></a>Выбор времени
 
 Предоставляет способ для пользователя для выбора времени, можно использовать [TimePicker](https://developer.xamarin.com/api/type/Android.Widget.TimePicker/). Android приложения обычно используют `TimePicker` с [TimePickerDialog](https://developer.xamarin.com/api/type/Android.App.TimePickerDialog/) для выбора значения времени &ndash; это позволяет обеспечить согласованный интерфейс для устройств и приложений. `TimePicker` позволяет пользователям выбирать время суток в 24-часового или 12-часовом режиме AM/PM.
 `TimePickerDialog` — Это вспомогательный класс, который инкапсулирует `TimePicker` в диалоговом окне.
@@ -279,7 +279,7 @@ is24HourFormat = true;
 
 [![Диалоговое окно TimePicker в 24-часовом формате](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png#lightbox)
 
-Так как обработчик вызывает [DateTime.ToShortTimeString](https://msdn.microsoft.com/en-us/library/system.datetime.toshortdatestring%28v=vs.110%29.aspx) печать время действия `TextView`, время по-прежнему выводится в стандартном 12-часовом формате AM/PM.
+Так как обработчик вызывает [DateTime.ToShortTimeString](xref:System.DateTime.ToShortDateString*) печать время действия `TextView`, время по-прежнему выводится в стандартном 12-часовом формате AM/PM.
 
 
 

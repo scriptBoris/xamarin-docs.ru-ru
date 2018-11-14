@@ -7,12 +7,12 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 527ecfa03adb78d8b97e95d0b6b81ceb12f0a107
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: a795b382b9bcc727b0b0872d29d30a501cfed0a6
+ms.sourcegitcommit: f3f28722198e172d81c16bdeab0cb0a581a08dd0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563775"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51598903"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Сводка Глава 20. Асинхронный и файловый ввод-вывод
 
@@ -23,7 +23,7 @@ ms.locfileid: "51563775"
 
 Пользователи ожидают, что графические интерфейсы пользователя реагировать. Это означает, что программа быстрой обработки событий ввода пользователя. Если это невозможно, то обработка необходимо перейти на роль второстепенных потоков выполнения.
 
-Несколько примеров программ в этой книге использовали [ `WebRequest` ](xref:System.Net.WebRequest) класса. В этом классе [ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)) метод запускает рабочий поток, который вызывает функцию обратного вызова, после ее завершения. Однако такой функции обратного вызова выполняется в рабочий поток, поэтому необходимо вызвать программу [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) метод для доступа к интерфейсу пользователя.
+Несколько примеров программ в этой книге использовали [ `WebRequest` ](xref:System.Net.WebRequest) класса. В этом классе [ `BeginGetResponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)) метод запускает рабочий поток, который вызывает функцию обратного вызова, после ее завершения. Однако такой функции обратного вызова выполняется в рабочий поток, поэтому необходимо вызвать программу [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) метод для доступа к интерфейсу пользователя.
 
 > [!NOTE]
 > Следует использовать программы Xamarin.Forms [ `HttpClient` ](xref:System.Net.Http.HttpClient) вместо [ `WebRequest` ](xref:System.Net.WebRequest) для доступа к файлам через Интернет. `HttpClient` поддерживает асинхронные операции.

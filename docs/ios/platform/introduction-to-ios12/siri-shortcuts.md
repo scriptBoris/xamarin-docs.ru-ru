@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: f9034799355d01a3ade20a78540d6ecac43d9cc8
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 38e71914d9f7f6bb46ebeee8d548968c207d3b16
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526901"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617765"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Сочетания клавиш Siri в Xamarin.iOS
 
@@ -695,7 +695,7 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 ### <a name="automatic-provisioning"></a>Автоматическая подготовка
 
-Обратите внимание, что можно использовать [автоматическую подготовку](https://docs.microsoft.com/en-us/xamarin/ios/get-started/installation/device-provisioning/automatic-provisioning) для выполнения большинства из них подготовки задачи непосредственно в интегрированной среде разработки.
+Обратите внимание, что можно использовать [автоматическую подготовку](https://docs.microsoft.com/xamarin/ios/get-started/installation/device-provisioning/automatic-provisioning) для выполнения большинства из них подготовки задачи непосредственно в интегрированной среде разработки.
 Тем не менее автоматической подготовки не настроить группы приложений. Необходимо будет вручную настроить **Entitlements.plist** файлы с именем группы приложений, вы бы хотели использовать, посетите портал разработчиков Apple для создания группы приложений, назначьте эту группу приложений для каждого идентификатора приложения, созданные автоматически Подготовка, повторно создайте профили подготовки (приложения, расширение Intents, расширение интерфейса Intents UI), чтобы включить в группу только что созданному приложению, скачайте и установите их.
 
 ## <a name="related-links"></a>Связанные ссылки

@@ -8,17 +8,17 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: bb30f9264cb5f3b762088e3523223b2bff8416b9
-ms.sourcegitcommit: ebc0b3838836ee5cf9e54d58866d23916664a43d
+ms.openlocfilehash: 21ff09f2af93ee46578b959111bf744ba05a74d7
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50142340"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617661"
 ---
 # <a name="xamarin-live-reload-preview"></a>Динамической перезагрузки Xamarin (Предварительная версия)
 
 > [!NOTE]
-> Предварительная версия Xamarin Live перезагрузить прекращена, и мы хотим поблагодарить всех для отзывы и комментарии. Прочитайте наши [стратегия](https://docs.microsoft.com/en-us/visualstudio/productinfo/vs-roadmap) для Visual Studio 2019 г. Дополнительные сведения о новых функциях повышения производительности, мы работаем над для Xamarin.Forms. Это расширение, остаются доступными для Visual Studio 2017, но не должен получать будущих обновлений.
+> Предварительная версия Xamarin Live перезагрузить прекращена, и мы хотим поблагодарить всех для отзывы и комментарии. Прочитайте наши [стратегия](https://docs.microsoft.com/visualstudio/productinfo/vs-roadmap) для Visual Studio 2019 г. Дополнительные сведения о новых функциях повышения производительности, мы работаем над для Xamarin.Forms. Это расширение, остаются доступными для Visual Studio 2017, но не должен получать будущих обновлений.
 
 Xamarin Live Reload позволяет **вносить изменения в XAML и они отразятся в режиме реального времени, без необходимости другую компиляции и развертывания**. Изменения, внесенные в XAML будет повторно развернуто на сохранение и отражаются на целевой развертывание.
 

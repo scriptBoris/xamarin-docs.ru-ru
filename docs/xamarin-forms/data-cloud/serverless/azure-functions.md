@@ -7,12 +7,12 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 08/08/2018
-ms.openlocfilehash: 3c7f3558557c5ecf4df961b58c2dd147a6f89691
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d8dd6927daab563b4331e9e87c7b069d84078f66
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111613"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617440"
 ---
 # <a name="get-started-with-azure-functions"></a>Начало работы с функциями Azure
 
@@ -24,7 +24,7 @@ _Начните создавать первую функцию Azure, котор
 
 ## <a name="step-by-step-instructions"></a>Пошаговые инструкции
 
-В дополнение к видео, необходимо выполнить следующие инструкции, чтобы [Создание первой функции с помощью Visual Studio 2017](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-your-first-function-visual-studio).
+В дополнение к видео, необходимо выполнить следующие инструкции, чтобы [Создание первой функции с помощью Visual Studio 2017](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio).
 
 ## <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
@@ -32,7 +32,7 @@ _Начните создавать первую функцию Azure, котор
 
 ## <a name="step-by-step-instructions"></a>Пошаговые инструкции
 
-Помимо этого видео доступен [Пошаговое руководство](https://docs.microsoft.com/en-us/visualstudio/mac/azure-functions-lab) , показано, как создание и отладка функций Azure в Visual Studio для Mac.
+Помимо этого видео доступен [Пошаговое руководство](https://docs.microsoft.com/visualstudio/mac/azure-functions-lab) , показано, как создание и отладка функций Azure в Visual Studio для Mac.
 
 -----
 

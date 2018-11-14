@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 958ca967764b4547d6bdf64452e372d3ea4abd1e
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 7d0ccfeaa85e74b15f1d1bf2feae8e4404b36813
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39351526"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617349"
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
@@ -57,7 +57,7 @@ sections:
     - href: ~/xamarin-forms/get-started/index.md
       html: Руководства, которые помогут вам начать работу с Xamarin.Forms. Убедитесь в том, что все установлено правильно, и создайте свое первое приложение Xamarin.Forms.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
         href: ~/xamarin-forms/get-started/index.md
       title: Начало работы
     - href: ~/xamarin-forms/xaml/
@@ -87,7 +87,7 @@ sections:
     - href: ~/essentials/index.md?context=xamarin/xamarin-forms
       html: Кроссплатформенные API-интерфейсы для общих задач, таких как доступ к файлам, сведения об устройстве, параметры оборудования и многих других.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_multi-connect.svg
+        src: https://docs.microsoft.com/media/common/i_multi-connect.svg
         href: ~/essentials/index.md?context=xamarin/xamarin-forms
       title: Xamarin.Essentials
     - href: ~/xamarin-forms/data-cloud/
@@ -105,7 +105,7 @@ sections:
     - href: ~/xamarin-forms/internals/
       html: Дополнительные сведения о структуре Xamarin.Forms и помощь по использованию функций, например локализации и специальных возможностей.
       image:
-        src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
+        src: https://docs.microsoft.com/media/common/i_config-tools.svg
         href: ~/xamarin-forms/internals/
       title: Дополнительные понятия и внутренние компоненты
 - title: Ссылка
