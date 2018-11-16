@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 219c6bb4cd5718c969ba83a55596ad7b0bab8baf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 815e3ddf44ae94b6b26a325599de1f4c1f6714a8
+ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121130"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51681544"
 ---
 # <a name="architecture"></a>Архитектура
 
@@ -33,7 +33,8 @@ Xamarin.Android разработчики получают доступ к фун
 
 Пакетов приложений для Android — это контейнеры ZIP с *.apk* расширение файла. Пакеты приложения Xamarin.Android имеют одну и ту же структуру и макет как обычный Android пакеты, со следующими дополнениями:
 
--   (Содержащий IL) сборок приложения *хранятся* без сжатия в *сборки* папки. Во время процесса построения запуска в выпуске *.apk* — *mmap()* ed в процесс и сборки загружаются из памяти. Это позволяет более быстрый запуск приложений, как сборки не обязательно должно быть извлечено перед выполнением. - *Примечание:* сведения о расположении сборки, такие как [Assembly.Location](xref:System.Reflection.Assembly.Location) и [Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
+-   (Содержащий IL) сборок приложения *хранятся* без сжатия в *сборки* папки. Во время процесса построения запуска в выпуске *.apk* — *mmap()* ed в процесс и сборки загружаются из памяти. Это позволяет более быстрый запуск приложений, как сборки не обязательно должно быть извлечено перед выполнением.  
+-   *Примечание:* сведения о расположении сборки, такие как [Assembly.Location](xref:System.Reflection.Assembly.Location) и [Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
     *нельзя рассчитывать* в выпуске выполняет построение. Они не существуют как операции distinct файловой системы и имеют расположение не может использоваться.
 
 
@@ -44,7 +45,7 @@ Xamarin.Android разработчики получают доступ к фун
 
 
 
-## <a name="android-callable-wrappers"></a>Вызываемые оболочки времени Android
+## <a name="android-callable-wrappers"></a>Вызываемые программы-оболочки Android
 
 - **Вызываемые оболочки времени Android** являются [JNI](http://en.wikipedia.org/wiki/Java_Native_Interface) моста, которые используются в любое время, в среде выполнения Android необходимо вызывать управляемый код. Android вызываемых оболочек, как виртуальные методы можно переопределить и Java-интерфейсов может быть реализован. См. в разделе [обзора интеграции Java](~/android/platform/java-integration/index.md) документа для получения дополнительных сведений.
 

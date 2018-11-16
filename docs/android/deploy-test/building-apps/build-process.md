@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2018
-ms.openlocfilehash: 63e86ef89c8d736640e7677fee6147feacc87bdc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b63efb3f9bfa432f15415e652cd5d59f929c4488
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108929"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617791"
 ---
 # <a name="build-process"></a>Процесс сборки
 
@@ -195,7 +195,7 @@ ms.locfileid: "50108929"
 
 -   **AndroidTlsProvider** — строковое значение, которое указывает, какой поставщик TLS следует использовать в приложении. Доступны следующие значения:
 
-    - `btls`: используется [Boring SSL](https://boringssl.googlesource.com/boringssl) для взаимодействия через TLS с [HttpWebRequest](https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx).
+    - `btls`: используется [Boring SSL](https://boringssl.googlesource.com/boringssl) для взаимодействия через TLS с [HttpWebRequest](xref:System.Net.HttpWebRequest).
       Это позволяет использовать TLS 1.2 во всех версиях Android.
 
     - `legacy`: используется историческая управляемая реализация протокола SSL для взаимодействия по сети. TLS 1.2 *не* поддерживается.

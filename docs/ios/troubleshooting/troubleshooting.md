@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 4d887d5a57aa3a632bd2f6795052c5b38f66a75a
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 4ab6b217190ea633611a9c869ec7e93befcc3c56
+ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527174"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51681570"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Советы по устранению неполадок для Xamarin.iOS 
 
@@ -46,9 +46,10 @@ ms.locfileid: "51527174"
 
 Член удалена, скорее всего, компоновщиком и таким образом, не существует в сборке во время выполнения.  Существует несколько способов:
 
--  Добавить [[Сохранить]](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) атрибут.  Это будет препятствовать компоновщик его удаления.
--  При вызове [mtouch](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29) , использовать **- nolink** или **- linksdkonly** параметры. -    **-nolink** отключает компоновки.
--    **-linksdkonly** случае компонуются только Xamarin.iOS предоставляемую сборки, такие как *monotouch.dll* или xamarin.ios.dll.
+- Добавить [ `[Preserve]` ](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) атрибут.  Это будет препятствовать компоновщик его удаления.
+- При вызове [ **mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29), использовать **- nolink** или **- linksdkonly** параметры:
+  - **-nolink** отключает компоновки.
+  - **-linksdkonly** случае компонуются только Xamarin.iOS предоставляемую сборки, такие как **xamarin.ios.dll**, сохраняя все типы в сборках, созданных пользователем (т. е. проектов приложений).
 
 Обратите внимание, что сборки связаны таким образом, полученный исполняемый файл меньшего размера; Таким образом отключение связывания может привести к большой исполняемый файл не является предпочтительным.
 

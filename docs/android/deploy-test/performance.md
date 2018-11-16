@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: deabecc0dc96f8963122afebc0dc0ba256fd92e8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 10e45ec438f1e698a9f09223cecea5934de54da8
+ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115566"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51617718"
 ---
 # <a name="xamarinandroid-performance"></a>Производительность Xamarin.Android
 
@@ -233,7 +233,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 ## <a name="dispose-of-unused-image-resources"></a>Ликвидация неиспользуемых графических ресурсов
 
-Чтобы оптимизировать использование памяти, рекомендуется ликвидировать неиспользуемые ресурсы больших изображений. Тем не менее важно обеспечить надлежащее удаление изображений. Вместо явного вызова `.Dispose()` вы можете использовать преимущества инструкций [using](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement) для эффективной работы с объектами `IDisposable`. 
+Чтобы оптимизировать использование памяти, рекомендуется ликвидировать неиспользуемые ресурсы больших изображений. Тем не менее важно обеспечить надлежащее удаление изображений. Вместо явного вызова `.Dispose()` вы можете использовать преимущества инструкций [using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement) для эффективной работы с объектами `IDisposable`. 
 
 Например, класс [Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/) реализует интерфейс `IDisposable`. Создавая оболочку при создании экземпляра объекта `BitMap` в блоке `using`, можно гарантировать, что при выходе из блока он будет ликвидирован надлежащим образом:
 

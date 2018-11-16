@@ -5,12 +5,12 @@ ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 62ecf890ba6b3276db89e93c2699e0406dbe4d45
-ms.sourcegitcommit: a635312ffec816ba357a92b66c8c5221c8d9044c
+ms.openlocfilehash: 00419fb746609464b49be343938905614c59ab29
+ms.sourcegitcommit: 704d4cfd418c17b0e85a20c33a16d2419db0be71
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50965621"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51691767"
 ---
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials. Сведения о приложении
 
@@ -54,7 +54,7 @@ var build = AppInfo.BuildString;
 
 ```csharp
 // Display settings page
-AppInfo.ShowSettingsUI();
+AppInfo.OpenSettings();
 ```
 
 На этой странице параметров пользователь может изменять разрешения приложения и выполнять другие задачи для платформы.

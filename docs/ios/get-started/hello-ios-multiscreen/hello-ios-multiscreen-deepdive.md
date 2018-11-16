@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 61a90632849787e28526f83d53247a0491148148
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: e8b3881db99d569008ce1290f81891f1b3b183d7
+ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235094"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51563814"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Привет, iOS (несколько экранов): теперь подробнее
 
@@ -125,13 +125,13 @@ iOS вызывает метод `PrepareForSegue` непосредственно
 На этом этапе нам нужно вручную задать для перехода целевой контроллер представления. Следующий код получает дескриптор контроллера представления назначения и приводит его к необходимому классу, в данном случае к классу CallHistoryController:
 
 ```csharp
-CallHistoryController callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+CallHistoryController callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
 Наконец, мы передаем список номеров телефонов (модель) из `ViewController` в `CallHistoryController`, присвоив свойству `PhoneHistory` класса `CallHistoryController` список набранных номеров телефонов:
 
 ```csharp
-callHistoryContoller.PhoneNumbers = PhoneNumbers;
+callHistoryController.PhoneNumbers = PhoneNumbers;
 ```
 
 Ниже приведен полный код для передачи данных с помощью объекта перехода:
@@ -141,10 +141,10 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
 {
     base.PrepareForSegue (segue, sender);
 
-    var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
+    var callHistoryController = segue.DestinationViewController as CallHistoryController;
 
-    if (callHistoryContoller != null) {
-         callHistoryContoller.PhoneNumbers = PhoneNumbers;
+    if (callHistoryController != null) {
+         callHistoryController.PhoneNumbers = PhoneNumbers;
     }
  }
 ```
