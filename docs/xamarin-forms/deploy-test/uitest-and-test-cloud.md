@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/31/2016
-ms.openlocfilehash: cd46aac653d6477f3fc8240e4f193ec1c4a7bb4c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 215aa88b7e97a67242bd991dde0e66c445b47b0a
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122443"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51526429"
 ---
 # <a name="automate-xamarinforms-testing-with-app-center"></a>Автоматизация тестирования Xamarin.Forms с помощью Центра приложений
 

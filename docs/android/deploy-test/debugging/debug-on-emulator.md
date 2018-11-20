@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: e40178e43cfcfd261434fab9dd5ca0a9061d3f59
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6d595a487d87c7e30c87a0347d25404d0b2f7dbc
+ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113786"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527317"
 ---
 # <a name="debugging-on-the-android-emulator"></a>Отладка приложений в Android Emulator
 
