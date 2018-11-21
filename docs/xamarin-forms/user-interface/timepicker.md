@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2018
-ms.openlocfilehash: 9a534c39d514fec9a0de4bc810f33c972453baa2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f5fdaa55f91656d8560fb9ad2eb2b938d5c9a02f
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111658"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171850"
 ---
 # <a name="xamarinforms-timepicker"></a>Xamarin.Forms TimePicker
 
@@ -158,7 +158,7 @@ public partial class MainPage : ContentPage
 
 Тактов таймера каждую секунду, выполнение `OnTimerTick` метод, который проверяет ли [ `Switch` ](xref:Xamarin.Forms.Switch) на и ли текущее время — больше или равно времени таймера. При наступлении времени таймера [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) метод представляет диалоговое окно предупреждения пользователю для напоминания.
 
-При первом запуске образца, [ `TimePicker` ](xref:Xamarin.Forms.TimePicker) представление инициализируется до 11: 00. При касании `TimePicker` вызывает средство выбора времени платформы. Трех платформ реализовать средство выбора времени самыми разными способами, но каждый подход знакомы пользователям функции этой платформы:
+При первом запуске образца, [ `TimePicker` ](xref:Xamarin.Forms.TimePicker) представление инициализируется до 11: 00. При касании `TimePicker` вызывает средство выбора времени платформы. Платформы реализовать средство выбора времени самыми разными способами, но каждый подход знакомы пользователям функции этой платформы:
 
 [![Выберите время](timepicker-images/timepicker-open.png "выберите время")](timepicker-images/timepicker-open-large.png#lightbox "выбора времени")
 

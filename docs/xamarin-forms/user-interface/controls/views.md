@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 18/10/2018
-ms.openlocfilehash: a51a3bb7726baa9142579a518767dc722870ee06
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 13/11/2018
+ms.openlocfilehash: b14cb6fd96bb5da1ba2f8612daa51b2db4242630
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107531"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172346"
 ---
 # <a name="xamarinforms-views"></a>Представления Xamarin.Forms
 
@@ -43,7 +43,7 @@ _Представления Xamarin.Forms являются стандартны�
 | [`BoxView`](xref:Xamarin.Forms.BoxView) Отображает прямоугольник сплошной цвет [ `Color` ](xref:Xamarin.Forms.BoxView.Color) свойство. `BoxView` имеет размер запроса по умолчанию 40 x 40. Для других размеров, назначить [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) и [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) свойства.<br /><br />[Документация по API](xref:Xamarin.Forms.BoxView) / [руководство](~/xamarin-forms/user-interface/boxview.md) / [пример 1](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView), [2](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration), [3](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ColorListBox), [4 ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife), [5](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock), и [6](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock) | [![Пример BoxView](views-images/BoxView.png "пример BoxView")](views-images/BoxView-Large.png#lightbox "BoxView пример")<br />[Код C# для этой страницы](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/BoxViewDemoPage.cs) / [страницы XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/BoxViewDemoPage.xaml) |
 |     |     |
 
-### <a name="webview"></a>Веб-представления
+### <a name="webview"></a>WebView
 
 |     |     |
 | --- | --- |
@@ -71,6 +71,13 @@ _Представления Xamarin.Forms являются стандартны�
 |     |     |
 | --- | --- |
 | [`Button`](xref:Xamarin.Forms.Button) представляет собой прямоугольный объект, который отображает текст, и который запускается [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) событие, когда она нажата.<br /><br />[Документация по API](xref:Xamarin.Forms.Button) / [руководство](~/xamarin-forms/user-interface/button.md) / [образца](https://developer.xamarin.com/samples/UserInterface/ButtonDemos/) | [![Пример кнопки](views-images/Button.png "кнопку пример")](views-images/Button-Large.png#lightbox "кнопку пример")<br /> [Код C# для этой страницы](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [страницы XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml) с [кода](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
+|     |     |
+
+### <a name="imagebutton"></a>ImageButton
+
+|     |     |
+| --- | --- |
+| `ImageButton` — Это прямоугольный объектов, отображающие образа и которое генерируется `Clicked` событие, когда она нажата.<br /><br /> [Руководство по](~/xamarin-forms/user-interface/imagebutton.md) / [образца](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/) | [![Пример ImageButton](views-images/ImageButton.png "пример ImageButton")](views-images/ImageButton-Large.png#lightbox "пример ImageButton")<br /> [Код C# для этой страницы](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageButtonDemoPage.cs) / [страницы XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml) с [кода](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="searchbar"></a>SearchBar

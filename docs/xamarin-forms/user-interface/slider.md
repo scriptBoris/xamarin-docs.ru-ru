@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 12a97989ac675d2504a2c626da73ebccb596b99b
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: d83b2f249bb0afe4257544d6da731dbc9ac3e317
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563567"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52170940"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms "ползунок"
 
@@ -109,7 +109,7 @@ public class BasicSliderCodePage : ContentPage
 
 [![Ползунок базовый код](slider-images/BasicSliderCode.png "кода основные \"ползунок\"")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-Второй `Label` отображается текст «(неинициализированные)» до `Slider` будут обрабатывать, который вызывает первый `ValueChanged` , возникает событие. Обратите внимание на то, что число десятичных разрядов, выводимых отличается для трех платформ. Эти различия, относящиеся к реализации платформы `Slider` и рассматриваются далее в этой статье в разделе [различий в реализации платформы](#implementations).
+Второй `Label` отображается текст «(неинициализированные)» до `Slider` будут обрабатывать, который вызывает первый `ValueChanged` , возникает событие. Обратите внимание на то, что число десятичных разрядов, выводимых отличается для каждой платформы. Эти различия, относящиеся к реализации платформы `Slider` и рассматриваются далее в этой статье в разделе [различий в реализации платформы](#implementations).
 
 ### <a name="creating-a-slider-in-xaml"></a>Создание ползунка в XAML
 

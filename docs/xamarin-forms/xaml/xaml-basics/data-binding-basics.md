@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: e0ad67db0671996e594f9c5d48b329a5d676fc1d
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: aa576e4af5d804eb5b8d78643ffa762b8a15c6dc
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563437"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171772"
 ---
 # <a name="part-4-data-binding-basics"></a>Часть 4. Основы привязки данных
 
@@ -327,7 +327,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 </ContentPage>
 ```
 
-Обратите внимание на использование `OnPlatform` для определения размера `BoxView` и высоту `ListView` строк. Несмотря на то, что значения для всех трех платформах совпадают, разметка может легко адаптировать для других значений, скорректировав способ представления.
+Обратите внимание на использование `OnPlatform` для определения размера `BoxView` и высоту `ListView` строк. Несмотря на то, что значения для всех платформ совпадают, разметка может легко адаптировать для других значений, скорректировав способ представления.
 
 ## <a name="binding-value-converters"></a>Привязка преобразователей значений
 

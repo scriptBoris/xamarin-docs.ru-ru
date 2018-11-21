@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: bd865471e3efe42c44a8996a8e364b1c478b69e7
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 8354539288613353dcb7a792ace335daa5dc8f27
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615682"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171148"
 ---
 # <a name="path-effects-in-skiasharp"></a>Эффекты пути в SkiaSharp
 
@@ -923,7 +923,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Этот эффект можно использовать с Обводка или заполнение на основе `Style` свойство `SKPaint` объекта. Здесь это на всех трех платформах:
+Этот эффект можно использовать с Обводка или заполнение на основе `Style` свойство `SKPaint` объекта. Здесь выполняется:
 
 [![](effects-images/anotherroundedheptagon-small.png "Тройной снимок экрана страницы другой округленное Heptagon")](effects-images/anotherroundedheptagon-large.png#lightbox "тройной снимок экрана страницы другой Heptagon округляется")
 
@@ -1068,7 +1068,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Здесь он выполняется в альбомном режиме на всех трех платформах:
+Здесь он работает в альбомном режиме:
 
 [![](effects-images/jittertext-small.png "Тройной снимок экрана страницы дрожание: текст")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/16/2018
-ms.openlocfilehash: fa375720730630065609e328b343e16578c6f1df
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2a4b29df9148ce695f8f3ca5377e5848af1b775a
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131995"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171603"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>В случае ошибки привязки Xamarin.Forms
 
@@ -44,7 +44,7 @@ ms.locfileid: "50131995"
 > [!NOTE]
 > Невозможно присвоить `FallbackValue` свойство с выражением привязки.
 
-Вот ее запуск на всех трех платформах:
+Вот ее запуск.
 
 ![Привязка FallbackValue](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue привязки")
 
@@ -93,7 +93,7 @@ ms.locfileid: "50131995"
 > [!NOTE]
 > Невозможно присвоить `TargetNullValue` свойство с выражением привязки.
 
-Вот ее запуск на всех трех платформах:
+Вот ее запуск.
 
 [![Привязка TargetNullValue](binding-fallbacks-images/bindingunavailable-small.png "привязки TargetNullValue")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue привязки")
 

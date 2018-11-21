@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 104985a4221cc6e5e6aa56420c1a41ee4c736b8d
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: b5d01aa451c9ab9be081b666e8c7ce51f58a3096
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563697"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172318"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
@@ -181,7 +181,7 @@ public partial class MainPage : ContentPage
 
 [![Дней между датами начала](datepicker-images/DaysBetweenDatesStart.png "дней между датами начала")](datepicker-images/DaysBetweenDatesStart-Large.png#lightbox "дней между датами начала")
 
-Коснитесь любой из `DatePicker` отображает вызывает средство выбора даты платформы. Трех платформ реализованы средства выбора даты самыми разными способами, но каждый подход крайне знакомы пользователям функции этой платформы:
+Коснитесь любой из `DatePicker` отображает вызывает средство выбора даты платформы. Платформы реализованы средства выбора даты самыми разными способами, но каждый подход крайне знакомы пользователям функции этой платформы:
 
 [![Выберите дней между датами](datepicker-images/DaysBetweenDatesSelect.png "выберите дней между датами")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "выберите дней между датами")
 

@@ -6,13 +6,13 @@ ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 351119a8b0089f78d4ce98729a1516c3cd7bae7b
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.date: 10/24/2018
+ms.openlocfilehash: ab5315d169615430f5f5a733c0fa8c2ca9caa4b0
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203089"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172305"
 ---
 # <a name="customizing-a-map-pin"></a>Настройка закрепления карты
 
@@ -422,9 +422,10 @@ protected override MarkerOptions CreateMarker(Pin pin)
 }
 ```
 
-Этот метод создает новую `MarkerOption` экземпляра для каждого `Pin` экземпляр. После задания позиции, меток и адрес маркера, его значок, заданный параметром `SetIcon` метод. Этот метод принимает `BitmapDescriptor` объект, содержащий данные, необходимые для подготовки к просмотру, значка с `BitmapDescriptorFactory` класс, предоставляющий вспомогательные методы для упрощения создания `BitmapDescriptor`.
+Этот метод создает новую `MarkerOption` экземпляра для каждого `Pin` экземпляр. После задания позиции, меток и адрес маркера, его значок, заданный параметром `SetIcon` метод. Этот метод принимает `BitmapDescriptor` объект, содержащий данные, необходимые для подготовки к просмотру, значка с `BitmapDescriptorFactory` класс, предоставляющий вспомогательные методы для упрощения создания `BitmapDescriptor`. Дополнительные сведения об использовании `BitmapDescriptorFactory` класс для настройки маркер, см. в разделе [Настройка маркера](~/android/platform/maps-and-location/maps/maps-api.md).
 
-Дополнительные сведения об использовании `BitmapDescriptorFactory` класс для настройки маркер, см. в разделе [Настройка маркера](~/android/platform/maps-and-location/maps/maps-api.md).
+> [!NOTE]
+> При необходимости `GetMarkerForPin` метод может вызываться в модуле подготовки отчетов вашей карты для получения `Marker` из `Pin`.
 
 <a name="Customizing_the_Info_Window" />
 

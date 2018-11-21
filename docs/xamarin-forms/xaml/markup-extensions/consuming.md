@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2018
-ms.openlocfilehash: ecb0adb09c7d6b8bca2f1ee228b8cbdaad1d0314
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 2ab7381baefc6ca013b6c8a5c9f7bf7b5cae8b10
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563957"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171720"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Использование расширения разметки XAML
 
@@ -137,7 +137,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </Label>
 ```
 
-Ниже приведен пример, запущенный на всех трех платформах.
+Ниже приведен пример, запущенный.
 
 [![Демонстрация x: Static](consuming-images/staticdemo-small.png "Демонстрация x: Static")](consuming-images/staticdemo-large.png#lightbox "Демонстрация x: Static")
 
@@ -181,7 +181,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-Оба `x:Reference` выражения используйте сокращенную версию `ReferenceExtension` имя класса и исключить `Name=` часть выражения. В первом примере `x:Reference` расширение разметки, внедренного в `Binding` расширение разметки. Обратите внимание, что `Source` и `StringFormat` параметров разделяются запятыми. Вот ее запуск на всех трех платформах:
+Оба `x:Reference` выражения используйте сокращенную версию `ReferenceExtension` имя класса и исключить `Name=` часть выражения. В первом примере `x:Reference` расширение разметки, внедренного в `Binding` расширение разметки. Обратите внимание, что `Source` и `StringFormat` параметров разделяются запятыми. Вот ее запуск.
 
 [![Демонстрация x: Reference](consuming-images/referencedemo-small.png "Демонстрация x: Reference")](consuming-images/referencedemo-large.png#lightbox "Демонстрация x: Reference")
 
@@ -449,7 +449,7 @@ public partial class TypeDemoPage : ContentPage
 
 Затем вы обнаружите, что для одного из `Label` элементов, требуется, чтобы все значения свойств в явном `Style` за исключением `FontFamily`, который вы хотите иметь значение по умолчанию. Вы можете определить другой `Style` для этой цели, но более простой подход заключается в задании `FontFamily` свойство конкретного `Label` для `x:Null`, как показано в центре `Label`.
 
-Ниже приведен программу на трех платформ.
+Вот ее запуск.
 
 [![Демонстрация x: Null](consuming-images/nulldemo-small.png "Демонстрация x: Null")](consuming-images/nulldemo-large.png#lightbox "Демонстрация x: Null")
 
@@ -493,7 +493,7 @@ public partial class TypeDemoPage : ContentPage
 
 В этом примере все три `OnPlatform` выражения используйте сокращенную версию `OnPlatformExtension` имя класса. Три `OnPlatform` набор расширений разметки [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), и [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) свойства [ `BoxView` ](xref:Xamarin.Forms.BoxView) в разные значения для iOS, Android и универсальной платформы Windows. Расширения разметки также предоставляют значения по умолчанию для этих свойств на платформах, которые не заданы, при этом Избавляясь от `Default=` часть выражения. Обратите внимание на то, что свойства расширения разметки, заданные разделяются запятыми.
 
-Вот ее запуск на всех трех платформах:
+Вот ее запуск.
 
 [![Демонстрация OnPlatform](consuming-images/onplatformdemo-small.png "Демонстрация OnPlatform")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform Demo")
 
@@ -531,7 +531,7 @@ public partial class TypeDemoPage : ContentPage
 
 В этом примере все три `OnIdiom` выражения используйте сокращенную версию `OnIdiomExtension` имя класса. Три `OnIdiom` набор расширений разметки [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), и [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) свойства [ `BoxView` ](xref:Xamarin.Forms.BoxView) в разные значения для phone, планшетных и настольных систем идиом. Расширения разметки также предоставляют значения по умолчанию для этих свойств на стили, которые не указаны, устраняя `Default=` часть выражения. Обратите внимание на то, что свойства расширения разметки, заданные разделяются запятыми.
 
-Вот ее запуск на всех трех платформах:
+Вот ее запуск.
 
 [![Демонстрация OnIdiom](consuming-images/onidiomdemo-small.png "Демонстрация OnIdiom")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom Demo")
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 08fa9000a1fd9c97f7881a4a13c15fabfa6dda47
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: faf2c35b49b0b02b9f3b16e19494d2e447361d84
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617674"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171655"
 ---
 # <a name="time-picker"></a>Выбор времени
 
@@ -45,7 +45,7 @@ ms.locfileid: "51617674"
 В `TimePickerDialog`, выбрав раз и щелкнув **ОК** кнопку причины `TimePickerDialog` для вызова метода [IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/).
 Этот интерфейс реализуется путем размещения `DialogFragment` (`TimePickerFragment`, описанных ниже). Щелкнув **отменить** кнопка вызывает фрагмент и диалоговое окно можно закрыть.
 
-`DialogFragment` Возвращает установленный период времени для размещения Actvity в одном из трех способов:
+`DialogFragment` Возвращает установленный период времени для размещения действий в одном из трех способов:
 
 1. **Вызов метода или задании свойства** &ndash; действия можно указать свойства или метода специально для данного параметра.
 

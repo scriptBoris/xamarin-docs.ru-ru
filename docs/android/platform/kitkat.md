@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b1ea26afff1477d762d106db004be82010a2d557
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 7b7fa2ea99a58b875bc1dc579455511aa9bf72d1
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527337"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172097"
 ---
 # <a name="kitkat-features"></a>Функции KitKat
 
@@ -413,7 +413,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 #### <a name="printing-html-content"></a>Печати HTML-содержимое
 
-Автоматически создает KitKat [ `PrintDocumentAdapter` ](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/) для веб-представление с `WebView.CreatePrintDocumentAdapter`. Веб-Печать содержимого является занимаются между [ `WebViewClient` ](https://developer.xamarin.com/api/type/Android.Webkit.WebViewClient/) , ожидает на загружаемое содержимое HTML и позволяет действию, чтобы сделать доступным в меню "Параметры" Параметры печати и Actvity, которая ожидает пользователю Выберите параметры печати и вызовы `Print`на `PrintManager`. В этом разделе рассматриваются основные настройку, необходимую для печати на экране HTML-содержимое.
+Автоматически создает KitKat [ `PrintDocumentAdapter` ](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/) для веб-представление с `WebView.CreatePrintDocumentAdapter`. Веб-Печать содержимого является занимаются между [ `WebViewClient` ](https://developer.xamarin.com/api/type/Android.Webkit.WebViewClient/) , ожидает на загружаемое содержимое HTML и позволяет действию, чтобы сделать доступным в меню "Параметры" Параметры печати и действие, которое ожидает пользователю Выберите параметры печати и вызовы `Print`на `PrintManager`. В этом разделе рассматриваются основные настройку, необходимую для печати на экране HTML-содержимое.
 
 Обратите внимание, что загрузка и печать веб-содержимого требуется разрешение Internet.
 

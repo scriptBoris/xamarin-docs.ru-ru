@@ -7,16 +7,16 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 1e42fdfdf7f90a4efb639ce8ca94f45a49f59c35
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: eaee5d7921b99ea5e14cca9f03e33699a74b06f3
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563983"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172253"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Сводка Глава 28. Расположение и карты
 
-> [!NOTE] 
+> [!NOTE]
 > Заметки на этой странице указывать области, где различаются Xamarin.Forms материал, представленный в книге.
 
 Xamarin.Forms поддерживает [ `Map` ](xref:Xamarin.Forms.Maps.Map) элемент, производный от `View`. Из-за специальные требования к платформе связанные с использованием карт, они реализуются в отдельной сборке, **Xamarin.Forms.Maps**и они используют другое пространство имен: `Xamarin.Forms.Maps`.
@@ -194,7 +194,7 @@ Android приложениях, которые извлекают из мест�
 
 ### <a name="the-phones-location"></a>Расположение телефона
 
-[ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser) Свойство `Map` работает немного по-разному на трех платформах, как [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml) демонстрирует файл:
+[ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser) Свойство `Map` работает немного по-разному на каждой платформе, как [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml) демонстрирует файл:
 
 - В iOS синяя точка обозначает расположение телефона, но вам необходимо вручную перейти туда
 - В Android, отображается значок, что при передаче перемещает карту, чтобы расположение телефона

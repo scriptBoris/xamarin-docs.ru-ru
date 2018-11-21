@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 44d75322f151850b11e4da90486168c04496eca7
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 731eb8cbcf062556e4c37b444376825527f662df
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51564022"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171564"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -31,7 +31,7 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) возможнос
 
 ## <a name="common-usage-scenarios"></a>Распространенные сценарии использования
 
-**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** пример программы содержит несколько страниц, объяснить некоторые наиболее распространенные способы применения `FlexLayout` и позволяет экспериментировать со своими свойствами.
+**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** пример программы содержит несколько страниц, которые демонстрируют некоторые распространенные примеры использования `FlexLayout` и позволяет экспериментировать со своими свойствами.
 
 ### <a name="using-flexlayout-for-a-simple-stack"></a>С помощью FlexLayout для простого стека
 
@@ -187,7 +187,7 @@ public partial class PhotoWrappingPage : ContentPage
 }
 ```
 
-Ниже приведен программу на трех платформ, постепенно прокручивать сверху вниз.
+Ниже приведен программа работает, постепенно прокручивать сверху вниз.
 
 [![Странице упаковки Photo](flex-layout-images/PhotoWrapping.png "странице упаковки фото")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
 
@@ -242,7 +242,7 @@ public partial class PhotoWrappingPage : ContentPage
 </ContentPage>
 ```
 
-Здесь он работает под управлением трех платформ:
+Здесь выполняется:
 
 [![Страница макета Grail Священный](flex-layout-images/HolyGrailLayout.png "Grail Священный макета страницы")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
 
@@ -384,7 +384,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 ## <a name="the-bindable-properties-in-detail"></a>Привязываемые свойства подробно
 
-Теперь, когда вы узнали некоторые типичные способы применения `FlexLayout`, свойства `FlexLayout` можно изучать более подробно. 
+Теперь, когда вы узнали некоторые типичные способы применения `FlexLayout`, свойства `FlexLayout` можно изучать более подробно.
 `FlexLayout` Определяет шесть привязываемые свойства, установленные для `FlexLayout` сама, либо в коде или XAML, ориентацию элемента управления и выравнивание. (Одно из этих свойств [ `Position` ](xref:Xamarin.Forms.FlexLayout.Position), в этой статье не рассматривается.)
 
 Вы можете поэкспериментировать с пятью оставшихся привязываемые свойства с помощью **поэкспериментировать** странице **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** образца. Эта страница позволяет добавить или удалить дочерние объекты из `FlexLayout` и задать сочетания пять связываемые свойства. Все дочерние `FlexLayout` являются `Label` представления разных цветов и размеров, с помощью `Text` свойство присвоено значение, соответствующее положению в `Children` коллекции.
@@ -532,7 +532,7 @@ FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
 
 ### <a name="the-basis-property"></a>Свойство основы
 
-[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty) Присоединенное свойство, используемое указывает объем пространства, выделенного для дочернего элемента `FlexLayout` на основной оси. Указанная команда размер по `Basis` свойство — это размер родительского элемента на основной оси `FlexLayout`. Таким образом `Basis` указывает ширину дочерний элемент, если дочерние элементы расположены в строках или высота, если дочерние элементы размещаются в столбцах.
+[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty) Присоединенное свойство, используемое указывает объем пространства, выделенного для дочернего элемента `FlexLayout` на основной оси. Размер, указанный параметром `Basis` свойство — это размер родительского элемента на основной оси `FlexLayout`. Таким образом `Basis` указывает ширину дочерний элемент, если дочерние элементы расположены в строках или высота, если дочерние элементы размещаются в столбцах.
 
 `Basis` Свойство имеет тип [ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis), структуру. Можно указать размер, в любом аппаратно независимых единицах или в процентах от размера `FlexLayout`. Значение по умолчанию `Basis` свойством является свойство `FlexBasis.Auto`, это означает, что дочернего элемента запрошено используется ширины или высоты.
 
@@ -735,7 +735,7 @@ button {
 
 Несколько `FlexLayout` Здесь указываются присоединенного связываемые свойства. В `label.empty` селектор, вы увидите `flex-grow` атрибут, который задает стиль пустой `Label` для предоставления пустых строк выше `Button`. `image` Селектор содержит `order` атрибут и `align-self` атрибутов, которые соответствуют `FlexLayout` присоединенного свойства для привязки.
 
-Вы уже видели, что можно задать свойства непосредственно на `FlexLayout` и подключенных привязываемые свойства можно задать с дочерними объектами `FlexLayout`. Или можно задать эти свойства, косвенно с помощью традиционных стили, основанные на XAML или стили CSS. Важно узнать и понять эти свойства. Эти свойства, которые делают `FlexLayout` по-настоящему гибкие. 
+Вы уже видели, что можно задать свойства непосредственно на `FlexLayout` и подключенных привязываемые свойства можно задать с дочерними объектами `FlexLayout`. Или можно задать эти свойства, косвенно с помощью традиционных стили, основанные на XAML или стили CSS. Важно узнать и понять эти свойства. Эти свойства, которые делают `FlexLayout` по-настоящему гибкие.
 
 ## <a name="flexlayout-with-xamarinuniversity"></a>FlexLayout с Xamarin.University
 

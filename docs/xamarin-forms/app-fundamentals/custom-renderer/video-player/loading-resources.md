@@ -1,54 +1,54 @@
 ---
-title: Загрузка видео ресурсов приложения
-description: В этой статье объясняется, как загрузить видео, хранимые как ресурсы приложения в приложении видеопроигрывателя с помощью Xamarin.Forms.
+title: Загрузка видеоресурсов приложения
+description: В этой статье объясняется, как загрузить видео, хранятся в виде ресурсов приложения в приложение проигрывателя видео, с помощью Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: f28b0dc8e25cb2e498f4101175005f05a5c5a6ef
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 17e9e7061e4329431a0f34abdbbb616a1aff1b43
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241036"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171330"
 ---
-# <a name="loading-application-resource-videos"></a>Загрузка видео ресурсов приложения
+# <a name="loading-application-resource-videos"></a>Загрузка видеоресурсов приложения
 
-Пользовательские модули подготовки отчетов для `VideoPlayer` представления можно использовать для воспроизведения видео файлов, внедренных в проектах отдельных платформы как ресурсы приложения. Однако текущая версия `VideoPlayer` сможет подключиться к ресурсам, внедренных в библиотеке .NET Standard.
+Пользовательские модули подготовки отчетов для `VideoPlayer` представления способны воспроизведения видеофайлов, которые внедрены в качестве ресурсов приложения проекты для отдельных платформ. Однако текущая версия `VideoPlayer` нет доступа к ресурсам, внедренных в библиотеку .NET Standard.
 
-Чтобы загрузить эти ресурсы, создайте экземпляр `ResourceVideoSource` , установив `Path` свойство имени файла (или в папку и имя файла) ресурса. Кроме того, вы можете вызвать статический `VideoSource.FromResource` метод, чтобы создать ссылку на ресурс. Затем задайте `ResourceVideoSource` объект `Source` свойство `VideoPlayer`.
+Чтобы загрузить эти ресурсы, создайте экземпляр `ResourceVideoSource` , задав `Path` свойство имени файла (или в папку и имя файла) ресурса. Кроме того, можно вызвать статический `VideoSource.FromResource` метод для ссылки на ресурс. Затем задайте `ResourceVideoSource` объект `Source` свойство `VideoPlayer`.
 
 ## <a name="storing-the-video-files"></a>Хранение файлов видео
 
-Сохранение файла видео в проекте платформы отличается для трех платформ.
+Хранение видеофайла в проект платформы отличается для каждой платформы.
 
-### <a name="ios-video-resources"></a>видео-ресурсов операций ввода-вывода
+### <a name="ios-video-resources"></a>видеоресурсы iOS
 
-В проект iOS можно хранить видео в **ресурсов** папку или подпапку **ресурсов** папки. Файл изображения должен содержать `Build Action` из `BundleResource`. Задать `Path` свойство `ResourceVideoSource` к имени файла, например, **MyFile.mp4** для файла в **ресурсов** папки, или **MyFolder/MyFile.mp4**, где **MyFolder** вложена **ресурсов**.
+В проект iOS, можно хранить видео в **ресурсы** папку или вложенную папку **ресурсы** папки. Видеофайл должен иметь `Build Action` из `BundleResource`. Задайте `Path` свойство `ResourceVideoSource` к имени файла, например, **MyFile.mp4** для файла в **ресурсы** папки, или **MyFolder/MyFile.mp4**, где **MyFolder** вложена **ресурсы**.
 
-В **VideoPlayerDemos** решения, **VideoPlayerDemos.iOS** проект содержит вложенную папку **ресурсов** с именем **видео** содержащий файл с именем **iOSApiVideo.mp4**. Это связано с коротким видео, которое показывает, как использовать веб-сайт Xamarin для ссылки на документацию для iOS `AVPlayerViewController` класса.
+В **VideoPlayerDemos** решения, **VideoPlayerDemos.iOS** проект содержит вложенную папку **ресурсы** с именем **видео** содержащий файл с именем **iOSApiVideo.mp4**. Это короткое видео, которое показывает, как использовать веб-сайт Xamarin для поиска документации по iOS `AVPlayerViewController` класса.
 
-### <a name="android-video-resources"></a>Android видео-ресурсов
+### <a name="android-video-resources"></a>Ресурсы Android видео
 
-В проекте Android видео должны храниться во вложенной **ресурсов** с именем **необработанные**. **Необработанные** папка не может содержать вложенные папки. Предоставьте видеофайл `Build Action` из `AndroidResource`. Задать `Path` свойство `ResourceVideoSource` к имени файла, например, **MyFile.mp4**.
+В проекте Android видео должны храниться во вложенной **ресурсы** с именем **необработанные**. **Необработанные** папка не может содержать вложенные папки. Присвойте файлу видео `Build Action` из `AndroidResource`. Задайте `Path` свойство `ResourceVideoSource` к имени файла, например, **MyFile.mp4**.
 
-**VideoPlayerDemos.Android** проект содержит вложенную папку **ресурсов** с именем **необработанные**, которая содержит файл с именем **AndroidApiVideo.mp4**.
+**VideoPlayerDemos.Android** проект содержит вложенную папку **ресурсы** с именем **необработанные**, который содержит файл с именем **AndroidApiVideo.mp4**.
 
-### <a name="uwp-video-resources"></a>Видеоресурсов UWP
+### <a name="uwp-video-resources"></a>Видеоресурсы универсальной платформы Windows
 
-В проекте универсальной платформы Windows можно хранить видео в любой папке проекта. Дайте файлу `Build Action` из `Content`. Задать `Path` свойство `ResourceVideoSource` к папке и имя файла, например, **MyFolder/MyVideo.mp4**.
+В проекте универсальной платформы Windows можно хранить видео в любой папке в проекте. Присвойте файлу `Build Action` из `Content`. Задайте `Path` свойство `ResourceVideoSource` к папке и имя файла, например, **MyFolder/MyVideo.mp4**.
 
 **VideoPlayerDemos.UWP** проект содержит папку с именем **видео** с файлом **UWPApiVideo.mp4**.
 
 ## <a name="loading-the-video-files"></a>Загрузка файлов видео
 
-Каждый из классов отрисовки платформы содержит код в его `SetSource` метод для загрузки видеофайлов, хранимые как ресурсы.
+Каждый из классов отрисовки платформы содержит код в его `SetSource` метод загрузки видеофайлов, хранятся как ресурсы.
 
-### <a name="ios-resource-loading"></a>Загрузка ресурсов операций ввода-вывода
+### <a name="ios-resource-loading"></a>Загрузка ресурсов iOS
 
-Версия iOS `VideoPlayerRenderer` использует `GetUrlForResource` метод `NSBundle` для загрузки ресурсов. Полный путь необходимо разделить на имя файла, расширение и каталог. Код использует `Path` класс в .NET `System.IO` пространство имен для разделения путь к файлу на эти компоненты:
+Версии iOS `VideoPlayerRenderer` использует `GetUrlForResource` метод `NSBundle` для загрузки ресурса. Полный путь необходимо разделить на имя файла, расширение и каталог. Код использует `Path` классов в .NET `System.IO` пространство имен для разделения пути к файлу на эти компоненты:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -82,7 +82,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="android-resource-loading"></a>Загрузка ресурсов Android
 
-Android `VideoPlayerRenderer` использует для создания имени файла и имени пакета `Uri` объекта. Имя пакета — имя приложения, в этом случае **VideoPlayerDemos.Android**, которые можно получить из статического `Context.PackageName` свойство. Итоговые `Uri` объект затем передается `SetVideoURI` метод `VideoView`:
+Android `VideoPlayerRenderer` использует имя файла и пакетов для создания `Uri` объекта. Имя пакета, — это имя приложения, в этом случае **VideoPlayerDemos.Android**, можно получить из статического `Context.PackageName` свойство. Полученный `Uri` объект затем передается `SetVideoURI` метод `VideoView`:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -115,9 +115,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="uwp-resource-loading"></a>Загрузка ресурсов UWP
+### <a name="uwp-resource-loading"></a>Загрузка ресурсов универсальной платформы Windows
 
-UWP `VideoPlayerRenderer` создает `Uri` объекта для пути и назначает ей `Source` свойства `MediaElement`:
+UWP `VideoPlayerRenderer` создает `Uri` объекта для пути и заменяет его на `Source` свойство `MediaElement`:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -147,7 +147,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="playing-the-resource-file"></a>Воспроизведение файла ресурсов
 
-**Воспроизведение видео ресурсов** страницы в **VideoPlayerDemos** использует решение `OnPlatform` класс, чтобы указать файл видео для каждой платформы:
+**Воспроизведения видео ресурсов** странице в **VideoPlayerDemos** решения использует `OnPlatform` класс для указания файла видео для каждой платформы:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -171,15 +171,15 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-Если ресурс операций ввода-вывода хранится в **ресурсов** папки, и если ресурс UWP хранится в корневой папке проекта, можно использовать такое же имя файла для трех платформ. Если это так, то это имя можно задать непосредственно в `Source` свойство `VideoPlayer`.
+Если ресурс iOS хранится в **ресурсы** папки, и если ресурс универсальной платформы Windows хранится в корневой папке проекта, можно использовать такое же имя файла для каждой платформы. Если это так, то это имя можно задать непосредственно в `Source` свойство `VideoPlayer`.
 
-Вот этой страницы, работающих на трех платформ.
+Вот этой странице под управлением:
 
-[![Воспроизведение видео ресурсов](loading-resources-images/playvideoresource-small.png "воспроизведение видео ресурсов")](loading-resources-images/playvideoresource-large.png#lightbox "воспроизведение видео ресурсов")
+[![Воспроизвести видео ресурсов](loading-resources-images/playvideoresource-small.png "воспроизведения видео ресурсов")](loading-resources-images/playvideoresource-large.png#lightbox "воспроизведения видео ресурсов")
 
-Теперь вы знаете как [загрузить видео из Web URI](web-videos.md) и воспроизведение внедренные ресурсы. Кроме того, вы можете [загрузить видео из устройства видеотека](accessing-library.md).
+Теперь вы знаете как [загрузка видео из Web URI](web-videos.md) и воспроизведение внедренные ресурсы. Кроме того, вы можете [загрузка видео из устройства видеотека](accessing-library.md).
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Видеодемонстрации проигрывателя (пример)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Видеодемонстрации Player (пример)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

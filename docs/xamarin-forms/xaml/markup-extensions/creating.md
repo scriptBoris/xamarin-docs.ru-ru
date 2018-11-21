@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b928c55f447d68b8adfedaa031fd85750ee71267
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: e11f7c95ccc65371ec5d844505682103025cd8af
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563710"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172240"
 ---
 # <a name="creating-xaml-markup-extensions"></a>Создание расширений разметки XAML
 
@@ -141,8 +141,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
         }
 
         string assemblyName = GetType().GetTypeInfo().Assembly.GetName().Name;
-
-        return ImageSource.FromResource(assemblyName + "." + Source);
+        return ImageSource.FromResource(assemblyName + "." + Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
     }
 
     object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
@@ -152,7 +151,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` полезно, когда файл XAML требуется доступ к файл изображения, хранящиеся в виде внедренного ресурса в проект библиотеки .NET Standard. Она использует `Source` свойство для вызова статического `ImageSource.FromResource` метод. Этот метод требует ресурсов полное доменное имя, которое состоит из имени сборки, имя папки и имя файла, разделенных точками. `ImageResourceExtension` Не требуется имя сборки, часть, так как он получает имя сборки, с помощью отражения и добавляет его в `Source` свойство. В любом случае `ImageSource.FromResource` должна вызываться из сборки, содержащей точечного рисунка, который означает, что это расширение ресурсов XAML не может быть частью внешней библиотеки, если не являются также в этой библиотеке. (См. в разделе [ **внедренные изображения** ](~/xamarin-forms/user-interface/images.md#embedded-images) содержатся дополнительные сведения о доступе к растровые изображения, хранящиеся в виде внедренных ресурсов.)
+`ImageResourceExtension` полезно, когда файл XAML требуется доступ к файл изображения, хранящиеся в виде внедренного ресурса в проект библиотеки .NET Standard. Она использует `Source` свойство для вызова статического `ImageSource.FromResource` метод. Этот метод требует ресурсов полное доменное имя, которое состоит из имени сборки, имя папки и имя файла, разделенных точками. Второй аргумент `ImageSource.FromResource` метода содержит имя сборки, а только необходимые для сборки выпуска на UWP. В любом случае `ImageSource.FromResource` должна вызываться из сборки, содержащей точечного рисунка, который означает, что это расширение ресурсов XAML не может быть частью внешней библиотеки, если не являются также в этой библиотеке. (См. в разделе [ **внедренные изображения** ](~/xamarin-forms/user-interface/images.md#embedded-images) содержатся дополнительные сведения о доступе к растровые изображения, хранящиеся в виде внедренных ресурсов.)
 
 Несмотря на то что `ImageResourceExtension` требует `Source` свойство для установки, `Source` свойство указывается в атрибуте как свойство содержимого класса. Это означает, что `Source=` можно опустить часть выражения в фигурных скобках. В **Демонстрация ресурса образа** странице `Image` элементы получить два изображения, используя имя папки и имя файла, разделенных точками:
 
@@ -178,7 +177,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 </ContentPage>
 ```
 
-Вот ее запуск на всех трех платформах:
+Вот ее запуск.
 
 [![Изображение ресурсов Demo](creating-images/imageresourcedemo-small.png "изображения ресурсов Demo")](creating-images/imageresourcedemo-large.png#lightbox "изображения Демонстрация ресурсов")
 
@@ -199,7 +198,6 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 ## <a name="conclusion"></a>Заключение
 
 Расширения разметки XAML играют важную роль в XAML, расширив возможность устанавливать атрибуты из различных источников. Кроме того Если не указать существующие расширения разметки XAML, то, что вам нужно, можно также написать собственные.
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

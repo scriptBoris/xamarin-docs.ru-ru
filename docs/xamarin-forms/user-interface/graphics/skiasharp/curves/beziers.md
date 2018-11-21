@@ -7,12 +7,12 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 1da0ee6155548a38057e4c7bf49ae5b90d445d79
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 60024be0c39bd215a828acfd8a4ac6294eeac9d8
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615344"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172357"
 ---
 # <a name="three-types-of-bzier-curves"></a>Три типа кривых Безье
 
@@ -89,7 +89,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Здесь выполняется на всех трех платформах:
+Здесь выполняется:
 
 [![](beziers-images/beziercurve-small.png "Тройной снимок экрана страницы кривой Безье")](beziers-images/beziercurve-large.png#lightbox "тройной снимок экрана страницы кривую Безье")
 
@@ -207,7 +207,7 @@ float Magnitude(SKPoint v)
 
 Начальная и конечная точки (`point0` и `point3`) из расчета за обычный параметрические уравнения круга. Так как элемент управления circle центрируется в (0, 0), эти точки могут также рассматриваться как радиального векторов в центре круга для длины окружности. Контрольные точки, в строках, которые являются касательной к элементу управления circle, поэтому они находятся под прямым углом в следующие радиального векторы. Вектор под прямым углом в другой — просто исходного вектора с местами координаты X и Y и один из них внесены отрицательное.
 
-Ниже приведен программу на трех платформ с тремя различными углами зрения.
+Вот приложение, выполняющееся с различными углами зрения:
 
 [![](beziers-images/beziercirculararc-small.png "Тройной снимок экрана страницы Безье дуги")](beziers-images/beziercirculararc-large.png#lightbox "тройной снимок экрана страницы дуги Безье")
 
@@ -289,7 +289,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Точки интерполируются на основе sinusoidally oscillating значения `t`. Интерполированные точки затем используются для создания ряда из четырех соединенных кривых Безье. Вот анимацию на трех платформах, показывающее ход выполнения из круг в квадрат:
+Точки интерполируются на основе sinusoidally oscillating значения `t`. Интерполированные точки затем используются для создания ряда из четырех соединенных кривых Безье. Ниже приведен запущенная анимация.
 
 [![](beziers-images/squaringthecircle-small.png "Тройной снимок Squaring странице круг")](beziers-images/squaringthecircle-large.png#lightbox "тройной снимок Squaring странице круг")
 
@@ -338,7 +338,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Это может быть хорошее упражнение для построения эти координаты на бумаге graph, чтобы увидеть, как они связаны. Знак бесконечности центрируется относительно точки (0, 0), а два цикла иметь центров (–150, 0) и (150, 0) и радиусы 100. В ряде `CubicTo` команды, вы увидите X координаты точек управления на значения –95 и –205 (эти значения являются –150 сложения и вычитания 55), 205 и 95 (150 сложения и вычитания 55), а также 250 и –250 правой и левой сторон. Единственное исключение — когда знак бесконечности пересекает самого в центре. В этом случае контрольные точки имеют координаты вместе с 50 и от – 50, чтобы выровнять кривой рядом с центром.
 
-Ниже приведен знак бесконечности на всех трех платформах.
+Ниже приведен знак бесконечности.
 
 [![](beziers-images/bezierinfinity-small.png "Тройной снимок экрана страницы бесконечность Безье")](beziers-images/bezierinfinity-large.png#lightbox "тройной снимок экрана страницы бесконечность Безье")
 
@@ -401,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-И здесь он выполняется на всех трех платформах:
+И здесь он выполняется:
 
 [![](beziers-images/quadraticcurve-small.png "Тройной снимок экрана страницы квадратичной кривой")](beziers-images/quadraticcurve-large.png#lightbox "тройной снимок экрана страницы квадратичной кривой")
 
@@ -479,7 +479,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Здесь выполняется на всех трех платформах:
+Здесь выполняется:
 
 [![](beziers-images/coniccurve-small.png "Тройной снимок экрана страницы Conic кривой")](beziers-images/coniccurve-large.png#lightbox "тройной снимок экрана страницы Conic кривой")
 

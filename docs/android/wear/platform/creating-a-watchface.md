@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
-ms.openlocfilehash: f46e0d27a39c7734e63bf5603ef2e47cd5fa7aa9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 067a39838fbfe3f1b33ac0d30b5069366b11e407
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105536"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172006"
 ---
 # <a name="creating-a-watch-face"></a>Создание оформлений экрана
 
@@ -302,7 +302,7 @@ public override void OnTimeTick()
 
 3.  Объявляет drawable образ с именем `preview` , будет отображаться на экране выбора средства выбора контрольных значений.
 
-4.  Включает в себя `intent-filter` для Android следует помнить, что `MyWatchFaceSevice` будут смотреть оформлений.
+4.  Включает в себя `intent-filter` для Android следует помнить, что `MyWatchFaceService` будут смотреть оформлений.
 
 На этом завершается создание кода для базовой `WatchFace` пример. Следующим шагом является добавление необходимых ресурсов.
 

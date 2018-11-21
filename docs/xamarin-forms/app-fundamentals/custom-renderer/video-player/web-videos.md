@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 566f056bd616c918ce274b9c7406d94fdc265ea2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7f40d0d11fc932121b4ff7789969bbb1e354024c
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994563"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52172214"
 ---
 # <a name="playing-a-web-video"></a>Воспроизведение видео через Интернет
 
@@ -465,7 +465,7 @@ namespace FormsVideoLibrary.UWP
 
 [![Воспроизведение видео в Интернете](web-videos-images/playwebvideo-small.png "воспроизведение видео в Интернете")](web-videos-images/playwebvideo-large.png#lightbox "воспроизведение видео в Интернете")
 
-На каждом из трех платформ элементы управления транспортировкой Исчезание если они не используются, но могут быть восстановлены для просмотра, коснувшись видео.
+На каждой из платформ элементы управления транспортировкой Исчезание если они не используются, но могут быть восстановлены для просмотра, коснувшись видео.
 
 Видео может не запускаться автоматически, задав `AutoPlay` свойства `false`:
 

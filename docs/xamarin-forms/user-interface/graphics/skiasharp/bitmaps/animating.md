@@ -7,12 +7,12 @@ ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: 78fcbae8db70a83d7d0a643e0b27f575152e9515
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6eacc7f2688a563f9facf651b0a6da85bd75360f
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112563"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171356"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>Анимации точечных рисунков SkiaSharp
 
@@ -20,7 +20,7 @@ ms.locfileid: "50112563"
 
 Тем не менее если графики слишком сложны для отображения в 16 миллисекунд, анимация может стать перебои управления. Программист может потребоваться уменьшить частоту обновления до 30 раз или 15 раз в секунду, но иногда этого недостаточно. Иногда графика — настолько сложны, что они просто не может быть отображен в режиме реального времени.
 
-Одним из решений является заранее подготовить для анимации с визуализации отдельных кадров анимации на ряд точечных рисунков. Для отображения анимации, необходим только для отображения растровых изображения последовательно 60 раз в секунду. 
+Одним из решений является заранее подготовить для анимации с визуализации отдельных кадров анимации на ряд точечных рисунков. Для отображения анимации, необходим только для отображения растровых изображения последовательно 60 раз в секунду.
 
 Само собой, это потенциально много точечных рисунков, но это как большой бюджет 3D вносятся анимированных фильмов. 3D-графики гораздо слишком сложны для отображения в режиме реального времени. Требуется много времени обработки для отрисовки каждого кадра. Что видят при просмотре фильма является по сути ряд точечных рисунков.
 
@@ -34,7 +34,7 @@ ms.locfileid: "50112563"
 
 Мандельброта визуально интересно, но computionally длинными. (Обсуждение Мандельброта и алгоритм, используемый здесь, см. в разделе [Глава 20 _Создание мобильных приложений с помощью Xamarin.Forms_ ](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) начиная на странице 666. Со следующим описанием предполагается, что фоновые знания.)
 
-[ **Анимации Мандельброта** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/) образец использует анимации растрового изображения для эмуляции непрерывного изменения масштаба фиксированной точки Мандельброта. Увеличение следуют масштаба изображения, и затем цикл повторяется неограниченное время или до окончания работы программы. 
+[ **Анимации Мандельброта** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/) образец использует анимации растрового изображения для эмуляции непрерывного изменения масштаба фиксированной точки Мандельброта. Увеличение следуют масштаба изображения, и затем цикл повторяется неограниченное время или до окончания работы программы.
 
 Программа подготавливает этой анимации путем создания до 50 растровые изображения, хранящиеся в локальном хранилище приложения. Каждый рисунок охватывает половины ширины и высоты на комплексной плоскости как предыдущих битовую карту. (В программе, эти точечные рисунки называются представляют целочисленный тип _уровни масштаба_.) Растровые изображения отображаются в последовательности. Масштабирование растрового изображения каждого анимируется для предоставления smooth последовательность от одного точечного рисунка в другой.
 
@@ -150,7 +150,7 @@ class BitmapInfo
 
             <Button x:Name="deleteButton"
                     Text="Delete All"
-                    HorizontalOptions="EndAndExpand" 
+                    HorizontalOptions="EndAndExpand"
                     Clicked="OnDeleteButtonClicked" />
         </StackLayout>
     </StackLayout>
@@ -179,7 +179,7 @@ public partial class MainPage : ContentPage
 
 Рано или поздно вам, вероятно, захотите изменить `COUNT` значение 50, чтобы увидеть полный диапазон анимации. Значения выше 50 не используются. Вокруг уровень масштабирования — 48, или около того разрешение чисел с плавающей запятой двойной точности становится недостаточным для расчета Мандельброта. Эта проблема рассматривается на странице 684 _Создание мобильных приложений с помощью Xamarin.Forms_.
 
-`center` Имеет большое значение. Это цель анимации масштабирования. Три значения в файле, используемые в трех окончательный снимки экрана в главе 20 _Создание мобильных приложений с помощью Xamarin.Forms_ на странице 684, но вы можете поэкспериментировать с программой в этой главе восстанавливался с одним из собственных значений. 
+`center` Имеет большое значение. Это цель анимации масштабирования. Три значения в файле, используемые в трех окончательный снимки экрана в главе 20 _Создание мобильных приложений с помощью Xamarin.Forms_ на странице 684, но вы можете поэкспериментировать с программой в этой главе восстанавливался с одним из собственных значений.
 
 **Анимации Мандельброта** образец хранит их `COUNT` растровые изображения в хранилище локального приложения. Пятьдесят точечные рисунки требуют более чем 20 мегабайт памяти на устройстве, поэтому полезно знать, какой объем хранилища, занимаемого эти точечные рисунки, а в определенный момент может потребоваться удалить их все. Это назначение этих двух методов, в нижней части `MainPage` класса:
 
@@ -222,10 +222,10 @@ public partial class MainPage : ContentPage
 {
     ···
     // File path for storing each bitmap in local storage
-    string FolderPath() => 
+    string FolderPath() =>
         Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
-    string FilePath(int zoomLevel) => 
+    string FilePath(int zoomLevel) =>
         Path.Combine(FolderPath(),
                      String.Format("R{0}I{1}Z{2:D2}.png", center.Real, center.Imaginary, zoomLevel));
 
@@ -292,7 +292,7 @@ public partial class MainPage : ContentPage
 
                 CancellationToken cancelToken = cancelTokenSource.Token;
 
-                // Do the (generally lengthy) Mandelbrot calculation 
+                // Do the (generally lengthy) Mandelbrot calculation
                 BitmapInfo bitmapInfo =
                     await Mandelbrot.CalculateAsync(center,
                                                     4 / Math.Pow(2, zoomLevel),
@@ -376,7 +376,7 @@ public partial class MainPage : ContentPage
 
 После создания или загрузки в память все битовые карты, этот метод начинает `Stopwatch` и вызывает `Device.StartTimer`. `OnTimerTick` Каждые 16 миллисекунд вызывается метод.
 
-`OnTimerTick` Вычисляет `time` значение в миллисекундах, в диапазоне от 0 до 6000 раз `COUNT`, который apportions шесть секунд для отображения каждого растрового изображения. `progress` Значение использует `Math.Sin` следующие значения и создать переход анимацию, которая будет выполняться медленнее в начале цикла, и медленнее в конце, так как он меняет направление. 
+`OnTimerTick` Вычисляет `time` значение в миллисекундах, в диапазоне от 0 до 6000 раз `COUNT`, который apportions шесть секунд для отображения каждого растрового изображения. `progress` Значение использует `Math.Sin` следующие значения и создать переход анимацию, которая будет выполняться медленнее в начале цикла, и медленнее в конце, так как он меняет направление.
 
 `progress` Значение лежит в диапазоне от 0 до `COUNT`. Это означает, что целой части `progress` является индексом в `bitmaps` массива, а дробная часть параметра `progress` указывает значение масштаба для этого конкретного растрового изображения. Эти значения хранятся в `bitmapIndex` и `bitmapProgress` полей и их отображения с `Label` и `Slider` в файле XAML. `SKCanvasView` Становится недействительным, чтобы обновить список точечного рисунка:
 
@@ -448,7 +448,7 @@ public partial class MainPage : ContentPage
             SKBitmap bitmap = bitmaps[bitmapIndex];
             int width = bitmap.Width;
             int height = bitmap.Height;
-            SKRect sourceRect = new SKRect(fraction * width, fraction * height, 
+            SKRect sourceRect = new SKRect(fraction * width, fraction * height,
                                            (1 - fraction) * width, (1 - fraction) * height);
 
             // Display the bitmap
@@ -459,7 +459,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Вот ее запуск на всех трех платформах:
+Вот ее запуск.
 
 [![Анимация Мандельброта](animating-images/MandelbrotAnimation.png "Мандельброта анимации")](animating-images/MandelbrotAnimation-Large.png#lightbox)
 
@@ -482,7 +482,7 @@ public partial class MainPage : ContentPage
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <skia:SKCanvasView x:Name="canvasView" 
+        <skia:SKCanvasView x:Name="canvasView"
                            Grid.Row="0"
                            PaintSurface="OnCanvasViewPaintSurface" />
 
@@ -494,11 +494,11 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-Файл с выделенным кодом не обобщается для воспроизведения анимированный GIF-файл. Он игнорирует большая часть данных, который доступен, в частности, число повторений и просто играет анимационный GIF в цикле. 
+Файл с выделенным кодом не обобщается для воспроизведения анимированный GIF-файл. Он игнорирует большая часть данных, который доступен, в частности, число повторений и просто играет анимационный GIF в цикле.
 
 Использование SkisSharp для извлечения кадры анимированный GIF-файл не документироваться в любой точке мира, поэтому описания приведенный ниже код — более подробные, чем обычно:
 
-Декодирование анимированный GIF-файл в конструктор страницы происходит, но она требуется `Stream` использовать для создания объекта, ссылающегося на точечный рисунок `SKManagedStream` объекта и затем [ `SKCodec` ](xref:SkiaSharp.SKCodec) объекта. [ `FrameCount` ](xref:SkiaSharp.SKCodec.FrameCount) Свойство указывает количество кадров, составляющих анимации. 
+Декодирование анимированный GIF-файл в конструктор страницы происходит, но она требуется `Stream` использовать для создания объекта, ссылающегося на точечный рисунок `SKManagedStream` объекта и затем [ `SKCodec` ](xref:SkiaSharp.SKCodec) объекта. [ `FrameCount` ](xref:SkiaSharp.SKCodec.FrameCount) Свойство указывает количество кадров, составляющих анимации.
 
 Эти кадры в конечном итоге сохраняются как отдельные точечные рисунки, поэтому конструктор использует `FrameCount` выделить массив объектов типа `SKBitmap` а также два `int` массивы накопленных в течение каждого кадра и (для упрощения логики анимации) длительность.
 
@@ -562,10 +562,10 @@ public partial class AnimatedGifPage : ContentPage
                 totalDuration += durations[frame];
             }
 
-            // Calculate the accumulated durations 
+            // Calculate the accumulated durations
             for (int frame = 0; frame < durations.Length; frame++)
             {
-                accumulatedDurations[frame] = durations[frame] + 
+                accumulatedDurations[frame] = durations[frame] +
                     (frame == 0 ? 0 : accumulatedDurations[frame - 1]);
             }
         }
@@ -641,7 +641,7 @@ public partial class AnimatedGifPage : ContentPage
         SKCanvas canvas = surface.Canvas;
 
         canvas.Clear(SKColors.Black);
-            
+
         // Get the bitmap and center it
         SKBitmap bitmap = bitmaps[currentFrame];
         canvas.DrawBitmap(bitmap,info.Rect, BitmapStretch.Uniform);

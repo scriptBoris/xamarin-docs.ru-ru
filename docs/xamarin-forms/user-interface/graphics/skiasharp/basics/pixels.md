@@ -1,5 +1,5 @@
 ---
-title: Пиксели и аппаратно независимые единицы
+title: Пиксели и аппаратно-независимые единицы
 description: В этой статье рассматриваются различия между SkiaSharp координаты и Xamarin.Forms и демонстрирует это с помощью примера кода.
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -7,14 +7,14 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: 9da46f128eeb502e0f40e5861f3d04c66491565b
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: d4c890853cb6db334416fc31feb2205a203faa4a
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615305"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171928"
 ---
-# <a name="pixels-and-device-independent-units"></a>Пиксели и аппаратно независимые единицы
+# <a name="pixels-and-device-independent-units"></a>Пиксели и аппаратно-независимые единицы
 
 _Ознакомьтесь с различиями между SkiaSharp координаты и Xamarin.Forms_
 
@@ -97,7 +97,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Метод начинается первая строка текста с координату по оси X 20 (для небольшой поля слева) и координата Y `fontSpacing`, который является немного более, чем нужно отобразить полную высоту первой строки текста в верхней части области отображения. После каждого вызова `DrawText`, координата Y увеличивается на один или два приращения `fontSpacing`.
 
-Вот ее запуск на всех трех платформах:
+Вот ее запуск.
 
 [![](pixels-images/surfacesize-small.png "Тройной снимок экрана страницы размер поверхности")](pixels-images/surfacesize-large.png#lightbox "тройной снимок экрана поверхности размер страницы")
 
@@ -140,7 +140,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Здесь он работает под управлением трех платформ:
+Здесь выполняется:
 
 [![](pixels-images/ellipsefill-small.png "Тройной снимок экрана страницы размер поверхности")](pixels-images/ellipsefill-large.png#lightbox "тройной снимок экрана поверхности размер страницы")
 

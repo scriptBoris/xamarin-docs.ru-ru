@@ -6,13 +6,13 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/01/2018
-ms.openlocfilehash: 3249a9706ba96ec3690a3a3a6b80a5eb261625e4
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 11/19/2018
+ms.openlocfilehash: 5de5899b01965a33025c8af0c1ae6c09ac60dc9b
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527278"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171291"
 ---
 # <a name="android-platform-specifics"></a>Android особенностей платформы
 
@@ -143,6 +143,7 @@ _legacyColorModeDisabledButton.On<Android>().SetIsLegacyColorModeEnabled(false);
 
 - Используя Отбивка по умолчанию и значений тени Android кнопок. Дополнительные сведения см. в разделе [с помощью Android кнопки](#button-padding-shadow).
 - Настройка данный метод ввода параметров редактора для программируемой клавиатуры для [ `Entry` ](xref:Xamarin.Forms.Entry). Дополнительные сведения см. в разделе [параметры редактора метода ввода для записи параметра](#entry-imeoptions).
+- Включение тени `ImageButton`. Дополнительные сведения см. в разделе [Включение падающую тень на ImageButton](#imagebutton-drop-shadow).
 - Включение быстрой прокрутке в [ `ListView` ](xref:Xamarin.Forms.ListView) Дополнительные сведения см. в разделе [Включение быстрой прокрутке в ListView](#fastscroll).
 - Управление ли [ `WebView` ](xref:Xamarin.Forms.WebView) можно отобразить смешанное содержимое. Дополнительные сведения см. в разделе [Включение смешанного содержимого в веб-представление](#webview-mixed-content).
 
@@ -227,6 +228,67 @@ entry.On<Android>().SetImeOptions(ImeFlags.Send);
 Результатом является то, что указанный [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) значение применяется к программируемой клавиатуры для [ `Entry` ](xref:Xamarin.Forms.Entry), присваивающего параметры редактора метода ввода:
 
 [![Запись входных данных метод редактор платформы](android-images/entry-imeoptions.png "платформы редактора метода ввода запись")](android-images/entry-imeoptions-large.png#lightbox "платформы редактора метода ввода запись")
+
+<a name="imagebutton-drop-shadow" />
+
+### <a name="enabling-a-drop-shadow-on-a-imagebutton"></a>Включение тени на ImageButton
+
+Этой платформы будет использоваться для включения тени на `ImageButton`. Он используется в XAML, задав `ImageButton.IsShadowEnabled` свойство, используемое для `true`, а также ряд дополнительных необязательно привязываемые свойства, которые управляют тени:
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+       <ImageButton ...
+                    Source="XamarinLogo.png"
+                    BackgroundColor="GhostWhite"
+                    android:ImageButton.IsShadowEnabled="true"
+                    android:ImageButton.ShadowColor="Gray"
+                    android:ImageButton.ShadowRadius="12">
+            <android:ImageButton.ShadowOffset>
+                <Size>
+                    <x:Arguments>
+                        <x:Double>10</x:Double>
+                        <x:Double>10</x:Double>
+                    </x:Arguments>
+                </Size>
+            </android:ImageButton.ShadowOffset>
+        </ImageButton>
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Кроме того его можно будет использовать с помощью C# с помощью текучего API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+var imageButton = new Xamarin.Forms.ImageButton { Source = "XamarinLogo.png", BackgroundColor = Color.GhostWhite, ... };
+imageButton.On<Android>()
+           .SetIsShadowEnabled(true)
+           .SetShadowColor(Color.Gray)
+           .SetShadowOffset(new Size(10, 10))
+           .SetShadowRadius(12);
+```
+
+> [!IMPORTANT]
+> Тень рисуется как часть `ImageButton` фона и фона только рисуется Если `BackgroundColor` свойству. Таким образом, тень не рисуется Если `ImageButton.BackgroundColor` свойства не задано.
+
+`ImageButton.On<Android>` Метод указывает, что этой платформы будет выполняться только в Android. `ImageButton.SetIsShadowEnabled` Метод в [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) пространства имен, используется для управления отвечает за включение тени на `ImageButton`. Кроме того можно вызвать следующие методы для управления тени:
+
+- `SetShadowColor` — Задает цвет тени. Цвет по умолчанию [ `Color.Default` ](xref:Xamarin.Forms.Color.Default*).
+- `SetShadowOffset` — Задает смещение тени. Смещение меняет направление тени приводится и указываются в виде [ `Size` ](xref:Xamarin.Forms.Size) значение. `Size` Структуры значения выражаются в аппаратно независимых единицах, первое значение, что расстояние до (отрицательное значение) или влево (положительное значение), а второе значение, что расстояние выше (отрицательное значение) или ниже (положительное значение) . Значение этого свойства по умолчанию — (0.0, 0.0), тень, что приводит к приведение вокруг каждая сторона `ImageButton`.
+- `SetShadowRadius`— Задает радиуса размытия, используемую для отрисовки тени. Значение радиуса по умолчанию — 10.0.
+
+> [!NOTE]
+> Состояние тени можно запрашивать путем вызова `GetIsShadowEnabled`, `GetShadowColor`, `GetShadowOffset`, и `GetShadowRadius` методы.
+
+Результатом является то, что тень можно включить на `ImageButton`:
+
+![](android-images/imagebutton-drop-shadow.png "ImageButton с тенью")
 
 <a name="fastscroll" />
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: fb7d18e6434e32941531d2c37cd8b938ec21ba90
-ms.sourcegitcommit: 28dbb5fa2fbcc7e66cd09c1d0077496fcdefac56
+ms.openlocfilehash: 8df8a4f5e59675164e7d06b682c61094078edc4f
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51027331"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171044"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>В приложении используется Google Maps API
 
@@ -223,7 +223,7 @@ public class MapWithMarkersActivity : AppCompatActivity, IOnMapReadyCallback
 
 Существует пять разных типа карт из API сопоставляет Google:
 
--  **Обычный** -это тип карты по умолчанию. Он показывает, дороги и важные естественным компоненты, а также некоторые artifical Достопримечательности (например, здания и мосты).
+-  **Обычный** -это тип карты по умолчанию. Он показывает, дороги и важных функций естественным вместе с некоторых искусственные баллы интерес (например, здания и мосты).
 
 -  **Вспомогательные** -карта кода показывает вспомогательную фотография.
 

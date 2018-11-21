@@ -7,12 +7,12 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: b55067f7b4df66ccce23a7409281f4b8bbc4e9e9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d4029cbd4100b3ad83343b3bee73868b385a02e5
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111641"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171824"
 ---
 # <a name="skiasharp-image-filters"></a>Фильтры образа SkiaSharp
 
@@ -29,8 +29,8 @@ ms.locfileid: "50111641"
 Эффект размытия, созданные [ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*) статический метод имеет значительное преимущество по сравнению с методами размытия в [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter) класса: фильтра образа можно размыть всего точечного рисунка. Метод имеет следующий синтаксис:
 
 ```csharp
-public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY, 
-                                                  SKImageFilter input = null, 
+public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
+                                                  SKImageFilter input = null,
                                                   SKImageFilter.CropRect cropRect = null);
 ```
 
@@ -44,7 +44,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="SkiaSharpFormsDemos.Effects.ImageBlurExperimentPage"
              Title="Image Blur Experiment">
-    
+
     <StackLayout>
         <skia:SKCanvasView x:Name="canvasView"
                            VerticalOptions="FillAndExpand"
@@ -59,7 +59,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
                               Path=Value,
                               StringFormat='Sigma X = {0:F1}'}"
                HorizontalTextAlignment="Center" />
-        
+
         <Slider x:Name="sigmaYSlider"
                 Maximum="10"
                 Margin="10, 0"
@@ -145,11 +145,11 @@ public partial class ImageBlurExperimentPage : ContentPage
 [ `SKImageFilter.CreateDropShadow` ](xref:SkiaSharp.SKImageFilter.CreateDropShadow*) Статический метод создает `SKImageFilter` объект тени:
 
 ```csharp
-public static SKImageFilter CreateDropShadow (float dx, float dy, 
-                                              float sigmaX, float sigmaY, 
-                                              SKColor color, 
-                                              SKDropShadowImageFilterShadowMode shadowMode, 
-                                              SKImageFilter input = null, 
+public static SKImageFilter CreateDropShadow (float dx, float dy,
+                                              float sigmaX, float sigmaY,
+                                              SKColor color,
+                                              SKDropShadowImageFilterShadowMode shadowMode,
+                                              SKImageFilter input = null,
                                               SKImageFilter.CropRect cropRect = null);
 ```
 
@@ -159,7 +159,7 @@ public static SKImageFilter CreateDropShadow (float dx, float dy,
 
 `sigmaX` И `sigmaY` параметры жизнью людей размываются факторы тени.
 
-`color` Параметр является цвет тени. Это `SKColor` значение может содержать прозрачности. Один из вариантов является значение цвета `SKColors.Black.WithAlpha(0x80)` затемнения любой цвет фона. 
+`color` Параметр является цвет тени. Это `SKColor` значение может содержать прозрачности. Один из вариантов является значение цвета `SKColors.Black.WithAlpha(0x80)` затемнения любой цвет фона.
 
 Последние два параметра являются необязательными.
 
@@ -265,7 +265,7 @@ public partial class DropShadowExperimentPage : ContentPage
                                     sigmaX,
                                     sigmaY,
                                     SKColors.Red,
-                                    SKDropShadowImageFilterShadowMode.DrawShadowAndForeground); 
+                                    SKDropShadowImageFilterShadowMode.DrawShadowAndForeground);
 
             SKRect textBounds = new SKRect();
             paint.MeasureText(TEXT, ref textBounds);
@@ -280,7 +280,7 @@ public partial class DropShadowExperimentPage : ContentPage
 }
 ```
 
-Вот ее запуск на всех трех платформах:
+Вот ее запуск.
 
 [![Удалить эксперимент тени](image-filters-images/DropShadowExperiment.png "Drop эксперимента тени")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
 
@@ -299,22 +299,22 @@ public partial class DropShadowExperimentPage : ContentPage
 
 Эти методы создают изображения фильтры, которые имитируют влияние различные виды освещения на трехмерной поверхности. Фильтр результирующий образ освещает двухмерный объекты, как если бы они существовали в трехмерном пространстве, что может привести к этим объектам отображаются с повышенными правами или утопленная, или с помощью зеркального отражения.
 
-`Distant` Света методы предполагают, что загорается от дальней расстояния. Для целей illuminating объектов света предполагается, что точки в одном направлении, согласованных в трехмерном пространстве, как Sun в небольшой области Земли. `Point` Света методы имитации лампочка в трехмерном пространстве, которое выдает свет во всех направлениях. `Spot` Имеет свет, положение и направлении, как фонарик. 
+`Distant` Света методы предполагают, что загорается от дальней расстояния. Для целей illuminating объектов света предполагается, что точки в одном направлении, согласованных в трехмерном пространстве, как Sun в небольшой области Земли. `Point` Света методы имитации лампочка в трехмерном пространстве, которое выдает свет во всех направлениях. `Spot` Имеет свет, положение и направлении, как фонарик.
 
-Расположения и указаниям, приведенным в трехмерном пространстве указываются с помощью значения [ `SKPoint3` ](xref:SkiaSharp.SKPoint3) структуру, которая аналогична `SKPoint` , но с тремя свойствами с именем `X`, `Y`, и `Z`. 
+Расположения и указаниям, приведенным в трехмерном пространстве указываются с помощью значения [ `SKPoint3` ](xref:SkiaSharp.SKPoint3) структуру, которая аналогична `SKPoint` , но с тремя свойствами с именем `X`, `Y`, и `Z`.
 
 Количество и сложность параметры для этих методов усложняют экспериментов с ними. Чтобы приступить к работе, **отдаленных поэкспериментировать свет** странице позволяет экспериментировать с параметрами, чтобы `CreateDistantLightDiffuse` метод:
 
 ```csharp
-public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction, 
-                                                     SKColor lightColor, 
-                                                     float surfaceScale, 
-                                                     float kd, 
-                                                     SKImageFilter input = null, 
+public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
+                                                     SKColor lightColor,
+                                                     float surfaceScale,
+                                                     float kd,
+                                                     SKImageFilter input = null,
                                                      SKImageFilter.CropRect cropRect = null);
 ```
 
-Страницы не использует последние два необязательных параметров. 
+Страницы не использует последние два необязательных параметров.
 
 Три `Slider` представления в XAML-файла позволяют выбрать `Z` координата `SKPoint3` значение, `surfaceScale` параметра и `kd` параметр, который определен в документации по API, как «константа диффузным освещением»:
 
@@ -331,7 +331,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                            PaintSurface="OnCanvasViewPaintSurface"
                            VerticalOptions="FillAndExpand" />
 
-        <Slider x:Name="zSlider" 
+        <Slider x:Name="zSlider"
                 Minimum="-10"
                 Maximum="10"
                 Margin="10, 0"
@@ -342,7 +342,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                               StringFormat='Z = {0:F0}'}"
                HorizontalTextAlignment="Center" />
 
-        <Slider x:Name="surfaceScaleSlider" 
+        <Slider x:Name="surfaceScaleSlider"
                 Minimum="-1"
                 Maximum="1"
                 Margin="10, 0"
@@ -353,7 +353,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                               StringFormat='Surface Scale = {0:F1}'}"
                HorizontalTextAlignment="Center" />
 
-        <Slider x:Name="lightConstantSlider" 
+        <Slider x:Name="lightConstantSlider"
                 Minimum="-1"
                 Maximum="1"
                 Margin="10, 0"

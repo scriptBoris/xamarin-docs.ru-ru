@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 8952f98045d9830e9b8f25a7d4b93a5e4310cb32
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: 9226e1d26dcc49b6ec82b71f7757eb0e22cd66ec
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351591"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171980"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Разрешение зависимостей в Xamarin.Forms
 
@@ -149,7 +149,7 @@ public VideoPlayerRenderer(ILogger logger)
 }
 ```
 
-На всех трех платформах, осуществляется регистрация типа с помощью контейнера внедрения зависимостей `RegisterTypes` метод, который вызывается до загрузки приложения с платформы `LoadApplication(new App())` метод. В следующем примере показан `RegisterTypes` метод на платформе iOS:
+На всех платформах, осуществляется регистрация типа с помощью контейнера внедрения зависимостей `RegisterTypes` метод, который вызывается до загрузки приложения с платформы `LoadApplication(new App())` метод. В следующем примере показан `RegisterTypes` метод на платформе iOS:
 
 ```csharp
 void RegisterTypes()
@@ -196,7 +196,7 @@ boxView.Effects.Add(touchEffect);
 
 `TouchEffect` Класс является [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect) , реализованный на каждой платформе, `TouchEffect` класс, который имеет `PlatformEffect`. Платформа `TouchEffect` класс предоставляет функциональные возможности для перетаскивания `BoxView` вокруг страницы. Дополнительные сведения об этих классах эффект см. в разделе [вызов события из эффекты](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
 
-На всех трех платформах `TouchEffect` класс имеет следующий конструктор, который требует `ILogger` аргумент:
+На всех платформах `TouchEffect` класс имеет следующий конструктор, который требует `ILogger` аргумент:
 
 ```csharp
 public TouchEffect(ILogger logger)
@@ -205,7 +205,7 @@ public TouchEffect(ILogger logger)
 }
 ```
 
-На всех трех платформах, осуществляется регистрация типа с помощью контейнера внедрения зависимостей `RegisterTypes` метод, который вызывается до загрузки приложения с платформы `LoadApplication(new App())` метод. В следующем примере показан `RegisterTypes` метод на платформе Android:
+На всех платформах, осуществляется регистрация типа с помощью контейнера внедрения зависимостей `RegisterTypes` метод, который вызывается до загрузки приложения с платформы `LoadApplication(new App())` метод. В следующем примере показан `RegisterTypes` метод на платформе Android:
 
 ```csharp
 void RegisterTypes()
@@ -240,7 +240,7 @@ public PhotoPicker(ILogger logger)
 }
 ```
 
-На всех трех платформах, осуществляется регистрация типа с помощью контейнера внедрения зависимостей `RegisterTypes` метод, который вызывается до загрузки приложения с платформы `LoadApplication(new App())` метод. В следующем примере показан `RegisterTypes` метод для универсальной платформы Windows:
+На всех платформах, осуществляется регистрация типа с помощью контейнера внедрения зависимостей `RegisterTypes` метод, который вызывается до загрузки приложения с платформы `LoadApplication(new App())` метод. В следующем примере показан `RegisterTypes` метод для универсальной платформы Windows:
 
 ```csharp
 void RegisterTypes()

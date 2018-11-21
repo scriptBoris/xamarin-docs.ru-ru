@@ -6,13 +6,13 @@ ms.assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/26/2018
-ms.openlocfilehash: cdff3e721aa91733e995e95ead533a3ad7b41a77
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.date: 11/19/2018
+ms.openlocfilehash: fbdb611df558c547a2470a8c8a9d7848ef7aa31f
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563931"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171395"
 ---
 # <a name="xamarinforms-button"></a>Кнопка Xamarin.Forms
 
@@ -422,7 +422,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 - [`FontSize`](xref:Xamarin.Forms.Button.FontSize) размер текста
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) Указывает, является ли текст курсивом или полужирным шрифтом
 - [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) Ширина границы
-- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) Округление углов
+- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) — Это радиус скругления углов `Button`
 
 > [!NOTE]
 > `Button` Класс также имеет [ `Margin` ](xref:Xamarin.Forms.View.Margin) и [ `Padding` ](xref:Xamarin.Forms.Button.Padding) свойства, которые управляют поведением макета `Button`. Дополнительные сведения см. в разделе [поля и заполнение](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
@@ -543,6 +543,40 @@ public partial class PressAndReleaseButtonPage : ContentPage
 В iOS, вы заметите, что ширина большой границы вторгаться в внутреннюю часть `Button` , влияют на отображение текста. Если вы решили использовать элемент border с iOS `Button`, вы, вероятно, захотите начинаются и заканчиваются `Text` свойство с пробелами, чтобы сохранить его видимость.
 
 На UWP выбрав `CornerRadius` , превышает половину высоты `Button` приводит к появлению исключения.
+
+## <a name="button-visual-states"></a>Визуальные состояния кнопки
+
+[`Button`](xref:Xamarin.Forms.Button) имеет `Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState) , можно использовать для запуска Визуальное изменение в `Button` при нажатии пользователем, в условии, что он включен.
+
+В следующем примере XAML показано, как определить визуальное состояние для `Pressed` состояния:
+
+```xaml
+<Button Text="Click me!"
+        ...>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+            <VisualState x:Name="Normal">
+                <VisualState.Setters>
+                    <Setter Property="Scale"
+                            Value="1" />
+                </VisualState.Setters>
+            </VisualState>
+
+            <VisualState x:Name="Pressed">
+                <VisualState.Setters>
+                    <Setter Property="Scale"
+                            Value="0.8" />
+                </VisualState.Setters>
+            </VisualState>
+
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+</ImageButton>
+```
+
+`Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState) Указывает, что при [ `Button` ](xref:Xamarin.Forms.Button) нажата, его [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) свойства изменяется от его значение по умолчанию 1 к 0,8. `Normal` `VisualState` Указывает, что при `Button` находится в обычном состоянии, его `Scale` будет установлено значение 1. Таким образом, общий эффект том, что при `Button` является нажата, она масштабируется повторно немного меньше, и когда `Button` является выпуска, она масштабируется повторно размер по умолчанию.
+
+Дополнительные сведения о визуальных состояниях см. в разделе [Xamarin.Forms Диспетчер визуальных состояний](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="creating-a-toggle-button"></a>Создание кнопку-переключатель
 
@@ -774,7 +808,7 @@ Button button = new Button
         ContentLayout="Right, 20" />
 ```
 
-**Демонстрация изображение кнопки** странице использует `OnPlatform` для указания различных имен файлов, для iOS, Android и универсальной платформы Windows файлы точечных рисунков. Если вы хотите использовать это имя для всех трех платформ и избегайте использования `OnPlatform`, вам потребуется для хранения растровых изображений универсальной платформы Windows в корневом каталоге проекта.
+**Демонстрация изображение кнопки** странице использует `OnPlatform` для указания различных имен файлов, для iOS, Android и универсальной платформы Windows файлы точечных рисунков. Если вы хотите использовать это имя для каждой платформы и избегайте использования `OnPlatform`, вам потребуется для хранения растровых изображений универсальной платформы Windows в корневом каталоге проекта.
 
 Первый `Button` на **Демонстрация изображение кнопки** странице наборы `Image` свойство, но не `Text` свойство:
 

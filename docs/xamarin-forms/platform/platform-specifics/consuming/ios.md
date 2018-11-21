@@ -6,13 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/01/2018
-ms.openlocfilehash: afecf5c173e919bd20015aadd8a874f492dc4e34
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 10/24/2018
+ms.openlocfilehash: 12fd9e477e24058d36128e52b7b5dd9074598be8
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527083"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171798"
 ---
 # <a name="ios-platform-specifics"></a>Особенности платформы iOS
 
@@ -783,7 +783,34 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 В iOS, предоставляются следующие функциональные возможности платформы для Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application) класса:
 
+- Включение структурой элементов управления и Подготовка к просмотру обновлений, выполняемых в основном потоке. Дополнительные сведения см. в разделе [обработки элемента управления обновлений на основной поток](#update-on-main-thread).
 - Включение [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) в области прокрутки для записи и совместно использовать жест pan с представления с прокруткой. Дополнительные сведения см. в разделе [Включение одновременных распознавания жестов Pan](#simultaneous-pan-gesture).
+
+<a name="update-on-main-thread" />
+
+### <a name="handling-control-updates-on-the-main-thread"></a>Управление обновлением обработки в основном потоке
+
+Этой платформы позволяет структурой элементов управления и Подготовка к просмотру обновлений, выполняемых в основном потоке, а не выполняется в фоновом потоке. Он понадобится редко, но в некоторых случаях может предотвратить сбои. Его использования в XAML, задав `Application.HandleControlUpdatesOnMainThread` свойство, используемое для `true`:
+
+```xaml
+<Application ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Application.HandleControlUpdatesOnMainThread="true">
+    ...
+</Application>
+```
+
+Кроме того его можно будет использовать с помощью C# с помощью текучего API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+Xamarin.Forms.Application.Current.On<iOS>().SetHandleControlUpdatesOnMainThread(true);
+```
+
+`Application.On<iOS>` Метод указывает, что этой платформы будет выполняться только на устройствах iOS. `Application.SetHandleControlUpdatesOnMainThread` Метод в [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) пространства имен, используется для управления ли макет элемента управления и отрисовки обновления выполняются в основном потоке, а не выполняется в фоновом потоке. Кроме того `Application.GetHandleControlUpdatesOnMainThread` метод может использоваться для возврата, которые выполняются ли структура элемента управления и Подготовка к просмотру обновлений в основном потоке.
 
 <a name="simultaneous-pan-gesture" />
 
