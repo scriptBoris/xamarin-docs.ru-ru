@@ -7,13 +7,13 @@ ms.assetid: b674db3d-c526-4e31-a9f4-b6d6528ce7a9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/31/2016
-ms.openlocfilehash: 215aa88b7e97a67242bd991dde0e66c445b47b0a
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.date: 10/24/2018
+ms.openlocfilehash: a4a3a1d35b675091319646a03fb0362e4d250b0e
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526429"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171889"
 ---
 # <a name="automate-xamarinforms-testing-with-app-center"></a>Автоматизация тестирования Xamarin.Forms с помощью Центра приложений
 
@@ -38,7 +38,7 @@ _Компонент UITest Xamarin можно использовать с Xamari
 
 UITest автоматизирует пользовательский интерфейс путем активации элементов управления на экране и ввода данных в любом месте, где пользователь обычно взаимодействует с приложением. Чтобы включить тесты, которые могут *нажимать кнопку* или *вводить текст в поле*, коду теста потребуется способ определения элементов управления на экране.
 
-Чтобы код UITest ссылался на элементы управления, каждому элементу управления требуется уникальный идентификатор. В Xamarin.Forms рекомендуется задать этот идентификатор с помощью свойства `AutomationId`, как показано ниже:
+Чтобы код UITest ссылался на элементы управления, каждому элементу управления требуется уникальный идентификатор. В Xamarin.Forms рекомендуется задавать эти идентификаторы при помощи свойства [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId), как показано ниже:
 
 ```csharp
 var b = new Button {
@@ -51,17 +51,19 @@ var l = new Label {
 };
 ```
 
-Свойство `AutomationId` можно также задать в XAML:
+Свойство [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) можно также задать в XAML:
 
 ```xaml
 <Button x:Name="b" AutomationId="MyButton" Text="Click me"/>
 <Label x:Name="l" AutomationId="MyLabel" Text="Hello, Xamarin.Forms!" />
 ```
 
-Уникальное свойство `AutomationId` следует добавить ко всем элементам управления, необходимым для тестирования (включая кнопки, записи текста и метки, значение которых может запрашиваться).
-
 > [!NOTE]
-> Обратите внимание, что при многократных попытках задать свойство `InvalidOperationException` объекта `AutomationId` возникнет исключение `Element`.
+> [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) является [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), поэтому его также можно задать выражением привязки.
+
+Уникальный [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) следует добавить всем элементам управления, необходимым для тестирования (включая кнопки, текстовые элементы и метки, для которых может запрашиваться значение).
+
+> [Внимание!] Возникнет исключение `InvalidOperationException`, если вы попытаетесь задать свойство [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) в каком-то [`Element`](xref:Xamarin.Forms.Element) более одного раза.
 
 ### <a name="ios-application-project"></a>Проект приложения iOS
 
@@ -102,16 +104,16 @@ Xamarin.Calabash.Start();
 
 ### <a name="use-automationid-in-the-xamarinforms-ui"></a>Использование AutomationId в пользовательском интерфейсе Xamarin.Forms
 
-Перед написанием тестов пользовательского интерфейса необходимо убедиться, что пользовательский интерфейс Xamarin.Forms поддерживает сценарии. Все элементы управления в пользовательском интерфейсе должны иметь свойство `AutomationId`, чтобы на них можно было ссылаться в коде теста.
+Перед написанием тестов пользовательского интерфейса необходимо убедиться, что пользовательский интерфейс Xamarin.Forms поддерживает сценарии. Все элементы управления в пользовательском интерфейсе должны иметь свойство [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId), чтобы на них можно было ссылаться в коде теста.
 
 #### <a name="referring-to-the-automationid-in-uitests"></a>Ссылка на AutomationId в тестах пользовательского интерфейса
 
-При написании тестов пользовательского интерфейса значение `AutomationId` по-разному обрабатывается на каждой платформе:
+При написании тестов пользовательского интерфейса значение [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) на разных платформах предоставляется по-разному:
 
 - в **iOS** используется поле `id`;
 - в **Android** используется поле `label`.
 
-Для написания кроссплатформенных тестов пользовательского интерфейса, которые будут искать `AutomationId` в iOS и Android, используется запрос теста `Marked`:
+Для написания кроссплатформенных тестов пользовательского интерфейса, которые будут находить [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) на iOS и Android, используйте запрос теста `Marked`:
 
 ```csharp
 app.Query(c=>c.Marked("MyButton"))
@@ -200,7 +202,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 
 ## <a name="summary"></a>Сводка
 
-Приложения можно легко протестировать с помощью **Xamarin.UITest**, используя простой механизм для предоставления `AutomationId` в качестве уникального идентификатора представления для автоматизации тестирования. После добавления проекта UITest в решение Xamarin.Forms выполняются действия по написанию и запуску тестов для приложения Xamarin.Forms, аналогичные действиям для приложений Xamarin.Android и Xamarin.iOS.
+Приложения Xamarin.Forms можно легко тестировать с помощью **Xamarin.UITest**, используя простой механизм для предоставления [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) в качестве уникального идентификатора вида для автоматизации тестирования. После добавления проекта UITest в решение Xamarin.Forms выполняются действия по написанию и запуску тестов для приложения Xamarin.Forms, аналогичные действиям для приложений Xamarin.Android и Xamarin.iOS.
 
 Сведения об отправке тестов в службу тестов Центра приложений см. в статье об [отправке тестов пользовательского интерфейса](/appcenter/test-cloud/preparing-for-upload/uitest/). Дополнительные сведения о компоненте UITest см. в [документации по службе тестов Центра приложений](/appcenter/test-cloud/).
 

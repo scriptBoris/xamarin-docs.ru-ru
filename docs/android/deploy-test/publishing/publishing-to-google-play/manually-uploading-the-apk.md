@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: df6ef208957d8dae229ebb8aee2304444b7d18fe
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4f0378f7e2fe29a5d11c2cbc02fc736adf12577c
+ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111288"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52171733"
 ---
 # <a name="manually-uploading-the-apk"></a>Отправка пакета APK вручную
 
@@ -125,7 +125,7 @@ Google Play не разрешит изменить бесплатное прил
 
 ### <a name="manage-countries"></a>Управление странами
 
-В следующем разделе **Управление странами** осуществляется управление странами, в которые можно распространять приложения:
+В следующем разделе **Управление странами** можно выбирать, в каких странах распространяется приложение:
 
 [![Диалоговое окно "Управление странами"](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
 
@@ -169,7 +169,7 @@ Google Play не разрешит изменить бесплатное прил
 
 -   [uses-feature](http://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; Этот элемент манифеста объявляет возможности оборудования или программного обеспечения, которыми должно располагать устройство, чтобы обеспечить функционирование приложения. Этот атрибут носит исключительно информационный характер. Google Play не отобразит приложение для устройств, которые не соответствуют условиям этого фильтра. Однако приложение можно установить и другими способами (вручную или путем скачивания). Этот элемент необходимо добавить в файл **AndroidManifest.xml** вручную. 
 
--   [uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; Этот элемент указывает, что на устройстве должны присутствовать некоторые общие библиотеки, например Google Maps. Этот элемент также можно указать с помощью `Android.App.UsesLibaryAttribute`. Пример: 
+-   [uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; Этот элемент указывает, что на устройстве должны присутствовать некоторые общие библиотеки, например Google Maps. Этот элемент также можно указать с помощью `Android.App.UsesLibraryAttribute`. Пример: 
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
