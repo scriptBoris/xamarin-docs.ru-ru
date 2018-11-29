@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: e41f19c1a2d02537f300ae82b7f3d45bc6571e1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 076c6464359a58c2b36d157d9620673b0644cd4a
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112477"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459841"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>пользовательского интерфейса.Storyboard/.xib-less в Xamarin.Mac
 
@@ -34,7 +34,7 @@ _В этой статье описано, как создавать пользо
 
 Чтобы переключиться в окно Xibless для приложения, сделайте следующее:
 
-1. Откройте приложение, которое вы хотите остановить использование `.stroyboard` или xib-файлы для определения пользовательского интерфейса в Visual Studio для Mac.
+1. Откройте приложение, которое вы хотите остановить использование `.storyboard` или xib-файлы для определения пользовательского интерфейса в Visual Studio для Mac.
 2. В **панели решения**, щелкните правой кнопкой мыши **Main.storyboard** или **MainWindow.xib** файл и выберите **удалить**: 
 
     ![Удаление основной раскадровки или окно](xibless-ui-images/switch01.png "основной раскадровки или окно")

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: d1b1a59b432315532844f8fca3b613ff3392a7b5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bfbb8c2b189defeb6efb07388ea34425c239c061
+ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108253"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52459893"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Оптимизированные уведомления пользователя в Xamarin.iOS
 
@@ -58,7 +58,7 @@ ms.locfileid: "50108253"
 - Оповещения
 - Триггеры учитывать расположение
 
-Дополнительные сведения см. в разделе Apple [локальных и удаленных уведомлений руководство по программированию на](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) документации.
+Дополнительные сведения см. в разделе Apple [локальных и удаленных уведомлений руководство по программированию на](https://developer.apple.com/documentation/usernotifications) документации.
 
 ### <a name="about-remote-notifications"></a>О удаленные уведомления
 
@@ -80,7 +80,7 @@ ms.locfileid: "50108253"
 - **Пользователь с доступом к** -будут отображаться для пользователя на устройстве.
 - **Автоматическая обновлений** -они предоставляют механизм для обновления содержимого приложения iOS в фоновом режиме. При получении автоматического обновления, приложение может обратиться к извлечем серверы удалить последнее содержимое.
 
-Дополнительные сведения см. в разделе Apple [локальных и удаленных уведомлений руководство по программированию на](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) документации.
+Дополнительные сведения см. в разделе Apple [локальных и удаленных уведомлений руководство по программированию на](https://developer.apple.com/documentation/usernotifications) документации.
 
 ### <a name="about-the-existing-notifications-api"></a>Об уведомлениях существующих API
 
@@ -202,7 +202,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 Маркер действует как ключ, который объединяет уведомления и приложение, используемое для открытия или ответ на уведомление.
 
-Дополнительные сведения см. в разделе Apple [локальных и удаленных уведомлений руководство по программированию на](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) документации.
+Дополнительные сведения см. в разделе Apple [локальных и удаленных уведомлений руководство по программированию на](https://developer.apple.com/documentation/usernotifications) документации.
 
 ## <a name="notification-delivery"></a>Доставка уведомлений
 
@@ -672,4 +672,4 @@ namespace myApp {
 - [Примеры iOS 10](https://developer.xamarin.com/samples/ios/iOS10/)
 - [Справочник по платформа Usernotifications](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
-- [Руководство по программированию локальных и удаленных уведомлений](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
+- [Руководство по программированию локальных и удаленных уведомлений](https://developer.apple.com/documentation/usernotifications)
