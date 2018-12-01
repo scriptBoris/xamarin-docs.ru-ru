@@ -1,23 +1,23 @@
 ---
 title: Индексирование приложения и создание глубинных ссылок
-description: В этой статье показано, как использовать индексирование приложения и создание глубинных ссылок, чтобы предоставить доступ к содержимому приложения Xamarin.Forms для поиска на устройствах iOS и Android.
+description: В этой статье объясняется, как использовать индексирование приложения и создание глубинных ссылок, чтобы предоставить доступ к содержимому приложения Xamarin.Forms для поиска на устройствах iOS и Android.
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/11/2016
-ms.openlocfilehash: 7a102765a3633b8abaf01b3f090d8253230bc16b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 11/28/2018
+ms.openlocfilehash: f73760e2dc2310a9c1cd7a63a03ead37283a415f
+ms.sourcegitcommit: 215cad17324ba3fbc23487ce66cd4e1cc74eb879
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996100"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710014"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Индексирование приложения и создание глубинных ссылок
 
-_Индексирование приложения позволяет приложениям, которые в противном случае забывается после использует некоторые в ногу с отображаются в результатах поиска. Создание глубинных ссылок позволяет приложениям реагировать на результат поиска, который содержит данные приложения, как правило, перейдя на страницу, на которые ссылается прямой ссылки. В этой статье показано, как использовать индексирование приложения и создание глубинных ссылок, чтобы предоставить доступ к содержимому приложения Xamarin.Forms для поиска на устройствах iOS и Android._
+_Индексирование приложения позволяет приложениям, которые в противном случае забывается после использует некоторые в ногу с отображаются в результатах поиска. Создание глубинных ссылок позволяет приложениям реагировать на результат поиска, который содержит данные приложения, как правило, перейдя на страницу, на которые ссылается прямой ссылки. В этой статье объясняется, как использовать индексирование приложения и создание глубинных ссылок, чтобы предоставить доступ к содержимому приложения Xamarin.Forms для поиска на устройствах iOS и Android._
 
 > [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
 
@@ -32,10 +32,10 @@ _Индексирование приложения позволяет прило
 
 Каждый `TodoItem` индексируется экземпляра, созданных пользователем. Поиск конкретных платформ можно найти индексированных данных из приложения. Когда пользователь нажимает на элемент в результатах поиска для приложения, приложение запускается, `TodoItemPage` осуществляется переход и `TodoItem` ссылаться из сложного отображается ссылка.
 
-Дополнительные сведения об использовании базу данных SQLite, см. в разделе [работа с локальной базой данных](~/xamarin-forms/app-fundamentals/databases.md).
+Дополнительные сведения об использовании базу данных SQLite, см. в разделе [Xamarin.Forms локальные базы данных](~/xamarin-forms/app-fundamentals/databases.md).
 
 > [!NOTE]
-> Индексирование приложения Xamarin.Forms, а также глубокого связывание функциональность доступна только на платформах iOS и Android и требует iOS 9 и API 23 соответственно.
+> Индексирование приложения Xamarin.Forms, а также глубокого связывание функциональность доступна только на платформах iOS и Android и требуется как минимум iOS 9 и API 23 соответственно.
 
 ## <a name="setup"></a>Установка
 
@@ -43,7 +43,15 @@ _Индексирование приложения позволяет прило
 
 ### <a name="ios"></a>iOS
 
-На платформе iOS есть без дополнительной настройки, необходимые для использования этой функции.
+На платформе iOS, убедитесь, что проект платформы iOS задает **Entitlements.plist** файл как файл пользовательских прав для подписи пакета.
+
+Использование iOS универсальные ссылки:
+
+1. Добавить назначение сопоставленные домены в приложение с `applinks` ключей, включая все домены будут поддерживаться в вашем приложении.
+1. Добавьте файл связь с сайтом приложения Apple на веб-сайт.
+1. Добавление `applinks` ключа в файле связь с сайтом приложения Apple.
+
+Дополнительные сведения см. в разделе [разрешение приложений и веб-сайтов в связь to Your Content](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content) на developer.apple.com.
 
 ### <a name="android"></a>Android
 
@@ -56,12 +64,20 @@ _Индексирование приложения позволяет прило
 Как только эти условия выполнены, следующие дополнительные должен использовать индексирование приложения Xamarin.Forms и создание глубинных ссылок на платформе Android:
 
 1. Установка [Xamarin.Forms.AppLinks](https://www.nuget.org/packages/Xamarin.Forms.AppLinks/) пакет NuGet в проект приложения Android.
-1. В `MainActivity.cs` файл, импортировать `Xamarin.Forms.Platform.Android.AppLinks` пространства имен.
+1. В **MainActivity.cs** добавьте объявление для использования `Xamarin.Forms.Platform.Android.AppLinks` пространства имен.
+1. В **MainActivity.cs** добавьте объявление для использования `Firebase` пространства имен.
+1. В веб-браузер, создайте новый проект с помощью [консоли Firebase](https://console.firebase.google.com/).
+1. Добавление Firebase в приложение Android в консоли Firebase и введите необходимые данные.
+1. Скачайте итоговый **google-services.json** файл.
+1. Добавить **google-services.json** файл в корневой каталог для проекта Android и задайте для его **действие при построении** для **GoogleServicesJson**.
 1. В `MainActivity.OnCreate` переопределения, добавьте следующую строку кода под `Forms.Init(this, bundle)`:
 
 ```csharp
-AndroidAppLinks.Init (this);
+FirebaseApp.InitializeApp(this);
+AndroidAppLinks.Init(this);
 ```
+
+Когда **google-services.json** добавляется в проект (и *GoogleServicesJson** задано действие сборки), процесс построения извлекает ключ API и идентификатор клиента, а затем добавляет эти учетные данные созданный файл манифеста.
 
 Дополнительные сведения см. в разделе [глубокого ссылку содержимого с помощью Xamarin.Forms URL-адреса однократным](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) в блоге Xamarin.
 
@@ -75,29 +91,33 @@ AndroidAppLinks.Init (this);
 В следующем примере кода демонстрируется создание [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) экземпляр:
 
 ```csharp
-AppLinkEntry GetAppLink (TodoItem item)
+AppLinkEntry GetAppLink(TodoItem item)
 {
-  var pageType = GetType ().ToString ();
-  var pageLink = new AppLinkEntry {
-    Title = item.Name,
-    Description = item.Notes,
-    AppLinkUri = new Uri (string.Format ("http://{0}/{1}?id={2}",
-      App.AppName, pageType, WebUtility.UrlEncode (item.ID)), UriKind.RelativeOrAbsolute),
-    IsLinkActive = true,
-    Thumbnail = ImageSource.FromFile ("monkey.png")
-  };
+    var pageType = GetType().ToString();
+    var pageLink = new AppLinkEntry
+    {
+        Title = item.Name,
+        Description = item.Notes,
+        AppLinkUri = new Uri($"http://{App.AppName}/{pageType}?id={item.ID}", UriKind.RelativeOrAbsolute),
+        IsLinkActive = true,
+        Thumbnail = ImageSource.FromFile("monkey.png")
+    };
 
-  return pageLink;
+    pageLink.KeyValues.Add("contentType", "TodoItemPage");
+    pageLink.KeyValues.Add("appName", App.AppName);
+    pageLink.KeyValues.Add("companyName", "Xamarin");
+
+    return pageLink;
 }
 ```
 
 [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) Экземпляр содержит ряд свойств, значения которых необходимы для страницы индекса и Создание прямых ссылок. [ `Title` ](xref:Xamarin.Forms.IAppLinkEntry.Title), [ `Description` ](xref:Xamarin.Forms.IAppLinkEntry.Description), И [ `Thumbnail` ](xref:Xamarin.Forms.IAppLinkEntry.Thumbnail) свойства используются для идентификации индексированное содержимое, когда он появится в результатах поиска. [ `IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive) Свойству `true` для указания, что индексированное содержимое в настоящий момент просматривается. [ `AppLinkUri` ](xref:Xamarin.Forms.IAppLinkEntry.AppLinkUri) Свойство `Uri` , содержащий сведения, необходимые для возврата к текущей странице и отобразить текущее `TodoItem`. В следующем примере показано пример `Uri` для примера приложения:
 
 ```csharp
-http://deeplinking/DeepLinking.TodoItemPage?id=ec38ebd1-811e-4809-8a55-0d028fce7819
+http://deeplinking/DeepLinking.TodoItemPage?id=2
 ```
 
-Это `Uri` содержит все сведения, необходимые для запуска `deeplinking` приложение, перейдите к `DeepLinking.TodoItemPage`и отобразить `TodoItem` с `ID` из `ec38ebd1-811e-4809-8a55-0d028fce7819`.
+Это `Uri` содержит все сведения, необходимые для запуска `deeplinking` приложение, перейдите к `DeepLinking.TodoItemPage`и отобразить `TodoItem` с `ID` 2.
 
 ## <a name="registering-content-for-indexing"></a>Регистрация содержимого для индексирования
 
@@ -138,30 +158,28 @@ Application.Current.AppLinks.DeregisterLink (appLink);
 ```csharp
 public class App : Application
 {
-  ...
+    ...
+    protected override async void OnAppLinkRequestReceived(Uri uri)
+    {
+        string appDomain = "http://" + App.AppName.ToLowerInvariant() + "/";
+        if (!uri.ToString().ToLowerInvariant().StartsWith(appDomain, StringComparison.Ordinal))
+            return;
 
-  protected override async void OnAppLinkRequestReceived (Uri uri)
-  {
-    string appDomain = "http://" + App.AppName.ToLowerInvariant () + "/";
-    if (!uri.ToString ().ToLowerInvariant ().StartsWith (appDomain)) {
-      return;
+        string pageUrl = uri.ToString().Replace(appDomain, string.Empty).Trim();
+        var parts = pageUrl.Split('?');
+        string page = parts[0];
+        string pageParameter = parts[1].Replace("id=", string.Empty);
+
+        var formsPage = Activator.CreateInstance(Type.GetType(page));
+        var todoItemPage = formsPage as TodoItemPage;
+        if (todoItemPage != null)
+        {
+            var todoItem = await App.Database.GetItemAsync(int.Parse(pageParameter));
+            todoItemPage.BindingContext = todoItem;
+            await MainPage.Navigation.PushAsync(formsPage as Page);
+        }
+        base.OnAppLinkRequestReceived(uri);
     }
-
-    string pageUrl = uri.ToString ().Replace (appDomain, string.Empty).Trim ();
-    var parts = pageUrl.Split ('?');
-    string page = parts [0];
-    string pageParameter = parts [1].Replace ("id=", string.Empty);
-
-    var formsPage = Activator.CreateInstance (Type.GetType (page));
-    var todoItemPage = formsPage as TodoItemPage;
-    if (todoItemPage != null) {
-      var todoItem = App.Database.Find (pageParameter);
-      todoItemPage.BindingContext = todoItem;
-      await MainPage.Navigation.PushAsync (formsPage as Page);
-    }
-
-    base.OnAppLinkRequestReceived (uri);
-  }
 }
 ```
 
@@ -174,23 +192,25 @@ public class App : Application
 В следующем примере кода демонстрируется параметр [ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive) свойства `true` в [ `Page.OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) переопределить:
 
 ```csharp
-protected override void OnAppearing ()
+protected override void OnAppearing()
 {
-  appLink = GetAppLink (BindingContext as TodoItem);
-  if (appLink != null) {
-    appLink.IsLinkActive = true;
-  }
+    appLink = GetAppLink(BindingContext as TodoItem);
+    if (appLink != null)
+    {
+        appLink.IsLinkActive = true;
+    }
 }
 ```
 
 Аналогичным образом, когда страницу, представленную объектом прямая ссылка будет выполнен переход от, [ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive) можно присвоить свойство `false`. В iOS и Android, при этом прекращается выполнение [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) экземпляр объявления для индексирования поиска, а также на iOS только, она также останавливает рекламы `AppLinkEntry` экземпляр для обработки. Это можно сделать в [ `Page.OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) переопределить, как показано в следующем примере кода:
 
 ```csharp
-protected override void OnDisappearing ()
+protected override void OnDisappearing()
 {
-  if (appLink != null) {
-    appLink.IsLinkActive = false;
-  }
+    if (appLink != null)
+    {
+        appLink.IsLinkActive = false;
+    }
 }
 ```
 
@@ -199,8 +219,9 @@ protected override void OnDisappearing ()
 В iOS относящиеся к приложению данные могут храниться, при индексировании страницы. Это достигается путем добавления данных к [ `KeyValues` ](xref:Xamarin.Forms.IAppLinkEntry.KeyValues) коллекции, являющийся `Dictionary<string, string>` для хранения пар "ключ значение", которые используются в перемещение вручную. Переадресуемое дает пользователю начать действие на одном из своих устройств и по-прежнему действия на другом устройствах (которые определяются в учетной записи iCloud). Следующий код является примером хранения пар ключ значение конкретного приложения:
 
 ```csharp
-var pageLink = new AppLinkEntry {
-  ...  
+var pageLink = new AppLinkEntry
+{
+    ...
 };
 pageLink.KeyValues.Add("appName", App.AppName);
 pageLink.KeyValues.Add("companyName", "Xamarin");
@@ -221,8 +242,7 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 
 ## <a name="summary"></a>Сводка
 
-В этой статье показано, как использовать индексирование приложения и создание глубинных ссылок, чтобы предоставить доступ к содержимому приложения Xamarin.Forms для поиска на устройствах iOS и Android. Индексирование приложения позволяет приложениям ногу, отображаются в результатах поиска, которые бы в противном случае забыть о после использует несколько.
-
+В этой статье описано, как использовать индексирование приложения и создание глубинных ссылок, чтобы предоставить доступ к содержимому приложения Xamarin.Forms для поиска на устройствах iOS и Android. Индексирование приложения позволяет приложениям ногу, отображаются в результатах поиска, которые бы в противном случае забыть о после использует несколько.
 
 ## <a name="related-links"></a>Связанные ссылки
 
