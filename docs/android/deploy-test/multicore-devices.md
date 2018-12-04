@@ -258,5 +258,5 @@ Xamarin.Android сейчас не поддерживает `mips`.
 - [Архитектура MIPS](http://www.mips.com/products/product-materials/processor/mips-architecture)
 - [Интерфейс ABI для архитектуры ARM (PDF)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
 - [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
-- [Issue 9089:Nexus One - Won't load ANY native libraries from armeabi if there's at least one library at armeabi-v7a](http://code.google.com/p/android/issues/detail?id=9089) (Проблема 9089: на устройстве Nexus One не загружается ни одна собственная библиотека для armeabi, если есть хотя бы одна библиотека для armeabi-v7a).
-- [Issue 24321: Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk](http://code.google.com/p/android/issues/detail?id=25321) (Проблема 24321: устройство Galaxy Nexus 4.0.2 использует машинный код armeabi, если в APK есть файлы для armeabi и armeabi-v7a).
+- [(Проблема 9089: на устройстве Nexus One не загружается ни одна собственная библиотека для armeabi, если есть хотя бы одна библиотека для armeabi-v7a](http://code.google.com/p/android/issues/detail?id=9089) 
+- [Проблема 24321: устройство Galaxy Nexus 4.0.2 использует машинный код armeabi, если в APK есть файлы для armeabi и armeabi-v7a](http://code.google.com/p/android/issues/detail?id=25321) 
