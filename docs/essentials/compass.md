@@ -4,17 +4,15 @@ description: В этом документе описывается класс Co
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 51812f9b4f88d77bf553a26ef3a6802239e338e0
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 55dd10bff21b7d082b225277d0100232d5efd4f3
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675501"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898788"
 ---
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Compass
-
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
 Класс **Compass** позволяет отслеживать направление устройства на северный магнитный полюс.
 
@@ -86,13 +84,13 @@ Android не предоставляет API для извлечения данн
 
 ## <a name="low-pass-filter"></a>Фильтр нижних частот
 
-Из-за способа обновления и вычисления значений компаса Android может потребоваться сглаживание значений. Вы можете применить _фильтр нижних частот_, который усредняет значения синуса и косинуса углов и который можно включить, установив свойство `ApplyLowPassFilter` в классе `Compass`:
+Из-за способа обновления и вычисления значений компаса Android может потребоваться сглаживание значений. Вы можете применить _низкочастотный фильтр_, который усредняет значения синуса и косинуса углов и который можно включить с помощью перегрузки метода `Start`, принимающего параметр `bool applyLowPassFilter`:
 
 ```csharp
-Compass.ApplyLowPassFilter = true;
+Compass.Start(SensorSpeed.UI, applyLowPassFilter: true);
 ```
 
-Это применяется только на платформе Android. Дополнительные сведения можно найти [здесь](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860).
+Это работает только на платформе Android. На iOS и UWP параметр игнорируется.  Дополнительные сведения можно найти [здесь](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860).
 
 --------------
 

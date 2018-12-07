@@ -4,17 +4,15 @@ description: В этом документе описывается класс De
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 530b04446703d78452357b2c9f9089e59ebf6e6c
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: b78c04d30871552f9b1e18a42c871e24464c4802
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674817"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898957"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials. Сведения об устройстве
-
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
 Класс **DeviceInfo** предоставляет сведения об устройстве, в котором выполняется приложение.
 
@@ -57,22 +55,23 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="platformsxrefxamarinessentialsdeviceinfoplatforms"></a>[Платформы](xref:Xamarin.Essentials.DeviceInfo.Platforms)
 
-`DeviceInfo.Platform` устанавливает корреляцию с постоянной строкой, которая сопоставляется с операционной системой. Значения можно проверить с помощью класса `Platforms`:
+`DeviceInfo.Platform` устанавливает корреляцию с постоянной строкой, которая сопоставляется с операционной системой. Значения можно проверить с помощью структуры `DevicePlatform`:
 
-- **DeviceInfo.Platforms.iOS** — iOS
-- **DeviceInfo.Platforms.Android** — Android
-- **DeviceInfo.Platforms.UWP** — UWP
-- **DeviceInfo.Platforms.Unsupported** — не поддерживается
+- **DevicePlatform.iOS** — iOS
+- **DevicePlatform.Android** — Android
+- **DevicePlatform.UWP** — UWP
+- **DevicePlatform.Unknown** — неизвестно
 
 ## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[Idioms](xref:Xamarin.Essentials.DeviceInfo.Idioms)
 
-`DeviceInfo.Idiom` коррелирует постоянную строку, которая сопоставляется с типом устройства, на котором выполняется приложение. Значения можно проверить с помощью класса `Idioms`:
+`DeviceInfo.Idiom` коррелирует постоянную строку, которая сопоставляется с типом устройства, на котором выполняется приложение. Значения можно проверить с помощью структуры `DeviceIdiom`:
 
-- **DeviceInfo.Idioms.Phone** — телефон
-- **DeviceInfo.Idioms.Tablet** — планшет
-- **DeviceInfo.Idioms.Desktop** — настольный компьютер
-- **DeviceInfo.Idioms.TV** — ТВ
-- **DeviceInfo.Idioms.Unsupported** — не поддерживается
+- **DeviceIdiom.Phone** — телефон
+- **DeviceIdiom.Tablet** — планшет
+- **DeviceIdiom.Desktop** — компьютер
+- **DeviceIdiom.TV** — телевизор
+- **DeviceIdiom.Watch** — часы
+- **DeviceIdiom.Unknown** — неизвестно
 
 ## <a name="device-type"></a>Тип устройства
 

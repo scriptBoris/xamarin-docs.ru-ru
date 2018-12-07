@@ -4,17 +4,15 @@ description: В этом документе описан класс Geolocation 
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 55d33181b2a0de1f939ebd28b83a67a9af64716e
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.date: 11/04/2018
+ms.openlocfilehash: 651da789dcd87810ef6650d87fc2df4f91ce58e1
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528498"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898938"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Geolocation
-
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
 Класс **Geolocation** предоставляет API для получения текущих геолокационных координат устройства.
 
@@ -156,7 +154,7 @@ catch (Exception ex)
 | iOS | 1000. |
 | UWP | 300–3000 |
 
-### <a name="medium-default"></a>Среднее (по умолчанию)
+### <a name="medium-default"></a>Medium (по умолчанию)
 
 | Platform | Расстояние (в метрах) |
 | --- | --- |
@@ -191,7 +189,7 @@ catch (Exception ex)
 ```csharp
 Location boston = new Location(42.358056, -71.063611);
 Location sanFrancisco = new Location(37.783333, -122.416667);
-double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Miles);
+double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnit.Miles);
 ```
 
 В конструкторе `Location` аргументы широты и долготы указаны в следующем порядке. Положительные значения широты находятся к северу от экватора, а положительные значения долготы — к востоку от нулевого меридиана. Используйте последний аргумент `CalculateDistance`, чтобы указать единицы измерения: мили или километры. Класс `Location` также определяет методы `KilometersToMiles` и `MilesToKilometers` для преобразования между двумя единицами измерения.

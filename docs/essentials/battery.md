@@ -4,19 +4,17 @@ description: В этом документе описан класс Battery в X
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 6a14c939064538a405a1fe64061e0bb2e903fedd
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 5c457bb8ad9796396f24264e27f6762569ea542c
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675436"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898873"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Battery
 
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
-
-Класс **Battery** позволяет проверить информацию об аккумуляторе устройства и отслеживать изменения.
+Класс **Battery** позволяет получать сведения о батарее устройства, отслеживать изменения и просматривать информацию о состоянии энергосбережения (находится ли устройство в режиме пониженного энергопотребления). Приложениям следует избегать фоновой обработки, если на устройстве включено состояние экономии электроэнергии.
 
 ## <a name="get-started"></a>Начало работы
 
@@ -28,7 +26,7 @@ ms.locfileid: "50675436"
 
 Требуется разрешение `Battery`, которое следует настроить в проекте Android. Для этого можно применить любой из следующих методов:
 
-Откройте файл **AssemblyInfo.cs** в папке **Properties** и добавьте в него:
+Откройте файл **AssemblyInfo.cs** в папке **Свойства** и добавьте в него:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
@@ -65,7 +63,7 @@ using Xamarin.Essentials;
 Проверьте текущую информацию об аккумуляторе:
 
 ```csharp
-var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or -1.0 if unable to determine.
+var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or 1.0 when on AC or no battery.
 
 var state = Battery.State;
 
@@ -121,7 +119,7 @@ public class BatteryTest
         Battery.BatteryChanged += Battery_BatteryChanged;
     }
 
-    void Battery_BatteryChanged(object sender, BatteryChangedEventArgs   e)
+    void Battery_BatteryChanged(object sender, BatteryInfoChangedEventArgs   e)
     {
         var level = e.ChargeLevel;
         var state = e.State;
@@ -130,6 +128,39 @@ public class BatteryTest
     }
 }
 ```
+
+Устройства, работающие на аккумуляторах, можно перевести в режим низкого энергопотребления. Иногда устройства переключаются в этот режим автоматически, например, если остаток заряда аккумулятора опускается ниже 20 %. Операционная система в режиме экономии электроэнергии сокращает количество действий, при которых быстро разряжается аккумулятор. В приложениях при включенном режиме экономии не выполняется фоновая обработка и другие энергоемких действий.
+
+Вы также можете узнать текущее состояние энергосбережения на устройстве с помощью статического свойства `Battery.EnergySaverStatus`:
+
+```csharp
+// Get energy saver status
+var status = Battery.EnergySaverStatus;
+```
+
+Это свойство возвращает элемент перечисления `EnergySaverStatus`, значением которого является `On`, `Off` или `Unknown`. Если свойство возвращает значение `On`, приложению следует избегать фоновой обработки и выполнения других действий, которые могут потреблять много электроэнергии.
+
+Также приложению следует установить обработчик событий. Класс **Battery** предоставляет событие, которое активируется при изменении состояния энергосбережения:
+
+```csharp
+public class EnergySaverTest
+{
+    public EnergySaverTest()
+    {
+        // Subscribe to changes of energy-saver status
+        Batter.EnergySaverStatusChanged += OnEnergySaverStatusChanged;
+    }
+
+    private void OnEnergySaverStatusChanged(EnergySaverStatusChangedEventArgs e)
+    {
+        // Process change
+        var status = e.EnergySaverStatus;
+    }
+}
+```
+
+Если состояние экономии электроэнергии изменится на `On`, приложение должно прекратить выполнение фоновой обработки. Если состояние изменится на `Unknown` или `Off`, приложение может возобновить фоновую обработку.
+
 
 ## <a name="platform-differences"></a>Различия платформ
 

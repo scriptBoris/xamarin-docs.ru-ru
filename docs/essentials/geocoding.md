@@ -4,17 +4,15 @@ description: Класс Geocoding в Xamarin.Essentials предоставляе
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 3202d4ace85c68042425ca5f23641ca7a76a6c7e
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.date: 11/04/2018
+ms.openlocfilehash: 0f44f179588c564ac9fa46d42ec18de6d303e239
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528394"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898983"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Geocoding
-
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
 Класс **Geocoding** предоставляет API-интерфейсы для геокодирования метки в позиционные координаты и обратного геокодирования координат в метку.
 
@@ -36,10 +34,10 @@ ms.locfileid: "51528394"
 
 Для применения геокодирования нужно использовать ключ API Карт Bing. Зарегистрируйтесь для получения бесплатной учетной записи [Карт Bing](https://www.bingmapsportal.com/) В разделе **Моя учетная запись > My keys** (Мои ключи) создайте ключ и заполните сведения на основе типа приложения (которое должно быть **общедоступным приложением Windows (UWP, 8.x и более ранних версий)** для приложений UWP).
 
-На раннем этапе жизненного цикла вашего приложения до вызова любого метода **Geocoding** задайте ключ API:
+На раннем этапе работы приложения перед вызовом любого метода **Geocoding** задайте ключ API (он доступен только на UWP):
 
 ```csharp
-Geocoding.MapKey = "YOUR-KEY-HERE";
+Platform.MapServiceToken = "YOUR-KEY-HERE";
 ```
 
 -----

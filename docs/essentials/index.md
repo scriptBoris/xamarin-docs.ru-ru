@@ -4,17 +4,15 @@ description: Этот документ содержит ссылки на раз
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 07/30/2018
-ms.openlocfilehash: b81102c6c0e0d65aaa46b2d32e34db536ab58e03
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.date: 11/04/2018
+ms.openlocfilehash: 0f4271e5c0c9de53a83a840f7fe0a83b594a06fa
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "39361006"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898645"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
-
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
 Xamarin.Essentials предоставляет разработчикам кроссплатформенные API-интерфейсы для мобильных приложений.
 
@@ -35,7 +33,6 @@ Android, iOS и универсальная платформа Windows предо
 * [Буфер обмена](clipboard.md?context=xamarin/xamarin-forms) — быстрый и удобный метод устанавливать или считывать текст в буфере обмена.
 * [Компас](compass.md?context=xamarin/xamarin-forms) — отслеживание изменений в направлении на магнитный полюс.
 * [Подключение](connectivity.md?context=xamarin/xamarin-forms) — проверка состояния подключения и отслеживание изменений этого состояния.
-* [Передача данных](data-transfer.md?context=xamarin/xamarin-forms) — отправка текстов и URI веб-сайтов другим приложениям.
 * [Сведения об устройстве отображения](device-display.md?context=xamarin/xamarin-forms) — получение характеристик экрана и сведений об ориентации устройства.
 * [Сведения об устройстве](device-information.md?context=xamarin/xamarin-forms) — простое изучение характеристик устройства.
 * [Электронная почта](email.md?context=xamarin/xamarin-forms) — удобная отправка сообщений электронной почты.
@@ -51,10 +48,9 @@ Android, iOS и универсальная платформа Windows предо
 * [Открыть браузер](open-browser.md?context=xamarin/xamarin-forms) — быстрый и простой метод открыть в браузере определенный веб-сайт.
 * [Датчик ориентации](orientation-sensor.md?context=xamarin/xamarin-forms) — получение сведений об ориентации устройства в трехмерном пространстве.
 * [Набиратель номера](phone-dialer.md?context=xamarin/xamarin-forms) — открытие набирателя номера.
-* [Питание](power.md?context=xamarin/xamarin-forms) — получения сведений о состоянии энергосбережения на устройстве.
 * [Параметры](preferences.md?context=xamarin/xamarin-forms) — быстрый и удобный метод добавления сохраняемых параметров.
-* [Блокировка экрана](screen-lock.md?context=xamarin/xamarin-forms) — запрет перехода экрана в спящий режим.
 * [Безопасное хранилище](secure-storage.md?context=xamarin/xamarin-forms) — безопасное хранение данных.
+* [Share](share.md?context=xamarin/xamarin-forms) — отправка текста и URI веб-сайтов другим приложениям.
 * [SMS](sms.md?context=xamarin/xamarin-forms) — создание SMS-сообщения для отправки.
 * [Преобразование текста в речь](text-to-speech.md?context=xamarin/xamarin-forms) — звуковое воспроизведение текста на устройстве.
 * [Отслеживания версий](version-tracking.md?context=xamarin/xamarin-forms) — отслеживание версий и номеров сборки для приложений.

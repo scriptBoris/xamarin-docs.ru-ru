@@ -1,28 +1,26 @@
 ---
-title: 'Xamarin.Essentials: карты'
-description: Класс Maps в Xamarin.Essentials позволяет приложению открыть установленное приложение карт на определенном местоположении или метке.
+title: 'Xamarin.Essentials: класс Map'
+description: Класс Map в Xamarin.Essentials позволяет приложению открывать установленное приложение карт на определенном местоположении или метке.
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 07/25/2018
-ms.openlocfilehash: fb4cbc2fd334d574abc57a3359fa346bc6795408
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 9797244a9f89d0658b65b132eaf541ed763be97b
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674786"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898970"
 ---
-# <a name="xamarinessentials-maps"></a>Xamarin.Essentials: карты
+# <a name="xamarinessentials-map"></a>Xamarin.Essentials: класс Map
 
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
-
-Класс **Maps** позволяет приложению открыть установленное приложение карт для определенного расположения или метки.
+Класс **Map** позволяет приложению открывать установленное приложение карт на определенном местоположении или метке.
 
 ## <a name="get-started"></a>Начало работы
 
 [!include[](~/essentials/includes/get-started.md)]
 
-## <a name="using-maps"></a>Использование класса Maps
+## <a name="using-map"></a>Использование класса Map
 
 Добавьте в свой класс ссылку на Xamarin.Essentials:
 
@@ -30,17 +28,17 @@ ms.locfileid: "50674786"
 using Xamarin.Essentials;
 ```
 
-Чтобы использовать функции класса Maps, вызовите метод `OpenAsync` с параметром `Location` или `Placemark` для открытия с дополнительными параметрами `MapsLaunchOptions`.
+Чтобы использовать функции класса Map, вызовите метод `OpenAsync` с параметром `Location` или `Placemark` для открытия с дополнительными параметрами `MapLaunchOptions`.
 
 ```csharp
-public class MapsTest
+public class MapTest
 {
     public async Task NavigateToBuilding25()
     {
         var location = new Location(47.645160, -122.1306032);
-        var options =  new MapsLaunchOptions { Name = "Microsoft Building 25" };
+        var options =  new MapLaunchOptions { Name = "Microsoft Building 25" };
 
-        await Maps.OpenAsync(location, options);
+        await Map.OpenAsync(location, options);
     }
 }
 ```
@@ -53,7 +51,7 @@ public class MapsTest
 - `Locality`
 
 ```csharp
-public class MapsTest
+public class MapTest
 {
     public async Task NavigateToBuilding25()
     {
@@ -64,40 +62,40 @@ public class MapsTest
                 Thoroughfare = "Microsoft Building 25",
                 Locality = "Redmond"
             };
-        var options =  new MapsLaunchOptions { Name = "Microsoft Building 25" };
+        var options =  new MapLaunchOptions { Name = "Microsoft Building 25" };
 
-        await Maps.OpenAsync(placemark, options);
+        await Map.OpenAsync(placemark, options);
     }
 }
 ```
 
 ## <a name="extension-methods"></a>Методы расширения
 
-Если у вас уже есть ссылка на `Location` или `Placemark`, вы можете использовать встроенный метод расширения `OpenMapsAsync` с дополнительными параметрами `MapsLaunchOptions`:
+Если у вас уже есть ссылка на `Location` или `Placemark`, вы можете использовать встроенный метод расширения `OpenMapAsync` с дополнительными параметрами `MapLaunchOptions`:
 
 ```csharp
-public class MapsTest
+public class MapTest
 {
-    public async Task OpenPlacemarkOnMaps(Placemark placemark)
+    public async Task OpenPlacemarkOnMap(Placemark placemark)
     {
-        await placemark.OpenMapsAsync();
+        await placemark.OpenMapAsync();
     }
 }
 ```
 
 ## <a name="directions-mode"></a>Режим направлений
 
-Если вызвать `OpenMapsAsync` без параметров `MapsLaunchOptions`, карта запустится для указанного расположения. При желании можно рассчитать навигационный маршрут с текущего положения устройства. Для этого нужно установить `MapDirectionsMode` в `MapsLaunchOptions`:
+Если вызвать `OpenMapAsync` без параметров `MapLaunchOptions`, карта запустится для указанного расположения. При желании можно рассчитать навигационный маршрут с текущего положения устройства. Для этого нужно установить `NavigationMode` в `MapLaunchOptions`:
 
 ```csharp
-public class MapsTest
+public class MapTest
 {
     public async Task NavigateToBuilding25()
     {
         var location = new Location(47.645160, -122.1306032);
-        var options =  new MapsLaunchOptions { MapDirectionsMode = MapDirectionsMode.Driving };
+        var options =  new MapLaunchOptions { NavigationMode = NavigationMode.Driving };
 
-        await Maps.OpenAsync(location, options);
+        await Map.OpenAsync(location, options);
     }
 }
 ```
@@ -106,15 +104,15 @@ public class MapsTest
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-- `MapDirectionsMode` поддерживает езду на велосипеде, вождение и ходьбу.
+- `NavigationMode` поддерживает езду на велосипеде, вождение и ходьбу.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-- `MapDirectionsMode` поддерживает вождение, перемещение в общественном транспорте и ходьбу.
+- `NavigationMode` поддерживает вождение, перемещение в общественном транспорте и ходьбу.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-- `MapDirectionsMode` поддерживает вождение, перемещение в общественном транспорте и ходьбу.
+- `NavigationMode` поддерживает вождение, перемещение в общественном транспорте и ходьбу.
 
 --------------
 
@@ -136,5 +134,5 @@ Android использует схему `geo:` Uri для запуска при�
 
 ## <a name="api"></a>API
 
-- [Исходный код класса Maps](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Maps)
-- [Документация по API Maps](xref:Xamarin.Essentials.Maps)
+- [Исходный код Map](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Map)
+- [Документация по API для Map](xref:Xamarin.Essentials.Map)

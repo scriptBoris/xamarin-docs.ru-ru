@@ -4,17 +4,15 @@ description: Класс Barometer в Xamarin.Essentials позволяет от�
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 08/16/2018
-ms.openlocfilehash: 9172d816fe9a15993ba8f015310d0e79874c2d84
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: 342ae1b64fefebaa4b3fa82e9f48c6e9a58d4751
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675033"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899048"
 ---
 # <a name="xamarinessentials-barometer"></a>Xamarin.Essentials: барометр
-
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
 Класс **Barometer** позволяет отслеживать барометрический датчик устройства, измеряющий давление.
 
@@ -30,7 +28,7 @@ ms.locfileid: "50675033"
 using Xamarin.Essentials;
 ```
 
-Для доступа к функциям барометра нужно вызвать методы `Start` и `Stop`, которые отслеживают изменение показаний барометра в килопаскалях. Все изменения возвращаются через событие `ReadingChanged`. Пример использования:
+Чтобы использовать функции класса Barometer, вызывайте методы `Start` и `Stop`, которые отслеживают изменение показаний давления на барометре в гектопаскалях. Все изменения возвращаются через событие `ReadingChanged`. Пример использования:
 
 ```csharp
 
@@ -49,7 +47,7 @@ public class BarometerTest
     {
         var data = e.Reading;
         // Process Pressure
-        Console.WriteLine($"Reading: Pressure: {data.Pressure} kilopascals");
+        Console.WriteLine($"Reading: Pressure: {data.PressureInHectopascals} hectopascals");
     }
 
     public void ToggleBarometer()
