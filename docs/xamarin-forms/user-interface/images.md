@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 53179170afa1381a562699a39baaa716ecc6a5a6
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: f6815b54867b47bb32ede41470712dac65b6d410
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171200"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53062182"
 ---
 # <a name="images-in-xamarinforms"></a>Образы в Xamarin.Forms
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
 
 _Образы могут совместно использоваться платформах с помощью Xamarin.Forms, могут быть загружены специально для каждой платформы, или их можно загрузить для отображения._
 

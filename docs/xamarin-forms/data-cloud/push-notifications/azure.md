@@ -1,6 +1,6 @@
 ---
-title: Отправка Push-уведомления из Azure мобильных приложений
-description: В этой статье описывается использование концентраторов уведомлений Azure для отправки push-уведомления из мобильных приложений Azure экземпляра приложения Xamarin.Forms.
+title: Отправка Push-уведомлений из мобильных приложений Azure
+description: В этой статье объясняется, как использовать центры уведомлений Azure для отправки Push-уведомлений из экземпляра мобильных приложений Azure для приложения Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: A1EF400F-73F4-43E9-A0C3-1569A0F34A3B
 ms.technology: xamarin-forms
@@ -8,102 +8,104 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: d5bf0e614ef3777bc956e66c0b737bfb8a5b9e0c
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 42ec5ddb6846ccf733f2bf18812f43e7afd45f34
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243770"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058582"
 ---
-# <a name="sending-push-notifications-from-azure-mobile-apps"></a>Отправка Push-уведомления из Azure мобильных приложений
+# <a name="sending-push-notifications-from-azure-mobile-apps"></a>Отправка Push-уведомлений из мобильных приложений Azure
 
-_Концентраторы уведомлений Azure предоставляют масштабируемые push-инфраструктуру для отправки мобильные push-уведомления с любого сервера на любую мобильную платформу, устраняя необходимость связываться с разных систем уведомлений платформы серверной части сложности. В этой статье описывается использование концентраторов уведомлений Azure для отправки push-уведомления из мобильных приложений Azure экземпляра приложения Xamarin.Forms._
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzurePush/)
+
+_Концентраторы уведомлений Azure предоставляют масштабируемые Push-инфраструктуру для отправки мобильные Push-уведомления из любой серверной части на любую мобильную платформу, устраняя сложности серверной части, необходимость связываться с разных систем уведомлений платформы. В этой статье объясняется, как использовать центры уведомлений Azure для отправки Push-уведомлений из экземпляра мобильных приложений Azure для приложения Xamarin.Forms._
 
 > [!VIDEO https://youtube.com/embed/le2lDY22xwM]
 
-**Azure Push с концентратором уведомлений и Xamarin.Forms, [университета Xamarin](https://university.xamarin.com/)**
+**Azure передает в центр уведомлений и Xamarin.Forms, [Xamarin University](https://university.xamarin.com/)**
 
-Push-уведомлений используются для передачи из серверной системе приложения на мобильном устройстве, чтобы увеличить engagement приложения и сведения, такие как сообщения. Уведомления могут отправляться в любое время, даже в том случае, если пользователь не использует активно целевого приложения.
+Push-уведомления используются для доставки сведения, такие как сообщения, из серверной системы, приложения на мобильном устройстве, чтобы увеличить приложения вовлеченности и использования. Уведомления могут отправляться в любое время, даже в том случае, если пользователь не использует активно целевому приложению.
 
-Серверных системах отправки push-уведомлений на мобильных устройствах через систем уведомления платформы (PNS), как показано на следующей схеме:
+Серверные системы отправки Push-уведомлений на мобильные устройства через систем отправки уведомлений платформы (PNS), как показано на следующей схеме:
 
-[![](azure-images/pns.png "Систем уведомлений платформы")](azure-images/pns-large.png#lightbox "систем уведомлений платформы")
+[![](azure-images/pns.png "Системы отправки уведомлений платформы")](azure-images/pns-large.png#lightbox "систем отправки уведомлений платформы")
 
-Для отправки push-уведомлений, серверной системе обращается в PNS платформой для отправки уведомления в экземпляре приложения клиента. Это значительно увеличивает сложность серверной части при кросс платформенных push-уведомлений не требуются, поскольку серверной части должен использовать каждый платформой PNS API и протокол.
+Для отправки Push-уведомление, Серверная система обращается к PNS платформы для отправки уведомления на экземпляр приложения клиента. Это значительно увеличивает сложность серверной части при кросс платформенные Push-уведомления являются обязательными, так как необходимо использовать серверную часть каждой платформы PNS API и протокола.
 
-Концентраторы уведомлений Azure исключить сложность, не учитывая деталей разных систем уведомлений платформы, уведомлением кросс платформенных отправляемых с помощью одного вызова API, как показано на следующей схеме:
+Центры уведомлений Azure устранить сложности, учитывая деталей разных систем уведомлений платформы, позволяя кросс платформенные уведомления отправляться с помощью одного вызова API, как показано на следующей схеме:
 
 [![](azure-images/notification-hub.png)](azure-images/notification-hub-large.png#lightbox)
 
-Для отправки push-уведомлений, серверной системе только контакты Azure концентратор уведомлений, который в свою очередь, взаимодействует с разных систем уведомлений платформы, поэтому Уменьшение сложности серверной части кода, отправляет push-уведомлений.
+Для отправки Push-уведомление, серверной части системы только контакты в центре уведомлений Azure, который в свою очередь, взаимодействует с разных систем уведомлений платформы, поэтому Уменьшение сложности серверной части кода, отправляет Push-уведомлений.
 
-Мобильные приложения Azure включают встроенную поддержку push-уведомления с использованием концентраторов уведомлений. При отправке извещающего уведомления из экземпляра мобильных приложений Azure в приложение Xamarin.Forms выполняется следующим образом:
+Мобильные приложения Azure имеют встроенную поддержку Push-уведомлений с помощью центров уведомлений. Процесс для отправки Push-уведомление из экземпляра мобильных приложений Azure в приложения Xamarin.Forms выглядит следующим образом:
 
-1. Xamarin.Forms приложение регистрирует PNS, который возвращает дескриптор.
-1. Экземпляр мобильных приложений Azure отправляет уведомление его концентратор уведомлений Azure, задающего дескриптор устройства, для которых будет включен.
-1. Концентратор уведомлений Azure отправляет уведомление соответствующие PNS для устройства.
+1. Приложение Xamarin.Forms регистрирует в PNS, которая возвращает дескриптор.
+1. Экземпляр мобильных приложений Azure отправляет уведомление в свой центр уведомлений Azure, задающего дескриптор устройства, для которых будет включен.
+1. В центре уведомлений Azure отправляет уведомления в соответствующую службу pns для устройства.
 1. Служба PNS отправляет уведомление на устройство.
-1. Xamarin.Forms приложение обрабатывает уведомление и отображает его.
+1. Приложение Xamarin.Forms обрабатывает уведомление и отображает его.
 
-Образец приложения показывает приложения списка задач, данные которого хранится в экземпляре мобильных приложений Azure. Каждый раз при добавлении нового элемента к экземпляру мобильных приложений Azure, push-уведомление отправляется в приложение Xamarin.Forms. Следующих снимках экрана показано каждой платформы, отображение полученных push-уведомлений.
+Пример приложения демонстрирует приложение списка задач, данные которых хранятся в экземпляре мобильных приложений Azure. Каждый раз при добавлении нового элемента к экземпляру мобильных приложений Azure, Push-уведомление отправляется в приложение Xamarin.Forms. На следующих снимках экрана показано каждой платформы, Отображение полученного Push-уведомления:
 
-[![](azure-images/screenshots.png "Образец приложения, получения Push-уведомление")](azure-images/screenshots-large.png#lightbox "образец приложения, получения Push-уведомление")
+[![](azure-images/screenshots.png "Пример приложения, получения Push-уведомление")](azure-images/screenshots-large.png#lightbox "пример приложение, получающее Push-уведомление")
 
-Дополнительные сведения о концентраторах уведомлений Azure см. в разделе [концентраторов уведомлений Azure](https://azure.microsoft.com/documentation/articles/notification-hubs-push-notification-overview/) и [Добавление push-уведомлений в приложение Xamarin.Forms](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push/).
+Дополнительные сведения о концентраторах уведомлений Azure, см. в разделе [центров уведомлений Azure](https://azure.microsoft.com/documentation/articles/notification-hubs-push-notification-overview/) и [Добавление Push-уведомлений в приложение Xamarin.Forms](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push/).
 
 ## <a name="azure-and-platform-notification-system-setup"></a>Azure и настройка системы уведомления платформы
 
-Интеграция концентратор уведомлений Azure в экземпляр мобильных приложений Azure выполняется следующим образом:
+Процесс интеграции центра уведомлений Azure в экземпляр мобильных приложений Azure выглядит следующим образом:
 
-1. Создайте экземпляр мобильных приложений Azure. Дополнительные сведения см. в разделе [использование мобильного приложения Azure](~/xamarin-forms/data-cloud/consuming/azure.md).
-1. Настройка концентратора уведомления. Дополнительные сведения см. в разделе [Настройка концентратора уведомления](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#create-hub).
-1. Обновите экземпляр мобильные приложения Azure для отправки извещающих уведомлений. Дополнительные сведения см. в разделе [обновление project server для отправки извещающих уведомлений](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#update-the-server-project-to-send-push-notifications).
+1. Создайте экземпляр мобильных приложений Azure. Дополнительные сведения см. в разделе [использование мобильное приложение Azure](~/xamarin-forms/data-cloud/consuming/azure.md).
+1. Настройка концентратора уведомлений. Дополнительные сведения см. в разделе [Настройка концентратора уведомлений](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#create-hub).
+1. Обновление экземпляра мобильных приложений Azure для отправки Push-уведомлений. Дополнительные сведения см. в разделе [обновление серверного проекта для отправки Push-уведомления](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#update-the-server-project-to-send-push-notifications).
 1. Зарегистрируйте каждый PNS.
-1. Настройка концентратора уведомления для взаимодействия с каждой PNS.
+1. Настройка концентратора уведомлений для взаимодействия с каждой PNS.
 
-В следующих разделах приведены инструкции дополнительной настройки для каждой платформы.
+Следующие разделы содержат дополнительные инструкции по установке для каждой платформы.
 
 ### <a name="ios"></a>iOS
 
-Следующие дополнительные действия должны выполняться для использования Apple Push Notification Service (APNS) из концентратора уведомлений Azure:
+Следующие дополнительные действия должны выполняться для использования Apple Push Notification Service (APNS) из центра уведомлений Azure:
 
-1. Создание запроса для принудительной сертификата с помощью средства доступа к цепочке ключей подписи сертификата. Дополнительные сведения см. в разделе [создать файл запроса подписи сертификата для сертификата push](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#generate-the-certificate-signing-request-file-for-the-push-certificate) в центре документации Azure.
-1. Регистрация приложения Xamarin.Forms для поддержки уведомлений push в центре разработчиков Apple. Дополнительные сведения см. в разделе [регистрации приложения push-уведомления](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#register-your-app-for-push-notifications) в центре документации Azure.
-1. Создание принудительной уведомления включен профиль подготовки для приложения Xamarin.Forms в центре разработчиков Apple. Дополнительные сведения см. в разделе [создайте подготовительный профиль для приложения](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#create-a-provisioning-profile-for-the-app) в центре документации Azure.
-1. Настройка концентратора уведомления для взаимодействия с APNS. Дополнительные сведения см. в разделе [Настройка концентратора уведомления для APNS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configure-the-notification-hub-for-apns).
-1. Настройте Xamarin.Forms приложению использовать новый идентификатор приложения и подготовительного профиля. Дополнительные сведения см. в разделе [настройки в проекте iOS в Xamarin Studio](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configuring-the-ios-project-in-xamarin-studio) или [настройке проекта для iOS в Visual Studio](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configuring-the-ios-project-in-visual-studio) в центре документации Azure.
+1. Создание запроса для сертификата push certificate с помощью средства доступа к цепочкам ключей подписи сертификата. Дополнительные сведения см. в разделе [создать файл запроса подписи сертификата для сертификата push certificate](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#generate-the-certificate-signing-request-file-for-the-push-certificate) в центре документации Azure.
+1. Регистрация приложения Xamarin.Forms для поддержка Push-уведомлений в центре разработчиков Apple. Дополнительные сведения см. в разделе [Регистрация приложения для Push-уведомлений](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#register-your-app-for-push-notifications) в центре документации Azure.
+1. Создание принудительной уведомлений включен профиль подготовки для приложения Xamarin.Forms в центре разработчиков Apple. Дополнительные сведения см. в разделе [создать профиль подготовки для приложения](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#create-a-provisioning-profile-for-the-app) в центре документации Azure.
+1. Настройка концентратора уведомлений для связи с APNS. Дополнительные сведения см. в разделе [настройки концентратора уведомлений для APNS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configure-the-notification-hub-for-apns).
+1. Настройка приложения Xamarin.Forms для использования нового идентификатора приложения и профиль подготовки. Дополнительные сведения см. в разделе [Настройка проекта iOS в Xamarin Studio](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configuring-the-ios-project-in-xamarin-studio) или [Настройка проекта iOS в Visual Studio](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configuring-the-ios-project-in-visual-studio) в центре документации Azure.
 
 ### <a name="android"></a>Android
 
-Следующие дополнительные действия должны выполняться для использования Firebase облака обмена сообщениями (FCM) из концентратора уведомлений Azure:
+Для использования Firebase Cloud Messaging (FCM) из центра уведомлений Azure должны выполняться следующие дополнительные шаги:
 
-1. Зарегистрировать FCM. Ключ API сервера и идентификатор клиента, автоматически создается и упаковываются в `google-services.json` файл, который загружается. Дополнительные сведения см. в разделе [включить Firebase облака обмена сообщениями (FCM)](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#enable-firebase-cloud-messaging-fcm).
-1. Настройка концентратора уведомления для взаимодействия с FCM. Дополнительные сведения см. в разделе [Настройка завершить обратно мобильные приложения для отправки запросов push с помощью FCM](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#configure-the-mobile-apps-back-end-to-send-push-requests-by-using-fcm).
+1. Регистрация для FCM. Ключ API сервера и идентификатор клиента, будут автоматически созданы и упаковываются в `google-services.json` файла. Дополнительные сведения см. в разделе [включить Firebase Cloud Messaging (FCM)](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#enable-firebase-cloud-messaging-fcm).
+1. Настройка концентратора уведомлений для взаимодействия с FCM. Дополнительные сведения см. в разделе [Настройка завершить обратно на мобильные приложения для отправки Push-запросов с использованием FCM](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#configure-the-mobile-apps-back-end-to-send-push-requests-by-using-fcm).
 
 ### <a name="universal-windows-platform"></a>Универсальная платформа Windows 
 
-Для использования Windows Notification Service (WNS) из концентратора уведомлений Azure должен выполнять следующие дополнительные действия:
+Следующие дополнительные действия должны выполняться для использования службы уведомлений Windows (WNS) из центра уведомлений Azure:
 
-1. Зарегистрировать службу уведомлений Windows (WNS). Дополнительные сведения см. в разделе [Регистрация приложения Windows для push-уведомлений с WNS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#register-your-windows-app-for-push-notifications-with-wns) в центре документации Azure.
-1. Настройка концентратора уведомления для взаимодействия с WNS. Дополнительные сведения см. в разделе [Настройка концентратора уведомления для WNS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configure-the-notification-hub-for-wns) в центре документации Azure.
+1. Зарегистрируйтесь в службу уведомлений Windows (WNS). Дополнительные сведения см. в разделе [Регистрация приложения Windows для Push-уведомлений с помощью WNS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#register-your-windows-app-for-push-notifications-with-wns) в центре документации Azure.
+1. Настройка концентратора уведомлений для связи с WNS. Дополнительные сведения см. в разделе [настройки концентратора уведомлений для WNS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configure-the-notification-hub-for-wns) в центре документации Azure.
 
-## <a name="adding-push-notification-support-to-the-xamarinforms-application"></a>Добавление поддержки принудительной уведомлений в приложения Xamarin.Forms
+## <a name="adding-push-notification-support-to-the-xamarinforms-application"></a>Добавляется поддержка Push-уведомлений в приложение Xamarin.Forms
 
-В следующих разделах рассматриваются реализацию, необходимых в каждом проекте конкретную платформу для поддержки push-уведомлений.
+В следующих разделах рассматриваются реализации, необходимые в каждом проекте под конкретную платформу для поддержки Push-уведомлений.
 
 ### <a name="ios"></a>iOS
 
-Реализация поддержки принудительной уведомлений в приложения iOS выполняется следующим образом:
+Процесс реализации поддержка Push-уведомлений в приложения iOS выглядит следующим образом:
 
-1. Регистрации с Apple Push Notification Service (APNS) в `AppDelegate.FinishedLaunching` метод. Дополнительные сведения см. в разделе [регистрации в системе уведомлений Apple Push](#ios_register).
+1. Регистрация с помощью Apple Push Notification Service (APNS) в `AppDelegate.FinishedLaunching` метод. Дополнительные сведения см. в разделе [регистрации в системе уведомлений Apple Push](#ios_register).
 1. Реализуйте `AppDelegate.RegisteredForRemoteNotifications` метод для обработки ответа регистрации. Дополнительные сведения см. в разделе [обработки ответа регистрации](#ios_registration_response).
-1. Реализуйте `AppDelegate.DidReceiveRemoteNotification` метод для обработки входящих push-уведомлений. Дополнительные сведения см. в разделе [обработки входящих Push-уведомления](#ios_process_incoming).
+1. Реализуйте `AppDelegate.DidReceiveRemoteNotification` метод для обработки входящего Push-уведомлений. Дополнительные сведения см. в разделе [обработки входящего Push-уведомления](#ios_process_incoming).
 
 <a name="ios_register" />
 
-### <a name="registering-with-the-apple-push-notification-service"></a>Регистрация с помощью службы Push-уведомлений Apple
+### <a name="registering-with-the-apple-push-notification-service"></a>Регистрация с помощью службы Apple Push-уведомлений
 
-Прежде чем приложение iOS может получать push-уведомлений, его необходимо зарегистрировать с Apple Push Notification Service (APNS), который создаст токен уникальный устройства и вернуть его в приложение. Вызывается во фрагментах регистрации `FinishedLaunching` переопределить в `AppDelegate` класса:
+Прежде чем приложение iOS сможет получать Push-уведомлений, его необходимо зарегистрировать с помощью Apple Push Notification Service (APNS), который создаст уникальный маркер и вернуть его в приложение. В вызове регистрации `FinishedLaunching` в Переопределите `AppDelegate` класса:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
@@ -118,16 +120,16 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 }
 ```
 
-При регистрации приложения iOS APNS его необходимо указать типы push-уведомлений, которые хотите получать. `RegisterUserNotificationSettings` Метод регистрирует типы уведомлений, приложение может получать, с `RegisterForRemoteNotifications` метод регистрации для получения push-уведомления из APNS.
+При регистрации приложения iOS с помощью APNS его необходимо указать типы Push-уведомлений, которые хотите получать. `RegisterUserNotificationSettings` Метод регистрирует типы уведомлений, приложение может получать, с помощью `RegisterForRemoteNotifications` метод регистрации для получения Push-уведомлений из APNS.
 
 > [!NOTE]
-> Если не вызывается `RegisterUserNotificationSettings` метода приведет к push-уведомлений, полученных без вмешательства пользователя приложения.
+> Если не вызывается `RegisterUserNotificationSettings` метода приведет к Push-уведомлений, полученных без вмешательства пользователя приложения.
 
 <a name="ios_registration_response" />
 
 ### <a name="handling-the-registration-response"></a>Обработка ответа регистрации
 
-Запрос на регистрацию APNS происходит в фоновом режиме. При получении ответа iOS будет вызывать `RegisteredForRemoteNotifications` переопределить в `AppDelegate` класса:
+Запрос на регистрацию APNS происходит в фоновом режиме. При получении ответа операций ввода-вывода будет вызывать `RegisteredForRemoteNotifications` в Переопределите `AppDelegate` класса:
 
 ```csharp
 public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
@@ -146,16 +148,16 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
 }
 ```
 
-Этот метод создает шаблон простой уведомления сообщения как JSON и регистрирует устройство для получения уведомлений шаблона от концентратора уведомлений.
+Этот метод создает простой шаблон уведомления как JSON и регистрирует устройство для получения шаблонных уведомлений из центра уведомлений.
 
 > [!NOTE]
-> `FailedToRegisterForRemoteNotifications` Переопределения должен быть реализован для обработки ситуаций, например, отсутствует сетевое подключение. Это важно, поскольку пользователи могут запускать приложения на время выполнения вне сети.
+> `FailedToRegisterForRemoteNotifications` Переопределения должен быть реализован для обработки ситуаций, таких как отсутствует сетевое подключение. Это важно, так как пользователи могут запускать приложение при автономном режиме.
 
 <a name="ios_process_incoming" />
 
-### <a name="processing-incoming-push-notifications"></a>Обработка входящих Push-уведомлений
+### <a name="processing-incoming-push-notifications"></a>Обработки входящего Push-уведомлений
 
-`DidReceiveRemoteNotification` Переопределить в `AppDelegate` класс используется для обработки входящих push-уведомления, когда приложение работает и вызывается при получении уведомления:
+`DidReceiveRemoteNotification` В Переопределите `AppDelegate` класс используется для обработки входящего Push-уведомления, когда приложение работает и вызывается при получении уведомления:
 
 ```csharp
 public override void DidReceiveRemoteNotification(
@@ -177,41 +179,41 @@ public override void DidReceiveRemoteNotification(
 }
 ```
 
-`userInfo` Словаре `aps` ключ, значение которого является `alert` словарь, оставшиеся данные уведомления. Этот словарь извлекается, с `string` сообщение уведомления, отображаемых в диалоговом окне.
+`userInfo` Словарь содержит `aps` ключ, значение которого равно `alert` словаря с помощью оставшихся данных уведомлений. Этот словарь извлекается, с помощью `string` сообщение уведомления, отображаемых в диалоговом окне.
 
 > [!NOTE]
-> Если приложение не выполняется при получении push-уведомлений, приложение будет запускаться, но `DidReceiveRemoteNotification` метода не будет обрабатывать уведомление. Вместо этого получить полезные данные уведомления и реагировать соответствующим образом из `WillFinishLaunching` или `FinishedLaunching` переопределяет.
+> Если приложение не работает при получении Push-уведомления, приложение запустится, но `DidReceiveRemoteNotification` метод не сможет обрабатывать уведомления. Вместо этого получить полезные данные уведомления и реагировать соответствующим образом из `WillFinishLaunching` или `FinishedLaunching` переопределяет.
 
-Дополнительные сведения о APNS см. в разделе [Push-уведомления в iOS](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md).
+Дополнительные сведения о APNS, см. в разделе [Push-уведомлений в iOS](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md).
 
 ### <a name="android"></a>Android
 
-Реализация поддержки принудительной уведомлений в приложения выполняется следующим образом:
+Процесс реализации поддержка Push-уведомлений в приложение на платформе Android выглядит следующим образом:
 
-1. Добавить [Xamarin.Firebase.Messaging](https://www.nuget.org/packages/Xamarin.Firebase.Messaging/) NuGet пакета в проект Android, а также задать целевой версии приложения для Android 7.0 или более поздней версии.
-1. Добавить `google-services.json` файла, загруженные из консоли Firebase в корне проекта Android и задайте его действие построения **GoogleServicesJson**. Дополнительные сведения см. в разделе [добавить файл JSON служб Google](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md).
-1. Регистрация с сообщениями Firebase облака (FCM) путем объявления получателя в манифесте Android правой кнопкой мыши и в реализации `FirebaseRegistrationService.OnTokenRefresh` метод. Дополнительные сведения см. в разделе [регистрация Firebase Cloud Messaging](#android_register_fcm).
-1. Регистрация с концентратором уведомлений Azure в `AzureNotificationHubService.RegisterAsync` метод. Дополнительные сведения см. в разделе [регистрации в концентраторе уведомлений Azure](#android_register_azure).
-1. Реализуйте `FirebaseNotificationService.OnMessageReceived` метод для обработки входящих push-уведомлений. Дополнительные сведения см. в разделе [отображение содержимого Push-уведомлений](#android_displaying_notification).
+1. Добавить [Xamarin.Firebase.Messaging](https://www.nuget.org/packages/Xamarin.Firebase.Messaging/) NuGet пакета проекта Android и задать целевой версии приложения для Android 7.0 или более поздней версии.
+1. Добавить `google-services.json` файл, Скачанный из консоли Firebase, в корень проекта Android и задайте его действие построения для **GoogleServicesJson**. Дополнительные сведения см. в разделе [добавьте JSON-файла служб Google](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md).
+1. Регистрация с помощью Firebase Cloud Messaging (FCM) путем объявления получателя в манифест Android файла и по реализации `FirebaseRegistrationService.OnTokenRefresh` метод. Дополнительные сведения см. в разделе [регистрация в Firebase Cloud Messaging](#android_register_fcm).
+1. Регистрация в концентраторе уведомлений Azure в `AzureNotificationHubService.RegisterAsync` метод. Дополнительные сведения см. в разделе [регистрацию в центре уведомлений Azure](#android_register_azure).
+1. Реализуйте `FirebaseNotificationService.OnMessageReceived` метод для обработки входящего Push-уведомлений. Дополнительные сведения см. в разделе [отображение содержимого Push-уведомление](#android_displaying_notification).
 
-Дополнительные сведения об обмене сообщениями облака Firebase см. в разделе [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) и [удаленного уведомления с Firebase Cloud Messaging](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md).
+Дополнительные сведения о Firebase Cloud Messaging, см. в разделе [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) и [удаленные уведомления с помощью Firebase Cloud Messaging](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md).
 
 <a name="android_register_fcm" />
 
-#### <a name="registering-with-firebase-cloud-messaging"></a>Регистрация в Firebase облако обмена сообщениями
+#### <a name="registering-with-firebase-cloud-messaging"></a>Регистрация в Firebase Cloud Messaging
 
-Прежде чем приложение сможет получить push-уведомлений, его необходимо зарегистрировать FCM, которая создания токена регистрации и вернуться в приложение. Дополнительные сведения о маркерах регистрации см. в разделе [регистрации в FCM](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#registration).
+Прежде чем приложение Android может получать Push-уведомлений, его необходимо зарегистрировать в FCM, который создаст маркер регистрации и вернуть его в приложение. Дополнительные сведения о маркерах регистрации, см. в разделе [регистрации в FCM](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#registration).
 
 Это достигается путем:
 
-- Объявление получателя в манифесте Android. Дополнительные сведения см. в разделе [объявление приемника в Android манифеста](#declaring_a_receiver).
-- Реализация службы Firebase идентификатор экземпляра. Дополнительные сведения см. в разделе [реализации службы идентификатор экземпляра Firebase](#implementing-firebase-instance-id-service).
+- Объявление получателя в манифесте Android. Дополнительные сведения см. в разделе [объявления получателя в манифесте Android](#declaring_a_receiver).
+- Реализация службы идентификатора экземпляра Firebase. Дополнительные сведения см. в разделе [реализация службы идентификатора экземпляра Firebase](#implementing-firebase-instance-id-service).
 
 <a name="declaring_a_receiver" />
 
-##### <a name="declaring-the-receiver-in-the-android-manifest"></a>Объявление получателя в манифесте Android
+##### <a name="declaring-the-receiver-in-the-android-manifest"></a>Объявление получателя в манифест Android
 
-Изменить **AndroidManifest.xml** и вставьте следующий `<receiver>` элементы в `<application>` элемента:
+Изменить **AndroidManifest.xml** и вставьте следующий `<receiver>` элементы в `<application>` элемент:
 
 ```xml
 <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
@@ -226,16 +228,16 @@ public override void DidReceiveRemoteNotification(
 
 Этот XML-код выполняет следующие операции:
 
-- Объявляет внутреннюю `FirebaseInstanceIdInternalReceiver` реализацию, которая используется для запуска служб безопасно.
-- Объявляет `FirebaseInstanceIdReceiver` реализацию, которая предоставляет уникальный идентификатор для каждого экземпляра приложения. Данный получатель также проверяет подлинность и авторизует действия.
+- Объявляет внутреннего `FirebaseInstanceIdInternalReceiver` реализацию, используемую для безопасного запуска служб.
+- Объявляет `FirebaseInstanceIdReceiver` реализация, которая предоставляет уникальный идентификатор для каждого экземпляра приложения. Также данный получатель проверяет подлинность и авторизует действия.
 
-`FirebaseInstanceIdReceiver` Получает `FirebaseInstanceId` и `FirebaseMessaging` событий и доставляет их в класс, производный от `FirebasesInstanceIdService`.
+`FirebaseInstanceIdReceiver` Получает `FirebaseInstanceId` и `FirebaseMessaging` события и доставляет их в класс, производный от `FirebasesInstanceIdService`.
 
 <a name="implementing-firebase-instance-id-service" />
 
-##### <a name="implementing-the-firebase-instance-id-service"></a>Реализация службы идентификатор экземпляра Firebase
+##### <a name="implementing-the-firebase-instance-id-service"></a>Реализация службы идентификатора экземпляра Firebase
 
-Регистрация приложения с FCM достигается путем создания класса, производного от класса `FirebaseInstanceIdService` класса. Этот класс отвечает за создание маркеров безопасности, который разрешает доступ к FCM клиентское приложение. В примере приложения `FirebaseRegistrationService` класс является производным от `FirebaseInstanceIdService` класса и показано в следующем примере кода:
+Регистрация приложения для использования FCM достигается путем наследования от класса `FirebaseInstanceIdService` класса. Этот класс отвечает за создание маркеров безопасности, который разрешает клиентскому приложению доступ к FCM. В примере приложения `FirebaseRegistrationService` класс является производным от `FirebaseInstanceIdService` класса и показан в следующем примере кода:
 
 ```csharp
 [Service]
@@ -262,15 +264,15 @@ public class FirebaseRegistrationService : FirebaseInstanceIdService
 }
 ```
 
-`OnTokenRefresh` Метод вызывается, когда приложение получает токен регистрации из FCM. Этот метод извлекает маркер из `FirebaseInstanceId.Instance.Token` свойство, которое обновляется FCM асинхронно. `OnTokenRefresh` Редко вызывается метод, так как маркер обновляется только в том случае, когда приложение установки или удаления, когда пользователь удаляет данные приложений, когда приложение удаляет идентификатор экземпляра, после или маркера безопасности под угрозой. Кроме того что приложение периодически обновляется в свой маркер, обычно каждые 6 месяцев запросит FCM идентификатор экземпляра службы.
+`OnTokenRefresh` Метод вызывается, когда приложение получает маркер регистрации из FCM. Этот метод извлекает маркер из `FirebaseInstanceId.Instance.Token` свойство, которое асинхронно обновляется средствами FCM. `OnTokenRefresh` Метод вызывается редко, так как маркер обновляется только в том случае, когда приложение установки или удаления, когда пользователь удаляет данные приложения при его удалении идентификатора экземпляра, после или маркера безопасности под угрозой. Кроме того служба идентификатора экземпляра FCM потребует, что приложение периодически обновляется в свой маркер, обычно каждые 6 месяцев.
 
-`OnTokenRefresh` Метод также вызывает `SendRegistrationTokenToAzureNotificationHub` метод, который позволяет связать маркер регистрации пользователя с концентратором уведомлений Azure.
+`OnTokenRefresh` Также вызывает метод `SendRegistrationTokenToAzureNotificationHub` метод, который позволяет связать маркер регистрации пользователя в центре уведомлений Azure.
 
 <a name="android_register_azure" />
 
 #### <a name="registering-with-the-azure-notification-hub"></a>Регистрация в концентраторе уведомлений Azure
 
-`AzureNotificationHubService` Класс предоставляет `RegisterAsync` метод, который связывает маркер регистрации пользователя с концентратором уведомлений Azure. В следующем примере кода показан `RegisterAsync` метод, который может быть вызван с `FirebaseRegistrationService` класса при изменении маркер регистрации пользователя:
+`AzureNotificationHubService` Класс предоставляет `RegisterAsync` метод, который связывает пользователя маркер регистрации в центре уведомлений Azure. В следующем коде показано в примере `RegisterAsync` метод, который вызывается `FirebaseRegistrationService` класса при изменении маркер регистрации пользователя:
 
 ```csharp
 public class AzureNotificationHubService
@@ -299,13 +301,13 @@ public class AzureNotificationHubService
 }
 ```
 
-Этот метод создает шаблон простой уведомления сообщения как JSON и регистры для получения шаблона уведомлений из центра уведомлений с помощью токена регистрации Firebase. Это гарантирует, что все уведомления, отправленные из концентратора уведомлений Azure, будут обрабатываться представленного маркером регистрации устройства.
+Этот метод создает простой шаблон уведомления как JSON и регистрируется для получения шаблонных уведомлений из центра уведомлений, с помощью маркера регистрации Firebase. Это гарантирует, что все уведомления, отправленные из концентратора уведомлений Azure будут направляться на устройство, представленного маркером регистрации.
 
 <a name="android_displaying_notification" />
 
 #### <a name="displaying-the-contents-of-a-push-notification"></a>Отображение содержимого Push-уведомление
 
-Отображение содержимого push-уведомление достигается путем создания класса, производного от класса `FirebaseMessagingService` класса. Этот класс включает переопределяемый `OnMessageReceived` указанный метод, который вызывается, когда приложение получает уведомление от FCM, что приложение выполняется на переднем плане. В примере приложения `FirebaseNotificationService` класс является производным от `FirebaseMessagingService` класса и показано в следующем примере кода:
+Отображение содержимого Push-уведомление достигается путем наследования от класса `FirebaseMessagingService` класса. Этот класс включает переопределяемый `OnMessageReceived` метод, который вызывается, когда приложение получает уведомление от FCM, указано, что приложение выполняется на переднем плане. В примере приложения `FirebaseNotificationService` класс является производным от `FirebaseMessagingService` класса и показано в следующем примере кода:
 
 ```csharp
 [Service]
@@ -347,11 +349,11 @@ public class FirebaseNotificationService : FirebaseMessagingService
 }
 ```
 
-Когда приложение получает уведомление от FCM, `OnMessageReceived` метод извлекает содержимое сообщения и вызывает `SendNotification` метод. Этот метод преобразует содержимое сообщения в локальный уведомление, которое запускается во время выполнения приложения с уведомлением, отображаются в области уведомлений.
+Когда приложение получает уведомление от FCM, `OnMessageReceived` метод извлекает содержимое сообщения, а также вызывает `SendNotification` метод. Этот метод преобразует содержимое сообщения в локальное уведомление, которое запускается во время работы приложения, с помощью уведомление отображается в области уведомлений.
 
-##### <a name="handling-notification-intents"></a>Обработка уведомлений целей
+##### <a name="handling-notification-intents"></a>Обработка уведомлений намерений
 
-Когда пользователь касается уведомления, любые данные, сопровождающие сообщения уведомления доступны в `Intent` дополнения. Эти данные можно извлечь с помощью следующего кода:
+Когда пользователь касается уведомления, любые данные, сопровождающие сообщения уведомления стала доступной на `Intent` дополнения. Эти данные могут быть извлечены следующим кодом:
 
 ```csharp
 if (Intent.Extras != null)
@@ -364,11 +366,11 @@ if (Intent.Extras != null)
 }
 ```
 
-Запуск приложений `Intent` возникает, когда пользователь касается его сообщение уведомления, этот код будет входить содержащиеся в ней данные `Intent` в окне вывода.
+Запуск приложений `Intent` возникает, когда пользователь касается его сообщение уведомления, поэтому этот код добавляет в журнал содержащиеся в ней данные в `Intent` в окне вывода.
 
 ### <a name="universal-windows-platform"></a>Универсальная платформа Windows 
 
-Прежде чем универсальной платформы Windows (UWP), приложение может получить push-уведомлений, его необходимо зарегистрировать с помощью Windows Notification Service (WNS), который будет возвращать канал уведомления. Вызываемая регистрации `InitNotificationsAsync` метод `App` класса:
+Прежде чем универсальной платформы Windows (UWP), приложение может получать Push-уведомлений, его необходимо зарегистрировать с помощью Windows Notification Service (WNS), который возвратит канала уведомления. Вызывается регистрации `InitNotificationsAsync` метод в `App` класса:
 
 ```csharp
 private async Task InitNotificationsAsync()
@@ -394,9 +396,9 @@ private async Task InitNotificationsAsync()
 }
 ```
 
-Этот метод возвращает канала push-уведомлений, создает шаблон сообщения уведомления, как JSON и регистрирует устройство для получения уведомлений шаблона от концентратора уведомлений.
+Этот метод получает канал Push-уведомлений, создает шаблон сообщений уведомления как JSON и регистрирует устройство для получения шаблонных уведомлений из центра уведомлений.
 
-`InitNotificationsAsync` Метод вызывается из `OnLaunched` переопределить в `App` класса:
+`InitNotificationsAsync` Метод вызывается из `OnLaunched` в Переопределите `App` класса:
 
 ```csharp
 protected override async void OnLaunched(LaunchActivatedEventArgs e)
@@ -406,21 +408,21 @@ protected override async void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-Это гарантирует, что регистрации push-уведомлений создается или обновляется каждый раз при запуске приложения, таким образом обеспечивая канала WNS push не всегда активно.
+Это гарантирует, что регистрации Push-уведомлений создаваться или обновляться при каждом запуске приложения, таким образом гарантируя, что Push-канал WNS всегда активен.
 
-При получении push-уведомление он будет автоматически отображаться в виде *всплывающих* — немодальное окно, содержащее сообщение.
+При получении Push-уведомление будет автоматически отображаться как *всплывающих* — немодальное окно, содержащее сообщение.
 
 ## <a name="summary"></a>Сводка
 
-В этой статье показано, как использование концентраторов уведомлений Azure для отправки push-уведомления из мобильных приложений Azure экземпляра приложения Xamarin.Forms. Концентраторы уведомлений Azure предоставляют масштабируемые push-инфраструктуру для отправки мобильные push-уведомления с любого сервера на любую мобильную платформу, устраняя необходимость связываться с разных систем уведомлений платформы серверной части сложности.
+В этой статье было показано, как использовать центры уведомлений Azure для отправки Push-уведомлений из мобильных приложений Azure экземпляра приложения Xamarin.Forms. Концентраторы уведомлений Azure предоставляют масштабируемые Push-инфраструктуру для отправки мобильные Push-уведомления из любой серверной части на любую мобильную платформу, устраняя сложности серверной части, необходимость связываться с разных систем уведомлений платформы.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Использование мобильного приложения Azure](~/xamarin-forms/data-cloud/consuming/azure.md)
 - [Центры уведомлений Azure](https://azure.microsoft.com/documentation/articles/notification-hubs-push-notification-overview/)
-- [Добавление push-уведомлений в приложение Xamarin.Forms](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/)
+- [Добавление Push-уведомлений в приложение Xamarin.Forms](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/)
 - [Push-уведомлений в iOS](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md)
 - [Обмен сообщениями Firebase Cloud](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)
 - [TodoAzurePush (пример)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzurePush/)
-- [Пакет SDK для Azure мобильного клиента](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
+- [Azure SDK для мобильного клиента](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

@@ -7,14 +7,16 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 6c666329664ad7dfaa8439068a60b6135d59d229
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 56c4345dffe71f79e9d89c64478a9c6c38fc1d84
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563060"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53048821"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Сводка Глава 21. Transform
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21)
 
 Xamarin.Forms отображается на экране в расположение и размер определяется своим родительским элементом, который обычно является `Layout` или `Layout<View>` производных продуктов. *Преобразования* — это функция Xamarin.Forms, можно изменить, расположение, размер или даже ориентации.
 

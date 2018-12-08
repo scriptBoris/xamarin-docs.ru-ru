@@ -7,14 +7,16 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: d4029cbd4100b3ad83343b3bee73868b385a02e5
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 517ebfb529dd26236ba157d40168fa7c75288d27
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171824"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050378"
 ---
 # <a name="skiasharp-image-filters"></a>Фильтры образа SkiaSharp
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Фильтры образа, эффекты, которые работают на всех битов цвет пикселей, составляющих изображение. Они являются более гибкими, чем маска фильтров, которые работают только в альфа-канала, как описано в статье [ **фильтры маска SkiaSharp**](mask-filters.md). Чтобы использовать изображение фильтр, установите [ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter) свойство `SKPaint` для объекта типа [ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter) вы создали путем вызова одного из статических методов класса.
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: ff485774b8e9ee47aae4808701e8b9d20c308e03
-ms.sourcegitcommit: 676c5a6795ab4896ccd1b288424bf2040b1208aa
+ms.openlocfilehash: 25c5077b3637c54370fa1a42a9b652ef211c0ed9
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52280482"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059344"
 ---
 # <a name="xamarinforms-grid"></a>Сетка Xamarin.Forms
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
 [`Grid`](xref:Xamarin.Forms.Grid) поддерживает упорядочение по строкам и столбцам представлений. Строки и столбцы можно присвоить пропорционально размеры или абсолютные размеры. `Grid` Макет не следует путать с помощью традиционных таблиц и не предназначен для представления табличных данных. `Grid` не поддерживает концепцию строки, столбца или ячейки. В отличие от таблиц HTML `Grid` предназначен исключительно для расположения содержимого.
 

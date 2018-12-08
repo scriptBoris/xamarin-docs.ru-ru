@@ -7,16 +7,18 @@ ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: fcb832e851d7467679d979841dad60d117240b59
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 948d25ce379944691053a5ff76ba3b2284385251
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563889"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052641"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Сводка Глава 2. Анатомия приложения
 
-> [!NOTE] 
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+
+> [!NOTE]
 > Заметки на этой странице указывать области, где различаются Xamarin.Forms материал, представленный в книге.
 
 В приложении Xamarin.Forms объектов, занимающих место на экране, называются *визуальные элементы*, инкапсулированный с [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) класса. Визуальные элементы можно разделить на три категории, соответствующие этих классов:
@@ -31,9 +33,9 @@ ms.locfileid: "51563889"
 
 ## <a name="say-hello"></a>Поприветствуйте
 
-На платформе Xamarin установлен можно создать новое решение Xamarin.Forms в Visual Studio или Visual Studio для Mac. [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) решение использует переносимую библиотеку классов, общий код. 
+На платформе Xamarin установлен можно создать новое решение Xamarin.Forms в Visual Studio или Visual Studio для Mac. [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) решение использует переносимую библиотеку классов, общий код.
 
-> [!NOTE] 
+> [!NOTE]
 > Переносимые библиотеки классов были заменены библиотеки .NET Standard. Все примеры кода из книги будет преобразована использовать стандартные библиотеки .NET.
 
 В этом примере демонстрируется решение Xamarin.Forms, созданные в Visual Studio без изменений. Решение состоит из шести проектов:
@@ -45,8 +47,8 @@ ms.locfileid: "51563889"
 - [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows), проект приложения для Windows 8.1
 - [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone), проект приложения для Windows Phone 8.1
 
-> [!NOTE] 
-> Xamarin.Forms больше не поддерживает Windows 8.1, Windows Phone 8.1 или Windows 10 Mobile, но приложения Xamarin.Forms выполняются на рабочем столе Windows 10. 
+> [!NOTE]
+> Xamarin.Forms больше не поддерживает Windows 8.1, Windows Phone 8.1 или Windows 10 Mobile, но приложения Xamarin.Forms выполняются на рабочем столе Windows 10.
 
 Внесите любые из этих проектов приложений запускаемого проекта и затем постройте и запустите программу на устройства или симулятора.
 
@@ -56,7 +58,7 @@ ms.locfileid: "51563889"
 
 Визуальные элементы, отображаемые **Hello** программы определяются в конструкторе класса [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) класса. `App` является производным от класса Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application).
 
-> [!NOTE] 
+> [!NOTE]
 > Шаблоны решений Visual Studio для Xamarin.Forms создайте страницу с файлом XAML. В этой книге, пока не рассматривается XAML [Глава 7](chapter07.md).
 
 **Ссылки** раздел **Hello** проект переносимой библиотеки Классов включает следующие сборки Xamarin.Forms:
@@ -74,8 +76,8 @@ ms.locfileid: "51563889"
 - **Xamarin.Forms.Platform.WinRT.Tablet**
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
-> [!NOTE] 
-> **Ссылки** разделах эти проекты не перечислены сборки. Вместо этого файл проекта содержит **PackageReference** теги, ссылающиеся на пакет Xamarin.Forms NuGet. **Ссылки** раздел в списках Visual Studio **Xamarin.Forms** пакета вместо сборки Xamarin.Forms. 
+> [!NOTE]
+> **Ссылки** разделах эти проекты не перечислены сборки. Вместо этого файл проекта содержит **PackageReference** теги, ссылающиеся на пакет Xamarin.Forms NuGet. **Ссылки** раздел в списках Visual Studio **Xamarin.Forms** пакета вместо сборки Xamarin.Forms.
 
 Каждый из проектов приложений содержит вызов статического `Forms.Init` метод в `Xamarin.Forms` пространства имен. Это инициализирует библиотеку Xamarin.Forms. Другая версия `Forms.Init` определяется для каждой платформы. Вызовы этого метода можно найти в следующих классов:
 
@@ -95,7 +97,7 @@ ms.locfileid: "51563889"
 
 Имеется возможность создать решение Xamarin.Forms с общим кодом в переносимой библиотеки классов (PCL) или общего ресурса проекта (SAP). Создание решения SAP, выберите параметр Shared в Visual Studio. [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) решение демонстрирует SAP шаблон без изменений.
 
-> [!NOTE] 
+> [!NOTE]
 > Переносимые библиотеки классов была заменена библиотеки .NET Standard. Все примеры кода из книги будет преобразована использовать стандартные библиотеки .NET. В противном случае библиотеки PCL и .NET Standard концептуально очень похожи.
 
 Пакеты библиотеки подход, общего кода в проекте библиотеки ссылаться проекты приложения платформы. При использовании SAP общий код фактически существует во всех проектах приложения платформы и распределяется между ними.

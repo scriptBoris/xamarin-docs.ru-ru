@@ -8,14 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 7ea7a9bb66e039289e8ce09e77c223c98f90e4c1
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 79547277b00ae1f1d9b035d5fb08685562cefc79
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617635"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052586"
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Использование базы данных документов Azure Cosmos DB
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
 
 _База данных документов Azure Cosmos DB является базой данных NoSQL, которая предоставляет высокоскоростной доступ к документам JSON, предоставляющие доступ к службе быстрый, высокой степенью доступности и базы данных для приложений, которым требуется эффективное масштабирование и глобальная репликация. В этой статье объясняется, как использовать клиентской библиотеке .NET Standard для Azure Cosmos DB для интеграции базы данных документов Azure Cosmos DB в приложение Xamarin.Forms._
 

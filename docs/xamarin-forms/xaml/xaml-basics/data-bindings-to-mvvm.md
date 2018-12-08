@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 2376ff986db985c3764c90c3af76ea74c2936a29
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: c7bf7ca28200004e2383631c68cdaa4299348ecb
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563151"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054037"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Часть 5. От привязки данных до MVVM
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 _Шаблон архитектуры Model-View-ViewModel (MVVM) была изобретена с XAML в виду. Шаблон обеспечивает разделение уровней программного обеспечения и три — пользовательский интерфейс XAML, именем представления. базовые данные, называется моделью; а посредником между представлением и моделью, называются ViewModel. View и ViewModel часто соединены через привязки данных, определенные в файле XAML. BindingContext для представления обычно является экземпляром ViewModel._
 

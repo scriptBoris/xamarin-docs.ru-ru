@@ -7,14 +7,16 @@ ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: eebfe40bca6db92bae1f2fdcc9cbff3173dc4e51
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: cd7c8484827a038bbcf11180296547ea6fedf929
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172019"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059208"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>Доступ к биты пикселов точечного рисунка SkiaSharp
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Как было показано в этой статье [ **SkiaSharp сохранение растровых изображений в файлы**](saving.md), растровые изображения обычно хранятся в файлах в сжатом формате, например, JPEG или PNG. В отличие от SkiaSharp растрового изображения, хранящиеся в памяти не сжимаются. Они хранятся как ряд последовательных точках. Этот формат без сжатия упрощает перенос растровые изображения на поверхность отображения.
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 504b2789ef61b0339d1c32e92c852a779a193b52
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 786f1503fcc0cc07f76a7cdc55731d341607429f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854770"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053201"
 ---
 # <a name="authenticating-users-with-an-identity-provider"></a>Проверка подлинности пользователей с помощью поставщика удостоверений
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
 
 _Xamarin.Auth — это кроссплатформенный пакет SDK для проверки подлинности пользователей и хранения учетной записью. Он включает в себя структур проверки подлинности OAuth, которые предоставляют поддержку использования поставщиков удостоверений, например Google, Майкрософт, Facebook и Twitter. В этой статье описываются способы использования Xamarin.Auth для управления процессом проверки подлинности в приложении Xamarin.Forms._
 

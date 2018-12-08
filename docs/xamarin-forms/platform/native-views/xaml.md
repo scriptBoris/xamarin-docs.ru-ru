@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: b7ea75c13d84cf9fe74d7a606f6127aaa6bbe3b2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4b33d1d149d3ac85d01dfcbe0d144416fd953426
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996338"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052906"
 ---
 # <a name="native-views-in-xaml"></a>Исходные представления в XAML
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeSwitch/)
 
 _Исходные представления из iOS, Android и универсальной платформы Windows можно непосредственно ссылаться из файлов XAML Xamarin.Forms. На исходные представления можно задать свойства и обработчики событий, и они могут взаимодействовать с представления Xamarin.Forms. В этой статье показано, как использовать исходные представления из файлов XAML Xamarin.Forms._
 

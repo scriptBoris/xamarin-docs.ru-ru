@@ -7,14 +7,16 @@ ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 3c0ee238e0fc72aaea2f73e11317fea7b7a63fb7
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 4801aa12acf8eca2384cc5b41d677f7cb0bdd90d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171499"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052055"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp шум и составление
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Для поиска в понятном и естественном обычно простой векторной графики. Прямых линий, кривых smooth и сплошным цветом не напоминать дефекты реальных объектов. При работе в графическом объекте компьютерных фильма 1982 _Tron_, компьютер по обработке и анализу Перлина Алексей приступил к разработке алгоритмы, которые используются для предоставления более реалистичный текстуры эти образы случайных процессов. В 1997 году Алексей Перлина выиграла награду Academy для технических награду. Впоследствии получило название шума Перлина начал свою работу, и он поддерживается в SkiaSharp. Ниже приведен пример:
 

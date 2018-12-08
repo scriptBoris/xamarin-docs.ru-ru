@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: b6989782c438ec41911cc9317d9f911d6518132d
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 7c12136a0dad0165c46f1559e7a2d61abaf7af1e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38872725"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059708"
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>Проверка подлинности пользователей с Azure Active Directory B2C
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureADB2CAuth/)
 
 _Azure Active Directory B2C является это облаке решение управления удостоверениями для мобильных приложений и веб-потребитель. В этой статье показано, как интегрировать систему управления удостоверениями пользователей мобильного приложения с помощью библиотеки проверки подлинности Майкрософт и Azure Active Directory B2C._
 

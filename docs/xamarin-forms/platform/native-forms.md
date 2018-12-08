@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
-ms.openlocfilehash: 6232c6b561a791f170ebedd4d441f7be2a8ef92e
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: e02c04afe656b0eca3b7ae12b8b30f35836b9368
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563736"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054817"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms в проектах Xamarin Native
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
 
 _Исходные формы позволяют производным Xamarin.Forms ContentPage страниц для использования в собственных проектах Xamarin.iOS, Xamarin.Android и универсальной платформы Windows (UWP). Собственные проекты могут потреблять производным ContentPage страниц, которые добавляются непосредственно в проект, или из библиотеки .NET Standard, библиотеку .NET Standard или общий проект. Эта статья объясняет, как использовать производные ContentPage страниц, которые напрямую добавляются в собственные проекты и как перемещаться между ними._
 

@@ -7,14 +7,16 @@ ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 6393794a20a80fae43e31a96efd4941f4b633c28
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: a67a2e12a12039755970a78739ea2ca3d2ffae08
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563723"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053494"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Сводка Глава 14. Абсолютный макет
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
 
 Как и `StackLayout`, [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout) является производным от `Layout<View>` и наследует `Children` свойство. `AbsoluteLayout` реализует систему макета, которая требует от программиста для указания положения его дочерних элементов и, возможно, их размера. Позиция задается верхнего левого угла дочернего элемента относительно верхнего левого угла `AbsoluteLayout` в аппаратно независимых единицах. `AbsoluteLayout` также реализует пропорционально позиционирования и возможность изменения размера.
 

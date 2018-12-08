@@ -7,14 +7,16 @@ ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: aa5f42596b6f92285b8b8bed40452928e3c494b1
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 552cff71911b0f5ee118e15cb543e16bbfa19bd3
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52170927"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050969"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Сводка Глава 1. Как подобрать размер Xamarin.Forms?
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
 
 > [!NOTE]
 > Заметки на этой странице указывать области, где различаются Xamarin.Forms материал, представленный в книге.

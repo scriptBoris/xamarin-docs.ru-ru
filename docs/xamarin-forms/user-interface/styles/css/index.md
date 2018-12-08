@@ -8,14 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 98eb37d27a20bac4ad2efab831552140496af2e3
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: d56cf660fb5aa73b300a36c5abd8ff9338791747
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172175"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054859"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Задание стиля приложений Xamarin.Forms с помощью каскадных таблиц стилей (CSS)
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
 
 _Xamarin.Forms поддерживает стили визуальных элементов с помощью каскадных таблиц стилей (CSS)._
 
@@ -335,7 +337,7 @@ stacklayout>image {
 
 Xamarin.Forms поддерживает следующие селекторы CSS:
 
-|Селектор|Пример|Описание:|
+|Селектор|Пример|Описание|
 |---|---|---|
 |`.class`|`.header`|Выбирает все элементы с `StyleClass` свойство, содержащее «заголовок». Обратите внимание на то, что этот селектор чувствительно к регистру.|
 |`#id`|`#email`|Выбирает все элементы с `StyleId` присвоено `email`. Если `StyleId` не указан, возврат к `x:Name`. При использовании XAML, `x:Name` предпочтительнее, чем `StyleId`. Обратите внимание на то, что этот селектор чувствительно к регистру.|

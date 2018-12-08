@@ -7,14 +7,16 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: eaee5d7921b99ea5e14cca9f03e33699a74b06f3
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: bcca7bc7ac56b745945b6d7daef3c4ddd634b486
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172253"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059409"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Сводка Глава 28. Расположение и карты
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
 
 > [!NOTE]
 > Заметки на этой странице указывать области, где различаются Xamarin.Forms материал, представленный в книге.

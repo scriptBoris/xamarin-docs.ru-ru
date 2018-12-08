@@ -7,14 +7,16 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: cd91f145d41d5e3bbb2f8061e04d87fdc495f1aa
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 428a8cbda43736c56b748374dc6f97649036302a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171057"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057130"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>Сохранение растровых изображений SkiaSharp в файлы
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 После приложения SkiaSharp создал или изменил Битовая карта, приложение может потребоваться сохранить растровое изображение к библиотеке фотографий пользователя:
 

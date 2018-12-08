@@ -7,14 +7,16 @@ ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: 6eacc7f2688a563f9facf651b0a6da85bd75360f
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: de27e151a475856f0789285dddc1526613e0b828
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171356"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053149"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>Анимации точечных рисунков SkiaSharp
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 Приложения, которые обычно анимация графики SkiaSharp вызывают `InvalidateSurface` на `SKCanvasView` по фиксированной ставке, часто каждые 16 миллисекунд. Стал недопустимым области активирует вызов `PaintSurface` обработчик для повторной отрисовки поверхности отображения. Как визуальные элементы перерисовываются 60 раз в секунду, они отображаются плавно анимировать.
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: c6a6ed38ec64c681075ffa3e42f3ffaf58c576ec
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 98212483481b2ce60c73a40c014816ee3c3f110c
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997221"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059250"
 ---
 # <a name="listview-performance"></a>Производительность элемента управления ListView
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
 
 При написании приложений для мобильных устройств, производительность имеет значение. Пользователи привыкли плавную прокрутку и время быстрой загрузки. Несоответствие требованиям ожиданиям пользователей будет стоить вам оценки в хранилище приложения или в случае с бизнес-приложением издержек время и деньги.
 

@@ -7,14 +7,16 @@ ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 653904da37354db52ef6bbd303355e98ddc1582f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cf31f3bd6f84a040d21420e865737417c374d947
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122638"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056575"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>Обрезка точечные рисунки SkiaSharp
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 [ **Создание и точечные рисунки SkiaSharp Рисование** ](drawing.md) статье описано, как `SKBitmap` объект может быть передан `SKCanvas` конструктор. Любой рисования методу, вызванному для причины, чтобы холст рисунок для отображения изображения на точечный рисунок. К ним методов рисования относятся `DrawBitmap`, что означает, что этот метод можно использовать передача всех или части одного точечного рисунка для другого точечного рисунка, возможно с помощью преобразований.
 

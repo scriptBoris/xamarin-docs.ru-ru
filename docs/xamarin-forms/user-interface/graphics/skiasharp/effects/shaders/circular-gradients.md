@@ -7,14 +7,16 @@ ms.assetid: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 08a79c7685b6e7d210baf11e99edcf928df88c67
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a17ddf438856600870c9bb3da60a5f4667128d57
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50132013"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056049"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>Циклическая градиенты SkiaSharp
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 [ `SKShader` ](xref:SkiaSharp.SKShader) Класс определяет статические методы для создания четырех различных типов градиентов. [ **Линейный градиент SkiaSharp** ](linear-gradient.md) статье [ `CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient*) метод. В этой статье рассматриваются три других типов градиентов, которые основаны на кругов.
 
