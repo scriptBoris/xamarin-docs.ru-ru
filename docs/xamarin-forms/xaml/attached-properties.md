@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: f9bd7e5be26b4721abe6756ecb6c5ff387c6f5e8
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 130f4e3efdd7b3792f6458ad28fc85654e6e38c8
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563385"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056192"
 ---
 # <a name="attached-properties"></a>Вложенные свойства
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
 
 _Присоединенное свойство — это специальный тип привязки свойства, определенные в одном классе, но присоединен к другим объектам и распознается в XAML как атрибут, содержащий класс и имя свойства, разделенные точкой. В этой статье содержатся вводные присоединенных свойств и показано, как создавать и использовать их._
 

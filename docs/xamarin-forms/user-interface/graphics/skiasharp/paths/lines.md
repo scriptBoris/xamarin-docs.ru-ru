@@ -7,14 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 6e0377b71badfae0d0e6a1a6ffdaf1d67a7f3ad9
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 85d863b19c3bf0302464e371738a2926cc80e8ce
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171421"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059721"
 ---
 # <a name="lines-and-stroke-caps"></a>Линии и концы штрихов
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Узнайте, как рисование линий с концы штрихов в другой с помощью SkiaSharp_
 

@@ -7,14 +7,16 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: d4ab7ad5a0fc645c13388d76eb11cbd4e2dd72f8
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 9bc320273df192f9daf2520f451601335731e7b0
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615607"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061356"
 ---
 # <a name="the-scale-transform"></a>Преобразование масштаба
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Обнаружение преобразование SkiaSharp масштабирования для масштабирования объектов для различных размеров_
 

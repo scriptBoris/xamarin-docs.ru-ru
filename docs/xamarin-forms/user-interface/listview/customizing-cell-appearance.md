@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 7a0f55b6d8a61f52f4ef137d83c56d86149bc3c9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7c19cc0f2d1f72706926d640bb7fad9323a9e17f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996260"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53049460"
 ---
 # <a name="customizing-listview-cell-appearance"></a>Настройка внешнего вида ячейки ListView
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 
 ListView представляет прокручиваемые списки, которые можно настраивать с помощью объекта `ViewCell`s. `ViewCells` можно использовать для отображения текста и изображений, указывающее состояние true или false и при получении входных данных пользователя.
 

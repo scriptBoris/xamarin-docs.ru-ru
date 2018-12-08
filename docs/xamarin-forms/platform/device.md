@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2018
-ms.openlocfilehash: 084c0c292cb7e527d74c77937bc69f76fc8c0658
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4ba4bd7528b635d099868f093268d2d83e44dae0
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114324"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059760"
 ---
 # <a name="xamarinforms-device-class"></a>Класс устройств Xamarin.Forms
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
 
 [ `Device` ](xref:Xamarin.Forms.Device) Класс содержит несколько свойств и методов, чтобы помочь разработчикам настраивать макет и функций на каждой платформы.
 
@@ -113,7 +115,7 @@ if (Device.Idiom == TargetIdiom.Phone) {
 
 ## <a name="deviceflowdirection"></a>Device.FlowDirection
 
-[ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Значение извлекает [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) значение перечисления, представляющее текущее направление потока, который используется устройством. Направление потока является направление, в котором проверяются элементы пользовательского интерфейса на странице глаза. Перечисление имеет следующие значения.
+[ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Значение извлекает [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) значение перечисления, представляющее текущее направление потока, который используется устройством. Направление потока — это направление, в котором глаз человека перемещается по элементам пользовательского интерфейса на странице. Перечисление имеет следующие значения.
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
 - [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
@@ -215,4 +217,4 @@ Xamarin.Forms `Device` класс обеспечивает точный конт
 
 - [Пример устройства](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
 - [Образец стилей](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [Устройства](xref:Xamarin.Forms.Device)
+- [Устройство](xref:Xamarin.Forms.Device)

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 3f82e4b7d52988bfef9736ace8c476a9cd2da02b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 102ff15ea0e0002b783f993c59eb50d03a5ece63
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994748"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051073"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>Задание свойства ItemsSource средства выбора
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
 
 _Представление выбора является элемент управления для выбора элемента из списка данных. В этой статье объясняется, как заполнить управляющий элемент выбора с данными, задав свойство ItemsSource и как реагировать на выбор элемента пользователем._
 

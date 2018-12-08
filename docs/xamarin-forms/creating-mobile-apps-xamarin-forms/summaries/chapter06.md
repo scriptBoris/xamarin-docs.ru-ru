@@ -7,14 +7,16 @@ ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 0f1da94031e658d42205e6346d41b02c5822d992
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 12c8cdc19f9e6765ca25ade97bcfdbffb7b60381
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563684"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057604"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>Сводка Глава 6. Нажатие кнопки
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
 
 [ `Button` ](xref:Xamarin.Forms.Button) — Это представление, которое позволяет пользователю запускать команду. Объект `Button` идентифицируется по тексту (и при необходимости изображением, как показано в [главе 13, точечные рисунки](chapter13.md)). Следовательно `Button` определяет многие из тех же свойств `Label`:
 

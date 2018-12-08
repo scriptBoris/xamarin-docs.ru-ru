@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: ba9be51daa32be1034e2bdfafafe80c45d00d83c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 4609593337cc0d003c5b35ef4570f11e27b14f7b
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995236"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050404"
 ---
 # <a name="layout-compression"></a>Сжатие макета
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/userinterface/layoutcompression/)
 
 _Сжатие макета позволяет удалить указанные макеты из визуального дерева с целью повышения скорости отрисовки страниц. В этой статье объясняется, как включить сжатие макета и необходимые преимущества для использования._
 

@@ -7,16 +7,18 @@ ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 1dc4fe12d3ca23a9ca87c3be7819c970683db469
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: ce4dde3716176daf826678809339afb84c25d84a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563502"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052573"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Сводка Глава 7. XAML и кода
 
-> [!NOTE] 
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
+
+> [!NOTE]
 > Заметки на этой странице указывать области, где различаются Xamarin.Forms материал, представленный в книге.
 
 Xamarin.Forms поддерживает язык разметки на основе XML, называемый Extensible Application Markup Language или XAML (произносится «это»). XAML представляет собой альтернативу C# в определении макета пользовательского интерфейса приложения Xamarin.Forms и определения привязок между элементами пользовательского интерфейса и базовые данные.
@@ -39,7 +41,7 @@ Xamarin.Forms классы и структуры становятся XML-эле
 
 Может содержать страницы XAML Xamarin.Forms переносимой библиотеки классов, при ее создании или страницу XAML можно добавить в существующий проект. В диалоговом окне, чтобы добавить новый элемент, выберите элемент, который ссылается на страницу XAML или `ContentPage` и XAML. (Не `ContentView`.)
 
-> [!NOTE] 
+> [!NOTE]
 > В этой главе было написано с момента изменения параметров Visual Studio.
 
 Будут созданы два файла: файл XAML с .xaml расширение имени файла и файла с расширением на C#. xaml.cs. Файл C# часто называют *кода* файла XAML. Файл с выделенным кодом является определение разделяемого класса, производного от `ContentPage`. Во время сборки XAML анализируется и другом определении разделяемого класса создается для того же класса. Этот созданный класс содержит метод с именем `InitializeComponent` , вызывается из конструктора файл с выделенным кодом.

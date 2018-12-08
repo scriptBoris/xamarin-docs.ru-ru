@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: dc039a7a984fae9bd856a9e7147ad899f86f0592
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 9da3bd65dfb5cc6f9ca6bd0e2930003e6ac3d182
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "35245005"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059263"
 ---
 # <a name="xamarinforms-listview"></a>ListView Xamarin.Forms
 
-ListView — это представление для представления списков данных, особенно длинных списках, требующих прокрутки. В этом руководстве показано, как использовать ListView:
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/WorkingWithListview)
+
+Представление — это представление для представления списков данных, особенно длинных списках, требующих прокрутки. В этом руководстве показано, как использовать ListView:
 
 1. **[Источники данных](data-and-databinding.md)**  &ndash; заполнение ListView данными, с или без привязки данных.
 2. **[Внешний вид ячейки](customizing-cell-appearance.md)**  &ndash; настройки внешнего вида встроенных ячеек или создать собственные пользовательские ячейки.

@@ -7,14 +7,16 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2017
-ms.openlocfilehash: 03a6de3b6297e57620655e3697fe729e6fb06501
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: eb7622fb2cebc13abd5e49e42b21511e45c72a45
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615825"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050837"
 ---
 # <a name="finger-painting-in-skiasharp"></a>Рисование пальцами в SkiaSharp
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Используйте пальцы для рисования на холсте._
 

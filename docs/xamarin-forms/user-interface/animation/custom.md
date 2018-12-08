@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 519368031384e72a2d2e0a7c99053be44ea4cffc
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 157e044fd96cdeff87d8fb56029fe625b7312bf4
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995225"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056244"
 ---
 # <a name="custom-animations-in-xamarinforms"></a>Пользовательской анимации в Xamarin.Forms
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/custom/)
 
 _Класс анимации является стандартным блоком все Xamarin.Forms анимации, с помощью методов расширения в классе ViewExtensions, создание одного или нескольких объектов анимации. В этой статье показано, как использовать класс анимации для создания и Отмена анимации, синхронизации нескольких анимаций и создание анимации, анимации свойств, не анимировано в существующие методы анимации._
 

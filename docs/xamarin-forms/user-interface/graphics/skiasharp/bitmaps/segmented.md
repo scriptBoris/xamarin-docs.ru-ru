@@ -7,14 +7,16 @@ ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 71997acde4545fec801dfdc8147ab1a9ace7ab24
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: be2d998916c81cb2216251e2112ff8ca2af5d87a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119232"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061372"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>Сегментированное отображение точечных рисунков SkiaSharp
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 SkiaSharp `SKCanvas` объект определяет метод с именем `DrawBitmapNinePatch` и два метода с именем `DrawBitmapLattice` , очень похожи. Оба эти методы отрисовки растровое изображение, чтобы размер целевого прямоугольника, но вместо растягивания растровое изображение единообразно, они отображения части точечного рисунка в его размеры в пикселах и выполнить растяжение другие части точечного рисунка, так, чтобы прямоугольник:
 

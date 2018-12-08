@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 0c7e0d01a75d72204ca086fc1b0639d584220651
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 75d3c628a513b81af9dea7308ca49c2b490c4aff
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171577"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059747"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Часть 2. Синтаксис Essential XAML
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 _XAML предназначен главным образом для создания и инициализации объектов. Но часто необходимо задать свойства для сложных объектов, которые нельзя легко представить в виде строки XML, и иногда на дочерний класс, в котором необходимо задать свойства, определенные в одном классе. Эти две задачи требуют самых важных особенностей синтаксиса XAML элементов свойства и вложенные свойства._
 

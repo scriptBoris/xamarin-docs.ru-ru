@@ -7,14 +7,18 @@ ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 5bd063f82cc1d09c6b2e9100429889a23a2eda7f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 24c33c61002130fe645bba54c307394bbc2e0656
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111588"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060382"
 ---
 # <a name="skiasharp-bitmap-tiling"></a>Мозаичное заполнение точечного рисунка SkiaSharp
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/CatClock/)
 
 Как вы уже видели в двух предыдущих статьях, [ `SKShader` ](xref:SkiaSharp.SKShader) класс создает линейные и циклическая градиенты. Эта статья посвящена `SKShader` объект, который использует растровое изображение для заполнения области. Битовая карта может повторяться по горизонтали и вертикали, либо в исходной ориентации или в качестве альтернативы перевернуто по горизонтали и вертикали. Отражение позволяет избежать перебоям в работе между плитки:
 

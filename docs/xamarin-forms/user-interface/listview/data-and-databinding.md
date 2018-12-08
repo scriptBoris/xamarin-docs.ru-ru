@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 4f80682c5d8c4f5231fbdd2e081fdcf7962aa969
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 06cf5d2a862a5db2f94fca655b69c45d16375854
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103729"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059156"
 ---
 # <a name="listview-data-sources"></a>Источники данных ListView
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
 
 Объект [ `ListView` ](xref:Xamarin.Forms.ListView) используется для отображения списков данных. Вы узнаете о заполнении ListView с данными, и как можно привязать к выбранному элементу.
 

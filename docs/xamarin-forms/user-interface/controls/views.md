@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 13/11/2018
-ms.openlocfilehash: b14cb6fd96bb5da1ba2f8612daa51b2db4242630
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 819eff30f9d9aa9107df3bffaa749a2c078431a5
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172346"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53061123"
 ---
 # <a name="xamarinforms-views"></a>Представления Xamarin.Forms
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Представления Xamarin.Forms являются стандартными блоками кроссплатформенных мобильных пользовательских интерфейсов._
 

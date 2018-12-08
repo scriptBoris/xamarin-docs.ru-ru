@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 1c75771173d94a18c7c1cc5100c64d45bdc32078
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 211f56e0d9f96383670be1d60421d3ac28eabe46
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998125"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052000"
 ---
 # <a name="easing-functions-in-xamarinforms"></a>Функции плавности в Xamarin.Forms
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/easing/)
 
 _Платформа Xamarin.Forms включает класс, стирание, который позволяет указать функции передачи, который определяет, как ускорить или замедлить работу, так как они выполняются в анимации. В этой статье показано, как использовать предварительно определенных функций плавности, а также как создавать пользовательские функции плавности._
 

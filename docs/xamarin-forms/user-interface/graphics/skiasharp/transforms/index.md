@@ -7,14 +7,16 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: aa4042bb2971739238bd8b8f2c1936306d08a5f7
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: a57e50f098c92dbfcdcaa3139565d2ba0e291e3d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39615864"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057539"
 ---
 # <a name="skiasharp-transforms"></a>Преобразование Skiasharp
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 
 _Дополнительные сведения о преобразованиях для отображения графики SkiaSharp_
 

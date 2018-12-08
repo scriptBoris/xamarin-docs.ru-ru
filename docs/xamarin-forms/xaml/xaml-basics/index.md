@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 348cbc07586a5d8536efafe67103258936c1c705
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 0f39eb78d46b6156231a165f950f4698e63fc073
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563216"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53055745"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Основы XAML Xamarin.Forms
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 XAML (расширяемый язык разметки для приложений) позволяет разработчикам определить пользовательские интерфейсы приложений Xamarin.Forms с помощью разметки вместо кода. В приложении Xamarin.Forms XAML никогда не требуется, но часто бывает более емкий и визуально более согласованным, чем эквивалентный код и потенциально оснащен инструментами. XAML особенно хорошо подходит для использования с популярными архитектура приложений MVVM (Model-View-ViewModel): XAML определяет представление, которая связана с ViewModel кода через привязки данных на основе XAML.
 

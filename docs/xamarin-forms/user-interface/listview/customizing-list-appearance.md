@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 1326a1326b4a88459e4e0a01ef590e770e3a88c0
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 8adac1711271324b70731a085088bd8805391d31
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997352"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059461"
 ---
 # <a name="customizing-listview-appearance"></a>Настройка внешнего вида ListView
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
 
 `ListView` содержит параметры для управления представлением общий список, в дополнение к основной `ViewCell`s. Возможны следующие значения.
 

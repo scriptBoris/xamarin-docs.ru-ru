@@ -1,39 +1,41 @@
 ---
-title: Перевод текста с помощью преобразователя API
-description: API-Интерфейс Microsoft Translator можно использовать для преобразования речи и текста с помощью API-интерфейса REST. В этой статье объясняется, как использовать API-Интерфейс Microsoft Translator текст для перевода текста с одного языка на другой в приложении Xamarin.Forms.
+title: Перевод текста с помощью Translator API
+description: API Microsoft Translator можно использовать для перевода речи и текста с помощью REST API. В этой статье объясняется, как использовать API Microsoft Translator текста для перевода текста с одного языка на другой в приложении Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 68330242-92C5-46F1-B1E3-2395D8823B0C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 5c1001335fb030f9a91ec72456042316864ccf5c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 18e5b430d9a56b22a0b4cc72d6aff1c4e3049362
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30776668"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050573"
 ---
-# <a name="text-translation-using-the-translator-api"></a>Перевод текста с помощью преобразователя API
+# <a name="text-translation-using-the-translator-api"></a>Перевод текста с помощью Translator API
 
-_API-Интерфейс Microsoft Translator можно использовать для преобразования речи и текста с помощью API-интерфейса REST. В этой статье объясняется, как использовать API-Интерфейс Microsoft Translator текст для перевода текста с одного языка на другой в приложении Xamarin.Forms._
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+
+_API Microsoft Translator можно использовать для перевода речи и текста с помощью REST API. В этой статье объясняется, как использовать API Microsoft Translator текста для перевода текста с одного языка на другой в приложении Xamarin.Forms._
 
 ## <a name="overview"></a>Обзор
 
-Транслятор API состоит из двух компонентов:
+Translator API состоит из двух компонентов:
 
-- Перевод текста REST API для перевод текста с одного языка на другой язык текста. API-Интерфейс автоматически определяет язык текста, который был отправлен до его преобразования.
-- Перевод речи REST API для ведения протокола речи с одного языка в текст другого языка. API-Интерфейс также сочетает в себе возможности преобразования текста в речь оперировать переведенный текст обратно.
+- Перевод текста REST API, перевод текста с одного языка на текст другого языка. API автоматически определяет язык текста, который был отправлен перед его преобразование.
+- Перевод речи REST API для транскрипция речи с одного языка в текст другого языка. API также сочетает в себе возможности преобразования текста в речь для Озвучивание переведенного текста обратно.
 
-Эта статья посвящена перевод текста с одного языка на другую с помощью API текст переводчик.
+Эта статья посвящена перевод текста с одного языка в другой с помощью API перевода текстов.
 
-Использовать API-Интерфейс преобразователя текста необходимо получить ключ API. Это можно сделать в [регистрация для API-интерфейса Microsoft Translator текст](/azure/cognitive-services/translator/translator-text-how-to-signup/).
+Чтобы использовать API перевода текстов необходимо получить ключ API. Его можно получить в [как зарегистрироваться в Microsoft Translator Text API](/azure/cognitive-services/translator/translator-text-how-to-signup/).
 
-Дополнительные сведения об API-Интерфейсе Microsoft Translator текста см. в разделе [переводчик текст документации API](/azure/cognitive-services/translator/).
+Дополнительные сведения о Microsoft Translator Text API, см. в разделе [документации по API перевода текста](/azure/cognitive-services/translator/).
 
 ## <a name="authentication"></a>Проверка подлинности
 
-Каждый запрос к API текст переводчик требуется маркер доступа JSON Web Token (JWT), который можно получить от службы маркеров когнитивных служб в `https://api.cognitive.microsoft.com/sts/v1.0/issueToken`. Маркер можно получить, выполнив запрос POST в службу маркера указание `Ocp-Apim-Subscription-Key` заголовок, содержащий ключ API, как его значение.
+Каждый запрос к API перевода текстов требуется маркер доступа JSON Web Token (JWT), который можно получить от службы маркеров cognitive services в `https://api.cognitive.microsoft.com/sts/v1.0/issueToken`. Маркер можно получить, выполнив запрос POST к службе маркеров, указав `Ocp-Apim-Subscription-Key` заголовок, содержащий ключ API, как его значение.
 
 В следующем примере кода показано, как запросить доступ маркера от службы маркеров:
 
@@ -54,19 +56,19 @@ async Task<string> FetchTokenAsync(string fetchUri)
 }
 ```
 
-Маркер доступа, возвращаемый, являющийся текст в кодировке Base64, имеет время отключения 10 минут. Таким образом образец приложения обновляет токен доступа минутам 9.
+Токен возвращаемый доступа, представляющий собой текст в кодировке Base64, имеет время окончания срока действия 10 минут. Таким образом пример приложения обновляет токен доступа каждые 9 минут.
 
-Маркер доступа должен быть указан в API текст каждого транслятора вызывать как `Authorization` префиксом со строкой заголовка `Bearer`, как показано в следующем примере кода:
+Маркер доступа должен быть указан в каждом API перевода текстов вызов в качестве `Authorization` префиксом со строкой заголовка `Bearer`, как показано в следующем примере кода:
 
 ```csharp
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
 ```
 
-Дополнительные сведения о службе маркеров когнитивных служб см. в разделе [API маркеров проверки подлинности](http://docs.microsofttranslator.com/oauth-token.html).
+Дополнительные сведения о службе маркеров cognitive services, см. в разделе [API маркеров проверки подлинности](http://docs.microsofttranslator.com/oauth-token.html).
 
 ## <a name="performing-text-translation"></a>Выполняет перевод текста
 
-Перевод текста можно получить, сделав запрос GET к `translate` API по `https://api.microsofttranslator.com/v2/http.svc/translate`. В примере приложения `TranslateTextAsync` метод вызывает процесс преобразования текста:
+Перевод текста можно достичь, выполнив запрос GET к `translate` API в `https://api.microsofttranslator.com/v2/http.svc/translate`. В приложении-примере `TranslateTextAsync` метод вызывает процесс перевода текста:
 
 ```csharp
 public async Task<string> TranslateTextAsync(string text)
@@ -80,13 +82,13 @@ public async Task<string> TranslateTextAsync(string text)
 }
 ```
 
-`TranslateTextAsync` Метод приводит к возникновению ошибки URI запроса и извлекает токен доступа от службы маркеров. Затем отправляется запрос перевод текста `translate` API, который возвращает XML-ответ, содержащий результат. Выполняется синтаксический анализ XML-ответа и перевод результат возвращается в вызывающий метод для отображения.
+`TranslateTextAsync` Метод создает URI запроса и получает маркер доступа от службы маркеров. Затем отправляется запрос перевода текста `translate` API, который возвращает XML-ответ, содержащий результат. Ответ в формате XML анализируется, и результат перевода возвращается в вызывающий метод для отображения.
 
-Дополнительные сведения об интерфейсах API REST перевод текста см. в разделе [Microsoft Translator текст API](http://docs.microsofttranslator.com/text-translate.html).
+Дополнительные сведения об API-интерфейсы REST для преобразования текста, см. в разделе [Microsoft Translator Text API](http://docs.microsofttranslator.com/text-translate.html).
 
 ### <a name="configuring-text-translation"></a>Настройка преобразования текста
 
-Процесс преобразования текстового может настраиваться путем указания параметров запроса HTTP:
+Процесс преобразования текста можно настроить путем указания параметров запроса HTTP:
 
 ```csharp
 string GenerateRequestUri(string endpoint, string text, string to)
@@ -98,14 +100,14 @@ string GenerateRequestUri(string endpoint, string text, string to)
 }
 ```
 
-Этот метод устанавливает текст, которые будут преобразованы и язык перевода текста. Список языков, поддерживаемых Microsoft Translator см. в разделе [поддерживаемые языки в API-Интерфейс Microsoft Translator текст](/azure/cognitive-services/translator/languages/).
+Этот метод задает текст для перевода, а также язык перевода текста. Список языков, поддерживаемых Microsoft Translator, см. в разделе [поддерживаемые языки в Microsoft Translator Text API](/azure/cognitive-services/translator/languages/).
 
 > [!NOTE]
-> Если приложению нужно знать, какой язык, текст находится в, `Detect` API можно вызвать для определения языка текстовую строку.
+> Если приложению нужно знать, какой язык, текст находится в, `Detect` API можно вызвать, чтобы определить язык текста строки.
 
-### <a name="sending-the-request"></a>Идет отправка запроса
+### <a name="sending-the-request"></a>Отправка запроса
 
-`SendRequestAsync` Метод выполняет запрос GET к REST API преобразования текста и возвращает ответ:
+`SendRequestAsync` Метод выполняет запрос GET к REST API перевода текста и возвращает ответ:
 
 ```csharp
 async Task<string> SendRequestAsync(string url, string bearerToken)
@@ -121,29 +123,29 @@ async Task<string> SendRequestAsync(string url, string bearerToken)
 }
 ```
 
-Этот метод создает запрос GET, добавляя токен доступа для `Authorization` префиксом со строкой заголовка `Bearer`. Затем отправляется запрос GET `translate` API с URL-АДРЕСЕ запроса задания текста перевода и язык перевода текста. Ответ считывается и возвращается вызывающему методу.
+Этот метод создает запрос GET, добавляя токен доступа для `Authorization` заголовка с префиксом строкой `Bearer`. Затем отправляется запрос GET `translate` API, с помощью URL-АДРЕСЕ запроса указание текст для перевода, а также язык перевода текста. Ответ считывается и возвращается вызывающему методу.
 
-`translate` API отправит код состояния HTTP 200 (ОК) в ответе, что запрос допустим, указывающая, что запрос выполнен успешно, и что запрашиваемые данные находятся в ответе. Список возможных ошибках см. в разделе ответные сообщения в [получить перевод](http://docs.microsofttranslator.com/text-translate.html#!/default/get_Translate).
+`translate` API отправит код состояния HTTP 200 (ОК) в ответе, при условии, что запрос является допустимым, который указывает, что запрос успешно выполнен, и что запрашиваемые данные находятся в ответе. Список возможные сообщения об ошибках, см. в разделе сообщений-ответов в [получить перевод](http://docs.microsofttranslator.com/text-translate.html#!/default/get_Translate).
 
 ### <a name="processing-the-response"></a>Обработка ответа
 
-API ответ возвращается в формате XML. Следующий XML-данных показано сообщение обычно успешный ответ:
+В ответе API возвращаются в формате XML. Следующий XML-данных показывает типичный успешный ответ сообщение:
 
 ```xml
 <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Morgen kaufen gehen ein</string>
 ```
 
-В примере приложения XML-ответа разбивается на `XDocument` экземпляр со значением корневой XML возвращается в вызывающий метод для отображения, как показано на следующем снимке экрана:
+В примере приложения, ответ в формате XML преобразуется в `XDocument` экземпляра со значением корневой XML возвращается в вызывающий метод для отображения, как показано на следующем снимке экрана:
 
 ![](text-translation-images/text-translation.png "Перевод текста на немецкий")
 
 ## <a name="summary"></a>Сводка
 
-В этой статье описано, как использовать API-Интерфейс Microsoft Translator текст для перевод текста с одного языка на другой язык в приложении Xamarin.Forms текст. Помимо перевод текста, API-Интерфейс Microsoft Translator также можно переписать речи с одного языка в текст другого языка.
+В этой статье описываются способы использования API Microsoft Translator Text перевод текста с одного языка на текст другого языка, в приложении Xamarin.Forms. Помимо перевода текста, API Microsoft Translator можно также транскрипция речи с одного языка в текст другого языка.
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Транслятор текст API документации](/azure/cognitive-services/translator/).
-- [Использование веб-службы RESTful](~/xamarin-forms/data-cloud/consuming/rest.md)
-- [TODO Когнитивных службы (пример)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
-- [Текст Microsoft Translator API](http://docs.microsofttranslator.com/text-translate.html).
+- [Translator Text API документации](/azure/cognitive-services/translator/).
+- [Использование веб-службу RESTful](~/xamarin-forms/data-cloud/consuming/rest.md)
+- [Cognitive Services TODO (пример)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [Microsoft Translator Text API](http://docs.microsofttranslator.com/text-translate.html).

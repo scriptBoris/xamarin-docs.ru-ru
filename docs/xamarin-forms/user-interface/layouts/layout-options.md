@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/10/2017
-ms.openlocfilehash: 1ede5f75925a3dafa93062d147fa349ff91f07d2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a78911a13ca3682a18b0911d020d98445b4f560c
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995314"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059513"
 ---
 # <a name="layout-options-in-xamarinforms"></a>Параметры макета в Xamarin.Forms
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/userinterface/layoutoptions/)
 
 _Каждое представление Xamarin.Forms имеет HorizontalOptions и VerticalOptions свойства, типа LayoutOptions. В этой статье объясняется влияние каждого значения LayoutOptions на выравнивание и расширения представления._
 

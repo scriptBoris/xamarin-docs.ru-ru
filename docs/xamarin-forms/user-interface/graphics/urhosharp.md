@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: 921419aa2361d9c9e8f1a25bc357c2dd2729e6b6
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: b251fa13c4b436a837f71b5362ae85dffd245092
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563642"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058721"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Использование UrhoSharp в Xamarin.Forms
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
 
 ## <a name="what-is-urhosharp"></a>Что такое UrhoSharp?
 

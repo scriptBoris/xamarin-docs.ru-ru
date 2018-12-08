@@ -7,14 +7,16 @@ ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 2c9493706930bd3c2ffd54835d963d9847e82e76
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: f326d0434fd2565c30890dea0838168c9d8b4287
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563801"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054745"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Сводка Глава 10. Расширения разметки XAML
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
 
 Как правило, средство синтаксического анализа XAML преобразует любой строки задается как значение атрибута для типа свойства, в зависимости от стандартных преобразований для базовых типов данных .NET, или [ `TypeConverter` ](xref:Xamarin.Forms.TypeConverter) производных присоединенного к свойству, либо его тип [`TypeConverterAttribute`](xref:Xamarin.Forms.TypeConverterAttribute).
 

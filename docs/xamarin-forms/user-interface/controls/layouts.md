@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 224eb2ee3958e5979382a3dc5e70110fdce51879
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 520a90030200a1371b15331868ec6e325c6d3694
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994606"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053335"
 ---
 # <a name="xamarinforms-layouts"></a>Макеты Xamarin.Forms
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Макеты Xamarin.Forms используются для создания элементов управления пользовательского интерфейса в visual структуры._
 

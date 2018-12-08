@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: b5d01aa451c9ab9be081b666e8c7ce51f58a3096
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 263cbb4aed47794a09341bb8c78c4835510e50c0
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172318"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059578"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
 
 _Представление Xamarin.Forms, которое позволяет пользователю выбрать дату._
 

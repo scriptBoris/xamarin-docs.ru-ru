@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 2f336bff19302228b9c8c3a1aa87930414c44ac2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f1c491bd2e19f44151e2efb317fe40d2d122ecae
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108409"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058531"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>Динамические стили в Xamarin.Forms
+
+[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 
 _Стили не отвечать на изменения свойств и остаются неизменными в течение всего приложения. Например после назначения стиля в визуальный элемент, если один из экземпляров задания изменены, удалены, или добавить новый экземпляр задания, изменения не будут применяться к визуальный элемент. Тем не менее приложения могут реагировать на изменения стиля динамически во время выполнения с помощью динамических ресурсов._
 
