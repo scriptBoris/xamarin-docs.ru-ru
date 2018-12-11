@@ -5,13 +5,13 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 03/14/2018
-ms.openlocfilehash: b63efb3f9bfa432f15415e652cd5d59f929c4488
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.date: 12/03/2018
+ms.openlocfilehash: ae005b487e13ab4d2d39b26b10c7ca08e263ef67
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617791"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899178"
 ---
 # <a name="build-process"></a>Процесс сборки
 
@@ -76,7 +76,7 @@ ms.locfileid: "51617791"
 
 ## <a name="build-properties"></a>Свойства сборки
 
-Свойства MSBuild управляют поведением целевых объектов. Они указаны в файле проекта, например **MyApp.csproj**, в элементе [MSBuild PropertyGroup](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild).
+Свойства MSBuild управляют поведением целевых объектов. Они указаны в файле проекта, например **MyApp.csproj**, в элементе [MSBuild PropertyGroup](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild). 
 
 -   **Configuration** — указывает конфигурацию сборки, например "отладка" или "выпуск". Свойство Configuration используется для определения значений по умолчанию для других свойств, которые определяют поведение целевого объекта. В вашей среде IDE можно создать дополнительные конфигурации.
 
@@ -94,7 +94,8 @@ ms.locfileid: "51617791"
 
     Если свойство `DebugType` не задано или является пустой строкой, тогда свойство `DebugSymbols` определяет, является ли это приложение отлаживаемым.
 
-
+    - **AndroidGenerateLayoutBindings** &ndash; включает создание [кода программной части макета](https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/LayoutCodeBehind.md), если присвоить значение `true`, или полностью отключает его, если задать значение `false`. Значение по умолчанию — `false`.
+    
 ### <a name="install-properties"></a>Свойства установки
 
 Свойства MSBuild управляют поведением целевых объектов `Install` и `Uninstall`.
@@ -129,6 +130,16 @@ ms.locfileid: "51617791"
     Поддержка этого свойства была добавлена в Xamarin.Android ​​после версии 7.1.
 
     По умолчанию это свойство имеет значение `False`.
+
+-   **AndroidD8JarPath** &ndash; Путь к `d8.jar` для использования с DEX-компилятором d8. По умолчанию используется путь установки Xamarin.Android. Дополнительные сведения см. в документации по [D8 и R8][d8-r8].
+
+-   **AndroidDexTool** &ndash; Свойство стиля перечисления с допустимыми значениями `dx` или `d8`. Указывает, какой [DEX][dex]-компилятор Android используется во время сборки Xamarin.Android.
+    Сейчас по умолчанию имеет значение `dx`. Дополнительные сведения см. в документации по [D8 и R8][d8-r8].
+
+    [dex]: https://source.android.com/devices/tech/dalvik/dalvik-bytecode
+    [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
+
+-   **AndroidEnableDesugar** &ndash; Логическое свойство, которое определяет, включен ли `desugar`. Android пока поддерживает не все функции Java 8, и цепочка инструментов по умолчанию реализует новые языковые функции, выполняя преобразования байт-кода, которые называются `desugar`, на выходе компилятора `javac`. По умолчанию используется `False` при использовании `AndroidDexTool=dx` и `True` при использовании `AndroidDexTool=d8`.
 
 -   **AndroidEnableMultiDex**  — логическое свойство, которое определяет, будет ли поддерживаться Multi-DEX в окончательном файле `.apk`.
 
@@ -229,6 +240,14 @@ ms.locfileid: "51617791"
     <AndroidLinkSkip>Assembly1;Assembly2</AndroidLinkSkip>
     ```
 
+-   **AndroidLinkTool** &ndash; Свойство стиля перечисления с допустимыми значениями `proguard` или `r8`. Указывает, какое средство для сокращения кода используется для кода Java. Значение по умолчанию является пустой строкой или `proguard`, если `$(AndroidEnableProguard)` — `True`. Дополнительные сведения см. в документации по [D8 и R8][d8-r8].
+
+    [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
+
+-   **LinkerDumpDependencies** &ndash; Логическое свойство, которое включает создание файла зависимостей компоновщика. Этот файл может использоваться в качестве входных данных для средства [illinkanalyzer](https://github.com/mono/linker/tree/master/analyzer).
+
+    Значение по умолчанию — False.
+
 -   **AndroidManagedSymbols** — логическое свойство, которое определяет, создаются ли точки последовательности, чтобы можно было извлечь имя файла и номер строки из трассировки стека `Release`.
 
     Свойство добавлено в Xamarin.Android версии 6.1.
@@ -236,6 +255,8 @@ ms.locfileid: "51617791"
 -   **AndroidManifest** — определяет имя файла, которое будет использоваться в качестве шаблона для манифеста [`AndroidManifest.xml`](~/android/platform/android-manifest.md) приложения.
     Во время сборки необходимые значения будут объединены для создания фактического файла `AndroidManifest.xml`.
     `$(AndroidManifest)` должен содержать имя пакета в атрибуте `/manifest/@package`.
+
+-   **AndroidR8JarPath** &ndash; Путь к `r8.jar` для использования с DEX-компилятором и средством сжатия кода r8. По умолчанию используется путь установки Xamarin.Android. Дополнительные сведения см. в документации по [D8 и R8][d8-r8].
 
 -   **AndroidSdkBuildToolsVersion** — предоставляет версию пакета средств сборки SDK для Android, который помимо прочих включает средства **aapt** и **zipalign**. Одновременно могут быть установлены несколько различных версий пакета средств сборки. Пакет средств сборки, выбранный для упаковки, создается путем проверки и использования "предпочтительной" версии, если она присутствует. Если такая версия *отсутствует*, то используется установленный пакет средств сборки последней версии.
 
@@ -245,7 +266,6 @@ ms.locfileid: "51617791"
 
     Допустимые значения:
 
-    -   `armeabi`
     -   `armeabi-v7a`
     -   `x86`
     -   `arm64-v8a`: требуется Xamarin.Android 5.1 и более поздней версии.
@@ -284,10 +304,11 @@ ms.locfileid: "51617791"
     Если установлено значение `True`, файлы [ProguardConfiguration](#ProguardConfiguration) будут использоваться для управления выполнением `proguard`.
 
 -   **JavaMaximumHeapSize** — указывает значение параметра **java**
-    `-Xmx` для использования при формировании файла `.dex` в процессе упаковки. Если значение не указано, то параметр `-Xmx` не используется для **java**.
+    `-Xmx` для использования при формировании файла `.dex` в процессе упаковки. Если он не указан, то параметр `-Xmx` задает для **java** значение `1G`. Это часто будет требоваться в Windows по сравнению с другими платформами.
 
     Это свойство требуется указывать, если целевой объект [`_CompileDex` вызывает ошибку `java.lang.OutOfMemoryError`](https://bugzilla.xamarin.com/show_bug.cgi?id=18327).
 
+    Настройка значения путем изменения:
     ```xml
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     ```
@@ -334,8 +355,7 @@ ms.locfileid: "51617791"
     
     Предварительно определенные ключевые элементы
 
-    -   **ABI** &ndash; вставляет целевой ABI для приложения
-        -   1 — `armeabi`.
+    -   **ABI** — вставляет целевой ABI для приложения.
         -   2 — `armeabi-v7a`.
         -   3 — `x86`.
         -   4 — `arm64-v8a`.
@@ -351,7 +371,7 @@ ms.locfileid: "51617791"
 
     Добавлено в Xamarin.Android версии 7.2.
 
--   **AndroidVersionCodeProperties** &ndash; — cтроковое свойство, которое позволяет разработчику определить настраиваемые элементы для использования с `AndroidVersionCodePattern`. Они находятся в форме пары `key=value`. Все элементы в `value` должны быть целыми числами. Например, `screen=23;target=$(_SupportedApiLevel)`. Как видно, вы можете использовать существующие или пользовательские свойства MSBuild в строке.
+-   **AndroidVersionCodeProperties** &ndash; — cтроковое свойство, которое позволяет разработчику определить настраиваемые элементы для использования с `AndroidVersionCodePattern`. Они находятся в форме пары `key=value`. Все элементы в `value` должны быть целыми числами. Например, `screen=23;target=$(_AndroidApiLevel)`. Как видно, вы можете использовать существующие или пользовательские свойства MSBuild в строке.
 
     Добавлено в Xamarin.Android версии 7.2.
 
@@ -370,6 +390,65 @@ ms.locfileid: "51617791"
 -  **AndroidApkSignerAdditionalArguments** — строковое свойство, которое позволяет разработчику предоставлять дополнительные аргументы для средства `apksigner`.
 
     Свойство добавлено в Xamarin.Android версии 8.2.
+
+-  **AndroidLintEnabled** &ndash; Логическое свойство, которое позволяет разработчику запускать инструмент Android `lint` в процессе упаковки.
+
+    -   **AndroidLintEnabledIssues** &ndash; разделенный запятыми список проблем lint для включения.
+
+    -   **AndroidLintDisabledIssues** &ndash; разделенный запятыми список проблем lint для отключения.
+
+    -   **AndroidLintCheckIssues** &ndash; разделенный запятыми список проблем lint для проверки. 
+       Примечание. Проверяться будут только эти проблемы.
+
+    -   **AndroidLintConfig** &ndash; действие сборки для файла конфигурации стиля lint. Позволяет включить или отключить проверку проблем. Несколько файлов могут использовать это действие построения, так как их содержимое будет объединено.
+
+    См. [справку по Lint](http://www.androiddocs.com/tools/help/lint.html), чтобы узнать больше об инструментах Android `lint`.
+
+-  **AndroidGenerateJniMarshalMethods** &ndash; Логическое свойство, которое включает создание методов маршалинга JNI в процессе сборки. Это существенно сокращает использование System.Reflection в вспомогательном коде привязки.
+
+   По умолчанию установлено значение False. Если разработчики хотят использовать новые методы маршалинга JNI, методы можно настроить
+
+    ```xml
+    <AndroidGenerateJniMarshalMethods>True</AndroidGenerateJniMarshalMethods>
+    ```
+
+    в собственном CSPROJ-файле. Вы также можете указать свойства в командной строке с помощью параметра
+
+    `/p:AndroidGenerateJniMarshalMethods=True`
+
+    **Экспериментальное**. Свойство добавлено в Xamarin.Android версии 9.2.
+    Значение по умолчанию — False.
+
+- **AndroidGenerateJniMarshalMethodsAdditionalArguments** &ndash; строковое свойство, которое может использоваться для добавления дополнительных параметров вызова `jnimarshalmethod-gen.exe`.  Это полезно для отладки, поэтому можно использовать такие параметры, как `-v`, `-d` и `--keeptemp`.
+
+   Значение по умолчанию — пустая строка. Его можно задать в CSPROJ-файле или в командной строке. Пример:
+
+    ```xml
+    <AndroidGenerateJniMarshalMethodsAdditionalArguments>-v -d --keeptemp</AndroidGenerateJniMarshalMethodsAdditionalArguments>
+    ```
+
+   или
+
+    `/p:AndroidGenerateJniMarshalMethodsAdditionalArguments="-v -d --keeptemp"`
+
+    Свойство добавлено в Xamarin.Android версии 9.2.
+
+- **AndroidMultiDexClassListExtraArgs** &ndash; строковое свойство, которое позволяет разработчикам передавать дополнительные аргументы в `com.android.multidex.MainDexListBuilder` при создании файла `multidex.keep`. 
+
+    Один из частных случаев — появление следующей ошибки во время компиляции `dx`.
+
+        com.android.dex.DexException: Too many classes in --main-dex-list, main dex capacity exceeded
+
+    Если возникает эта ошибка, можно добавить следующее в CSPROJ-файл.
+
+    ```xml
+    <DxExtraArguments>--force-jumbo </DxExtraArguments>
+    <AndroidMultiDexClassListExtraArgs>--disable-annotation-resolution-workaround</AndroidMultiDexClassListExtraArgs>
+    ```
+
+    Это позволит успешно выполнить шаг `dx`.
+
+    Свойство добавлено в Xamarin.Android версии 8.3.
 
 ### <a name="binding-project-build-properties"></a>Свойства сборки проекта привязки
 
@@ -408,9 +487,7 @@ ms.locfileid: "51617791"
 
       - Кэширование `jmethodID` конструкторов JCW для управляемых подклассов.
 
-    Значение по умолчанию — `XamarinAndroid`.
-
-    Значение по умолчанию будет изменено в будущих выпусках.
+    Значение по умолчанию — `XAJavaInterop1`.
 
 
 ### <a name="resource-properties"></a>Свойства ресурса
@@ -427,8 +504,31 @@ ms.locfileid: "51617791"
 
 -   **AndroidExplicitCrunch** — при создании приложения с очень большим числом локальных прорисовываемых ресурсов первоначальное создание (или перестроение) может занять несколько минут. Чтобы ускорить процесс сборки, попробуйте включить это свойство и установите для него значение `True`. Если это свойство задано, процесс сборки предварительно анализирует PNG-файлы.
 
+    Примечание. Параметр несовместим с параметром `$(AndroidUseAapt2)`. Если `$(AndroidUseAapt2)` включен, эта функция будет отключена. Если вы хотите использовать эту функцию по-прежнему, задайте `$(AndroidUseAapt2)` для `False`.
+
     **Экспериментальное**. Добавлено в Xamarin.Android версии 7.0.
 
+-  **AndroidUseAapt2** &ndash; логическое свойство, которое позволяет разработчику управлять использованием средства `aapt2` для упаковки.
+    По умолчанию установлено значение False, и будет использоваться `aapt`.
+    Если разработчик желает использовать новые функциональные возможности `aapt2`, их можно настроить
+        
+    ```xml
+    <AndroidUseAapt2>True</AndroidUseAapt2>
+    ```
+        
+    в собственном CSPROJ-файле. Вы также можете указать свойства в командной строке с помощью параметра
+
+    `/p:AndroidUseAapt2=True`
+
+    Свойство добавлено в Xamarin.Android версии 8.3.
+
+-   **AndroidAapt2CompileExtraArgs** &ndash; — указывает дополнительные параметры командной строки для передачи команде **aapt2 compile** при обработке активов и ресурсов Android.
+
+    Свойство добавлено в Xamarin.Android версии 9.1.
+
+-   **AndroidAapt2LinkExtraArgs** &ndash; — указывает дополнительные параметры командной строки для передачи команде **aapt2 link** при обработке активов и ресурсов Android.
+
+    Свойство добавлено в Xamarin.Android версии 9.1.
 
 <a name="Signing_Properties" />
 
@@ -542,6 +642,18 @@ Enter key password for keystore.alias
 </ItemGroup>
 ```
 
+### <a name="androidboundlayout"></a>AndroidBoundLayout
+
+Указывает, что для файла макета следует создавать код программной части в случае, когда свойство `AndroidGenerateLayoutBindings` задано как `false`. В остальном он аналогичен `AndroidResource`, описанному выше. Это действие может использоваться **только** с файлами макета:
+
+```xml
+<AndroidBoundLayout Include="Resources\layout\Main.axml" />
+```
+
+### <a name="androidfragmenttype"></a>AndroidFragmentType
+
+Указывает полный тип по умолчанию, используемый для всех элементов макета `<fragment>` при создании кода привязок макета. По умолчанию свойство использует стандартный тип Android `Android.App.Fragment`.
+
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
@@ -552,7 +664,7 @@ Enter key password for keystore.alias
 1.  Сканирование пути.
 2.  С помощью атрибута элемента `Abi`.
 
-При сканировании пути имя родительского каталога собственной библиотеки используется для указания целевого ABI библиотеки. Таким образом при добавлении `lib/armeabi/libfoo.so` к сборке ABI будет сканироваться как `armeabi`. 
+При сканировании пути имя родительского каталога собственной библиотеки используется для указания целевого ABI библиотеки. Таким образом при добавлении `lib/armeabi-v7a/libfoo.so` к сборке ABI будет сканироваться как `armeabi-v7a`. 
 
 
 #### <a name="item-attribute-name"></a>Имя атрибута элемента
@@ -562,7 +674,7 @@ Enter key password for keystore.alias
 ```xml
 <ItemGroup>
   <AndroidNativeLibrary Include="path/to/libfoo.so">
-    <Abi>armeabi</Abi>
+    <Abi>armeabi-v7a</Abi>
   </AndroidNativeLibrary>
 </ItemGroup>
 ```
@@ -572,7 +684,13 @@ Enter key password for keystore.alias
 
 Действие сборки `AndroidAarLibrary` следует использовать для прямой ссылки на AAR-файлы. Действие сборки будет наиболее часто использоваться компонентами Xamarin. То есть они будут использовать его для включения ссылок на AAR-файлы, которые необходимы для работы Google Play и других служб.
 
-Файлы с действием сборки будут обрабатываться так же, как внедренные ресурсы, расположенные в проектах библиотек. AAR-файлы будут извлекаться в промежуточный каталог. Затем все активы, ресурсы и JAR-файлы будут включены в соответствующие группы элементов.  
+Файлы с действием сборки будут обрабатываться так же, как внедренные ресурсы, расположенные в проектах библиотек. AAR-файлы будут извлекаться в промежуточный каталог. Затем все активы, ресурсы и JAR-файлы будут включены в соответствующие группы элементов. 
+
+### <a name="androidlintconfig"></a>AndroidLintConfig
+
+Действие сборки «AndroidLintConfig» следует использовать в сочетании со свойством сборки `AndroidLintEnabled`. Файлы с этим действием сборки объединяются друг с другом и передаются инструментам Android `lint`. Это должны быть XML-файлы, которые содержат информацию о том, какие тесты требуется включить или отключить.
+
+Дополнительные сведения см. в [документации по lint](http://www.androiddocs.com/tools/help/lint.html).
 
 ### <a name="content"></a>Content
 

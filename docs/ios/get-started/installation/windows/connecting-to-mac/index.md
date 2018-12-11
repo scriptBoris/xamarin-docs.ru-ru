@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/29/2018
-ms.openlocfilehash: befeb92529aa066f6106e855ed1fbdfe49c51e66
-ms.sourcegitcommit: c59e1882aa4af3ce36fba5c6eaeb5cf73a9cb289
+ms.openlocfilehash: 8e87a284e684dff14a2ea0fcfbf34158ed8adefa
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50919046"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899139"
 ---
-# <a name="pair-to-mac-for-xamarinios-development"></a>Связывание с Mac для разработки Xamarin.iOS
+# <a name="pair-to-mac-for-xamarinios-development"></a>Связывание с Mac при разработке для Xamarin.iOS
 
 _В этом руководстве описывается использование функции "Связать с Mac" для подключения Visual Studio 2017 к узлу сборки Mac._
 
