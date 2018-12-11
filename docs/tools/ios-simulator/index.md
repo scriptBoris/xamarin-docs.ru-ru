@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2018
-ms.openlocfilehash: 21229bc9d56865d6365f8ddfe4dd2046fbabc03d
-ms.sourcegitcommit: ae34d048aeb23a99678ae768cdeef0c92ca36b51
+ms.openlocfilehash: 4a45d4fb7aaad504c7bb5628f1e521a39463b06f
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51681531"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52899074"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Удаленный симулятор iOS для Windows
 
@@ -34,7 +34,7 @@ ms.locfileid: "51681531"
 
 - **Домашний** — имитирует кнопка "Главная" на устройстве iOS.
 - **Блокировка** — блокирует симулятор (проведите по экрану, чтобы разблокировать).
-- **Снимок экрана** — сохраняет снимок экрана имитатора (хранящиеся в **симулятор Pictures\Xamarin\iOS\**).
+- **Снимок экрана** — сохраняет снимок экрана имитатора (хранящиеся в **симулятор Pictures\Xamarin\iOS\\**).
 - [**Параметры** ](#settings) — отображает клавиатуры, расположение и другие параметры.
 - [**Другие варианты** ](#other-options) — можно открыть различные параметры симулятора, такие как поворот, жесты встряхивания и Touch ID.
 
