@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: cbec49844d34ab8ad04282b383de15093ecdd891
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ada563fee78e579906e7f765a0120d8bfff67402
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118285"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267512"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>Введение в tvOS в Xamarin
 
@@ -68,7 +68,7 @@ Apple этого был выпущен 5-го поколения оборудо�
 
 ## <a name="known-issues-and-troubleshooting"></a>Известные проблемы и устранение неполадок
 
-Если возникнет проблема создания tvOS с помощью Xamarin, проверьте [заметки о выпуске](http://releases.xamarin.com/), [форумы Xamarin.iOS](https://forums.xamarin.com/categories/ios), [Xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS), и [GitHub ](https://github.com/xamarin/xamarin-macios/issues) существующие проблемы.
+Если возникнет проблема создания tvOS с помощью Xamarin, проверьте [заметки о выпуске](https://docs.microsoft.com/xamarin/ios/release-notes/), [форумы Xamarin.iOS](https://forums.xamarin.com/categories/ios), [Xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS), и [GitHub ](https://github.com/xamarin/xamarin-macios/issues) существующие проблемы.
 
 Сообщить о новых проблемах и предложениях [на сайте GitHub](https://github.com/xamarin/xamarin-macios/issues).
 

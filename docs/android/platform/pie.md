@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: cd1c374fa68420e1923ef4dee0bb37a4665f3535
-ms.sourcegitcommit: 215cad17324ba3fbc23487ce66cd4e1cc74eb879
+ms.openlocfilehash: 49e3a0189d0887343f2636d6931a00cc819800c0
+ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52710027"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53267642"
 ---
 # <a name="android-pie-features"></a>Android круговой функции
 
@@ -24,7 +24,7 @@ _Как приступить к разработке приложений для
 
 Чтобы помочь вам приступить к разработке приложений Xamarin.Android для Android круговой структурируются в этой статье. Здесь объясняется, как установить необходимые обновления и настройки пакета SDK Подготовка эмуляторе или на устройстве для тестирования. Также приводится обзор новых функций в Android круговой и примеры исходного кода, показано, как использовать некоторые из ключевых функций Android круговой.
 
-Xamarin.Android 9.0 обеспечивает поддержку Android круга. Дополнительные сведения о поддержке Xamarin.Android Android круговой см. в разделе [Android P Developer Preview 3](https://developer.xamarin.com/releases/android/xamarin.android_9/xamarin.android_9.0/#android-p-dp1) заметки о выпуске.
+Xamarin.Android 9.0 обеспечивает поддержку Android круга. Дополнительные сведения о поддержке Xamarin.Android Android круговой см. в разделе [Android P Developer Preview 3](https://docs.microsoft.com/xamarin/android/release-notes/9/9.0/#android-p-dp1) заметки о выпуске.
 
 ## <a name="requirements"></a>Требования
 
