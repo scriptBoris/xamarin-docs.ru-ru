@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: a0054c79bf0f356bcfcc48389a0a28f68f73a48b
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 42889e3805391e9e586cda61d26103398ba16269
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38997125"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898528"
 ---
 # <a name="xamarinforms-fast-renderers"></a>Модули подготовки отчетов Xamarin.Forms Fast
+
+![Предварительный просмотр](~/media/shared/preview.png)
 
 _В этой статье рассматриваются быстрые отрисовщики, которые сокращают затраты на отрисовку элемента управления Xamarin.Forms на Android путем сведения в итоге иерархия собственного элемента управления._
 

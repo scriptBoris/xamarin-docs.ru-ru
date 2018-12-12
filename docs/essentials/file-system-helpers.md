@@ -4,17 +4,15 @@ description: Класс FileSystem в Xamarin.Essentials содержит ряд
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 37a4fdbdc3f7e1ee309ee9d49c7ad67374035ab4
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.date: 11/04/2018
+ms.openlocfilehash: 74089d55006555168d9774924c484cb8866cfb37
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617531"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898862"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: вспомогательные функции класса FileSystem
-
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
 Класс **FileSystem** содержит ряд вспомогательных функций для поиска кэша приложения, каталогов данных и открытых файлов в пакете приложения.
 

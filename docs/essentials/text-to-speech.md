@@ -4,17 +4,15 @@ description: Класс TextToSpeech в Xamarin.Essentials позволяет п
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 08/30/2018
-ms.openlocfilehash: 29eab430ae3d42934cedfdbd36d7be08e55b5d54
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.date: 11/04/2018
+ms.openlocfilehash: a7f40fc652c6f02d68a9f01dcdd0f4132893a6ca
+ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675371"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52898541"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: преобразование текста в речь
-
-![Предварительная версия NuGet](~/media/shared/pre-release.png)
 
 Класс **TextToSpeech** позволяет приложению использовать встроенные механизмы преобразования текста в речь, чтобы озвучивать текст на устройстве, а также запрашивать доступные языки, которые может поддерживать подсистема.
 
@@ -97,12 +95,12 @@ public void SpeakMultiple()
 
 ### <a name="speech-settings"></a>Настройки речи
 
-Для более высокого уровня контроля над воспроизведением звука применяется параметр `SpeakSettings`, который позволяет установить громкость, высоту тона и языковой стандарт.
+Для более высокого уровня контроля над воспроизведением звука применяется параметр `SpeechOptions`, который позволяет установить громкость, высоту тона и языковой стандарт.
 
 ```csharp
 public async Task SpeakNow()
 {
-    var settings = new SpeakSettings()
+    var settings = new SpeechOptions()
         {
             Volume = .75,
             Pitch = 1.0
@@ -131,7 +129,7 @@ public async Task SpeakNow()
     // Grab the first locale
     var locale = locales.FirstOrDefault();
 
-    var settings = new SpeakSettings()
+    var settings = new SpeechOptions()
         {
             Volume = .75,
             Pitch = 1.0,
