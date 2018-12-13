@@ -1,6 +1,6 @@
 ---
 title: Создание видеопроигрывателей платформы
-description: В этой статье объясняется, как реализовать пользовательское средство отрисовки видеопроигрывателя на каждой платформе, с помощью Xamarin.Forms.
+description: В этой статье объясняется, как внедрить пользовательский отрисовщик видеопроигрывателя на каждой платформе с помощью Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: EEE2FB9B-EB73-4A3F-A859-7A1D4808E149
 ms.technology: xamarin-forms
@@ -9,18 +9,18 @@ ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 0090ec798e8d7b1dfb9bd8e25f09d71ec0353b45
 ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2018
 ms.locfileid: "52171915"
 ---
 # <a name="creating-the-platform-video-players"></a>Создание видеопроигрывателей платформы
 
-[ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) решение содержит весь код для реализации видеопроигрывателя для Xamarin.Forms. Она также включает ряд страниц, который демонстрирует использование проигрывателя видео в приложении. Все `VideoPlayer` кода и его платформу модулей подготовки отчетов находятся в папках проекта с именем `FormsVideoLibrary`, а также использовать пространство имен `FormsVideoLibrary`. Это следует сделать легко скопировать файлы в приложении и ссылки на классы.
+Решение [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) содержит весь необходимый код для внедрения видеопроигрывателя для Xamarin.Forms. Оно также включает ряд страниц, где демонстрируется использование видеопроигрывателя в приложении. Весь код `VideoPlayer` и отрисовщики платформ находятся в папках проекта с именем `FormsVideoLibrary` и используют пространство имен `FormsVideoLibrary`. Благодаря этому вы сможете легко копировать файлы в собственное приложение и ссылаться на классы.
 
 ## <a name="the-video-player"></a>Видеопроигрыватель
 
-[ `VideoPlayer` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs) Класс является частью **VideoPlayerDemos** библиотеки .NET Standard, которая является общей для платформы. Он является производным от `View`:
+Класс [`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs) входит в библиотеку .NET Standard **VideoPlayerDemos**, которая является общей для платформ. Он является производным от `View`.
 
 ```csharp
 using System;
@@ -35,15 +35,15 @@ namespace FormsVideoLibrary
 }
 ```
 
-Члены этого класса (и `IVideoPlayerController` интерфейс) описаны в последующих статьях.
+Члены этого класса (и интерфейс `IVideoPlayerController`) описываются в следующих статьях.
 
-Каждой из платформ содержит класс с именем `VideoPlayerRenderer` , содержащий специфические для платформы код для реализации видеопроигрывателя. Основная задача этого модуля подготовки отчетов является создание видеопроигрывателя для данной платформы.
+Каждая платформа содержит класс `VideoPlayerRenderer`, имеющий характерный для платформы код, который предназначен для реализации видеопроигрывателя. Основная задача этого отрисовщика заключается в создании видеопроигрывателя для данной платформы.
 
-### <a name="the-ios-player-view-controller"></a>Контроллер представления проигрыватель iOS
+### <a name="the-ios-player-view-controller"></a>Контроллер представления проигрывателя в iOS
 
-При реализации проигрыватель видео в iOS участвуют несколько классов. Во-первых, приложение создает [ `AVPlayerViewController` ](https://developer.xamarin.com/api/type/AVKit.AVPlayerViewController/) и затем задает [ `Player` ](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.Player/) свойство для объекта типа [ `AVPlayer` ](https://developer.xamarin.com/api/type/AVFoundation.AVPlayer/). Дополнительные классы необходимы, когда игрок назначается источник видео.
+При реализации видеопроигрывателя в iOS используется несколько классов. Сначала приложение создает класс [`AVPlayerViewController`](https://developer.xamarin.com/api/type/AVKit.AVPlayerViewController/), а затем в качестве значения свойства [`Player`](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.Player/) задает объекта типа [`AVPlayer`](https://developer.xamarin.com/api/type/AVFoundation.AVPlayer/). При назначении видеопроигрывателю источника видео требуются дополнительные классы.
 
-Все модули подготовки отчетов, iOS, такие как [ `VideoPlayerRenderer` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs) содержит `ExportRenderer` атрибут, определяющий `VideoPlayer` представление с помощью модуля подготовки отчетов:
+Как все отрисовщики, класс [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs) в iOS содержит атрибут `ExportRenderer`, определяющий представление `VideoPlayer` с помощью отрисовщика.
 
 ```csharp
 using System;
@@ -71,9 +71,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Обычно модуль подготовки отчетов, который задает элемент управления платформы является производным от [ `ViewRenderer<View, NativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs) класса, где `View` подход — Xamarin.Forms `View` производных (в этом случае `VideoPlayer`) и `NativeView` является iOS `UIView` класс, производный от класса модуля подготовки отчетов. Для этого модуля подготовки отчетов, просто присваивается универсального аргумента `UIView`, по причинам, вскоре вы увидите.
+Обычно отрисовщик, который задает элемент управления платформы, является производным от класса [`ViewRenderer<View, NativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs), где `View` — это производная `View` Xamarin.Forms (в этом случае `VideoPlayer`), а `NativeView` — производная `UIView` в iOS для класса отрисовщика. В этом отрисовщике универсальному аргументу просто задано значение `UIView`. Причины вы узнаете в ближайшее время.
 
-Когда модуль подготовки отчетов основан на `UIViewController` производных (что является), а затем класс должен переопределять `ViewController` свойства и возвращаемые контроллера представления, в данном случае `AVPlayerViewController`. То есть назначение `_playerViewController` поля:
+Если отрисовщик основан на производной `UIViewController` (такой как эта), то класс должен переопределить свойство `ViewController` и вернуть контроллер представления, в данном случае `AVPlayerViewController`. В этом заключается цель поля `_playerViewController`.
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -112,13 +112,13 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Основной обязанностью `OnElementChanged` переопределение заключается в проверке, если `Control` свойство `null` и, если да, создать элемент управления платформы и передать его в `SetNativeControl` метод. В этом случае этот объект доступен только из `View` свойство `AVPlayerViewController`. Что `UIView` производных происходит быть закрытый класс с именем `AVPlayerView`, но так как он является закрытым, он не явно как второй аргумент универсального `ViewRenderer`.
+Основная обязанность переопределения метода `OnElementChanged` состоит в том, чтобы проверить, задано ли свойству `Control` значение `null`, и если это так, создать элемент управления платформы и передать его методу `SetNativeControl`. В этом случае объект доступен только из свойства `View` класса `AVPlayerViewController`. Производная `UIView` является закрытым классом с именем `AVPlayerView`, но так как класс закрытый, его невозможно явно указать в качестве второго универсального аргумента для `ViewRenderer`.
 
-Обычно `Control` свойство класса модуля подготовки отчетов, затем ссылается на `UIView` используется для реализации модуля подготовки отчетов, но в данном случае `Control` свойство нигде не используется.
+Обычно свойство `Control` класса отрисовщика затем ссылается на производную `UIView`, используемую для реализации отрисовщика, но в этом случае свойство `Control` нигде не применяется.
 
-### <a name="the-android-video-view"></a>Представление Android видео
+### <a name="the-android-video-view"></a>Представление видео в Android
 
-Модуль подготовки отчетов, Android для `VideoPlayer` основан на Android [ `VideoView` ](https://developer.xamarin.com/api/type/Android.Widget.VideoView/) класса. Тем не менее если `VideoView` используется сама по себе для воспроизведения видео в приложения Xamarin.Forms, видео заливки отведенное области для `VideoPlayer` без сохранения правильных пропорций. Для этого-либо причине (как вы вскоре увидите), `VideoView` сделана дочерним Android `RelativeLayout`. Объект `using` директива определяет `ARelativeLayout` чтобы отличить его от Xamarin.Forms `RelativeLayout`, и это второй универсальный аргумент `ViewRenderer`:
+Отрисовщик Android для `VideoPlayer` основан на классе [`VideoView`](https://developer.xamarin.com/api/type/Android.Widget.VideoView/) в Android. Однако при отдельном использовании класса `VideoView` для воспроизведения видео в приложении Xamarin.Forms видео заполняет область, отведенную для класса `VideoPlayer`, без сохранения правильных пропорций. Поэтому (как вы вскоре увидите) класс `VideoView` стал дочерним по отношению к классу `RelativeLayout` в Android. Производная `using` определяет `ARelativeLayout`, чтобы отличать его от класса `RelativeLayout` Xamarin.Forms, и он представляет собой второй универсальный аргумент в классе `ViewRenderer`.
 
 ```csharp
 using System;
@@ -149,9 +149,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-Начиная с версии 2.5 Xamarin.Forms, Android модулей подготовки отчетов должен содержать конструктор с `Context` аргумент.
+Начиная с Xamarin.Forms 2.5 отрисовщики Android должны содержать конструктор с аргументом `Context`.
 
-`OnElementChanged` Переопределение создает обе `VideoView` и `RelativeLayout` и задает параметры макета для `VideoView` по центру в пределах `RelativeLayout`.
+Переопределение метода `OnElementChanged` создает классы `VideoView` и `RelativeLayout` и задает параметры макета для класса `VideoView`, чтобы расположить его в центре класса `RelativeLayout`.
 
 
 ```csharp
@@ -214,13 +214,13 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-Обработчик для `Prepared` событие присоединена в этот метод и отключении от `Dispose` метод. Это событие срабатывает, когда `VideoView` имеет достаточно данных для начала воспроизведения видеофайла.
+Обработчик для события `Prepared` присоединяется в этом методе и отсоединяется в методе `Dispose`. Это событие возникает, когда класс `VideoView` имеет достаточно данных для начала воспроизведения видеофайла.
 
-### <a name="the-uwp-media-element"></a>Элемент мультимедиа универсальной платформы Windows
+### <a name="the-uwp-media-element"></a>Элемент мультимедиа на универсальной платформе Windows
 
-В универсальной платформы Windows (UWP), является наиболее распространенных видеопроигрыватель [ `MediaElement` ](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/). Эта документация из `MediaElement` указывает, что [ `MediaPlayerElement` ](/uwp/api/windows.ui.xaml.controls.mediaplayerelement/) следует использовать вместо этого, когда она необходима только для поддержки версий Windows 10, начиная с сборка 1607.
+[`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) является самым распространенным видеопроигрывателем на универсальной платформе Windows (UWP). В документации по классу `MediaElement` определено, что вместо него следует использовать класс [`MediaPlayerElement`](/uwp/api/windows.ui.xaml.controls.mediaplayerelement/), если только необходимо поддерживать версии Windows 10, начиная со сборки 1607.
 
-`OnElementChanged` Необходимо создать переопределение `MediaElement`, настройте несколько обработчиков событий и передачи `MediaElement` объект `SetNativeControl`:
+Переопределению метода `OnElementChanged` необходимо создать класс `MediaElement`, задать несколько обработчиков событий и передать объект `MediaElement` методу `SetNativeControl`.
 
 ```csharp
 using System;
@@ -275,13 +275,13 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-Два обработчика событий, отсоединены в `Dispose` событий модуля подготовки отчетов.
+Два обработчика событий отсоединяются в событии `Dispose` для отрисовщика.
 
-## <a name="showing-the-transport-controls"></a>С элементами управления транспорта
+## <a name="showing-the-transport-controls"></a>Отображение элементов управления транспортировкой
 
-Все видео проигрывателей, включенных в платформы поддерживают набор по умолчанию элементы управления транспортировкой, включающие кнопки для воспроизведения и приостановки и строка укажите текущую позицию в видео, а также переместить в новую позицию.
+Все видеопроигрыватели в составе платформ поддерживают заданный по умолчанию набор элементов управления транспортировкой, в который входят кнопки для воспроизведения и приостановки, строка для указания текущей позиции в видео и для перемещения в новую позицию.
 
-`VideoPlayer` Класс определяет свойство, именуемое `AreTransportControlsEnabled` и задает значение по умолчанию `true`:
+Класс `VideoPlayer` определяет свойство с именем `AreTransportControlsEnabled` и задает значение по умолчанию `true`.
 
 
 ```csharp
@@ -304,19 +304,19 @@ namespace FormsVideoLibrary
 }
 ```
 
-Несмотря на то, что это свойство имеет оба `set` и `get` методы доступа, модуль подготовки отчетов должен обрабатывать случаи, только в том случае, если свойство имеет значение. `get` Доступа просто возвращает текущее значение свойства.
+Несмотря на то, что у этого свойства есть оба метода доступа `set` и `get`, отрисовщик должен обрабатывать только те случаи, когда свойству задано значение. Метод доступа `get` просто возвращает текущее значение свойства.
 
-Свойства, такие как `AreTransportControlsEnabled` обрабатываются в модулях подготовки отчетов платформы двумя способами:
+Свойства, такие как `AreTransportControlsEnabled`, обрабатываются в отрисовщиках платформы двумя способами.
 
-- — В первый раз, когда создает Xamarin.Forms `VideoPlayer` элемент. Это указано в `OnElementChanged` переопределить модуля подготовки отчетов при `NewElement` свойство не является `null`. В настоящее время можно установить модуль подготовки отчетов — это проигрыватель видео собственные платформы, от начального значения свойства, как определено в `VideoPlayer`.
+- Первый — при создании элемента `VideoPlayer` в Xamarin.Forms. Это указывается в переопределении метода `OnElementChanged` отрисовщика, если свойству `NewElement` не задано значение `null`. В настоящее время отрисовщик может устанавливать собственный видеопроигрыватель на основе начального значения свойства, как определено в классе `VideoPlayer`.
 
-- Если свойство в `VideoPlayer` позже меняется, то `OnElementPropertyChanged` вызывается метод в модуле подготовки отчетов. Благодаря этому модуль подготовки отчетов для обновления платформы видеопроигрывателя, на основе нового параметра свойства.
+- Если позже свойство в классе `VideoPlayer` меняется, то в отрисовщике вызывается метод `OnElementPropertyChanged`. Благодаря этому отрисовщик может обновить видеопроигрыватель платформы с учетом нового параметра свойства.
 
-В следующих разделах рассматриваются как `AreTransportControlsEnabled` свойство обрабатывается на каждой платформе.
+В следующих разделах описывается обработка свойства `AreTransportControlsEnabled` на каждой платформе.
 
-### <a name="ios-playback-controls"></a>элементы управления воспроизведением iOS
+### <a name="ios-playback-controls"></a>Элементы управления воспроизведением в iOS
 
-Свойство iOS `AVPlayerViewController` , управляющий отображение транспорта controls является [ `ShowsPlaybackControls` ](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.ShowsPlaybackControls/). Вот как это свойство задается в iOS `VideoViewRenderer`:
+Для управления отображением элементов управления транспортировкой служит свойство класса `AVPlayerViewController` в iOS — [`ShowsPlaybackControls`](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.ShowsPlaybackControls/). Это свойство задается в классе `VideoViewRenderer` iOS следующим образом:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -359,11 +359,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-`Element` Свойство модуля подготовки отчетов ссылается на `VideoPlayer` класса.
+Свойство `Element` отрисовщика ссылается на класс `VideoPlayer`.
 
 ### <a name="the-android-media-controller"></a>Контроллер мультимедиа Android
 
-В Android, отображение элементов управления движением требует создания [ `MediaController` ](https://developer.xamarin.com/api/type/Android.Widget.MediaController/) объекта и его сопоставления с `VideoView` объекта. Механизм демонстрируются в `SetAreTransportControlsEnabled` метод:
+Для отображения элементов управления транспортировкой в Android необходимо создать объект [`MediaController`](https://developer.xamarin.com/api/type/Android.Widget.MediaController/) и связать его с объектом `VideoView`. Механизмы показаны в методе `SetAreTransportControlsEnabled`:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -420,9 +420,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="the-uwp-transport-controls-property"></a>Свойства транспорта управления универсальной платформы Windows
+### <a name="the-uwp-transport-controls-property"></a>Свойство элементов управления транспортировкой на универсальной платформе Windows
 
-UWP `MediaElement` определяет свойство, именуемое [ `AreTransportControlsEnabled` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_AreTransportControlsEnabled), таким образом, чтобы свойство задается из `VideoPlayer` свойство с тем же именем:
+Класс `MediaElement` на платформе UWP определяет свойство с именем [`AreTransportControlsEnabled`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_AreTransportControlsEnabled) таким образом, что свойство задается из одноименного свойства `VideoPlayer`.
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -460,9 +460,9 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-Еще одно свойство необходим начать воспроизведение видео: это очень важно, `Source` свойство, которое ссылается на файл видео. Реализация `Source` свойство описан в следующей статье [воспроизведение видео через Интернет](web-videos.md).
+Чтобы начать воспроизведение видео, требуется еще одно свойство. Это важное свойство `Source`, которое ссылается на видеофайл. Реализация свойства `Source` описывается в следующей статье — [Воспроизведение видео через Интернет](web-videos.md).
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Видеодемонстрации Player (пример)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Демоверсии видеопроигрывателя (пример)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

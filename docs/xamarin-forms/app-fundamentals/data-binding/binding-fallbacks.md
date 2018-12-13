@@ -1,6 +1,6 @@
 ---
-title: В случае ошибки привязки Xamarin.Forms
-description: В этой статье объясняется, как для повышения надежности привязок, определив возврата значений, которые будут использоваться, если привязка не выполняется.
+title: Резервные значения привязки в Xamarin.Forms
+description: В этой статье описывается, как повысить надежность привязок путем определения резервных значений, которые будут использоваться при сбое привязки.
 ms.prod: xamarin
 ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
 ms.technology: xamarin-forms
@@ -9,32 +9,32 @@ ms.author: dabritch
 ms.date: 08/16/2018
 ms.openlocfilehash: 2a4b29df9148ce695f8f3ca5377e5848af1b775a
 ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2018
 ms.locfileid: "52171603"
 ---
-# <a name="xamarinforms-binding-fallbacks"></a>В случае ошибки привязки Xamarin.Forms
+# <a name="xamarinforms-binding-fallbacks"></a>Резервные значения привязки в Xamarin.Forms
 
-Иногда сбой привязки данных, так как источник привязки не может быть разрешена, или привязка выполняется успешно, но возвращает `null` значение. Хотя эти сценарии могут обрабатываться с помощью преобразователей значений или других дополнительный код, привязки данных можно сделать более надежным, определив возврата значений, используемых при сбое процесса привязки. Это можно сделать, определив [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) и [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) свойствам в выражении привязки. Так как эти свойства находятся в [ `BindingBase` ](xref:Xamarin.Forms.BindingBase) класса, они могут использоваться с привязками, скомпилированный привязки и с `Binding` расширение разметки.
+Иногда может происходить сбой привязки данных из-за того, что не удалось разрешить источник привязки, или из-за того, что успешно выполненная привязка возвращает значение `null`. Хотя в таких ситуациях можно применять преобразователи величин или другой дополнительный код, повысить надежность привязок можно путем определения резервных значений, которые используются в случае сбоя привязки. Для этого можно определить свойства [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) и [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) в выражении привязки. Так как эти свойства находятся в классе [`BindingBase`](xref:Xamarin.Forms.BindingBase), их можно использовать с обычными привязками, скомпилированными привязками и расширением разметки `Binding`.
 
 > [!NOTE]
-> Использование [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) и [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) свойствам в выражении привязки является необязательным.
+> Использование свойств [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) и [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) в выражении привязки не является обязательным.
 
 ## <a name="defining-a-fallback-value"></a>Определение резервного значения
 
-[ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) Свойство позволяет запасное значение должна определяться, который будет использоваться при привязке *источника* не может быть разрешен. Распространенный сценарий для этого свойства является привязка к свойствам источников, которые могут не существовать для всех объектов в присоединенной коллекции разнородных типов.
+Свойство [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) позволяет определить резервное значение, которое будет использоваться, если невозможно разрешить *источник* привязки. Это свойство задается, например, при привязке к исходным свойствам, которые могут иметься не у всех объектов однородных типов в связанной коллекции.
 
-**MonkeyDetail** страницы показан параметр [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) свойство:
+На странице **MonkeyDetail** иллюстрируется задание свойства [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue):
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue='Population size unknown'}"
        ... />   
 ```
 
-Привязка на [ `Label` ](xref:Xamarin.Forms.Label) определяет [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) значение, которое будет задано для целевого объекта, если источник привязки не может быть разрешена. Таким образом, значения, определенного `FallbackValue` свойство будет отображаться, если `Population` свойство не существует в привязанном объекте. Обратите внимание, что здесь `FallbackValue` значение свойства разделяются одинарными кавычками (апостроф).
+Для привязки к [`Label`](xref:Xamarin.Forms.Label) определено значение [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue), которое будет присвоено целевому объекту, если не удастся разрешить источник привязки. Поэтому, если у привязанного объекта нет свойства `Population`, отображается значение, определенное в свойстве `FallbackValue`. Обратите внимание на то, что здесь значение свойства `FallbackValue` отделяется одинарными кавычками (апострофами).
 
-Вместо того чтобы [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) значения встроенного свойства рекомендуется определять их как ресурсы в [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Преимуществом такого подхода является такие значения будут определены один раз в одном месте что могут более легко быть локализованы. Ресурсы может быть извлечен с помощью `StaticResource` расширение разметки:
+Значения свойств [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) рекомендуется определять не в коде, а в качестве ресурсов а [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary). Преимущество такого подхода состоит в том, что такие значения определяются однократно в одном месте, где их легко найти. Ресурсы можно извлечь с помощью расширения разметки `StaticResource`:
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue={StaticResource populationUnknown}}"
@@ -42,22 +42,22 @@ ms.locfileid: "52171603"
 ```
 
 > [!NOTE]
-> Невозможно присвоить `FallbackValue` свойство с выражением привязки.
+> Свойство `FallbackValue` невозможно задать с помощью выражения привязки.
 
-Вот ее запуск.
+Вот работающая программа:
 
-![Привязка FallbackValue](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue привязки")
+![Привязка FallbackValue](binding-fallbacks-images/bindingunavailable-detail-cropped.png "Привязка FallbackValue")
 
-Когда `FallbackValue` свойства не задано в выражении привязки и путь привязки или часть пути не разрешается, [ `BindableProperty.DefaultValue` ](xref:Xamarin.Forms.BindableProperty.DefaultValue) установлено на целевом объекте. Тем не менее, если `FallbackValue` свойства, а путь привязки или часть пути не разрешается, значение `FallbackValue` свойство value устанавливается на целевом объекте. Таким образом, на **MonkeyDetail** страницы [ `Label` ](xref:Xamarin.Forms.Label) отображает «Неизвестный размер совокупности», так как не имеет связанного объекта `Population` свойство.
+Если свойство `FallbackValue` не задано в выражении привязки и не удалось разрешить путь привязки или его часть, для целевого объекта задается [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue). Однако если свойство `FallbackValue` задано, но не удается разрешить путь привязки или его часть, для целевого объекта задается значение свойства `FallbackValue`. Поэтому на странице **MonkeyDetail** в элементе [`Label`](xref:Xamarin.Forms.Label) отображается текст "Population size unknown" (Размер популяции неизвестен), так как у привязанного объекта нет свойства `Population`.
 
 > [!IMPORTANT]
-> Преобразователь значений, определенных в выражении привязки не выполняется при [ `FallbackValue` ](xref:Xamarin.Forms.BindingBase.FallbackValue) свойству.
+> Если задано свойство [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue), определенный преобразователь величин не выполняется в выражении привязки.
 
-## <a name="defining-a-null-replacement-value"></a>Определение значения null замены
+## <a name="defining-a-null-replacement-value"></a>Определение значения, заменяющего NULL
 
-[ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) Свойство позволяет значение замены должна определяться, который будет использоваться при привязки *источника* будет устранена, но будет `null`. Распространенный сценарий для этого свойства является привязка к свойствам источников, которые могут быть `null` в связанной коллекции.
+Свойство [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) позволяет определить заменяющее значение, которое будет использоваться, если *источник* привязки разрешается, но возвращается значение `null`. Это свойство задается, например, при привязке к исходным свойствам, которые могут иметь значение `null` в связанной коллекции.
 
-**Кодеры** страницы показан параметр [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) свойство:
+На странице **Monkeys** иллюстрируется задание свойства [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue):
 
 ```xaml
 <ListView ItemsSource="{Binding Monkeys}"
@@ -79,9 +79,9 @@ ms.locfileid: "52171603"
 </ListView>
 ```
 
-Привязки на [ `Image` ](xref:Xamarin.Forms.Image) и [ `Label` ](xref:Xamarin.Forms.Label) оба определения [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) значения, которые будут применяться, если путь привязки возвращает `null`. Таким образом, значения, которые были определены `TargetNullValue` для любых объектов в коллекции будут выведены свойства где `ImageUrl` и `Location` свойства не определены. Обратите внимание, что здесь `TargetNullValue` значения свойств, разделенные символами одинарной кавычки (апостроф).
+Для привязок к [`Image`](xref:Xamarin.Forms.Image) и [`Label`](xref:Xamarin.Forms.Label) определены значения [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue), которые применяются, если путь привязки возвращает значение `null`. Поэтому значения свойств `TargetNullValue` отображаются для всех объектов в коллекции, для которых свойства `ImageUrl` и `Location` не определены. Обратите внимание на то, что здесь значения свойства `TargetNullValue` отделяются одинарными кавычками (апострофами).
 
-Вместо того чтобы [ `TargetNullValue` ](xref:Xamarin.Forms.BindingBase.TargetNullValue) значения встроенного свойства рекомендуется определять их как ресурсы в [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Преимуществом такого подхода является такие значения будут определены один раз в одном месте что могут более легко быть локализованы. Ресурсы может быть извлечен с помощью `StaticResource` расширение разметки:
+Значения свойств [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) рекомендуется определять не в коде, а в качестве ресурсов а [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary). Преимущество такого подхода состоит в том, что такие значения определяются однократно в одном месте, где их легко найти. Ресурсы можно извлечь с помощью расширения разметки `StaticResource`:
 
 ```xaml
 <Image Source="{Binding ImageUrl, TargetNullValue={StaticResource fallbackImageUrl}}"
@@ -91,17 +91,17 @@ ms.locfileid: "52171603"
 ```
 
 > [!NOTE]
-> Невозможно присвоить `TargetNullValue` свойство с выражением привязки.
+> Свойство `TargetNullValue` невозможно задать с помощью выражения привязки.
 
-Вот ее запуск.
+Вот работающая программа:
 
-[![Привязка TargetNullValue](binding-fallbacks-images/bindingunavailable-small.png "привязки TargetNullValue")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue привязки")
+[![Привязка TargetNullValue](binding-fallbacks-images/bindingunavailable-small.png "Привязка TargetNullValue")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "Привязка TargetNullValue")
 
-При `TargetNullValue` свойства не задано в выражении привязки, значение источника `null` будут преобразованы в том случае, если определен преобразователь значений, отформатированных при `StringFormat` определен, и результат затем устанавливается на целевом объекте. Тем не менее, если `TargetNullValue` свойство задано, значение источника `null` будут преобразованы в том случае, если определен преобразователь значений, и в том случае, если по-прежнему `null` после преобразования значение `TargetNullValue` установлено на целевом объекте.
+Когда свойство `TargetNullValue` не указано в выражении привязки, исходное значение `null` преобразуется, если определен преобразователь величин, форматируется, если определен формат `StringFormat`, а затем результат задается для целевого объекта. Однако когда свойство `TargetNullValue` указано, исходное значение `null` преобразуется, если определен преобразователь величин, а затем, если оно по-прежнему равно `null` после преобразования, значение свойства `TargetNullValue` задается для целевого объекта.
 
 > [!IMPORTANT]
-> Форматирование строк в выражении привязки не применяется при `TargetNullValue` свойству.
+> Если свойство `TargetNullValue` задано, форматирование строк в выражении привязки не применяется.
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Демонстрации, привязка данных (пример)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Демоверсии привязок данных (пример)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)

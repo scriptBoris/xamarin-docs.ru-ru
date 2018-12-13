@@ -1,6 +1,6 @@
 ---
-title: Видео источников привязки для проигрывателя
-description: В этой статье объясняется, как выполнить привязку источников видеосигнала видеопроигрывателя с помощью Xamarin.Forms.
+title: Привязка источников видео к проигрывателю
+description: В этой статье объясняется, как привязать источники видео к видеопроигрывателю с помощью Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 504E0C7E-051A-4AF2-B654-BAB4D0957928
 ms.technology: xamarin-forms
@@ -9,14 +9,14 @@ ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: b0efdc1a20f52231f15b7a08eb86962e2079c678
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/08/2018
 ms.locfileid: "35240034"
 ---
-# <a name="binding-video-sources-to-the-player"></a>Видео источников привязки для проигрывателя
+# <a name="binding-video-sources-to-the-player"></a>Привязка источников видео к проигрывателю
 
-Когда `Source` свойство `VideoPlayer` новый видеофайл задано представление, существующего видео воспроизведение прекращается и начинается новый видео. Это продемонстрировано на **выберите видео в Интернете** страница [ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) образца. Страница содержит `ListView` заголовками три видео, на который ссылается **App.xaml** файла:
+Когда свойству `Source` представления `VideoPlayer` присваивается новый видеофайл, воспроизведение текущего видео останавливается и начинает воспроизводиться новое видео. Это демонстрируется на странице **Select Web Video** (Выбор видео из Интернета) в примере [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/). На ней есть представление `ListView` с названиями трех видеороликов, на которые указывают ссылки в файле **App.xaml**:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -47,7 +47,7 @@ ms.locfileid: "35240034"
 </ContentPage>
 ```
 
-При выборе видео `ItemSelected` выполняется обработчик событий в файле кода. Обработчик удаляет все пробелы и апострофы из заголовка и использует его в качестве ключа для получения одного из ресурсов, определенных в **App.xaml** файла. Что `UriVideoSource` объекта присваивается значение `Source` свойство `VideoPlayer`.
+При выборе видео выполняется обработчик событий `ItemSelected` в файле кода программной части. Обработчик удаляет все пробелы и апострофы из названия и использует итоговую строку как ключ для получения одного из ресурсов, определенных в файле **App.xaml**. После этого объект `UriVideoSource` присваивается свойству `Source` представления `VideoPlayer`.
 
 ```csharp
 namespace VideoPlayerDemos
@@ -71,11 +71,11 @@ namespace VideoPlayerDemos
 }
 ```
 
-При первой загрузке страницы не выбран элемент в `ListView`, поэтому необходимо выбрать один для видео, чтобы начать воспроизведение:
+При первой загрузке страницы элемент в `ListView` не выбран. Чтобы видео начало воспроизводиться, необходимо выбрать один из элементов:
 
-[![Выберите видео в Интернете](source-bindings-images/selectwebvideo-small.png "выберите видео в Интернете")](source-bindings-images/selectwebvideo-large.png#lightbox "выберите видео в Интернете")
+[![Выбор видео из Интернета](source-bindings-images/selectwebvideo-small.png "Выбор видео из Интернета")](source-bindings-images/selectwebvideo-large.png#lightbox "Выбор видео из Интернета")
 
-`Source` Свойство `VideoPlayer` поддерживаемый привязываемые свойства, которое означает, что он может быть целевого объекта привязки данных. Это продемонстрировано на **привязки к VideoPlayer** страницы. Разметка **BindToVideoPlayer.xaml** файла поддерживается следующий класс, инкапсулирующий название видео, а также соответствующий `VideoSource` объекта:
+Свойство `Source` представления `VideoPlayer` поддерживается привязываемым свойством, то есть может быть целью привязки данных. Это демонстрируется на странице **Bind to VideoPlayer** (Привязка к VideoPlayer). Разметка в файле **BindToVideoPlayer.xaml** поддерживается следующим классом, который инкапсулирует название видео и соответствующий объект `VideoSource`:
 
 ```csharp
 namespace VideoPlayerDemos
@@ -94,7 +94,7 @@ namespace VideoPlayerDemos
 }
 ```
 
-`ListView` В **BindToVideoPlayer.xaml** файл содержит массив этих `VideoInfo` объектов, каждое из которых инициализируется название видео и `UriVideoSource` объекта из словаря ресурсов в  **App.XAML**:
+Элемент `ListView` в файле **BindToVideoPlayer.xaml** содержит массив объектов `VideoInfo`, каждый из которых инициализируется с использованием названия видео и объекта `UriVideoSource` из словаря ресурсов в файле **App.xaml**:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -133,11 +133,11 @@ namespace VideoPlayerDemos
 </ContentPage>
 ```
 
-`Source` Свойство `VideoPlayer` привязан к `ListView`. `Path` Привязки указывается как `SelectedItem.VideoSource`, который является составного контура, состоящий из двух свойств: `SelectedItem` — это свойство `ListView`. Выбранный элемент имеет тип `VideoInfo`, который имеет `VideoSource` свойства.
+Свойство `Source` представления `VideoPlayer` привязано к `ListView`. Свойство `Path` привязки задается как `SelectedItem.VideoSource`. Это составная строка, включающая два свойства: `SelectedItem` — это свойства элемента `ListView`. Выбранный элемент имеет тип `VideoInfo`, у которого есть свойство `VideoSource`.
 
-Как и в первом **выберите видео в Интернете** страницы, ни один элемент первоначально выбранный из `ListView`, поэтому необходимо выбрать один из видео до начала воспроизведения.
+Так же как и в случае с первой страницей **Select Web Video**, элемент в `ListView` изначально не выбран. Поэтому, чтобы видео начало воспроизводиться, нужно выбрать один из видеороликов.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Видеодемонстрации проигрывателя (пример)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Демоверсии видеопроигрывателя (пример)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

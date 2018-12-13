@@ -1,6 +1,6 @@
 ---
 title: Реализация преобразования текста в речь
-description: В этой статье объясняется, как использовать класс Xamarin.Forms DependencyService для вызова в собственном API преобразования текста в речь каждой платформы.
+description: В этой статье объясняется, как использовать класс Xamarin.Forms DependencyService для вызова собственного интерфейса API преобразования текста в речь каждой платформы.
 ms.prod: xamarin
 ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
 ms.technology: xamarin-forms
@@ -9,30 +9,30 @@ ms.author: dabritch
 ms.date: 09/18/2017
 ms.openlocfilehash: 6d1948214b97a1b536b07b6420c32e4d27124518
 ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/18/2018
 ms.locfileid: "38997547"
 ---
 # <a name="implementing-text-to-speech"></a>Реализация преобразования текста в речь
 
-В этой статье поможет вам при создании кроссплатформенного приложения, который использует [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) обратиться к собственным API преобразования текста в речь:
+Эта статья поможет вам создать кроссплатформенное приложение, в котором [`DependencyService`](xref:Xamarin.Forms.DependencyService) используется для доступа к собственным интерфейсам API преобразования текста в речь:
 
-- **[Создание интерфейса](#Creating_the_Interface)**  &ndash; понять, как интерфейс создается в общем коде.
-- **[iOS реализация](#iOS_Implementation)**  &ndash; Узнайте, как реализовать интерфейс в машинном коде для iOS.
-- **[Android реализации](#Android_Implementation)**  &ndash; Узнайте, как реализовать интерфейс в машинном коде для Android.
-- **[Реализация UWP](#WindowsImplementation)**  &ndash; Узнайте, как реализовать интерфейс в машинном коде для универсальной платформы Windows (UWP).
-- **[Реализация в общем коде](#Implementing_in_Shared_Code)**  &ndash; сведения об использовании `DependencyService` выполнить вызов собственной реализации из общего кода.
+- **[Создание интерфейса](#Creating_the_Interface)** &ndash; сведения о создании интерфейса в общем коде.
+- **[Реализация в iOS](#iOS_Implementation)** &ndash; сведения о реализации интерфейса в машинном коде для iOS.
+- **[Реализация в Android](#Android_Implementation)** &ndash; сведения о реализации интерфейса в машинном коде для Android.
+- **[Реализация в UWP](#WindowsImplementation)** &ndash; сведения о реализации интерфейса в машинном коде для универсальной платформы Windows (UWP).
+- **[Реализация в общем коде](#Implementing_in_Shared_Code)** &ndash; сведения об использовании `DependencyService` для вызова собственной реализации из общего кода.
 
-Приложение с помощью `DependencyService` будет иметь следующую структуру:
+У приложения, использующего `DependencyService`, будет следующая структура:
 
-![](text-to-speech-images/tts-diagram.png "Структура приложений DependencyService")
+![](text-to-speech-images/tts-diagram.png "Структура приложения DependencyService")
 
 <a name="Creating_the_Interface" />
 
 ## <a name="creating-the-interface"></a>Создание интерфейса
 
-Во-первых необходимо создаете интерфейс в общем коде, который выражает функцию, которую планируется реализовать. В этом примере интерфейс содержит один метод `Speak`:
+Сначала создайте в общем коде интерфейс для функциональности, которую вы планируете реализовать. В этом примере интерфейс содержит один метод `Speak`:
 
 ```csharp
 public interface ITextToSpeech
@@ -41,16 +41,16 @@ public interface ITextToSpeech
 }
 ```
 
-Создания кода для этого интерфейса в общем коде позволит приложению доступ к API-интерфейсы речи на каждой платформе Xamarin.Forms.
+Реализация этого интерфейса в общем коде позволит приложению Xamarin.Forms обращаться к речевым интерфейсам API на каждой платформе.
 
 > [!NOTE]
-> Классы, реализующие интерфейс должен иметь конструктор без параметров для работы с `DependencyService`.
+> Для работы с `DependencyService` классы, реализующие интерфейс, должны иметь конструктор без параметров.
 
 <a name="iOS_Implementation" />
 
-## <a name="ios-implementation"></a>Реализация iOS
+## <a name="ios-implementation"></a>Реализация в iOS
 
-Интерфейс должен быть реализован в каждом проекте приложения для конкретной платформы. Обратите внимание, что класс имеет конструктор без параметров, чтобы `DependencyService` можно создавать новые экземпляры.
+Интерфейс необходимо реализовать в проекте приложения для каждой платформы. Обратите внимание на то, что класс имеет конструктор без параметров. Это позволяет `DependencyService` создавать экземпляры.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
@@ -78,13 +78,13 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-`[assembly]` Атрибут регистрирует класс как реализация `ITextToSpeech` интерфейс, который означает, что `DependencyService.Get<ITextToSpeech>()` может использоваться в общем коде, чтобы создать его экземпляр.
+Атрибут `[assembly]` регистрирует экземпляры как реализацию интерфейса `ITextToSpeech`. Это означает, что для создания его экземпляра можно использовать метод `DependencyService.Get<ITextToSpeech>()` в общем коде.
 
 <a name="Android_Implementation" />
 
-## <a name="android-implementation"></a>Реализация Android
+## <a name="android-implementation"></a>Реализация в Android
 
-Код для Android сложнее, чем версия iOS: требует реализации класса для наследования от конкретных Android `Java.Lang.Object` и реализовать `IOnInitListener` также интерфейс. Он также требуется доступ к текущему контексту Android, который предоставляется командлетом `MainActivity.Instance` свойство.
+Код для Android сложнее, чем для iOS: реализующий класс должен наследовать класс Android `Java.Lang.Object`, а также реализовывать интерфейс `IOnInitListener`. Кроме того, требуется доступ к текущему контексту Android, который предоставляется свойством `MainActivity.Instance`.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
@@ -119,13 +119,13 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-`[assembly]` Атрибут регистрирует класс как реализация `ITextToSpeech` интерфейс, который означает, что `DependencyService.Get<ITextToSpeech>()` может использоваться в общем коде, чтобы создать его экземпляр.
+Атрибут `[assembly]` регистрирует экземпляры как реализацию интерфейса `ITextToSpeech`. Это означает, что для создания его экземпляра можно использовать метод `DependencyService.Get<ITextToSpeech>()` в общем коде.
 
 <a name="WindowsImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>Реализация платформы универсальной Windows
+## <a name="universal-windows-platform-implementation"></a>Реализация на универсальной платформе Windows
 
-Универсальная платформа Windows имеет API распознавания речи в `Windows.Media.SpeechSynthesis` пространства имен. Единственная загвоздка состоит в том, обязательно установите **"микрофон"** возможность в манифест, в противном случае доступ к речи, API-интерфейсы, блокируются.
+Универсальная платформа Windows имеет речевой интерфейс API в пространстве имен `Windows.Media.SpeechSynthesis`. Нужно лишь не забыть отметить возможность **Microphone** (Микрофон) в манифесте. В противном случае доступ к речевым интерфейсам API будет заблокирован.
 
 ```csharp
 [assembly:Dependency(typeof(TextToSpeechImplementation))]
@@ -143,13 +143,13 @@ public class TextToSpeechImplementation : ITextToSpeech
 }
 ```
 
-`[assembly]` Атрибут регистрирует класс как реализация `ITextToSpeech` интерфейс, который означает, что `DependencyService.Get<ITextToSpeech>()` может использоваться в общем коде, чтобы создать его экземпляр.
+Атрибут `[assembly]` регистрирует экземпляры как реализацию интерфейса `ITextToSpeech`. Это означает, что для создания его экземпляра можно использовать метод `DependencyService.Get<ITextToSpeech>()` в общем коде.
 
 <a name="Implementing_in_Shared_Code" />
 
 ## <a name="implementing-in-shared-code"></a>Реализация в общем коде
 
-Теперь мы можно разработать и протестировать общий код, который обращается к интерфейсу преобразования текста в речь. Это простая страница имеется кнопка, которая активирует функцию распознавания речи. Она использует `DependencyService` для получения экземпляра `ITextToSpeech` интерфейс &ndash; во время выполнения этот экземпляр будет реализацию платформы, которая имеет полный доступ к собственным пакетом SDK для.
+Теперь можно написать и протестировать общий код, который обращается к интерфейсу преобразования текста в речь. На этой простой странице есть кнопка, которая активирует функцию преобразования в речь. Для получения экземпляра `ITextToSpeech` интерфейса &ndash; используется `DependencyService`. Во время выполнения этот экземпляр будет представлять собой зависящую от платформы реализацию с полным доступом к собственному пакету SDK.
 
 ```csharp
 public MainPage ()
@@ -166,13 +166,13 @@ public MainPage ()
 }
 ```
 
-Выполнение этого приложения в iOS, Android и UWP, а затем нажмите кнопку приведет к приложения, обращаться к вам с помощью собственного speech SDK на каждой платформе.
+Если запустить это приложение в iOS, Android или UWP и нажать кнопку, текст будет озвучен с помощью собственного пакета SDK соответствующей платформы.
 
- ![iOS и Android озвучивания текста кнопки](text-to-speech-images/running.png "пример преобразования текста в речь")
+ ![Кнопка преобразования текста в речь в iOS и Android](text-to-speech-images/running.png "Пример преобразования текста в речь")
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [С помощью DependencyService (пример)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
+- [Использование DependencyService (пример)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 - [DependencyServiceSample](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample/)
 

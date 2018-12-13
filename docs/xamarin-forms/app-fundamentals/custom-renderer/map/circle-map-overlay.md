@@ -1,6 +1,6 @@
 ---
 title: Выделение круговой области на карте
-description: В этой статье объясняется, как добавить циклическая наложение на карту, чтобы выделить круговой области карты. IOS и Android предлагает API-интерфейсы для добавления циклическая наложение на карту, в универсальной платформы Windows наложения обрабатывается как многоугольник.
+description: В этой статье содержатся сведения о добавлении кругового наложения на карту для выделения на ней круговой области. В iOS и Android имеются интерфейсы API для добавления кругового наложения на карту, а в UWP наложение отрисовывается как многоугольник.
 ms.prod: xamarin
 ms.assetid: 6FF8BD15-074E-4E6A-9522-F9E2BE32EF12
 ms.technology: xamarin-forms
@@ -9,37 +9,37 @@ ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 3064296d4c78a3342fb27afc971c37a029987e5e
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998561"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>Выделение круговой области на карте
 
-_В этой статье объясняется, как добавить циклическая наложение на карту, чтобы выделить круговой области карты._
+_В этой статье содержатся сведения о добавлении кругового наложения на карту для выделения на ней круговой области._
 
 ## <a name="overview"></a>Обзор
 
-Наложение — это многоуровневая изображение на карте. Наложений поддерживает рисование графического содержимого, которые масштабируются вместе с карты, так как оно увеличивается. На следующих снимках экрана показано результат сложения циклическая наложение на карту:
+Наложение — это многослойное изображение на карте. Наложения позволяют рисовать графическое содержимое, которое масштабируется вместе с картой. На следующих снимках экрана показан результат добавления кругового наложения на карту.
 
 ![](circle-map-overlay-images/screenshots.png)
 
-Когда [ `Map` ](xref:Xamarin.Forms.Maps.Map) элемент управления отрисовывается в приложении Xamarin.Forms в iOS `MapRenderer` создается экземпляр класса, который в свою очередь создает экземпляр собственного `MKMapView` элемента управления. На платформе Android `MapRenderer` класс создает экземпляр собственного `MapView` элемента управления. В универсальной платформы Windows (UWP), `MapRenderer` класс создает экземпляр собственного `MapControl`. Процесс подготовки отчета можно задействуем преимущества реализации настроек карты конкретных платформ путем создания пользовательского средства визуализации для `Map` на каждой платформе. Таким образом процесс выглядит следующим образом:
+Когда элемент управления [`Map`](xref:Xamarin.Forms.Maps.Map) отображается в приложении Xamarin.Forms, в iOS создается экземпляр класса `MapRenderer`, который, в свою очередь, создает собственный элемент управления `MKMapView`. На платформе Android класс `MapRenderer` создает собственный элемент управления `MapView`. На универсальной платформе Windows (UWP) класс `MapRenderer` создает собственный элемент управления `MapControl`. Процесс отрисовки можно использовать для реализации настроек карты для конкретных платформ путем создания пользовательского отрисовщика для `Map` на каждой платформе. Этот процесс выглядит следующим образом:
 
 1. [Создание](#Creating_the_Custom_Map) пользовательской карты Xamarin.Forms.
-1. [Использовать](#Consuming_the_Custom_Map) пользовательских карт с помощью Xamarin.Forms.
-1. [Настройка](#Customizing_the_Map) карты, создав пользовательское средство отрисовки карты на каждой платформе.
+1. [Использование](#Consuming_the_Custom_Map) пользовательской карты в Xamarin.Forms.
+1. [Настройка](#Customizing_the_Map) карты путем создания пользовательского отрисовщика для нее на каждой платформе.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) необходимо инициализировать и настроить перед использованием. Дополнительные сведения см. в разделе [`Maps Control`](~/xamarin-forms/user-interface/map.md)
+> Перед использованием необходимо инициализировать и настроить [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps). Дополнительные сведения см. в разделе [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
-Сведения о настройке карты с помощью пользовательского средства визуализации, см. в разделе [Настройка закрепления карты](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
+Сведения о настройке карты с помощью пользовательского отрисовщика см. в разделе [Настройка закрепления карты](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
 <a name="Creating_the_Custom_Map" />
 
 ### <a name="creating-the-custom-map"></a>Создание пользовательской карты
 
-Создание `CustomCircle` классом, имеющим `Position` и `Radius` свойства:
+Создайте класс `CustomCircle` со свойствами `Position` и `Radius`:
 
 ```csharp
 public class CustomCircle
@@ -49,7 +49,7 @@ public class CustomCircle
 }
 ```
 
-Затем создайте подкласс [ `Map` ](xref:Xamarin.Forms.Maps.Map) класс, который добавляет свойство типа `CustomCircle`:
+Затем создайте подкласс класса [`Map`](xref:Xamarin.Forms.Maps.Map), в котором добавлено свойство типа `CustomCircle`:
 
 ```csharp
 public class CustomMap : Map
@@ -62,7 +62,7 @@ public class CustomMap : Map
 
 ### <a name="consuming-the-custom-map"></a>Использование пользовательской карты
 
-Использовать `CustomMap` элемента управления, объявив его экземпляр в экземпляр страницы XAML:
+Для использования элемента управления `CustomMap` объявите его экземпляр в экземпляре страницы XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -75,7 +75,7 @@ public class CustomMap : Map
 </ContentPage>
 ```
 
-В качестве альтернативы использовать `CustomMap` элемента управления, объявив его экземпляр в экземпляр страницы C#:
+Вы также можете использовать элемент управления `CustomMap`, объявив его экземпляр в экземпляре страницы C#:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -93,7 +93,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-Инициализировать `CustomMap` управления:
+Инициализируйте элемент управления `CustomMap` требуемым образом:
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -120,17 +120,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-Эта инициализация добавляет [ `Pin` ](xref:Xamarin.Forms.Maps.Pin) и `CustomCircle` экземпляров для пользовательской карты и помещает представление карты с [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) метод, который изменяет положение и масштаб Уровень сопоставления, создав [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) из [ `Position` ](xref:Xamarin.Forms.Maps.Position) и [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
+При инициализации экземпляры [`Pin`](xref:Xamarin.Forms.Maps.Pin) и `CustomCircle` добавляются на пользовательскую карту, а затем представление карты позиционируется с помощью метода [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*). Положение и масштаб карты изменяются путем создания объекта [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) на основе [`Position`](xref:Xamarin.Forms.Maps.Position) и [`Distance`](xref:Xamarin.Forms.Maps.Distance).
 
 <a name="Customizing_the_Map" />
 
 ### <a name="customizing-the-map"></a>Настройка карты
 
-Пользовательское средство отрисовки теперь должны добавляться в каждый проект приложения для добавления циклическая наложение на карту.
+Теперь в каждый проект приложения необходимо добавить пользовательский отрисовщик для добавления кругового наложения на карту.
 
-#### <a name="creating-the-custom-renderer-on-ios"></a>Создание пользовательского средства визуализации на iOS
+#### <a name="creating-the-custom-renderer-on-ios"></a>Создание пользовательского отрисовщика в iOS
 
-Создать подкласс `MapRenderer` класса и переопределять его `OnElementChanged` метод, чтобы добавить циклическая наложения:
+Создайте подкласс класса `MapRenderer` и переопределите его метод `OnElementChanged` для добавления кругового наложения:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -170,13 +170,13 @@ namespace MapOverlay.iOS
 
 ```
 
-Этот метод выполняет следующую конфигурацию, при условии, что пользовательское средство отрисовки подключен к новому элементу Xamarin.Forms.
+Этот метод выполняет указанные ниже действия, если пользовательский отрисовщик подключен к новому элементу Xamarin.Forms:
 
-- `MKMapView.OverlayRenderer` Свойству соответствующий делегат.
-- Элемент управления circle создается путем установки статического `MKCircle` , указывающий центр окружности и радиус окружности в метрах.
-- Элемент управления circle добавляется на карту путем вызова `MKMapView.AddOverlay` метод.
+- Свойству `MKMapView.OverlayRenderer` присваивается соответствующий делегат.
+- Создается круг путем задания статического объекта `MKCircle`, который определяет центр круга и радиус в метрах.
+- Круг добавляется на карту путем вызова метода `MKMapView.AddOverlay`.
 
-Затем запустите `GetOverlayRenderer` метод для настройки оформления наложения:
+Затем реализуйте метод `GetOverlayRenderer` для настройки отрисовки наложения:
 
 ```csharp
 public class CustomMapRenderer : MapRenderer
@@ -198,9 +198,9 @@ public class CustomMapRenderer : MapRenderer
 }
 ```
 
-#### <a name="creating-the-custom-renderer-on-android"></a>Создание пользовательского средства визуализации на устройстве Android
+#### <a name="creating-the-custom-renderer-on-android"></a>Создание пользовательского отрисовщика в Android
 
-Создать подкласс `MapRenderer` класса и переопределять его `OnElementChanged` и `OnMapReady` методы для добавления циклическая наложения:
+Создайте подкласс класса `MapRenderer` и переопределите его методы `OnElementChanged` и `OnMapReady` для добавления кругового наложения:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -248,11 +248,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-`OnElementChanged` Вызовы методов `MapView.GetMapAsync` метод, который возвращает базовый `GoogleMap` привязывается к представлению, при условии, что пользовательское средство отрисовки подключен к новому элементу Xamarin.Forms. Один раз `GoogleMap` экземпляр доступен, `OnMapReady` вызывается метод, где элемент управления circle создается путем создания экземпляра `CircleOptions` , указывающий центр окружности и радиус окружности в метрах. Элемент управления circle добавляется карты, вызвав `NativeMap.AddCircle` метод.
+Метод `OnElementChanged` вызывает метод `MapView.GetMapAsync`, который получает базовую карту `GoogleMap`, связанную с представлением, если пользовательский отрисовщик подключен к новому элементу Xamarin.Forms. Когда экземпляр `GoogleMap` становится доступен, вызывается метод `OnMapReady`, который создает круг путем создания объекта `CircleOptions`, определяющего центр круга и его радиус в метрах. Затем круг добавляется на карту путем вызова метода `NativeMap.AddCircle`.
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Создание пользовательского средства визуализации на платформе универсальных Windows
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Создание пользовательского отрисовщика на универсальной платформе Windows
 
-Создать подкласс `MapRenderer` класса и переопределять его `OnElementChanged` метод, чтобы добавить циклическая наложения:
+Создайте подкласс класса `MapRenderer` и переопределите его метод `OnElementChanged` для добавления кругового наложения:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -296,12 +296,12 @@ namespace MapOverlay.UWP
 }
 ```
 
-Этот метод выполняет следующие операции, при условии, что пользовательское средство отрисовки подключен к новому элементу Xamarin.Forms:
+Этот метод выполняет указанные ниже операции, если пользовательский отрисовщик подключен к новому элементу Xamarin.Forms:
 
-- Круг положение и radius извлекаются из `CustomMap.Circle` свойство и передается `GenerateCircleCoordinates` метод, который создает широту и долготу координат для периметра окружности. Ниже приведен код для этот вспомогательный метод.
-- Координаты периметра окружности преобразуются в `List` из `BasicGeoposition` координаты.
-- Элемент управления circle создается путем создания экземпляра `MapPolygon` объекта. `MapPolygon` Класс используется для отображения фигуры нескольких точек на карте, задав его `Path` свойства `Geopath` , содержащий координаты фигуры.
-- Многоугольника отрисовывается на карте, добавив его `MapControl.MapElements` коллекции.
+- Положение и радиус круга извлекаются из свойства `CustomMap.Circle` и передаются в метод `GenerateCircleCoordinates`, который создает координаты широты и долготы для окружности. Код этого вспомогательного метода показан ниже.
+- Координаты окружности преобразуются в список `List` координат `BasicGeoposition`.
+- Круг создается путем создания объекта `MapPolygon`. Класс `MapPolygon` используется для отображения многоугольной фигуры на карте. Для этого его свойству `Path` присваивается объект `Geopath`, содержащий координаты фигуры.
+- Многоугольник отображается на карте путем его добавления в коллекцию `MapControl.MapElements`.
 
 
 ```
@@ -328,11 +328,11 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 
 ## <a name="summary"></a>Сводка
 
-В этой статье описываются способы добавления циклическая наложение на карту, чтобы выделить круговой области карты.
+В этой статье были представлены сведения о добавлении кругового наложения на карту для выделения на ней круговой области.
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Циклическая Ovlerlay карты (пример)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
+- [Круговое наложение на карте (пример)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
 - [Настройка закрепления карты](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

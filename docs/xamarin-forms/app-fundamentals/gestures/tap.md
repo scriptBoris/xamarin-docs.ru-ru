@@ -1,6 +1,6 @@
 ---
 title: Добавление распознавателя жестов касания
-description: В этой статье объясняется, как использовать жест касания для обнаружения tap в приложении Xamarin.Forms. Обнаружение TAP реализуется с помощью класса TapGestureRecognizer.
+description: В этой статье объясняется, как использовать жест касания для распознавания касания в приложении Xamarin.Forms. Распознавание касания реализовано с помощью класса TapGestureRecognizer.
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: a28afb30770f15861aef06643e7f51070199ea9b
 ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/18/2018
 ms.locfileid: "38994858"
 ---
 # <a name="adding-a-tap-gesture-recognizer"></a>Добавление распознавателя жестов касания
 
-_Жест касания используется для обнаружения tap и реализуется с помощью класса TapGestureRecognizer._
+_Жест касания используется для распознавания касания и реализован с помощью класса TapGestureRecognizer._
 
-Чтобы сделать активным с помощью жеста касания элемента пользовательского интерфейса, создать [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) экземпляра, обрабатывать [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) событий и добавьте новый распознаватель жестов для [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) коллекции элемента пользовательского интерфейса. В следующем коде показано в примере `TapGestureRecognizer` подключен к [ `Image` ](xref:Xamarin.Forms.Image) элемент:
+Чтобы элемент пользовательского интерфейса можно было выбирать жестом касания, необходимо создать экземпляр [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer), реализовать обработку события [`Tapped`](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) и добавить новый распознаватель жестов в коллекцию [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) элемента пользовательского интерфейса. В следующем примере кода показан распознаватель `TapGestureRecognizer`, присоединенный к элементу [`Image`](xref:Xamarin.Forms.Image):
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -28,19 +28,19 @@ tapGestureRecognizer.Tapped += (s, e) => {
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-По умолчанию образ будет отвечать на одного касания. Задайте [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) свойство дважды щелкните (или дополнительные касания при необходимости).
+По умолчанию изображение будет реагировать на одиночные касания. Для реагирования на двойные (или множественные) касания задайте свойство [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired).
 
 ```csharp
 tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
-Когда [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) имеет значение выше, обработчик событий будет выполняться только если касания происходят в пределах заданного периода времени (это период не настраивается). Если второй (или последующих) касания не происходят в течение этого периода эффективно игнорируются и перезапускает «tap count».
+Если свойство [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) имеет значение больше единицы, обработчик событий выполняется только при том условии, что касания были совершены в течение определенного периода времени (настроить его нельзя). Если второе или последующие касания не были совершены в течение этого периода, они игнорируются и счетчик касаний сбрасывается.
 
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>С помощью Xaml
+## <a name="using-xaml"></a>Использование XAML
 
-Распознаватель жестов можно добавить к элементу управления в Xaml, использование присоединенных свойств. Синтаксис для добавления [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) изображения, показано ниже (в данном случае определение *двойного касания* событий):
+Распознаватель жестов можно добавить к элементу управления в XAML с помощью присоединенных свойств. Синтаксис для добавления [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) к изображению показан ниже (в этом случае определяется событие *двойного касания*).
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -52,7 +52,7 @@ tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 </Image>
 ```
 
-Код для обработчика событий (в данном) увеличивает значение счетчика и изображения изменяется от черного &amp; белый.
+Код обработчика событий (в этом примере) увеличивает значение счетчика и преобразовывает цветное изображение в черно-белое.
 
 ```csharp
 void OnTapGestureRecognizerTapped(object sender, EventArgs args)
@@ -68,9 +68,9 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 }
 ```
 
-## <a name="using-icommand"></a>С помощью ICommand
+## <a name="using-icommand"></a>Использование интерфейса ICommand
 
-Приложения, использующие шаблон Model-View-ViewModel (MVVM), обычно используют `ICommand` вместо привязки обработчиков событий напрямую. [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Можно легко поддерживать `ICommand` либо задав привязку в коде:
+Приложения на основе шаблона "модель — представление — модель представления" (MVVM) обычно используют интерфейс `ICommand` вместо подключения обработчиков событий напрямую. Распознаватель [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) поддерживает `ICommand` путем настройки привязки в коде:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -78,7 +78,7 @@ tapGestureRecognizer.SetBinding (TapGestureRecognizer.CommandProperty, "TapComma
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-или с помощью Xaml:
+или путем использования XAML:
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -90,7 +90,7 @@ image.GestureRecognizers.Add(tapGestureRecognizer);
 </Image>
 ```
 
-Полный код для этой модели представления можно найти в образце. Соответствующие `Command` детали реализации, показаны ниже:
+Полный код для этой модели представления можно найти в примере. Ниже представлена соответствующая реализация `Command`.
 
 ```csharp
 public class TapViewModel : INotifyPropertyChanged

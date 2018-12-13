@@ -1,6 +1,6 @@
 ---
 title: Отображение всплывающих элементов
-description: Xamarin.Forms предоставляет два во всплывающем регистрации подобные элементы пользовательского интерфейса — оповещение и листом действие. В этой статье демонстрируется использование окно оповещения и действия API-интерфейсы на простые вопросы пользователей и помогает пользователям сделать задачи.
+description: 'В Xamarin.Forms существует два всплывающих элемента пользовательского интерфейса: предупреждение и лист действий. В этой статье демонстрируется использование интерфейсов API предупреждений и листов действий, которые позволяют задавать пользователям простые вопросы и предоставлять им пошаговые инструкции по выполнению задач.'
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
@@ -9,30 +9,30 @@ ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 156c2f9dca47a7755d4f810d7921a05662388ded
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38996718"
 ---
 # <a name="displaying-pop-ups"></a>Отображение всплывающих элементов
 
-_Xamarin.Forms предоставляет два во всплывающем регистрации подобные элементы пользовательского интерфейса — оповещение и листом действие. В этой статье демонстрируется использование окно оповещения и действия API-интерфейсы на простые вопросы пользователей и помогает пользователям сделать задачи._
+_В Xamarin.Forms существует два всплывающих элемента пользовательского интерфейса: предупреждение и лист действий. В этой статье демонстрируется использование интерфейсов API предупреждений и листов действий, которые позволяют задавать пользователям простые вопросы и предоставлять им пошаговые инструкции по выполнению задач._
 
-Отображение оповещения или где пользователю предлагается сделать выбор — это распространенная задача пользовательского интерфейса. Xamarin.Forms имеет два метода [ `Page` ](xref:Xamarin.Forms.Page) классом для взаимодействия с пользователем через всплывающее окно: [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) и [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*). Они отображаются с помощью соответствующих собственных элементов управления на каждой платформе.
+Вывод предупреждения или вариантов на выбор — стандартная задача в пользовательском интерфейсе. В Xamarin.Forms есть два метода, относящихся к классу [`Page`](xref:Xamarin.Forms.Page), для взаимодействия с пользователем посредством всплывающих элементов: [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) и [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*). Эти элементы визуализируются на каждой платформе с помощью соответствующих собственных элементов управления.
 
-## <a name="displaying-an-alert"></a>Отображение оповещения
+## <a name="displaying-an-alert"></a>Отображение предупреждения
 
-Все поддерживаемые Xamarin.Forms платформы имеют модальное всплывающее окно предупреждения пользователя и простые вопросы из них. Чтобы отобразить эти оповещения в Xamarin.Forms, используйте [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) метод на любом [ `Page` ](xref:Xamarin.Forms.Page). Следующий код показывает простое сообщение пользователю:
+На всех платформах, поддерживаемых Xamarin.Forms, есть модальный всплывающий элемент, позволяющий выводить предупреждения или задавать простые вопросы пользователю. Для вывода предупреждений в Xamarin.Forms используйте метод [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) на любой странице [`Page`](xref:Xamarin.Forms.Page). Следующая строка отображает простое сообщение:
 
 ```csharp
 DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![](pop-ups-images/alert.png "Диалоговое окно оповещения с помощью одной кнопки")
+![](pop-ups-images/alert.png "Диалоговое окно предупреждения с одной кнопкой")
 
-В этом примере не собирает данные от пользователя. Отображает предупреждения в модальном режиме и после закрытия пользователя продолжается, взаимодействующего с приложением.
+В этом примере не предполагается получение сведений от пользователя. Предупреждение отображается в модальном режиме, и после его закрытия пользователь продолжает работать с приложением.
 
-[ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) Метод может также использоваться для записи ответа пользователя путем представления две кнопки и возвращения сведений `boolean`. Чтобы получить ответ из оповещения, введите текст для обеих кнопок и `await` метод. После того как пользователь выберет один из вариантов ответ возвращается в код. Примечание `async` и `await` ключевые слова в образце кода ниже:
+Метод [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) можно также использовать для получения ответа от пользователя. Для этого предлагаются две кнопки и возвращается значение типа `boolean`. Для получения ответа на предупреждение предоставьте надписи для обеих кнопок и примените к методу оператор `await`. После того как пользователь выберет один из вариантов, ответ возвращается в код. Обратите внимание на ключевые слова `async` и `await` в примере кода ниже.
 
 ```csharp
 async void OnAlertYesNoClicked (object sender, EventArgs e)
@@ -42,13 +42,13 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayAlert](pop-ups-images/alert2-sml.png "предупреждения диалоговое окно с двумя кнопками")](pop-ups-images/alert2.png#lightbox "предупреждения диалоговое окно с кнопками")
+[![DisplayAlert](pop-ups-images/alert2-sml.png "Диалоговое окно предупреждения с двумя кнопками")](pop-ups-images/alert2.png#lightbox "Диалоговое окно предупреждения с двумя кнопками")
 
-## <a name="guiding-users-through-tasks"></a>Руководящие пользователей с помощью задач
+## <a name="guiding-users-through-tasks"></a>Предоставление пользователям инструкций по выполнению задач
 
-[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) является общий элемент пользовательского интерфейса в iOS. Xamarin.Forms [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*) метод позволяет включать этот элемент управления в кроссплатформенных приложений, Подготовка к просмотру собственного альтернативы в Android и UWP.
+[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) — это стандартный элемент пользовательского интерфейса в iOS. Метод Xamarin.Forms [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) позволяет включать этот элемент управления в кроссплатформенные приложения. При этом в Android и UWP будут отрисовываться собственные аналоги.
 
-Чтобы отобразить лист действие `await` [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*) в любом [ `Page` ](xref:Xamarin.Forms.Page), передавая сообщение и кнопку меток в виде строки. Метод возвращает строку метки кнопки, который был щелкнут пользователем. Ниже приведен простой пример.
+Чтобы отобразить лист действий, используйте метод [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) с оператором `await` на любой странице [`Page`](xref:Xamarin.Forms.Page), передав сообщение и надписи кнопок в виде строк. Этот метод возвращает надпись кнопки, нажатой пользователем. Вот простой пример.
 
 ```csharp
 async void OnActionSheetSimpleClicked (object sender, EventArgs e)
@@ -58,9 +58,9 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 }
 ```
 
-![](pop-ups-images/action.png "Диалоговое окно ActionSheet")
+![](pop-ups-images/action.png "Диалоговое окно с листом действий")
 
-`destroy` Кнопка отображается по-другому, чем другие и можно оставить `null` или указан в качестве третьего параметра строку. В следующем примере используется `destroy` кнопки:
+Кнопка `destroy` отрисовывается не так, как другие. Ее можно оставить со значением `null` или указать в качестве третьего строкового параметра. В следующем примере используется кнопка `destroy`.
 
 ```csharp
 async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
@@ -70,11 +70,11 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayActionSheet](pop-ups-images/action2-sml.png "диалоговое окно листа действий с кнопкой \"Destroy\"")](pop-ups-images/action2.png#lightbox "диалоговое окно листа действий с кнопкой \"Destroy\"")
+[![DisplayActionSheet](pop-ups-images/action2-sml.png "Диалоговое окно с листом действий и кнопкой удаления")](pop-ups-images/action2.png#lightbox "Диалоговое окно с листом действий и кнопкой удаления")
 
 ## <a name="summary"></a>Сводка
 
-В этой статье продемонстрированных окно оповещения и действия API-интерфейсы на простые вопросы пользователей и помогает пользователям сделать задачи. Xamarin.Forms имеет два метода [ `Page` ](xref:Xamarin.Forms.Page) классом для взаимодействия с пользователем через всплывающее окно: [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*) и [ `DisplayActionSheet` ](xref:Xamarin.Forms.Page.DisplayActionSheet*), и они являются Оба к просмотру с помощью соответствующих собственных элементов управления на каждой платформе.
+В этой статье было продемонстрировано использование интерфейсов API предупреждений и списков действий, которые позволяют задавать пользователям простые вопросы и предоставлять им пошаговые инструкции по выполнению задач. В Xamarin.Forms есть два метода, относящихся к классу [`Page`](xref:Xamarin.Forms.Page), для взаимодействия с пользователем посредством всплывающих элементов: [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) и [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*). Эти элементы визуализируются на каждой платформе с помощью соответствующих собственных элементов управления.
 
 
 

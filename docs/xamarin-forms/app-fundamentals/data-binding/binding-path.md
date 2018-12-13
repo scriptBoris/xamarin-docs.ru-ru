@@ -1,6 +1,6 @@
 ---
 title: Путь привязки Xamarin.Forms
-description: В этой статье объясняется, как использовать привязки данных в Xamarin.Forms для доступа к подчиненные свойства и элементы коллекции со свойством путь класса привязки.
+description: В этой статье описывается, как использовать привязки данных Xamarin.Forms для доступа к вложенным свойствам и элементам коллекций с помощью свойства Path класса Binding.
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
@@ -9,31 +9,31 @@ ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: 5ffc167b1e5695663dff6005f3d7e0ba0ea958db
 ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2018
 ms.locfileid: "52172110"
 ---
 # <a name="xamarinforms-binding-path"></a>Путь привязки Xamarin.Forms
 
-Во всех предыдущих примерах привязки данных [ `Path` ](xref:Xamarin.Forms.Binding.Path) свойство `Binding` класс (или [ `Path` ](xref:Xamarin.Forms.Xaml.BindingExtension.Path) свойство `Binding` расширение разметки) установлен к одному свойству. Фактически можно задать `Path` для *подсвойство* (свойство свойства), или с элементом коллекции.
+Во всех предыдущих примерах привязки данных в свойстве [`Path`](xref:Xamarin.Forms.Binding.Path) класса `Binding` (или свойстве [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) расширения разметки `Binding`) указывалось одно свойство. В действительности `Path` может указывать на *вложенное свойство* (свойство свойства) или элемент коллекции.
 
-Например, предположим, что страница содержит `TimePicker`:
+Например, предположим, что страница содержит объект `TimePicker`:
 
 ```xaml
 <TimePicker x:Name="timePicker">
 ```
 
-`Time` Свойство `TimePicker` имеет тип `TimeSpan`, но возможно, вы хотите создать привязку данных, который ссылается на `TotalSeconds` , свойство `TimeSpan` значение. Ниже приведен привязки данных.
+Свойство `Time` класса `TimePicker` имеет тип `TimeSpan`, но, возможно, вам нужно создать привязку данных, которая ссылается на свойство `TotalSeconds` этого значения `TimeSpan`. Вот эта привязка данных:
 
 ```xaml
 {Binding Source={x:Reference timePicker},
          Path=Time.TotalSeconds}
 ```
 
-`Time` Свойство имеет тип `TimeSpan`, который имеет `TotalSeconds` свойства. `Time` И `TotalSeconds` свойства являются просто подключается с периодом. Элементы в `Path` строки всегда относятся к свойствам, а не типы этих свойств.
+Свойство `Time` имеет тип `TimeSpan`, который имеет свойство `TotalSeconds`. Свойства `Time` и `TotalSeconds` соединяются точкой. Элементы в строке `Path` всегда ссылаются на свойства, а не на их типы.
 
-Пример и несколько других отображаются в **вариации путь** страницы:
+Этот и еще ряд примеров представлены на странице **Path Variations** (Варианты пути):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,11 +89,11 @@ ms.locfileid: "52172110"
 </ContentPage>
 ```
 
-Во втором `Label`, источника привязки является самой страницы. `Content` Свойство имеет тип `StackLayout`, который имеет `Children` свойство типа `IList<View>`, который имеет `Count` свойство, указывающее количество дочерних элементов.
+Во втором элементе `Label` источником привязки является сама страница. Свойство `Content` имеет тип `StackLayout`, который имеет свойство `Children` типа `IList<View>`. Этот тип, в свою очередь, имеет свойство `Count`, в котором указывается число дочерних объектов.
 
-## <a name="paths-with-indexers"></a>Пути с помощью индексаторов
+## <a name="paths-with-indexers"></a>Пути с индексаторами
 
-Привязка в третьем `Label` в **вариации путь** страниц ссылки [ `CultureInfo` ](xref:System.Globalization.CultureInfo) в класс `System.Globalization` пространства имен:
+Привязка в третьем элементе `Label` на странице **Path Variations** ссылается на класс [`CultureInfo`](xref:System.Globalization.CultureInfo) в пространстве имен `System.Globalization`:
 
 ```xaml
 <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
@@ -101,9 +101,9 @@ ms.locfileid: "52172110"
                       StringFormat='The middle day of the week is {0}'}" />
 ```
 
-Настройка источника статического `CultureInfo.CurrentCulture` свойство, которое является объектом типа `CultureInfo`. Что класс определяет свойство с именем `DateTimeFormat` типа [ `DateTimeFormatInfo` ](xref:System.Globalization.DateTimeFormatInfo) , содержащий `DayNames` коллекции. Индекс выбирает четвертый элемент.
+В качестве источника задано статическое свойство `CultureInfo.CurrentCulture`, представляющее собой объект типа `CultureInfo`. В этом классе определено свойство `DateTimeFormat` типа [`DateTimeFormatInfo`](xref:System.Globalization.DateTimeFormatInfo), содержащее коллекцию `DayNames`. Индекс выбирает четвертый элемент.
 
-Четвертый `Label` делает нечто подобное, но для региональных параметров, связанных с Франция. `Source` Привязки задано значение `CultureInfo` объекта конструктор без параметров:
+Четвертый элемент `Label` выполняет схожие действия, но для французского языка и региональных параметров. Свойству `Source` привязки присваивается объект `CultureInfo` с конструктором:
 
 ```xaml
 <Label>
@@ -122,9 +122,9 @@ ms.locfileid: "52172110"
 </Label>
 ```
 
-См. в разделе [передав аргументы конструктора](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) Дополнительные сведения об указании аргументы конструктора в XAML.
+Дополнительные сведения об указании аргументов конструктора в XAML см. в разделе [Передача аргументов конструктора](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments).
 
-Наконец, последний пример аналогичен второй, за исключением того, что он ссылается на один из дочерних элементов `StackLayout`:
+Наконец, последний пример аналогичен второму, за тем исключением, что он ссылается на один из дочерних элементов `StackLayout`:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -132,22 +132,22 @@ ms.locfileid: "52172110"
                       StringFormat='The first Label has {0} characters'}" />
 ```
 
-Этот дочерний элемент является `Label`, который имеет `Text` свойство типа `String`, который имеет `Length` свойства. Первый `Label` отчеты `TimeSpan` в `TimePicker`, поэтому при изменении текста, последний `Label` также изменения.
+Этот дочерний объект представляет собой элемент `Label`, который имеет свойство `Text` типа `String`, имеющего свойство `Length`. Первый элемент `Label` сообщает значение `TimeSpan`, заданное в `TimePicker`, поэтому при изменении текста итоговый элемент `Label` также меняется.
 
-Вот ее запуск.
+Вот работающая программа:
 
-[![Варианты путь](binding-path-images/pathvariations-small.png "вариации путь")](binding-path-images/pathvariations-large.png#lightbox "вариации путь")
+[![Варианты пути](binding-path-images/pathvariations-small.png "Варианты пути")](binding-path-images/pathvariations-large.png#lightbox "Варианты пути")
 
-## <a name="debugging-complex-paths"></a>Отладка сложных контуров
+## <a name="debugging-complex-paths"></a>Отладка сложных путей
 
-Определения сложных путь может быть сложно создать: вам нужно знать тип каждого вложенного свойства или тип элементов в коллекции, чтобы правильно добавить Далее подчиненных свойств, но сами типы не отображаются в пути. Хорошим способом — инкрементное построение пути и посмотреть на промежуточных результатов. Для последнего примера, можно начать с нет `Path` определения всех:
+Составлять определения сложных путей может быть непросто: нужно знать тип каждого вложенного свойства или элементов в коллекции, чтобы правильно добавить следующее вложенное свойство. Однако сами типы в пути отсутствуют. Один из приемов — формировать путь поэтапно, проверяя промежуточные результаты. В последнем примере можно было начать без определения `Path`:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
                       StringFormat='{0}'}" />
 ```
 
-Отображающий тип источника привязки, или `DataBindingDemos.PathVariationsPage`. Вы знаете `PathVariationsPage` является производным от `ContentPage`, поэтому он `Content` свойство:
+Этот код отображает тип источника привязки (`DataBindingDemos.PathVariationsPage`). Известно, что страница `PathVariationsPage` является производной `ContentPage`, поэтому она имеет свойство `Content`:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -155,15 +155,15 @@ ms.locfileid: "52172110"
                       StringFormat='{0}'}" />
 ```
 
-Тип `Content` свойство теперь получит доступ к быть `Xamarin.Forms.StackLayout`. Добавить `Children` свойства `Path` и тип `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`, — это класс, внутренними для Xamarin.Forms, но очевидно, что тип коллекции. Добавьте индекс, а тип — `Xamarin.Forms.Label`. По-прежнему таким образом.
+Теперь видно, что свойство `Content` имеет тип `Xamarin.Forms.StackLayout`. Добавьте свойство `Children` в `Path`, и будет ясно, что его тип — `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`. Это внутренний класс Xamarin.Forms, однако очевидно, что он представляет собой коллекцию. Добавьте индекс. Тип — `Xamarin.Forms.Label`. Продолжайте тем же образом.
 
-По мере Xamarin.Forms обработки путь привязки, он устанавливает `PropertyChanged` обработчик для любого объекта в пути, который реализует `INotifyPropertyChanged` интерфейс. Например, последний привязки реагирует на изменения в первом `Label` поскольку `Text` изменения свойств.
+Когда Xamarin.Forms обрабатывает путь привязки, для каждого объекта, реализующего интерфейс `INotifyPropertyChanged`, в пути устанавливается обработчик `PropertyChanged`. Например, последняя привязка реагирует на изменение в первом элементе `Label`, так как меняется свойство `Text`.
 
-Если свойство в пути привязки не реализует `INotifyPropertyChanged`, любые изменения этого свойства будет игнорироваться. Некоторые изменения полностью может сделать недействительным путь привязки, поэтому этот метод следует использовать только в том случае, если строка свойства и подсвойства никогда не становятся недействительными.
+Если свойство в пути привязки не реализует интерфейс `INotifyPropertyChanged`, изменения этого свойства игнорируются. Некоторые изменения могут сделать путь привязки полностью недействительным, поэтому этот прием следует использовать, только если строка из свойств и вложенных свойств не может стать недействительной.
 
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Демонстрации, привязка данных (пример)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Данные привязки Глава из книги по Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Демоверсии привязок данных (пример)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Глава, посвященная привязкам данных, из книги Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

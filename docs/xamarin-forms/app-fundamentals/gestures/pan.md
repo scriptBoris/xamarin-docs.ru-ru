@@ -1,6 +1,6 @@
 ---
-title: Добавление распознавателя жестов pan
-description: В этой статье объясняется, как использовать жест pan горизонтально и вертикально Сдвиг изображения, таким образом, чтобы все содержимое образа можно просмотреть, когда оно отображается в окне просмотра меньше, чем размеры изображения.
+title: Добавление распознавателя жестов сдвига
+description: В этой статье описывается, как использовать жест сдвига для смещения изображения по горизонтали или вертикали, когда оно не помещается полностью в окне просмотра.
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: 59e9f4c61bda86faa5a55d70ef91411adb14da6d
 ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/18/2018
 ms.locfileid: "38996810"
 ---
-# <a name="adding-a-pan-gesture-recognizer"></a>Добавление распознавателя жестов pan
+# <a name="adding-a-pan-gesture-recognizer"></a>Добавление распознавателя жестов сдвига
 
-_Жест pan используется для обнаружения движения пальца по экрану и применения к содержимому, перемещение и реализуется с помощью `PanGestureRecognizer` класса. Распространенный сценарий для жест pan является по горизонтали и вертикали Сдвиг изображения, таким образом, чтобы все содержимое образа можно просмотреть, когда оно отображается в окне просмотра меньше, чем размеры изображения. Это достигается путем перемещения изображения в области просмотра и демонстрируется в этой статье._
+_Жест сдвига используется для обнаружения движения пальцев по экрану и применения этого движения к содержимому. Он реализуется с помощью класса `PanGestureRecognizer`. Жест сдвига обычно используется для смещения изображения по горизонтали или вертикали, когда оно не помещается полностью в окне просмотра. Для этого изображение перемещается в пределах окна просмотра, как показано в этой статье._
 
-Чтобы сделать элемент пользовательского интерфейса, перемещаемые с жестом pan, создать [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) экземпляра, обрабатывать [ `PanUpdated` ](xref:Xamarin.Forms.PanGestureRecognizer.PanUpdated) событий, и добавьте новый распознаватель жестов для [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) коллекции элемента пользовательского интерфейса. В следующем коде показано в примере `PanGestureRecognizer` подключен к [ `Image` ](xref:Xamarin.Forms.Image) элемент:
+Чтобы элемент пользовательского интерфейса можно было перемещать жестом сдвига, необходимо создать экземпляр [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer), реализовать обработку события [`PanUpdated`](xref:Xamarin.Forms.PanGestureRecognizer.PanUpdated) и добавить новый распознаватель жестов в коллекцию [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) элемента пользовательского интерфейса. В следующем примере кода показан распознаватель `PanGestureRecognizer`, присоединенный к элементу [`Image`](xref:Xamarin.Forms.Image):
 
 ```csharp
 var panGesture = new PanGestureRecognizer();
@@ -28,7 +28,7 @@ panGesture.PanUpdated += (s, e) => {
 image.GestureRecognizers.Add(panGesture);
 ```
 
-Это можно также сделать в XAML, как показано в следующем примере кода:
+Реализация в XAML показана в следующем примере кода:
 
 ```xaml
 <Image Source="MonoMonkey.jpg">
@@ -38,7 +38,7 @@ image.GestureRecognizers.Add(panGesture);
 </Image>
 ```
 
-Код для `OnPanUpdated` обработчик событий добавляется в файл с выделенным кодом:
+Затем код обработчика событий `OnPanUpdated` добавляется в файл кода программной части:
 
 ```csharp
 void OnPanUpdated (object sender, PanUpdatedEventArgs e)
@@ -48,11 +48,11 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 ```
 
 > [!NOTE]
-> Правильный панорамирования в Android требует [пакет NuGet Xamarin.Forms 2.1.0-pre1](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1) как минимум.
+> Для правильного сдвига в Android требуется по крайней мере [пакет NuGet Xamarin.Forms 2.1.0-pre1](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1).
 
-## <a name="creating-a-pan-container"></a>Создание контейнера pan
+## <a name="creating-a-pan-container"></a>Создание контейнера сдвига
 
-Этот раздел содержит универсальный вспомогательный класс, который выполняет прокрутку свободной формы, которой обычно подходит для перехода в пределах изображения или карты. Обработка жест pan для выполнения этой операции требуется некоторые расчеты для преобразования пользовательского интерфейса. Это математические используется для сдвига только в пределах границ элемента оболочку пользовательского интерфейса. Следующий пример кода демонстрирует класс `PanContainer`:
+В этом разделе представлен универсальный вспомогательный класс для произвольного сдвига. Он обычно подходит для навигации по изображениям и картам. Для выполнения преобразований в пользовательском интерфейсе в ответ на жест сдвига требуется ряд математических операций. Они используются только для сдвига в пределах границ элемента пользовательского интерфейса, заключенного в оболочку. Следующий пример кода демонстрирует класс `PanContainer`:
 
 ```csharp
 public class PanContainer : ContentView
@@ -75,7 +75,7 @@ public class PanContainer : ContentView
 }
 ```
 
-Этот класс можно обернуть вокруг элемента пользовательского интерфейса таким образом, жест будет сдвинуть элемент оболочку пользовательского интерфейса. В следующем примере показан код XAML `PanContainer` упаковки [ `Image` ](xref:Xamarin.Forms.Image) элемент:
+Этот класс может служить оболочкой для элемента пользовательского интерфейса, содержимое которого сдвигается в ответ на жест. В следующем примере кода XAML показан контейнер `PanContainer`, содержащий элемент [`Image`](xref:Xamarin.Forms.Image).
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -92,7 +92,7 @@ public class PanContainer : ContentView
 </ContentPage>
 ```
 
-В следующем примере кода показано как `PanContainer` заключает в оболочку [ `Image` ](xref:Xamarin.Forms.Image) элемента на странице C#:
+В следующем примере кода показано, как элемент [`Image`](xref:Xamarin.Forms.Image) заключается в контейнер `PanContainer` на странице C#.
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -115,9 +115,9 @@ public class HomePageCS : ContentPage
 }
 ```
 
-В обоих примерах [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) и [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) свойствам присваивается значения ширины и высоты изображения.
+В обоих примерах свойствам [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) и [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) присваиваются значения ширины и высоты отображаемого изображения.
 
-Когда [ `Image` ](xref:Xamarin.Forms.Image) элемент получает жест pan, изображение, показываемое, на которые будет панорамировании окна. Панорамирование выполняется по `PanContainer.OnPanUpdated` метод, который показан в следующем примере кода:
+Когда для элемента [`Image`](xref:Xamarin.Forms.Image) выполняется жест сдвига, отображаемое изображение смещается. Сдвиг осуществляется с помощью метода `PanContainer.OnPanUpdated`, который показан в следующем примере кода.
 
 ```csharp
 void OnPanUpdated (object sender, PanUpdatedEventArgs e)
@@ -140,12 +140,12 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 }
 ```
 
-Этот метод обновляет содержимое для просмотра элементом оболочку пользовательского интерфейса, в зависимости от пользователя pan жест. Это достигается с помощью значения [ `TotalX` ](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalX) и [ `TotalY` ](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalY) свойства [ `PanUpdatedEventArgs` ](xref:Xamarin.Forms.PanUpdatedEventArgs) экземпляр для вычисления направления и расстояние сдвига. `App.ScreenWidth` И `App.ScreenHeight` свойства укажите высоту и ширину окна просмотра и заданы ширина экрана и значения высоты экрана устройства, соответствующие проекты под конкретные платформы. Элемент оболочку пользовательского затем панорамировании окна, задав его [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX) и [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY) вычисляемые значения для свойств.
+Этот метод обновляет видимое содержимое заключенного в оболочку элемента пользовательского интерфейса в соответствии с жестом сдвига пользователя. Направление и расстояние сдвига рассчитываются исходя из значений свойств [`TotalX`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalX) и [`TotalY`](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalY) экземпляра [`PanUpdatedEventArgs`](xref:Xamarin.Forms.PanUpdatedEventArgs). Свойства `App.ScreenWidth` и `App.ScreenHeight` содержат высоту и ширину окна просмотра. В качестве их значений задаются высота и ширина экрана устройства в зависимости от платформы. После этого заключенный в оболочку элемент интерфейса сдвигается путем присвоения свойствам [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) и [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) вычисленных значений.
 
-Когда прокрутку содержимого в элемент, который не занимает весь экран, высоту и ширину окна просмотра можно получить из этого элемента [ `Height` ](xref:Xamarin.Forms.VisualElement.Height) и [ `Width` ](xref:Xamarin.Forms.VisualElement.Width) свойства.
+Когда содержимое сдвигается внутри элемента, который занимает не весь экран, высоту и ширину окна просмотра можно получить из свойств [`Height`](xref:Xamarin.Forms.VisualElement.Height) и [`Width`](xref:Xamarin.Forms.VisualElement.Width) элемента.
 
 > [!NOTE]
-> Отображение изображения с высоким разрешением, может значительно увеличивать объем памяти приложения. Таким образом они должны быть созданы только при необходимости и как только приложение больше не требуется, их необходимо освободить. Дополнительные сведения см. в разделе [Оптимизация графических ресурсов](~/xamarin-forms/deploy-test/performance.md#optimizeimages).
+> Отображение изображений в высоком разрешении может значительно увеличивать объем памяти, занимаемой приложением. Поэтому их следует создавать только при необходимости и сразу же освобождать, если они больше не нужны приложению. Дополнительные сведения см. в разделе [Оптимизация графических ресурсов](~/xamarin-forms/deploy-test/performance.md#optimizeimages).
 
 ## <a name="related-links"></a>Связанные ссылки
 

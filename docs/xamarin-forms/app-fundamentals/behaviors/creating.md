@@ -1,6 +1,6 @@
 ---
-title: Реакции на событие Xamarin.Forms
-description: Реакции на событие Xamarin.Forms создаются путем наследования от поведение или поведение<T> класса. В этой статье показано, как создавать и использовать реакции на событие Xamarin.Forms.
+title: Реакции на события Xamarin.Forms
+description: Реакции на событие Xamarin.Forms создаются путем наследования от класса Behavior или Behavior<T>. В этой статье содержатся сведения о создании и использовании реакций на события Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
 ms.technology: xamarin-forms
@@ -9,25 +9,25 @@ ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: 7e057567ec0bb72e9bcc016d4a9fef3af78a3ea1
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998899"
 ---
-# <a name="xamarinforms-behaviors"></a>Реакции на событие Xamarin.Forms
+# <a name="xamarinforms-behaviors"></a>Реакции на события Xamarin.Forms
 
-_Реакции на событие Xamarin.Forms создаются путем наследования от поведение или поведение<T> класса. В этой статье показано, как создавать и использовать реакции на событие Xamarin.Forms._
+_Реакции на событие Xamarin.Forms создаются путем наследования от класса Behavior или Behavior<T>. В этой статье содержатся сведения о создании и использовании реакций на события Xamarin.Forms._
 
 ## <a name="overview"></a>Обзор
 
-Процесс создания Xamarin.Forms поведение выглядит следующим образом:
+Процесс создания реакции на событие Xamarin.Forms выглядит следующим образом:
 
-1. Создайте класс, наследуемый от [ `Behavior` ](xref:Xamarin.Forms.Behavior) или [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) класса, где `T` является тип элемента управления, к которому следует применить поведение.
-1. Переопределить [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) метод для выполнения дополнительных настроек.
-1. Переопределить [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) метод, чтобы выполнить необходимую очистку.
-1. Реализации основных функциональных возможностей поведения.
+1. Создайте класс, наследующий от класса [`Behavior`](xref:Xamarin.Forms.Behavior) или [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1), где `T` — это тип элемента управления, к которому должна применяться реакция на событие.
+1. Переопределите метод [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) для выполнения требуемой настройки.
+1. Переопределите метод [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) для выполнения требуемой очистки.
+1. Реализуйте основные функциональные возможности реакции на событие.
 
-Это приводит к структуре, показано в следующем примере кода:
+В результате вы получите структуру, приведенную в следующем примере кода:
 
 ```csharp
 public class CustomBehavior : Behavior<View>
@@ -48,15 +48,15 @@ public class CustomBehavior : Behavior<View>
 }
 ```
 
-[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Метод запускается сразу после прикреплено поведение к элементу управления. Этот метод получает ссылку на элемент управления, к которому он подключен и может использоваться для регистрации обработчиков событий или выполните другие настройки, необходимые для поддержки функциональных возможностей поведения. Например может подписаться на событие элемента управления. Функциональных возможностей поведения, то должен быть реализован в обработчике событий для события.
+Метод [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) запускается сразу после присоединения реакции на событие к элементу управления. Этот метод получает ссылку на элемент управления, к которому выполнено присоединение, и может использоваться для регистрации обработчиков событий или выполнения других настроек, необходимых для поддержки функциональных возможностей реакции на событие. Например, можно подписаться на событие в элементе управления. В этом случае функциональные возможности реакции на событие будут реализованы в обработчике событий для этого события.
 
-[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Метод создается в том случае, когда поведение удаляется из элемента управления. Этот метод получает ссылку на элемент управления, к которому он подключен и используется для выполнения всех действий по очистке. Например вы может отменить подписку на событие элемента управления для предотвращения утечек памяти.
+Метод [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) активируется при удалении реакции на событие из элемента управления. Этот метод получает ссылку на элемент управления, к которому выполнено присоединение, и используется для выполнения любой требуемой очистки. Например, вы можете отменить подписку на событие в элементе управления, чтобы предотвратить утечки памяти.
 
-Поведение принимаются, подключив его к [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) коллекцию соответствующий элемент управления.
+После этого реакцию на событие можно использовать посредством ее присоединения к коллекции [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) соответствующего элемента управления.
 
-## <a name="creating-a-xamarinforms-behavior"></a>Создание поведение Xamarin.Forms
+## <a name="creating-a-xamarinforms-behavior"></a>Создание реакции на событие Xamarin.Forms
 
-Пример приложения демонстрирует `NumericValidationBehavior`, который рассказывает, введенное пользователем в [ `Entry` ](xref:Xamarin.Forms.Entry) управления красным, если это не `double`. Поведение показано в следующем примере кода:
+В примере приложения демонстрируется реакция на событие `NumericValidationBehavior`, которая выделяет значение, введенное пользователем в элементе управления [`Entry`](xref:Xamarin.Forms.Entry), красным цветом, если оно не имеет тип `double`. Эта реакция на событие показана в следующем примере кода:
 
 ```csharp
 public class NumericValidationBehavior : Behavior<Entry>
@@ -82,14 +82,14 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior` Является производным от [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) класса, где `T` — [ `Entry` ](xref:Xamarin.Forms.Entry). [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Метод регистрирует обработчик событий для [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged) событий, с помощью [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) метод при отмене регистрации `TextChanged`событие памяти во избежание утечки. Основные функциональные возможности поведения обеспечивается `OnEntryTextChanged` метод, который выполняет синтаксический анализ значение, введенное пользователем в `Entry`и задает [ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor) свойство на красный, если значение не `double`.
+`NumericValidationBehavior` является производным от класса [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1), где `T` — это [`Entry`](xref:Xamarin.Forms.Entry). Метод [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) регистрирует обработчик событий для события [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged), при этом метод [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) отменяет регистрацию события `TextChanged` во избежание утечек памяти. Базовая функциональность реакции на событие обеспечивается методом `OnEntryTextChanged`, который анализирует значение, введенное пользователем в `Entry`, и присваивает свойству [`TextColor`](xref:Xamarin.Forms.Entry.TextColor) значение red (красный), если введенное значение не имеет тип `double`.
 
 > [!NOTE]
-> Xamarin.Forms не устанавливает `BindingContext` поведения, так как поведения можно совместно использовать и применить к нескольким элементам управления через стили.
+> Xamarin.Forms не задает `BindingContext` для реакции на событие, так как реакции на событие можно использовать совместно и применять к нескольким элементам управления через стили.
 
-## <a name="consuming-a-xamarinforms-behavior"></a>Использование поведения Xamarin.Forms
+## <a name="consuming-a-xamarinforms-behavior"></a>Использование реакции на событие Xamarin.Forms
 
-Каждому элементу управления Xamarin.Forms [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) коллекции, к которому можно добавить один или несколько поведений, как показано в следующем примере кода XAML:
+Каждый элемент управления Xamarin.Forms имеет коллекцию [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors), в которую можно добавить одну или несколько реакций на событие, как показано в следующем примере кода XAML:
 
 ```xaml
 <Entry Placeholder="Enter a System.Double">
@@ -99,29 +99,29 @@ public class NumericValidationBehavior : Behavior<Entry>
 </Entry>
 ```
 
-Эквивалент [ `Entry` ](xref:Xamarin.Forms.Entry) в C# показан в следующем примере кода:
+В следующем примере кода показан эквивалентный элемент управления [`Entry`](xref:Xamarin.Forms.Entry) на языке C#:
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 entry.Behaviors.Add (new NumericValidationBehavior ());
 ```
 
-Во время выполнения поведение будет отвечать на действия с элементом управления, в соответствии с реализация поведения. Далее на снимках экрана показано поведение, реагирование на недопустимые входные данные:
+Во время выполнения реакция на событие будет реагировать на взаимодействие с элементом управления в соответствии с ее реализацией. На следующих снимках экрана показана реакция на событие ввода недопустимого значения:
 
-[![](creating-images/screenshots-sml.png "Пример приложения с поведением Xamarin.Forms")](creating-images/screenshots.png#lightbox "пример приложения с поведением Xamarin.Forms")
+[![](creating-images/screenshots-sml.png "Пример приложения с реакцией на событие Xamarin.Forms")](creating-images/screenshots.png#lightbox "Пример приложения с реакцией на событие Xamarin.Forms")
 
 > [!NOTE]
-> Поведения написаны для типа элемента управления (или суперкласса, можно применить к многим элементам управления), и они должны добавляться только к элементу управления совместимы. Попытка подключить поведение к элементу управления несовместимые приведет к возникновению исключения.
+> Реакция на событие создается для элементов управления определенного типа (или суперкласса, включающего множество разных элементов управления) и должна добавляться только к совместимым элементам управления. Попытка присоединить реакцию на событие к несовместимому элементу управления может привести к возникновению исключения.
 
-### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Использование Xamarin.Forms поведения в стиле
+### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Использование реакции на событие Xamarin.Forms с помощью стиля
 
-Поведение также могут использоваться один из явных или неявных стилей. Однако создание стиль, который задает [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) свойства элемента управления не поддерживается, так как свойство только для чтения. Решение — добавить присоединенное свойство в класс поведение, управляющий добавления и удаления поведения. Процесс выглядит следующим образом:
+Реакции на событие также могут использоваться явным или неявным стилем. Однако создание стиля, который задает свойство [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) элемента управления, не поддерживается, так как это свойство доступно только для чтения. Решение заключается в том, чтобы добавить присоединенное свойство в класс реакции на событие, управляющий добавлением и удалением реакции на событие. Процесс выглядит следующим образом:
 
-1. Добавьте вложенное свойство в класс поведение, который будет использоваться для управления, добавление или удаление поведения, элементом управления, к которому будет поведение. Убедитесь, что присоединенное свойство регистрирует `propertyChanged` делегат, который будет выполняться при изменении значения свойства.
-1. Создание `static` Get и set для присоединенного свойства.
-1. Реализовать логику в `propertyChanged` делегат для добавления и удаления поведения.
+1. Добавьте присоединенное свойство в класс реакции на событие, который будет использоваться для управления добавлением или удалением реакции на событие, в элемент управления, к которому будет присоединена реакция на событие. Это присоединенное свойство должно регистрировать делегат `propertyChanged`, который будет выполняться при изменении значения свойства.
+1. Создайте методы получения и задания `static` для присоединенного свойства.
+1. Реализуйте логику в делегате `propertyChanged` для добавления и удаления реакции на событие.
 
-В следующем примере кода показано вложенного свойства, элементы управления, добавляя и удаляя `NumericValidationBehavior`:
+В следующем примере кода показано присоединенное свойство, управляющее добавлением и удалением `NumericValidationBehavior`:
 
 ```csharp
 public class NumericValidationBehavior : Behavior<Entry>
@@ -160,9 +160,9 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior` Класс содержит вложенное свойство с именем `AttachBehavior` с `static` Get и set, управляющий Добавление или удаление поведения в элемент управления, к которому будет присоединен. Это присоединенного свойства регистры `OnAttachBehaviorChanged` метод, который будет выполняться при изменении значения свойства. Этот метод добавляет или удаляет поведение к элементу управления, в зависимости от значения `AttachBehavior` вложенного свойства зависимостей.
+Класс `NumericValidationBehavior` содержит присоединенное свойство `AttachBehavior` с методами задания и получения `static`, управляющее добавлением и удалением реакции на событие в элементе управления, к которому она будет присоединена. Это присоединенное свойство регистрирует метод `OnAttachBehaviorChanged`, который будет выполняться при изменении значения свойства. В зависимости от значения присоединенного свойства `AttachBehavior`, этот метод добавляет или удаляет реакцию на событие в элементе управления.
 
-В следующем коде показано в примере *явные* стиль для `NumericValidationBehavior` , использующий `AttachBehavior` подключенное свойство, и которые могут применяться к [ `Entry` ](xref:Xamarin.Forms.Entry) элементов управления:
+В следующем примере кода показан *явный* стиль для `NumericValidationBehavior`, который использует присоединенное свойство `AttachBehavior` и может применяться к элементам управления [`Entry`](xref:Xamarin.Forms.Entry):
 
 ```xaml
 <Style x:Key="NumericValidationStyle" TargetType="Entry">
@@ -172,20 +172,20 @@ public class NumericValidationBehavior : Behavior<Entry>
 </Style>
 ```
 
-[ `Style` ](xref:Xamarin.Forms.Style) Могут применяться к [ `Entry` ](xref:Xamarin.Forms.Entry) элемента управления, задав его [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) свойства `Style` экземпляра с помощью `StaticResource` расширения разметки, как показано в следующем примере кода:
+Чтобы применить [`Style`](xref:Xamarin.Forms.Style) к элементу управления [`Entry`](xref:Xamarin.Forms.Entry), для его свойства [`Style`](xref:Xamarin.Forms.VisualElement.Style) следует задать значение экземпляра `Style` с помощью расширения разметки `StaticResource`, как показано в следующем примере кода:
 
 ```xaml
 <Entry Placeholder="Enter a System.Double" Style="{StaticResource NumericValidationStyle}">
 ```
 
-Дополнительные сведения о стилях см. в разделе [стили](~/xamarin-forms/user-interface/styles/index.md).
+Дополнительные сведения о стилях см. в статье [Стили](~/xamarin-forms/user-interface/styles/index.md).
 
 > [!NOTE]
-> Хотя вы можете добавить состоянием привязываемые свойства на поведение, которое задается или запросить в XAML, если вы создаете поведения, они не могут совместно использоваться между элементами управления в `Style` в `ResourceDictionary`.
+> Хотя вы можете добавить привязываемые свойства для реакции на событие, которая задается или запрашивается в XAML, в этом случае нужно создать реакции на событие с состоянием, которое не должно совместно использоваться между элементами управления в `Style` в `ResourceDictionary`.
 
-### <a name="removing-a-behavior-from-a-control"></a>Удаление поведения из элемента управления
+### <a name="removing-a-behavior-from-a-control"></a>Удаление реакции на событие из элемента управления
 
-[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Метод создается в том случае, когда поведение будет удален из элемента управления и используется для выполнения всех действий по очистке например отмены подписки на событие, чтобы предотвратить утечку памяти. Тем не менее, поведение не удаляются неявно из элементов управления Если элемента управления [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) коллекция изменяется с `Remove` или `Clear` метод. В следующем примере кода демонстрируется удаление особое поведение элемента управления `Behaviors` коллекции:
+Метод [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) активируется при удалении реакции на событие из элемента управления и используется для выполнения любой требуемой очистки, например для отмены подписки на событие в целях предотвращения утечки памяти. Тем не менее реакции на событие не удаляются из элементов управления неявным образом, если коллекция [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) элемента управления изменяется с помощью метода `Remove` или `Clear`. В следующем примере кода показано удаление конкретной реакции на событие из коллекции `Behaviors` элемента управления:
 
 ```csharp
 var toRemove = entry.Behaviors.FirstOrDefault (b => b is NumericValidationBehavior);
@@ -194,22 +194,22 @@ if (toRemove != null) {
 }
 ```
 
-Кроме того, элемента управления [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) очистить коллекцию, как показано в следующем примере кода:
+Кроме того, коллекцию [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) элемента управления можно очистить, как показано в следующем примере кода:
 
 ```csharp
 entry.Behaviors.Clear();
 ```
 
-Кроме того Обратите внимание на то, что варианты поведения, не удаляются неявно из элементов управления при страниц извлекаются из стека навигации. Вместо этого они должны быть явно удалены до страницы, окажется вне области действия.
+Обратите внимание, что реакции на событие не удаляются из элементов управления неявным образом при извлечении страниц из стека навигации. Вместо этого их требуется явно удалить до того, как страницы окажутся вне области действия.
 
 ## <a name="summary"></a>Сводка
 
-В этой статье было показано, как создавать и использовать реакции на событие Xamarin.Forms. Реакции на событие Xamarin.Forms создаются путем наследования от [ `Behavior` ](xref:Xamarin.Forms.Behavior) или [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) класса.
+В этой статье содержатся сведения о создании и использовании реакций на события Xamarin.Forms. Реакции на событие Xamarin.Forms создаются путем наследования от классов [`Behavior`](xref:Xamarin.Forms.Behavior) или [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1).
 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Поведение Xamarin.Forms (пример)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
-- [Поведение Xamarin.Forms применен стиль (пример)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehaviorstyle/)
-- [Поведение](xref:Xamarin.Forms.Behavior)
-- [Поведение<T>](xref:Xamarin.Forms.Behavior`1)
+- [Реакция на событие Xamarin.Forms (пример)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
+- [Применение реакции на событие Xamarin.Forms с помощью стиля (пример)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehaviorstyle/)
+- [Реакция на событие](xref:Xamarin.Forms.Behavior)
+- [Реакция на событие<T>](xref:Xamarin.Forms.Behavior`1)

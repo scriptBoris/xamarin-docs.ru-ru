@@ -1,6 +1,6 @@
 ---
 title: Иерархическая навигация
-description: В этой статье показано, как использовать класс NavigationPage выполнить переход в стек последним на страницах поступления (LIFO).
+description: В этой статье показано, как использовать класс NavigationPage для навигации в стеке страниц по методу ЛИФО.
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
@@ -9,43 +9,43 @@ ms.author: dabritch
 ms.date: 08/14/2018
 ms.openlocfilehash: a0a58cf05c97221a73cd0784b7859bb9c84cef86
 ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
 ms.locfileid: "38994680"
 ---
 # <a name="hierarchical-navigation"></a>Иерархическая навигация
 
-_Класс NavigationPage обеспечивает иерархическую навигацию, где пользователь является возможность переходить по страницам вперед и назад по своему усмотрению. Класс реализует навигацию в виде стопки последним поступил — первым обслужен (LIFO) объектов страницы. В этой статье показано, как использовать класс NavigationPage выполнить переход в виде стека страниц._
+_Класс NavigationPage обеспечивает иерархическую навигацию, при которой пользователь может переходить по страницам вперед и назад по своему желанию. Этот класс реализует навигацию на основе стека объектов Page по методу ЛИФО (последним поступил — первым обслужен). В этой статье показано, как использовать класс NavigationPage для навигации в стеке страниц._
 
-Чтобы перейти от одной страницы к другому, приложение будет отправлять новую страницу в стек навигации, где она становится активной страницей, как показано на следующей схеме:
+Для перехода с одной страницы на другую приложение помещает новую страницу в стек навигации, где она становится активной страницей, как показано на следующем рисунке.
 
-![](hierarchical-images/pushing.png "Помещает в стек навигации страницы")
+![](hierarchical-images/pushing.png "Помещение страницы в стек навигации")
 
-Для возврата к предыдущей странице приложение выбирает текущую страницу из стека навигации, а верхняя страница становится активной страницей, как показано на следующей схеме:
+Для возврата к предыдущей странице приложение выбирает текущую страницу из стека навигации, после чего активной становится верхняя страница в стеке, как показано на следующем рисунке.
 
-![](hierarchical-images/popping.png "Извлечение страницу из стека навигации")
+![](hierarchical-images/popping.png "Извлечение страницы из стека навигации")
 
-Представляемые методы навигации [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) свойство для какого-либо [ `Page` ](xref:Xamarin.Forms.Page) производные типы. Эти методы предоставляют возможность для отправки страницы в стек навигации, pop страниц из стека навигации, а также для выполнения со стеком.
+Методы навигации предоставляются свойством [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) любых типов, производных от класса [`Page`](xref:Xamarin.Forms.Page). Эти методы предоставляют возможность для отправки страниц в стек навигации, извлечения страниц из стека навигации, а также для выполнения операций со стеком.
 
 <a name="Performing_Navigation" />
 
 ## <a name="performing-navigation"></a>Выполнение навигации
 
-При иерархической навигации класс [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) используется для перехода по стеку объектов [`ContentPage`](xref:Xamarin.Forms.ContentPage). На следующих снимках экрана показано основные компоненты `NavigationPage` на каждой платформе:
+При иерархической навигации класс [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) используется для перехода по стеку объектов [`ContentPage`](xref:Xamarin.Forms.ContentPage). На следующих снимках экрана показаны основные компоненты `NavigationPage` на каждой платформе.
 
 ![](hierarchical-images/navigationpage-components.png "Компоненты NavigationPage")
 
-Макет [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) зависит от платформы:
+Макет [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) зависит от платформы:
 
-- В iOS, присутствует панель навигации в верхней части страницы, отображающий заголовок и имеющего *обратно* кнопка, которая возвращает на предыдущую страницу.
-- В Android присутствует панель навигации в верхней части страницы, отображающей заголовок, значок, и *обратно* кнопка, которая возвращает на предыдущую страницу. Значок определяется в `[Activity]` атрибут, который оформляет `MainActivity` класс в проекте специфические для платформы Android.
-- На универсальной платформе Windows в верхней части страницы, отображающей заголовок присутствует панель навигации.
+- В iOS панель навигации находится в верхней части страницы, где отображается заголовок и кнопка *Назад*, которая возвращает на предыдущую страницу.
+- В Android панель навигации находится в верхней части страницы, где отображается заголовок, значок и кнопка *Назад*, которая возвращает на предыдущую страницу. Значок определяется в атрибуте `[Activity]`, который оформляет класс `MainActivity` в проекте, зависящем от платформы Android.
+- На универсальной платформе Windows панель навигации расположена в верхней части страницы, где отображается заголовок.
 
-На всех платформах, значение [ `Page.Title` ](xref:Xamarin.Forms.Page.Title) свойство отображается как заголовок страницы.
+На всех платформах значение свойства [`Page.Title`](xref:Xamarin.Forms.Page.Title) отображается как заголовок страницы.
 
 > [!NOTE]
-> Рекомендуется `NavigationPage` должен быть заполнен `ContentPage` только экземпляр.
+> Рекомендуется заполнять `NavigationPage` только экземплярами `ContentPage`.
 
 ### <a name="creating-the-root-page"></a>Создание корневой страницы
 
@@ -58,16 +58,16 @@ public App ()
 }
 ```
 
-В результате `Page1Xaml` [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) экземпляр помещается в стек навигации, где он становится активной страницей и на корневую страницу приложения. Это показано на следующем снимке экрана:
+В результате в стек навигации помещается экземпляр `Page1Xaml` [`ContentPage`](xref:Xamarin.Forms.ContentPage), где он становится активной страницей и корневой страницей приложения. Эти действия показаны на следующих снимках экрана.
 
-![](hierarchical-images/mainpage.png "Корневую страницу из стека навигации")
+![](hierarchical-images/mainpage.png "Корневая страница стека навигации")
 
 > [!NOTE]
-> [ `RootPage` ](xref:Xamarin.Forms.NavigationPage.RootPage) Свойство [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) экземпляр предоставляет доступ к первой странице в стеке навигации.
+> Свойство [`RootPage`](xref:Xamarin.Forms.NavigationPage.RootPage) экземпляра [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) предоставляет доступ к первой странице в стеке навигации.
 
-### <a name="pushing-pages-to-the-navigation-stack"></a>Помещает в стек навигации страницы
+### <a name="pushing-pages-to-the-navigation-stack"></a>Помещение страниц в стек навигации
 
-Чтобы перейти к `Page2Xaml`, необходимо вызвать [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*) метод [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) свойство текущей страницы, как показано в следующем примере кода:
+Для перехода к странице `Page2Xaml` необходимо вызвать метод [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) свойства [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) текущей страницы, как показано в следующем примере кода.
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -76,22 +76,22 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-В результате в стек навигации помещается экземпляр `Page2Xaml`, где он становится активной страницей. Это показано на следующем снимке экрана:
+В результате в стек навигации помещается экземпляр `Page2Xaml`, где он становится активной страницей. Эти действия показаны на следующих снимках экрана.
 
-![](hierarchical-images/secondpage.png "Стек навигации помещается страницы")
+![](hierarchical-images/secondpage.png "Страница, помещенная в стек навигации")
 
-Когда [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*) вызывается метод, происходят следующие события:
+Когда вызывается метод [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*), происходят следующие события.
 
-- Вызов страницы `PushAsync` имеет его [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) вызывается переопределение.
-- На странице, на которой осуществляется переход к его [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) вызывается переопределение.
-- `PushAsync` Завершения задачи.
+- У страницы, вызывающей `PushAsync`, вызывается переопределение [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing).
+- Вызывается переопределение [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) страницы, к которой осуществляется переход.
+- Задача `PushAsync` завершается.
 
-Однако точный порядок, в котором происходят эти события не зависит от платформы. Дополнительные сведения см. в разделе [Глава 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) книги Xamarin.Forms (Charles Petzold).
+Однако точный порядок, в котором происходят эти события, зависит от платформы. Дополнительные сведения см. в [главе 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) книги Xamarin.Forms Чарльза Петцольда (Charles Petzold).
 
 > [!NOTE]
-> Вызовы [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) и [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) переопределения не может рассматриваться как гарантированной указывают, навигация по страницам. Например, в iOS `OnDisappearing` переопределение вызывается на активной странице, когда приложение завершает работу.
+> Вызовы переопределений [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) и [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) не могут рассматриваться как гарантия перехода на страницу. Например, в iOS переопределение `OnDisappearing` вызывается на активной странице, когда приложение завершает работу.
 
-### <a name="popping-pages-from-the-navigation-stack"></a>Добавление страницы из стека навигации
+### <a name="popping-pages-from-the-navigation-stack"></a>Извлечение страниц из стека навигации
 
 Активная страница может быть извлечена из стека навигации путем нажатия кнопки *Назад* на устройстве, причем это может быть как физическая кнопка, так и кнопка на экране.
 
@@ -104,15 +104,15 @@ async void OnPreviousPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-В результате экземпляр `Page2Xaml` удаляется из стека навигации, а активной становится верхняя страница в нем. Когда [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) вызывается метод, происходят следующие события:
+В результате экземпляр `Page2Xaml` удаляется из стека навигации, а активной становится верхняя страница в нем. Когда вызывается метод [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync), происходят следующие события.
 
-- Вызов страницы `PopAsync` имеет его [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) вызывается переопределение.
-- На странице, возвращается его [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) вызывается переопределение.
-- `PopAsync` Задач возвращает.
+- У страницы, вызывающей `PopAsync`, вызывается переопределение [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing).
+- У страницы, к которой вы возвращаетесь, вызывается переопределение [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing).
+- Возвращается задача `PopAsync`.
 
-Однако точный порядок, в котором происходят эти события не зависит от платформы. Дополнительные сведения см. в разделе [Глава 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) книги Xamarin.Forms (Charles Petzold).
+Однако точный порядок, в котором происходят эти события, зависит от платформы. Дополнительные сведения см. в [главе 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) книги Xamarin.Forms Чарльза Петцольда (Charles Petzold).
 
-А также [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*) и [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) методы, [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) свойство каждой страницы также предоставляет [ `PopToRootAsync` ](xref:Xamarin.Forms.NavigationPage.PopToRootAsync) метод, который показан в следующем примере кода:
+Как и методы [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) и [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync), свойство [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) каждой страницы также предоставляет метод [`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync), который показан в следующем примере кода.
 
 ```csharp
 async void OnRootPageButtonClicked (object sender, EventArgs e)
@@ -121,11 +121,11 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Этот метод выводит все, кроме корневого [ `Page` ](xref:Xamarin.Forms.Page) из стека навигации, что на корневую страницу активная страница приложения.
+Этот метод извлекает все, кроме корневого объекта [`Page`](xref:Xamarin.Forms.Page), из стека навигации; таким образом, корневая страница приложения становится активной страницей.
 
-### <a name="animating-page-transitions"></a>Анимация переходов страниц
+### <a name="animating-page-transitions"></a>Анимация переходов по страницам
 
-[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Свойство каждой страницы также предоставляет переопределенный Push-уведомлений и pop методы, которые включают `boolean` параметр, который управляет отображением анимированный страницы во время перехода, как показано в следующем коде Пример:
+Свойство [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) каждой страницы также предоставляет переопределенные методы отправки и извлечения, которые включают параметр `boolean`, указывающий, нужно ли отображать анимацию страниц во время перехода, как показано в следующем примере кода.
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -147,17 +147,17 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Установка `boolean` параметр `false` отключает анимацию перехода страницы, задать для параметра `true` позволяет анимации перехода страницы, при условии, что он поддерживается используемой платформой. Тем не менее Принудительная отправка и извлечение методы, которые не хватает этот параметр по умолчанию включают анимации.
+Установка для параметра `boolean` значения `false` отключает анимацию перехода страницы, а установка для параметра значения `true` включает анимацию, при условии что она поддерживается используемой платформой. Однако методы отправки и извлечения без этого параметра включают анимацию по умолчанию.
 
 <a name="Passing_Data_when_Navigating" />
 
 ## <a name="passing-data-when-navigating"></a>Передача данных при переходе
 
-Иногда это необходимо для страницы для передачи данных на другую страницу во время навигации. Два способа решения этой проблемы происходит обмен данными с помощью конструктора страницы и установив новую страницу [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) к данным. Каждый теперь обсуждаются в свою очередь.
+Иногда странице необходимо передать данные другой странице во время навигации. Существует два способа: передача данных с помощью конструктора страниц и указание данных для объекта [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) новой страницы. Мы обсудим оба способа.
 
 ### <a name="passing-data-through-a-page-constructor"></a>Передача данных через конструктор страниц
 
-Самый простой способ передачи данных на другую страницу во время навигации — в качестве параметра конструктора страницы, как показано в следующем примере кода:
+Самый простой способ передачи данных на другую страницу во время навигации — в качестве параметра конструктора страниц, как показано в следующем примере кода.
 
 ```csharp
 public App ()
@@ -166,9 +166,9 @@ public App ()
 }
 ```
 
-Этот код создает `MainPage` экземпляра, передавая текущую дату и время в формате ISO8601, который упаковывается в [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) экземпляра.
+Этот код создает экземпляр `MainPage`, передавая текущую дату и время в формате ISO8601, который упаковывается в экземпляр [`NavigationPage`](xref:Xamarin.Forms.NavigationPage).
 
-`MainPage` Экземпляр получает данные с помощью параметра конструктора, как показано в следующем примере кода:
+Экземпляр `MainPage` получает данные с помощью параметра конструктора, как показано в следующем примере кода.
 
 ```csharp
 public MainPage (string date)
@@ -178,13 +178,13 @@ public MainPage (string date)
 }
 ```
 
-Данные отображаются на странице, задав [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) свойства, как показано на следующем снимке экрана:
+Данные отображаются на странице путем установки свойства [`Label.Text`](xref:Xamarin.Forms.Label.Text), как показано на следующих снимках экрана.
 
-![](hierarchical-images/passing-data-constructor.png "Данные, передаваемые через конструктор страницы")
+![](hierarchical-images/passing-data-constructor.png "Данные, переданные через конструктор страниц")
 
 ### <a name="passing-data-through-a-bindingcontext"></a>Передача данных через объект BindingContext
 
-Альтернативный подход для передачи данных на другую страницу во время навигации —, задав новую страницу [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) к данным, как показано в следующем примере кода:
+Альтернативный способ передачи данных на другую страницу во время навигации —указание данных для объекта [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) новой страницы, как показано в следующем примере кода.
 
 ```csharp
 async void OnNavigateButtonClicked (object sender, EventArgs e)
@@ -202,9 +202,9 @@ async void OnNavigateButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Этот код задает [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) из `SecondPage` экземпляр `Contact` экземпляра, а затем переходит к `SecondPage`.
+Этот код задает объекту [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) экземпляра `SecondPage` экземпляр `Contact`, а затем переходит к `SecondPage`.
 
-`SecondPage` Затем использует привязку данных для отображения `Contact` экземпляра данных, как показано в следующем примере кода XAML:
+Затем `SecondPage` использует привязку данных для отображения данных экземпляра `Contact`, как показано в следующем примере кода XAML.
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -224,7 +224,7 @@ async void OnNavigateButtonClicked (object sender, EventArgs e)
 </ContentPage>
 ```
 
-В следующем примере кода показано, как можно выполнить привязку данных в C#:
+В следующем примере кода показано, как можно выполнить привязку данных в C#.
 
 ```csharp
 public class SecondPageCS : ContentPage
@@ -264,27 +264,27 @@ public class SecondPageCS : ContentPage
 }
 ```
 
-Данные отображаются на странице ряд [ `Label` ](xref:Xamarin.Forms.Label) элементы управления, как показано на следующем снимке экрана:
+Данные отображаются на странице с помощью нескольких элементов управления [`Label`](xref:Xamarin.Forms.Label), как показано на следующих снимках экрана.
 
-![](hierarchical-images/passing-data-bindingcontext.png "Данные, передаваемые через объект BindingContext")
+![](hierarchical-images/passing-data-bindingcontext.png "Данные, переданные через объект BindingContext")
 
 Дополнительные сведения о привязке данных см. в статье [Основы привязки данных](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 <a name="Manipulating_the_Navigation_Stack" />
 
-## <a name="manipulating-the-navigation-stack"></a>Управление стек навигации
+## <a name="manipulating-the-navigation-stack"></a>Управление стеком навигации
 
-[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Предоставляет свойство [ `NavigationStack` ](xref:Xamarin.Forms.INavigation.NavigationStack) свойство, из которого можно получить страницы в стеке навигации. Хотя Xamarin.Forms поддерживает доступ к стек навигации, `Navigation` предоставляет свойство [ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*) и [ `RemovePage` ](xref:Xamarin.Forms.INavigation.RemovePage*) методы для управления стека путем вставки страницы или их удаления.
+Свойство [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) предоставляет свойство [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack), из которого могут быть получены страницы в стеке навигации. Хотя Xamarin.Forms поддерживает доступ к стеку навигации, свойство `Navigation` предоставляет методы [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) и [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) для управления стеком путем вставки страниц или их удаления.
 
-[ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*) Метод вставляет указанную страницу в стеке навигации перед указанной существующей страницы, как показано на следующей схеме:
+Метод [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) вставляет указанную страницу в стек навигации перед указанной существующей страницей, как показано на следующей схеме.
 
-![](hierarchical-images/insert-page-before.png "Вставка страницы в стеке навигации")
+![](hierarchical-images/insert-page-before.png "Вставка страницы в стек навигации")
 
-[ `RemovePage` ](xref:Xamarin.Forms.INavigation.RemovePage*) Метод удаляет указанную страницу из стека навигации, как показано на следующей схеме:
+Метод [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) удаляет указанную страницу из стека навигации, как показано на следующей схеме.
 
 ![](hierarchical-images/remove-page.png "Удаление страницы из стека навигации")
 
-Эти методы позволяют с возможностями пользовательских переходов, например, заменив страницу входа на новую страницу, после успешного входа. В следующем примере кода демонстрируется этот сценарий:
+Эти методы обеспечивают возможность настраиваемой навигации, например замены страницы входа на новую страницу после успешного входа. Следующий пример кода демонстрирует этот сценарий.
 
 ```csharp
 async void OnLoginButtonClicked (object sender, EventArgs e)
@@ -302,13 +302,13 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 ```
 
-При условии, что учетные данные пользователя верны, `MainPage` экземпляр вставляется в стеке навигации перед текущей страницы. [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) Метод затем удаляет текущую страницу из стека навигации, с помощью `MainPage` экземпляра, становится активной страницей.
+При условии что учетные данные пользователя верны, экземпляр `MainPage` вставляется в стек навигации перед текущей страницей. Метод [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) удаляет текущую страницу из стека навигации, а активной страницей становится экземпляр `MainPage`.
 
 ## <a name="displaying-views-in-the-navigation-bar"></a>Отображение представлений на панели навигации
 
-Любой Xamarin.Forms [ `View` ](xref:Xamarin.Forms.View) могут отображаться в панели переходов [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage). Это достигается путем установки [ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) вложенное свойство, чтобы `View`. Это вложенное свойство может быть задано для любого [ `Page` ](xref:Xamarin.Forms.Page)и когда `Page` помещается `NavigationPage`, `NavigationPage` будет учитывать значение свойства.
+Любое представление Xamarin.Forms [`View`](xref:Xamarin.Forms.View) может отображаться на панели навигации [`NavigationPage`](xref:Xamarin.Forms.NavigationPage). Для этого нужно установить присоединенное свойство [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) в `View`. Это присоединенное свойство может быть задано для любого объекта [`Page`](xref:Xamarin.Forms.Page), и, когда `Page` помещается в `NavigationPage`, `NavigationPage` будет учитывать значение этого свойства.
 
-В следующем примере, взятом из [Title Просмотр результата](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/), показано, как задать [ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) присоединенное свойство из XAML:
+В следующем примере, взятом из [примера представления заголовка](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/), показано, как задать присоединенное свойство [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) в XAML.
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -321,7 +321,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 </ContentPage>
 ```
 
-Ниже приведен эквивалент C# кода:
+Вот эквивалент в коде C#:
 
 ```csharp
 public class TitleViewPage : ContentPage
@@ -335,35 +335,35 @@ public class TitleViewPage : ContentPage
 }
 ```
 
-В результате [ `Slider` ](xref:Xamarin.Forms.Slider) будут отображаться на панели навигации на [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+В результате объект [`Slider`](xref:Xamarin.Forms.Slider) отображается на панели навигации на [`NavigationPage`](xref:Xamarin.Forms.NavigationPage):
 
-[![Ползунок TitleView](hierarchical-images/titleview-small.png "TitleView ползунок")](hierarchical-images/titleview-large.png#lightbox "TitleView \"ползунок\"")
+[![Представление заголовка ползунка](hierarchical-images/titleview-small.png "Представление заголовка ползунка")](hierarchical-images/titleview-large.png#lightbox "Представление заголовка ползунка")
 
 > [!IMPORTANT]
-> Несколько представлений не будет отображаться на панели навигации, если не указан размер представления с [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) и [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) свойства. Кроме того, представление может быть заключен в [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) с [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) и [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) свойства, задайте соответствующие значения.
+> Многие представления не будут отображаться на панели навигации, если не указан размер представления с помощью свойств [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) и [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest). Кроме того, представление может быть заключено в [`StackLayout`](xref:Xamarin.Forms.StackLayout) со свойствами [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) и [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions), для которых установлены соответствующие значения.
 
-Обратите внимание, что, поскольку [ `Layout` ](xref:Xamarin.Forms.Layout) класс является производным от [ `View` ](xref:Xamarin.Forms.View) класс, [ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) присоединенного свойства, которые можно задать для отображения макета класс, содержащий несколько представлений. В iOS и универсальной платформы Windows (UWP) нельзя изменить высоту панели навигации и поэтому происходит обрезки, если представление, отображаемое на панели навигации больше, чем размер по умолчанию на панели навигации. Тем не менее, в Android высоту панели навигации можно изменить, задав [ `NavigationPage.BarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) свойство, используемое для `double` представляющее новую высоту. Дополнительные сведения см. в разделе [значение высоты панели навигации на NavigationPage](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight).
+Поскольку класс [`Layout`](xref:Xamarin.Forms.Layout) является производным от класса [`View`](xref:Xamarin.Forms.View), присоединенное свойство [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) можно настроить для отображения класса макета, содержащего несколько представлений. В iOS и на универсальной платформе Windows (UWP) высоту панели навигации нельзя изменить, поэтому она будет обрезана, если представление, отображаемое на панели навигации, больше, чем размер панели навигации по умолчанию. В Android высоту панели навигации можно изменить, задав для привязываемого свойства [`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) значение `double`, представляющее новую высоту. Дополнительные сведения см. в разделе [Установка высоты панели навигации в объекте NavigationPage](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight).
 
-Кроме того панель с расширенной навигации могут быть предложены, поместить некоторое содержимое на панели навигации, а некоторые — в представление в верхней части страницы содержимого, вы цвет соответствует на панель навигации. Кроме того, в iOS разделительной линии и тени, который находится в нижней части панели навигации можно удалить, установив [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) свойство, используемое для `true`. Дополнительные сведения см. в разделе [скрытие разделителя панели навигации на NavigationPage](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar).
+Также панель навигации можно расширить, если поместить некоторое содержимое на панели навигации, а некоторое — в представление в верхней части страницы таким образом, чтобы цвет совпадал с панелью навигации. Кроме того, в iOS разделительную линию и тень в нижней части панели навигации можно удалить, установив для привязываемого свойства [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) значение `true`. Дополнительные сведения см. в разделе [Сокрытие разделителя панели навигации в объекте NavigationPage](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar).
 
 > [!NOTE]
-> [ `BackButtonTitle` ](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty), [ `Title` ](xref:Xamarin.Forms.Page.Title), [ `TitleIcon` ](xref:Xamarin.Forms.NavigationPage.TitleIconProperty), И [ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) свойства позволяют определять значения, которые занимают место на панели навигации. Хотя размер панели навигации зависит от платформы и размера экрана, установка все эти свойства приведет конфликты из-за ограниченной свободное место. Вместо использования сочетания этих свойств, возможно, лучше достигается макета панели требуемой навигации, только задав `TitleView` свойство.
+> Свойства [`BackButtonTitle`](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty), [`Title`](xref:Xamarin.Forms.Page.Title), [`TitleIcon`](xref:Xamarin.Forms.NavigationPage.TitleIconProperty) и [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) позволяют определять значения, которые занимают место на панели навигации. Хотя размер панели навигации зависит от платформы и размера экрана, установка всех этих свойств приведет к конфликтам из-за ограничений свободного пространства. Вместо комбинации этих свойств лучше задать желаемый дизайн панели навигации только с помощью свойства `TitleView`.
 
 ### <a name="limitations"></a>Ограничения
 
-Существует ряд ограничений, которые следует учитывать при отображении [ `View` ](xref:Xamarin.Forms.View) в строке навигации [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+Существует ряд ограничений, которые следует учитывать при отображении объекта [`View`](xref:Xamarin.Forms.View) на панели навигации [`NavigationPage`](xref:Xamarin.Forms.NavigationPage).
 
-- В iOS, представления, помещаются в панели переходов `NavigationPage` отображаться по-разному в зависимости от того, доступны ли крупных названий. Дополнительные сведения о включении крупных названий, см. в разделе [отображения крупных названий](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title).
-- В Android, поместив представления в панели переходов `NavigationPage` могут выполняться только в приложениях, использующих совместимости приложений.
-- Не рекомендуется помещать больших и сложных представлениях, например [ `ListView` ](xref:Xamarin.Forms.ListView) и [ `TableView` ](xref:Xamarin.Forms.TableView), в строке навигации `NavigationPage`.
+- В iOS представления, размещенные на панели навигации `NavigationPage`, отображаются по-разному в зависимости от того, включены ли крупные заголовки. Дополнительные сведения о включении крупных заголовков см. в разделе [Отображение крупных заголовков](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title).
+- В Android можно поместить представления на панели навигации `NavigationPage` только в приложениях, использующих совместимость приложений.
+- Не рекомендуется помещать большие и сложные представления, например [`ListView`](xref:Xamarin.Forms.ListView) и [`TableView`](xref:Xamarin.Forms.TableView), в строке навигации `NavigationPage`.
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Навигация по страницам](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
+- [Переход по страницам](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
 - [Иерархическое (пример)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 - [PassingData (пример)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
 - [LoginFlow (пример)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
 - [TitleView (пример)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)
-- [Как создать знак в потоке экрана в пример приложения Xamarin.Forms (видео Xamarin University)](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
-- [Как создать знак в потоке экрана в Xamarin.Forms (видео Xamarin University)](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
+- [Как создать поток экрана входа в Xamarin.Forms (видео от Xamarin University). Пример](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
+- [Как создать поток экрана входа в Xamarin.Forms (видео от Xamarin University)](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

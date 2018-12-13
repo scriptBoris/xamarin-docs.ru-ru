@@ -1,6 +1,6 @@
 ---
-title: Класс приложения Xamarin.Forms
-description: В этой статье описаны функции класса приложения по умолчанию, который содержит свойство, чтобы задать начальную страницу для приложения, и постоянных словарь для хранения простых значений в изменениях состояния жизненного цикла.
+title: Класс App Xamarin.Forms
+description: В этой статье описаны функции класса App по умолчанию, который включает в себя свойство для задания начальной страницы приложения, а также сохраняемый словарь для хранения простых значений в рамках изменений состояния жизненного цикла.
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
@@ -9,27 +9,27 @@ ms.author: dabritch
 ms.date: 02/19/2016
 ms.openlocfilehash: 9acd1b8f25696267578f5cc269eb1b0c738be571
 ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/31/2018
 ms.locfileid: "50675098"
 ---
-# <a name="xamarinforms-app-class"></a>Класс приложения Xamarin.Forms
+# <a name="xamarinforms-app-class"></a>Класс App Xamarin.Forms
 
-`Application` Базовый класс предоставляет следующие возможности, которые предоставляются в используемом по умолчанию проекты `App` подкласс:
+Базовый класс `Application` предлагает следующие возможности, которые предоставляются в используемом по умолчанию подклассе `App` проекта:
 
-* Объект `MainPage` свойство, которое можно задать начальную страницу для приложения.
-* Это постоянный [ `Properties` словарь](#Properties_Dictionary) для хранения простых значений в изменениях состояния жизненного цикла.
-* Статический `Current` свойство, которое содержит ссылку на текущий объект приложения.
+* Свойство `MainPage` используется для задания начальной страницы для приложения.
+* Сохраняемый [словарь `Properties`](#Properties_Dictionary) для хранения простых значений в рамках изменений состояния жизненного цикла.
+* Статическое свойство `Current`, содержащее ссылку на текущий объект приложения.
 
-Он также предоставляет [методы жизненного цикла](~/xamarin-forms/app-fundamentals/app-lifecycle.md) например `OnStart`, `OnSleep`, и `OnResume` а также события модальной навигации.
+Он также предоставляет [методы жизненного цикла](~/xamarin-forms/app-fundamentals/app-lifecycle.md), например `OnStart`, `OnSleep` и `OnResume`, а также события модальной навигации.
 
-В зависимости от шаблона, который вы выбрали, `App` класса можно определить одним из двух способов:
+В зависимости от выбранного шаблона класс `App` можно определить одним из двух способов:
 
-* **C#**, или
-* **XAML И C#**
+* **C#** или
+* **XAML и C#**
 
-Для создания **приложения** класса с помощью XAML, значение по умолчанию **приложения** класса должны быть заменены XAML **приложения** класс и выделенным кодом, как показано в следующем примере кода:
+Чтобы создать класс **App** с помощью XAML, необходимо заменить класс **App** по умолчанию классом **App** XAML и соответствующим кодом программной части, как показано в следующем примере кода:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Photos.App">
@@ -37,7 +37,7 @@ ms.locfileid: "50675098"
 </Application>
 ```
 
-В следующем примере кода показано связанного кода:
+В следующем примере показан соответствующий код программной части:
 
 ```csharp
 public partial class App : Application
@@ -51,15 +51,15 @@ public partial class App : Application
 }
 ```
 
-А также параметр [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage) свойства кода необходимо также вызвать `InitializeComponent` метод, чтобы загрузить и проанализировать связанные XAML.
+Помимо задания свойства [`MainPage`](xref:Xamarin.Forms.Application.MainPage), в коде программной части также должен вызываться метод `InitializeComponent` для загрузки и анализа соответствующего кода XAML.
 
 ## <a name="mainpage-property"></a>Свойство MainPage
 
-`MainPage` Свойство `Application` класса задает корневую страницу приложения.
+Свойство `MainPage` в классе `Application` задает корневую страницу приложения.
 
-Например, можно создать логику в вашей `App` для отображения на другую страницу, в зависимости от того, вошел ли пользователь или нет.
+Например, вы можете создать в своем классе `App` логику для отображения другой страницы в зависимости от того, вошел ли пользователь в систему.
 
-`MainPage` Свойство должно быть установлено `App` конструктор,
+Свойство `MainPage` должно быть задано в конструкторе `App`.
 
 ```csharp
 public class App : Xamarin.Forms.Application
@@ -73,19 +73,19 @@ public class App : Xamarin.Forms.Application
 
 <a name="Properties_Dictionary" />
 
-## <a name="properties-dictionary"></a>Словарь свойств
+## <a name="properties-dictionary"></a>Словарь Properties
 
-`Application` Подкласс имеет статическое `Properties` словаря, который может использоваться для хранения данных, в частности, для использования в `OnStart`, `OnSleep`, и `OnResume` методы. Это может быть организован в любом месте кода Xamarin.Forms с помощью `Application.Current.Properties`.
+Подкласс `Application` имеет статический словарь `Properties`, который позволяет хранить данные, в частности, для использования в методах `OnStart`, `OnSleep` и `OnResume`. Обратиться к нему можно из любой части кода Xamarin.Forms с помощью `Application.Current.Properties`.
 
-`Properties` Использует словарь `string` ключ и сохраняет `object` значение.
+Словарь `Properties` использует ключ `string` и сохраняет значение `object`.
 
-Например, можно задать это постоянный `"id"` свойства в любом месте в коде (при выборе элемента на странице `OnDisappearing` метод, или в `OnSleep` метод) следующим образом:
+Например, можно задать постоянное свойство `"id"` в любой части кода (при выборе элемента в методе `OnDisappearing` страницы или в методе `OnSleep`) следующим образом:
 
 ```csharp
 Application.Current.Properties ["id"] = someClass.ID;
 ```
 
-В `OnStart` или `OnResume` методы, это значение можно затем использовать для повторного создания с пользователем каким-либо образом. `Properties` Хранилищ словарь `object`s, поэтому необходимо привести его значение перед его использованием.
+В методах `OnStart` или `OnResume` это значение можно использовать для воссоздания взаимодействия с пользователем некоторым образом. Словарь `Properties` хранит объекты `object`, поэтому вам не требуется приводить его значение перед использованием.
 
 ```csharp
 if (Application.Current.Properties.ContainsKey("id"))
@@ -95,27 +95,27 @@ if (Application.Current.Properties.ContainsKey("id"))
 }
 ```
 
-Всегда проверяйте наличие ключа перед получением доступа к его, чтобы предотвратить непредвиденные ошибки.
+Всегда проверяйте наличие ключа перед обращением, чтобы предотвратить непредвиденные ошибки.
 
 > [!NOTE]
-> `Properties` Словарь только может сериализовать типы-примитивы, для хранения. Необходимо хранить другие типы (такие как `List<string>`) может завершиться ошибкой без уведомления.
+> Словарь `Properties` может сериализировать только примитивные типы для хранения. Попытка сохранить другие типы (например, `List<string>`) может завершиться сбоем без каких-либо сообщений.
 
 <!-- bugzilla 28657 -->
 
 ### <a name="persistence"></a>Сохраняемость
 
-`Properties` Словарь автоматически сохраняются на устройстве.
-Данные, добавляется в словарь, будут доступны при переходе приложения в фоновом режиме, или даже в том случае, после его перезапуска.
+Словарь `Properties` автоматически сохраняется на устройстве.
+Данные, добавленные в словарь, будут доступны при возврате приложения в фоновый режим или даже после его перезапуска.
 
-Xamarin.Forms 1.4 появился дополнительный метод на `Application` класс - `SavePropertiesAsync()` -которого можно вызывать для сохранения заранее `Properties` словаря. Это позволяет сохранить свойства после важные обновления, а не риска их не сериализуемую из-за сбоя или закрывается Операционной системой.
+В Xamarin.Forms 1.4 представлен дополнительный метод класса `Application` — `SavePropertiesAsync()`, который можно вызвать для упреждающего сохранения словаря `Properties`. Это позволяет сохранить свойства после важных обновлений, не рискуя, что они будут отсериализированы из-за сбоя либо завершены операционной системой.
 
-Можно найти ссылки с помощью `Properties` словарь в **Создание мобильных приложений с помощью Xamarin.Forms** главы книги [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf), и [20 ](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)и в связанном [примеры](https://github.com/xamarin/xamarin-forms-book-preview-2).
+Ссылки на использование словаря `Properties` можно найти в главах [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) и [20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) книги о **создании мобильных приложений с помощью Xamarin.Forms**, а также в соответствующих [примерах](https://github.com/xamarin/xamarin-forms-book-preview-2).
 
 
 
 ## <a name="the-application-class"></a>Класс Application
 
-Полный `Application` для справки ниже приведен реализацию класса:
+Полная реализация класса `Application` приведена ниже для справки:
 
 ```csharp
 public class App : Xamarin.Forms.Application
@@ -146,17 +146,17 @@ public class App : Xamarin.Forms.Application
 
 ```
 
-Затем этот класс создается в каждом проекте под конкретную платформу и передается `LoadApplication` метод, что выгодно `MainPage` загружается и отображается для пользователя.
-В следующих разделах показан код для каждой платформы. Последние шаблоны решения Xamarin.Forms уже содержать весь этот код, предварительно настроенного для вашего приложения.
+Затем в каждом проекте конкретной платформы создается экземпляр этого класса, который затем передается в метод `LoadApplication`. Там `MainPage` загружается и отображается для пользователя.
+Код для каждой из платформ приведен в разделах ниже. Последние шаблоны решений Xamarin.Forms уже содержат весь этот код, предварительно настроенный для вашего приложения.
 
 
-### <a name="ios-project"></a>Проект iOS
+### <a name="ios-project"></a>Проект на платформе iOS
 
-IOS `AppDelegate` класс наследует от `FormsApplicationDelegate`. Оно должно:
+Класс `AppDelegate` iOS наследует от `FormsApplicationDelegate`. Он должен:
 
-* Вызовите `LoadApplication` с экземпляром `App` класса.
+* вызывать `LoadApplication` с экземпляром класса `App`;
 
-* Всегда возвращает `base.FinishedLaunching (app, options);`.
+* всегда возвращать `base.FinishedLaunching (app, options);`.
 
 ```csharp
 [Register ("AppDelegate")]
@@ -174,9 +174,9 @@ public partial class AppDelegate :
 }
 ```
 
-### <a name="android-project"></a>Проект Android
+### <a name="android-project"></a>Проект на платформе Android
 
-Android `MainActivity` наследует от `FormsAppCompatActivity`. В `OnCreate` переопределить `LoadApplication` был вызван с помощью экземпляра `App` класса.
+Класс `MainActivity` Android наследует от `FormsAppCompatActivity`. В переопределении `OnCreate` метод `LoadApplication` вызывается с помощью экземпляра класса `App`.
 
 ```csharp
 [Activity (Label = "App Lifecycle Sample", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true,
@@ -194,11 +194,11 @@ public class MainActivity : FormsAppCompatActivity
 }
 ```
 
-### <a name="universal-windows-project-uwp-for-windows-10"></a>Проект универсальной Windows (UWP) для Windows 10
+### <a name="universal-windows-project-uwp-for-windows-10"></a>Универсальный проект Windows (UWP) для Windows 10
 
-См. в разделе [проекты установки Windows](~/xamarin-forms/platform/windows/installation/index.md) сведения о поддержке универсальной платформы Windows в Xamarin.Forms.
+Сведения о поддержке UWP в Xamarin.Forms см. в разделе [Настройка проектов Windows](~/xamarin-forms/platform/windows/installation/index.md).
 
-Главную страницу в проекте универсальной платформы Windows должен быть производным от `WindowsPage`:
+Главная страница в проекте UWP должна быть производной от `WindowsPage`:
 
 ```xaml
 <forms:WindowsPage
@@ -208,7 +208,7 @@ public class MainActivity : FormsAppCompatActivity
 </forms:WindowsPage>
 ```
 
-C# Кода программной части конструкции необходимо вызвать `LoadApplication` для создания экземпляра вашего Xamarin.Forms `App`. Обратите внимание, что следует явно использовать пространство имен приложения для уточнения `App` поскольку приложений универсальной платформы Windows, также имеют свои собственные `App` класс, не имеющих отношения к Xamarin.Forms.
+Код C#, отвечающий за создание, должен вызывать `LoadApplication` для создания экземпляра вашего `App` Xamarin.Forms. Обратите внимание, что рекомендуется явно использовать пространство имен приложения для уточнения `App`, так как приложения UWP также имеют свой собственный класс `App`, не связанный с Xamarin.Forms.
 
 ```csharp
 public sealed partial class MainPage
@@ -222,4 +222,4 @@ public sealed partial class MainPage
  }
 ```
 
-Обратите внимание, что `Forms.Init()` должен вызываться **App.xaml.cs** около строки 63.
+Обратите внимание, что `Forms.Init()` должен вызываться в **App.xaml.cs** в районе строки 63.

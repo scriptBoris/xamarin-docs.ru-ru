@@ -1,6 +1,6 @@
 ---
-title: Знакомство с шаблонами Xamarin.Forms данных
-description: Шаблоны Xamarin.Forms данных предоставляют возможность настраивать представление данных в поддерживаемых элементах управления. В этой статье введение в шаблоны данных, анализ, почему они необходимы.
+title: Общие сведения о шаблонах данных Xamarin.Forms
+description: Шаблоны данных Xamarin.Forms дают возможность настраивать представление данных в поддерживаемых элементах управления. В этой статье описываются шаблоны данных и объясняется их необходимость.
 ms.prod: xamarin
 ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
 ms.technology: xamarin-forms
@@ -9,16 +9,16 @@ ms.author: dabritch
 ms.date: 09/11/2017
 ms.openlocfilehash: 129ce7a04b93bfb3cb1b9a1639aee61cd56d09d5
 ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/12/2018
 ms.locfileid: "38998925"
 ---
-# <a name="introduction-to-xamarinforms-data-templates"></a>Знакомство с шаблонами Xamarin.Forms данных
+# <a name="introduction-to-xamarinforms-data-templates"></a>Общие сведения о шаблонах данных Xamarin.Forms
 
-_Шаблоны Xamarin.Forms данных предоставляют возможность настраивать представление данных в поддерживаемых элементах управления. В этой статье введение в шаблоны данных, анализ, почему они необходимы._
+_Шаблоны данных Xamarin.Forms дают возможность настраивать представление данных в поддерживаемых элементах управления. В этой статье описываются шаблоны данных и объясняется их необходимость._
 
-Рассмотрите возможность [ `ListView` ](xref:Xamarin.Forms.ListView) , отображающий коллекцию `Person` объектов. В следующем примере кода показано определение `Person` класса:
+Предположим, имеется элемент [`ListView`](xref:Xamarin.Forms.ListView), в котором отображается коллекция объектов `Person`. В следующем примере кода показано определение класса `Person`.
 
 ```csharp
 public class Person
@@ -29,7 +29,7 @@ public class Person
 }
 ```
 
-`Person` Класс определяет `Name`, `Age`, и `Location` свойства, которые можно задать при `Person` создается объект. [ `ListView` ](xref:Xamarin.Forms.ListView) Используется для отображения коллекция `Person` объектов, как показано в следующем примере кода XAML:
+В классе `Person` определены свойства `Name`, `Age` и `Location`, которые можно задать при создании объекта `Person`. Элемент [`ListView`](xref:Xamarin.Forms.ListView) используется для отображения коллекции объектов `Person`, как показано в следующем примере кода XAML.
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -54,12 +54,12 @@ public class Person
 </ContentPage>
 ```
 
-Элементы добавляются [ `ListView` ](xref:Xamarin.Forms.ListView) в XAML путем инициализации [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) свойства из массива `Person` экземпляров.
+Элементы добавляются в [`ListView`](xref:Xamarin.Forms.ListView) в XAML путем инициализации свойства [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) на основе массива экземпляров `Person`.
 
 > [!NOTE]
-> Обратите внимание, что `x:Array` элемента требуется `Type` атрибут, указывающий, тип элементов в массиве.
+> Обратите внимание на то, что для элемента `x:Array` требуется атрибут `Type`, указывающий тип элементов в массиве.
 
-Эквивалентное страницы C# показан в следующем примере кода, который инициализирует [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) свойства `List` из `Person` экземпляров:
+Эквивалентная страница на C# показана в следующем примере кода, в котором свойство [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) инициализируется с помощью списка `List` экземпляров `Person`:
 
 ```csharp
 public WithoutDataTemplatePageCS()
@@ -86,11 +86,11 @@ public WithoutDataTemplatePageCS()
 }
 ```
 
-[ `ListView` ](xref:Xamarin.Forms.ListView) Вызовы `ToString` при отображении объектов в коллекции. Так как не `Person.ToString` переопределить, `ToString` возвращает имя типа каждого объекта, как показано на следующем снимке экрана:
+При отображении объектов в коллекции [`ListView`](xref:Xamarin.Forms.ListView) вызывает `ToString`. Так как переопределения `Person.ToString` нет, `ToString` возвращает имя типа каждого объекта, как показано на следующих снимках экрана.
 
 ![](introduction-images/no-data-template.png "ListView без шаблона данных")
 
-`Person` Объекта можно переопределить `ToString` метод для отображения значимых данных, как показано в следующем примере кода:
+Объект `Person` может переопределять метод `ToString` для отображения осмысленных данных, как показано в следующем примере кода.
 
 ```csharp
 public class Person
@@ -103,34 +103,34 @@ public class Person
 }
 ```
 
-В результате [ `ListView` ](xref:Xamarin.Forms.ListView) отображение `Person.Name` значение свойства для каждого объекта в коллекции, как показано на следующем снимке экрана:
+В результате в [`ListView`](xref:Xamarin.Forms.ListView) отображается значение свойства `Person.Name` для каждого объекта в коллекции, как показано на следующих снимках экрана.
 
-![](introduction-images/override-tostring.png "ListView с помощью шаблона данных")
+![](introduction-images/override-tostring.png "ListView с шаблоном данных")
 
-`Person.ToString` Переопределения может вернуть отформатированную строку, состоящую из `Name`, `Age`, и `Location` свойства. Тем не менее этот подход обеспечивает отчасти контролировать внешний вид каждого элемента данных. Для большей гибкости [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) могут создаваться, определяющий внешний вид данных.
+Переопределение `Person.ToString` могло бы возвращать форматированную строку, состоящую из значений свойств `Name`, `Age` и `Location`. Однако такой подход не позволяет полностью контролировать внешний вид каждого элемента данных. Чтобы добиться большей гибкости, можно создать шаблон [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), определяющий внешний вид данных.
 
-## <a name="creating-a-datatemplate"></a>Создание шаблона данных DataTemplate
+## <a name="creating-a-datatemplate"></a>Создание DataTemplate
 
-Объект [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) используется для определения внешнего вида данных и обычно использует привязку данных для отображения данных. Его стандартный сценарий использования — при отображении данных из коллекции объектов в [ `ListView` ](xref:Xamarin.Forms.ListView). Например, если `ListView` привязан к коллекции `Person` объектов, `ListView.ItemTemplate` свойству будет присвоено `DataTemplate` , определяющий внешний вид каждого `Person` объекта в `ListView`. `DataTemplate` Будет содержать элементы, которые привязаны к значениям свойств каждого `Person` объекта. Дополнительные сведения о привязке данных см. в статье [Основы привязки данных](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+Шаблон [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) используется для определения внешнего вида данных и обычно привязывается к данным для отображения. Стандартный сценарий его использования — отображение данных из коллекции объектов в [`ListView`](xref:Xamarin.Forms.ListView). Например, если элемент `ListView` привязан к коллекции объектов `Person`, свойству `ListView.ItemTemplate` присваивается шаблон `DataTemplate`, определяющий внешний вид каждого объекта `Person` в `ListView`. Шаблон `DataTemplate` будет содержать элементы, привязанные к значениям свойств каждого объекта `Person`. Дополнительные сведения о привязке данных см. в статье [Основы привязки данных](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
-Объект [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) может использоваться в качестве значения для следующих свойств:
+Шаблон [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) можно использовать в качестве значения следующих свойств:
 
 - [`ListView.HeaderTemplate`](xref:Xamarin.Forms.ListView.HeaderTemplate)
 - [`ListView.FooterTemplate`](xref:Xamarin.Forms.ListView.FooterTemplate)
 - [`ListView.GroupHeaderTemplate`](xref:Xamarin.Forms.ListView.GroupHeaderTemplate)
-- [`ItemsView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1), который наследуется [ `ListView` ](xref:Xamarin.Forms.ListView).
-- [`MultiPage.ItemTemplate`](xref:Xamarin.Forms.MultiPage`1), который наследуется [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage), [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage), и [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage).
+- [`ItemsView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1), наследуемое элементом [`ListView`](xref:Xamarin.Forms.ListView);
+- [`MultiPage.ItemTemplate`](xref:Xamarin.Forms.MultiPage`1), наследуемое элементами [`CarouselPage`](xref:Xamarin.Forms.CarouselPage), [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) и [`TabbedPage`](xref:Xamarin.Forms.TabbedPage).
 
 > [!NOTE]
-> Обратите внимание, что, несмотря на то что [ `TableView` ](xref:Xamarin.Forms.TableView) используются [ `Cell` ](xref:Xamarin.Forms.Cell) объектов, он не использует [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Это обусловлено привязки данных всегда задаются непосредственно в `Cell` объектов.
+> Обратите внимание на то, что, хотя представление [`TableView`](xref:Xamarin.Forms.TableView) использует объекты [`Cell`](xref:Xamarin.Forms.Cell), оно не использует шаблон [`DataTemplate`](xref:Xamarin.Forms.DataTemplate). Связано это с тем, что привязки данных всегда задаются непосредственно для объектов `Cell`.
 
-Объект [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) , помещаются как является прямым потомком свойства, перечисленные выше называется *встроенного шаблона*. Кроме того `DataTemplate` можно определить как ресурс уровня управления, страницы или приложения. Выбор места для определения [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) последствий, где его можно использовать:
+Шаблон [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), являющийся прямым потомком перечисленных выше свойств, называется *встроенным*. Кроме того, шаблон `DataTemplate` можно определить как ресурс на уровне элемента управления, страницы или приложения. От того, где определен шаблон [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), зависит то, где его можно использовать.
 
-- Объект [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) определены в элементе управления уровень может применяться только к элементу управления.
-- Объект [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) определены на странице уровень может применяться к несколько допустимых элементов управления на странице.
-- Объект [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) определены на уровне приложения может быть применен к допустимым элементов управления в приложении.
+- Шаблон [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), определенный на уровне элемента управления, можно применять только к элементу управления.
+- Шаблон [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), определенный на уровне страницы, можно применять к допустимым элементам управления на странице.
+- Шаблон [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), определенный на уровне приложения, можно применять к допустимым элементам управления в приложении.
 
-Шаблоны данных более низкого уровня в иерархии представлений имеют приоритет над определенных выше вверх, когда они совместно используют `x:Key` атрибуты. Например шаблон приложения уровня данных будут переопределены шаблон уровня страницы данных и шаблон уровня страницы данных будут переопределены шаблон элемента управления на уровне данных, или встроенный шаблон данных.
+Шаблоны данных, которые находятся ниже в иерархии представлений, имеют приоритет над определенными выше в иерархии, если они имеют общие атрибуты `x:Key`. Например, шаблон данных на уровне приложения переопределяется шаблоном данных на уровне страницы, а шаблон данных на уровне страницы переопределяется шаблоном данных на уровне элемента управления или встроенным шаблоном данных.
 
 
 ## <a name="related-links"></a>Связанные ссылки
