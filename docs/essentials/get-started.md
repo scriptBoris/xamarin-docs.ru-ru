@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
-ms.openlocfilehash: 5cb53006d7cc965f378f6e971bfc623f0c4cbd60
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: c40762ad4d165c1e5a29bdf9dc6d3c0fdb8581f7
+ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899112"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53411730"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Начало работы с Xamarin.Essentials
 
@@ -33,7 +33,7 @@ Xamarin.Essentials предоставляется в виде пакета NuGet
 
 1. Скачайте и установите [Visual Studio](http://visualstudio.com) с помощью [средств Visual Studio для Xamarin](~/cross-platform/get-started/installation/index.md).
 
-2. Откройте существующий проект или создайте новый, используя шаблон пустого приложения в разделе **Visual Studio C#** (для Android, для iPhone и iPad или кроссплатформенный). **Важно.** Если это проект универсальной платформы Windows, в свойствах проекта необходимо указать сборку 16299 или более поздней версии.
+2. Откройте существующий проект или создайте новый, используя шаблон пустого приложения в разделе **Visual Studio C#** (для Android, для iPhone и iPad или кроссплатформенный). **Важно**. При добавлении в проект UWP укажите в свойствах проекта сборку 16299 или более позднюю версию.
 
 3. Добавьте пакет NuGet для **Xamarin.Essentials** в каждый из проектов:
 
@@ -47,9 +47,6 @@ Xamarin.Essentials предоставляется в виде пакета NuGet
     # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio для Mac](#tab/macos)
 
     На панели обозревателя решений щелкните правой кнопкой мыши имя проекта и выберите **Добавить > Add NuGet Packages... (Добавить пакеты NuGet...)**. Найдите **Xamarin.Essentials** и установите пакет во **ВСЕ** проекты, в том числе для Android, iOS и .NET Standard.
-
-    > [!TIP]
-    > Установите флажок **Показать пакеты предварительного выпуска**, если [доступна только предварительная версия пакета NuGet для **Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials).
 
     -----
 
