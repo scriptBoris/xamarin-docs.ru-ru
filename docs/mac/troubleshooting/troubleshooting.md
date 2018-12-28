@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: c2c0e516c864ec4073d5bb54b77754f58064d6b0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f498aab5bfaffc08a22f62a318f8f9f73ab0afca
+ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116749"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53609913"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Советы по устранению неполадок Xamarin.Mac
 
@@ -77,7 +77,7 @@ ms.locfileid: "50116749"
 
 ### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException: данные недоступны для кодирования 437
  
-Когда в приложении Xamarin.Mac, включая библиотеки сторонних производителей, может возникнуть ошибка в форме «System.NotSupportedException: данные недоступны для кодирования 437» при попытке скомпилировать и запустить приложение. Например, библиотеки, такие как `Ionic.Zip.ZipFile`, может вызвать это исключение во время операции.
+Когда в приложении Xamarin.Mac, включая библиотеки сторонних производителей, может возникнуть ошибка в форме «System.NotSupportedException: Данные недоступны для кодирования 437" при попытке скомпилировать и запустить приложение. Например, библиотеки, такие как `Ionic.Zip.ZipFile`, может вызвать это исключение во время операции.
 
 Это можно решить, открыв параметры проекта Xamarin.Mac, собираетесь **сборки Mac** > **интернационализации** и проверка **Западная** Интернационализация:
 
@@ -110,10 +110,6 @@ ms.locfileid: "50116749"
 Введите `Entitlements` имя и нажмите кнопку **New** кнопки. Если ранее проекте включен файл прав, вам будет предложено добавить его в проект, а не создавать новый файл:
 
 [![Проверка перезаписи файла](troubleshooting-images/entitlements04.png "проверка перезаписи файла")](troubleshooting-images/entitlements04-large.png#lightbox)
-
-## <a name="contacting-support-business-or-enterprise-licenses"></a>Обращения в службу поддержки (лицензии business или enterprise)
-
-Если у вас есть или бизнес-Корпоративная лицензия, вы имеете право нужно запросить помощь напрямую от инженеров Xamarin с помощью запросов в службу поддержки. См. в разделе [xamarin.com/support](http://xamarin.com/support) сведения.
 
 ## <a name="community-support-on-the-forums"></a>Поддержка сообщества на форумах
 

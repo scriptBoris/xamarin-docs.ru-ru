@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/02/2018
-ms.openlocfilehash: 808053319bb98b505748ade24b358a08ded48cd6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ad706700001ab07d74f518d50ab389c8590ba131
+ms.sourcegitcommit: 7016df4979e763963eb024eb2fe6d79f466d871a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103534"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53748449"
 ---
 # <a name="how-can-i-download-a-previous-version-of-xcode"></a>Как загрузить предыдущей версии Xcode?
 
@@ -22,7 +22,7 @@ ms.locfileid: "50103534"
 
 ## <a name="older-versions"></a>Предыдущие версии
 
-Более старые версии Xcode можно найти, войдя в [страницы загрузок для разработчиков Apple](https://developer.apple.com/downloads/) и поиск версии Xcode, вам потребуется.
+Более старые версии Xcode можно найти, войдя в [страницы загрузок для разработчиков Apple](https://developer.apple.com/downloads/more/) и поиск версии Xcode, вам потребуется.
 
 ## <a name="related-links"></a>Связанные ссылки
 - [Требования к системе Xamarin](~/cross-platform/get-started/requirements.md)

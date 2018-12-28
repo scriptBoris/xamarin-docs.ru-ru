@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 7108b24f73d1f7389bf37fe8640061ae3e077300
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 250b3de2ef41ce488165f3149c72ce28c39e53a3
+ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054428"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53746899"
 ---
 # <a name="xamarinforms-button"></a>Кнопка Xamarin.Forms
 
@@ -138,7 +138,7 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>Отключение кнопки
 
-Иногда приложение находится в определенном состоянии, там, где определенный `Button` щелкните не является допустимой операцией. В таком случае `Button` следует отключить, задав его `IsEnabled` свойства `false`. Классическим примером является `Entry` управления для имени файла с открывающей файл `Button`: `Button` должно быть включено только в том случае, если какой-либо текст, набранный в `Entry`.
+Иногда приложение находится в определенном состоянии, там, где определенный `Button` щелкните не является допустимой операцией. В таком случае `Button` следует отключить, задав его `IsEnabled` свойства `false`. Классическим примером является `Entry` управления для имени файла с открывающей файл `Button`: `Button` Должно быть включено только в том случае, если какой-либо текст, набранный в `Entry`.
 Можно использовать `DataTrigger` для этой задачи, как показано в [ **триггеры данных** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers) статьи.
 
 ## <a name="using-the-command-interface"></a>С помощью интерфейса командной
@@ -409,7 +409,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 [![Нажмите и отпустите кнопку](button-images/PressAndReleaseButton.png "нажмите и отпустите кнопку")](button-images/PressAndReleaseButton-Large.png)
 
-Такое поведение имеет приложений для игр: палец пройдет `Button` может придать объекту на экране переместить в определенном направлении.
+Такое поведение имеет приложений для игр: Палец пройдет `Button` может придать объекту на экране переместить в определенном направлении.
 
 <a name="button-appearance" />
 
@@ -573,7 +573,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
-</ImageButton>
+</Button>
 ```
 
 `Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState) Указывает, что при [ `Button` ](xref:Xamarin.Forms.Button) нажата, его [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) свойства изменяется от его значение по умолчанию 1 к 0,8. `Normal` `VisualState` Указывает, что при `Button` находится в обычном состоянии, его `Scale` будет установлено значение 1. Таким образом, общий эффект том, что при `Button` является нажата, она масштабируется повторно немного меньше, и когда `Button` является выпуска, она масштабируется повторно размер по умолчанию.
@@ -582,7 +582,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 ## <a name="creating-a-toggle-button"></a>Создание кнопку-переключатель
 
-Можно создать подкласс `Button` таким образом, чтобы он работает как параметр включения или выключения: используйте кнопку один раз для выключатель на и коснитесь его еще раз, чтобы отключить данную функцию.
+Можно создать подкласс `Button` таким образом, чтобы он работает как параметр включения или выключения: Коснитесь кнопки один раз для выключатель на и коснитесь его еще раз, чтобы отключить данную функцию.
 
 Следующие `ToggleButton` класс является производным от `Button` и определяет новое событие, именуемое `Toggled` и логическое свойство с именем `IsToggled`. Это те же два свойства, определяемые Xamarin.Forms [ `Switch` ](xref:Xamarin.Forms.Switch):
 
