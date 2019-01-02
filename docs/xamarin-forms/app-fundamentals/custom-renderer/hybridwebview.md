@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/19/2018
-ms.openlocfilehash: aa060bd16bc0220f6a6026106ff6c8d786daebc1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f3b8cf7ec8a42ed031699d8f5e02f32c6eb61458
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105042"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053871"
 ---
 # <a name="implementing-a-hybridwebview"></a>Реализация HybridWebView
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
 
 _Настраиваемые элементы управления пользовательского интерфейса Xamarin.Forms должны быть производными от класса View, который используется для размещения макетов и элементов управления на экране. В этой статье показано, как создать настраиваемый отрисовщик для пользовательского элемента управления HybridWebView, который показывает, как улучшить зависящие от платформы веб-элементы управления, чтобы разрешить вызов кода C# из JavaScript._
 

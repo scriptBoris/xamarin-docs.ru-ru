@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b0efdc1a20f52231f15b7a08eb86962e2079c678
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0fe170aaa880aebcaff7899c440a0522e1f83a0c
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240034"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051125"
 ---
 # <a name="binding-video-sources-to-the-player"></a>Привязка источников видео к проигрывателю
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 Когда свойству `Source` представления `VideoPlayer` присваивается новый видеофайл, воспроизведение текущего видео останавливается и начинает воспроизводиться новое видео. Это демонстрируется на странице **Select Web Video** (Выбор видео из Интернета) в примере [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/). На ней есть представление `ListView` с названиями трех видеороликов, на которые указывают ссылки в файле **App.xaml**:
 

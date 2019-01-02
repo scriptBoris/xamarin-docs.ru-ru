@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 00697ca0adf3a34abec90c2f96d9fd9c273d06bb
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1677f86379310ee6d5e0973108f85db2a328cd23
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239788"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53048835"
 ---
 # <a name="implementing-a-video-player"></a>Реализация видеопроигрывателя
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 Иногда нужно, чтобы видеофайлы воспроизводились в приложении Xamarin.Forms. В этой серии статей объясняется, как написать пользовательские отрисовщики для iOS, Android и универсальной платформы Windows (UWP) для класса Xamarin.Forms `VideoPlayer`.
 

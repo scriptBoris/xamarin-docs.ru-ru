@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: c720b9f38d2a34155face10b75f5f054f3313711
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f59a528916d2cc5efd19ba7c35a7b4f041ecbe09
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131917"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056166"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Свойства автоматизации в Xamarin.Forms
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
 
 _Xamarin.Forms позволяет задавать значения специальных возможностей в элементах пользовательского интерфейса с помощью присоединенных свойств из класса AutomationProperties, которые, в свою очередь, задают собственные значения специальных возможностей. Эта статья поясняет, как использовать класс AutomationProperties, чтобы средство чтения с экрана могло озвучивать элементы на странице._
 

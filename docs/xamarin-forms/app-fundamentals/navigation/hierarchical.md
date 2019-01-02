@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: a0a58cf05c97221a73cd0784b7859bb9c84cef86
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 0511cd1a4cf76368623c56ef53cd98323114f98e
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "38994680"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058994"
 ---
 # <a name="hierarchical-navigation"></a>Иерархическая навигация
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 
 _Класс NavigationPage обеспечивает иерархическую навигацию, при которой пользователь может переходить по страницам вперед и назад по своему желанию. Этот класс реализует навигацию на основе стека объектов Page по методу ЛИФО (последним поступил — первым обслужен). В этой статье показано, как использовать класс NavigationPage для навигации в стеке страниц._
 
@@ -184,7 +186,7 @@ public MainPage (string date)
 
 ### <a name="passing-data-through-a-bindingcontext"></a>Передача данных через объект BindingContext
 
-Альтернативный способ передачи данных на другую страницу во время навигации —указание данных для объекта [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) новой страницы, как показано в следующем примере кода.
+Альтернативный способ передачи данных на другую страницу во время навигации —указание данных для объекта [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) новой страницы, как показано в следующем примере кода:
 
 ```csharp
 async void OnNavigateButtonClicked (object sender, EventArgs e)

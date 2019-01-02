@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/25/2018
-ms.openlocfilehash: c5d2f93c8cb97c50f9d35d9ad91adf4c6437a3db
-ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
+ms.openlocfilehash: c716f39faad0b58159df5631bf415239a2c658b1
+ms.sourcegitcommit: 06f88979db160fb8dd1c9ee0d5000d8749107489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "38999021"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53806955"
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Введение в Xamarin.Forms
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/GettingStarted/)
 
 _Xamarin.Forms — это платформа, позволяющая разработчикам создавать кроссплатформенные приложения для Android, iOS и Windows. Определения кода и пользовательского интерфейса для разных платформ общие, но прорисовываются они с помощью собственных элементов управления. В этой статье представлены общие сведения о Xamarin.Forms. Также из нее вы узнаете, как в Visual Studio создавать приложения на C# и XAML._
 
@@ -424,7 +426,7 @@ class EmployeeCell : ViewCell
         var twitterLabel = new Label
         {
            HorizontalOptions = LayoutOptions.FillAndExpand,
-           Font = Fonts.Twitter
+           FontSize = 24
         };
         twitterLabel.SetBinding(Label.TextProperty, "Twitter");
 

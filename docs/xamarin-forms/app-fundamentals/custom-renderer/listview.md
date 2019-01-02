@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: b3b73d542faebdb8ab85c989d7812368f4f3ffac
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 39ba281f036b9c57f85629390f5ba76377c99dd8
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997495"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054215"
 ---
 # <a name="customizing-a-listview"></a>Настройка ListView
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/listview/)
 
 _Xamarin.Forms ListView — это представление, в котором коллекция данных отображается в виде вертикального списка. В этой статье показано, как создать пользовательское средство отрисовки, содержащее зависящий от платформы список элементов управления и собственные макеты ячеек, предоставляя больше контроля над производительностью списка собственных элементов управления._
 

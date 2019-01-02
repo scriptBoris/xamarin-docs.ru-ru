@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: a72777c7e51e96a8e123ecd85ad0aa24fc60fc6c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 75ea30dd510021d7755814e19728bfe60f765645
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994521"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057293"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>Создание DataTemplateSelector в Xamarin.Forms
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplateselector/)
 
 _С помощью объекта DataTemplateSelector можно выбирать шаблон DataTemplate во время выполнения в соответствии со значением привязанного к данным свойства. Это позволяет применять несколько шаблонов DataTemplate к одному типу объектов, чтобы настроить внешний вид определенных объектов. В этой статье содержатся сведения о создании и использовании объекта DataTemplateSelector._
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
-ms.openlocfilehash: 8bf8f86cf708806d1c17b3fe4eda0755f98fd646
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 1c2aea9a5dead1962cfd4bb71d1a1211e8b98ee9
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563190"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056711"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>Повторно используемый EventToCommandBehavior
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
 
 _Реакции на события можно использовать для сопоставления команд с элементами управления, которые не были предназначены для взаимодействия с командами. В этой статье демонстрируется создание и использование реакции на событие Xamarin.Forms для выполнения команды при возникновении события._
 
@@ -154,7 +156,7 @@ public class EventToCommandBehavior : BehaviorBase<View>
 
 ## <a name="consuming-the-behavior"></a>Использование реакции на событие
 
-Класс `EventToCommandBehavior` можно присоединить к коллекции [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) элемента управления, как показано в следующем примере кода XAML:
+Класс `EventToCommandBehavior` можно присоединить к коллекции [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) элемента управления, как показано в следующем примере кода XAML.
 
 ```xaml
 <ListView ItemsSource="{Binding People}">

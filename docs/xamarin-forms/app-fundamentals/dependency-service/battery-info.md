@@ -7,21 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: cbb4a01ac2c6d933fe40a0b3c2571d1fe3ce75c0
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: bdfef88e0cf5916b1eec08ddfaa09165a057765a
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998405"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058588"
 ---
 # <a name="checking-battery-status"></a>Проверка состояния батареи
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/DependencyService)
 
 В этой статье приводятся пошаговые инструкции по созданию приложения, проверяющего состояние батареи. В статье используется подключаемый модуль Battery, разработанный Джеймсом Монтеманьо (James Montemagno). Дополнительные сведения см. в [репозитории GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery).
 
 Так как в Xamarin.Forms нет возможностей для проверки текущего состояния батареи, приложению потребуется использовать [`DependencyService`](xref:Xamarin.Forms.DependencyService) для доступа к собственным интерфейсам API.  В этой статье рассматриваются следующие этапы использования `DependencyService`:
 
 - **[Создание интерфейса](#Creating_the_Interface)** &ndash; сведения о создании интерфейса в общем коде.
-- **[Реализация в iOS](#iOS_Implementation)**  — сведения о реализации интерфейса в машинном коде для iOS.
+- **[Реализация в iOS](#iOS_Implementation)** &ndash; сведения о реализации интерфейса в машинном коде для iOS.
 - **[Реализация в Android](#Android_Implementation)** &ndash; сведения о реализации интерфейса в машинном коде для Android.
 - **[Реализация на универсальной платформе Windows](#UWPImplementation)**  — сведения о реализации интерфейса в машинном коде для универсальной платформы Windows (UWP).
 - **[Реализация в общем коде](#Implementing_in_Shared_Code)**  — сведения об использовании `DependencyService` для вызова собственной реализации из общего кода.

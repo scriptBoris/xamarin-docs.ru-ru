@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: a017cfaa6f96c95f4b501f189fe778fbd5ece3f2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f07b26ed06e85e1b20a29459d2f8f0d2626a2855
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241629"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53054872"
 ---
 # <a name="xamarinforms-dependencyservice"></a>DependencyService в Xamarin.Forms
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/UsingDependencyService)
 
 _Xamarin.Forms позволяет разработчикам определять поведение в проектах для конкретных платформы. Затем DependencyService находит подходящую реализацию платформы, а общий код получает доступ к встроенной функциональности._
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 13730dce5d4698085abe10cb93da5ba50b87ab01
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 49f66164c707f91f298b2e5cb09b35f1767186cf
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106433"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051585"
 ---
 # <a name="binding-from-a-xamarinforms-controltemplate"></a>Привязка на основе ControlTemplate в Xamarin.Forms
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
 
 _Привязки шаблонов позволяют элементам управления в шаблоне элемента управления выполнять привязку данных к общим свойствам, предоставляя возможность легко изменять значения свойств в элементах управления в шаблоне элемента управления. В этой статье содержатся сведения об использовании привязок шаблонов для выполнения привязки данных на основе шаблона элемента управления._
 

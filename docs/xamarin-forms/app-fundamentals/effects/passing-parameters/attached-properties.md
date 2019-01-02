@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 9483e424a74a88ce3f0eb49624bb5315551f2062
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 642a4a63ca2c451c6a085f0e99cebd93babe078d
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996455"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058760"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Передача параметров эффекта в качестве присоединенных свойств
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)
 
 _Присоединенные свойства можно использовать для определения параметров эффекта, реагирующих на изменения свойств времени выполнения. В этой статье описывается использование присоединенных свойств для передачи параметров эффекту и изменение параметра во время выполнения._
 
@@ -348,7 +350,7 @@ public class LabelShadowEffect : PlatformEffect
 
 ### <a name="universal-windows-platform-project"></a>Проект на универсальной платформе Windows
 
-В следующем коде показана реализация класса `LabelShadowEffect` для проекта на универсальной платформе Windows (UWP).
+В следующем коде показана реализация класса `LabelShadowEffect` для проекта на универсальной платформе Windows (UWP):
 
 ```csharp
 [assembly: ResolutionGroupName ("MyCompany")]
@@ -402,7 +404,7 @@ namespace EffectsDemo.UWP
 }
 ```
 
-На платформе UWP эффект тени отсутствует, поэтому реализация `LabelShadowEffect` на обеих платформах имитирует его, добавляя второй класс смещения [`Label`](xref:Xamarin.Forms.Label) за основной экземпляр `Label`. Метод `OnAttached` создает экземпляр `Label` и задает для `Label` определенные свойства макета. Затем он вызывает методы, которые получают значения присоединенных свойств с помощью методов получения `ShadowEffect`, и создает тень, задавая свойства [`TextColor`](xref:Xamarin.Forms.Label.TextColor), [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) и [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) для управления цветом и расположением `Label`. `shadowLabel` является смещением, вставленным за основной экземпляр `Label`. Ели у элемента управления, к которому присоединен эффект, отсутствуют свойства `Control.Layer`, указанная выше функциональность заключается в блок `try`/`catch`. Поскольку очистка не требуется, метод `OnDetached` не предоставляет реализацию.
+На платформе UWP эффект тени отсутствует, поэтому реализация `LabelShadowEffect` на обеих платформах имитирует его, добавляя второй класс смещения [`Label`](xref:Xamarin.Forms.Label) за основной экземпляр `Label`. Метод `OnAttached` создает экземпляр `Label` и задает для `Label` определенные свойства макета. Затем он вызывает методы, которые получают значения присоединенных свойств с помощью методов получения `ShadowEffect`, и создает тень, задавая свойства [`TextColor`](xref:Xamarin.Forms.Label.TextColor), [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) и [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) для управления цветом и расположением `Label`. `shadowLabel` является смещением, вставленным за основной экземпляр `Label`. Если у элемента управления, к которому присоединен эффект, отсутствуют свойства `Control.Layer`, указанная выше функциональность заключается в блок `try`/`catch`. Поскольку очистка не требуется, метод `OnDetached` не предоставляет реализацию.
 
 #### <a name="responding-to-property-changes"></a>Реагирование на изменения свойств
 

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/15/2018
-ms.openlocfilehash: f703dff56d2947c35a9bc76e0eb909bfe9023bac
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 69fc1cd146227e464e70c347d3e28d250a7f1346
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131954"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050443"
 ---
 # <a name="keyboard-navigation-in-xamarinforms"></a>Навигации с помощью клавиатуры в Xamarin.Forms
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
 
 Некоторым пользователям может быть трудно работать с приложениями, которые не обеспечивают должный уровень доступа с клавиатуры. Задание последовательности табуляции для элементов управления обеспечивает навигацию с помощью клавиатуры и подготавливает страницы приложений к вводу входных данных в определенном порядке.
 
