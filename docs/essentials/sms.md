@@ -5,12 +5,12 @@ ms.assetid: 81A757F2-6F2A-458F-B9BE-770ADEBFAB58
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: d0655f3e687750e0fca626fb017096a946c0abb3
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: a7b52bac0e9e2061cf9ff277db044ab232b1e9e5
+ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898775"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "53815195"
 ---
 # <a name="xamarinessentials-sms"></a>Xamarin.Essentials: SMS
 
@@ -37,7 +37,7 @@ public class SmsTest
     {
         try
         {
-            var message = new SmsMessage(messageText, recipient);
+            var message = new SmsMessage(messageText, new []{ recipient });
             await Sms.ComposeAsync(message);
         }
         catch (FeatureNotSupportedException ex)
