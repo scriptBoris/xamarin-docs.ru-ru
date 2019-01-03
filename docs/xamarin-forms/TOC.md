@@ -30,6 +30,7 @@
 ### [Словари ресурсов](xaml/resource-dictionaries.md)
 ### [XAML Standard (предварительная версия)](xaml/standard/index.md)
 #### [Элементы управления](xaml/standard/controls.md)
+### [Загрузка XAML во время выполнения](xaml/runtime-load.md)
 ## [Принципы работы приложения](app-fundamentals/index.md)
 ### [Специальные возможности](app-fundamentals/accessibility/index.md)
 #### [Свойства автоматизации](app-fundamentals/accessibility/automation-properties.md)
