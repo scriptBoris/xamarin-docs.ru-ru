@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 3397c931dcb23a29b0682699512a5b4c9018de38
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: b0d202ff7743361207795d342b29243130f4f056
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171070"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53058734"
 ---
 # <a name="custom-video-transport-controls"></a>Пользовательские элементы управления транспортировкой видео
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 К элементам управления транспортировкой в видеопроигрывателе относятся кнопки, которые выполняют функции **воспроизведения**, **паузы** и **остановки**. Эти кнопки обычно определяются по знакомым значкам, а не тексту. Как правило, функции **Воспроизведение** и **Пауза** объединены в одну кнопку.
 
@@ -358,7 +360,7 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Необходимо обращаться к двум свойствам `AVPlayer`: свойству [`Status`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) типа `AVPlayerStatus` и свойству [`TimeControlStatus`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) типа `AVPlayerTimeControlStatus`. Обратите внимание, что для задания свойства `Status` свойство `Element` (которое является `VideoPlayer`) должно быть приведено к типу `IVideoPlayerController`.
+Необходимо обратиться к двум свойствам `AVPlayer`: свойству [`Status`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) типа `AVPlayerStatus` и свойству [`TimeControlStatus`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) типа `AVPlayerTimeControlStatus`. Обратите внимание, что для задания свойства `Status` свойство `Element` (которое является `VideoPlayer`) должно быть приведено к типу `IVideoPlayerController`.
 
 ### <a name="the-android-status-setting"></a>Параметр состояния на платформе Android
 

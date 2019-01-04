@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 5ffc167b1e5695663dff6005f3d7e0ba0ea958db
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 0c63e33309802f0945ad94a858af45f6b29b2cc4
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172110"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53050783"
 ---
 # <a name="xamarinforms-binding-path"></a>Путь привязки Xamarin.Forms
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 Во всех предыдущих примерах привязки данных в свойстве [`Path`](xref:Xamarin.Forms.Binding.Path) класса `Binding` (или свойстве [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) расширения разметки `Binding`) указывалось одно свойство. В действительности `Path` может указывать на *вложенное свойство* (свойство свойства) или элемент коллекции.
 
@@ -140,7 +142,7 @@ ms.locfileid: "52172110"
 
 ## <a name="debugging-complex-paths"></a>Отладка сложных путей
 
-Составлять определения сложных путей может быть непросто: нужно знать тип каждого вложенного свойства или элементов в коллекции, чтобы правильно добавить следующее вложенное свойство. Однако сами типы в пути отсутствуют. Один из приемов — формировать путь поэтапно, проверяя промежуточные результаты. В последнем примере можно было начать без определения `Path`:
+Составлять определения сложных путей может быть непросто. Вам нужно знать тип каждого вложенного свойства или элементов в коллекции, чтобы правильно добавить следующее вложенное свойство. Но сами типы в пути отсутствуют. Один из приемов — формировать путь поэтапно, проверяя промежуточные результаты. В последнем примере можно было начать без определения `Path`:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},

@@ -7,19 +7,21 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 00308a6c7883d4ac6ce41592d4a0e18f9fb28d52
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3452c79621013690f967e065c7afaf0768a50c3f
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113317"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057498"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Выбор фотографии в библиотеке рисунков
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
 
 Эта статья описывает создание приложения, позволяющего пользователю выбрать фотографию в библиотеке рисунков на телефоне. Так как Xamarin.Forms не содержит эту функцию, требуется использовать [`DependencyService`](xref:Xamarin.Forms.DependencyService) для доступа к собственным API на каждой платформе.  В этой статье рассматриваются следующие этапы использования `DependencyService` для выполнения этой задачи:
 
 - **[Создание интерфейса](#Creating_the_Interface)** &ndash; сведения о создании интерфейса в общем коде.
-- **[Реализация в iOS](#iOS_Implementation)**  — сведения о реализации интерфейса в машинном коде для iOS.
+- **[Реализация в iOS](#iOS_Implementation)** &ndash; сведения о реализации интерфейса в машинном коде для iOS.
 - **[Реализация в Android](#Android_Implementation)** &ndash; сведения о реализации интерфейса в машинном коде для Android.
 - **[Реализация на универсальной платформе Windows](#UWP_Implementation)**  — сведения о реализации интерфейса в машинном коде для универсальной платформы Windows (UWP).
 - **[Реализация в общем коде](#Implementing_in_Shared_Code)**  — сведения об использовании `DependencyService` для вызова собственной реализации из общего кода.
@@ -90,11 +92,11 @@ namespace DependencyServiceSample.iOS
 
 ```
 
-Метод `GetImageStreamAsync` создает `UIImagePickerController` и инициализирует его, чтобы выбрать изображения из библиотеки фотографий. Требуется два обработчика событий: один, когда пользователь выбирает фотографию, а другой, когда пользователь отменяет отображение библиотеки фотографий. После этого `PresentModalViewController` отображает библиотеку фотографий для пользователя.
+Метод `GetImageStreamAsync` создает `UIImagePickerController` и инициализирует его, чтобы выбрать изображения из библиотеки фотографий. Требуется два обработчика событий: один, когда пользователь выбирает фотографию, и другой — когда пользователь отменяет отображение библиотеки фотографий. После этого `PresentModalViewController` отображает библиотеку фотографий для пользователя.
 
 На этом этапе метод `GetImageStreamAsync` должен возвращать объект `Task<Stream>` вызывающему его коду. Эта задача выполняется только после того, как пользователь закончил взаимодействие с библиотекой фотографий и вызван один из обработчиков событий. Для таких ситуаций крайне важен класс [`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx). Он предоставляет объект `Task` соответствующего универсального типа для возврата из метода `GetImageStreamAsync`, а позднее этому классу можно подать сигнал о выполнении задачи.
 
-Обработчик событий `FinishedPickingMedia` вызывается, когда пользователь выбирает изображение. Однако обработчик предоставляет объект `UIImage` и `Task` должен возвратить объект .NET `Stream`. Это осуществляется в два этапа: сначала объект `UIImage` преобразуется в JPEG-файл в памяти, хранящейся в объекте `NSData`, а затем объект `NSData` преобразуется в объект .NET `Stream`. Вызов метода `SetResult` объекта `TaskCompletionSource` завершает задачу, предоставляя объект `Stream`:
+Обработчик событий `FinishedPickingMedia` вызывается, когда пользователь выбирает изображение. Однако обработчик предоставляет объект `UIImage` и `Task` должен возвратить объект .NET `Stream`. Это осуществляется в два этапа: сначала объект `UIImage` преобразуется в JPEG-файл в памяти (хранится в объекте `NSData`), а затем объект `NSData` преобразуется в объект .NET `Stream`. Вызов метода `SetResult` объекта `TaskCompletionSource` завершает задачу, предоставляя объект `Stream`:
 
 ```csharp
 namespace DependencyServiceSample.iOS

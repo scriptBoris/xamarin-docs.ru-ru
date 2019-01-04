@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e31cba5c61624b0bca03443262b95d7497564750
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 62dae2f85abb7327e133f008e27e2519ccdc2f68
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675202"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53051987"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Базовые привязки Xamarin.Forms
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 Привязка данных Xamarin.Forms связывает пару свойств между двумя объектами, по крайней мере один из которых обычно является объектом пользовательского интерфейса. Эти два объекта называются *целевым объектом* и *источником*:
 
@@ -84,7 +86,7 @@ public partial class BasicCodeBindingPage : ContentPage
 
 Для свойства источника такого правила нет. Оно указывается как строка. На внутреннем уровне используется отражение для доступа к фактическому свойству. В данном случае, однако, свойство `Value` также поддерживается привязываемым свойством.
 
-Код можно упростить: привязываемое свойство `RotationProperty` определяется элементом `VisualElement` и наследуется `Label` и `ContentPage`, поэтому имя класса не требуется в вызове метода `SetBinding`:
+Код можно упростить. Привязываемое свойство `RotationProperty` определяется элементом `VisualElement` и наследуется `Label` и `ContentPage`, поэтому имя класса не требуется в вызове метода `SetBinding`:
 
 ```csharp
 label.SetBinding(RotationProperty, "Value");
@@ -135,7 +137,7 @@ BindingContext="slider"
 
 Обратите внимание, что свойство источника указано в свойстве [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) класса `BindingExtension`, которое соответствует свойству [`Path`](xref:Xamarin.Forms.Binding.Path) класса [`Binding`](xref:Xamarin.Forms.Binding).
 
-Разметку, показанную на странице **Базовая привязка XAML**, можно упростить: расширения разметки XAML, такие как `x:Reference` и `Binding`, могут иметь определенные атрибуты *свойства содержимого*, что для расширения разметки XAML означает, что имя свойства не нужно отображать. Свойство `Name` является свойством содержимого `x:Reference`, а свойство `Path` является свойством содержимого `Binding`, то есть их можно удалить из выражения:
+Разметку, показанную на странице **Базовая привязка XAML**, можно упростить. Расширения разметки XAML, такие как `x:Reference` и `Binding`, могут иметь определенные атрибуты *свойства содержимого*. Для расширения разметки XAML это означает, что имя свойства не нужно отображать. Свойство `Name` является свойством содержимого `x:Reference`, а свойство `Path` является свойством содержимого `Binding`, то есть их можно удалить из выражения:
 
 ```xaml
 <Label Text="TEXT"

@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 8efd93204b848113e0ed95c8066a5506eb517ac6
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: 2dd7efb9f295143775961afb97e70b5f241d1337
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52170953"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056127"
 ---
 # <a name="xamarinforms-string-formatting"></a>Форматирование строк Xamarin.Forms
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 Иногда привязки данных удобно использовать для отображения строкового представления объекта или значения. Например, может потребоваться использовать `Label` для отображения текущего значения `Slider`. В этой привязке данных `Slider` является источником, а целевым объектом является свойство `Text` объекта `Label`.
 
@@ -22,7 +24,7 @@ ms.locfileid: "52170953"
 
 ## <a name="the-stringformat-property"></a>Свойство StringFormat
 
-Эта функция переносится в привязки данных — вы можете задать для свойства [`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat) объекта `Binding` (или свойство [`StringFormat`](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat) расширения разметки `Binding`) стандартную строку форматирования .NET с одним заполнителем:
+Эта функция переносится в привязки данных. Вы можете задать для свойства [`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat) объекта `Binding` (или свойство [`StringFormat`](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat) расширения разметки `Binding`) стандартную строку форматирования .NET с одним заполнителем:
 
 ```xaml
 <Slider x:Name="slider" />
@@ -178,7 +180,7 @@ ms.locfileid: "52170953"
 
 Вы можете спросить, как отобразить значения RGB (красный, зеленый, синий) в традиционном двухзначном шестнадцатеричном формате. Эти целочисленные значения недоступны непосредственно из структуры `Color`. Одно решение заключается в вычислении целочисленных значений компонентов цветов в модели представления и предоставлении их в качестве свойств. Затем их можно отформатировать с помощью спецификации форматирования `X2`.
 
-Другой подход является более общим: можно написать *преобразователь значений привязки*, как описано в последующей статье [**Преобразователи значений привязки**](converters.md).
+Другой подход является более общим. Можно написать *преобразователь значений привязки*, как описано [**здесь**](converters.md).
 
 Тем не менее в следующей статье [**путь привязки**](binding-path.md) рассматривается более подробно, а также показано, как его можно использовать для ссылки на вложенные свойства и элементы в коллекциях.
 

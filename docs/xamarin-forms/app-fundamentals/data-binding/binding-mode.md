@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 03dbaa36cc1fa4a6a169f9456e0fd5b0fdc0d295
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 0e8b727fb520b6901bf397c9cfb67947897cbc8b
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563944"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53056968"
 ---
 # <a name="xamarinforms-binding-mode"></a>Режим привязки Xamarin.Forms
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 
 В [предыдущей статье](basic-bindings.md), в разделах **Альтернативная привязка кода** и **Альтернативная привязка XAML**, объект `Label` со свойством `Scale` привязывался к свойству `Value` объекта `Slider`. Так как начальное значение `Slider` равно 0, свойство `Scale` объекта `Label` также было равно 0, а не 1, поэтому объект `Label` исчезал.
 
@@ -414,9 +416,9 @@ public class SampleSettingsViewModel : INotifyPropertyChanged
 
 Каждый параметр приложения — это свойство, которое сохраняется в словаре свойств Xamarin.Forms в методе с именем `SaveState` и загружается из этого словаря в конструкторе. В конце класса есть два метода, которые помогают упростить модели представлений и снизить вероятность ошибок в них. Метод `OnPropertyChanged` внизу имеет необязательный параметр, который задается как свойство вызова. Это позволяет избежать орфографических ошибок при указании имени свойства в виде строки.
 
-Метод `SetProperty` в классе идет еще дальше: он сравнивает значение, которое задается для свойства, со значением, хранящимся в виде поля, и вызывает `OnPropertyChanged` только в случае, когда эти два значения не равны.
+Метод `SetProperty` в классе выполняет следующее. Он сравнивает значение, которое задается для свойства, со значением, хранящимся в виде поля, и вызывает `OnPropertyChanged`, только когда эти два значения не равны.
 
-Класс `SampleSettingsViewModel` определяет два свойства для фонового цвета: свойство `BackgroundNamedColor` имеет тип `NamedColor`, который как класс также входит в решение **DataBindingDemos**. Свойство `BackgroundColor` имеет тип `Color` и получается из свойства `Color` объекта `NamedColor`.
+Класс `SampleSettingsViewModel` определяет два свойства для цвета фона: свойство `BackgroundNamedColor` имеет тип `NamedColor`, который как класс также входит в решение **DataBindingDemos**. Свойство `BackgroundColor` имеет тип `Color` и получается из свойства `Color` объекта `NamedColor`.
 
 Класс `NamedColor` использует отражение .NET для перечисления всех открытых статических полей в структуре `Color` Xamarin.Forms и их хранения с именами в коллекции, доступной из статического свойства `All`:
 
@@ -562,7 +564,7 @@ public partial class App : Application
 
 Дополнительные сведения о методах жизненного цикла приложения см. в статье [**Жизненный цикл приложения**](~/xamarin-forms/app-fundamentals/app-lifecycle.md).
 
-Практически все остальное обрабатывается в файле **SampleSettingsPage.xaml**. Параметр страницы `BindingContext` задается с помощью расширения разметки `Binding`: источник привязки является статическим свойством `Application.Current`, которое является экземпляром класса `App` в проекте, а `Path` задается по свойству `Settings`, которое является объектом `SampleSettingsViewModel`:
+Практически все остальное обрабатывается в файле **SampleSettingsPage.xaml**. Параметр страницы `BindingContext` задается с помощью расширения разметки `Binding`: источник привязки является статическим свойством `Application.Current`, которое является экземпляром класса `App` в проекте, а `Path` задается по свойству `Settings`, которое является объектом `SampleSettingsViewModel`.
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

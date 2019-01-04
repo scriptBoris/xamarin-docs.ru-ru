@@ -6,13 +6,13 @@ ms.assetid: 1A674212-72DB-4AA4-B626-A4EC135AD1A0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2018
-ms.openlocfilehash: 933368f7ca1435ece4f20945b2f8e905f7584217
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 12/11/2018
+ms.openlocfilehash: 422311c766584cbd27d0ab0c42adee042e9aac3e
+ms.sourcegitcommit: 408b78dd6eded4696469e316af7922a5991f2211
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899387"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53246299"
 ---
 # <a name="xamarinforms-shell"></a>Оболочка Xamarin.Forms
 
@@ -50,7 +50,7 @@ ms.locfileid: "52899387"
 
 ## <a name="bootstrapping-a-shell-application"></a>Начальная загрузка приложения оболочки
 
-Приложение оболочки загружается путем присваивания свойству `MainPage` класса `App` нового экземпляра `Shell`:
+Приложение оболочки загружается путем присваивания свойству `MainPage` класса `App` экземпляра файла оболочки:
 
 ```csharp
 namespace TailwindTraders.Mobile
@@ -62,13 +62,13 @@ namespace TailwindTraders.Mobile
             InitializeComponent();
 
             Forms.SetFlags("Shell_Experimental");
-            MainPage = new Shell();
+            MainPage = new TheShell();
         }
     }
 }
 ```
 
-Класс `Shell` является XAML-файлом, который описывает визуальную структуру вашего приложения.
+Класс `TheShell` является XAML-файлом, который описывает визуальную структуру вашего приложения.
 
 > [!IMPORTANT]
 > Оболочка в настоящее время является экспериментальной и может использоваться только путем добавления `Forms.SetFlags("Shell_Experimental");` либо в ваш класс `App` перед созданием экземпляра `Shell`, либо в ваш проект платформы до вызова метода `Forms.Init`.
@@ -83,13 +83,13 @@ namespace TailwindTraders.Mobile
 
 Ни один из этих элементов не представляет какую-либо часть пользовательского интерфейса; вместо этого они служат для организации визуальной структуры приложения. Оболочка будет принимать эти элементы и создавать пользовательский интерфейс переходов по содержимому.
 
-Ниже представлен простой XAML-пример файла `Shell`:
+Ниже представлен простой XAML-пример файла оболочки:
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:TailwindTraders"
-       x:Class=" TailwindTraders.Shell"
+       xmlns:local="clr-namespace:TailwindTraders.Mobile.Features.Shell"
+       x:Class="TailwindTraders.Mobile.Features.Shell.TheShell"
        Title="TailwindTraders">
     <ShellItem Title="Home">
         <ShellSection>
@@ -97,7 +97,7 @@ namespace TailwindTraders.Mobile
                 <local:HomePage />
             </ShellContent>
         </ShellSection>
-    <ShellItem>
+    </ShellItem>
 </Shell>
 ```
 
@@ -117,8 +117,8 @@ namespace TailwindTraders.Mobile
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:TailwindTraders"
-       x:Class=" TailwindTraders.Shell"
+       xmlns:local="clr-namespace:TailwindTraders.Mobile.Features.Shell"
+       x:Class="TailwindTraders.Mobile.Features.Shell.TheShell"
        Title="TailwindTraders">
     <ShellItem Title="Home">
         <ShellSection>
@@ -349,7 +349,7 @@ namespace TailwindTraders.Mobile
 
 Оболочка включает навигацию на основе URI. URI предоставляют улучшенные возможности навигации по интерфейсу, позволяя переходить на любую страницу в приложении без необходимости навигации по заданной иерархии. Кроме того, они также дают возможность перехода назад без необходимости прохода всех страниц в стеке навигации.
 
-Навигация на основе URI осуществляется с помощью маршрутов, которые являются сегментами URI, используемыми для перехода в приложении. В файле `Shell` необходимо объявить схему маршрута, узел маршрутов и маршрут:
+Навигация на основе URI осуществляется с помощью маршрутов, которые являются сегментами URI, используемыми для перехода в приложении. В файле оболочки необходимо объявить схему маршрута, узел маршрутов и маршрут:
 
 ```xaml
 <Shell ...
@@ -362,9 +362,9 @@ namespace TailwindTraders.Mobile
 
 Вместе значения свойств `RouteScheme`, `RouteHost` и `Route` формируют корневой URI `app://www.microsoft.com/tailwindtraders`.
 
-Каждый элемент класса `Shell` может также определять свойство route, используемое в программных переходах.
+Каждый элемент в файле оболочки может также определять свойство route, используемое в программных переходах.
 
-В конструкторе `Shell` или любой другой части кода, которая выполняется перед вызовом маршрута, можно явно зарегистрировать дополнительные маршруты для всех страниц, которые не представлены с помощью элемента оболочки (таких как экземпляры `MenuItem`):
+В конструкторе файла оболочки или любой другой части кода, которая выполняется перед вызовом маршрута, можно явно зарегистрировать дополнительные маршруты для всех страниц, которые не представлены с помощью элемента оболочки (таких как экземпляры `MenuItem`):
 
 ```csharp
 Routing.RegisterRoute("productcategory", typeof(ProductCategoryPage));
@@ -435,7 +435,7 @@ void OnShellNavigating(object sender, ShellNavigatingEventArgs e)
 
 Класс `ShellNavigatingEventArgs` предоставляет следующие свойства:
 
-| Свойство. | Тип | Описание: |
+| Свойство. | Тип | Описание |
 |---|---|---|
 | Текущие | `ShellNavigationState` | URI текущей страницы. |
 | Исходный код | `ShellNavigationState` | URI, представляющий источник навигации. |
@@ -447,7 +447,7 @@ void OnShellNavigating(object sender, ShellNavigatingEventArgs e)
 
 Класс `ShellNavigatedEventArgs` предоставляет следующие свойства:
 
-| Свойство. | Тип | Описание: |
+| Свойство. | Тип | Описание |
 |---|---|---|
 | Текущие | `ShellNavigationState` | URI текущей страницы. |
 | Назад| `ShellNavigationState` | URI предыдущей страницы. |

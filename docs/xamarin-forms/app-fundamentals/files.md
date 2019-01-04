@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 87084a0ccc2970f56e7ef7a6d2f4c59c49032aa0
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 93218289cefe26c523bf14721202f7ec4743f022
+ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527369"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057617"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Обработка файлов в Xamarin.Forms
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
 
 _Обработку файлов в Xamarin.Forms можно выполнить с помощью кода в библиотеке .NET Standard или внедренных ресурсов._
 
@@ -62,7 +64,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 ## <a name="loading-files-embedded-as-resources"></a>Загрузка файлов, внедряемых в качестве ресурсов
 
-Чтобы внедрить файл в сборку **.NET Standard**, создайте или добавьте файл и убедитесь, что настроено **Действие при сборке: EmbeddedResource**.
+Чтобы внедрить файл в сборку **.NET Standard**, создайте или добавьте файл и убедитесь, что задана конфигурация **Build Action (Действие при сборке): EmbeddedResource**.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
