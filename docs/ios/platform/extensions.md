@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 9c28cc892536ebe841fb28e8313cf380c7f051b6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f892774b4899fcbac46e8cc7bc2b0dd0336cc036
+ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120428"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012286"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>расширениях iOS в Xamarin.iOS
 
@@ -27,7 +27,7 @@ ms.locfileid: "50120428"
 
 ## <a name="extension-points"></a>Точки расширения
 
-|Тип|Описание|Точка расширения|Узел приложения|
+|Тип|Описание:|Точка расширения|Узел приложения|
 |--- |--- |--- |--- |
 |Действие|Специализированный редактор или средство просмотра для определенного типа носителя|`com.apple.ui-services`|Любой|
 |Поставщик документа|Позволяет приложению использовать хранилище удаленных документов|`com.apple.fileprovider-ui`|Приложения, использующие [UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|

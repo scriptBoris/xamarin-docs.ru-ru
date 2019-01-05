@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: 8df8a4f5e59675164e7d06b682c61094078edc4f
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: db442f45c615b680264e79262f62062eb6a6bfd5
+ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171044"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012299"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>В приложении используется Google Maps API
 
@@ -45,7 +45,7 @@ API карт подходит для случаев, где вы хотите п
 
 ### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Установка пакета SDK служб Google Play
 
-Сервисы Google Play — это технология от Google, позволяющий приложениям Android, чтобы воспользоваться преимуществами различных функций Google Google +, выставление счетов в приложении и схем. Эти функции доступны на устройствах Android, как фоновые службы, f, содержащихся в [APK-службы Google Play](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en).
+Сервисы Google Play — это технология от Google, позволяющий приложениям Android, чтобы воспользоваться преимуществами различных функций Google Google +, выставление счетов в приложении и схем. Эти функции доступны на устройствах Android, как фоновых служб, которые содержатся в [APK-службы Google Play](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en).
 
 Android приложения взаимодействуют с помощью службы Google Play через клиентскую библиотеку служб Google Play. Эта библиотека содержит интерфейсы и классы для отдельных служб, такие как карты. Следующей схеме показана связь между Android приложения и сервисы Google Play:
 
@@ -236,7 +236,7 @@ public class MapWithMarkersActivity : AppCompatActivity, IOnMapReadyCallback
 
 На следующем рисунке показаны три различных типов карт, из слева направо (обычный, гибридное решение, ландшафта):
 
-[![Три сопоставить снимки экрана: обычный, гибридных и ландшафта](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
+[![Снимки экрана с тремя карты: Обычный, гибридных и ландшафта](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
 
 `GoogleMap.MapType` Свойство позволяет задать или изменить, какой тип карты отображается. В следующем фрагменте кода показано, как для отображения карты вспомогательную.
 
