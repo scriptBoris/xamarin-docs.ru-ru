@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 60b981a764a2656210730ae0602ff32dc580cd0a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0f4d6bb042f8bc8d48b45d7148984a53e3ce3437
+ms.sourcegitcommit: e3e851080e6ea0b77e355487a61348d8e0419b09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117568"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54060074"
 ---
 # <a name="xamarinmac-extension-support"></a>Поддержка расширения Xamarin.Mac
 
-В предварительной версии Xamarin.Mac 2.10 была добавлена поддержка нескольких точек расширения macOS:
+В Xamarin.Mac 2.10 была добавлена поддержка нескольких точек расширения macOS:
 
 - Служба поиска
 - Общий доступ
@@ -59,10 +59,10 @@ ms.locfileid: "50117568"
 
 ## <a name="summary"></a>Сводка
 
-В этой статье были предприняты никакие краткий обзор работы с расширениями в приложения с подключением Xamarin.Max версии 2.10 (больше).
+В этой статье были предприняты никакие краткий обзор работы с расширениями в версии 2.10 (и более) приложения Xamarin.Mac.
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Привет, Mac](~/mac/get-started/hello-mac.md)
 - [ExtensionSamples](https://developer.xamarin.com/samples/mac/ExtensionSamples/)
-- [Рекомендации по работе с человеческим интерфейсом OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [Рекомендации по созданию пользовательских интерфейсов в macOS](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)
