@@ -1,18 +1,19 @@
 ---
-title: 'Xamarin.Essentials: подключение'
+title: 'Xamarin.Essentials: Подключение'
 description: Класс Connectivity в Xamarin.Essentials позволяет отслеживать изменения в условиях подключения устройства к сети, проверять текущее состояние и используемый метод доступа.
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 3c29fc85d20e3a4d91a1ae63feca1cb668af141e
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 01/08/2019
+ms.custom: video
+ms.openlocfilehash: 749eec6d2000e9ffa84b1d3ac04aa575ebeb212f
+ms.sourcegitcommit: 7db5be0bb11e8914e1d1760e5f969ed17731e3a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899023"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54114970"
 ---
-# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: подключение
+# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Подключение
 
 Класс **Connectivity** позволяет отслеживать изменения в условиях подключения устройства к сети, проверять текущее состояние и используемый метод доступа.
 
@@ -116,3 +117,9 @@ public class ConnectivityTest
 
 * [Исходный код Connectivity](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
 * [Документация по API-интерфейсу Connectivity](xref:Xamarin.Essentials.Connectivity)
+
+## <a name="related-video"></a>Связанные видео
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Connectivity-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
