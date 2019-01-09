@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d83470db23b1376d18fa36c52c1daabaf68cfe0b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c61b5a8bd99afda5e8fbeea44e3362574fa7feea
+ms.sourcegitcommit: b18ceed35aa94999d13faf4a3e3177c0b9fc33b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117763"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54084585"
 ---
 # <a name="maps-in-xamarinios"></a>Карты в Xamarin.iOS
 
@@ -175,7 +175,7 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 ### <a name="overlays"></a>Наложения
 
-Другой способ слой графических элементов на карте, — использовать наложение. Наложений поддерживает рисование графического содержимого, которые масштабируются вместе с карты, так как оно увеличивается. iOS поддерживает несколько типов наложения, включая:
+Другой способ слой графических элементов на карте, — использовать наложение. Наложения позволяют рисовать графическое содержимое, которое масштабируется вместе с картой. iOS поддерживает несколько типов наложения, включая:
 
 -  Многоугольники - обычно используется для выделения некоторые области на карте.
 -  Ломаные линии -, которая происходит при отображении маршрут.
@@ -267,23 +267,23 @@ DefinesPresentationContext = true;
 
 //Set the search bar in the navigation bar
 NavigationItem.TitleView = searchController.SearchBar;
+```
 
-```csharp
-Note that you are responsible for incorporating the search bar object into the user interface. In this example, we assigned it to the TitleView of the navigation bar, but if you do not use a navigation controller in your application you will have to find another place to display it.
+Обратите внимание на то, что вы несете ответственность за включение объект панели поиска в пользовательском интерфейсе. В этом примере мы назначили для TitleView панели навигации, но если вы не используете контроллер навигации в приложении необходимо найти другое место, чтобы отобразить ее.
 
-In this code snippet, we created another custom view controller – `searchResultsController` –  that displays the search results and then we used this object to create our search controller object. We also created a new search updater, which becomes active when the user interacts with the search bar. It receives notifications about searches with each keystroke and is responsible for updating the UI.
-We will take a look at how to implement both the `searchResultsController` and the `searchResultsUpdater` later in this guide.
+В этом фрагменте кода мы создали другой пользовательский контролер представлений — `searchResultsController` —, отображающий результаты поиска, и затем мы использовали этот объект для создания контроллера нашего поиска объекта. Мы также создали новый updater поиска становится активным, когда пользователь взаимодействует с помощью панели поиска. Он получает уведомления о поиске при каждом нажатии клавиши и отвечает за обновление пользовательского интерфейса.
+Мы обратим внимание на том, как реализовать оба `searchResultsController` и `searchResultsUpdater` далее в этом руководстве.
 
-This results in a search bar displayed over the map as shown below:
+Это приводит к строке поиска, отображаемый над картой, как показано ниже:
 
- ![](images/07-searchbar.png "A search bar displayed over the map")
+ ![](images/07-searchbar.png "Панель поиска отображается над картой")
  
 
 
-### Displaying the Search Results
+### <a name="displaying-the-search-results"></a>Отображение результатов поиска
 
-To display search results, we need to create a custom View Controller; normally a `UITableViewController`. As shown above, the `searchResultsController` is passed to the constructor of the `searchController` when it is being created.
-The following code is an example of how to create this custom View Controller:
+Чтобы отобразить результаты поиска, нам необходимо создать контроллер пользовательские представления; Обычно `UITableViewController`. Как показано выше, `searchResultsController` передается в конструктор класса `searchController` при его создании.
+Ниже приведен пример создания этого пользовательского контроллера представлений:
 
 ```csharp
 public class SearchResultsViewController : UITableViewController
