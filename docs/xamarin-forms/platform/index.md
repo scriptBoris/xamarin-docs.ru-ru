@@ -6,13 +6,13 @@ ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/06/2018
-ms.openlocfilehash: 070602f05170f7d37a38b184ecd3dbb7864ac73d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 01/08/2018
+ms.openlocfilehash: 3f0156926f8d7a31e2e80318d7b05a909f158653
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118764"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207730"
 ---
 # <a name="xamarinforms-platform-features"></a>Функции платформы Xamarin.Forms
 
@@ -20,11 +20,7 @@ Xamarin.Forms расширяется и позволяет объединять 
 
 ## <a name="androidandroidindexmd"></a>[Android](android/index.md)
 
-В этом руководстве описывается реализация материальному дизайну, обновив имеющихся приложений Xamarin.Forms Android.
-
-## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Индексирование приложения и создание глубинных ссылок](deep-linking.md)
-
-Индексирование приложения позволяет приложениям, которые в противном случае забывается после использует некоторые в ногу с отображаются в результатах поиска. Создание глубинных ссылок позволяет приложениям реагировать на результат поиска, который содержит данные приложения, как правило, перейдя на страницу, на которые ссылается прямой ссылки.
+В этом руководстве описывается Android особенностей платформы Xamarin.Forms и как реализовать материальному дизайну, обновив имеющихся приложений Xamarin.Forms Android.
 
 ## <a name="device-classdevicemd"></a>[Класс устройства](device.md)
 
@@ -32,15 +28,7 @@ Xamarin.Forms расширяется и позволяет объединять 
 
 ## <a name="iosiosindexmd"></a>[iOS](ios/index.md)
 
-Некоторые стили iOS можно выполнять с помощью **Info.plist** и `UIAppearance` API. Это руководство содержит примеры для включения функции iOS 9 в приложение iOS решения Xamarin.Forms, включая поиск полезные сведения.
-
-## <a name="gtkgtkmd"></a>[GTK](gtk.md)
-
-Xamarin.Forms теперь имеет поддержку GTK # приложений в предварительной версии.
-
-## <a name="macmacmd"></a>[Mac](mac.md)
-
-Xamarin.Forms теперь имеет поддержку приложения для macOS в предварительной версии.
+В этом руководстве описаны iOS особенностей платформы Xamarin.Forms, и способы выполнения дополнительных операций ввода-вывода стиля с помощью **Info.plist** и `UIAppearance` API.
 
 ## <a name="native-formsnative-formsmd"></a>[Исходные формы](native-forms.md)
 
@@ -52,20 +40,8 @@ Xamarin.Forms теперь имеет поддержку приложения д
 
 ## <a name="platform-specificsplatform-specificsindexmd"></a>[Особенности платформы](platform-specifics/index.md)
 
-Особенности платформы позволяют использовать функциональные возможности, доступные только на определенной платформе, не требуя пользовательские модули подготовки отчетов или эффекты.
-
-## <a name="pluginspluginsmd"></a>[Подключаемые модули](plugins.md)
-
-Доступны самые разнообразные подключаемые открытым исходным кодом на Github, Nuget и Store компонента Xamarin, чтобы расширить приложений Xamarin.Forms.
-
-## <a name="tizentizenmd"></a>[Tizen](tizen.md)
-
-Tizen .NET позволяет создавать приложения .NET с помощью Xamarin.Forms и Tizen .NET Framework.
+Особенности платформы позволяют использовать функциональные возможности, доступные только на определенной платформе, не требуя пользовательские модули подготовки отчетов или эффекты. Кроме того поставщики могут создавать свои собственные особенности платформы с эффектами.
 
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
-Xamarin.Forms поддерживает для универсальной платформы Windows (UWP) в Windows 10. В этой статье описывается добавление проекта UWP в существующее решение Xamarin.Forms.
-
-## <a name="wpfwpfmd"></a>[WPF](wpf.md)
-
-Xamarin.Forms теперь включает поддержку предварительной версии, для приложений Windows Presentation Foundation (WPF).
+В этом руководстве описывается Windows особенностей платформы Xamarin.Forms, и как добавить проект UWP в существующее решение Xamarin.Forms.

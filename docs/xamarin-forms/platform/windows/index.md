@@ -1,44 +1,65 @@
 ---
-title: Компоненты платформы Windows
-description: В этой статье объясняется поддержка платформы Windows, которая доступна в Xamarin.Forms.
+title: Функции платформы Windows
+description: В этой статье описывается поддержка платформ Windows, которая доступна в Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/20/2017
-ms.openlocfilehash: 26511f6e3e0ba09830bb85d1ad6ec30072d53866
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 01/08/2018
+ms.openlocfilehash: b1ba6a9f2ee15cf078658b49124c1d9203a3f3d9
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242938"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207951"
 ---
-# <a name="windows-platform-features"></a>Компоненты платформы Windows
+# <a name="windows-platform-features"></a>Функции платформы Windows
 
-Разработка приложений Xamarin.Forms для платформ Windows требуется Visual Studio. [Странице требований](~/xamarin-forms/get-started/installation.md) содержит дополнительные сведения о необходимых компонентов.
+При разработке приложения Xamarin.Forms для платформ Windows требуется Visual Studio. [Страница "размер"](~/xamarin-forms/get-started/installation.md) содержит дополнительные сведения о необходимых компонентах.
 
-![](images/allhanselman.png "Xamarin.Forms приложений, работающих в Windows")
+![](images/allhanselman.png "Приложения Xamarin.Forms, работающие на Windows")
+
+## <a name="platform-specifics"></a>Особенности платформы
+
+Особенности платформы позволяют использовать функциональные возможности, доступные только на определенной платформе, без реализации пользовательских модулей подготовки отчетов или эффектов.
+
+Предоставляются следующие функциональные возможности платформы для представления Xamarin.Forms, страницы и макеты на универсальной платформе Windows (UWP):
+
+- Установка ключа доступа для [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Дополнительные сведения см. в разделе [VisualElement ключи доступа в Windows](#visualelement-accesskeys).
+- Отключение режима устаревших цвет в поддерживаемой [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Дополнительные сведения см. в разделе [VisualElement прежних версий цветовой режим на Windows](#legacy-color-mode).
+
+Следующие функциональные возможности платформы предоставляется для представления Xamarin.Forms для UWP:
+
+- Обнаружение, порядок чтения из текстового содержимого в [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), и [ `Label` ](xref:Xamarin.Forms.Label) экземпляров. Дополнительные сведения см. в разделе [InputView порядок чтения на Windows](#inputview-readingorder).
+- Включение поддержки жест касания в [ `ListView` ](xref:Xamarin.Forms.ListView). Дополнительные сведения см. в разделе [ListView SelectionMode в Windows](#listview-selectionmode).
+- Включение [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) для взаимодействия с подсистемой проверки орфографии. Дополнительные сведения см. в разделе [SearchBar проверку орфографии Windows](#searchbar-spellcheck).
+- Включение [ `WebView` ](xref:Xamarin.Forms.WebView) на отображение оповещений JavaScript в диалоговом окне сообщения универсальной платформы Windows. Дополнительные сведения см. в разделе [WebView предупреждения JavaScript на Windows](#webview-javascript-alert).
+
+Следующие функциональные возможности платформы предоставляется для страницы Xamarin.Forms для UWP:
+
+- Свертывание [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) панели навигации. Дополнительные сведения см. в разделе [MasterDetailPage панели навигации в Windows](#collapsable_navigation_bar).
+- Настройка параметров размещения панели инструментов. Дополнительные сведения см. в разделе [расположение панели инструментов страницы на Windows](#toolbar_placement).
+- Включение значков страниц, отображаемых на [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) панели инструментов. Дополнительные сведения см. в разделе [TabbedPage значки на Windows](#tabbedpage-icons).
 
 ## <a name="platform-support"></a>Поддержка платформ
 
-Xamarin.Forms шаблоны, доступные в Visual Studio, содержат проект универсальной платформы Windows (UWP).
+Шаблоны Xamarin.Forms, доступные в Visual Studio, содержат проект универсальной платформы Windows (UWP).
 
 > [!NOTE]
-> Поддержка 1.x и 2.x Xamarin.Forms _Windows Phone 8 Silverlight_, _Windows Phone 8.1_, и _Windows 8.1_ разработки приложений. Тем не менее являются устаревшими в этих типах проектов.
+> Поддержка версий 1.x и 2.x Xamarin.Forms _Windows Phone 8 Silverlight_, _Windows Phone 8.1_, и _Windows 8.1_ разработки приложений. Тем не менее эти типы проектов стали нерекомендуемыми.
 
 ## <a name="getting-started"></a>Начало работы
 
-Последовательно выберите пункты **файл > Создать > проект** в Visual Studio и выберите один из **кросс-платформенных > пустое приложение (Xamarin.Forms)** шаблоны, чтобы приступить к работе.
+Перейдите к **файл > Создать > проект** в Visual Studio и выберите один из **кросс-платформенных > пустое приложение (Xamarin.Forms)** шаблоны, чтобы приступить к работе.
 
-Старые решения Xamarin.Forms, так и созданных на macOS, не будет иметь все проекты Windows, перечисленных выше (но они должны быть добавлены вручную).
-Если в вашем решении, посетите еще на платформу Windows, требуется выбрать [инструкции по установке](installation/index.md) добавить нужные Windows проектов типа в секунду.
+Старые решения Xamarin.Forms, или были созданы в macOS, не будет иметь все проекты Windows, перечисленных выше (но их необходимо вручную добавить). Если на платформу Windows, необходимо еще в решении, посетите [инструкции по установке](installation/index.md) для добавления нужного Windows проект типа в секунду.
 
 ## <a name="samples"></a>Примеры
 
-[Все образцы](https://github.com/xamarin/xamarin-forms-book-preview-2) Чарльз Петцольд книги [ *Создание мобильных приложений с помощью Xamarin.Forms* ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) проекты универсальной платформы Windows (для Windows 10).
+[Все примеры](https://github.com/xamarin/xamarin-forms-book-preview-2) для книга Чарльза Петцольда [ *Создание мобильных приложений с помощью Xamarin.Forms* ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) включают в себя проекты универсальной платформы Windows (для Windows 10).
 
-[«Скотт Хансельман» демонстрационных приложений](https://github.com/jamesmontemagno/Hanselman.Forms) доступна отдельно, а также включает проекты Apple Watch и Android с (с помощью Xamarin.iOS и Xamarin.Android соответственно, Xamarin.Forms не выполняется на этих платформах).
+[«Scott Hanselman» демонстрационное приложение](https://github.com/jamesmontemagno/Hanselman.Forms) доступна отдельно, а также включают проекты Apple Watch и Android Wear (соответственно с помощью Xamarin.iOS и Xamarin.Android, Xamarin.Forms не выполняется на этих платформах).
 
 ## <a name="related-links"></a>Связанные ссылки
 

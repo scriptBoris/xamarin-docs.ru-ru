@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 5eb3348df39b8931d8cdd89d8c6f54b8bb3024a0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 6eb1e9a6f9c46fd7337003e05daa10d408fb5108
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057435"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54208016"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>Добавление данных в коллекцию элементов средства выбора
 
@@ -58,7 +58,7 @@ picker.Items.Add("Japanese Macaque");
 Объект [ `Picker` ](xref:Xamarin.Forms.Picker) поддерживает выбор одного элемента за раз. Когда пользователь выбирает элемент, [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) вызывает событие и [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) свойство обновляется в целое число, представляющее индекс выбранного элемента в списке. `SelectedIndex` Свойство — отсчитываемый от нуля номер, указывающий элемент, выбранный пользователем. Если элемент не выбран, что происходит при `Picker` сначала создается и инициализируется, `SelectedIndex` будет равно -1.
 
 > [!NOTE]
-> Элемент поведение выделения в [ `Picker` ](xref:Xamarin.Forms.Picker) можно настраивать на iOS с конкретной платформы. Дополнительные сведения см. в разделе [управление Выбор элемента](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode).
+> Элемент поведение выделения в [ `Picker` ](xref:Xamarin.Forms.Picker) можно настраивать на iOS с конкретной платформы. Дополнительные сведения см. в разделе [управление Выбор элемента](~/xamarin-forms/platform/ios/picker-selection.md).
 
 В следующем коде показано в примере `OnPickerSelectedIndexChanged` метод обработчика событий, который выполняется при [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) вызывает событие:
 

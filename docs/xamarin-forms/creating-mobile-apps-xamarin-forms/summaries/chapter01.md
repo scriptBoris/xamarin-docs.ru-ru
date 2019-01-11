@@ -7,12 +7,12 @@ ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 40f319a67ecc2ca81243c8ac7c415266c1ea0b5c
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.openlocfilehash: 58d3b3ae067913a85c3ada5f5b35e64511523ff8
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746860"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207912"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Сводка Глава 1. Как подобрать размер Xamarin.Forms?
 
@@ -49,7 +49,7 @@ Xamarin в настоящее время предоставляет средст
 - Универсальная платформа Windows для целевой платформы Windows 10
 
 > [!NOTE]
-> Xamarin.Forms больше не поддерживает Windows 8.1, Windows Phone 8.1 или Windows 10 Mobile, но приложения Xamarin.Forms выполняются на рабочем столе Windows 10. Имеется также поддержка предварительной версии для [Mac](~/xamarin-forms/platform/mac.md), [WPF](~/xamarin-forms/platform/wpf.md), [GTK #](~/xamarin-forms/platform/gtk.md), и [Tizen](~/xamarin-forms/platform/tizen.md) платформ.
+> Xamarin.Forms больше не поддерживает Windows 8.1, Windows Phone 8.1 или Windows 10 Mobile, но приложения Xamarin.Forms выполняются на рабочем столе Windows 10. Имеется также поддержка предварительной версии для [Mac](~/xamarin-forms/platform/other/mac.md), [WPF](~/xamarin-forms/platform/other/wpf.md), [GTK #](~/xamarin-forms/platform/other/gtk.md), и [Tizen](~/xamarin-forms/platform/other/tizen.md) платформ.
 
 Основная часть программы Xamarin.Forms существует в библиотеке или SAP. Каждой из платформ состоит из небольшого приложения заглушка, которая вызывает этот общий код.
 

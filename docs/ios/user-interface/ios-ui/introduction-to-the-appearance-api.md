@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/15/2018
-ms.openlocfilehash: 86055932edf82f04e11c9ae8dd684a3d77c3d830
-ms.sourcegitcommit: da2260a882dbda02732e21cad5cc9a9dd35e27e7
+ms.openlocfilehash: bfbc902b0912527fea6aaa58c6706ef5a0ccbf8e
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51709232"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207925"
 ---
 # <a name="appearance-api-in-xamarinios"></a>API внешнего вида в Xamarin.iOS
 
@@ -69,7 +69,7 @@ progress2.TrackTintColor = UIColor.FromRGB (197,255,132);
 
 ## <a name="using-uiappearance-in-xamarinforms"></a>Использование UIAppearance в Xamarin.Forms
 
-API внешнего вида могут быть полезны, при [Задание стиля приложений iOS](~/xamarin-forms/platform/ios/theme.md#uiappearance) в решения Xamarin.Forms. Несколько строк в `AppDelegate` класс может помочь в реализации конкретных цветовую схему без создания [пользовательское средство отрисовки](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
+API внешнего вида могут быть полезны, при [Задание стиля приложений iOS](~/xamarin-forms/platform/ios/formatting.md#uiappearance) в решения Xamarin.Forms. Несколько строк в `AppDelegate` класс может помочь в реализации конкретных цветовую схему без создания [пользовательское средство отрисовки](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
 ### <a name="custom-themes-and-uiappearance"></a>Пользовательские темы и UIAppearance
 
@@ -83,7 +83,7 @@ iOS позволяет многие визуальные атрибуты пол
 sg1.TintColor = UIColor.Magenta;
 ```
 
-Кроме того задайте значение в панели свойств конструктора: 
+Кроме того задайте значение в панели свойств конструктора:
 
 [![](introduction-to-the-appearance-api-images/propertiespadtint.png "Оттенок панель свойств")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
@@ -109,4 +109,4 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 - [Внешний вид (пример)](https://developer.xamarin.com/samples/monotouch/Appearance/)
 - [Справочник по протоколу UIAppearance](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/)
-- [Внешний вид в Xamarin.Forms](~/xamarin-forms/platform/ios/theme.md#uiappearance)
+- [Внешний вид в Xamarin.Forms](~/xamarin-forms/platform/ios/formatting.md#uiappearance)

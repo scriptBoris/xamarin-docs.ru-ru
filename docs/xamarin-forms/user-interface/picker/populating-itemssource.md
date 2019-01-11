@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 102ff15ea0e0002b783f993c59eb50d03a5ece63
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8e05a5f1c52183f29f22cbcd9655c26dc934e7d8
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051073"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207858"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>Задание свойства ItemsSource средства выбора
 
@@ -66,7 +66,7 @@ picker.ItemsSource = monkeyList;
 Объект [ `Picker` ](xref:Xamarin.Forms.Picker) поддерживает выбор одного элемента за раз. Когда пользователь выбирает элемент, [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) вызывает событие [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) в целое число, представляющее индекс выбранного элемента в списке, обновляется свойство и [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) обновляется `object` представляющий выбранный элемент. [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) Свойство является отсчитываемый от нуля номер, указывающий элемент, выбранный пользователем. Если элемент не выбран, что происходит при [ `Picker` ](xref:Xamarin.Forms.Picker) сначала создается и инициализируется, `SelectedIndex` будет равно -1.
 
 > [!NOTE]
-> Элемент поведение выделения в [ `Picker` ](xref:Xamarin.Forms.Picker) можно настраивать на iOS с конкретной платформы. Дополнительные сведения см. в разделе [управление Выбор элемента](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#picker_update_mode).
+> Элемент поведение выделения в [ `Picker` ](xref:Xamarin.Forms.Picker) можно настраивать на iOS с конкретной платформы. Дополнительные сведения см. в разделе [управление Выбор элемента](~/xamarin-forms/platform/ios/picker-selection.md).
 
 В следующем примере кода показано, как получить [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) значение свойства из [ `Picker` ](xref:Xamarin.Forms.Picker) в XAML:
 
@@ -178,10 +178,9 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 [ `Picker` ](xref:Xamarin.Forms.Picker) Представление является элемент управления для выбора элемента из списка данных. В этой статье описано, как заполнять `Picker` с данными, задав [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource) свойство и как реагировать на выбор элемента пользователем. Этот подход, который появился в Xamarin.Forms 2.3.4, подход рекомендуется для взаимодействия с `Picker`.
 
-
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Средство выбора Demo (пример)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
 - [Monkey приложения (пример)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
 - [Выбор привязки (пример)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
-- [Средство выбора](xref:Xamarin.Forms.Picker)
+- [Выбор API](xref:Xamarin.Forms.Picker)

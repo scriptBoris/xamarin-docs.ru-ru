@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: a1458d53cb6e57b73317bce77ebdfd5aea64acca
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 5dae8f1907b9a61018e335a8fe19ad319d95741d
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061950"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207873"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Создание мобильных приложений с помощью Xamarin.Forms (книга)
 
 [![Загрузить образец](~/media/shared/download.png) загрузить пример](https://github.com/xamarin/xamarin-forms-book-samples)
 
-<p><img src="images/cover-sml.png" title="Создание мобильных приложений с помощью Xamarin.Forms (книга)" align="left" />Книга <i>Создание мобильных приложений с помощью Xamarin.Forms</i> Чарльза Петцольда является руководство о том, как писать приложения Xamarin.Forms. Единственным предварительным условием является знание C# языка программирования. В книге предоставляет обширные исследования в пользовательском интерфейсе Xamarin.Forms и также рассматриваются анимации, MVVM, триггеры, поведений, пользовательские макеты, пользовательские модули подготовки отчетов и многое другое. 
+<p><img src="images/cover-sml.png" title="Создание мобильных приложений с помощью Xamarin.Forms (книга)" align="left" />Книга <i>Создание мобильных приложений с помощью Xamarin.Forms</i> Чарльза Петцольда является руководство о том, как писать приложения Xamarin.Forms. Единственным предварительным условием является знание C# языка программирования. В книге предоставляет обширные исследования в пользовательском интерфейсе Xamarin.Forms и также рассматриваются анимации, MVVM, триггеры, поведений, пользовательские макеты, пользовательские модули подготовки отчетов и многое другое.
 
-В книге была опубликована весной 2016 и не была обновлена с тех пор. Нам есть в книге, остается качественное, но некоторые из [материал устарел](#ways-in-which-the-book-is-outdated), и некоторые темы, не полностью правильный или завершения. 
+В книге была опубликована весной 2016 и не была обновлена с тех пор. Нам есть в книге, остается качественное, но некоторые из [материал устарел](#ways-in-which-the-book-is-outdated), и некоторые темы, не полностью правильный или завершения.
 
 ## <a name="download-ebook-for-free"></a>Загрузить электронную книгу бесплатно
 
@@ -48,7 +48,7 @@ ms.locfileid: "53061950"
 
 - Ссылки на документацию по API для более подробное описание Xamarin.Forms классов, структур, свойства, перечислений и т. д
 
-Такое краткое изложение также указывать, когда может быть материал в главе [несколько устаревшим](#ways-in-which-the-book-is-outdated). 
+Такое краткое изложение также указывать, когда может быть материал в главе [несколько устаревшим](#ways-in-which-the-book-is-outdated).
 
 ## <a name="download-chapters-and-summaries"></a>Скачайте главы и сводки
 
@@ -85,13 +85,13 @@ ms.locfileid: "53061950"
 
 ## <a name="ways-in-which-the-book-is-outdated"></a>Способами, в котором она неактуальна книги
 
-С момента публикации <i>Создание мобильных приложений с помощью Xamarin.Forms</i>, были добавлены несколько новых возможностей в Xamarin.Forms. Эти новые возможности описаны в отдельных статьях в [Xamarin.Forms](/xamarin/) документации. 
+С момента публикации <i>Создание мобильных приложений с помощью Xamarin.Forms</i>, были добавлены несколько новых возможностей в Xamarin.Forms. Эти новые возможности описаны в отдельных статьях в [Xamarin.Forms](/xamarin/) документации.
 
 Другие изменения привели некоторое содержимое книги как устаревшие:
 
 ### <a name="net-standard-20-libraries-have-replaced-portable-class-libraries"></a>Библиотеки .NET standard 2.0 заменили переносимых библиотек классов
 
-Обычно приложения Xamarin.Forms использует библиотеку для совместного использования кода между разными платформами. Первоначально это была переносимой библиотеки классов (PCL). Существует множество ссылок на профилях PCL, которые на протяжении всего в книге и Глава сводок. 
+Обычно приложения Xamarin.Forms использует библиотеку для совместного использования кода между разными платформами. Первоначально это была переносимой библиотеки классов (PCL). Существует множество ссылок на профилях PCL, которые на протяжении всего в книге и Глава сводок.
 
 В переносимой библиотеке классов был заменен с библиотекой .NET Standard 2.0, как описано в статье [.NET Standard 2.0 поддержка в Xamarin.Forms](~/xamarin-forms/internals/net-standard.md). Все [пример кода](https://github.com/xamarin/xamarin-forms-book-samples) из книги был обновлен для использования библиотек .NET Standard 2.0.
 
@@ -101,25 +101,25 @@ ms.locfileid: "53061950"
 
 ### <a name="the-role-of-xaml-has-been-elevated"></a>Была изменена роль XAML
 
-<i>Создание мобильных приложений с помощью Xamarin.Forms</i> начинается с описания способах создания приложений Xamarin.Forms с помощью C#. Расширяемый язык разметки приложений (XAML) не возникающие до [Глава 7. XAML vs. Код](summaries/chapter07.md). 
+<i>Создание мобильных приложений с помощью Xamarin.Forms</i> начинается с описания способах создания приложений Xamarin.Forms с помощью C#. Расширяемый язык разметки приложений (XAML) не возникающие до [Глава 7. XAML vs. Код](summaries/chapter07.md).
 
 XAML теперь имеет роль в Xamarin.Forms. Шаблоны решения Xamarin.Forms, в состав Visual Studio создайте файлы на основе XAML страницы. Разработчик, использующий Xamarin.Forms следует ознакомиться с XAML как можно раньше. [Расширяемого языка разметки приложений (XAML)](~/xamarin-forms/xaml/index.md) раздел документации Xamarin.Forms содержит несколько статей о XAML, чтобы приступить к работе.
 
-### <a name="supported-platforms"></a>Поддерживаемые платформы 
+### <a name="supported-platforms"></a>Поддерживаемые платформы
 
-Xamarin.Forms больше не поддерживает Windows 8.1 и Windows Phone 8.1. 
+Xamarin.Forms больше не поддерживает Windows 8.1 и Windows Phone 8.1.
 
 Книга иногда упоминаются _среды выполнения Windows_. Это условие, которое включает в себя API Windows, используемых в нескольких версиях Windows и Windows Phone. Более поздних версиях Xamarin.Forms ограничится поддержка универсальной платформы Windows API для Windows 10 и Windows 10 Mobile.
 
-Библиотеку .NET Standard 2.0 не поддерживает любой версии Windows 10 Mobile. Таким образом приложения Xamarin.Forms с помощью библиотеки .NET Standard не запустится на устройстве Windows 10 Mobile. Приложения Xamarin.Forms по-прежнему работать под управлением Windows 10 desktop, версии 10.0.16299.0 и выше. 
+Библиотеку .NET Standard 2.0 не поддерживает любой версии Windows 10 Mobile. Таким образом приложения Xamarin.Forms с помощью библиотеки .NET Standard не запустится на устройстве Windows 10 Mobile. Приложения Xamarin.Forms по-прежнему работать под управлением Windows 10 desktop, версии 10.0.16299.0 и выше.
 
-Xamarin.Forms имеет поддержку предварительной версии [Mac](~/xamarin-forms/platform/mac.md), [WPF](~/xamarin-forms/platform/wpf.md), [GTK #](~/xamarin-forms/platform/gtk.md), и [Tizen](/xamarin-forms/platform/tizen.md) платформ.
+Xamarin.Forms имеет поддержку предварительной версии [Mac](~/xamarin-forms/platform/other/mac.md), [WPF](~/xamarin-forms/platform/other/wpf.md), [GTK #](~/xamarin-forms/platform/other/gtk.md), и [Tizen](/xamarin-forms/platform/other/tizen.md) платформ.
 
 ### <a name="chapter-summaries"></a>Глава сводок
 
 Глава сводок включить информацию об изменениях в Xamarin.Forms, так как книга написана. Ниже приведены часто в виде заметки.
 
-> [!NOTE] 
+> [!NOTE]
 > Заметки на каждой странице указывают, где различаются Xamarin.Forms материал, представленный в книге.
 
 ### <a name="samples"></a>Примеры
