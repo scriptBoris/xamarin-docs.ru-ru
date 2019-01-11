@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: 0511cd1a4cf76368623c56ef53cd98323114f98e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: f69acd60d7a80607528e4a39ee6a8bfbc19711f5
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058994"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207977"
 ---
 # <a name="hierarchical-navigation"></a>Иерархическая навигация
 
@@ -344,9 +344,9 @@ public class TitleViewPage : ContentPage
 > [!IMPORTANT]
 > Многие представления не будут отображаться на панели навигации, если не указан размер представления с помощью свойств [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) и [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest). Кроме того, представление может быть заключено в [`StackLayout`](xref:Xamarin.Forms.StackLayout) со свойствами [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) и [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions), для которых установлены соответствующие значения.
 
-Поскольку класс [`Layout`](xref:Xamarin.Forms.Layout) является производным от класса [`View`](xref:Xamarin.Forms.View), присоединенное свойство [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) можно настроить для отображения класса макета, содержащего несколько представлений. В iOS и на универсальной платформе Windows (UWP) высоту панели навигации нельзя изменить, поэтому она будет обрезана, если представление, отображаемое на панели навигации, больше, чем размер панели навигации по умолчанию. В Android высоту панели навигации можно изменить, задав для привязываемого свойства [`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) значение `double`, представляющее новую высоту. Дополнительные сведения см. в разделе [Установка высоты панели навигации в объекте NavigationPage](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight).
+Поскольку класс [`Layout`](xref:Xamarin.Forms.Layout) является производным от класса [`View`](xref:Xamarin.Forms.View), присоединенное свойство [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) можно настроить для отображения класса макета, содержащего несколько представлений. В iOS и на универсальной платформе Windows (UWP) высоту панели навигации нельзя изменить, поэтому она будет обрезана, если представление, отображаемое на панели навигации, больше, чем размер панели навигации по умолчанию. В Android высоту панели навигации можно изменить, задав для привязываемого свойства [`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) значение `double`, представляющее новую высоту. Дополнительные сведения см. в разделе [Установка высоты панели навигации в объекте NavigationPage](~/xamarin-forms/platform/android/navigationpage-bar-height.md).
 
-Также панель навигации можно расширить, если поместить некоторое содержимое на панели навигации, а некоторое — в представление в верхней части страницы таким образом, чтобы цвет совпадал с панелью навигации. Кроме того, в iOS разделительную линию и тень в нижней части панели навигации можно удалить, установив для привязываемого свойства [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) значение `true`. Дополнительные сведения см. в разделе [Сокрытие разделителя панели навигации в объекте NavigationPage](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar).
+Также панель навигации можно расширить, если поместить некоторое содержимое на панели навигации, а некоторое — в представление в верхней части страницы таким образом, чтобы цвет совпадал с панелью навигации. Кроме того, в iOS разделительную линию и тень в нижней части панели навигации можно удалить, установив для привязываемого свойства [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) значение `true`. Дополнительные сведения см. в разделе [Сокрытие разделителя панели навигации в объекте NavigationPage](~/xamarin-forms/platform/ios/navigation-bar-separator.md).
 
 > [!NOTE]
 > Свойства [`BackButtonTitle`](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty), [`Title`](xref:Xamarin.Forms.Page.Title), [`TitleIcon`](xref:Xamarin.Forms.NavigationPage.TitleIconProperty) и [`TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) позволяют определять значения, которые занимают место на панели навигации. Хотя размер панели навигации зависит от платформы и размера экрана, установка всех этих свойств приведет к конфликтам из-за ограничений свободного пространства. Вместо комбинации этих свойств лучше задать желаемый дизайн панели навигации только с помощью свойства `TitleView`.
@@ -355,7 +355,7 @@ public class TitleViewPage : ContentPage
 
 Существует ряд ограничений, которые следует учитывать при отображении объекта [`View`](xref:Xamarin.Forms.View) на панели навигации [`NavigationPage`](xref:Xamarin.Forms.NavigationPage).
 
-- В iOS представления, размещенные на панели навигации `NavigationPage`, отображаются по-разному в зависимости от того, включены ли крупные заголовки. Дополнительные сведения о включении крупных заголовков см. в разделе [Отображение крупных заголовков](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title).
+- В iOS представления, размещенные на панели навигации `NavigationPage`, отображаются по-разному в зависимости от того, включены ли крупные заголовки. Дополнительные сведения о включении крупных заголовков см. в разделе [Отображение крупных заголовков](~/xamarin-forms/platform/ios/page-large-title.md).
 - В Android можно поместить представления на панели навигации `NavigationPage` только в приложениях, использующих совместимость приложений.
 - Не рекомендуется помещать большие и сложные представления, например [`ListView`](xref:Xamarin.Forms.ListView) и [`TableView`](xref:Xamarin.Forms.TableView), в строке навигации `NavigationPage`.
 
