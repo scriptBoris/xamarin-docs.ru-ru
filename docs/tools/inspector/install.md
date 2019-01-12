@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 2357003e3a855981f053c48a596b932d9ba36d90
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2bbf0bda42b7bce483d9d036ebf39314dcb73072
+ms.sourcegitcommit: fabd3b51dca6d904009d0670137c5fb5ee6c32ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104965"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249194"
 ---
 # <a name="inspector-installation-and-requirements"></a>Требования к установке инспектора и
 
@@ -52,7 +52,7 @@ ms.locfileid: "50104965"
 |Платформа приложений|Поддержка IDE|Примечания|
 |--- |--- |--- |
 |Mac|Поддерживается только в Visual Studio для Mac|
-|iOS|Поддерживается в Visual Studio 2017 и Visual Studio для Mac| |
+|iOS|Поддерживается в Visual Studio 2017 и Visual Studio для Mac| Поведение компоновщика должно быть присвоено **не компоновать** (в разделе **сборка iOS** параметры проекта) |
 |Android|Поддерживается в Visual Studio 2017 и Visual Studio для Mac|Необходимо применять Android > = 4.0.3, с помощью **fastdev** включена.<br />Необходимо использовать эмуляторы Google, Visual Studio или Xamarin Android. Эмуляторы Android 7 не должен позволять проверки в данный момент.|
 |WPF|Поддерживается только в Visual Studio 2017|
 
@@ -115,7 +115,7 @@ Visual Studio
 - Имя устройства, как показано в интерфейсе IDE
 - Версия ОС устройства
 - Android: Убедитесь, что вы используете x86 эмулятора
-- Android — Платформы эмулятора вы используете? Эмулятор Google? Эмулятор Android Visual Studio? Xamarin Android Player?
+- Android: Какие платформы эмулятора вы используете? Эмулятор Google? Эмулятор Android Visual Studio? Xamarin Android Player?
 - Правильно отлаживаемое приложение выглядеть и работать на устройстве?
 - Устройство имеет сетевое подключение (Ознакомьтесь с веб-браузер)?
 
