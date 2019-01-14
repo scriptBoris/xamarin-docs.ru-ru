@@ -6,13 +6,13 @@ ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/03/2018
-ms.openlocfilehash: 015a7dfa3d55b411e6626ae2ac70fd2930661e65
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 01/08/2018
+ms.openlocfilehash: a65946f21f8ced00e9ad64aec590df37acab1528
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898996"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207821"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Основы разработки приложения Xamarin.Forms
 
@@ -27,6 +27,10 @@ ms.locfileid: "52898996"
 ## <a name="app-lifecycleapp-lifecyclemd"></a>[Жизненный цикл приложения](app-lifecycle.md)
 
 Методы `OnStart`, `OnSleep` и `OnResume` класса `Application`, а также события модальной навигации позволяют обрабатывать события жизненного цикла приложений с помощью пользовательского кода.
+
+## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Индексирование приложения и создание глубинных ссылок](deep-linking.md)
+
+Индексирование приложения позволяет приложениям, которые в противном случае забываются после нескольких использований, оставаться релевантными благодаря отображению в результатах поиска. Создание прямых ссылок позволяет приложениям реагировать на результат поиска, который содержит данные приложения, как правило путем перехода на страницу, на которую ссылается прямая ссылка.
 
 ## <a name="behaviorsbehaviorsindexmd"></a>[Поведения](behaviors/index.md)
 
@@ -66,7 +70,7 @@ Xamarin.Forms поддерживает приложения на основе б
 
 ## <a name="messaging-centermessaging-centermd"></a>[Центр обмена сообщениями](messaging-center.md)
 
-Xamarin.Forms `MessagingCenter` позволяет просматривать модели и другие компоненты. При этом для взаимодействия вам не нужно ничего знать, кроме простого контракта сообщений.
+Класс `MessagingCenter` в Xamarin.Forms позволяет моделям представлений и другим компонентам взаимодействовать, не зная ничего друг о друге, кроме простого контракта сообщения.
 
 ## <a name="navigationnavigationindexmd"></a>[Навигация](navigation/index.md)
 
