@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 53348e15d1ecc74f50cacdd422da5c80af802d1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 54479a7ed66c83d1d97d51cc93e3df3241ec740f
+ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110723"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54207938"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Принципы проектирования API Xamarin.Android
 
@@ -111,9 +111,9 @@ if (goodSource.Count != 4) // false
 
 Методы Java преобразуются в свойства, когда это необходимо:
 
--  Пары методов Java `T getFoo()` и `void setFoo(T)` преобразуются в `Foo` свойство. Пример: [Activity.Intent](https://developer.xamarin.com/api/property/Android.App.Activity.Intent/).
+-  Пары методов Java `T getFoo()` и `void setFoo(T)` преобразуются в `Foo` свойство. Пример [Activity.Intent](https://developer.xamarin.com/api/property/Android.App.Activity.Intent/).
 
--  Следующий метод Java `getFoo()` преобразуется в свойство Foo только для чтения. Пример: [Context.PackageName](https://developer.xamarin.com/api/property/Android.Content.Context.PackageName/).
+-  Следующий метод Java `getFoo()` преобразуется в свойство Foo только для чтения. Пример [Context.PackageName](https://developer.xamarin.com/api/property/Android.Content.Context.PackageName/).
 
 -  Только для задания свойств не создаются.
 
@@ -319,9 +319,9 @@ public class Resource {
 
 Например, рассмотрим [Activity.requestWindowFeature (int featureID)](http://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int)).
 
-В таких случаях мы для группирования связанных констант в перечислении .NET и переназначить метод выполнить перечисление.
+В таких случаях для группирования связанных констант в перечислении .NET и переназначить метод выполнить перечисление.
 Таким образом, мы могут предложить выделение IntelliSense из возможных значений.
 
-Приведенный выше пример становится: [Activity.RequestWindowFeature (WindowFeatures featureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/)).
+Приведенный выше пример выглядит следующим образом: [Activity.RequestWindowFeature (WindowFeatures featureId)](https://developer.xamarin.com/api/member/Android.App.Activity.RequestWindowFeature/p/Android.Views.WindowFeatures/).
 
-Обратите внимание, что это очень ручной процесс, чтобы выяснить, какие константы связаны друг с другом, а какие интерфейсы API используют эти константы. Отправьте ошибки за любое использование констант в API, которая была бы лучше выражается как перечисление.
+Обратите внимание, что это очень ручной процесс, чтобы выяснить, какие константы связаны друг с другом, а какие интерфейсы API используют эти константы. Отправьте сведения об ошибках все константы, используемые в API, которая была бы лучше выражается как перечисление.
