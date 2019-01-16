@@ -1,18 +1,19 @@
 ---
-title: 'Xamarin.Essentials: Preferences'
+title: 'Xamarin.Essentials: Параметры'
 description: В этом документе описан класс Preferences в Xamarin.Essentials, который сохраняет параметры приложения в хранилище ключей и значений. Здесь рассматривается использование класса и типы данных, которые можно сохранить.
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 0144cdd4e12d53e0ac82af24a932825491db9e41
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 01/15/2019
+ms.custom: video
+ms.openlocfilehash: 6d57b5ce9cb61363eef24b230f6cf71894f66198
+ms.sourcegitcommit: 53f5e83f4e246be703917d7cc719c8cc959517ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899088"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54317886"
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Preferences
+# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Параметры
 
 Класс **Preferences** помогает хранить параметры приложения в хранилище ключей и значений.
 
@@ -68,7 +69,7 @@ Preferences.Clear();
 
 ## <a name="implementation-details"></a>Сведения о реализации
 
-Значения `DateTime` хранятся в двоичном 64-битном формате (длинное целое число) с использованием двух методов, определяемых классом `DateTime`. Метод [`ToBinary`](xref:System.DateTime.ToBinary) используется для шифрования значения `DateTime`. Метод [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) декодирует значение. Ознакомьтесь с документацией об этих методах для возможной корректировки декодированных значений, если сохраняется значение `DateTime` не в формате UTC.
+Значения `DateTime` хранятся в 64-разрядном двоичном формате (длинное целое) с использованием двух методов, определенных классом `DateTime`. Метод [`ToBinary`](xref:System.DateTime.ToBinary) используется для кодирования значения `DateTime`, а метод [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) декодирует значение. Ознакомьтесь с документацией об этих методах для возможной корректировки декодированных значений, если сохраняется значение `DateTime` не в формате UTC.
 
 ## <a name="platform-implementation-specifics"></a>Особенности реализации для платформ
 
@@ -98,3 +99,9 @@ Preferences.Clear();
 
 - [Исходный код класса Preferences](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
 - [Документация по API параметров](xref:Xamarin.Essentials.Preferences)
+
+## <a name="related-video"></a>Связанные видео
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Preferences-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
