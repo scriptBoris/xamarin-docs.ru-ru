@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: Battery'
+title: 'Xamarin.Essentials: Батарея'
 description: В этом документе описан класс Battery в Xamarin.Essentials, который позволяет проверить информацию об аккумуляторе устройства и отслеживать изменения.
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 3d69d082495f11c48273e9329bd2a4a61451b33f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4b3f361f2e97673c4121e81247f668eb0730199e
+ms.sourcegitcommit: 53f5e83f4e246be703917d7cc719c8cc959517ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058692"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54317873"
 ---
-# <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Battery
+# <a name="xamarinessentials-battery"></a>Xamarin.Essentials: Батарея
 
 Класс **Battery** позволяет получать сведения о батарее устройства, отслеживать изменения и просматривать информацию о состоянии энергосбережения (находится ли устройство в режиме пониженного энергопотребления). Приложениям следует избегать фоновой обработки, если на устройстве включено состояние экономии электроэнергии.
 
@@ -116,10 +116,10 @@ public class BatteryTest
     public BatteryTest()
     {
         // Register for battery changes, be sure to unsubscribe when needed
-        Battery.BatteryChanged += Battery_BatteryChanged;
+        Battery.BatteryInfoChanged += Battery_BatteryInfoChanged;
     }
 
-    void Battery_BatteryChanged(object sender, BatteryInfoChangedEventArgs   e)
+    void Battery_BatteryInfoChanged(object sender, BatteryInfoChangedEventArgs   e)
     {
         var level = e.ChargeLevel;
         var state = e.State;
@@ -148,7 +148,7 @@ public class EnergySaverTest
     public EnergySaverTest()
     {
         // Subscribe to changes of energy-saver status
-        Batter.EnergySaverStatusChanged += OnEnergySaverStatusChanged;
+        Battery.EnergySaverStatusChanged += OnEnergySaverStatusChanged;
     }
 
     private void OnEnergySaverStatusChanged(EnergySaverStatusChangedEventArgs e)
