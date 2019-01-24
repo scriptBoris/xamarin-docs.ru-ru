@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 88f973715f216f5d68eb2b3dc5582502cf5d605d
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: 84e0a5d37b757d14750f6bd3119d8695b35d7544
+ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479736"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54841371"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Геопозиционирование
 
@@ -95,7 +95,7 @@ catch (FeatureNotSupportedException fnsEx)
 {
     // Handle not supported on device exception
 }
-catch (FeatureNotEnableException fneEx)
+catch (FeatureNotEnabledException fneEx)
 {
     // Handle not enabled on device exception
 }
@@ -128,7 +128,7 @@ catch (FeatureNotSupportedException fnsEx)
 {
     // Handle not supported on device exception
 }
-catch (FeatureNotEnableException fneEx)
+catch (FeatureNotEnabledException fneEx)
 {
     // Handle not enabled on device exception
 }
@@ -197,10 +197,10 @@ catch (Exception ex)
 ```csharp
 Location boston = new Location(42.358056, -71.063611);
 Location sanFrancisco = new Location(37.783333, -122.416667);
-double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnit.Miles);
+double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Miles);
 ```
 
-В конструкторе `Location` аргументы широты и долготы указаны в следующем порядке. Положительные значения широты находятся к северу от экватора, а положительные значения долготы — к востоку от нулевого меридиана. Используйте последний аргумент `CalculateDistance`, чтобы указать единицы измерения: мили или километры. Класс `Location` также определяет методы `KilometersToMiles` и `MilesToKilometers` для преобразования между двумя единицами измерения.
+В конструкторе `Location` аргументы широты и долготы указаны в следующем порядке. Положительные значения широты находятся к северу от экватора, а положительные значения долготы — к востоку от нулевого меридиана. Используйте последний аргумент `CalculateDistance`, чтобы указать единицы измерения: мили или километры. Класс `UnitConverters` также определяет методы `KilometersToMiles` и `MilesToKilometers` для преобразования между двумя единицами измерения.
 
 ## <a name="api"></a>API
 
