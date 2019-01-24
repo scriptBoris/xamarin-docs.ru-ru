@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c761f9f11e8053dcd0960129a28251ed6acf473c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 941b88f9109cf2f3a3485311c52b1250bd08e53f
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120285"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479775"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>Часть 2 – реализация WalkingGame
 
@@ -398,7 +398,7 @@ public Rectangle CurrentRectangle
         AnimationFrame currentFrame = null;
 
         // See if we can find the frame
-        TimeSpan accumulatedTime;
+        TimeSpan accumulatedTime = new TimeSpan();
         foreach(var frame in frames)
         {
             if (accumulatedTime + frame.Duration >= timeIntoAnimation)
@@ -510,7 +510,7 @@ protected override void Update(GameTime gameTime)
 
 Далее мы добавим перемещения для наших символов, с помощью сенсорных элементов управления. Когда пользователь касается экрана, символ будет перейти к точке, где коснулись экрана. При обнаружении не штрихи, а затем обозначает символ на месте.
 
-### <a name="defining-getdesiredvelocityfrominput"></a>Определение GetDesiredVelocityFromInput
+### <a name="defining-getdesiredvelocityfrominput"></a>Defining GetDesiredVelocityFromInput
 
 Мы будем использовать его MonoGame `TouchPanel` класс, который предоставляет сведения о текущем состоянии сенсорный экран. Давайте добавим метод, согласно которому будет проверяться `TouchPanel` и возвращать нужные скорость наших символ:
 
