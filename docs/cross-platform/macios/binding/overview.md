@@ -1,16 +1,17 @@
 ---
 title: Общие сведения о привязки Objective-C
-description: Этот документ содержит обзор различных способов создания привязки C# для кода Objective-C, включая командной строки привязки, привязка проектов и Sharpie цели. Здесь также обсуждается, как работает привязка.
+description: В этом документе содержится обзор различных способов создания C# привязки для кода Objective-C, включая командной строки привязки, привязка проектов и Sharpie цели. Здесь также обсуждается, как работает привязка.
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 97d0c5b9f61d4dafe144d2b2f22df6d465cbbccb
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.date: 11/25/2015
+ms.openlocfilehash: 3f15eaf9171ac44b870239fb5ffa14edd6210360
+ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855277"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54879307"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Общие сведения о привязки Objective-C
 
@@ -18,14 +19,14 @@ _Сведения о принципах работы процесса привя
 
 Привязка библиотек Objective-C для использования с Xamarin принимает из трех этапов:
 
-1. Писать на языке C# «Определение API» для описания способа собственного API предоставления в .NET, и как она сопоставляется базовой Objective-C. Это делается с помощью стандартных C# создает как `interface` и различные привязки **атрибуты** (см. в разделе, это [простой пример](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
+1. Запись C# «Определение API» для описания способа собственного API предоставления в .NET, и как она сопоставляется базовой Objective-C. Это делается с помощью стандартных C# конструкции, такие как `interface` и различные привязки **атрибуты** (см. в разделе, это [простой пример](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
 
-2. После написания «определение API» в C# можно скомпилировать его для создания сборки «привязки». Это можно сделать на [ **командной строки** ](#commandline) или с помощью [ **проект привязки** ](#bindingproject) в Visual Studio для Mac или Visual Studio.
+2. После написания «определение API» C#, можно скомпилировать его для создания сборки «привязки». Это можно сделать на [ **командной строки** ](#commandline) или с помощью [ **проект привязки** ](#bindingproject) в Visual Studio для Mac или Visual Studio.
 
 3. Эту сборку «привязки» добавляется в проект приложения Xamarin, чтобы собственные функции с помощью API, вы определили.
   Проект привязки никак не связано с проектах приложений.
 
-**Примечание:** шаг 1 можно автоматизировать с помощью [ **Objective Sharpie**](#objectivesharpie). Он проверяет Objective-C API и создает предложенное C# «Определение API». Можно настраивать файлы, созданные программой Sharpie цели и использовать их в проекте привязки (или в командной строке) для создания привязки сборки. Цели Sharpie не приводит к созданию привязки сам по себе, он просто необязательная часть большего процесса.
+**Примечание.** Шаг 1 можно автоматизировать с помощью [ **Objective Sharpie**](#objectivesharpie). Он проверяет Objective-C API и создает предложенное C# «Определение API». Можно настраивать файлы, созданные программой Sharpie цели и использовать их в проекте привязки (или в командной строке) для создания привязки сборки. Цели Sharpie не приводит к созданию привязки сам по себе, он просто необязательная часть большего процесса.
 
 Можно также прочитать дополнительные технические сведения о [принцип работы](#howitworks), который поможет вам писать привязок.
 
@@ -33,7 +34,7 @@ _Сведения о принципах работы процесса привя
 
 ## <a name="command-line-bindings"></a>Привязки командной строки
 
-Можно использовать `btouch-native` для Xamarin.iOS (или `bmac-native` при использовании Xamarin.Mac) для создания привязок напрямую. Он работает путем передачи определений API C#, созданные вами вручную (или с помощью Sharpie цель) в средство командной строки (`btouch-native` для iOS или `bmac-native` для Mac).
+Можно использовать `btouch-native` для Xamarin.iOS (или `bmac-native` при использовании Xamarin.Mac) для создания привязок напрямую. Он работает путем передачи C# API определений, которые вы создали вручную (или, с помощью Sharpie цель) в средство командной строки (`btouch-native` для iOS или `bmac-native` для Mac).
 
 
 Ниже приведен общий синтаксис для вызова этих средств.
@@ -61,7 +62,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 <a name="objectivesharpie" />
 
-## <a name="objective-sharpie"></a>Цели Sharpie
+## <a name="objective-sharpie"></a>Objective Sharpie
 
 Цели Sharpie — средство командной строки еще одна, отдельная, которое помогает в начальной стадии создания привязки. Сама по себе не создается привязка, скорее она автоматизирует начальный этап создания определения API для целевой собственной библиотеки.
 
@@ -75,7 +76,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 Во-первых найти тип, для привязки. Обсуждение целей (и простоты), мы будем привязать [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) типа (который уже был привязан в [Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); реализация ниже просто для примера является целей).
 
-Во-вторых необходимо создать тип C#. Мы скорее всего захотите добавить его в пространстве имен. так как Objective-C не поддерживает пространства имен, необходимо использовать `[Register]` атрибут, чтобы изменить имя типа, который Xamarin.iOS будет зарегистрирован в среде выполнения Objective-C. Тип C# также должен наследовать от [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
+Во-вторых, необходимо создать C# типа. Мы скорее всего захотите добавить его в пространстве имен. так как Objective-C не поддерживает пространства имен, необходимо использовать `[Register]` атрибут, чтобы изменить имя типа, который Xamarin.iOS будет зарегистрирован в среде выполнения Objective-C. C# Тип также должен наследовать от [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
 
 ```csharp
 namespace Example.Binding {
@@ -188,5 +189,5 @@ namespace Example.Binding {
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Xamarin University курс: Создание библиотеку привязки Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University курс: Создание библиотеки привязки Objective-C с помощью цели Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Курс Xamarin University. Создание библиотеки привязки Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Курс Xamarin University. Создание библиотеки привязки Objective-C с помощью цели Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

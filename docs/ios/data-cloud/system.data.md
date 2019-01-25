@@ -6,12 +6,13 @@ ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 4e9b782cf266a96f30c79eaf139ef88332e02dca
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/25/2015
+ms.openlocfilehash: 014de47660f2c0ac8295495e417b3d5def135470
+ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119870"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54879320"
 ---
 # <a name="systemdata-in-xamarinios"></a>System.Data в Xamarin.iOS
 
@@ -110,7 +111,7 @@ class Demo {
 > Как упоминалось в приведенном выше примере, не рекомендуется, чтобы внедрять строки в командах SQL, так как он делает код уязвимым для [путем внедрения кода SQL](http://en.wikipedia.org/wiki/SQL_injection).
 
 
-### <a name="using-command-parameters"></a>С помощью параметров команды
+### <a name="using-command-parameters"></a>Использование параметров команды
 
 Приведенный ниже показано использование параметров команды вставляемый введенный пользователем текст безопасно в базе данных (даже если текст содержит специальные символы SQL, такие как апостроф один):
 
