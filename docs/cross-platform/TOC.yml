@@ -46,7 +46,7 @@ items:
         href: app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md
       - name: Часть 6. Тестирование и утверждение магазина приложений
         href: app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md
-      - name: 'Практический пример: Tasky'
+      - name: Практический пример. Tasky
         href: app-fundamentals/building-cross-platform-applications/case-study-tasky.md
     expanded: true
   - name: Общий доступ к коду
@@ -74,6 +74,8 @@ items:
         href: app-fundamentals/nuget-multiplatform-libraries/metadata.md
     - name: Пакеты NuGet (руководство)
       href: app-fundamentals/nuget-manual.md
+    - name: Использование библиотек C/C++ в кроссплатформенных приложениях
+      href: cpp/index.md
   - name: Языковая поддержка
     href: platform/index.md
     items:
@@ -190,9 +192,9 @@ items:
   - name: Примеры
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 6de69aacc37d17086e49ae1a7571879686168a42
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5eb01503b809979ebbc6598cf1cde985d3431bad
+ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50130260"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54841332"
