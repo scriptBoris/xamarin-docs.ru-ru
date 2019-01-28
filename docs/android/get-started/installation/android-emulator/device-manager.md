@@ -7,13 +7,14 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 09/06/2018
-ms.openlocfilehash: 67ab5b9bd711cb10a20b1365effea1627d0f7688
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.custom: video
+ms.date: 01/22/2019
+ms.openlocfilehash: 5618f15d60a26d2ad3d84ff0e3674936c0c01ca3
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526992"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479788"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Управление виртуальными устройствами с помощью Android Device Manager
 
@@ -388,7 +389,7 @@ Android Device Manager предназначен для создания и н�
 
    ![Расположение файла журнала для Android Device Manager](device-manager-images/win/30-log-files.png)
 
-2. Дважды щелкните, чтобы открыть один из файлов журнала, и найдите **Путь к файлу конфигурации**. Пример:
+2. Дважды щелкните, чтобы открыть один из файлов журнала, и найдите **Путь к файлу конфигурации**. Например:
 
    [![Путь к файлу конфигурации в файле журнала](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 
@@ -502,3 +503,9 @@ Android Device Manager предназначен для создания и н�
 - [Заметки о выпуске пакета SDK Tools (Google)](https://developer.android.com/studio/releases/sdk-tools)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
+
+## <a name="related-video"></a>Связанные видео
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/How-to-Create-and-Manage-Your-Own-Android-Emulators/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

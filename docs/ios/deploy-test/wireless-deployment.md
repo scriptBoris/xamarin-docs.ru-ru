@@ -6,13 +6,14 @@ ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 02/09/2018
-ms.openlocfilehash: 6e63d60d12a80abb8f229b2daf0767ad54a83314
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.custom: video
+ms.date: 01/22/2019
+ms.openlocfilehash: 6d64acdcc84c16f33a1f543bf1c9506ae7c8e347
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118907"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479697"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Беспроводное развертывание для приложений Xamarin.iOS и tvOS
 
@@ -58,7 +59,7 @@ ms.locfileid: "50118907"
 
 1. Откройте Xcode и перейдите к разделу **Window (Окно) > Devices and Simulators (Устройства и эмуляторы)**.
 2. Подключите устройства iOS к компьютеру Mac с помощью кабеля Lightning. Возможно, на устройстве нужно будет подтвердить запрос **доверять этому компьютеру**.
-3. Выберите устройство и установите флажок **Connect via network** (Подключиться через сеть), чтобы связать устройство: ![Окно "Устройства и симулятор" с выбранным вариантом подключения через сеть](wireless-deployment-images/image2.png)
+3. Выберите устройство и установите флажок **Connect via network** (Подключиться через сеть), чтобы связать устройство:  ![Окно устройства и симулятора с выбранным вариантом подключения через сеть](wireless-deployment-images/image2.png)
 
 ### <a name="pairing-an-apple-tv-with-xcode"></a>Подключение Apple TV к Xcode
 
@@ -105,3 +106,9 @@ ms.locfileid: "50118907"
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Pair a wireless device with Xcode](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad) (Подключение беспроводного устройства с помощью Xcode)
+
+## <a name="related-video"></a>Связанные видео
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Debug-to-iOS-Devices-Over-Wi-Fi/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

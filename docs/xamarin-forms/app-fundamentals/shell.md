@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2018
-ms.openlocfilehash: 422311c766584cbd27d0ab0c42adee042e9aac3e
-ms.sourcegitcommit: 408b78dd6eded4696469e316af7922a5991f2211
+ms.openlocfilehash: 41530399bfc2210e7c3eda461688c12c6235ef79
+ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53246299"
+ms.lasthandoff: 01/21/2019
+ms.locfileid: "54418677"
 ---
 # <a name="xamarinforms-shell"></a>Оболочка Xamarin.Forms
 
@@ -61,7 +61,6 @@ namespace TailwindTraders.Mobile
         {
             InitializeComponent();
 
-            Forms.SetFlags("Shell_Experimental");
             MainPage = new TheShell();
         }
     }
@@ -71,7 +70,46 @@ namespace TailwindTraders.Mobile
 Класс `TheShell` является XAML-файлом, который описывает визуальную структуру вашего приложения.
 
 > [!IMPORTANT]
-> Оболочка в настоящее время является экспериментальной и может использоваться только путем добавления `Forms.SetFlags("Shell_Experimental");` либо в ваш класс `App` перед созданием экземпляра `Shell`, либо в ваш проект платформы до вызова метода `Forms.Init`.
+> Оболочка сейчас является экспериментальной и может использоваться только путем добавления `Forms.SetFlags("Shell_Experimental");` в ваш проект платформы до вызова метода `Forms.Init`.
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+```csharp
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+    protected override void OnCreate(Bundle savedInstanceState)
+    {
+        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
+
+        TabLayoutResource = Resource.Layout.Tabbar;
+        ToolbarResource = Resource.Layout.Toolbar;
+
+        base.OnCreate(savedInstanceState);
+
+        global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+        LoadApplication(new App());
+    }
+}
+```
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+```csharp
+public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+{
+    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+    {
+        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
+
+        global::Xamarin.Forms.Forms.Init();
+        LoadApplication(new App());
+
+        return base.FinishedLaunching(app, options);
+    }
+}
+```
+
+----
 
 ## <a name="shell-file-hierarchy"></a>Иерархия файлов оболочки
 
