@@ -7,12 +7,12 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 428a8cbda43736c56b748374dc6f97649036302a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 885bba381e1371d273000fa0d970b465e9ca9c0b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057130"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233709"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>Сохранение растровых изображений SkiaSharp в файлы
 
@@ -46,7 +46,7 @@ ms.locfileid: "53057130"
 
 Кроме того [ `SKCodec` ](xref:SkiaSharp.SKCodec) класс имеет два метода с именем `Create` , можно создать `SKCodec` от сжатые исходные и позволяют приложению получить более важную роль в процессе декодирования. ( `SKCodec` Класс показан в этой статье [ **анимации точечных рисунков SkiaSharp** ](animating.md#gif-animation) в связи с декодирование анимированный GIF-файл.)
 
-Необходим при кодировании Битовая карта, Дополнительные сведения: кодировщику необходимо знать формат определенного файла, приложению необходимо использовать (JPEG или PNG или иное). При необходимости с потерями формат кодирования, также необходимо знать требуемый уровень качества.
+При кодировании растрового изображения, необходимые дополнительные сведения: Кодировщику необходимо знать, что формат файла определенного приложения хочет использовать (JPEG или PNG или иное). При необходимости с потерями формат кодирования, также необходимо знать требуемый уровень качества.
 
 `SKBitmap` Класс определяет одно [ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32)) метод со следующим синтаксисом:
 
@@ -87,7 +87,7 @@ public interface IPhotoLibrary
 
 ### <a name="the-ios-implementation"></a>Реализация iOS
 
-Реализация iOS `SavePhotoAsync` использует [ `SaveToPhotosAlbum` ](https://developer.xamarin.com/api/member/UIKit.UIImage.SaveToPhotosAlbum/) метод `UIImage`:
+Реализация iOS `SavePhotoAsync` использует [ `SaveToPhotosAlbum` ](xref:UIKit.UIImage.SaveToPhotosAlbum*) метод `UIImage`:
 
 ```csharp
 public class PhotoLibrary : IPhotoLibrary

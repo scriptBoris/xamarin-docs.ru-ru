@@ -6,12 +6,12 @@ ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
-ms.openlocfilehash: 3a2c3f98e3ba83db0794a68ff1d62a9845a111c0
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: bfca620848bef174e78d9d34b6fdc497dda8f1de
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270193"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233228"
 ---
 # <a name="sharing-code-on-multiple-platforms"></a>Совместное использование кода на нескольких платформах
 
@@ -33,10 +33,14 @@ ms.locfileid: "39270193"
 
 Проекты переносимой библиотеки классов можно создавать и распространять сборки, содержащие общий код для запуска на нескольких платформах. Для создания переносимой библиотеки классов (или «PCL») сначала выбрать какие платформы для целевой, а затем написать код для подмножество .NET Framework, которая доступна в профиле, определенных для этих платформ. PCL считается устаревшим в последних версиях Visual Studio; Разработчики, рекомендуется вместо этого использовать .NET Standard 2.0.
 
-## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[Проекты NuGet: многоплатформенного библиотек для совместного использования кода](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
+## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[Проекты NuGet: Обеспечивает реализацию многоплатформенных библиотек для совместного использования кода](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
 
 Пакеты NuGet можно автоматически создавать из проектов переносимой библиотеки Классов или .NET standard; и проектах общих можно упаковать в пакеты NuGet «с подменой», с помощью отдельный тип проекта NuGet. В этом разделе описывается создание пакетов NuGet для каждого сценария совместного использования кода.
 
 ## <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[Вручную созданию пакетов NuGet для Xamarin](~/cross-platform/app-fundamentals/nuget-manual.md)
 
 Советы по созданию пакетов NuGet, которые работают на платформе Xamarin.
+
+## <a name="use-cc-libraries-in-cross-platform-xamarin-projectscross-platformcppindexmd"></a>[Использование библиотек C/C++ в проектах Xamarin кросс платформенные](~/cross-platform/cpp/index.md)
+
+Этот метод позволяет отделить развития библиотек C/C++, C# привязки в приложения Xamarin и NuGet. Функциональность обеспечивается библиотеки платформы машинный код C/C++, но изолированный от окончательного приложения Xamarin, позволяя производительности максимальное возможное с без дублирования кода весь код конкретной платформы. 

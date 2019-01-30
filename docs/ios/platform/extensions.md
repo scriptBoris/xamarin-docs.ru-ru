@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: f892774b4899fcbac46e8cc7bc2b0dd0336cc036
-ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
+ms.openlocfilehash: 10b692099bae6f444474394144eb7e8bb46d749f
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012286"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233930"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>расширениях iOS в Xamarin.iOS
 
@@ -30,7 +30,7 @@ ms.locfileid: "54012286"
 |Тип|Описание:|Точка расширения|Узел приложения|
 |--- |--- |--- |--- |
 |Действие|Специализированный редактор или средство просмотра для определенного типа носителя|`com.apple.ui-services`|Любой|
-|Поставщик документа|Позволяет приложению использовать хранилище удаленных документов|`com.apple.fileprovider-ui`|Приложения, использующие [UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|Поставщик документа|Позволяет приложению использовать хранилище удаленных документов|`com.apple.fileprovider-ui`|Приложения, использующие [UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)|
 |Клавиатура|Альтернативный клавиатуры|`com.apple.keyboard-service`|Любой|
 |Редактирование фотографий|Манипуляций над и редактирования|`com.apple.photo-editing`|Редактор Photos.App|
 |Общий доступ|Взаимодействует с социальными сетями, обмена сообщениями, служб и т. д.|`com.apple.share-services`|Любой|
@@ -48,8 +48,8 @@ ms.locfileid: "54012286"
 - Расширения не может использовать [расширенных фоновые режимы](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
 - Расширения не может получить доступ к камеры устройства или микрофонов (несмотря на то, что они могут обращаться к существующие файлы мультимедиа)
 - Расширения не могут получать Air Drop данных (несмотря на то, что они могут передавать данные через Air Drop)
-- [UIActionSheet](https://developer.xamarin.com/api/type/UIKit.UIActionSheet/) и [UIAlertView](https://developer.xamarin.com/api/type/UIKit.UIAlertView/) недоступны; необходимо использовать расширения [UIAlertController](https://developer.xamarin.com/api/type/UIKit.UIAlertController/)
-- Несколькими членами [UIApplication](https://developer.xamarin.com/api/type/UIKit.UIApplication/) недоступны: [UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/), `UIApplication.OpenURL`, `UIApplication.BeginIgnoringInteractionEvents` и `UIApplication.EndIgnoringInteractionEvents`
+- [UIActionSheet](xref:UIKit.UIActionSheet) и [UIAlertView](xref:UIKit.UIAlertView) недоступны; необходимо использовать расширения [UIAlertController](xref:UIKit.UIAlertController)
+- Несколькими членами [UIApplication](xref:UIKit.UIApplication) недоступны: [UIApplication.SharedApplication](xref:UIKit.UIApplication.SharedApplication), [UIApplication.OpenUrl](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl)), [UIApplication.BeginIgnoringInteractionEvents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents) и [ UIApplication.EndIgnoringInteractionEvents](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
 - iOS определяет ограничение использования памяти 16 МБ на современных расширения.
 - По умолчанию клавиатуры расширений нет доступа к сети. Это влияет на отладку на устройстве (ограничение не применяется в симуляторе), так как Xamarin.iOS требуется доступ к сети для отладки. Существует возможность запроса доступа к сети, задав `Requests Open Access` значение в файле Info.plist проекта для `Yes`. См. в разделе Apple [руководство клавиатуры Custom](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html) Дополнительные сведения об ограничениях расширения клавиатуры.
 
@@ -65,11 +65,11 @@ ms.locfileid: "54012286"
 
 ## <a name="extension-lifecycle"></a>Жизненный цикл расширения
 
-Расширение может быть сложнее, чем один [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/) или более сложные расширения, которые предлагают несколько экранов пользовательского интерфейса. При обнаружении _точки расширения_ (например, когда общий доступ к изображения), они будут иметь возможность выбрать из расширения, зарегистрированные для этой точки расширения. 
+Расширение может быть сложнее, чем один [UIViewController](xref:UIKit.UIViewController) или более сложные расширения, которые предлагают несколько экранов пользовательского интерфейса. При обнаружении _точки расширения_ (например, когда общий доступ к изображения), они будут иметь возможность выбрать из расширения, зарегистрированные для этой точки расширения. 
 
 Если они выберите один из приложения, расширения, его `UIViewController` будет создан и начать обычный жизненный цикл контроллера представления. Тем не менее в отличие от обычное приложение, которая будет приостановлено, но обычно не заканчивается, когда пользователь завершает взаимодействовать с ними, расширения загружаются, выполняется и затем завершается несколько раз.
 
-Расширения могут взаимодействовать с их размещение приложений с помощью [NSExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) объекта. Некоторые расширения имеют операциям, получающим асинхронные обратные вызовы с результатами. Эти обратные вызовы выполняются в фоновых потоках и модуль должны учитывать это; Например, с помощью [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/member/Foundation.NSObject.InvokeOnMainThread/) для обновления пользовательского интерфейса. См. в разделе [взаимодействия с приложением узла](#Communicating-with-the-Host-App) Дополнительные сведения в приведенном ниже разделе.
+Расширения могут взаимодействовать с их размещение приложений с помощью [NSExtensionContext](xref:Foundation.NSExtensionContext) объекта. Некоторые расширения имеют операциям, получающим асинхронные обратные вызовы с результатами. Эти обратные вызовы выполняются в фоновых потоках и модуль должны учитывать это; Например, с помощью [NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*) для обновления пользовательского интерфейса. См. в разделе [взаимодействия с приложением узла](#Communicating-with-the-Host-App) Дополнительные сведения в приведенном ниже разделе.
 
 По умолчанию расширения и их приложения-контейнеры могут не взаимодействовать, несмотря на то, устанавливаемого вместе. В некоторых случаях приложения-контейнера является по сути пустой «доставка» контейнер, цель которых выдается после установки расширения. Тем не менее, если условиям, приложения-контейнера и расширения могут совместно использовать ресурсы из общую область. Кроме того **сегодня расширение** может запросить его приложения-контейнера для открытия URL-адрес. Это поведение отображается в [развиваться мини-приложение обратного отсчета](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo).
 
@@ -264,11 +264,11 @@ public override void ViewDidLoad ()
 
 ## <a name="communicating-with-the-host-app"></a>Взаимодействие с приложением узла
 
-Пример сегодня расширения, созданную ранее не взаимодействует с его приложение host ( **сегодня** экрана). В противном случае он будет использовать [ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) свойство `TodayViewController` или `CodeBasedViewController` классы. 
+Пример сегодня расширения, созданную ранее не взаимодействует с его приложение host ( **сегодня** экрана). В противном случае он будет использовать [ExtensionContext](xref:Foundation.NSExtensionContext) свойство `TodayViewController` или `CodeBasedViewController` классы. 
 
-Для расширений, которые будет получать данные из их размещение приложений, данные хранятся в виде массива [NSExtensionItem](https://developer.xamarin.com/api/type/Foundation.NSExtensionItem/) объектов, хранящихся в [InputItems](https://developer.xamarin.com/api/property/Foundation.NSExtensionContext.InputItems/) свойство [ExtensionContext ](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) расширения `UIViewController`.
+Для расширений, которые будет получать данные из их размещение приложений, данные хранятся в виде массива [NSExtensionItem](xref:Foundation.NSExtensionItem) объектов, хранящихся в [InputItems](xref:Foundation.NSExtensionContext.InputItems) свойство [ExtensionContext ](xref:Foundation.NSExtensionContext) расширения `UIViewController`.
 
-Другое расширение, например расширения редактирования фотографий, может различать пользователей, завершение или Отмена использования. Это будет передаваться обратно в ведущее приложение с помощью [CompleteRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CompleteRequest/) и [CancelRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CancelRequest/) методы [ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) свойство.
+Другое расширение, например расширения редактирования фотографий, может различать пользователей, завершение или Отмена использования. Это будет передаваться обратно в ведущее приложение с помощью [CompleteRequest](xref:Foundation.NSExtensionContext.CompleteRequest*) и [CancelRequest](xref:Foundation.NSExtensionContext.CancelRequest*) методы [ExtensionContext](xref:Foundation.NSExtensionContext) свойство.
 
 Дополнительные сведения см. в разделе Apple [руководство по программированию расширения приложения](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW1).
 

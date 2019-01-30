@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 25b17dbebebf7bcae92ebdc294c798101d39b987
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d5b7d4a372704079343a357c1d341a5260fcf583
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121624"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233280"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Элементы управления пользовательского интерфейса в Xamarin.iOS
 
@@ -54,13 +54,13 @@ Maps — это основная возможность во всех совре
 
 ## <a name="progress-and-activity-indicatorsprogress-activity-indicatormd"></a>[Индикаторы активности и хода выполнения](progress-activity-indicator.md)
 
-iOS предоставляет два основных способа для отображения хода выполнения в приложении: индикаторы активности (включая конкретного _сети_ индикатор активности) и индикаторы выполнения.
+iOS предоставляет два основных способа для отображения хода выполнения в приложении: Индикаторы активности (включая конкретного _сети_ индикатор активности) и индикаторы выполнения.
 
 ## <a name="search-barssearchbarmd"></a>[Панели поиска](searchbar.md)
 
 UISearchBar используется для поиска по списку значений. 
 
-## <a name="sliders-steppers-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[Ползунки, средство организации пошагового режима и Сегментированные элементы управления](slider-switch-segmented-controls.md)
+## <a name="sliders-switches-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[Ползунки, коммутаторы и сегментированные элементы управления](slider-switch-segmented-controls.md)
 
 Элемент управления "ползунок" позволяет просто выделение числового значения в диапазоне. iOS использует `UISwitch` виде логическое значение входных данных, который может быть представлен переключатель на других платформах. Сегментированный управления является возможность разрешить пользователям взаимодействовать с небольшим числом параметров.
 

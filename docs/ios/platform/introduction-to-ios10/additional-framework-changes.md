@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 6ae08264218c8f959b351f059d73fc0aebfea39e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a7b029aad69e65192d48d969dba2b9bb9a0d7a50
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118088"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233904"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>Изменения платформы дополнительных iOS 10
 
@@ -156,7 +156,7 @@ iOS 10 вносит следующие усовершенствования fram
 
 Платформа SceneKit IOS 10 были внесены следующие улучшения:
 
-- [SCNCamera](https://developer.xamarin.com/api/type/SceneKit.SCNCamera/) класс может предоставить больше реализм с помощью функций HDR и эффекты. Используйте адаптивной раскрытия для создания автоматического эффекты или виньетирование использования, каймы цвет и цвет градации Добавление fillmatic эффекты для игры.
+- [SCNCamera](xref:SceneKit.SCNCamera) класс может предоставить больше реализм с помощью функций HDR и эффекты. Используйте адаптивной раскрытия для создания автоматического эффекты или виньетирование использования, каймы цвет и цвет градации Добавление fillmatic эффекты для игры.
 - SceneKit теперь включает в себя новую систему физически основе визуализации (PBR) для более реалистичного результатов разработки, более простой ресурс.
 - Используйте новый [SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased) заливки модель, в которой продукта широкий спектр реалистичную заливку эффекты при этом не только для трех основных свойств (`Diffuse`, `Metalness` и `Roughness`).
 - С момента PBR заливки работает лучше всего с освещением, основанная на среде, используйте `LightingEnvironment` свойств образа освещения сцены целиком.
@@ -191,8 +191,8 @@ iOS 10 вносит следующие усовершенствования fram
 
 На платформе UIKit в iOS 10 были внесены следующие улучшения:
 
-- Новый [UIPasteboard](https://developer.xamarin.com/api/type/UIKit.UIPasteboard/) API предоставляет новые возможности (например, время существования ограничения) и автоматически объявляют совместимых типов содержимого для распространенных типов классов.
-- Поддержка новых анимации, полностью интерактивные, объектно ориентированного прерываемой был добавлен и могут быть связаны с помощью жестов. Pleas см. в разделе Apple [по протоколу UIViewAnimating](https://developer.apple.com/reference/uikit/uiviewanimating), [ссылки на класс UIViewPropertyAnimator](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), [по протоколу UITimingCurveProvider](https://developer.apple.com/reference/uikit/uitimingcurveprovider), [Ссылки на класс UICubicTimingParameters](https://developer.apple.com/reference/uikit/uicubictimingparameters) и [ссылки на класс UISpringTimingParameter](https://developer.apple.com/reference/uikit/uispringtimingparameters) Дополнительные сведения.
+- Новый [UIPasteboard](xref:UIKit.UIPasteboard) API предоставляет новые возможности (например, время существования ограничения) и автоматически объявляют совместимых типов содержимого для распространенных типов классов.
+- Поддержка новых анимации, полностью интерактивные, объектно ориентированного прерываемой был добавлен и могут быть связаны с помощью жестов. См. в разделе Apple [по протоколу UIViewAnimating](https://developer.apple.com/reference/uikit/uiviewanimating), [ссылки на класс UIViewPropertyAnimator](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), [по протоколу UITimingCurveProvider](https://developer.apple.com/reference/uikit/uitimingcurveprovider), [Ссылки на класс UICubicTimingParameters](https://developer.apple.com/reference/uikit/uicubictimingparameters) и [ссылки на класс UISpringTimingParameter](https://developer.apple.com/reference/uikit/uispringtimingparameters) Дополнительные сведения.
 - Новый `UIPreviewInteraction` и `UIPreviewInteractionDelegate` разрешить приложению разработчика для обеспечения пользовательского интерфейса для операций считывания и pop.
 - Новый `UIAccessibilityCustomRotor` класс позволяет приложению предоставлять пользовательские, зависящего от контекста функциональные возможности для вспомогательных технологий, таких как Voice Over.
 - Используйте `UIAccessibilityIsAssistiveTouchRunning` и `UIAccessibilityAssistiveTouchStatusDidChangeNotification` символы, чтобы определить, включена ли AssistiveTouch.

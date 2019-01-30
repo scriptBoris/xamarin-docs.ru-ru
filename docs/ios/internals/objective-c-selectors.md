@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
-ms.openlocfilehash: b51ee6b547cc53761f23379e7233bb710090a61b
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 5d3c8b6bd8f7f788a1de74feddf7fcb378fa5818
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39351734"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233644"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Селекторы Objective-C в Xamarin.iOS
 
@@ -36,9 +36,9 @@ ms.locfileid: "39351734"
 Этот API имеет следующие характеристики:
 
 - Возвращаемый тип — `CGSize` для на единый API.
-- `font` Параметр [UIFont](https://developer.xamarin.com/api/type/UIKit.UIFont/) (и тип, производный от (косвенно) [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)) и сопоставлен с [System.IntPtr](xref:System.IntPtr).
+- `font` Параметр [UIFont](xref:UIKit.UIFont) (и тип, производный от (косвенно) [NSObject](xref:Foundation.NSObject)и сопоставлен с [System.IntPtr](xref:System.IntPtr).
 - `width` Параметра `CGFloat`, сопоставляется с `nfloat`.
-- `lineBreakMode` Параметра [ `UILineBreakMode` ](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc), уже был привязан в Xamarin.iOS как [`UILineBreakMode`](https://developer.xamarin.com/api/type/UIKit.UILineBreakMode/)
+- `lineBreakMode` Параметра [ `UILineBreakMode` ](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc), уже был привязан в Xamarin.iOS как [`UILineBreakMode`](xref:UIKit.UILineBreakMode)
 Перечисление.
 
 Окончательная сборка, `objc_msgSend` объявление должно соответствовать:
@@ -149,7 +149,7 @@ else
 
 ### <a name="calling-objcmsgsend"></a>Вызов objc_msgSend
 
-`objc_msgSend` отправляет сообщение (для выбора) для объекта. Это семейство функций принимает по крайней мере два обязательных аргумента: селектор целевой объект (экземпляр или класс обработки), селектор сам и все аргументы, требуемые для селектора. Экземпляр и селектор аргументы должны быть `System.IntPtr`, и все остальные аргументы должны соответствовать типу ожидает селектор, например `nint` для `int`, или `System.IntPtr` для всех `NSObject`-производные типы. Используйте [`NSObject.Handle`](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)
+`objc_msgSend` отправляет сообщение (для выбора) для объекта. Это семейство функций принимает по крайней мере два обязательных аргумента: селектор целевой объект (экземпляр или класс обработки), селектор сам и все аргументы, требуемые для селектора. Экземпляр и селектор аргументы должны быть `System.IntPtr`, и все остальные аргументы должны соответствовать типу ожидает селектор, например `nint` для `int`, или `System.IntPtr` для всех `NSObject`-производные типы. Используйте [`NSObject.Handle`](xref:Foundation.NSObject.Handle)
 Чтобы получить `IntPtr` для экземпляра типа Objective-C.
 
 Имеется более одного `objc_msgSend` функции:

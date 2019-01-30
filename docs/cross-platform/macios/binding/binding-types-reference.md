@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 369e1a37cc75bb4d10cc71d8f79ed1dd473378ba
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9c5a3cdbc8a8d5a046db90ffa48b12709359da98
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119440"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55234034"
 ---
 # <a name="binding-types-reference-guide"></a>Привязки типов справочное руководство
 
@@ -1181,7 +1181,7 @@ public class MyClass {
 }
 ```
 
-Пользователи кода можно затем легко подписаться на уведомления отправляется [NSDefaultCenter](https://developer.xamarin.com/api/property/Foundation.NSNotificationCenter.DefaultCenter/) с помощью следующего кода:
+Пользователи кода можно затем легко подписаться на уведомления отправляется [NSDefaultCenter](xref:Foundation.NSNotificationCenter.DefaultCenter) с помощью следующего кода:
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart ((notification) => {
@@ -1203,7 +1203,7 @@ var token = MyClass.Notifications.ObserverDidStart (objectToObserve, (notificati
 token.Dispose ();
 ```
 
-Или можно вызвать [NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject//) и передать маркер. Уведомление содержит параметры, следует указать вспомогательный объект `EventArgs` интерфейса следующим образом:
+Или можно вызвать [NSNotification.DefaultCenter.RemoveObserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject)) и передать маркер. Уведомление содержит параметры, следует указать вспомогательный объект `EventArgs` интерфейса следующим образом:
 
 ```csharp
 interface MyClass {
@@ -1226,7 +1226,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-Выше создаст `MyScreenChangedEventArgs` класса `ScreenX` и `ScreenY` свойства, которые получает данные из [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) словарь с использованием ключей `ScreenXKey` и `ScreenYKey` соответственно и применить соответствующие преобразования. `[ProbePresence]` Атрибут используется для генератора для выборки данных, если задано значение ключа `UserInfo`, вместо того, чтобы извлечь значение. Используется для случаев, когда наличие ключа является значение (обычно для логических значений).
+Выше создаст `MyScreenChangedEventArgs` класса `ScreenX` и `ScreenY` свойства, которые получает данные из [NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo) словарь с использованием ключей `ScreenXKey` и `ScreenYKey` соответственно и применить соответствующие преобразования. `[ProbePresence]` Атрибут используется для генератора для выборки данных, если задано значение ключа `UserInfo`, вместо того, чтобы извлечь значение. Используется для случаев, когда наличие ключа является значение (обычно для логических значений).
 
 Это позволяет писать код следующим образом:
 
@@ -1942,13 +1942,13 @@ interface MyBinding {
 
 В Xamarin.iOS 8.0, мы добавили поддержку легко создавать строго типизированные классы, которые упаковывают `NSDictionaries`.
 
-Хотя всегда можно было использовать [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) тип данных вручную интерфейс API, теперь стало гораздо проще сделать это.  Дополнительные сведения см. в разделе [отображая строгих типов](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types).
+Хотя всегда можно было использовать [DictionaryContainer](xref:Foundation.DictionaryContainer) тип данных вручную интерфейс API, теперь стало гораздо проще сделать это.  Дополнительные сведения см. в разделе [отображая строгих типов](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types).
 
 <a name="StrongDictionary" />
 
 ### <a name="strongdictionary"></a>StrongDictionary
 
-Когда этот атрибут применяется к интерфейсу, генератор создает класс с тем же именем, что интерфейс, который является производным от [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) и включает каждого свойства, определенного в интерфейсе в строго типизированный методы получения и задания для словаря.
+Когда этот атрибут применяется к интерфейсу, генератор создает класс с тем же именем, что интерфейс, который является производным от [DictionaryContainer](xref:Foundation.DictionaryContainer) и включает каждого свойства, определенного в интерфейсе в строго типизированный методы получения и задания для словаря.
 
 Это автоматически создает класс, который может быть создан из существующего `NSDictionary` или который был создан новый.
 

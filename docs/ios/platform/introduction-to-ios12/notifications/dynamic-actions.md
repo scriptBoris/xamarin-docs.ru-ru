@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 8a2755de3dc43ccff88cbdf4dc9c4f9ba2d532c0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ddd3e1e6cc3a3a9b42ddb7a597ed2db0ee495d41
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111628"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233319"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>Кнопки действий динамического уведомлений в Xamarin.iOS
 
 В iOS 12 уведомления можно динамически добавлять, удалять и обновлять свои кнопки соответствующее действие. Подобная настройка позволяет предоставлять пользователям действия, которые непосредственно относятся к содержимому уведомления и взаимодействие пользователя с ним.
 
-## <a name="sample-app-redgreennotifications"></a>Пример приложения: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>Пример приложения. RedGreenNotifications
 
 Фрагменты кода в этом руководстве взяты из [RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications) пример приложения, который показывает, как использовать Xamarin.iOS для работы с кнопками действие уведомления в iOS 12.
 
@@ -35,9 +35,9 @@ ms.locfileid: "50111628"
 Например, в [пример приложения](#sample-app-redgreennotifications), `FinishedLaunching` метод `AppDelegate` делает следующее:
 
 - Определяет одну категорию для красного уведомлений, а другой — для зеленого уведомления
-- Регистрирует эти категории путем вызова [`SetNotificationCategories`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.SetNotificationCategories/)
+- Регистрирует эти категории путем вызова [`SetNotificationCategories`](xref:UserNotifications.UNUserNotificationCenter.SetNotificationCategories*)
 метод `UNUserNotificationCenter`
-- Присоединяет один [`UNNotificationAction`](https://developer.xamarin.com/api/type/UserNotifications.UNNotificationAction/)
+- Присоединяет один [`UNNotificationAction`](xref:UserNotifications.UNNotificationAction)
 для каждой категории
 
 В следующем примере кода показано, как это работает:
@@ -74,12 +74,12 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-На основе этого кода, все уведомления [`Content.CategoryIdentifier`](https://developer.xamarin.com/api/property/UserNotifications.UNNotificationContent.CategoryIdentifier/)
+На основе этого кода, все уведомления [`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
 оно будет «красный category» или «зеленый category», по умолчанию, show **повернуть 20°** кнопкой действия.
 
 ## <a name="in-app-handling-of-notification-action-buttons"></a>Обработка кнопки действий для уведомлений в приложении
 
-`UNUserNotificationCenter` имеет `Delegate` свойство типа [ `IUNUserNotificationCenterDelegate` ](https://developer.xamarin.com/api/type/UserNotifications.UNUserNotificationCenterDelegate_Extensions/).
+`UNUserNotificationCenter` имеет `Delegate` свойство типа [ `IUNUserNotificationCenterDelegate` ](xref:UserNotifications.IUNUserNotificationCenterDelegate).
 
 В примере приложения `AppDelegate` устанавливается как делегат центра уведомлений для пользователей в `FinishedLaunching`:
 
@@ -95,7 +95,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
         // ...
 ```
 
-Затем `AppDelegate` реализует [`DidReceiveNotificationResponse`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse/)
+Затем `AppDelegate` реализует [`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
 Чтобы обработать действие касания кнопки:
 
 ```csharp
@@ -125,7 +125,7 @@ public void DidReceiveNotificationResponse(UNUserNotificationCenter center, UNNo
 
 Расширение notification content содержит контроллер представления, который определяет пользовательский интерфейс для уведомления.
 
-Можно использовать в этом контроллере представления `GetNotificationActions` и `SetNotificationActions` методов в его [`ExtensionContext`](https://developer.xamarin.com/api/property/UIKit.UIViewController.ExtensionContext/)
+Можно использовать в этом контроллере представления `GetNotificationActions` и `SetNotificationActions` методов в его [`ExtensionContext`](xref:UIKit.UIViewController.ExtensionContext)
 свойство для доступа и изменения кнопки действий уведомления.
 
 В примере приложения контроллер представления расширение notification content изменяет кнопки действий только в том случае, при ответе на коснуться кнопки действия уже существующие.

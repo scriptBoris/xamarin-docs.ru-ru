@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: a7a3bb8f720f1c6a2370a2510659693bb28ea09b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 96fce269784ad0ac41fd1685ac7ac6b957932bd8
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111596"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233176"
 ---
 # <a name="notification-management-in-xamarinios"></a>Управление уведомлений в Xamarin.iOS
 
 В iOS 12 операционная система может прямая ссылка из центра уведомлений и параметрам приложения для экрана управления уведомлений приложения. Этот экран пользователи должны иметь возможность согласиться и за пределы различные типы уведомлений, которые приложение отправляет.
 
-## <a name="sample-app-redgreennotifications"></a>Пример приложения: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>Пример приложения. RedGreenNotifications
 
 Чтобы увидеть пример того, как работает управление уведомлениями об, взгляните на [RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications) примера приложения.
 
@@ -28,8 +28,8 @@ ms.locfileid: "50111596"
 
 ## <a name="notification-management-screen"></a>Экран управления уведомлений
 
-В примере приложения `ManageNotificationsViewController` определяет пользовательский интерфейс, который позволяет пользователям независимо друг от друга Включение и отключение уведомлений красный и зеленый уведомлений. Это стандартный [`UIViewController`](https://developer.xamarin.com/api/type/UIKit.UIViewController/)
-содержащий [ `UISwitch` ](https://developer.xamarin.com/api/type/UIKit.UISwitch/) для каждого типа уведомления. Включение и выключение коммутатора для каждого типа уведомлений сохраняет, пользовательские параметры по умолчанию, пользовательские настройки для этого типа уведомлений:
+В примере приложения `ManageNotificationsViewController` определяет пользовательский интерфейс, который позволяет пользователям независимо друг от друга Включение и отключение уведомлений красный и зеленый уведомлений. Это стандартный [`UIViewController`](xref:UIKit.UIViewController)
+содержащий [ `UISwitch` ](xref:UIKit.UISwitch) для каждого типа уведомления. Включение и выключение коммутатора для каждого типа уведомлений сохраняет, пользовательские параметры по умолчанию, пользовательские настройки для этого типа уведомлений:
 
 ```csharp
 partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
@@ -41,7 +41,7 @@ partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
 > [!NOTE]
 > На экран управления уведомлений также проверяет ли пользователь полностью отключает уведомления для приложения. Если Да, он скрывает переключатели для типов индивидуальное уведомление. Чтобы сделать это, на экран управления уведомлений:
 >
-> - Вызовы [ `UNUserNotificationCenter.Current.GetNotificationSettingsAsync` ](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync()/) и проверяет [ `AuthorizationStatus` ](https://developer.xamarin.com/api/property/UserNotifications.UNNotificationSettings.AuthorizationStatus/) свойство.
+> - Вызовы [ `UNUserNotificationCenter.Current.GetNotificationSettingsAsync` ](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync) и проверяет [ `AuthorizationStatus` ](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus) свойство.
 > - Скрывает переключатели для типов индивидуальное уведомление, если уведомления были полностью отключены для приложения.
 > - Повторно проверяет, были ли уведомления отключены каждый раз, когда приложение перемещает на передний план, так как пользователь может включить или отключить уведомления в параметрах iOS в любое время.
 
@@ -61,7 +61,7 @@ partial void HandleTapRedNotificationButton(UIButton sender)
 iOS прямые ссылки на экран управления уведомлений приложения из центра уведомлений и параметры уведомлений приложения в настройках приложения. Для этого приложения необходимо:
 
 - Что доступно экран управления уведомление путем передачи `UNAuthorizationOptions.ProvidesAppNotificationSettings` запрос авторизации для получения уведомлений приложения.
-- Реализуйте `OpenSettings` метода из [ `IUNUserNotificationCenterDelegate` ](https://developer.xamarin.com/api/type/UserNotifications.IUNUserNotificationCenterDelegate/).
+- Реализуйте `OpenSettings` метода из [ `IUNUserNotificationCenterDelegate` ](xref:UserNotifications.IUNUserNotificationCenterDelegate).
 
 ### <a name="authorization-request"></a>Запрос авторизации
 

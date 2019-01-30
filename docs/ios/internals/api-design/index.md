@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 56f9cbdae565f0d89463742377ec2311d8e375ac
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: 75904ad91df7795c538e736eabb6c6000847b449
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235055"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233657"
 ---
 # <a name="xamarinios-api-design"></a>Проектирование API Xamarin.iOS
 
@@ -92,9 +92,9 @@ Xamarin.iOS содержит ряд для сборки, которые сост
 
 #### <a name="foundation"></a>Foundation
 
-[Foundation](https://developer.xamarin.com/api/namespace/Foundation/) пространство имен предоставляет базовые типы данных предназначен для взаимодействия с платформой Foundation Objective-C, который является частью iOS и является основой для объектно-ориентированного программирования в Objective-C.
+[Foundation](xref:Foundation) пространство имен предоставляет базовые типы данных предназначен для взаимодействия с платформой Foundation Objective-C, который является частью iOS и является основой для объектно-ориентированного программирования в Objective-C.
 
-Xamarin.iOS отражает в C# иерархию классов, от Objective-C. Например, базовый класс Objective-C [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) можно использовать с помощью C# с помощью [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/).
+Xamarin.iOS отражает в C# иерархию классов, от Objective-C. Например, базовый класс Objective-C [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) можно использовать с помощью C# с помощью [Foundation.NSObject](xref:Foundation.NSObject).
 
 Несмотря на то, что это пространство имен обеспечивает привязки для базовых типов Foundation Objective-C, в некоторых случаях мы сопоставили базовые типы и типы .NET. Пример:
 
@@ -107,13 +107,13 @@ Xamarin.iOS отражает в C# иерархию классов, от Objecti
 
 ##### <a name="nsobject"></a>NSObject
 
-[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) тип является основой для всех привязок Objective-C. Типы Xamarin.iOS отражают два класса типов из cocoatouch, облегченную API для iOS: типы C (обычно называют типами CoreFoundation) и типы Objective-C (они являются производными от класса NSObject).
+[NSObject](xref:Foundation.NSObject) тип является основой для всех привязок Objective-C. Типы Xamarin.iOS отражают два класса типов из cocoatouch, облегченную API для iOS: типы C (обычно называют типами CoreFoundation) и типы Objective-C (они являются производными от класса NSObject).
 
-Для каждого типа, отражающую неуправляемого типа, можно получить через собственный объект [обрабатывать](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/) свойство.
+Для каждого типа, отражающую неуправляемого типа, можно получить через собственный объект [обрабатывать](xref:Foundation.NSObject.Handle) свойство.
 
 Хотя Mono обеспечит сбор мусора для всех объектов, `Foundation.NSObject` реализует [System.IDisposable](xref:System.IDisposable) интерфейс. Это означает, что можно явно освободить ресурсы из любой заданной NSObject без ожидания для сборщика мусора для операций в. Это важно при использовании высоких NSObjects, например, UIImages, который может содержать указатели для больших блоков данных.
 
-Если ваш тип должен осуществлять детерминированную финализацию, переопределить [NSObject.Dispose(bool) метод](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose) параметра Dispose является «bool disposing», и если задать значение true, он означает, что метод Dispose вызывается, поскольку пользователь явно вызываемые Dispose (). в объекте. Если значение равно false, это означает, что метод Dispose (bool disposing) вызывается из метода завершения в потоке метода завершения. []()
+Если ваш тип должен осуществлять детерминированную финализацию, переопределить [NSObject.Dispose(bool) метод](xref:Foundation.NSObject.Dispose(System.Boolean)) параметра Dispose является «bool disposing», и если задать значение true, он означает, что метод Dispose вызывается, поскольку пользователь явно вызываемые Dispose (). в объекте. Если значение равно false, это означает, что метод Dispose (bool disposing) вызывается из метода завершения в потоке метода завершения. []()
 
 
 ##### <a name="categories"></a>Категории
@@ -198,7 +198,7 @@ PreserveAttribute — это настраиваемый атрибут, сооб
 
 #### <a name="uikit"></a>UIKit
 
-[UIKit](https://developer.xamarin.com/api/namespace/UIKit/) пространство имен содержит взаимно-однозначное сопоставление для всех компонентов пользовательского интерфейса, составляющих cocoatouch, облегченную в виде классов C#. API был изменен для выполнения соглашения, используемые в языке C#.
+[UIKit](xref:UIKit) пространство имен содержит взаимно-однозначное сопоставление для всех компонентов пользовательского интерфейса, составляющих cocoatouch, облегченную в виде классов C#. API был изменен для выполнения соглашения, используемые в языке C#.
 
 Делегаты в C# предоставляются для выполнения распространенных операций. См. в разделе [делегаты](#Delegates) Дополнительные сведения.
 
@@ -283,7 +283,7 @@ Objective-C и C# имеют различные значения для деле
 -  Чтобы добиться нужного поведения элемента управления.
 
 
-Шаблон программирования был разработан, чтобы свести к минимуму создание производных классов для изменения поведения элемента управления. Это решение в напоминает букву и дух то других наборов средств графического пользовательского интерфейса, было выполнено с годами: в Gtk сигнал, Qt слотов, события Winforms, WPF/Silverlight события и т. д. Чтобы избежать необходимости сотни интерфейса (по одному для каждого действия) или вносить разработчикам реализовать слишком много методов, которые не обязательно, Objective-C поддерживает необязательный метод определения. Это отличается от C# интерфейсы, которые требуют все методы должны быть реализованы.
+Шаблон программирования был разработан, чтобы свести к минимуму создание производных классов для изменения поведения элемента управления. Это решение будет дух то было выполнено с годами других наборов средств графического пользовательского интерфейса: В Gtk сигнал, Qt слотов, события Winforms, WPF/Silverlight события и т. д. Чтобы избежать необходимости сотни интерфейса (по одному для каждого действия) или вносить разработчикам реализовать слишком много методов, которые не обязательно, Objective-C поддерживает необязательный метод определения. Это отличается от C# интерфейсы, которые требуют все методы должны быть реализованы.
 
 В классах Objective-C, вы увидите, что классы, использующие этот шаблон программирования предоставляют свойство, которое обычно называется `delegate`, которая необходима, чтобы реализовать обязательные элементы интерфейса и нуль или более необязательных частей.
 
@@ -301,9 +301,9 @@ Objective-C и C# имеют различные значения для деле
 
 Для многих типов Xamarin.iOS автоматически создаст соответствующий делегат, который будет пересылать `UIWebViewDelegate` звонков на C# события. Для `UIWebView`:
 
--  [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:) относящимся [UIWebView.LoadStarted](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadStarted/) событий.
--  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) относящимся [UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/) событий.
--  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) относящимся [UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/) событий.
+-  [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:) относящимся [UIWebView.LoadStarted](xref:UIKit.UIWebView.LoadStarted) событий.
+-  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) относящимся [UIWebView.LoadFinished](xref:UIKit.UIWebView.LoadFinished) событий.
+-  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) относящимся [UIWebView.LoadError](xref:UIKit.UIWebView.LoadError) событий.
 
 Например Эта простая программа записывает время начала и окончания, при просмотре веб-узел загрузки:
 
@@ -339,7 +339,7 @@ void SetupTextField (UITextField tf)
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>Строго типизированные через свойство делегата
 
-Если вы не хотите использовать события, то можете предоставить собственные [UIWebViewDelegate](https://developer.xamarin.com/api/type/UIKit.UIWebViewDelegate/) подкласс и назначьте его [UIWebView.Delegate](https://developer.xamarin.com/api/property/UIKit.UIWebView.Delegate/) свойство. После назначения UIWebView.Delegate механизм диспетчеризации событий UIWebView больше не будет работать, и методы UIWebViewDelegate будет вызываться при возникновении соответствующего события.
+Если вы не хотите использовать события, то можете предоставить собственные [UIWebViewDelegate](xref:UIKit.UIWebViewDelegate) подкласс и назначьте его [UIWebView.Delegate](xref:UIKit.UIWebView.Delegate) свойство. После назначения UIWebView.Delegate механизм диспетчеризации событий UIWebView больше не будет работать, и методы UIWebViewDelegate будет вызываться при возникновении соответствующего события.
 
 Например этот простой тип записывает время, необходимое для загрузки веб-представление:
 
@@ -368,9 +368,9 @@ web.Delegate = new Notifier ();
 
 Будет создан UIWebViewer и проинструктирует его для отправки сообщений на экземпляр Уведомитель, класс, который мы создали для ответа на сообщения.
 
-Этот шаблон также используется для управления поведением для некоторых элементов управления, например в случае UIWebView [UIWebView.ShouldStartLoad](https://developer.xamarin.com/api/property/UIKit.UIWebView.ShouldStartLoad/) свойство позволяет `UIWebView` экземпляр для элемента управления ли `UIWebView` загрузит страницы или нет.
+Этот шаблон также используется для управления поведением для некоторых элементов управления, например в случае UIWebView [UIWebView.ShouldStartLoad](xref:UIKit.UIWebView.ShouldStartLoad) свойство позволяет `UIWebView` экземпляр для элемента управления ли `UIWebView` загрузит страницы или нет.
 
-Шаблон также используется для предоставления данных по запросу для нескольких элементов управления. Например [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/) элемент управления является полем мощные прорисовки таблиц — и внешний вид и содержимое обусловлены экземпляр [UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
+Шаблон также используется для предоставления данных по запросу для нескольких элементов управления. Например [UITableView](xref:UIKit.UITableView) элемент управления является полем мощные прорисовки таблиц — и внешний вид и содержимое обусловлены экземпляр [UITableViewDataSource](xref:UIKit.UITableViewDataSource)
 
 <a name="WeakDelegate"/>
 
@@ -379,7 +379,7 @@ web.Delegate = new Notifier ();
 В дополнение к строго типизированные свойства имеется также слабый делегат типизированный, разработчик может по-разному при желании привязать.
 Строго типизированный Everywhere `Delegate` свойство также представлено в привязке в Xamarin.iOS, соответствующий `WeakDelegate` также предоставляется свойство.
 
-При использовании `WeakDelegate`, вы несете ответственность за правильно Декорирование класса с помощью [Экспорт](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) атрибут, чтобы задать область выделения. Пример:
+При использовании `WeakDelegate`, вы несете ответственность за правильно Декорирование класса с помощью [Экспорт](xref:Foundation.ExportAttribute) атрибут, чтобы задать область выделения. Пример:
 
 ```csharp
 class Notifier : NSObject  {

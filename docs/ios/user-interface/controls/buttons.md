@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2018
-ms.openlocfilehash: 35fc743944c04dd1fdb8e035ba94ad6aeb6156ea
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: a98ddc2622682f2c105a6aff32e94bd92a5b11f2
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "38986008"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233254"
 ---
 # <a name="buttons-in-xamarinios"></a>Кнопки в Xamarin.iOS
 
@@ -75,7 +75,7 @@ button.TouchUpInside += (sender, e) => {
 ```
 
 > [!NOTE]
-> `TouchUpInside` не является событием доступно только кнопки. `UIButton` является дочерний класс этого `UIControl`, который определяет [различные события](https://developer.xamarin.com/api/type/UIKit.UIControlEvent/).
+> `TouchUpInside` не является событием доступно только кнопки. `UIButton` является дочерний класс этого `UIControl`, который определяет [различные события](xref:UIKit.UIControlEvent).
 
 ### <a name="using-the-ios-designer-to-specify-button-event-handlers"></a>Использовании конструктора iOS, чтобы указать обработчики событий для кнопки
 
@@ -90,7 +90,7 @@ button.TouchUpInside += (sender, e) => {
 `UIButton` элементы управления могут существовать в нескольких различных состояний, каждый указанных по `UIControlState` значение — `Normal`, `Disabled`, `Focused`, `Highlighted`и т. д. Каждое состояние можно предоставить уникальный стиль, указанный программно или с помощью конструктора iOS.
 
 > [!NOTE]
-> Полный список всех `UIControlState` значения, взгляните на [`UIKit.UIControlState enumeration`](https://developer.xamarin.com/api/type/UIKit.UIControlState/)
+> Полный список всех `UIControlState` значения, взгляните на [`UIKit.UIControlState enumeration`](xref:UIKit.UIControlState)
 > документация.
 
 Например, чтобы задать цвет заголовка и цвет тени для `UIControlState.Normal`:

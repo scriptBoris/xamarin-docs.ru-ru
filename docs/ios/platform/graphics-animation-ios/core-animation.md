@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 3b214833de10848e69a65181cff12e3223a6b24a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a40d0911b7dabc900a4c6e50c692e4f091f22be9
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111848"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233631"
 ---
 # <a name="core-animation-in-xamarinios"></a>Core анимации в Xamarin.iOS
 
@@ -49,7 +49,7 @@ UIKit предоставляет несколько функций, которы
 
  `UIViewController` предоставляет встроенную поддержку для перехода между контроллерами представления через `PresentViewController` метод. При использовании `PresentViewController`, переход на втором контроллере при необходимости могут быть анимированы.
 
-Например, рассмотрим приложение с двумя контроллерами, которых касается кнопки в первый контроллер вызывает `PresentViewController` для отображения второй контроллер. Чтобы контролировать, какие анимации перехода, используется для отображения второго контроллера, просто присвойте его [ `ModalTransitionStyle` ](https://developer.xamarin.com/api/type/UIKit.UIModalTransitionStyle/) свойства, как показано ниже:
+Например, рассмотрим приложение с двумя контроллерами, которых касается кнопки в первый контроллер вызывает `PresentViewController` для отображения второй контроллер. Чтобы контролировать, какие анимации перехода, используется для отображения второго контроллера, просто присвойте его [ `ModalTransitionStyle` ](xref:UIKit.UIModalTransitionStyle) свойства, как показано ниже:
 
 ```csharp
 SecondViewController vc2 = new SecondViewController {
@@ -90,7 +90,7 @@ UIView.Transition (
     completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition` также принимает `duration` параметр, который определяет, сколько времени выполняется анимация, а также [ `options` ](https://developer.xamarin.com/api/type/UIKit.UIViewAnimationOptions/) Чтобы задать такие параметры, такие как анимация и функцией плавности. Кроме того можно указать обработчик завершения, который будет вызываться при завершении анимации.
+`UIView.Transition` также принимает `duration` параметр, который определяет, сколько времени выполняется анимация, а также [ `options` ](xref:UIKit.UIViewAnimationOptions) Чтобы задать такие параметры, такие как анимация и функцией плавности. Кроме того можно указать обработчик завершения, который будет вызываться при завершении анимации.
 
 Снимок экрана ниже показано анимированные переходы между изображение представления, если `TransitionFlipFromTop` используется:
 

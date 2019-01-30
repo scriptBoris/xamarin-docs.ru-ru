@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 146b05cf7ca2bbd05e952ecc9064fbb9168d179a
-ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
+ms.openlocfilehash: 650ed00557a3dd819ab2920a7646f93199b98b9e
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53609939"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233956"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Советы по устранению неполадок для Xamarin.iOS 
 
@@ -75,7 +75,7 @@ TypeName XXXX {
 
 Выше определении автоматически создается средой Visual Studio для Mac для всех файлов XIB, добавляемые в Visual Studio для Mac в `NAME_OF_YOUR_XIB_FILE.designer.xib.cs` файл.
 
-Кроме того, типы, содержащий приведенный выше код должен быть подклассом [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/).  Если содержащий тип в пространстве имен, должна быть [[регистрация]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) атрибут, который предоставляет имя типа без пространства имен (как конструктор Interface Builder не поддерживает пространства имен в типах):
+Кроме того, типы, содержащий приведенный выше код должен быть подклассом [NSObject](xref:Foundation.NSObject).  Если содержащий тип в пространстве имен, должна быть [[регистрация]](xref:Foundation.RegisterAttribute) атрибут, который предоставляет имя типа без пространства имен (как конструктор Interface Builder не поддерживает пространства имен в типах):
 
 ```csharp
 namespace Samples.GLPaint {
@@ -98,7 +98,7 @@ public partial class MyImageView : UIView {
    public MyImageView (IntPtr handle) : base (handle {}
 }
 ```
-## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>System.MissingMethodException: Не удалось найти конструкторы для Foo.Bar::ctor(System.IntPtr)
+## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>System.MissingMethodException: No constructor found for Foo.Bar::ctor(System.IntPtr)
 
 Эта ошибка возникает во время выполнения, когда код пытается создать экземпляр класса, на который существует ссылка из файла конструктора Interface Builder. Это означает, что вы забыли добавить конструктор, принимающий один IntPtr как параметр.
 
@@ -317,7 +317,7 @@ Visual Studio для Mac 2.2 содержит ошибку, которая пр�
 -  Создание пользовательских Info.plist для проекта и явно задано MinimumOSVersion 3.0 в нем.   Это переопределит значение MinimumOSVersion 3.2, заданное параметром Xamarin.iOS.   Если этого не сделать, приложение не будет работать на iPhone.
 -  Перестроение, zip и отправить в iTunes connect.
 
-## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>Необработанное исключение: System.Exception: Не удалось найти селектор someSelector: на {type}
+## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>необработанное исключение: System.Exception: Не удалось найти селектор someSelector: на {type}
 
 Это исключение вызвано одно из трех действий:
 

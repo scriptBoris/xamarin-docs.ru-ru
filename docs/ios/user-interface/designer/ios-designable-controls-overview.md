@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 00bf7290d5f7165feb5b67cd91c15a96b7d3eaf8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c409fcc018379401c1ab40573495da12a8220c5a
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118374"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233670"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Пользовательские элементы управления в конструкторе Xamarin для iOS
 
@@ -24,8 +24,8 @@ _Конструктор Xamarin для iOS поддерживает отрисо
 
 В области конструктора будет отображаться элемент управления, который соответствует следующим требованиям:
 
-1.  Она является подклассом прямых или косвенных [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/) или [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIView/Controller). Другие [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) подклассы будет отображаться в виде значка в области конструктора.
-2.  Он имеет [RegisterAttribute](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) открыть ее для Objective-C.
+1.  Она является подклассом прямых или косвенных [UIView](xref:UIKit.UIView) или [UIViewController](xref:UIKit.UIViewController). Другие [NSObject](xref:Foundation.NSObject) подклассы будет отображаться в виде значка в области конструктора.
+2.  Он имеет [RegisterAttribute](xref:Foundation.RegisterAttribute) открыть ее для Objective-C.
 3.  Он имеет [необходимый конструктор IntPtr](~/ios/internals/api-design/index.md).
 4.  Он либо реализует [IComponent](xref:System.ComponentModel.IComponent) интерфейс или имеет [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute) присвоено значение True.
 
@@ -38,17 +38,17 @@ _Конструктор Xamarin для iOS поддерживает отрисо
 Свойство, объявленное в пользовательский элемент управления будет отображаться в панели «свойства», если выполняются следующие условия:
 
 1.  Свойство имеет открытого метода получения и задания.
-1.  Свойство имеет [ExportAttribute](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) , а также [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) присвоено значение True.
-1.  Тип свойства является числовой тип, тип перечисления, string, bool, [SizeF](xref:System.Drawing.SizeF), [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/), или [UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/). Этот список поддерживаемых типов может расширяться в будущем.
+1.  Свойство имеет [ExportAttribute](xref:Foundation.ExportAttribute) , а также [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) присвоено значение True.
+1.  Тип свойства является числовой тип, тип перечисления, string, bool, [SizeF](xref:System.Drawing.SizeF), [UIColor](xref:UIKit.UIColor), или [UIImage](xref:UIKit.UIImage). Этот список поддерживаемых типов может расширяться в будущем.
 
 
 Свойство также может быть оформлен [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute) указать метку, которая отображается для него на панели «Свойства».
 
 ## <a name="initialization"></a>Инициализация
 
-Для `UIViewController` подклассов, следует использовать [ViewDidLoad](https://developer.xamarin.com/api/member/UIKit.UIViewController.ViewDidLoad/) метод для кода, который зависит от представления, созданные в конструкторе.
+Для `UIViewController` подклассов, следует использовать [ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) метод для кода, который зависит от представления, созданные в конструкторе.
 
-Для `UIView` и других `NSObject` подклассов, [AwakeFromNib](https://developer.xamarin.com/api/member/Foundation.NSObject.AwakeFromNib/) метод является рекомендуемым местом для инициализации пользовательского элемента управления после его загрузки из файла макета. Это так, как все настраиваемые свойства, заданные на панели «свойства» не будет установлен при запуске конструктора элемента управления, но они будут устанавливаться перед `AwakeFromNib` вызывается:
+Для `UIView` и других `NSObject` подклассов, [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib) метод является рекомендуемым местом для инициализации пользовательского элемента управления после его загрузки из файла макета. Это так, как все настраиваемые свойства, заданные на панели «свойства» не будет установлен при запуске конструктора элемента управления, но они будут устанавливаться перед `AwakeFromNib` вызывается:
 
 
 ```csharp
@@ -138,7 +138,7 @@ public class CustomView : UIView {
 
 В области конструктора пользовательского элемента управления должен соответствовать несколько ограничений:
 
--  Ресурсы пакета приложения не доступны в режиме конструктора. Образы доступны при загрузке с помощью [UIImage методы](https://developer.xamarin.com/api/type/UIKit.UIImage/%2fM) .
+-  Ресурсы пакета приложения не доступны в режиме конструктора. Образы доступны при загрузке с помощью [UIImage методы](xref:UIKit.UIImage) .
 -  Асинхронные операции, например веб-запросов, не должны выполняться в режиме конструктора. Области конструктора не поддерживает анимацию или других асинхронных обновлений для элемента управления пользовательского интерфейса.
 
 

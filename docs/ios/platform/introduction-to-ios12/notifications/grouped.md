@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 278986b29e629995a202f474242670f5524c45ff
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2e23bb13ad35e9a7a6386d881fe64f817ca8e216
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111604"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233267"
 ---
 # <a name="grouped-notifications-in-xamarinios"></a>Сгруппированные уведомлений в Xamarin.iOS
 
@@ -20,7 +20,7 @@ ms.locfileid: "50111604"
 
 Приложения также могут группы уведомлений потоком, что упрощает для пользователей поиск и взаимодействовать с нужной информации им интересны.
 
-## <a name="sample-app-groupednotifications"></a>Пример приложения: GroupedNotifications
+## <a name="sample-app-groupednotifications"></a>Пример приложения. GroupedNotifications
 
 Чтобы узнать, как использовать сгруппированные уведомления с помощью Xamarin.iOS, взгляните на [GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications) примера приложения.
 
@@ -30,7 +30,7 @@ ms.locfileid: "50111604"
 
 ## <a name="request-authorization-and-allow-foreground-notifications"></a>Запросить авторизацию и разрешить уведомления переднего плана
 
-Приложения для отправки локального уведомления, оно должно запросить разрешение на это. В примере приложения [ `AppDelegate` ](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/), [ `FinishedLaunching` ](https://developer.xamarin.com/api/member/UIKit.UIApplicationDelegate.FinishedLaunching/p/UIKit.UIApplication/Foundation.NSDictionary/) метод запрашивает это разрешение:
+Приложения для отправки локального уведомления, оно должно запросить разрешение на это. В примере приложения [ `AppDelegate` ](xref:UIKit.UIApplicationDelegate), [ `FinishedLaunching` ](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) метод запрашивает это разрешение:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,7 +46,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-[ `Delegate` ](https://developer.xamarin.com/api/property/UserNotifications.UNUserNotificationCenter.Delegate/) (Задайте выше) для [ `UNUserNotificationCenter` ](https://developer.xamarin.com/api/type/UserNotifications.UNUserNotificationCenter/) решает ли приложение переднего плана отобразится уведомление о входящих путем вызова обработчик завершения, передаваемый [`WillPresentNotification`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification/p/UserNotifications.IUNUserNotificationCenterDelegate/UserNotifications.UNUserNotificationCenter/UserNotifications.UNNotification/System.Action%7BUserNotifications.UNNotificationPresentationOptions%7D/):
+[ `Delegate` ](xref:UserNotifications.UNUserNotificationCenter.Delegate) (Задайте выше) для [ `UNUserNotificationCenter` ](xref:UserNotifications.UNUserNotificationCenter) решает ли приложение переднего плана отобразится уведомление о входящих путем вызова обработчик завершения, передаваемый [`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions})):
 
 ```csharp
 [Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
@@ -56,7 +56,7 @@ public void WillPresentNotification(UNUserNotificationCenter center, UNNotificat
 }
 ```
 
-[ `UNNotificationPresentationOptions.Alert` ](https://developer.xamarin.com/api/type/UserNotifications.UNNotificationPresentationOptions/) Параметр указывает, что приложение должно отображать сообщение, но не воспроизведение звука или обновить эмблему.
+[ `UNNotificationPresentationOptions.Alert` ](xref:UserNotifications.UNNotificationPresentationOptions) Параметр указывает, что приложение должно отображать сообщение, но не воспроизведение звука или обновить эмблему.
 
 ## <a name="threaded-notifications"></a>Многопоточные уведомления
 
@@ -80,8 +80,8 @@ void StartNewThread()
 Чтобы отправить уведомление потоками, пример приложения:
 
 - Проверяет, имеет ли приложение авторизации для отправки уведомления.
-- Создает [`UNMutableNotificationContent`](https://developer.xamarin.com/api/type/UserNotifications.UNMutableNotificationContent/)
-объект для уведомления содержимого и устанавливает его [`ThreadIdentifier`](https://developer.xamarin.com/api/property/UserNotifications.UNMutableNotificationContent.ThreadIdentifier/)
+- Создает [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+объект для уведомления содержимого и устанавливает его [`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
 Идентификатор потока, созданный ранее.
 - Создает запрос и планирует уведомления:
 

@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: 3f15eaf9171ac44b870239fb5ffa14edd6210360
-ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
+ms.openlocfilehash: c68cdc443f11ec6709a9d6fdde8ce10cd9db6733
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54879307"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233683"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Общие сведения о привязки Objective-C
 
@@ -72,11 +72,11 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 ## <a name="how-binding-works"></a>Как работает привязка
 
-Можно использовать [[регистрация]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) атрибут, [[Экспорт]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) атрибут, и [вызова селектора вручную Objective-C](~/ios/internals/objective-c-selectors.md) друг с другом, чтобы вручную выполнять привязку new (ранее несвязанная) типы Objective-C.
+Можно использовать [[регистрация]](xref:Foundation.RegisterAttribute) атрибут, [[Экспорт]](xref:Foundation.ExportAttribute) атрибут, и [вызова селектора вручную Objective-C](~/ios/internals/objective-c-selectors.md) друг с другом, чтобы вручную выполнять привязку new (ранее несвязанная) типы Objective-C.
 
-Во-первых найти тип, для привязки. Обсуждение целей (и простоты), мы будем привязать [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) типа (который уже был привязан в [Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); реализация ниже просто для примера является целей).
+Во-первых найти тип, для привязки. Обсуждение целей (и простоты), мы будем привязать [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) типа (который уже был привязан в [Foundation.NSEnumerator](xref:Foundation.NSEnumerator); реализация ниже просто для примера является целей).
 
-Во-вторых, необходимо создать C# типа. Мы скорее всего захотите добавить его в пространстве имен. так как Objective-C не поддерживает пространства имен, необходимо использовать `[Register]` атрибут, чтобы изменить имя типа, который Xamarin.iOS будет зарегистрирован в среде выполнения Objective-C. C# Тип также должен наследовать от [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
+Во-вторых, необходимо создать C# типа. Мы скорее всего захотите добавить его в пространстве имен. так как Objective-C не поддерживает пространства имен, необходимо использовать `[Register]` атрибут, чтобы изменить имя типа, который Xamarin.iOS будет зарегистрирован в среде выполнения Objective-C. C# Тип также должен наследовать от [Foundation.NSObject](xref:Foundation.NSObject):
 
 ```csharp
 namespace Example.Binding {

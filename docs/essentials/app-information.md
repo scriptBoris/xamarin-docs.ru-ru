@@ -1,18 +1,19 @@
 ---
-title: Xamarin.Essentials. Сведения о приложении
+title: 'Xamarin.Essentials: Сведения о приложении'
 description: В этом документе описывается класс AppInfo в Xamarin.Essentials, с помощью которого можно получить сведения о вашем приложении. Например, он предоставляет имя и версию приложения.
 ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 3e67b605e485b724ec11f2ac94dcf3d1aa77d5cf
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 01/29/2019
+ms.custom: video
+ms.openlocfilehash: fa6910c380545527f930f340536f47b548b74b12
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057303"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233215"
 ---
-# <a name="xamarinessentials-app-information"></a>Xamarin.Essentials. Сведения о приложении
+# <a name="xamarinessentials-app-information"></a>Xamarin.Essentials: Сведения о приложении
 
 Класс **AppInfo** предоставляет сведения о приложении.
 
@@ -93,3 +94,9 @@ AppInfo.ShowSettingsUI();
 
 - [Исходный код AppInfo](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
 - [Документация по API AppInfo](xref:Xamarin.Essentials.AppInfo)
+
+## <a name="related-video"></a>Связанные видео
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/App-Information-Essential-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

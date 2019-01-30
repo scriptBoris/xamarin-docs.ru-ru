@@ -6,12 +6,12 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: bdb401cd9fd3cfa1e33acec1252cfffbd8be3ebd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: da7064997b8a10d4a4604861a405e13dd23a08cf
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116645"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233917"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Изменения платформы дополнительных iOS 9
 
@@ -75,7 +75,7 @@ var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 
 ### <a name="changes-to-nsbundle"></a>Изменения в NSBundle
 
-Были внесены следующие изменения для [NSBundle](https://developer.xamarin.com/api/type/Foundation.NSBundle/) класс для iOS 9:
+Были внесены следующие изменения для [NSBundle](xref:Foundation.NSBundle) класс для iOS 9:
 
 * `GetPreservationPriorityForTag (NSString tag)` — Возвращает текущий приоритет хранения для ресурсов с помощью данного тега. Допустимые значения лежат в диапазоне `0.0` для `1.0`, сначала очищаются ресурсы с самым низким приоритетом.
 * `SetPreservationPriorityForTag (double priority, NSSet tags)` — Задает текущий приоритет хранения для ресурсов с помощью заданного тегов. Допустимые значения лежат в диапазоне `0.0` для `1.0`, сначала очищаются ресурсы с самым низким приоритетом.
@@ -84,7 +84,7 @@ var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 
 ### <a name="changes-to-nsprocessinfo"></a>Изменения в NSProcessInfo
 
-Каждого процесса, запущенного на устройстве iOS имеется один, _процесс агента сведения_ (PIA). Используйте [NSProcessInfo](https://developer.xamarin.com/api/type/Foundation.NSProcessInfo/) класс, предоставляющий сведения о текущей основных сборках ВЗАИМОДЕЙСТВИЯ и управления питанием и температурным для данного процесса.
+Каждого процесса, запущенного на устройстве iOS имеется один, _процесс агента сведения_ (PIA). Используйте [NSProcessInfo](xref:Foundation.NSProcessInfo) класс, предоставляющий сведения о текущей основных сборках ВЗАИМОДЕЙСТВИЯ и управления питанием и температурным для данного процесса.
 
 Например для управления автоматического завершения процесса можно использовать следующий код:
 
@@ -103,7 +103,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>Реагирование на режим пониженного энергопотребления
 
-Используйте `LowPowerModeEnabled` свойство [NSProcessInfo](https://developer.xamarin.com/api/type/Foundation.NSProcessInfo/) класс, чтобы определить, включен ли режим низкого потребления на устройстве iOS, на которой выполняется приложение. Пример:
+Используйте `LowPowerModeEnabled` свойство [NSProcessInfo](xref:Foundation.NSProcessInfo) класс, чтобы определить, включен ли режим низкого потребления на устройстве iOS, на которой выполняется приложение. Пример:
 
 ```csharp
 // Is the device in low power mode?
@@ -175,7 +175,7 @@ Apple включает следующие изменения для [служб 
 
 - Теперь вы можете использовать новый [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) для отображения веб-содержимого в приложении Xamarin.iOS. Он предоставляет возможность совместно использовать данные веб-сайтов и файлов cookie с помощью приложения Safari, а также некоторые функции Safari (например, средство чтения и Автозаполнение). [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) функции **сделать** кнопка, которая будет возвращать пользователей в приложение при завершении работы, просмотр веб-содержимое.
 
-Так как [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) класс предназначен для отображения на одной странице веб-содержимого, можно использовать его для замены всех [WKWebKit](https://developer.xamarin.com/api/type/WebKit.WKWebView/) или [UIWebView](https://developer.xamarin.com/api/type/UIKit.UIWebView/)элементов управления в существующие приложения Xamarin.iOS.
+Так как [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) класс предназначен для отображения на одной странице веб-содержимого, можно использовать его для замены всех [WKWebKit](xref:WebKit.WKWebView) или [UIWebView](xref:UIKit.UIWebView)элементов управления в существующие приложения Xamarin.iOS.
 
 ### <a name="displaying-a-website"></a>Отображение веб-сайта
 
@@ -191,7 +191,7 @@ PresentViewController(controller, true, null);
 
 ## <a name="uikit-framework-changes"></a>Изменения платформы UIKit
 
-Apple включает в себя множество улучшений в несколько элементов из [UIKit](https://developer.xamarin.com/api/namespace/UIKit/) платформа для iOS 9. В следующих разделах будут подробно эти изменения.
+Apple включает в себя множество улучшений в несколько элементов из [UIKit](xref:UIKit) платформа для iOS 9. В следующих разделах будут подробно эти изменения.
 
 ### <a name="3d-touch-events"></a>События 3D Touch
 
@@ -203,7 +203,7 @@ Apple включает в себя множество улучшений в не
 
 ### <a name="document-open-in-place-functionality"></a>Функциональные возможности документ открытым на месте
 
-С помощью `FinishedLaunching (application, launchOptions)` или `WillFinishLaunching (Application, launchOptions)` методы [UIApplicationDelegate](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/) класс, теперь можно открыть документ и измените его на месте (в отличие от работы на копию).
+С помощью `FinishedLaunching (application, launchOptions)` или `WillFinishLaunching (Application, launchOptions)` методы [UIApplicationDelegate](xref:UIKit.UIApplicationDelegate) класс, теперь можно открыть документ и измените его на месте (в отличие от работы на копию).
 
 Для поддержки новых функциональных возможностей открытым на месте, добавьте `LSSupportsOpeningDocumentsInPlace` ключа в приложение Xamarin.iOS **Info.plist** файла со значением `YES`.
 
@@ -221,7 +221,7 @@ Apple предоставляет ряд дополнительных возмо�
 
 ### <a name="new-layout-anchors"></a>Новый макет привязки
 
-Новый `NSLayoutAnchor` и `NSLayoutDimension` классы привязки макета, работают с новыми свойствами привязки из [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/) класс (такие как `LeadingAnchor` и `WidthAnchor`) для упрощения макета в iOS 9.
+Новый `NSLayoutAnchor` и `NSLayoutDimension` классы привязки макета, работают с новыми свойствами привязки из [UIView](xref:UIKit.UIView) класс (такие как `LeadingAnchor` и `WidthAnchor`) для упрощения макета в iOS 9.
 
 См. наш [Знакомство с унифицированным раскадровкам](~/ios/user-interface/storyboards/unified-storyboards.md) Дополнительные сведения о работе с Автомакет и размеры в приложение Xamarin.iOS и Apple [ссылку NSLayoutAnchor](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor), [ Справочник по NSLayoutDimension](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension) и [UIView ссылки](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView) Дополнительные сведения.
 
@@ -231,11 +231,11 @@ Apple предоставляет ряд дополнительных возмо�
 
 ### <a name="text-input-in-notifications-modifications"></a>Ввод текста в уведомления изменения
 
-[UIUserNotificationAction](https://developer.xamarin.com/api/type/UIKit.UIUserNotificationAction/) классе определено новое `Behavior` свойство, которое может использоваться для поддержки ввода текста на уведомления.
+[UIUserNotificationAction](xref:UIKit.UIUserNotificationAction) классе определено новое `Behavior` свойство, которое может использоваться для поддержки ввода текста на уведомления.
 
 ### <a name="uiapplicationdelegate-changes"></a>Изменения UIApplicationDelegate
 
-Хотя формально не устарела компанией Apple, они предлагают, заменив все вызовы `FinishedLaunching (UIApplication application)` метод [UIApplicationDelegate](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/) класс `FinishedLaunching (UIApplication application, NSDictionary launchOptions)` или `WillFinishLaunching (UIApplication application, NSDictionary launchOptions)` методы.
+Хотя формально не устарела компанией Apple, они предлагают, заменив все вызовы `FinishedLaunching (UIApplication application)` метод [UIApplicationDelegate](xref:UIKit.UIApplicationDelegate) класс `FinishedLaunching (UIApplication application, NSDictionary launchOptions)` или `WillFinishLaunching (UIApplication application, NSDictionary launchOptions)` методы.
 
 См. в разделе Apple [UIApplicationDelegate ссылку](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intf/UIApplicationDelegate) для получения дополнительных сведений.
 
@@ -251,13 +251,13 @@ Apple предоставляет ряд дополнительных возмо�
 
 ### <a name="uipickerview-and-uidatepicker-changes"></a>UIPickerView и UIDatePicker изменения
 
-До iOS 9 [UIPickerView](https://developer.xamarin.com/api/type/UIKit.UIPickerView/) и [UIDatePicker](https://developer.xamarin.com/api/type/UIKit.UIDatePicker/) элементы управления были неизменяемый и будет автоматически изменить для заполнения контейнера (обычно ширину устройства iOS, приложение для запуска на).
+До iOS 9 [UIPickerView](xref:UIKit.UIPickerView) и [UIDatePicker](xref:UIKit.UIDatePicker) элементы управления были неизменяемый и будет автоматически изменить для заполнения контейнера (обычно ширину устройства iOS, приложение для запуска на).
 
 В iOS 9 это автоматическое изменение размеров исчезновения и элементы управления, которые будут передаваться в ширину 320 точек на всех устройствах iOS, независимо от размера и ориентации экрана.
 
 Чтобы исправить эту ситуацию, используйте автоматический макет и размеры закрепить ширину элемента управления к краям родительского контейнера (представление), а также укажите требуемую высоту. См. в нашем [Знакомство с унифицированным раскадровкам](~/ios/user-interface/storyboards/unified-storyboards.md) Дополнительные сведения о работе с автоматический макет и размер классов в приложении Xamarin.iOS.
 
-### <a name="new-uitextinputassistantitem-class"></a>Новый класс UITextInputAssistantItem
+### <a name="new-uitextinputassistantitem-class"></a>New UITextInputAssistantItem Class
 
 Используйте новый `UITextInputAssistantItem` класса группы кнопок панели макета в _панель_. Панель является новой области, доступные в программируемой клавиатуры для предоставления ввода клавиш.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 31b4c6e98945cd7b5dd4cea8be6f5e3857444f78
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d4a90ee0b85144269d80815820fe09fa0fcd3c58
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50132061"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233163"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>Временное уведомлений в Xamarin.iOS
 
@@ -20,13 +20,13 @@ ms.locfileid: "50132061"
 
 В центре уведомлений пользователи могут указать, что приложения следует остановить доставки уведомлений, вы можете по-прежнему условно их доставку и доставлять их наиболее вероятными.
 
-## <a name="sample-app-redgreennotifications"></a>Пример приложения: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>Пример приложения. RedGreenNotifications
 
 Взгляните на [RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications) пример приложения, который отправляет уведомления временное.
 
 ## <a name="sending-provisional-notifications"></a>Отправка уведомлений временное
 
-Для отправки уведомлений, вы можете предоставить `UNAuthorizationOptions.Provisional` как параметр [`RequestAuthorization`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.RequestAuthorization/)
+Для отправки уведомлений, вы можете предоставить `UNAuthorizationOptions.Provisional` как параметр [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
 метод `UNUserNotificationCenter`:
 
 ```csharp

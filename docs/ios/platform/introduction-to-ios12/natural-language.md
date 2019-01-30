@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/20/2018
-ms.openlocfilehash: b0a5d3e75ebbcd70a60a3e4e76eebe166117d31c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0b3fb7d467ae64e2cbfdb61644b1537bc5ae1161
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131848"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233072"
 ---
 # <a name="using-the-natural-language-framework-with-xamarinios"></a>Использование платформы естественного языка с помощью Xamarin.iOS
 
@@ -20,9 +20,9 @@ ms.locfileid: "50131848"
 
 Пользовательские модели машинного Обучения Core также может использоваться платформой естественного языка для классификации и пометка текста в специализированных контекстов.
 
-[NSLinguisticTagger](https://developer.xamarin.com/api/type/Foundation.NSLinguisticTagger/) класс по-прежнему доступен. Тем не менее платформа естественный язык — предпочтительный механизм для обработки естественного языка.
+[NSLinguisticTagger](xref:Foundation.NSLinguisticTagger) класс по-прежнему доступен. Тем не менее платформа естественный язык — предпочтительный механизм для обработки естественного языка.
 
-## <a name="sample-app-xamarinnl"></a>Пример приложения: XamarinNL
+## <a name="sample-app-xamarinnl"></a>Пример приложения. XamarinNL
 
 Чтобы научиться использовать платформу естественного языка с помощью Xamarin.iOS, взгляните на [XamarinNL пример приложения](https://developer.xamarin.com/samples/monotouch/iOS12/XamarinNL).
 Этот пример приложения демонстрирует использование структурой естественного языка для:
@@ -151,7 +151,7 @@ partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
 Коснитесь **слова** или **предложения** кнопку, чтобы получить список токенов. Каждый токен, связанный с слово или предложение в исходном тексте.
 
 `ShowTokens` разбиений, введенные пользователем в токены, вызвав [`GetTokens`](https://developer.xamarin.com/api/member/NaturalLanguage.NLTokenizer.GetTokens/)
-метод `NLTokenizer`. Этот метод возвращает массив [`NSValue`](https://developer.xamarin.com/api/type/Foundation.NSValue/)
+метод `NLTokenizer`. Этот метод возвращает массив [`NSValue`](xref:Foundation.NSValue)
 объекты, каждый упаковки `NSRange` значение, соответствующее токен в исходном тексте.
 
 ```csharp

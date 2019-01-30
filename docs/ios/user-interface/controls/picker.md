@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/14/2018
-ms.openlocfilehash: 0ef33c2036b1ff2d5a7e2035ca5fa8af58672867
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 525ddf3c8cfc457738099c3afbb162fd3fb9239b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34789916"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233579"
 ---
 # <a name="picker-control-in-xamarinios"></a>Средство выбора элемента управления в Xamarin.iOS
 
-Объект [ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/) дает возможность выбрать значение из списка прокрутив отдельные компоненты интерфейса колесика по принципу.
+Объект [ `UIPickerView` ](xref:UIKit.UIPickerView) дает возможность выбрать значение из списка прокрутив отдельные компоненты интерфейса колесика по принципу.
 
-Выбор часто используются для выбора даты и времени; Компания Apple предоставляет [`UIDatePicker`](https://developer.xamarin.com/api/type/UIKit.UIDatePicker/)
+Выбор часто используются для выбора даты и времени; Компания Apple предоставляет [`UIDatePicker`](xref:UIKit.UIDatePicker)
 класс для этой цели.
 
 Статья описывает, как реализовать и использовать `UIPickerView` и `UIDatePicker` элементов управления.
@@ -59,8 +59,8 @@ public override void ViewDidLoad()
 }
 ```
 
-[ `UIPickerViewModel` ](https://developer.xamarin.com/api/type/UIKit.UIPickerViewModel/) Базовый класс реализует два интерфейса [`IUIPickerDataSource`](https://developer.xamarin.com/api/type/UIKit.IUIPickerViewDataSource/)
-и [ `IUIPickerViewDelegate` ](https://developer.xamarin.com/api/type/UIKit.IUIPickerViewDelegate/), который объявлять различные методы, которые указывают средства выбора данных и обрабатывает взаимодействие:
+[ `UIPickerViewModel` ](xref:UIKit.UIPickerViewModel) Базовый класс реализует два интерфейса [`IUIPickerDataSource`](xref:UIKit.IUIPickerViewDataSource)
+и [ `IUIPickerViewDelegate` ](xref:UIKit.IUIPickerViewDelegate), который объявлять различные методы, которые указывают средства выбора данных и обрабатывает взаимодействие:
 
 ```csharp
 public class PeopleModel : UIPickerViewModel
@@ -126,13 +126,13 @@ public class PeopleModel : UIPickerViewModel
 
 ![Средство выбора с двумя компонентами](picker-images/image3.png "выбора с помощью двух компонентов")
 
-Чтобы указать число компонентов в средстве выбора, используйте [`GetComponentCount`](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetComponentCount/p/UIKit.UIPickerView/) 
+Чтобы указать число компонентов в средстве выбора, используйте [`GetComponentCount`](xref:UIKit.UIPickerViewModel.GetComponentCount(UIKit.UIPickerView)) 
 метод.
 
 ### <a name="customizing-a-pickers-appearance"></a>Настройка внешнего вида управляющий элемент выбора
 
 Чтобы настроить внешний вид управляющий элемент выбора, используйте [`UIPickerView.UIPickerViewAppearance`](https://developer.xamarin.com/api/type/UIKit.UIPickerView+UIPickerViewAppearance/)
-класс, или переопределить [ `GetView` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetView/p/UIKit.UIPickerView/System.nint/System.nint/UIKit.UIView/) и [ `GetRowHeight` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetRowHeight/p/UIKit.UIPickerView/System.nint/) методы в `UIPickerViewModel`.
+класс, или переопределить [ `GetView` ](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView)) и [ `GetRowHeight` ](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint)) методы в `UIPickerViewModel`.
 
 ## <a name="uidatepicker"></a>UIDatePicker
 
@@ -161,7 +161,7 @@ UIPickerView pickerView = new UIPickerView(
 
 #### <a name="minimum-and-maximum-date"></a>Минимальное и максимальное значение даты
 
-[`MinimumDate`](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MinimumDate/) и [ `MaximumDate` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MaximumDate/) ограничить диапазон дат в элементе выбора даты. Например следующий код ограничивает управляющий элемент выбора даты до 60 лет, вплоть до момента присутствует:
+[`MinimumDate`](xref:UIKit.UIDatePicker.MinimumDate) и [ `MaximumDate` ](xref:UIKit.UIDatePicker.MaximumDate) ограничить диапазон дат в элементе выбора даты. Например следующий код ограничивает управляющий элемент выбора даты до 60 лет, вплоть до момента присутствует:
 
 ```csharp
 var calendar = new NSCalendar(NSCalendarType.Gregorian);
@@ -182,7 +182,7 @@ datePickerView.MaximumDate = NSDate.Now;
 
 #### <a name="minute-interval"></a>Пятиминутный интервал
 
-[ `MinuteInterval` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MinuteInterval/) Свойство задает интервал, с которой средство выбора отобразит минут:
+[ `MinuteInterval` ](xref:UIKit.UIDatePicker.MinuteInterval) Свойство задает интервал, с которой средство выбора отобразит минут:
 
 ```csharp
 datePickerView.MinuteInterval = 10;
@@ -190,7 +190,7 @@ datePickerView.MinuteInterval = 10;
 
 #### <a name="mode"></a>Режим
 
-Выбор даты поддерживают четыре [режимы](https://developer.xamarin.com/api/type/UIKit.UIDatePickerMode/), описанной ниже:
+Выбор даты поддерживают четыре [режимы](xref:UIKit.UIDatePickerMode), описанной ниже:
 
 ##### <a name="uidatepickermodetime"></a>UIDatePickerMode.Time
 
@@ -243,7 +243,7 @@ datePickerView.Mode = UIDatePickerMode.DateAndTime;
 datePickerView.Mode = UIDatePickerMode.CountDownTimer;
 ```
 
-![«UIDatePickerMode.CountDownTimer»](picker-images/image5.png "UIDatePickerMode.CountDownTimer")
+!["UIDatePickerMode.CountDownTimer"](picker-images/image5.png "UIDatePickerMode.CountDownTimer")
 
 `CountDownDuration` Свойство отражает ценность управляющий элемент выбора даты в `UIDatePickerMode.CountDownTimer` режиме. Например, чтобы добавить значение обратного отсчета до текущей даты:
 
@@ -257,9 +257,9 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 #### <a name="nsdateformatter"></a>NSDateFormatter
 
-Для форматирования `NSDate`, использовать [ `NSDateFormatter` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatter/).
+Для форматирования `NSDate`, использовать [ `NSDateFormatter` ](xref:Foundation.NSDateFormatter).
 
-Чтобы использовать `NSDateFormatter`, вызовите его [ `ToString` ](https://developer.xamarin.com/api/member/Foundation.NSDateFormatter.ToString/p/Foundation.NSDate/) метод. Пример:
+Чтобы использовать `NSDateFormatter`, вызовите его [ `ToString` ](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate)) метод. Пример:
 
 ```csharp
 var date = NSDate.Now;
@@ -272,7 +272,7 @@ var formattedDate = formatter.ToString(d);
 
 ##### <a name="dateformat"></a>DateFormat
 
-[ `DateFormat` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.DateFormat/) Свойство (строка) `NSDateFormatter` обеспечивает настраиваемые даты в спецификации формата:
+[ `DateFormat` ](xref:Foundation.NSDateFormatter.DateFormat) Свойство (строка) `NSDateFormatter` обеспечивает настраиваемые даты в спецификации формата:
 
 ```csharp
 NSDateFormatter dateFormat = new NSDateFormatter();
@@ -281,7 +281,7 @@ dateFormat.DateFormat = "yyyy-MM-dd";
 
 ##### <a name="timestyle"></a>TimeStyle
 
-[ `TimeStyle` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.TimeStyle/) Свойство ( [ `NSDateFormatterStyle` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatterStyle/)) из `NSDateFormatter` указывает форматирование времени на основе предопределенных стилей:
+[ `TimeStyle` ](xref:Foundation.NSDateFormatter.TimeStyle) Свойство ( [ `NSDateFormatterStyle` ](xref:Foundation.NSDateFormatterStyle) из `NSDateFormatter` указывает форматирование времени на основе предопределенных стилей:
 
 ```csharp
 NSDateFormatter timeFormat = new NSDateFormatter();
@@ -297,7 +297,7 @@ timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 
 ##### <a name="datestyle"></a>DateStyle
 
-[ `DateStyle` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.DateStyle/) Свойство ( `NSDateFormatterStyle`) из `NSDateFormatter` определяет форматирование дат на основе предопределенных стилей:
+[ `DateStyle` ](xref:Foundation.NSDateFormatter.DateStyle) Свойство ( `NSDateFormatterStyle`) из `NSDateFormatter` определяет форматирование дат на основе предопределенных стилей:
 
 ```csharp
 NSDateFormatter dateTimeformat = new NSDateFormatter();
@@ -307,7 +307,7 @@ dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 Различные `NSDateFormatterStyle` значения отображение дат следующим образом:
 
 - `NSDateFormatterStyle.Full`: Среда, август 2 2017 в 7:48
-- `NSDateFormatterStyle.Long`: 2 август 2017 г. в 19:49:00
+- `NSDateFormatterStyle.Long`: 2 августа 2017 г. в 19:49:00
 - `NSDateFormatterStyle.Medium`: 2 августа 2017 г., 19:49:00
 - `NSDateFormatterStyle.Short`: 8/2/17, 7:50 PM
 

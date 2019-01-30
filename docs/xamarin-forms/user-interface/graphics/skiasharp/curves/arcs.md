@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: fc08824ba973f5d50dbe92950d57c4ea8ecc3147
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 020afef6b2eb3743fd17118b2922bac4d4c32239
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054016"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233995"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Три способа нарисовать дугу
 
@@ -38,7 +38,7 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-Эти методы аналогичны Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) и [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) методы. IOS [ `AddArc` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) метод аналогичен, но будет ограничен дуг на длину окружности круга, а не обобщить как эллипс.
+Эти методы аналогичны Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) и [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) методы. IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean)) метод аналогичен, но будет ограничен дуг на длину окружности круга, а не обобщить как эллипс.
 
 Оба метода начинаются с `SKRect` значение, которое определяет расположение и размер эллипса:
 
@@ -58,7 +58,7 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 ![](arcs-images/anglearc.png "Угол дуги сама по себе")
 
-`startAngle` Или `sweepAngle` аргументов может быть отрицательным: дуги по часовой стрелке для положительных значений из `sweepAngle` и против часовой стрелки для отрицательных значений.
+`startAngle` Или `sweepAngle` аргументов может быть отрицательным: Дуги по часовой стрелке для положительных значений из `sweepAngle` и против часовой стрелки для отрицательных значений.
 
 Тем не менее `AddArc` does *не* определить закрытый профиль. При вызове метода `LineTo` после `AddArc`, линия берет начало от конца дуги к моменту `LineTo` метода и это справедливо для `ArcTo`.
 
@@ -226,7 +226,7 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-Это `ArcTo` метод аналогичен методу PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) функции (страницы 532) и iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) метод.
+Это `ArcTo` метод аналогичен методу PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) функции (страницы 532) и iOS [ `AddArcToPoint` ](xref:CoreGraphics.CGPath.AddArcToPoint(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat)) метод.
 
 `ArcTo` Метод включает в себя три точки:
 
@@ -521,7 +521,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 ![](arcs-images/ellipticalarcellipse1.png "Первый набор эллиптической дуги")
 
-Можно отличить эти две дуги двумя способами: верхний дуги больше, чем нижней дуги и как дуга которого отображается слева направо, верхнем дуги по часовой стрелке хотя нижней дуга рисуется против часовой стрелки.
+Можно отличить эти две дуги двумя способами: Top дуги больше, чем нижней дуги, а как дуга которого отображается слева направо, верхнем дуги по часовой стрелке хотя нижней дуга рисуется против часовой стрелки.
 
 Можно также в соответствии с эллипса между двумя точками другим способом:
 
@@ -535,8 +535,8 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 Эти четыре дуги различаются по четыре комбинации [ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize) и [ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection) аргументов типа перечисления в `ArcTo` метод:
 
-- красный: SKPathArcSize.Large и SKPathDirection.Clockwise
-- Зеленый: SKPathArcSize.Small и SKPathDirection.Clockwise
+- Red: SKPathArcSize.Large и SKPathDirection.Clockwise
+- Зеленый цвет: SKPathArcSize.Small и SKPathDirection.Clockwise
 - Синий: SKPathArcSize.Small и SKPathDirection.CounterClockwise
 - Пурпурный: SKPathArcSize.Large и SKPathDirection.CounterClockwise
 

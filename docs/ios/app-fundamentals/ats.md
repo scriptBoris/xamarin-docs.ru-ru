@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: 0645b326576a68c97479bc5b59aabaa104f87ae2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9308d3a746a5a0a43cf47cc5ea809c0f82bbe7b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114266"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233826"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Безопасность транспорта приложения в Xamarin.iOS
 
@@ -27,11 +27,11 @@ _Безопасность транспорта приложения (ATS) обе
 
 Для существующих приложений, реализовать `HTTPS` протокола, когда это возможно. Для новых приложений Xamarin.iOS, следует использовать `HTTPS` исключительно в том случае, при взаимодействии с Интернет-ресурсам. Кроме того общий API связи должны быть зашифрованы с помощью TLS версии 1.2 с безопасной пересылки.
 
-Любого соединения, установленного с помощью [NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/), [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/) или [NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/) будет использоваться ATS по умолчанию в приложениях, созданных для iOS 9 и OS X 10.11 (El Capitan).
+Любого соединения, установленного с помощью [NSUrlConnection](xref:Foundation.NSUrlConnection), [CFUrl](xref:CoreFoundation.CFUrl) или [NSUrlSession](xref:Foundation.NSUrlSession) будет использоваться ATS по умолчанию в приложениях, созданных для iOS 9 и OS X 10.11 (El Capitan).
 
 ## <a name="default-ats-behavior"></a>Поведение по умолчанию ATS
 
-Поскольку ATS включена по умолчанию в приложениях, созданных для iOS 9 и OS X 10.11 (El Capitan), все подключения с помощью [NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/), [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/) или [NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/) будет предметом Требования к безопасности ATS. Если эти требования не соответствуют подключений, они вызовут сбой с исключением.
+Поскольку ATS включена по умолчанию в приложениях, созданных для iOS 9 и OS X 10.11 (El Capitan), все подключения с помощью [NSUrlConnection](xref:Foundation.NSUrlConnection), [CFUrl](xref:CoreFoundation.CFUrl) или [NSUrlSession](xref:Foundation.NSUrlSession) будет предметом Требования к безопасности ATS. Если эти требования не соответствуют подключений, они вызовут сбой с исключением.
 
 ### <a name="ats-connection-requirements"></a>Требования к ATS подключения
 

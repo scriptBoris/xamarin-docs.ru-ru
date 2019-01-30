@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: b98d1fcf0917b9e25d774a92d56bf90bdd291978
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 9d1f54fa4753ba2ef44ba9b8b48a84a3ca932c4b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998640"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233852"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Макет для планшета и классических приложений
 
@@ -86,7 +86,7 @@ if (Device.Idiom == TargetIdiom.Phone)
 
 ### <a name="leveraging-masterdetailpage"></a>Используя MasterDetailPage
 
-[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) Идеально подходит для больших экранов, особенно на устройствах iPad, где он использует [ `UISplitViewController` ](https://developer.xamarin.com/api/type/UIKit.UISplitViewController/) для обеспечения работы машинном коде iOS.
+[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) Идеально подходит для больших экранов, особенно на устройствах iPad, где он использует [ `UISplitViewController` ](xref:UIKit.UISplitViewController) для обеспечения работы машинном коде iOS.
 
 Просмотрите [этой записи блога Xamarin](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/) чтобы увидеть, как можно ее адаптировать пользовательский интерфейс телефоны использовать один макет и экраны больше можно использовать другой (с `MasterDetailPage`).
 

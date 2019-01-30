@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 38e71914d9f7f6bb46ebeee8d548968c207d3b16
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 8b3b9a5b110432f33e06edf7ab51c582681e4ea3
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617765"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233735"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Сочетания клавиш Siri в Xamarin.iOS
 
@@ -24,7 +24,7 @@ iOS 12 добавляет клавиш Siri, позволяя всех типо�
 
 Сочетания клавиш можно использовать для ускорения пользователя возможности для выполнения распространенных задач — во многих случаях даже не открывая приложение.
 
-## <a name="sample-app-soup-chef"></a>Пример приложения: полный курс по работе Chef
+## <a name="sample-app-soup-chef"></a>Пример приложения. Полный курс по работе Chef
 
 Чтобы лучше понять Siri ярлыки, взгляните на [Soup Chef](https://developer.xamarin.com/samples/monotouch/ios12/SoupChef/) примера приложения. Полный курс по работе Chef позволяет пользователям размещать заказы из мнимой soup ресторан, просмотреть историю их заказов и определить фраз для использования при упорядочивании полный курс по работе, взаимодействуя с Siri.
 
@@ -72,9 +72,9 @@ iOS 12 добавляет клавиш Siri, позволяя всех типо�
 </array>
 ```
 
-Это `NSUserActivityTypes` пары "ключ/значение" Указывает, что полный курс по работе Chef знает, как обрабатывать `OrderSoupIntent`и [ `NSUserActivity` ](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/) необходимости [ `ActivityType` ](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.ActivityType/) из «com.xamarin.SoupChef.viewMenu».
+Это `NSUserActivityTypes` пары "ключ/значение" Указывает, что полный курс по работе Chef знает, как обрабатывать `OrderSoupIntent`и [ `NSUserActivity` ](xref:Foundation.NSUserActivity) необходимости [ `ActivityType` ](xref:Foundation.NSUserActivity.ActivityType) из «com.xamarin.SoupChef.viewMenu».
 
-Действия и настраиваемые цели, переданный в приложение, в отличие от его расширения обрабатываются в `AppDelegate` ( [ `UIApplicationDelegate` ](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)), [ `ContinueUserActivity` ](https://developer.xamarin.com/api/member/UIKit.UIApplicationDelegate.ContinueUserActivity/) метод.
+Действия и настраиваемые цели, переданный в приложение, в отличие от его расширения обрабатываются в `AppDelegate` ( [ `UIApplicationDelegate` ](xref:UIKit.UIApplicationDelegate) по [ `ContinueUserActivity` ](xref:UIKit.UIApplicationDelegate.ContinueUserActivity*) метод.
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -89,7 +89,7 @@ iOS 12 добавляет клавиш Siri, позволяя всех типо�
 <true/>
 ```
 
-Эта конфигурация показывает, что приложение использует эту группу приложений «group.com.xamarin.SoupChef». **SoupChefIntents** расширение приложения использует ту же группу приложений, что позволяет два проекта для совместного использования [`NSUserDefaults`](https://developer.xamarin.com/api/type/Foundation.NSUserDefaults/)
+Эта конфигурация показывает, что приложение использует эту группу приложений «group.com.xamarin.SoupChef». **SoupChefIntents** расширение приложения использует ту же группу приложений, что позволяет два проекта для совместного использования [`NSUserDefaults`](xref:Foundation.NSUserDefaults)
 данные.
 
 `com.apple.developer.siri` Ключ указывает, что приложение взаимодействует с Siri.
@@ -103,7 +103,7 @@ iOS 12 добавляет клавиш Siri, позволяя всех типо�
 
 ### <a name="setting-up-an-nsuseractivity"></a>Настройка NSUserActivity
 
-На экране меню `SoupMenuViewController` создает `NSUserActivity` и присваивает его на контроллер представления [ `UserActivity` ](https://developer.xamarin.com/api/property/UIKit.UIResponder.UserActivity/) свойство:
+На экране меню `SoupMenuViewController` создает `NSUserActivity` и присваивает его на контроллер представления [ `UserActivity` ](xref:UIKit.UIResponder.UserActivity) свойство:
 
 ```csharp
 public override void ViewDidLoad()
@@ -149,8 +149,8 @@ public static NSUserActivity ViewMenuActivity {
 В частности Обратите внимание на следующее:
 
 - Установка `EligibleForPrediction` для `true` указывает, что Siri можно прогнозировать это действие и область его ярлык.
-- [ `ContentAttributeSet` ](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.ContentAttributeSet/) Массив — это стандарт [ `CSSearchableItemAttributeSet` ](https://developer.xamarin.com/api/type/CoreSpotlight.CSSearchableItemAttributeSet/) используется для включения `NSUserActivity` в результатах поиска iOS.
-- [`SuggestedInvocationPhrase`](https://developer.xamarin.com/api/property/Foundation.NSUserActivity.SuggestedInvocationPhrase/) является фразой, Siri предложит пользователю как потенциальные вариант, при назначении фразы для ярлыка.
+- [ `ContentAttributeSet` ](xref:Foundation.NSUserActivity.ContentAttributeSet) Массив — это стандарт [ `CSSearchableItemAttributeSet` ](https://developer.xamarin.com/api/type/CoreSpotlight.CSSearchableItemAttributeSet/) используется для включения `NSUserActivity` в результатах поиска iOS.
+- [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase) является фразой, Siri предложит пользователю как потенциальные вариант, при назначении фразы для ярлыка.
 
 ### <a name="handling-an-nsuseractivity-shortcut"></a>Обработка NSUserActivity ярлык
 
@@ -415,7 +415,7 @@ void RemoveDonation(MenuItem menuItem)
 
 #### <a name="soupchefintents-infoplist-and-entitlementsplist"></a>SoupChefIntents — Info.plist и Entitlements.plist
 
-##### <a name="soupchefintents-infoplist"></a>SoupChefIntents – Info.plist
+##### <a name="soupchefintents-infoplist"></a>SoupChefIntents – Info.plist
 
 **Info.plist** в **SoupChefIntents** проект определяет **идентификатор пакета** как `com.xamarin.SoupChef.SoupChefIntents`.
 
@@ -517,7 +517,7 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 
 ### <a name="soupchefintentsui--infoplist-and-entitlementsplist"></a>SoupChefIntentsUI — Info.plist и Entitlements.plist
 
-#### <a name="soupchefintentsui-infoplist"></a>SoupChefIntentsUI – Info.plist
+#### <a name="soupchefintentsui-infoplist"></a>SoupChefIntentsUI – Info.plist
 
 **Info.plist** в **SoupChefIntentsUI** проект определяет **идентификатор пакета** как `com.xamarin.SoupChef.SoupChefIntentsui`.
 
@@ -600,7 +600,7 @@ public void ConfigureView(
 
 Полный курс по работе Chef предоставляет интерфейс для назначить голоса ярлык для каждого заказа, делая возможным soup заказа с Siri. На самом деле интерфейс, используемый для записи и назначения клавиш голоса в iOS и требует небольшого объема кода.
 
-В `OrderDetailViewController`, когда пользователь касается таблицы **добавить Siri** строки, [ `RowSelected` ](https://developer.xamarin.com/api/member/UIKit.UITableViewSource.RowSelected/) метод появится экран для добавления или изменить ярлык voice:
+В `OrderDetailViewController`, когда пользователь касается таблицы **добавить Siri** строки, [ `RowSelected` ](xref:UIKit.UITableViewSource.RowSelected*) метод появится экран для добавления или изменить ярлык voice:
 
 ```csharp
 public override void RowSelected(UITableView tableView, NSIndexPath indexPath)

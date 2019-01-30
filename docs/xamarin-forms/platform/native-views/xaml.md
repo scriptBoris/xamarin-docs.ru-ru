@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4b33d1d149d3ac85d01dfcbe0d144416fd953426
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4f5f32871c273fc7ac3bab8fd9bcbcac03fc47fa
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052906"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233813"
 ---
 # <a name="native-views-in-xaml"></a>Исходные представления в XAML
 
@@ -182,7 +182,7 @@ _Исходные представления из iOS, Android и универс
 </ContentPage>
 ```
 
-[ `UIFont.FromName` ](https://developer.xamarin.com/api/member/UIKit.UIFont.FromName/) Фабричный метод используется для задания [ `UILabel.Font` ](https://developer.xamarin.com/api/property/UIKit.UILabel.Font/) свойство в новый [ `UIFont` ](https://developer.xamarin.com/api/type/UIKit.UIFont/) в iOS. `UIFont` Аргументами метода, которые являются дочерними элементами указываются имя и размер `x:Arguments` атрибута.
+[ `UIFont.FromName` ](xref:UIKit.UIFont.FromName*) Фабричный метод используется для задания [ `UILabel.Font` ](xref:UIKit.UILabel.Font) свойство в новый [ `UIFont` ](xref:UIKit.UIFont) в iOS. `UIFont` Аргументами метода, которые являются дочерними элементами указываются имя и размер `x:Arguments` атрибута.
 
 [ `Typeface.Create` ](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/p/System.String/Android.Graphics.TypefaceStyle/) Фабричный метод используется для задания [ `TextView.Typeface` ](https://developer.xamarin.com/api/property/Android.Widget.TextView.Typeface/) свойство в новый [ `Typeface` ](https://developer.xamarin.com/api/type/Android.Graphics.Typeface/) в Android. `Typeface` Имя семейства и стиля задаются с помощью аргументов метода, которые являются дочерними элементами `x:Arguments` атрибута.
 
@@ -331,7 +331,7 @@ IOS и Android native кнопки одного и того же `OnButtonTap` �
 
 ### <a name="ios"></a>iOS
 
-Подклассы реализации iOS [ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/) представление и предоставляет свойства и события, можно было легко из XAML:
+Подклассы реализации iOS [ `UIPickerView` ](xref:UIKit.UIPickerView) представление и предоставляет свойства и события, можно было легко из XAML:
 
 ```csharp
 public class MyUIPickerView : UIPickerView
@@ -376,7 +376,7 @@ public class MyUIPickerView : UIPickerView
 }
 ```
 
-`MyUIPickerView` Предоставляет `ItemsSource` и `SelectedItem` свойства и `SelectedItemChanged` событий. Объект [ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/) требует базового [ `UIPickerViewModel` ](https://developer.xamarin.com/api/type/UIKit.UIPickerViewModel/) модель данных, к которому получает доступ `MyUIPickerView` свойства и события. `UIPickerViewModel` Модель данных обеспечивается `PickerModel` класса:
+`MyUIPickerView` Предоставляет `ItemsSource` и `SelectedItem` свойства и `SelectedItemChanged` событий. Объект [ `UIPickerView` ](xref:UIKit.UIPickerView) требует базового [ `UIPickerViewModel` ](xref:UIKit.UIPickerViewModel) модель данных, к которому получает доступ `MyUIPickerView` свойства и события. `UIPickerViewModel` Модель данных обеспечивается `PickerModel` класса:
 
 ```csharp
 class PickerModel : UIPickerViewModel
@@ -419,7 +419,7 @@ class PickerModel : UIPickerViewModel
 }
 ```
 
-`PickerModel` Класс предоставляет базовое хранилище `MyUIPickerView` класса, с помощью `Items` свойство. Каждый раз, когда выбранный элемент в `MyUIPickerView` изменения, [ `Selected` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.Selected/) выполняется метод, который обновляет выбранный индекс и активируется `ItemChanged` событий. Это гарантирует, что `SelectedItem` свойство всегда возвращает последний элемент, выбраны пользователем. Кроме того `PickerModel` класс переопределяет методы, которые используются для установки `MyUIPickerView` экземпляра.
+`PickerModel` Класс предоставляет базовое хранилище `MyUIPickerView` класса, с помощью `Items` свойство. Каждый раз, когда выбранный элемент в `MyUIPickerView` изменения, [ `Selected` ](xref:UIKit.UIPickerViewModel.Selected*) выполняется метод, который обновляет выбранный индекс и активируется `ItemChanged` событий. Это гарантирует, что `SelectedItem` свойство всегда возвращает последний элемент, выбраны пользователем. Кроме того `PickerModel` класс переопределяет методы, которые используются для установки `MyUIPickerView` экземпляра.
 
 ### <a name="android"></a>Android
 

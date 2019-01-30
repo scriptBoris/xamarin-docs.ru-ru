@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 42e357c0fbb4b858866e15d638177d6823de0f09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 33f27d2585f4fb4d65181cbfd9211ea87b837e73
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112680"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233891"
 ---
 # <a name="binding-objective-c-libraries"></a>Привязка библиотек Objective-C
 
@@ -49,7 +49,7 @@ ms.locfileid: "50112680"
 [![](objective-c-libraries-images/00vs-sml.png "Библиотека привязок iOS iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
-> Примечание: Привязка проектов для **Xamarin.Mac** поддерживаются только в Visual Studio для Mac.
+> Примечание. Привязка проектов для **Xamarin.Mac** поддерживаются только в Visual Studio для Mac.
 
 -----
 
@@ -214,7 +214,7 @@ string SetText ([NullAllowed] string text);
 и [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 Атрибуты.
 
-При использовании [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) для свойства в деле btouch собственный атрибут фактически выполняет привязку два метода: метод считывания и метод задания. Имя, которое следует указать для экспорта, **basename** и метод задания значения вычисляется путем добавления слова «set», включение первую букву **basename** в верхний регистр и делая селекторе занять аргумент. Это означает, что `[Export ("label")]` на свойство фактически выполняет привязку «label» и «setLabel:» Objective-C методы.
+При использовании [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) для свойства в деле btouch собственный атрибут фактически выполняет привязку два метода: метод считывания и метод задания. Имя, которое следует указать для экспорта, **basename** и метод задания значения вычисляется путем добавления слова «set», включение первую букву **basename** в верхний регистр и делая селекторе занять аргумент. Это означает, что `[Export ("label")]` на свойство фактически выполняет привязку «label» и «setLabel:» Методы Objective-C.
 
 Иногда свойства Objective-C не соответствуют описанной выше схемы и имя вручную перезаписывается. В таких случаях можно управлять способом, что привязка создается с помощью [`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) 
 атрибут в качестве метода получения или задания, например:
@@ -674,7 +674,7 @@ CAScroll [] SupportedScrollModes { get; set; }
 
 ### <a name="binding-notifications"></a>Привязка уведомлений
 
-Уведомления — это сообщения, которые учитываются в `NSNotificationCenter.DefaultCenter` и используются как механизм для широковещательной передачи сообщений из одной части приложения в другое. Разработчикам подписаться на уведомления, обычно используя [NSNotificationCenter](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/) [AddObserver](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/M/AddObserver/) метод. Когда приложение отправляет сообщение в центр уведомлений, оно обычно содержит полезные данные, хранящиеся в [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) словаря. Этот словарь нестрого типизирован, и получения информации от его подвержено ошибкам, поскольку пользователям обычно нужно прочитать в документации, какие ключи доступны в словаре и типы значений, которые могут храниться в словаре. Наличие ключей иногда используется в качестве также логического значения.
+Уведомления — это сообщения, которые учитываются в `NSNotificationCenter.DefaultCenter` и используются как механизм для широковещательной передачи сообщений из одной части приложения в другое. Разработчикам подписаться на уведомления, обычно используя [NSNotificationCenter](xref:Foundation.NSNotificationCenter) [AddObserver](xref:Foundation.NSNotificationCenter.AddObserver(Foundation.NSString,System.Action{Foundation.NSNotification})) метод. Когда приложение отправляет сообщение в центр уведомлений, оно обычно содержит полезные данные, хранящиеся в [NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo) словаря. Этот словарь нестрого типизирован, и получения информации от его подвержено ошибкам, поскольку пользователям обычно нужно прочитать в документации, какие ключи доступны в словаре и типы значений, которые могут храниться в словаре. Наличие ключей иногда используется в качестве также логического значения.
 
 Генератор привязки Xamarin.iOS предоставляет поддержку для разработчиков привязывать уведомления. Чтобы сделать это, необходимо задать [`[Notification]`](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute)
 атрибут для свойства, которое также были помечены [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)
@@ -703,7 +703,7 @@ public class MyClass {
 }
 ```
 
-Пользователи кода можно затем легко подписаться на уведомления отправляется [NSDefaultCenter](https://developer.xamarin.com/api/property/Foundation.NSNotificationCenter.DefaultCenter/) с помощью следующего кода:
+Пользователи кода можно затем легко подписаться на уведомления отправляется [NSDefaultCenter](xref:Foundation.NSNotificationCenter.DefaultCenter) с помощью следующего кода:
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart ((notification) => {
@@ -717,7 +717,7 @@ var token = MyClass.Notifications.ObserverDidStart ((notification) => {
 token.Dispose ();
 ```
 
-Или можно вызвать [NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject/) и передать маркер. Уведомление содержит параметры, следует указать вспомогательный объект `EventArgs` интерфейса следующим образом:
+Или можно вызвать [NSNotification.DefaultCenter.RemoveObserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject)) и передать маркер. Уведомление содержит параметры, следует указать вспомогательный объект `EventArgs` интерфейса следующим образом:
 
 ```csharp
 interface MyClass {
@@ -740,7 +740,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-Выше создаст `MyScreenChangedEventArgs` класса `ScreenX` и `ScreenY` свойства, которые получает данные из [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) словарь с помощью ключей «ScreenXKey» и «ScreenYKey» соответственно и применить соответствующие преобразования. `[ProbePresence]` Атрибут используется для генератора для выборки данных, если задано значение ключа `UserInfo`, вместо того, чтобы извлечь значение. Используется для случаев, когда наличие ключа является значение (обычно для логических значений).
+Выше создаст `MyScreenChangedEventArgs` класса `ScreenX` и `ScreenY` свойства, которые получает данные из [NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo) словарь с помощью ключей «ScreenXKey» и «ScreenYKey» соответственно и применить соответствующие преобразования. `[ProbePresence]` Атрибут используется для генератора для выборки данных, если задано значение ключа `UserInfo`, вместо того, чтобы извлечь значение. Используется для случаев, когда наличие ключа является значение (обычно для логических значений).
 
 Это позволяет писать код следующим образом:
 
@@ -918,7 +918,7 @@ public class  XyzOptions {
 
 Чтобы сделать это, вам потребуется выполнить ряд действий.
 
-* Создайте класс со строгой типизацией, который наследуется от класса [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) и предоставляет различные методы получения и задания для каждого свойства.
+* Создайте класс со строгой типизацией, который наследуется от класса [DictionaryContainer](xref:Foundation.DictionaryContainer) и предоставляет различные методы получения и задания для каждого свойства.
 * Объявления перегрузки для методов, принимающих `NSDictionary` вступили в новую версию со строгой типизацией.
 
 Можно создать строго типизированный класс можно вручную или использовать генератор для выполнения работы для вас.  Сначала мы рассмотрим, как это сделать вручную, чтобы понять, что происходит, а затем автоматической настройке.
@@ -1404,5 +1404,5 @@ class Demo {
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Пример привязки](https://developer.xamarin.com/samples/BindingSample/)
-- [Xamarin University курс: Создание библиотеку привязки Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University курс: Создание библиотеки привязки Objective-C с помощью цели Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Курс Xamarin University. Создание библиотеки привязки Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Курс Xamarin University. Создание библиотеки привязки Objective-C с помощью цели Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

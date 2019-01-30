@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: a1ddcda84d51b5a8a9220558ddaf9476a2321ee8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 09e895714cb4bbe241e4e14facaaee52079d55d9
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105055"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233198"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>Мультисенсорные палец отслеживания в Xamarin.iOS
 
@@ -20,7 +20,7 @@ _В этом документе показано, как отслеживать 
 
 Бывают случаи, когда Мультисенсорные приложения нужно отслеживать движение, при перемещении одновременно на экране. Одним из типичных приложений является finger-paint программы. Требуется, чтобы пользователь мог для рисования с одним пальцем, но также для рисования пальцами несколько за один раз. Как приложение обрабатывает несколько событий сенсорного ввода, ему необходимо различать эти пальцами.
 
-При первом касании пальцем экрана, iOS создает [ `UITouch` ](https://developer.xamarin.com/api/type/UIKit.UITouch/) объект для этого палец. Этот объект остается равным палец перемещается на экране, а затем поднимает на экране, после чего удаляется объект. Для отслеживания пальцами, программа не храните это `UITouch` объекта напрямую. Вместо этого можно использовать [ `Handle` ](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/) свойство типа `IntPtr` для уникальной идентификации этих `UITouch` объектов.
+При первом касании пальцем экрана, iOS создает [ `UITouch` ](xref:UIKit.UITouch) объект для этого палец. Этот объект остается равным палец перемещается на экране, а затем поднимает на экране, после чего удаляется объект. Для отслеживания пальцами, программа не храните это `UITouch` объекта напрямую. Вместо этого можно использовать [ `Handle` ](xref:Foundation.NSObject.Handle) свойство типа `IntPtr` для уникальной идентификации этих `UITouch` объектов.
 
 Почти всегда это программа, которая отслеживает движение ведение словаря для отслеживания сенсорного управления. Для приложения iOS является ключом словаря `Handle` значение, определяющее конкретной точки касания. Значение словаря зависит от приложения. В [FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint) программа, каждый палец stroke (от сенсорного ввода для освобождения) связана с объект, содержащий всю информацию, необходимую для отображения линии, нарисованных при помощи этого палец. Программа определяет небольшой `FingerPaintPolyline` класс для этой цели:
 
@@ -40,7 +40,7 @@ class FingerPaintPolyline
 }
 ```
 
-Каждой ломаной линии имеет цвет, ширину штриха и графики iOS [ `CGPath` ](https://developer.xamarin.com/api/type/CoreGraphics.CGPath/) объекта накапливаются и отобразить несколько точек линии, его написания.
+Каждой ломаной линии имеет цвет, ширину штриха и графики iOS [ `CGPath` ](xref:CoreGraphics.CGPath) объекта накапливаются и отобразить несколько точек линии, его написания.
 
 
 Все остальные приведенный ниже код, содержащийся в `UIView` с именем `FingerPaintCanvasView`. Что класс поддерживает словарь объектов типа `FingerPaintPolyline` во время они активно рисуются с одним или несколькими пальцами:
@@ -61,11 +61,11 @@ List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 
 `FingerPaintCanvasView` переопределяет пять методов, определенных `View`:
 
-- [`TouchesBegan`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesBegan/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesMoved`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesMoved/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesEnded`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesEnded/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesCancelled`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesCancelled/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`Draw`](https://developer.xamarin.com/api/member/UIKit.UIView.Draw/p/CoreGraphics.CGRect/)
+- [`TouchesBegan`](xref:UIKit.UIResponder.TouchesBegan(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesMoved`](xref:UIKit.UIResponder.TouchesMoved(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesEnded`](xref:UIKit.UIResponder.TouchesEnded(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesCancelled`](xref:UIKit.UIResponder.TouchesCancelled(Foundation.NSSet,UIKit.UIEvent))
+- [`Draw`](xref:UIKit.UIView.Draw(CoreGraphics.CGRect))
 
 Различные `Touches` переопределения накапливать точки, составляющие ломаные линии.
 
