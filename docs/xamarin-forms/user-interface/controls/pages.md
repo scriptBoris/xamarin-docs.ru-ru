@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 588c04729b3387cd1a072f73a21f1e49df4529e5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ce10a2e6ac91f67f8b4f664c232de2a3c97a5ba6
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050079"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292003"
 ---
 # <a name="xamarinforms-pages"></a>Страницы Xamarin.Forms
 
@@ -74,7 +74,6 @@ Xamarin.Forms поддерживает следующие типы страни�
 
 ## <a name="related-links"></a>Связанные ссылки
 
-- [Введение в Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Пример Xamarin.Forms FormsGallery](https://developer.xamarin.com/samples/FormsGallery/)
 - [Примеры Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Документация по API Xamarin.Forms](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

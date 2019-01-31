@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 6c1c7bd12922f127ff7f4eecdc982ede419fc515
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: fd5181040c1805d3fdabdae4803bbe32c6bb6652
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055940"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292237"
 ---
 # <a name="device-styles-in-xamarinforms"></a>Стили устройства в Xamarin.Forms
 
@@ -122,11 +122,6 @@ public class DeviceStylesPageCS : ContentPage
 Далее на снимках экрана показано стили устройства на каждой платформе, с помощью максимальный размер доступного шрифта:
 
 ![](device-images/maximum-size.png "Стили доступны большое устройство на каждой платформе")
-
-## <a name="summary"></a>Сводка
-
-Платформа Xamarin.Forms включает шесть *динамическое* стили, известный как *устройства* стили, в [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles) класса. Все шесть стили могут применяться только к [ `Label` ](xref:Xamarin.Forms.Label) экземпляров.
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

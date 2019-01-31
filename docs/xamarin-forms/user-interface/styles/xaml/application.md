@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: b663a7f2a4a67a9c3e18ed474d9935227fe34294
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 749e9bca87b2c9547b9733248d75718a4443ab88
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059565"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292354"
 ---
 # <a name="global-styles-in-xamarinforms"></a>Глобальные стили в Xamarin.Forms
 
@@ -20,7 +20,7 @@ ms.locfileid: "53059565"
 
 _Стили могут быть сделаны доступными глобально, добавив их в словарь ресурсов приложения. Это помогает избежать дублирования стилей всех страниц или элементов управления._
 
-## <a name="creating-a-global-style-in-xaml"></a>Создание глобальных стиля в XAML
+## <a name="create-a-global-style-in-xaml"></a>Создание глобальных стиля в XAML
 
 По умолчанию используют все приложения Xamarin.Forms, созданные на основе шаблона **приложения** класс для реализации [ `Application` ](xref:Xamarin.Forms.Application) подкласс. Чтобы объявить [ `Style` ](xref:Xamarin.Forms.Style) на уровне приложения, в приложении [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) с помощью XAML, значение по умолчанию **приложения** класса должны быть заменены XAML **Приложения** класс и связанные с выделенным кодом. Дополнительные сведения см. в разделе [работа с класс App](~/xamarin-forms/app-fundamentals/application-class.md).
 
@@ -66,7 +66,7 @@ _Стили могут быть сделаны доступными глобал
 
 Сведения о создании стилей на странице [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), см. в разделе [явные стили](~/xamarin-forms/user-interface/styles/explicit.md) и [неявные стили](~/xamarin-forms/user-interface/styles/implicit.md).
 
-### <a name="overriding-styles"></a>Переопределение стили
+### <a name="override-styles"></a>Переопределить стили
 
 Стили более низкого уровня в иерархии представлений имеют приоритет над определенных выше вверх. Например, установка [ `Style` ](xref:Xamarin.Forms.Style) , задает [ `Button.TextColor` ](xref:Xamarin.Forms.Button.TextColor) для `Red` приложения будут переопределены уровень стиль уровня страницы, который задает `Button.TextColor` для `Green`. Аналогичным образом стиль уровня будут переопределены уровня стиль элемента управления. Кроме того Если `Button.TextColor` задано напрямую на свойства элемента управления, это будет иметь приоритет над любые стили. В следующем примере кода демонстрируется такой приоритет:
 
@@ -102,7 +102,7 @@ _Стили могут быть сделаны доступными глобал
 
 [![](application-images/application-styles-2.png "Переопределение пример стилей")](application-images/application-styles-2-large.png#lightbox "переопределение пример стилей")
 
-## <a name="creating-a-global-style-in-c35"></a>Создание глобальных стиля в C&#35;
+## <a name="create-a-global-style-in-c35"></a>Создание глобальных стиля в C&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) экземпляры можно добавить в приложение [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) коллекции в C# путем создания нового [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)и затем добавив `Style` экземпляры `ResourceDictionary`, как в следующем примере кода показан:
 
@@ -149,12 +149,6 @@ public class ApplicationStylesPageCS : ContentPage
 ```
 
 `buttonStyle` Применяется к [ `Button` ](xref:Xamarin.Forms.Button) экземпляров, задав их [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) свойства и определяет отображение `Button` экземпляров.
-
-## <a name="summary"></a>Сводка
-
-Стили можно сделать доступными глобально, добавив их в приложение [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Это помогает избежать дублирования стилей всех страниц или элементов управления.
-
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

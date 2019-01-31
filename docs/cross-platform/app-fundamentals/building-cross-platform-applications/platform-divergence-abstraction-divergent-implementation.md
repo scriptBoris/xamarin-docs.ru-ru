@@ -1,19 +1,19 @@
 ---
-title: Часть 4 - Работа с несколькими платформами
+title: Часть 4. Работа с несколькими платформами
 description: В этом документе описываются способы расхождения приложения на основе платформы или возможностей. В нем описывается, что размер экрана, метафоры навигации, касания и жесты, Push-уведомлений и парадигм интерфейса, такие как списки и вкладки.
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ef224b7410565ae15da7613c04d11e7bd6a44dcb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f4558d5172d7dcbd2e14e6b74a347dd2f1e3a234
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117945"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292133"
 ---
-# <a name="part-4---dealing-with-multiple-platforms"></a>Часть 4 - Работа с несколькими платформами
+# <a name="part-4---dealing-with-multiple-platforms"></a>Часть 4. Работа с несколькими платформами
 
 ## <a name="handling-platform-divergence-amp-features"></a>Обработка расхождения платформы &amp; функции
 
@@ -71,7 +71,7 @@ ms.locfileid: "50117945"
 
 С помощью интерфейсов и базовых классов определен в общем коде и реализовать или расширяется в проекты под конкретные платформы. Написание и расширение общего кода с помощью класса абстракции особенно подходит для переносимых библиотек классов, так как они имеют ограниченный набор framework, доступные на них и не могут содержать директивы компилятора для поддержки ветвей кода для конкретных платформ.
 
-#### <a name="interfaces"></a>интерфейсов,
+#### <a name="interfaces"></a>Интерфейсы
 
 С помощью интерфейсов позволяет реализовать классы, зависящие от платформы, которые по-прежнему могут быть переданы в ваши общие библиотеки, чтобы воспользоваться преимуществами общего кода.
 
@@ -95,7 +95,7 @@ ms.locfileid: "50117945"
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-См. в разделе [Xamarin.Forms](~/xamarin-forms/get-started/index.md) документации.
+См. в разделе [Xamarin.Forms](~/get-started/index.md) документации.
 
 ### <a name="other-cross-platform-libraries"></a>Другие кросс платформенные библиотеки
 

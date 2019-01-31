@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 8f84c960f17f56fce2a1bba143a215ce930f6f4e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 6f5af5fde46676cf669e6c02fb83f4aac5d31c46
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996114"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292094"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Введение в стили Xamarin.Forms
 
@@ -45,7 +45,7 @@ _Стили позволяют внешний вид визуальных эле
 </ContentPage>
 ```
 
-В следующем примере кода показан эквивалентный страницы, созданной в C#:
+В следующем примере кода создается эквивалентная страница на языке C#:
 
 ```csharp
 public class NoStylesPageCS : ContentPage
@@ -88,7 +88,7 @@ public class NoStylesPageCS : ContentPage
 
 Настройка внешнего вида каждого отдельного элемента управления может быть повторяющихся и подвержено ошибкам. Вместо этого стиля могут создаваться, определяет внешний вид, а затем применяются к необходимыми элементами управления.
 
-## <a name="creating-a-style"></a>Создание стиля
+## <a name="create-a-style"></a>Создание стиля
 
 [ `Style` ](xref:Xamarin.Forms.Style) Класс группирует коллекцию значений свойств в один объект, который затем можно применить к нескольким экземплярам визуальный элемент. Это позволяет сократить повтора разметки и позволяет внешний вид приложения, проще изменять.
 
@@ -97,7 +97,7 @@ public class NoStylesPageCS : ContentPage
 - [`Style`](xref:Xamarin.Forms.Style) экземпляры, созданные в XAML обычно определяются в [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) , назначенный [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) коллекцию элемента управления, странице или к [ `Resources` ](xref:Xamarin.Forms.Application.Resources) коллекции приложения.
 - [`Style`](xref:Xamarin.Forms.Style) экземпляры, созданные на языке C# обычно определяются в классе страницы или в классе, который может осуществляться глобально.
 
-Выбор места для определения [ `Style` ](xref:Xamarin.Forms.Style) последствий, где его можно использовать:
+От того, где определен шаблон [`Style`](xref:Xamarin.Forms.Style), зависит то, где его можно использовать.
 
 - [`Style`](xref:Xamarin.Forms.Style) экземпляров, определенные на уровне управления может применяться только к элементу управления и с его дочерними элементами.
 - [`Style`](xref:Xamarin.Forms.Style) экземпляров, определенные на уровне страниц может применяться только к странице и с его дочерними элементами.
@@ -134,11 +134,6 @@ public class NoStylesPageCS : ContentPage
 > **Что такое StyleId?**
 >
 > Предшествующих версии 2.2 Xamarin.Forms [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) свойство используется для идентификации отдельных элементов в приложении для идентификации при тестировании пользовательского интерфейса, а также в тему движков, таких как Pixate. Тем не менее, представила Xamarin.Forms 2.2 [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId) свойство, которое используется для [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) свойство. Дополнительные сведения см. в разделе [Xamarin.Forms, автоматизировать тестирование с помощью Xamarin.UITest и тестовое облако](~/xamarin-forms/deploy-test/uitest-and-test-cloud.md).
-
-## <a name="summary"></a>Сводка
-
-Приложения Xamarin.Forms часто содержат несколько элементов управления, имеющих идентичным внешним видом. Настройка внешнего вида каждого отдельного элемента управления может быть повторяющихся и подвержено ошибкам. Вместо этого стили можно создать, настроить внешний вид элемента управления путем группирования и параметры свойств, доступных на типе элемента управления.
-
 
 ## <a name="related-links"></a>Связанные ссылки
 

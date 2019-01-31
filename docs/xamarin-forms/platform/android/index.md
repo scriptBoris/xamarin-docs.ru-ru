@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2018
-ms.openlocfilehash: 72a55441658755c1e068b33f910f3b7c0db5502f
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: a90ae27bb4e0085d1cd0c5b36cf7c00fe5ebfec6
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207782"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292224"
 ---
 # <a name="android-platform-features"></a>Возможности на платформе Android
 
-При разработке приложения Xamarin.Forms для Android требуется Visual Studio. [Страница "размер"](~/xamarin-forms/get-started/installation.md) содержит дополнительные сведения о необходимых компонентах.
+При разработке приложения Xamarin.Forms для Android требуется Visual Studio. [Страница "размер"](~/get-started/installation.md) содержит дополнительные сведения о необходимых компонентах.
 
 ## <a name="platform-specifics"></a>Особенности платформы
 
