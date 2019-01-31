@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 54721cd5584c8a660b48f569514a3650eb4b8974
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: 92b9f9c80672e1c98ecca3de3f236ea3dd606f9b
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267421"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292068"
 documentType: LandingData
 title: Графика и игры
 metadata:
@@ -60,7 +60,7 @@ sections:
     items:
     - title: Xamarin.Forms
       href: ~/xamarin-forms/index.md
-      html: <p><a href="~/xamarin-forms/get-started/index.md">Начало работы</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">Принципы работы приложения</a><br /><a href="~/xamarin-forms/user-interface/index.md">Пользовательский интерфейс</a><br /><a href="~/xamarin-forms/platform/index.md">Функции платформы</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Тестирование и развертывание</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Данные и облачные службы</a><br /><a href="~/xamarin-forms/internals/index.md">Дополнительные понятия и внутренние компоненты</a></p>
+      html: <p><a href="~/get-started/quickstarts/index.md">Начало работы</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">Принципы работы приложения</a><br /><a href="~/xamarin-forms/user-interface/index.md">Пользовательский интерфейс</a><br /><a href="~/xamarin-forms/platform/index.md">Функции платформы</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Тестирование и развертывание</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Данные и облачные службы</a><br /><a href="~/xamarin-forms/internals/index.md">Дополнительные понятия и внутренние компоненты</a></p>
     - title: Android
       href: ~/android/index.md
       html: <p><a href="~/android/get-started/index.md">Начало работы</a><br /><a href="~/android/app-fundamentals/index.md">Принципы работы приложения</a><br /><a href="~/android/user-interface/index.md">Пользовательский интерфейс</a><br /><a href="~/android/platform/index.md">Функции платформы</a><br /><a href="~/android/deploy-test/index.md">Тестирование и развертывание</a><br /><a href="~/android/data-cloud/index.md">Данные и облачные службы</a><br /><a href="~/android/internals/index.md">Дополнительные понятия и внутренние компоненты</a></p>
