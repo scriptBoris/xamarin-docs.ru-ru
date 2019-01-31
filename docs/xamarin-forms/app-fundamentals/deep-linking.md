@@ -79,7 +79,7 @@ FirebaseApp.InitializeApp(this);
 AndroidAppLinks.Init(this);
 ```
 
-При добавлении в проект **google-services.json** (и задании действия при сборке *GoogleServicesJson**) процесс сборки извлекает ключ API и идентификатор клиента, а затем добавляет эти учетные данные в созданный файл манифеста.
+При добавлении в проект **google-services.json** (и задании действия при сборке *GoogleServicesJson*\*) процесс сборки извлекает ключ API и идентификатор клиента, а затем добавляет эти учетные данные в созданный файл манифеста.
 
 Дополнительные сведения см. в статье, посвященной [созданию прямых ссылок на содержимое с помощью навигации по URL-адресам Xamarin.Forms](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/), в блоге Xamarin.
 

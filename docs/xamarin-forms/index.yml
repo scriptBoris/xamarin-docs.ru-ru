@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 892a6dccae7bf0ec673b19e830fc01e3f9e39833
-ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
+ms.openlocfilehash: 95df735c07def5b3f7a0ad2e7e3eb1e114cc5e8f
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53609900"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292250"
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
@@ -35,30 +35,38 @@ sections:
     - image:
         src: https://docs.microsoft.com/media/common/i_setup.svg
       text: Установка
-      href: ~/xamarin-forms/get-started/installation.md
+      href: ~/get-started/installation.md
     - image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
       text: Первое приложение
-      href: ~/xamarin-forms/get-started/first-app.md
+      href: ~/get-started/first-app/index.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Краткое руководство
-      href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
+      text: Кратко о приложениях
+      href: ~/get-started/quickstarts/single-page.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Приложения с поддержкой нескольких экранов
-      href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
+      text: Кратко о многостраничности
+      href: ~/get-started/quickstarts/multi-page.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
+      text: Кратко о локальных БД
+      href: ~/get-started/quickstarts/database.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
+      text: Кратко о стилях
+      href: ~/get-started/quickstarts/styling.md
 - title: Направляющие
   items:
   - type: list
     style: cards
     className: cardsB
     items:
-    - href: ~/xamarin-forms/get-started/index.md
+    - href: ~/get-started/quickstarts/index.md
       html: Руководства, которые помогут вам начать работу с Xamarin.Forms. Убедитесь в том, что все установлено правильно, и создайте свое первое приложение Xamarin.Forms.
       image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/xamarin-forms/get-started/index.md
+        href: ~/get-started/quickstarts/index.md
       title: Начало работы
     - href: ~/xamarin-forms/xaml/
       html: Создавайте пользовательские интерфейсы декларативно и предоставляйте к ним общий доступ на платформах мобильных и классических приложений.
