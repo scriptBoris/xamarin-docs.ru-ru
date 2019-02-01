@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/19/2018
-ms.openlocfilehash: f3b8cf7ec8a42ed031699d8f5e02f32c6eb61458
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 997b3e8a8f847ae08eea7e022e7b3424d0fddd8d
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053871"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233943"
 ---
 # <a name="implementing-a-hybridwebview"></a>Реализация HybridWebView
 
@@ -301,19 +301,19 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Класс `HybridWebViewRenderer` загружает веб-страницу, указанную в свойстве `HybridWebView.Uri`, в собственный элемент управления [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/), а функция JavaScript `invokeCSharpAction` внедряется в веб-страницы. Когда пользователь вводит свое имя и нажимает элемент HTML `button`, выполняется функция JavaScript `invokeCSharpAction`, и метод `DidReceiveScriptMessage` вызывается после получения сообщения от веб-страницы. В свою очередь, этот метод вызывает метод `HybridWebView.InvokeAction`, который будет вызывать зарегистрированное действие для отображения всплывающего окна.
+Класс `HybridWebViewRenderer` загружает веб-страницу, указанную в свойстве `HybridWebView.Uri`, в собственный элемент управления [`WKWebView`](xref:WebKit.WKWebView), а функция JavaScript `invokeCSharpAction` внедряется в веб-страницы. Когда пользователь вводит свое имя и нажимает элемент HTML `button`, выполняется функция JavaScript `invokeCSharpAction`, и метод `DidReceiveScriptMessage` вызывается после получения сообщения от веб-страницы. В свою очередь, этот метод вызывает метод `HybridWebView.InvokeAction`, который будет вызывать зарегистрированное действие для отображения всплывающего окна.
 
 Это достигается следующим образом:
 
 - При условии, что свойство `Control` является `null`, выполняются следующие операции:
-  - Создается экземпляр [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/), который позволяет размещать сообщения и внедрять сценарии пользователя в веб-страницу.
-  - Экземпляр [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) создается для внедрения функции JavaScript `invokeCSharpAction` в веб-страницу после загрузки веб-страницы.
-  - Метод [`WKUserContentController.AddScript`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddUserScript/p/WebKit.WKUserScript/) добавляет экземпляр [`WKUserScript`](https://developer.xamarin.com/api/type/WebKit.WKUserScript/) к контроллеру содержимого.
-  - Метод [`WKUserContentController.AddScriptMessageHandler`](https://developer.xamarin.com/api/member/WebKit.WKUserContentController.AddScriptMessageHandler/p/WebKit.IWKScriptMessageHandler/System.String/) добавляет обработчик сообщений сценария с именем `invokeAction` в экземпляр [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/), который приводит к определению функции JavaScript `window.webkit.messageHandlers.invokeAction.postMessage(data)` во всех фреймах всех веб-представлений, которые будут использовать экземпляр `WKUserContentController`.
-  - Создается экземпляр [`WKWebViewConfiguration`](https://developer.xamarin.com/api/type/WebKit.WKWebViewConfiguration/), и экземпляр [`WKUserContentController`](https://developer.xamarin.com/api/type/WebKit.WKUserContentController/) устанавливается в качестве контроллера содержимого.
-  - Создается экземпляр элемента управления [`WKWebView`](https://developer.xamarin.com/api/type/WebKit.WKWebView/), и вызывается метод `SetNativeControl`, чтобы назначить ссылку на элемент управления `WKWebView` свойству `Control`.
+  - Создается экземпляр [`WKUserContentController`](xref:WebKit.WKUserContentController), который позволяет размещать сообщения и внедрять сценарии пользователя в веб-страницу.
+  - Экземпляр [`WKUserScript`](xref:WebKit.WKUserScript) создается для внедрения функции JavaScript `invokeCSharpAction` в веб-страницу после загрузки веб-страницы.
+  - Метод [`WKUserContentController.AddUserScript`](xref:WebKit.WKUserContentController.AddUserScript(WebKit.WKUserScript)) добавляет экземпляр [`WKUserScript`](xref:WebKit.WKUserScript) к контроллеру содержимого.
+  - Метод [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String)) добавляет обработчик сообщений сценария с именем `invokeAction` в экземпляр [`WKUserContentController`](xref:WebKit.WKUserContentController), который приводит к определению функции JavaScript `window.webkit.messageHandlers.invokeAction.postMessage(data)` во всех фреймах всех веб-представлений, которые будут использовать экземпляр `WKUserContentController`.
+  - Создается экземпляр [`WKWebViewConfiguration`](xref:WebKit.WKWebViewConfiguration), и экземпляр [`WKUserContentController`](xref:WebKit.WKUserContentController) устанавливается в качестве контроллера содержимого.
+  - Создается экземпляр элемента управления [`WKWebView`](xref:WebKit.WKWebView), и вызывается метод `SetNativeControl`, чтобы назначить ссылку на элемент управления `WKWebView` свойству `Control`.
 - Если настраваемый отрисовщик подключен к новому элементу Xamarin.Forms:
-  - Метод [`WKWebView.LoadRequest`](https://developer.xamarin.com/api/member/WebKit.WKWebView.LoadRequest/p/Foundation.NSUrlRequest/) загружает HTML-файл, указанный свойством `HybridWebView.Uri`. Код указывает, что файл сохранен в папке `Content` проекта. Когда веб-страница отображается, функция JavaScript `invokeCSharpAction` внедряется в веб-страницу.
+  - Метод [`WKWebView.LoadRequest`](xref:WebKit.WKWebView.LoadRequest(Foundation.NSUrlRequest)) загружает HTML-файл, указанный свойством `HybridWebView.Uri`. Код указывает, что файл сохранен в папке `Content` проекта. Когда веб-страница отображается, функция JavaScript `invokeCSharpAction` внедряется в веб-страницу.
 - Когда элемент, к которому присоединен отрисовщик, меняется:
   - Ресурсы освобождаются.
 

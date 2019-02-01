@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 3452c79621013690f967e065c7afaf0768a50c3f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 5c4d43723bc23d8a16be8fec0a895a31ab8bcfdc
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057498"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233969"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Выбор фотографии в библиотеке рисунков
 
@@ -50,7 +50,7 @@ namespace DependencyServiceSample
 
 ## <a name="ios-implementation"></a>Реализация в iOS
 
-Реализация интерфейса `IPicturePicker` в iOS использует [`UIImagePickerController`](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/), как описано в разделе [**Выбор фотографии из коллекции**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) и [примере кода](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
+Реализация интерфейса `IPicturePicker` в iOS использует [`UIImagePickerController`](xref:UIKit.UIImagePickerController), как описано в разделе [**Выбор фотографии из коллекции**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) и [примере кода](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
 
 Реализация для iOS содержится в классе [`PicturePickerImplementation`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) в проекте iOS примера кода. Чтобы сделать этот класс видимым для диспетчера`DependencyService`, нужно определить класс с атрибутом [`assembly`] типа `Dependency`, при этом он должен быть открытым и явно реализовывать интерфейс `IPicturePicker`:
 

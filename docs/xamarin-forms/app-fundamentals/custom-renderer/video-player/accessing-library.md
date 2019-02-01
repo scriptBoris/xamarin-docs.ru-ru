@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 2754e135bee090ce47796dfa1ae39eed2b5f27c5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: dedd2768bfa843e529e2eddcaed3b102c0a2efbd
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059591"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233514"
 ---
 # <a name="accessing-the-devices-video-library"></a>Доступ к видеотеке устройства
 
@@ -40,7 +40,7 @@ namespace FormsVideoLibrary
 
 ### <a name="the-ios-video-picker"></a>Средство выбора видео на платформе iOS
 
-В iOS `VideoPicker` для доступа к библиотеке изображений используется iOS [`UIImagePickerController`](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/), при этом он должен быть ограничен видеороликами (для этого используется термин "movies") в свойстве iOS `MediaType`. Обратите внимание, что `VideoPicker` явным образом реализует интерфейс `IVideoPicker`. Следует отметить и атрибут`Dependency`, определяющий этот класс как службу зависимостей. Ниже приведены два требования, которые позволяют Xamarin.Forms найти службу зависимостей в проекте платформы:
+В iOS `VideoPicker` для доступа к библиотеке изображений используется iOS [`UIImagePickerController`](xref:UIKit.UIImagePickerController), при этом он должен быть ограничен видеороликами (для этого используется термин "movies") в свойстве iOS `MediaType`. Обратите внимание, что `VideoPicker` явным образом реализует интерфейс `IVideoPicker`. Следует отметить и атрибут`Dependency`, определяющий этот класс как службу зависимостей. Ниже приведены два требования, которые позволяют Xamarin.Forms найти службу зависимостей в проекте платформы:
 
 ```csharp
 using System;

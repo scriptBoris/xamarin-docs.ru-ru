@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/24/2017
-ms.openlocfilehash: 667c98d3140d460a6d4b3a26bd898f4c169d6d85
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: 04f92988d4d367abd5e6e864d4450aee2e6c1df2
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234886"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233800"
 ---
 # <a name="linking-xamarinios-apps"></a>Компоновка приложений Xamarin.iOS
 
@@ -147,7 +147,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 Это распространенная ситуация, так как разработчики не любят вручную добавлять атрибуты `[Preserve]` в свой код.  В такой ситуации компоновка не будет применяться для библиотек сторонних производителей. Это неплохой вариант по умолчанию, так как нет надежных методов проверки готовности сторонней библиотеки к обработке компоновщиком.
 
-Чтобы разрешить компоновку для определенной сборки, которую вы включили в проект или разрабатываете для многократного использования, достаточно добавить в нее атрибут уровня сборки [`LinkerSafe`](https://developer.xamarin.com/api/type/Foundation.LinkerSafeAttribute/), вот так:
+Чтобы разрешить компоновку для определенной сборки, которую вы включили в проект или разрабатываете для многократного использования, достаточно добавить в нее атрибут уровня сборки [`LinkerSafe`](xref:Foundation.LinkerSafeAttribute), вот так:
 
 ```csharp
 [assembly:LinkerSafe]

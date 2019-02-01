@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: bdfef88e0cf5916b1eec08ddfaa09165a057765a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 08278c2bc380892706320dbd0e69642257b73005
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058588"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233787"
 ---
 # <a name="checking-battery-status"></a>Проверка состояния батареи
 
@@ -77,7 +77,7 @@ namespace DependencyServiceSample
 
 ## <a name="ios-implementation"></a>Реализация в iOS
 
-Интерфейс `IBattery` необходимо реализовать в проекте приложения для каждой платформы. Реализация для iOS будет использовать собственные интерфейсы API [`UIDevice`](https://developer.xamarin.com/api/type/UIKit.UIDevice/) для доступа к сведениям о батарее. Обратите внимание на то, что следующий класс имеет конструктор без параметров, что позволяет `DependencyService` создавать экземпляры:
+Интерфейс `IBattery` необходимо реализовать в проекте приложения для каждой платформы. Реализация для iOS будет использовать собственные интерфейсы API [`UIDevice`](xref:UIKit.UIDevice) для доступа к сведениям о батарее. Обратите внимание на то, что следующий класс имеет конструктор без параметров, что позволяет `DependencyService` создавать экземпляры:
 
 ```csharp
 using UIKit;
