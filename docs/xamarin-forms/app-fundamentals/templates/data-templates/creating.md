@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 4eea0db32bcfae4dc2ecdec8c2e494989515ef00
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 0374d37027546c41305c8cd5f27de593c226fcaa
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060230"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233774"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>Создание DataTemplate в Xamarin.Forms
 
@@ -63,7 +63,7 @@ _Шаблоны данных могут создаваться как встро
 </ListView>
 ```
 
-Дочерний объект встроенного шаблона [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) должен иметь тип [`ViewCell`](xref:Xamarin.Forms.ViewCell) или производный от него тип. Управление макетом внутри `ViewCell` осуществляется здесь с помощью [`Grid`](xref:Xamarin.Forms.Grid). Макет `Grid` содержит три экземпляра [`Label`](xref:Xamarin.Forms.Label), свойства [`Text`](xref:Xamarin.Forms.Label.Text) которых привязаны к соответствующим свойствам каждого объекта `Person` в коллекции.
+Дочерний объект встроенного шаблона [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) должен иметь тип [`Cell`](xref:Xamarin.Forms.Cell) или производный от него тип. В этом примере используется класс [`ViewCell`](xref:Xamarin.Forms.ViewCell), производный от `Cell`. Управление макетом внутри `ViewCell` осуществляется здесь с помощью [`Grid`](xref:Xamarin.Forms.Grid). Макет `Grid` содержит три экземпляра [`Label`](xref:Xamarin.Forms.Label), свойства [`Text`](xref:Xamarin.Forms.Label.Text) которых привязаны к соответствующим свойствам каждого объекта `Person` в коллекции.
 
 Эквивалентный код на языке C# показан в следующем примере:
 
