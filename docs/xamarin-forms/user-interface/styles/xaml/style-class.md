@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 2de21f19e2789c94c02b5d2e9c13fc06963e1a7f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: dd749a4a78adbab5317f1ae5ca6334caa009b9b3
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293318"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668554"
 ---
 # <a name="xamarinforms-style-classes"></a>Классы стилей Xamarin.Forms
 
-[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 
 _Классы стилей Xamarin.Forms включить несколько стилей, применяемых к элементу управления, не прибегая к наследования стиля._
 
@@ -206,7 +206,7 @@ Resources = new ResourceDictionary
 ![](style-class-images/boxviews.png "BoxViews с классы стилей")
 
 > [!IMPORTANT]
-> Несколько классов стиля можно применить к элементу управления, поскольку [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) свойство имеет тип `IList<string>`.
+> Несколько классов стиля можно применить к элементу управления, поскольку [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) свойство имеет тип `IList<string>`. В этом случае стиль классы применяются в возрастающем порядке списка. Таким образом когда несколько классов стиля такими же свойствами, свойство в классе стиля, который находится в высшей позиции списка будет иметь приоритет.
 
 Ниже приведен аналогичный код C#:
 

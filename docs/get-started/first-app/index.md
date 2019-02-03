@@ -8,13 +8,13 @@ ms.technology: xamarin-forms
 ms.custom: video
 author: conceptdev
 ms.author: crdun
-ms.date: 09/24/2018
-ms.openlocfilehash: d89488e3f6e42f84fc9519eedaa38c99b90ae068
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.date: 02/02/2019
+ms.openlocfilehash: 8adf52d8e08dedeebae8362cf730e5dc3c7c93a9
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293355"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668567"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>Создание первого приложения Xamarin.Forms
 
@@ -25,6 +25,8 @@ _Просмотрите это видео и следуйте инструкци
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Building-Your-First-Android--iOS-App-in-Visual-Studio-2017/player]
 
 ## <a name="step-by-step-instructions-for-windows"></a>Пошаговые инструкции для Windows
+
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 Выполните следующие действия, как показано в видео.
 
@@ -40,7 +42,7 @@ _Просмотрите это видео и следуйте инструкци
 
 4. Запустите эмулятор Android, нажав кнопку отладки (или пункт меню **Отладка > Начать отладку**).
 
-5. Измените **MainPage.xaml**, добавив этот XAML до конца `</StackPanel>`:
+5. Измените **MainPage.xaml**, добавив этот XAML до конца `</StackLayout>`:
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
@@ -71,6 +73,8 @@ _Просмотрите это видео и следуйте инструкци
 
 ## <a name="step-by-step-instructions-for-mac"></a>Пошаговые инструкции для Mac
 
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+
 Выполните следующие действия, как показано в видео.
 
 1. Выберите **Файл > Создать решение...** или нажмите кнопку **Создать проект...** и выберите **Многоплатформенность > Приложение > Приложение с пустыми формами**:
@@ -87,7 +91,7 @@ _Просмотрите это видео и следуйте инструкци
 
 4. Запустите эмулятор Android, нажав кнопку отладки (или **Запуск > Начать отладку**).
 
-5. Измените **MainPage.xaml**, добавив этот XAML до конца `</StackPanel>`:
+5. Измените **MainPage.xaml**, добавив этот XAML до конца `</StackLayout>`:
 
     ```xaml
     <Button Text="Click Me" Clicked="Handle_Clicked" />
