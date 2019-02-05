@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 7c19cc0f2d1f72706926d640bb7fad9323a9e17f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 067ff4758ca78f7d706c7be96ffecd10e4e57965
+ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53049460"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55712076"
 ---
 # <a name="customizing-listview-cell-appearance"></a>Настройка внешнего вида ячейки ListView
 
@@ -120,6 +120,7 @@ x:Class="demoListView.ImageCellPage">
 - Пользовательской ячейки вложен в `DataTemplate`, который находится внутри `ListView.ItemTemplate`. Это же процессе, что с помощью любую другую ячейку.
 - `ViewCell` — Тип пользовательской ячейки. Дочерним элементом элемента `DataTemplate` элемент должен быть или являются производными от типа `ViewCell`.
 - Обратите внимание, что его в `ViewCell`, макет находится под управлением `StackLayout`. Этот макет позволяет настроить цвет фона. Обратите внимание, что любое свойство `StackLayout` то есть привязки может привязать внутри пользовательских ячейки, несмотря на то, что этот процесс не показан здесь.
+- Внутри `ViewCell`, макет может управляться любой макет Xamarin.Forms. 
 
 ### <a name="cnum"></a>C&num;
 
