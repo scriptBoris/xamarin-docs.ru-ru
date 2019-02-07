@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 39af3b0e28bbbf9397ceece55adc330e364dcc3d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 303cca48defdadd69449edbd6c4c3f5e4410bbbb
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061789"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831967"
 ---
 # <a name="xamarinforms-entry"></a>Запись Xamarin.Forms
 
@@ -44,6 +44,18 @@ var MyEntry = new Entry { Text = "I am an Entry" };
 var text = MyEntry.Text;
 ```
 
+### <a name="setting-placeholder-text"></a>Параметр замещающий текст
+
+[ `Entry` ](xref:Xamarin.Forms.Entry) Можно задать, чтобы показать текст заполнителя, если он не хранит ввод данных пользователем. Это достигается путем установки [ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder) свойства `string`и часто используется для указания типа содержимого, которое подходит для `Entry`. Кроме того, цвет текста заполнителя можно управлять, задав [ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor) свойства [ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<Entry Placeholder="Username" PlaceholderColor="Olive" />
+```
+
+```csharp
+var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
+```
+
 > [!NOTE]
 > Ширина `Entry` может быть определена путем задания его `WidthRequest` свойство. Не зависят от ширину `Entry` , определенное на основе значения из его `Text` свойство.
 
@@ -60,6 +72,40 @@ var entry = new Entry { ... MaxLength = 10 };
 ```
 
 Объект [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) свойства значение 0 указывает, что входные данные не будет разрешено и значение `int.MaxValue`, который является значением по умолчанию для [ `Entry` ](xref:Xamarin.Forms.Entry), указывает, что не действующие ограничения на число символов, которые могут быть введены.
+
+### <a name="password-fields"></a>Поля пароля
+
+`Entry` предоставляет `IsPassword` свойство. Когда `IsPassword` является `true`, содержимое поля будут представлены в виде кругов черным:
+
+В XAML:
+
+```xaml
+<Entry IsPassword="true" />
+```
+
+В C#:
+
+```csharp
+var MyEntry = new Entry { IsPassword = true };
+```
+
+![](entry-images/password.png "Пример записи IsPassword")
+
+Заполнители, которые могут использоваться с экземплярами `Entry` , настроенные в качестве пароля:
+
+В XAML:
+
+```xaml
+<Entry IsPassword="true" Placeholder="Password" />
+```
+
+В C#:
+
+```csharp
+var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
+```
+
+![](entry-images/passwordplaceholder.png "Запись IsPassword и примере заполнитель")
 
 ### <a name="setting-the-cursor-position-and-text-selection-length"></a>Задание позиции курсора и длину выделения текста
 
@@ -207,52 +253,6 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 
 > [!NOTE]
 > При [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) свойству `false`, и пользовательских сочетаний не используется, прогнозирование текста и автоматическое исправление текста отключено. Тем не менее если [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) было задано, прогнозирование текста отключает, `IsTextPredictionEnabled` свойство учитывается. Таким образом, свойство не может использоваться для прогнозирования текста для `Keyboard` , явно отключает его.
-
-### <a name="setting-placeholder-text"></a>Параметр замещающий текст
-
-[ `Entry` ](xref:Xamarin.Forms.Entry) Можно задать, чтобы показать текст заполнителя, если он не хранит ввод данных пользователем. Это достигается путем установки [ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder) свойства `string`и часто используется для указания типа содержимого, которое подходит для `Entry`. Кроме того, цвет текста заполнителя можно управлять, задав [ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor) свойства [ `Color` ](xref:Xamarin.Forms.Color):
-
-```xaml
-<Entry Placeholder="Username" PlaceholderColor="Olive" />
-```
-
-```csharp
-var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
-```
-
-### <a name="password-fields"></a>Поля пароля
-
-`Entry` предоставляет `IsPassword` свойство. Когда `IsPassword` является `true`, содержимое поля будут представлены в виде кругов черным:
-
-В XAML:
-
-```xaml
-<Entry IsPassword="true" />
-```
-
-В C#:
-
-```csharp
-var MyEntry = new Entry { IsPassword = true };
-```
-
-![](entry-images/password.png "Пример записи IsPassword")
-
-Заполнители, которые могут использоваться с экземплярами `Entry` , настроенные в качестве пароля:
-
-В XAML:
-
-```xaml
-<Entry IsPassword="true" Placeholder="Password" />
-```
-
-В C#:
-
-```csharp
-var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
-```
-
-![](entry-images/passwordplaceholder.png "Запись IsPassword и примере заполнитель")
 
 ### <a name="colors"></a>Цвета
 
