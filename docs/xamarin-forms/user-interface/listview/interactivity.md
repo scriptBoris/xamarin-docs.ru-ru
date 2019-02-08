@@ -6,23 +6,19 @@ ms.assetid: CD14EB90-B08C-4E8F-A314-DA0EEC76E647
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/13/2018
-ms.openlocfilehash: f5b5a8a2d7adf207a583d71953ead1e0e7306b3f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/14/2018
+ms.openlocfilehash: 939df6cfd17de82e28958363cfa51cd199f928cb
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052320"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831695"
 ---
 # <a name="listview-interactivity"></a>Интерактивность ListView
 
-[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
 
-ListView поддерживает взаимодействия с данными, которые она представляет, используя следующие подходы:
-
-- [**Выбор & касания** ](#selectiontaps) &ndash; реагирования на касания и выбранные параметры/deselections элементов. Включить или отключить выделение строки (включено по умолчанию).
-- [**Контекстные действия** ](#Context_Actions) &ndash; предоставляют функциональные возможности каждого элемента, например, проведите по экрану для удаления.
-- [**Чтобы обновить по запросу** ](#Pull_to_Refresh) &ndash; реализовать идиому по запросу для обновления, которая пользователи привыкли из собственного опыта.
+[`ListView`](xref:Xamarin.Forms.ListView) поддерживает взаимодействие с данными, которые она представляет.
 
 <a name="selectiontaps" />
 
@@ -66,6 +62,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 <a name="Context_Actions" />
 
 ## <a name="context-actions"></a>Контекстные действия
+
 Часто пользователей потребуется выполнить действие на элемент в `ListView`. Например рассмотрим список адресов электронной почты в почтовом приложении. В iOS можно проведите, чтобы удалить сообщение::
 
 ![](interactivity-images/context-default.png "ListView с помощью контекстных действий")
@@ -149,30 +146,47 @@ public void OnDelete (object sender, EventArgs e) {
 <a name="Pull_to_Refresh" />
 
 ## <a name="pull-to-refresh"></a>Потяните, чтобы обновить
-Пользователи привыкли, потянув вниз по списку данных обновит этого списка. `ListView` поддерживает этот out-of--box. Чтобы включить функцию по запросу для обновления, задайте `IsPullToRefreshEnabled` значение true:
+
+Пользователи привыкли, потянув вниз по списку данных обновит этого списка. [`ListView`](xref:Xamarin.Forms.ListView) поддерживает этот out-of--box. Чтобы включить функцию по запросу для обновления, задайте [ `IsPullToRefreshEnabled` ](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled) для `true`:
+
+```xaml
+<ListView ...
+          IsPullToRefreshEnabled="true" />
+```
+
+Ниже приведен аналогичный код C#:
 
 ```csharp
 listView.IsPullToRefreshEnabled = true;
 ```
 
-Извлекает по запросу для обновления имени пользователя:
+Счетчик появляется во время обновления, который является черной по умолчанию. Тем не менее, цвет "Счетчик" можно изменить в iOS и Android, задав `RefreshControlColor` свойства [ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<ListView ...
+          IsPullToRefreshEnabled="true"
+          RefreshControlColor="Red" />
+```
+
+Ниже приведен аналогичный код C#:
+
+```csharp
+listView.RefreshControlColor = Color.Red;
+```
+
+На следующих снимках экрана показано по запросу для обновления, как пользователь извлекает:
 
 ![](interactivity-images/refresh-start.png "ListView потяните, чтобы обновить выполняющееся")
 
-По запросу для обновления имени пользователя выпустила по запросу. Это, что пользователь видит при обновлении списка: ![](interactivity-images/refresh-in-progress.png "ListView потяните, чтобы обновить полный")
+Далее на снимках экрана Показывать по запросу для обновления после Пользователь отпустил по запросу, с "Счетчик", который отображается во время [ `ListView` ](xref:Xamarin.Forms.ListView) обновляется:
 
-ListView предоставляет несколько событий, которые позволяют реагировать на события по запросу для обновления.
+![](interactivity-images/refresh-in-progress.png "ListView потяните, чтобы обновление завершено")
 
--  `RefreshCommand` Будет вызываться и `Refreshing` событие. `IsRefreshing` будет присвоено `true`.
--  Следует выполнять код необходим для обновления содержимого представления "list", либо команду или события.
--  При обновлении завершения, вызовите `EndRefresh` или задать `IsRefreshing` для `false` определить представление списка, в котором все будет готово.
+[`ListView`](xref:Xamarin.Forms.ListView) активируется [ `Refreshing` ](xref:Xamarin.Forms.ListView.Refreshing) событий инициировать обновление и [ `IsRefreshing` ](xref:Xamarin.Forms.ListView.IsRefreshing) свойству будет присвоено `true`. Любой код не требуется, чтобы обновить содержимое `ListView` затем должна выполняться с помощью обработчика событий для `Refreshing` событий, или с помощью метода, выполняемая [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand). Один раз `ListView` обновляется и `IsRefreshing` свойство должно быть присвоено `false`, или [ `EndRefresh` ](xref:Xamarin.Forms.ListView.EndRefresh) метод должен вызываться, для указания выполнения обновления.
 
-`CanExecute` Учитывается свойство, которое позволяет способ управления ли команда по запросу для обновления должен быть включен.
-
-
+> [!NOTE]
+> При определении [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand), `CanExecute` метод команды можно задать, чтобы включить или отключить команду.
 
 ## <a name="related-links"></a>Связанные ссылки
 
 - [ListView интерактивности (пример)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
-- [заметки о выпуске 1.4](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [заметки о выпуске версии 1.3](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

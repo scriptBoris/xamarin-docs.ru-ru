@@ -6,13 +6,13 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/31/2018
-ms.openlocfilehash: 2fe1ad168186740fd71d25814e68b1109e097597
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/13/2018
+ms.openlocfilehash: 4011863553935052c230def403f4ebc281c51d92
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052628"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831876"
 ---
 # <a name="xamarinforms-editor"></a>Редактор Xamarin.Forms
 
@@ -45,6 +45,18 @@ var MyEditor = new Editor { Text = "I am an Editor" };
 
 ```csharp
 var text = MyEditor.Text;
+```
+
+### <a name="setting-placeholder-text"></a>Параметр замещающий текст
+
+[ `Editor` ](xref:Xamarin.Forms.Editor) Можно задать, чтобы показать текст заполнителя, если он не хранит ввод данных пользователем. Это достигается путем установки [ `Placeholder` ](xref:Xamarin.Forms.Editor.Placeholder) свойства `string`и часто используется для указания типа содержимого, которое подходит для `Editor`. Кроме того, цвет текста заполнителя можно управлять, задав [ `PlaceholderColor` ](xref:Xamarin.Forms.Editor.PlaceholderColor) свойства [ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
+```
+
+```csharp
+var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
 ```
 
 ### <a name="limiting-input-length"></a>Ограничение длины входных
@@ -159,17 +171,22 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 > [!NOTE]
 > Когда [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) свойству `false`и пользовательских сочетаний не используется, средство проверки орфографии собственного будет отключена. Тем не менее если [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) имеет был набор, который отключает орфографии поиска, например [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` свойство учитывается. Таким образом, свойство не позволяет включить проверку орфографии для `Keyboard` , явно отключает его.
 
-### <a name="setting-placeholder-text"></a>Параметр замещающий текст
+### <a name="enabling-and-disabling-text-prediction"></a>Включение и отключение прогнозирования текста
 
-[ `Editor` ](xref:Xamarin.Forms.Editor) Можно задать, чтобы показать текст заполнителя, если он не хранит ввод данных пользователем. Это достигается путем установки [ `Placeholder` ](xref:Xamarin.Forms.Editor.Placeholder) свойства `string`и часто используется для указания типа содержимого, которое подходит для `Editor`. Кроме того, цвет текста заполнителя можно управлять, задав [ `PlaceholderColor` ](xref:Xamarin.Forms.Editor.PlaceholderColor) свойства [ `Color` ](xref:Xamarin.Forms.Color):
+`IsTextPredictionEnabled` Свойство, управляет ли прогнозирование текста и автоматическое исправление текста включен. По умолчанию задано значение `true`. Как пользователь вводит текст, представляется word прогнозов.
+
+Тем не менее, для некоторых сценариев входа текст, например ввода имени пользователя, прогнозирование текста и текста исправление обеспечивает взаимодействие с отрицательным и следует отключить, задав `IsTextPredictionEnabled` свойства `false`:
 
 ```xaml
-<Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
+<Editor ... IsTextPredictionEnabled="false" />
 ```
 
 ```csharp
-var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
+var editor = new Editor { ... IsTextPredictionEnabled = false };
 ```
+
+> [!NOTE]
+> При `IsTextPredictionEnabled` свойству `false`, и пользовательских сочетаний не используется, прогнозирование текста и автоматическое исправление текста отключено. Тем не менее если [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) было задано, прогнозирование текста отключает, `IsTextPredictionEnabled` свойство учитывается. Таким образом, свойство не может использоваться для прогнозирования текста для `Keyboard` , явно отключает его.
 
 ### <a name="colors"></a>Цвета
 

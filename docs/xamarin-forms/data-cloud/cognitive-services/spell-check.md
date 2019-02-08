@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 08ac86674e4f10d6bd17d765de2bcdf7c2d3f901
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 79b973784dd978bff15c7a706083c70df83ba1c8
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061763"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831850"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Проверка орфографии с помощью API проверки орфографии Bing
 
@@ -154,6 +154,9 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 ![](spell-check-images/before-spell-check.png "Прежде чем проверки орфографии")
 
 ![](spell-check-images/after-spell-check.png "После проверки орфографии")
+
+> [!NOTE]
+> В примере выше используется `Replace` для простоты, а для всей большой объем текста, он может заменить Неверный маркер. Предоставляет API `offset` значение, которое следует использовать в рабочих приложениях, чтобы определить правильное расположение в исходном тексте, чтобы выполнить обновление.
 
 ## <a name="summary"></a>Сводка
 

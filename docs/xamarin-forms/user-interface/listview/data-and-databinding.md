@@ -7,21 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 06cf5d2a862a5db2f94fca655b69c45d16375854
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4f69e88e0abff1236dc8365d88c8efbdf58b4031
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059156"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831708"
 ---
 # <a name="listview-data-sources"></a>Источники данных ListView
 
 [![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
 
 Объект [ `ListView` ](xref:Xamarin.Forms.ListView) используется для отображения списков данных. Вы узнаете о заполнении ListView с данными, и как можно привязать к выбранному элементу.
-
-- **[Параметр ItemsSource](#ItemsSource)**  &ndash; использует простой список или массив.
-- **[Привязка данных](#Data_Binding)**  &ndash; устанавливает связь между моделью и ListView. Привязка идеально подходит для шаблона MVVM.
 
 ## <a name="itemssource"></a>ItemsSource
 

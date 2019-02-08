@@ -6,24 +6,19 @@ ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 8adac1711271324b70731a085088bd8805391d31
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/13/2018
+ms.openlocfilehash: 71962c5e7d2f4c360e14b2040779498d4be95282
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059461"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831799"
 ---
 # <a name="customizing-listview-appearance"></a>Настройка внешнего вида ListView
 
-[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
 
-`ListView` содержит параметры для управления представлением общий список, в дополнение к основной `ViewCell`s. Возможны следующие значения.
-
-- [**Группирование** ](#Grouping) &ndash; группировать элементы в ListView для упрощения навигации и усовершенствование структуры.
-- [**Верхние и нижние колонтитулы** ](#Headers_and_Footers) &ndash; отображения сведений в начале и конце представление, которое прокручивается вместе с другими элементами.
-- [**Разделители строк** ](#Row_Separators) &ndash; Отображение или скрытие разделительных линий между элементами.
-- [**Переменной высоты строк** ](#Row_Heights) &ndash; по умолчанию все строки имеют одинаковую высоту, но это можно изменить, чтобы разрешить строки с разными высоты для отображения.
+[`ListView`](xref:Xamarin.Forms.ListView) имеет возможность управления представления списка, в дополнение к [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) экземпляров для каждой строки в списке.
 
 <a name="Grouping" />
 
@@ -83,7 +78,7 @@ static PageTypeGroup()
 }
 ```
 
-В приведенном выше коде можно также вызвать `Add` над элементами `groups`, которые являются экземплярами типа `PageTypeGroup`. Это возможно, так как `PageTypeGroup` наследует от `List<PageModel>`. Ниже приведен пример списка шаблон списки, указанным выше.
+В приведенном выше коде, можно также вызвать `Add` над элементами `groups`, которые являются экземплярами типа `PageTypeGroup`. Это возможно, так как `PageTypeGroup` наследует от `List<PageModel>`. Ниже приведен пример списка шаблон списки, указанным выше.
 
 Ниже приведен XAML для отображения Сгруппированный список.
 
@@ -205,6 +200,14 @@ ListView HeaderList = new ListView() {
 ```
 
 ![](customizing-list-appearance-images/header-custom.png "ListView с настраиваемый верхний и нижний колонтитул")
+
+## <a name="scrollbar-visibility"></a>Видимость для полосы прокрутки
+
+[`ListView`](xref:Xamarin.Forms.ListView) имеет `HorizontalScrollBarVisibility` и `VerticalScrollBarVisibility` свойства, которые получить или задать [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) значение, представляющее полоса прокрутки по горизонтали или вертикали, является видимым. Оба свойства можно задать следующие значения:
+
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) Указывает поведение прокрутки панели по умолчанию для платформы, и значение по умолчанию для `HorizontalScrollBarVisibility` и `VerticalScrollBarVisibility` свойства.
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) Указывает, что полосы прокрутки будут видны, даже в том случае, если содержимое не укладывается в представлении.
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) Указывает, что полосы прокрутки не будут видны, событие, если содержимое не умещается в представлении.
 
 <a name="Row_Separators" />
 
