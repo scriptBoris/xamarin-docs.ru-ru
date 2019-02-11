@@ -6,13 +6,13 @@ ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2017
-ms.openlocfilehash: f59a528916d2cc5efd19ba7c35a7b4f041ecbe09
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/18/2018
+ms.openlocfilehash: 284e10af41429d320ce08b8d45ccd5bbcec851d1
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056166"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831993"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Свойства автоматизации в Xamarin.Forms
 
@@ -138,6 +138,43 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 > [!NOTE]
 > Обратите внимание, что метод [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) также можно использовать для задания присоединенного свойства `AutomationProperties.IsInAccessibleTree` — `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
+
+## <a name="accessibility-intricacies"></a>Особенности специальных возможностей
+
+Следующие разделы описывают особенности настройки специальных возможностей у определенных элементов управления.
+
+### <a name="navigationpage"></a>NavigationPage
+
+На Android, чтобы задать текст средства чтения с экрана, который будет произноситься для стрелки "назад" в панели действий [`NavigationPage`](xref:Xamarin.Forms.NavigationPage), используйте свойства `AutomationProperties.Name` и `AutomationProperties.HelpText` класса [`Page`](xref:Xamarin.Forms.Page). Однако учтите, что это не относится к кнопкам "назад" в операционной системе.
+
+### <a name="masterdetailpage"></a>MasterDetailPage
+
+На iOS и универсальной платформе Windows (UWP), чтобы задать текст средства чтения с экрана, который будет произноситься для выключателя в [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage), используйте либо свойства `AutomationProperties.Name` и `AutomationProperties.HelpText` класса `MasterDetailPage`, либо свойство `Icon` страницы `Master`.
+
+На Android, чтобы задать текст средства чтения с экрана, который будет произноситься для выключателя в [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage), добавьте в проект Android следующие строковые ресурсы:
+
+```xml
+<resources>
+        <string name="app_name">Xamarin Forms Control Gallery</string>
+        <string name="btnMDPAutomationID_open">Open Side Menu message</string>
+        <string name="btnMDPAutomationID_close">Close Side Menu message</string>
+</resources>
+```
+
+Затем назначьте нужную строку свойству `AutomationId` в свойстве `Icon` страницы `Master`:
+
+```csharp
+var master = new ContentPage { ... };
+master.Icon.AutomationId = "btnMDPAutomationID";
+```
+
+### <a name="toolbaritem"></a>ToolbarItem
+
+На iOS, Android и UWP средства чтения с экрана будут произносить значение свойства `Text` экземпляров [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) при условии, что не заданы значения `AutomationProperties.Name` или `AutomationProperties.HelpText`.
+
+На iOS и UWP значение свойства `AutomationProperties.Name` заменит значение `Text`, произносимое средством чтения с экрана.
+
+На Android значения свойств `AutomationProperties.Name` и `AutomationProperties.HelpText` полностью заменят значение `Text`, являющееся отображаемым и одновременно произносимым средством чтения с экрана. Это является ограничением API-интерфейсов вплоть до уровня 26.
 
 ## <a name="related-links"></a>Связанные ссылки
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: 6e4ff817bcf59f071277b653175066c9727167c1
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: babfc85de645b285812421d453d51d5be6dceb1c
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527161"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831941"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Публикация приложений Xamarin.iOS в App Store
 
@@ -30,7 +30,8 @@ ms.locfileid: "51527161"
 > - Сборка приложения и отправка его в Apple
 
 > [!IMPORTANT]
-> Корпорация Apple [объявила](https://developer.apple.com/news/?id=05072018a), что, начиная с июля 2018 г., все отправляемые в App Store приложения и обновления должны быть собраны с использованием пакета SDK для iOS 11 и [поддерживать дисплей iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
+> Корпорация Apple [объявила](https://developer.apple.com/ios/submit/), что начиная с марта 2019 г. все публикуемые в App Store приложения и обновления должны быть собраны с использованием пакета SDK для iOS 12.1 или более поздних версий, входящего в Xcode версии 10.1 и выше.
+> Кроме того, приложения должны поддерживать размеры экранов iPhone XS и iPad Pro с диагональю 12,9 дюйма.
 
 ## <a name="app-store-guidelines"></a>Правила App Store
 

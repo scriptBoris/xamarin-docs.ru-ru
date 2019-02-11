@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: f1b28c000fbc77a524097ce5a9e7d85d32a40230
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c085b515bf6618d110d95dc5a6456df182fa803f
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109345"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668580"
 ---
 # <a name="get-started-with-xamarinios"></a>Начало работы с Xamarin.iOS
 
@@ -28,6 +28,8 @@ Xamarin.iOS позволяет разработчикам создавать с�
 - Mac OS High Sierra (10.13) и более поздних версий.
 
 Актуальная версия Xcode доступна для скачивания в [центре разработчиков iOS](https://developer.apple.com/devcenter/ios/index.action#downloads) (требуются данные для входа) или в магазине Mac App Store:
+
+![Снимок экрана страницы описания Xcode в Mac App Store](installation/images/xcode.png "Xcode в Mac App Store")
 
 ## <a name="getting-started-series"></a>Материалы по началу работы
 
