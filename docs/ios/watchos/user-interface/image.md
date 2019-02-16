@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a9e23f1bfa6099c64a0a60d78ecc3c6283a86a96
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6a2b8c99156963ae167aecd29a618d0feeffbdc7
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108097"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321133"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>watchOS элементов управления Image в Xamarin
 
-предоставляет watchOS [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) управления для отображения изображений и простой анимации. Некоторые элементы управления могут также иметь фонового изображения (например, кнопки, группы и контроллеры интерфейса).
+предоставляет watchOS [ `WKInterfaceImage` ](xref:WatchKit.WKInterfaceImage) управления для отображения изображений и простой анимации. Некоторые элементы управления могут также иметь фонового изображения (например, кнопки, группы и контроллеры интерфейса).
 
 ![](image-images/image-walkway.png "Apple Watch отображение рисунка") ![ ] (image-images/image-animation.png "Apple Watch с простой анимации")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
@@ -99,7 +99,7 @@ animatedImage.StopAnimating ();
 
 <a name="cache" />
 
-## <a name="appendix-caching-images-watchos-1"></a>Приложение: Кэширования изображений (watchOS 1)
+## <a name="appendix-caching-images-watchos-1"></a>Приложение. Кэширование изображений (watchOS 1)
 
 > [!IMPORTANT]
 > приложения для watchOS 3 Запустите полностью на устройстве. Следующие сведения являются watchOS 1 только для приложений.
