@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 9acd1b8f25696267578f5cc269eb1b0c738be571
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: dbee8d3f55edee9c862b4c883b63b55f98972b48
+ms.sourcegitcommit: 0c2745c1593eee3ecb40ab882e854a13ca72bc86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675098"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56078424"
 ---
 # <a name="xamarinforms-app-class"></a>Класс App Xamarin.Forms
 
@@ -149,7 +149,6 @@ public class App : Xamarin.Forms.Application
 Затем в каждом проекте конкретной платформы создается экземпляр этого класса, который затем передается в метод `LoadApplication`. Там `MainPage` загружается и отображается для пользователя.
 Код для каждой из платформ приведен в разделах ниже. Последние шаблоны решений Xamarin.Forms уже содержат весь этот код, предварительно настроенный для вашего приложения.
 
-
 ### <a name="ios-project"></a>Проект на платформе iOS
 
 Класс `AppDelegate` iOS наследует от `FormsApplicationDelegate`. Он должен:
@@ -196,8 +195,6 @@ public class MainActivity : FormsAppCompatActivity
 
 ### <a name="universal-windows-project-uwp-for-windows-10"></a>Универсальный проект Windows (UWP) для Windows 10
 
-Сведения о поддержке UWP в Xamarin.Forms см. в разделе [Настройка проектов Windows](~/xamarin-forms/platform/windows/installation/index.md).
-
 Главная страница в проекте UWP должна быть производной от `WindowsPage`:
 
 ```xaml
@@ -222,4 +219,6 @@ public sealed partial class MainPage
  }
 ```
 
-Обратите внимание, что `Forms.Init()` должен вызываться в **App.xaml.cs** в районе строки 63.
+Обратите внимание, что `Forms.Init()` в проекте UWP следует вызывать из **App.xaml.cs**.
+
+Дополнительные сведения см. в разделе [Настройка проектов Windows](~/xamarin-forms/platform/windows/installation/index.md), в котором указаны шаги для добавления проекта UWP в существующее решение Xamarin.Forms, которое не предназначено для UWP.
