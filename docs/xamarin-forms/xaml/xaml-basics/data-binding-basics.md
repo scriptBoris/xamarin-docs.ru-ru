@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 65316bde1d1c709028eae39c19e5dc318821ff70
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.openlocfilehash: 4a24c8dbb9ab4e23afa03de4ae2dbc55ddfb5fa4
+ms.sourcegitcommit: e000cc0765857c1d7f49538df9e62e9d3aa60775
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746886"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56334570"
 ---
 # <a name="part-4-data-binding-basics"></a>Часть 4. Основы привязки данных
 
@@ -114,6 +114,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 - `OneWay` — значения передаются из источника в целевой объект
 - `OneWayToSource` — значения передаются от целевого объекта к источнику
 - `TwoWay` — значения передаются обе стороны между источником и целью
+- `OneTime` — данные отправляются из источника в целевой объект, но только если `BindingContext` изменения
 
 В следующей программе показано, как правило `OneWayToSource` и `TwoWay` режимы привязки. Четыре `Slider` представления предназначены для управления `Scale`, `Rotate`, `RotateX`, и `RotateY` свойства `Label`. Поначалу кажется, как если эти четыре свойства `Label` должно быть цели привязки данных, так как каждый задано `Slider`. Тем не менее `BindingContext` из `Label` может быть только один объект, и существует четыре разных ползунка.
 
