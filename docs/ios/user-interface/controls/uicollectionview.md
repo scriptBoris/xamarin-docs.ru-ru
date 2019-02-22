@@ -281,7 +281,7 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
  <a name="Flow_Layout" />
 
 
-### <a name="flow-layout"></a>Последовательное размещение
+### <a name="flow-layout"></a>Потоковый макет
 
 `UICollectionViewFlowLayout` Класс предоставляет макет, подходящая для упорядочивания содержимого в сетке ячеек, как мы видели на основе строки.
 
