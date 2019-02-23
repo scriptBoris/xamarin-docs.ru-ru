@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: fa0ad282fedecec8f5ca4e94e7119c36ef182261
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 846a8fd45b8e39fb11270374af47a5b6cb83fa01
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116021"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666939"
 ---
 # <a name="external-storage"></a>Внешнее хранилище
 
@@ -80,7 +80,7 @@ ms.locfileid: "50116021"
 В этом документе будет ссылаться в каталог хранилища для общих файлов на внешних носителях, как _ОТКРЫТЫЙ\_ВНЕШНИХ\_ХРАНЕНИЯ_.
 
 
-Android также поддерживает концепцию каталогов приложения на _ОТКРЫТЫЙ\_ВНЕШНИХ\_ХРАНЕНИЯ_. Эти каталоги являются точно так же, как diretories приложения для `_PRIVATE\_EXTERNAL\_STORAGE_` и описаны в таблице в предыдущем разделе. Метод `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` вернет `Java.IO.File` объект, который соответствуют directory общедоступных приложений. `directoryType` Параметр является обязательным параметром и не может быть `null`.
+Android также поддерживает концепцию каталогов приложения на _ОТКРЫТЫЙ\_ВНЕШНИХ\_ХРАНЕНИЯ_. Эти каталоги являются точно так же, как каталоги приложения для `_PRIVATE\_EXTERNAL\_STORAGE_` и описаны в таблице в предыдущем разделе. Метод `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` вернет `Java.IO.File` объект, который соответствуют directory общедоступных приложений. `directoryType` Параметр является обязательным параметром и не может быть `null`.
 
 Например, вызов `Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath` вернет строку, которая будет выглядеть так:
 
