@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 1b90a3184b89ba9147525a87b52e048bbb59f5af
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9441522af53a1240707eeb21ff9f583501d2491d
+ms.sourcegitcommit: 16a42b69176a40cde71e177079b11e15d300d042
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061159"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56795450"
 ---
 # <a name="fonts-in-xamarinforms"></a>Шрифты в Xamarin.Forms
 
@@ -97,27 +97,19 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
 
 ## <a name="setting-the-font-in-xaml"></a>Задание шрифта в XAML
 
-Xamarin.Forms элементы управления, отображаемый текст, все имеют `Font` свойство, которое можно задать в XAML. Самый простой способ задать шрифт в XAML является использование значений перечисления из указанных размеров, как показано в следующем примере:
+Xamarin.Forms элементы управления, отображаемый текст, все имеют `FontSize` свойство, которое можно задать в XAML. Самый простой способ задать шрифт в XAML является использование значений перечисления из указанных размеров, как показано в следующем примере:
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-Имеется встроенный преобразователь для `Font` свойство, которое обеспечивает все параметры шрифта были выражены в виде строкового значения в XAML. В следующих примерах показано, как можно указать атрибуты шрифтов и размеров в XAML:
+Имеется встроенный преобразователь для `FontSize` свойство, которое обеспечивает все параметры шрифта были выражены в виде строкового значения в XAML. Кроме того `FontAttributes` свойство может использоваться для указания атрибутов шрифта:
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
 <Label Text="Biggest NamedSize" FontSize="Large" />
 <Label Text="Use size 72" FontSize="72" />
-```
-
-Чтобы указать несколько `Font` параметры, объединять необходимые параметры в единую `Font` строке атрибута. Строка атрибута шрифта должен быть в формате `"[font-face],[attributes],[size]"`. Важен порядок параметров, все параметры являются необязательными и несколько `attributes` можно указать, например:
-
-```xaml
-<Label Text="Small bold text" Font="Bold, Micro" />
-<Label Text="Medium custom font" Font="MarkerFelt-Thin, 42" />
-<Label Text="Really big bold and italic text" Font="Bold, Italic, 72"  />
 ```
 
 [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) может также использоваться в XAML для отрисовки шрифта на каждой платформе. В следующем примере используется пользовательский шрифт в iOS (<span style="font-family:MarkerFelt-Thin">тонкой MarkerFelt</span>) и определяет только размер и атрибуты на других платформах:
