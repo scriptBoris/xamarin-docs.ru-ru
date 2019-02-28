@@ -16,9 +16,9 @@ ms.locfileid: "56321133"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>watchOS элементов управления Image в Xamarin
 
-предоставляет watchOS [ `WKInterfaceImage` ](xref:WatchKit.WKInterfaceImage) управления для отображения изображений и простой анимации. Некоторые элементы управления могут также иметь фонового изображения (например, кнопки, группы и контроллеры интерфейса).
+предоставляет watchOS [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage) управления для отображения изображений и простой анимации. Некоторые элементы управления могут также иметь фонового изображения (например, кнопки, группы и контроллеры интерфейса).
 
-![](image-images/image-walkway.png "Apple Watch отображение рисунка") ![ ] (image-images/image-animation.png "Apple Watch с простой анимации")
+![](image-images/image-walkway.png "Apple Watch отображение рисунка") ![](image-images/image-animation.png "Apple Watch с простой анимации")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 Используйте образы каталог активов для добавления изображения Watch комплект приложений.
