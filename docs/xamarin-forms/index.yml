@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 00d8e1459501b4643dea12b1d36939534a66833f
-ms.sourcegitcommit: 5405a376fe1b1e08c834eb565aaa5b1849a0fcdc
+ms.openlocfilehash: ccd085c8b1cf824f24d4677ed2e44ebc54b690bd
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55986491"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197177"
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
@@ -35,7 +35,7 @@ sections:
     - image:
         src: https://docs.microsoft.com/media/common/i_setup.svg
       text: Установка
-      href: ~/get-started/installation.md
+      href: ~/get-started/requirements.md
     - image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
       text: Первое приложение
@@ -62,18 +62,6 @@ sections:
     style: cards
     className: cardsB
     items:
-    - href: ~/get-started/index.md
-      html: Руководства, которые помогут вам начать работу с Xamarin.Forms. Убедитесь в том, что все установлено правильно, и создайте свое первое приложение Xamarin.Forms.
-      image:
-        src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/get-started/index.md
-      title: Начало работы
-    - href: ~/xamarin-forms/xaml/
-      html: Создавайте пользовательские интерфейсы декларативно и предоставляйте к ним общий доступ на платформах мобильных и классических приложений.
-      image:
-        src: ~/media/icons/i_xaml-forms.svg
-        href: ~/xamarin-forms/xaml/
-      title: XAML
     - href: ~/xamarin-forms/app-fundamentals/
       html: Все, что вам нужно знать для создания приложений Xamarin.Forms, например работа с файлами, изображениями, базами данных и т. д.
       image:
@@ -86,6 +74,12 @@ sections:
         src: ~/media/icons/i_user-interface.svg
         href: ~/xamarin-forms/user-interface/
       title: Пользовательский интерфейс
+    - href: ~/xamarin-forms/xaml/
+      html: Создавайте пользовательские интерфейсы декларативно и предоставляйте к ним общий доступ на платформах мобильных и классических приложений.
+      image:
+        src: ~/media/icons/i_xaml-forms.svg
+        href: ~/xamarin-forms/xaml/
+      title: XAML
     - href: ~/xamarin-forms/platform/
       html: Работа с функциями платформы Xamarin.Forms, такими как пользовательские отрисовщики, и другими важными функциями каждого выпуска.
       image:
