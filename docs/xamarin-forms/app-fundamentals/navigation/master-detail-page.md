@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 3bfb8a10eab1a8a75a3f2048de1ce219df9bde66
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 854b3fdbd34444cfb052d36287cf5cd47a36a2e0
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057669"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666913"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Страница "Основной вид и подробности" Xamarin.Forms
 
@@ -48,7 +48,7 @@ _Xamarin.Forms MasterDetailPage представляет собой страни
 
 - В iOS страница сведений *сдвигается* вправо, а главная страница выдвигается слева. При этом левая часть страницы сведений по-прежнему остается видимой.
 - В Android главная страница и страницы сведений *накладываются* друг на друга.
-- На универсальной платформе Windows (UWP) главная страница и страницы сведений *меняются местами*.
+- В UWP эталонная страница сдвигается из левой части страницы сведений с учетом того, что свойство [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) имеет значение `Popover`. Дополнительные сведения см. в разделе [Управление отображением страницы сведений](#Controlling_the_Detail_Page_Display_Behavior).
 
 Аналогичное поведение реализуется в альбомном режиме. Исключение составляют платформы iOS и Android, на которых главная страница сохраняет ту же ширину, что и в книжной ориентации, благодаря чему отображается больше содержимого страницы сведений.
 
@@ -291,7 +291,6 @@ public class MainPageCS : MasterDetailPage
 ## <a name="summary"></a>Сводка
 
 В этой статье описываются принципы работы со страницей [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) и перехода между управляемыми страницами данных. Xamarin.Forms `MasterDetailPage` представляет собой страницу, управляющую двумя страницами связанных данных — главной страницей, которая представляет элементы, и страницей сведений, которая представляет сведения об элементах на главной странице.
-
 
 ## <a name="related-links"></a>Связанные ссылки
 
