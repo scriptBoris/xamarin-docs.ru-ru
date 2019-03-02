@@ -6,12 +6,12 @@ ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f4558d5172d7dcbd2e14e6b74a347dd2f1e3a234
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 8fb373aa5081c8937da5110bad47c3f0decf0126
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292133"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197242"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>Часть 4. Работа с несколькими платформами
 
@@ -71,7 +71,7 @@ ms.locfileid: "55292133"
 
 С помощью интерфейсов и базовых классов определен в общем коде и реализовать или расширяется в проекты под конкретные платформы. Написание и расширение общего кода с помощью класса абстракции особенно подходит для переносимых библиотек классов, так как они имеют ограниченный набор framework, доступные на них и не могут содержать директивы компилятора для поддержки ветвей кода для конкретных платформ.
 
-#### <a name="interfaces"></a>Интерфейсы
+#### <a name="interfaces"></a>интерфейсов,
 
 С помощью интерфейсов позволяет реализовать классы, зависящие от платформы, которые по-прежнему могут быть переданы в ваши общие библиотеки, чтобы воспользоваться преимуществами общего кода.
 
@@ -95,7 +95,7 @@ ms.locfileid: "55292133"
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-См. в разделе [Xamarin.Forms](~/get-started/index.md) документации.
+См. в разделе [Xamarin.Forms](~/get-started/index.yml) документации.
 
 ### <a name="other-cross-platform-libraries"></a>Другие кросс платформенные библиотеки
 

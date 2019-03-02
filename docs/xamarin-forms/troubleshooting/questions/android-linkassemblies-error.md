@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: b027dd23b9144a865bc16b55ebac71855bae0725
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 552ad4d2de6e2560dc4301a9b5cc0ce6a5edb348
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292042"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197121"
 ---
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Ошибка сборки Android — непредвиденный сбой задачи LinkAssemblies
 
-Может появиться сообщение об ошибке `The "LinkAssemblies" task failed unexpectedly` при построении проекта Xamarin.Android, в котором используются форм. Это происходит, когда компоновщик активен (обычно при *выпуска* сборки, чтобы уменьшить размер пакета приложения); и она выполняется, так как Android целевые объекты не обновлен до последней версии framework. (Дополнительные сведения: [Xamarin.Forms для Android требования](~/get-started/installation.md#android))
+Может появиться сообщение об ошибке `The "LinkAssemblies" task failed unexpectedly` при построении проекта Xamarin.Android, в котором используются форм. Это происходит, когда компоновщик активен (обычно при *выпуска* сборки, чтобы уменьшить размер пакета приложения); и она выполняется, так как Android целевые объекты не обновлен до последней версии framework. (Дополнительные сведения: [Xamarin.Forms для Android требования](~/get-started/requirements.md#android))
 
 Решение этой проблемы является обеспечение того, можно иметь последнюю поддерживаемую версию пакета SDK для Android и задать **требуемой версии .NET Framework** для **использовать самую новую установленную платформу**. Кроме того, рекомендуется установить **целевая версия Android** для **использовать версию целевой платформы** и **Минимальная версия Android** API 15 или более поздней версии. Это считается поддерживаемой конфигурации.
 

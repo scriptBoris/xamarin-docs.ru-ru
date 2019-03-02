@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 4f69e88e0abff1236dc8365d88c8efbdf58b4031
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: e53f6dce47dd7db60267d21c8d816ece554dc46c
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831708"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197125"
 ---
 # <a name="listview-data-sources"></a>Источники данных ListView
 
@@ -71,11 +71,11 @@ listView.ItemsSource.Add("monochrome");
 Так как `ItemsSource` отправлен в массив, не будет обновляться при изменении базового списка или массива. Если требуется ListView на автоматическое обновление при элементы добавления, удаления и изменения в базовом списке, необходимо использовать `ObservableCollection`. [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1) определяется в `System.Collections.ObjectModel` и так же, как `List`, за исключением того, что их можно уведомить `ListView` о любых изменениях:
 
 ```csharp
-ObservableCollection<Employees> employeeList = new ObservableCollection<Employess>();
-listView.ItemsSource = employeeList;
+ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
+listView.ItemsSource = employees;
 
 //Mr. Mono will be added to the ListView because it uses an ObservableCollection
-employeeList.Add(new Employee(){ DisplayName="Mr. Mono"});
+employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 ```
 
 <a name="Data_Binding" />
@@ -93,7 +93,8 @@ employeeList.Add(new Employee(){ DisplayName="Mr. Mono"});
 Класса "Сотрудник":
 
 ```csharp
-public class Employee{
+public class Employee
+{
     public string DisplayName {get; set;}
 }
 ```

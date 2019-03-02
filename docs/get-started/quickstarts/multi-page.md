@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 48b1c93afa22bf069a2b47b6c9a259641e8ed70f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: f3c5ec1c6d37c74fd9b4fb4980c68a59c9864c05
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293339"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197372"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Выполнять навигации в приложении Xamarin.Forms многостраничных
 
-[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 
 В этом кратком руководстве вы узнаете, как:
 

@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 7696ece64da28f05bb15866214de4a7f1103d06f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: dddd41f064be5e7840b6b86d86faec8045b476bf
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293315"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197229"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Создание приложения Xamarin.Forms одной страницы
 
-[![Загрузить образец](~/media/shared/download.png) загрузить пример](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
+[![Скачать пример](~/media/shared/download.png) Скачать пример](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
 
 В этом кратком руководстве вы узнаете, как:
 
@@ -38,7 +38,7 @@ ms.locfileid: "55293315"
 - Знание C#.
 - (необязательно) Связанном компьютере Mac, чтобы создать приложение на iOS.
 
-Дополнительные сведения об этих требованиях см. в разделе [Установка Xamarin](~/cross-platform/get-started/installation/index.md). Сведения о подключении Visual Studio 2017 к узлу сборки Mac, см. в разделе [связывание с компьютером Mac для разработки Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+Дополнительные сведения об этих требованиях см. в разделе [Установка Xamarin](~/get-started/installation/index.md). Сведения о подключении Visual Studio 2017 к узлу сборки Mac, см. в разделе [связывание с компьютером Mac для разработки Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
 ## <a name="get-started-with-visual-studio"></a>Начало работы с Visual Studio
 
@@ -92,7 +92,7 @@ ms.locfileid: "55293315"
     </ContentPage>
     ```
 
-    Этот код декларативно определяет пользовательский интерфейс для страницы, которая состоит из [`Label`](xref:Xamarin.Forms.Label) для отображения текста, [`Editor`](xref:Xamarin.Forms.Editor) для ввода текста, а также двух экземпляров [`Button`](xref:Xamarin.Forms.Button), которые помогают приложению сохранить или удалить файл. Два экземпляра `Button` располагаются по горизонтали в [`Grid`](xref:Xamarin.Forms.Grid), а `Label`, `Editor` и `Grid` — по вертикали в [`StackLayout`](xref:Xamarin.Forms.StackLayout). Дополнительные сведения о создании пользовательского интерфейса см. в разделе [пользовательский интерфейс](deepdive.md#user-interface) в [подробный обзор быстрого запуска Xamarin.Forms](deepdive.md).
+    Этот код декларативно определяет пользовательский интерфейс для страницы, которая состоит из [ `Label` ](xref:Xamarin.Forms.Label) для отображения текста, [ `Editor` ](xref:Xamarin.Forms.Editor) для ввода текста, а также два [ `Button` ](xref:Xamarin.Forms.Button) экземпляров, которые направляют приложения, чтобы сохранить или удалить файл. Два экземпляра `Button` располагаются по горизонтали в [`Grid`](xref:Xamarin.Forms.Grid), а `Label`, `Editor` и `Grid` — по вертикали в [`StackLayout`](xref:Xamarin.Forms.StackLayout). Дополнительные сведения о создании пользовательского интерфейса см. в разделе [пользовательский интерфейс](deepdive.md#user-interface) в [подробный обзор быстрого запуска Xamarin.Forms](deepdive.md).
 
     Сохраните изменения в файле **MainPage.xaml**, нажав клавиши **CTRL+S**, и закройте файл.
 
@@ -188,7 +188,7 @@ ms.locfileid: "55293315"
 - Xcode (последний выпуск).
 - Знание C#.
 
-Дополнительные сведения об этих требованиях см. в разделе [Установка Xamarin](~/cross-platform/get-started/installation/index.md).
+Дополнительные сведения об этих требованиях см. в разделе [Установка Xamarin](~/get-started/installation/index.md).
 
 ## <a name="get-started-with-visual-studio-for-mac"></a>Начало работы с Visual Studio для Mac
 
@@ -246,7 +246,7 @@ ms.locfileid: "55293315"
     </ContentPage>
     ```
 
-    Этот код декларативно определяет пользовательский интерфейс для страницы, которая состоит из [`Label`](xref:Xamarin.Forms.Label) для отображения текста, [`Editor`](xref:Xamarin.Forms.Editor) для ввода текста, а также двух экземпляров [`Button`](xref:Xamarin.Forms.Button), которые помогают приложению сохранить или удалить файл. Два экземпляра `Button` располагаются по горизонтали в [`Grid`](xref:Xamarin.Forms.Grid), а `Label`, `Editor` и `Grid` — по вертикали в [`StackLayout`](xref:Xamarin.Forms.StackLayout). Дополнительные сведения о создании пользовательского интерфейса см. в разделе [пользовательский интерфейс](deepdive.md#user-interface) в [подробный обзор быстрого запуска Xamarin.Forms](deepdive.md).
+    Этот код декларативно определяет пользовательский интерфейс для страницы, которая состоит из [ `Label` ](xref:Xamarin.Forms.Label) для отображения текста, [ `Editor` ](xref:Xamarin.Forms.Editor) для ввода текста, а также два [ `Button` ](xref:Xamarin.Forms.Button) экземпляров, которые направляют приложения, чтобы сохранить или удалить файл. Два экземпляра `Button` располагаются по горизонтали в [`Grid`](xref:Xamarin.Forms.Grid), а `Label`, `Editor` и `Grid` — по вертикали в [`StackLayout`](xref:Xamarin.Forms.StackLayout). Дополнительные сведения о создании пользовательского интерфейса см. в разделе [пользовательский интерфейс](deepdive.md#user-interface) в [подробный обзор быстрого запуска Xamarin.Forms](deepdive.md).
 
     Сохраните изменения в **MainPage.xaml**, выбрав **Файл > Сохранить** или нажав клавиши **&#8984;+S**, и закройте файл.
 

@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: aacc63af53d7408b61f01054d49fa2b436588fc7
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 8e466c80468551f8262cfe49556d9527a147de4c
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293347"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197554"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Краткое руководство по Xamarin.Forms глубокое погружение в обработку
 
-В [краткое руководство по Xamarin.Forms](~/get-started/index.md), было создано приложение заметки. В этой статье выполняется проверка созданных компонентов, позволяющая получить представление об основных принципах работы приложений Xamarin.Forms.
+В [краткое руководство по Xamarin.Forms](~/get-started/index.yml), было создано приложение заметки. В этой статье выполняется проверка созданных компонентов, позволяющая получить представление об основных принципах работы приложений Xamarin.Forms.
 
 ::: zone pivot="windows"
 
@@ -180,7 +180,7 @@ namespace Notes.Droid
 
 ::: zone pivot="windows"
 
-### <a name="universal-windows-platform"></a>Универсальная платформа Windows
+### <a name="universal-windows-platform"></a>Универсальная платформа Windows 
 
 В приложениях универсальной платформы Windows (UWP) метод `Init`, который инициализирует платформу Xamarin.Forms, вызывается из класса `App`:
 
@@ -373,7 +373,7 @@ await Navigation.PopAsync();
 
 Привязка данных используется для упрощения способа, которым приложение Xamarin.Forms отображает данные и взаимодействует с ними. Она устанавливает связь между пользовательским интерфейсом и базовым приложением. Класс [`BindableObject`](xref:Xamarin.Forms.BindableObject) содержит основную часть инфраструктуры для поддержки привязки данных.
 
-Привязка данных связывает два объекта, которые называются *источником* и *целевым объектом*. *Источник* предоставляет данные. *Целевой* объект будет использовать (и часто отображать) данные из источника. Например, свойство [`Text`](xref:Xamarin.Forms.Editor.Text) элемента [`Editor`](xref:Xamarin.Forms.Editor) (*целевого* объекта) часто связывается с открытым свойством `string` *источника*. На следующей схеме показано отношение привязки:
+Привязка данных связывает два объекта, которые называются *источником* и *целевым объектом*. *Источник* предоставляет данные. *Целевой* объект будет использовать (и часто отображать) данные из источника. Например [ `Editor` ](xref:Xamarin.Forms.Editor) (*целевой* объекта) часто связывается его [ `Text` ](xref:Xamarin.Forms.Editor.Text) свойство с открытым `string` свойство в *источника* объекта. На следующей схеме показано отношение привязки:
 
 ![](deepdive-images/data-binding.png "Привязка данных")
 
